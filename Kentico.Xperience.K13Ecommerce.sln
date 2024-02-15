@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A94EE676-9ABE-44EA-BF9E-22004E9D54C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7C8D51F1-E71F-4DFE-BAE3-8B1D9180EEB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2AA4054-382D-4C37-9EED-E2B2C60DC90A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		.markdownlint.json = .markdownlint.json
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{21430A1F-0DF7-4D41-973A-00046A0FA84D}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.build.targets = Directory.build.targets
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{6264600D-221E-4E51-9D7F-14411DF793DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{DDCE1F24-20E6-4AF4-8D37-E90B2F6C6A2C}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Usage-Guide.md = docs\Usage-Guide.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.Ecommerce.Common", "src\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj", "{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.K13Ecommerce", "src\Kentico.Xperience.K13Ecommerce\Kentico.Xperience.K13Ecommerce.csproj", "{C30A7837-2BD6-4B0E-996D-2A2B9167173F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DancingGoat", "examples\DancingGoat-K13Ecommerce\DancingGoat.csproj", "{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico13_DancingGoat", "examples\Kentico13_DancingGoatStore\Kentico13_DancingGoat.csproj", "{219565E2-67AC-4858-A3D1-5C9A27BED0A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.StoreApi", "src\Kentico.Xperience.StoreApi\Kentico.Xperience.StoreApi.csproj", "{28755E8F-BB89-4196-AC65-2C5A823EF522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.Xperience.Store.Rcl", "src\Kentico.Xperience.Store.Rcl\Kentico.Xperience.Store.Rcl.csproj", "{E0981D21-9E8F-4A5B-9A98-A84D14EFA250}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30A7837-2BD6-4B0E-996D-2A2B9167173F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30A7837-2BD6-4B0E-996D-2A2B9167173F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30A7837-2BD6-4B0E-996D-2A2B9167173F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30A7837-2BD6-4B0E-996D-2A2B9167173F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219565E2-67AC-4858-A3D1-5C9A27BED0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219565E2-67AC-4858-A3D1-5C9A27BED0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219565E2-67AC-4858-A3D1-5C9A27BED0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219565E2-67AC-4858-A3D1-5C9A27BED0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28755E8F-BB89-4196-AC65-2C5A823EF522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28755E8F-BB89-4196-AC65-2C5A823EF522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28755E8F-BB89-4196-AC65-2C5A823EF522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28755E8F-BB89-4196-AC65-2C5A823EF522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0981D21-9E8F-4A5B-9A98-A84D14EFA250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0981D21-9E8F-4A5B-9A98-A84D14EFA250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0981D21-9E8F-4A5B-9A98-A84D14EFA250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0981D21-9E8F-4A5B-9A98-A84D14EFA250}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
+		{C30A7837-2BD6-4B0E-996D-2A2B9167173F} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
+		{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7} = {6264600D-221E-4E51-9D7F-14411DF793DD}
+		{219565E2-67AC-4858-A3D1-5C9A27BED0A0} = {6264600D-221E-4E51-9D7F-14411DF793DD}
+		{28755E8F-BB89-4196-AC65-2C5A823EF522} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
+		{E0981D21-9E8F-4A5B-9A98-A84D14EFA250} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B2A20BC-F57B-4AAE-B1C2-E4DC52EFCAC5}
+	EndGlobalSection
+EndGlobal
