@@ -12,13 +12,13 @@ namespace Kentico.Xperience.Shopify.Services.ProductService
     {
         private readonly IProductService productService;
         private readonly Uri shopifyProductUrlBase;
-        private readonly string[] _shopifyFields = [ "title", "body_html", "handle", "images", "variants" ];
+        private readonly string[] _shopifyFields = ["title", "body_html", "handle", "images", "variants"];
         private const string defaultCurrency = "USD";
 
         private string ShopifyFields => string.Join(",", _shopifyFields);
 
         public ShopifyProductService(IOptionsMonitor<ShopifyConfig> options, IProductServiceFactory productServiceFactory) : base(options)
-        {           
+        {
             productService = productServiceFactory.Create(shopifyCredentials);
 
             var uriBuilder = new UriBuilder(options.CurrentValue.ShopifyUrl);
@@ -28,8 +28,8 @@ namespace Kentico.Xperience.Shopify.Services.ProductService
 
         public async Task<ListResultWrapper<ProductListModel>> GetProductsAsync(ProductFilter initialFilter)
         {
-            return await TryCatch(async () => 
-            { 
+            return await TryCatch(async () =>
+            {
                 return await GetProductsAsyncInternal(initialFilter);
             }, GenerateEmptyResult);
         }
@@ -61,7 +61,7 @@ namespace Kentico.Xperience.Shopify.Services.ProductService
                 PresentmentCurrencies = new string[] { initialFilter.Currency?.ToString() ?? "" }
             };
             var result = await productService.ListAsync(filter, true);
-                
+
             return CreateResultModel(result, initialFilter.Currency.ToString());
         }
 
@@ -113,7 +113,7 @@ namespace Kentico.Xperience.Shopify.Services.ProductService
             {
                 var onlyVariant = variants.First();
                 var currencyPrice = onlyVariant.PresentmentPrices?.FirstOrDefault(x => x.Price.CurrencyCode == currency);
-                
+
                 return currencyPrice is { Price: not null } ?
                     (currencyPrice.Price.Amount, currencyPrice.CompareAtPrice?.Amount) : (null, null);
             }

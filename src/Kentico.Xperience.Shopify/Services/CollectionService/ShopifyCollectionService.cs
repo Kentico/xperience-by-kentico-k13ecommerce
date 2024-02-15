@@ -1,8 +1,8 @@
 ﻿using Kentico.Xperience.Shopify.Config;
-using Microsoft.Extensions.Options;
-using ShopifySharp.Factories;
-using ShopifySharp;
 using Kentico.Xperience.Shopify.Models;
+using Microsoft.Extensions.Options;
+using ShopifySharp;
+using ShopifySharp.Factories;
 using ShopifySharp.Filters;
 
 namespace Kentico.Xperience.Shopify.Services
@@ -12,12 +12,12 @@ namespace Kentico.Xperience.Shopify.Services
         private readonly ICustomCollectionService customCollectionService;
         private readonly ISmartCollectionService smartCollectionService;
 
-        public ShopifyCollectionService(IOptionsMonitor<ShopifyConfig> options, 
+        public ShopifyCollectionService(IOptionsMonitor<ShopifyConfig> options,
             ICustomCollectionServiceFactory customCollectionServiceFactory,
-            ISmartCollectionServiceFactory smartCollectionServiceFactory) : base(options) 
+            ISmartCollectionServiceFactory smartCollectionServiceFactory) : base(options)
         {
             customCollectionService = customCollectionServiceFactory.Create(shopifyCredentials);
-            smartCollectionService = smartCollectionServiceFactory.Create(shopifyCredentials);            
+            smartCollectionService = smartCollectionServiceFactory.Create(shopifyCredentials);
         }
 
         public async Task<IEnumerable<CollectionListingModel>> GetCollectionListingAsync()
@@ -33,7 +33,7 @@ namespace Kentico.Xperience.Shopify.Services
         private async Task<IEnumerable<CollectionListingModel>> GetCollectionListingInternal()
         {
             var modelList = new List<CollectionListingModel>();
-            
+
             var customCollectionsTask = customCollectionService.ListAsync(GenerateListFilter<CustomCollection>());
             var smartCollectionsTask = smartCollectionService.ListAsync(GenerateListFilter<SmartCollection>());
 

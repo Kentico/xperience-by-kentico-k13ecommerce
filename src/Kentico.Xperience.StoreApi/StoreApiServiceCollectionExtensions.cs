@@ -1,10 +1,10 @@
-﻿using Kentico.Xperience.StoreApi.Products;
+﻿using System.Reflection;
+using Kentico.Xperience.StoreApi.Products;
 using Kentico.Xperience.StoreApi.Products.Pages;
 using Kentico.Xperience.StoreApi.Products.SKU;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Reflection;
 
 namespace Kentico.Xperience.StoreApi;
 

@@ -3,7 +3,6 @@ using Kentico.Xperience.Shopify.Services;
 using Kentico.Xperience.Shopify.Services.ProductService;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using ShopifySharp.Extensions.DependencyInjection;
 
 namespace Kentico.Xperience.Shopify;

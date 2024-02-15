@@ -10,7 +10,7 @@ public class ShopifyCollectionSelectorComponent : SelectorFormComponent<ShopifyC
     private readonly IShopifyCollectionService collectionService;
 
     public const string IDENTIFIER = "Kentico.Xperience.Shopify.ShopifyCollectionSelector";
-        
+
     public ShopifyCollectionSelectorComponent(IShopifyCollectionService collectionService)
     {
         this.collectionService = collectionService;

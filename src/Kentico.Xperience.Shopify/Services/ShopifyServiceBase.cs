@@ -1,7 +1,6 @@
 ﻿using Kentico.Xperience.Shopify.Config;
 using Microsoft.Extensions.Options;
 using ShopifySharp.Credentials;
-using ShopifySharp.Filters;
 using ShopifySharp.Infrastructure;
 
 namespace Kentico.Xperience.Shopify.Services
@@ -9,7 +8,7 @@ namespace Kentico.Xperience.Shopify.Services
     public abstract class ShopifyServiceBase
     {
         protected readonly ShopifyApiCredentials shopifyCredentials;
-        protected ShopifyServiceBase(IOptionsMonitor<ShopifyConfig> options) 
+        protected ShopifyServiceBase(IOptionsMonitor<ShopifyConfig> options)
         {
             var url = options.CurrentValue.ShopifyUrl;
             var apiToken = options.CurrentValue.ApiToken;

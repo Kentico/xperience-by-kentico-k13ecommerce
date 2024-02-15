@@ -1,9 +1,9 @@
-﻿using CMS.Base;
+﻿using System.Net.Mime;
+using CMS.Base;
 using CMS.Ecommerce;
 using CMS.SiteProvider;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Mime;
 
 namespace Kentico.Xperience.StoreApi.StoreSite;
 

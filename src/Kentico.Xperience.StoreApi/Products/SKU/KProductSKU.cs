@@ -1,7 +1,7 @@
-﻿using CMS.Ecommerce;
+﻿using System.Text.Json.Serialization;
+using CMS.Ecommerce;
 using CMS.Helpers;
 using Kentico.Xperience.StoreApi.Products.Prices;
-using System.Text.Json.Serialization;
 
 namespace Kentico.Xperience.StoreApi.Products.SKU;
 

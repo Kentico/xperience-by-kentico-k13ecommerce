@@ -36,4 +36,4 @@ public class ShopifyCurrencySelectorComponent : SelectorFormComponent<ShopifyCur
             };
         }
     }
-}    
+}

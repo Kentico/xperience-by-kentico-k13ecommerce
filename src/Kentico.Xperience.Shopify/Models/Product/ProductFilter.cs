@@ -5,7 +5,7 @@ namespace Kentico.Xperience.Shopify.Models
     public class ProductFilter
     {
         public long? CollectionID { get; set; }
-        public CurrencyCode? Currency {  get; set; }
+        public CurrencyCode? Currency { get; set; }
         public int? Limit { get; set; }
     }
 }
