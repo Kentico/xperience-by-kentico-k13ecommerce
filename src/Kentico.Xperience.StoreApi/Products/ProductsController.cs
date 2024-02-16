@@ -17,7 +17,6 @@ namespace Kentico.Xperience.StoreApi.Products;
 public class ProductsController : ControllerBase
 {
     private readonly IKProductService productService;
-    private readonly int test;
 
     public ProductsController(IKProductService productService)
     {

@@ -4,7 +4,19 @@
 
 ## Description
 
----Please put here some general information about your Intergration / App / Solution.---
+Repository contains solutions with Xperience By Kentico integration to different E-Commerce platforms.
+Currently there are 2 solutions:
+- Kentico.Xperience.Shopify.sln
+  - It shows the connection to the Shopify headless API and shows the implementation of a simple e-shop on XByK
+    (extended Dancing Goat sample site) using Shopify 
+- Kentico.Xperience.K13Ecommerce.sln
+  - It shows the possibility of XbyK integration on Kentico 13 E-Commerce solution.
+  - Consists of two parts:
+    - Library for Kentico 13 that exposes a REST API for an E-Commerce site (Kentico.Xperience.StoreApi).
+    - Library for XbyK connecting to the given API running under Kentico 13 (Kentico.Xperience.K13Ecommerce)
+
+The development is currently in the first phase and the projects now only contains a product listing widget example, for displaying products from the E-Commerce platform (Shopify/Kentico 13),
+but the purchase itself still takes place on Shopify/Kentico13.
 
 ## Screenshots
 
@@ -12,33 +24,131 @@
 
 ## Library Version Matrix
 
-The versions of this library are supported by the following versions of Xperience by Kentico
+Summary of libraries which are supported by the following versions Xperince by Kentico / Kentico Xperience 13
 
-| Xperience Version | Library Version |
-| ----------------- | --------------- |
-| >= 28.2.1         | 1.0.0           |
+### Shopify integration
+
+| Library                            | Xperience Version | Library Version |
+| ----------------------------------- |-------------------| --------------- |
+| Kentico.Xperience.Ecommerce.Common | \>= 28.2.1        | 1.0.0           |
+| Kentico.Xperience.Shopify          | \>= 28.2.1        | 1.0.0           |
+| Kentico.Xperience.Shopify.Rcl      | \>= 28.2.1        | 1.0.0           |
+
+### Kentico Xperience 13 E-Commerce integration
+
+| Library                            | Xperience Version | Library Version |
+|------------------------------------|-------------------| --------------- |
+| Kentico.Xperience.Ecommerce.Common | \>= 28.2.1        | 1.0.0           |
+| Kentico.Xperience.K13Ecommerce     | \>= 28.2.1        | 1.0.0           |
+| Kentico.Xperience.Store.Rcl        | \>= 28.2.1        | 1.0.0           |
+| Kentico.Xperience.StoreApi         | \>= 13.0.131      | 1.0.0           |
 
 ### Dependencies
 
----These are all the dependencies required to use (not build) the library---
+#### Shopify
 
 - [ASP.NET Core 8.0](https://dotnet.microsoft.com/en-us/download)
 - [Xperience by Kentico](https://docs.xperience.io/xp/changelog)
 
+#### Kentico 13 E-Commerce
+
+Xperience by Kentico application:
+- [ASP.NET Core 8.0](https://dotnet.microsoft.com/en-us/download)
+- [Xperience by Kentico](https://docs.xperience.io/xp/changelog)
+
+Kentico Xperience 13 application (or standalone API app):
+- [ASP.NET Core 6.0](https://dotnet.microsoft.com/en-us/download)
+- [Kentico Xperience 13 Refresh 11](https://docs.kentico.com/13/release-notes-xperience-13)
+
 ## Package Installation
 
----This details the steps required to add the library to a solution. This could include multiple packages (NuGet and/or npm)---
+### Shopify integration
 
-Add the package to your application using the .NET CLI
+Add these packages to your XbyK application using the .NET CLI
 
 ```powershell
 dotnet add package Kentico.Xperience.Shopify
+dotnet add package Kentico.Xperience.Shopify.Rcl
+```
+
+### Kentico Xperience 13 E-Commerce integration
+
+Add these packages to your XbyK application using the .NET CLI
+
+```powershell
+dotnet add package Kentico.Xperience.K13Ecommerce
+dotnet add package Kentico.Xperience.Store.Rcl
+```
+
+Add this package to your Kentico Xperience 13 ASP.NET.Core application (live site)
+
+```powershell
+dotnet add package Kentico.Xperience.StoreApi
 ```
 
 ## Quick Start
 
----This section shows how to quickly get started with the library. The minimum number of steps (without all the details) should be listed
-to give a developer a general idea of what is involved---
+### Shopify integration
+1. Fill settings to connect your Shopify instance
+```json
+{  
+  "CMSShopifyConfig": {
+    "ShopifyUrl": "https://quickstart-xxxxxxxxxx.myshopify.com/",
+    "ApiToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  }
+}
+```
+2. Add library to the application services
+```csharp
+// Program.cs
+
+// Registers Shopify services
+builder.Services.RegisterShopifyServices(builder.Configuration);
+```
+3. Copy product listing widget from Dancing Goat example project to your project. Sample widget is located in 
+[here](./examples/DancingGoat-Shopify/Components/Widgets/Shopify/ProductListWidget).
+4. Start to you on your live site
+
+### Kentico Xperience 13 E-Commerce integration
+
+1. In Kentico Xperience 13 ASP.NET Core - Add Store API services to application services and configure Swagger
+```csharp
+// Startup.cs
+
+public void ConfigureServices(IServiceCollection services)
+{
+    // ...
+    //Store API registration
+    services.AddKenticoStoreApi();
+    // Registers Swagger generation
+    services.AddKenticoStoreApiSwagger();
+}
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
+{
+    //store api swagger (currenly only Proof of conception solution without proper authentication)
+    app.UseStoreApiSwagger();
+}
+
+```
+2. In XbyK - Fill settings to connect your Kentico Xperience 13 instance (API PoC solution without authentication!)
+```json
+{
+  "CMSKenticoStoreConfig": {
+    "StoreApiUrl": "http://dev.dancinggoat.com:65375"
+  }
+}
+```
+2. In XbyK - Add library to the application services
+```csharp
+// Program.cs
+
+// Registers Kentico Store API
+builder.Services.AddKenticoStoreServices(builder.Configuration);
+```
+3. Copy product listing widget from Dancing Goat example project to your project. Sample widget is located in
+   [here](./examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget).
+4. Start to use on your live site
 
 ## Full Instructions
 

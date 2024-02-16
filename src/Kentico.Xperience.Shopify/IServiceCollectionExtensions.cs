@@ -11,7 +11,7 @@ public static class IServiceCollectionExtensions
     public static void RegisterShopifyServices(this IServiceCollection services, ConfigurationManager configuration)
     {
         // Get Shopify config from appsettings.json
-        services.Configure<ShopifyConfig>(configuration.GetSection(nameof(ShopifyConfig)));
+        services.Configure<ShopifyConfig>(configuration.GetSection(ShopifyConfig.SECTION_NAME));
 
         // ShopifySharp dependency injection
         services.AddShopifySharpServiceFactories();

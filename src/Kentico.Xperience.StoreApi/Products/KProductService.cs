@@ -46,7 +46,7 @@ internal class KProductService : IKProductService
             {
                 q.Types(productTypes.Select(p => p.ClassName).ToArray())
                     .Path(path, PathTypeEnum.Children)
-                    .Page(0, limit)
+                    .TopN(limit)
                     .OrderBy(orderBy);
                 if (culture is not null)
                 {

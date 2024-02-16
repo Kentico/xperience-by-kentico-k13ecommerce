@@ -1,4 +1,5 @@
 ﻿using Kentico.Xperience.K13Ecommerce.KenticoStoreApi;
+using Kentico.Xperience.K13Ecommerce.Products;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Controllers;
@@ -15,7 +16,7 @@ public class TestController : Controller
 
     public async Task<IActionResult> TestProducts()
     {
-        var products = await storeApiService.GetProductPages("/", limit: 10);
+        var products = await storeApiService.GetProductPages(new ProductPageRequest { Path = "/", Limit = 12});
         return Ok(products);
     }
 }

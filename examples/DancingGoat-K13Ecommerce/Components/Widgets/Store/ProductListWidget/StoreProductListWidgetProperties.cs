@@ -26,7 +26,7 @@ public class StoreProductListWidgetProperties : IWidgetProperties
     [EditingComponent(TextInputComponent.IDENTIFIER, Label = "Order By", Order = 40)]
     public string OrderBy { get; set; }
 
-    [EditingComponent(IntInputComponent.IDENTIFIER, Label = "Max results", Order = 50)]
+    [EditingComponent(IntInputComponent.IDENTIFIER, Label = "Max. results", Order = 50)]
     [Range(1, 250)]
     public int Limit { get; set; }
 }

@@ -20,5 +20,8 @@ public class KProductNode
     /// </summary>
     public Dictionary<string, object> CustomFields { get; set; }
 
+    /// <summary>
+    /// Product SKU
+    /// </summary>
     public KProductSKU SKU { get; set; }
 }

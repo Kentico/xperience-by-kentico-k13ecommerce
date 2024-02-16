@@ -1,18 +1,17 @@
-﻿namespace Kentico.Xperience.K13Ecommerce.KenticoStoreApi;
+﻿using Kentico.Xperience.K13Ecommerce.Products;
 
-internal class KStoreApiService : IKStoreApiService
+namespace Kentico.Xperience.K13Ecommerce.KenticoStoreApi;
+
+internal class KStoreApiService(HttpClient httpClient) : IKStoreApiService
 {
-    private readonly KenticoStoreApiClient apiClient;
+    private readonly KenticoStoreApiClient apiClient = new(httpClient);
 
-    public KStoreApiService(HttpClient httpClient) => apiClient = new KenticoStoreApiClient(httpClient);
-
-    public async Task<ICollection<KProductNode>> GetProductPages(string path, string? culture = null, string? currency = null, string? orderBy = null, int? limit = null)
-    => await apiClient.ListingAsync(path, culture, currency, orderBy, limit);
+    public async Task<ICollection<KProductNode>> GetProductPages(ProductPageRequest request)
+    => await apiClient.ListingAsync(request.Path, request.Culture, request.Currency, request.OrderBy, request.Limit);
 
     public async Task<ICollection<KProductCategory>> GetProductCategories(string? culture = null)
     => await apiClient.CategoriesAsync(culture);
-
-
+    
     public async Task<ICollection<KCulture>> GetCultures()
     => await apiClient.CulturesAsync();
 

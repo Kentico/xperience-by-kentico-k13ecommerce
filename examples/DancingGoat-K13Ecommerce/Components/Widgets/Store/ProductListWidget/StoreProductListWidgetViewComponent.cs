@@ -19,8 +19,14 @@ public class StoreProductListWidgetViewComponent(IKStoreApiService storeApiServi
     public async Task<IViewComponentResult> InvokeAsync(StoreProductListWidgetProperties properties)
     {
         //@TODO cache results
-        var products = await storeApiService.GetProductPages(properties.Path, properties.Culture, properties.CurrencyCode,
-            orderBy: properties.OrderBy, limit: properties.Limit);
+        var products = await storeApiService.GetProductPages(new ProductPageRequest
+        {
+            Path = properties.Path,
+            Culture = properties.Culture,
+            Currency = properties.CurrencyCode,
+            OrderBy = properties.OrderBy,
+            Limit = properties.Limit
+        });
 
         string currencyFormatString = products.FirstOrDefault()?.Sku?.Prices?.Currency?.CurrencyFormatString;
         var model = new StoreProductListWidgetViewModel

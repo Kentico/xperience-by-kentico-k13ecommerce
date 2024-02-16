@@ -24,8 +24,8 @@ public static class StoreApiServiceCollectionExtensions
         {
             c.SwaggerDoc("storeapi", new OpenApiInfo { Title = "Kentico Xperience 13 Store API", Version = "v1" });
             c.DocumentFilter<StoreApiDocumentFilter>();
-            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             c.IncludeXmlComments(xmlPath);
             // prevent decimal encode as double in api schema
             c.MapType<decimal>(() => new OpenApiSchema { Type = "number", Format = "decimal" });
