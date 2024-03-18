@@ -94,7 +94,14 @@ dotnet add package Kentico.Xperience.StoreApi
 {  
   "CMSShopifyConfig": {
     "ShopifyUrl": "https://quickstart-xxxxxxxxxx.myshopify.com/",
-    "ApiToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    "AdminApiToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "StorefrontApiToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "StorefrontApiVersion": "YYYY-MM",
+    "CurrencyFormats": {
+      "USD": "$0.00",
+      "CZK": "0kč",
+      "...": "...."
+    }
   }
 }
 ```
@@ -105,9 +112,13 @@ dotnet add package Kentico.Xperience.StoreApi
 // Registers Shopify services
 builder.Services.RegisterShopifyServices(builder.Configuration);
 ```
-3. Copy product listing widget from Dancing Goat example project to your project. Sample widget is located in 
+3. Restore the continuous integration repository files to the database
+```powershell
+dotnet run --no-build --kxp-ci-restore
+```
+4. Copy product listing widget from Dancing Goat example project to your project. Sample widget is located in 
 [here](./examples/DancingGoat-Shopify/Components/Widgets/Shopify/ProductListWidget).
-4. Start to you on your live site
+5. Start to you on your live site
 
 ### Kentico Xperience 13 E-Commerce integration
 
