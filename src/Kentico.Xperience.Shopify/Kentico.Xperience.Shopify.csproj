@@ -15,6 +15,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="GraphQL" />
+		<PackageReference Include="GraphQL.Client" />
+		<PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" />
 		<PackageReference Include="Kentico.Xperience.Core" />
 		<PackageReference Include="ShopifySharp" />
 		<PackageReference Include="ShopifySharp.Extensions.DependencyInjection" />		

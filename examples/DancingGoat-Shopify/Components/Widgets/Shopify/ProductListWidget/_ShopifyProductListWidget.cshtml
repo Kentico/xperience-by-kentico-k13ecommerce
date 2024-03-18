@@ -12,7 +12,7 @@
             {
                 <div class="col-md-4" style="padding: 1rem 0.6rem;">
                     <div class="product-card">
-                        <a href="@product.ShopifyUrl">
+                        <a href="@product.ShopifyUrl" style="text-decoration: none">
                             <div style="text-align: center;">
                                 <img src="@product.Image" alt="@product.ImageAlt" loading="lazy">
                                 <h3>@product.Name</h3>
@@ -24,13 +24,20 @@
                                     @HTMLHelper.StripTags(product.Description)
                                 </p>
                                 <p>
-                                    Price:&nbsp;
-                                    @if (product.ListPrice != null)
+                                    @if (product.ListPrice != null && !product.HasMoreVariants)
                                     {
-                                        <s>@(product.ListPrice)</s>
+                                        <s>@(product.ListPriceFormatted)</s>
                                     }
-                                    @product.Price @Model.Currency
+                                    else if (product.HasMoreVariants)
+                                    {
+                                        <span>from</span>
+                                    }
+                                    <strong>@product.PriceFormatted</strong>
                                 </p>
+                                <br />
+                                <span class="btn">
+                                    Detail
+                                </span>
                             </div>
                         </a>
                     </div>

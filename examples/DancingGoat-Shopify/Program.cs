@@ -1,27 +1,16 @@
-using System;
-using System.Threading.Tasks;
-
 using DancingGoat;
 using DancingGoat.Models;
-
 using Kentico.Activities.Web.Mvc;
 using Kentico.Content.Web.Mvc.Routing;
 using Kentico.Membership;
 using Kentico.OnlineMarketing.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Web.Mvc;
-
-
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
+using Kentico.Xperience.Shopify;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.DependencyInjection;
-using Kentico.Xperience.Shopify.Services.ProductService;
-using Kentico.Xperience.Shopify;
 
 
 
@@ -66,6 +55,8 @@ builder.Services.RegisterShopifyServices(builder.Configuration);
 
 var app = builder.Build();
 
+app.UseSession();
+
 app.InitKentico();
 
 app.UseStaticFiles();
@@ -73,7 +64,6 @@ app.UseStaticFiles();
 app.UseCookiePolicy();
 
 app.UseAuthentication();
-
 
 app.UseKentico();
 
@@ -146,4 +136,6 @@ static void ConfigureMembershipServices(IServiceCollection services)
     });
 
     services.AddAuthorization();
+
+    services.AddSession();
 }

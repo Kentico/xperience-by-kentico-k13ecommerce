@@ -30,6 +30,7 @@
     <PackageReference Include="kentico.xperience.webapp" />
     <PackageReference Include="ShopifySharp" />
     <PackageReference Include="ShopifySharp.Extensions.DependencyInjection" />
+    <PackageReference Include="System.Linq.Async" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Kentico.Xperience.Shopify.Rcl\Kentico.Xperience.Shopify.Rcl.csproj" />

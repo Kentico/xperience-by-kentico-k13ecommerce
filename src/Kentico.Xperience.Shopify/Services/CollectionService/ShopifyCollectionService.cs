@@ -7,7 +7,7 @@ using ShopifySharp.Filters;
 
 namespace Kentico.Xperience.Shopify.Services
 {
-    public class ShopifyCollectionService : ShopifyServiceBase, IShopifyCollectionService
+    internal class ShopifyCollectionService : ShopifyServiceBase, IShopifyCollectionService
     {
         private readonly ICustomCollectionService customCollectionService;
         private readonly ISmartCollectionService smartCollectionService;
@@ -20,7 +20,7 @@ namespace Kentico.Xperience.Shopify.Services
             smartCollectionService = smartCollectionServiceFactory.Create(shopifyCredentials);
         }
 
-        public async Task<IEnumerable<CollectionListingModel>> GetCollectionListingAsync()
+        public async Task<IEnumerable<CollectionListingModel>> GetCollectionListing()
         {
             return await TryCatch(GetCollectionListingInternal, Enumerable.Empty<CollectionListingModel>);
         }

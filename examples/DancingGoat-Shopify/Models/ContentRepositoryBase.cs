@@ -128,7 +128,6 @@ namespace DancingGoat.Models
             return GetCachedQueryResultInternal(queryBuilder, queryOptions, resultSelector, cacheSettings, cacheDependenciesFunc, cancellationToken);
         }
 
-
         private async Task<IEnumerable<T>> GetCachedQueryResultInternal<T>(ContentItemQueryBuilder queryBuilder,
             ContentQueryExecutionOptions queryOptions,
             Func<IWebPageContentQueryDataContainer, T> resultSelector,

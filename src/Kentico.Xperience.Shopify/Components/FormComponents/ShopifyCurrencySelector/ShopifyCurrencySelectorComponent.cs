@@ -23,11 +23,11 @@ public class ShopifyCurrencySelectorComponent : SelectorFormComponent<ShopifyCur
 
         yield return new HtmlOptionItem()
         {
-            Value = "",
+            Value = string.Empty,
             Text = "default"
         };
 
-        foreach (var currency in currencies)
+        foreach (string? currency in currencies)
         {
             yield return new HtmlOptionItem()
             {

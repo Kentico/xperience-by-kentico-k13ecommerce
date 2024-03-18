@@ -74,6 +74,15 @@
           "microsoft.extensions.dependencyinjection": "8.0.0"
         }
       },
+      "System.Linq.Async": {
+        "type": "Direct",
+        "requested": "[6.0.1, )",
+        "resolved": "6.0.1",
+        "contentHash": "0YhHcaroWpQ9UCot3Pizah7ryAzQhNvobLMSxeDIGmnXfkQn8u5owvpOH0K6EVB+z9L7u6Cc4W17Br/+jyttEQ==",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0"
+        }
+      },
       "AngleSharp": {
         "type": "Transitive",
         "resolved": "0.17.1",
@@ -164,6 +173,37 @@
         "type": "Transitive",
         "resolved": "2.9.1",
         "contentHash": "OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA=="
+      },
+      "GraphQL-Parser": {
+        "type": "Transitive",
+        "resolved": "8.4.2",
+        "contentHash": "lztBQaZaq2g98w2XVSv3Y635AEwk/m6gwlvgmLxfIGxngpklaPSXWEIgCXcCv803qAXvUUTbvaVXuteyQdyVjw=="
+      },
+      "GraphQL.Analyzers": {
+        "type": "Transitive",
+        "resolved": "7.8.0",
+        "contentHash": "3Se7Tdz2VPukkmXXFIhx/Aaxh1V5qbFbemchYatKDxNoGMLiKrsEAmRsojoPI8Butz69ZRFYN9lwake2PndyqQ=="
+      },
+      "GraphQL.Client.Abstractions": {
+        "type": "Transitive",
+        "resolved": "6.0.2",
+        "contentHash": "/fyvoj9ghCYMIWlSOriMwSu0ElnQduWbkIPEytGo8Yw8FMIzYUIxGatbbwtiTrHCksFE8phQVeQgnixsRmxyIw==",
+        "dependencies": {
+          "GraphQL.Primitives": "6.0.2"
+        }
+      },
+      "GraphQL.Client.Abstractions.Websocket": {
+        "type": "Transitive",
+        "resolved": "6.0.2",
+        "contentHash": "7Y/hRjivZ6yx3F0nk6lXT8xRbSkD8UKRhIT3KoXT8Ehgj/ufIZb2fSc/U4Y9nUHH2dTjk+1Aq5KXg5FKe7JkqQ==",
+        "dependencies": {
+          "GraphQL.Client.Abstractions": "6.0.2"
+        }
+      },
+      "GraphQL.Primitives": {
+        "type": "Transitive",
+        "resolved": "6.0.2",
+        "contentHash": "mV1Gdv0ytSa8qzK2iTv4bgkiWrN71guON5NUkBkTt7Fo+9fP/EU7IAjg8vJIYfCBHfJ0lRD86r3xixR1qx7BHA=="
       },
       "GreenDonut": {
         "type": "Transitive",
@@ -452,8 +492,8 @@
       },
       "Microsoft.Bcl.AsyncInterfaces": {
         "type": "Transitive",
-        "resolved": "1.1.1",
-        "contentHash": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w=="
+        "resolved": "6.0.0",
+        "contentHash": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg=="
       },
       "Microsoft.CSharp": {
         "type": "Transitive",
@@ -883,6 +923,11 @@
         "resolved": "4.5.0",
         "contentHash": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ=="
       },
+      "System.Reactive": {
+        "type": "Transitive",
+        "resolved": "6.0.0",
+        "contentHash": "31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw=="
+      },
       "System.Runtime": {
         "type": "Transitive",
         "resolved": "4.3.0",
@@ -996,8 +1041,11 @@
       "kentico.xperience.shopify": {
         "type": "Project",
         "dependencies": {
+          "GraphQL": "[7.8.0, )",
+          "GraphQL.Client": "[6.0.2, )",
+          "GraphQL.Client.Serializer.Newtonsoft": "[6.0.2, )",
           "Kentico.Xperience.Core": "[28.2.1, )",
-          "Kentico.Xperience.Ecommerce.Common": "[1.0.0, )",
+          "Kentico.Xperience.Ecommerce.Common": "[1.0.0-prerelease-1, )",
           "ShopifySharp": "[6.13.0, )",
           "ShopifySharp.Extensions.DependencyInjection": "[1.4.0, )"
         }
@@ -1005,7 +1053,38 @@
       "kentico.xperience.shopify.rcl": {
         "type": "Project",
         "dependencies": {
-          "Kentico.Xperience.Shopify": "[1.0.0, )"
+          "Kentico.Xperience.Shopify": "[1.0.0-prerelease-1, )"
+        }
+      },
+      "GraphQL": {
+        "type": "CentralTransitive",
+        "requested": "[7.8.0, )",
+        "resolved": "7.8.0",
+        "contentHash": "pFWHJIst6lL7xHdr9yczZXE1slR4MZqpAgWOD2/9H54Rmrqztmo04YIyBUZAYxDT/omZaX3+4lkIZABKT/W/Zw==",
+        "dependencies": {
+          "GraphQL-Parser": "8.4.2",
+          "GraphQL.Analyzers": "7.8.0"
+        }
+      },
+      "GraphQL.Client": {
+        "type": "CentralTransitive",
+        "requested": "[6.0.2, )",
+        "resolved": "6.0.2",
+        "contentHash": "to0STnqWUIGfujL2kbWmR08wMGVFITxgmbAlKTk22OGJ70HlNVqrqrafCPeIwjfPJjZH8j1Vl115hRS63NPgGQ==",
+        "dependencies": {
+          "GraphQL.Client.Abstractions": "6.0.2",
+          "GraphQL.Client.Abstractions.Websocket": "6.0.2",
+          "System.Reactive": "6.0.0"
+        }
+      },
+      "GraphQL.Client.Serializer.Newtonsoft": {
+        "type": "CentralTransitive",
+        "requested": "[6.0.2, )",
+        "resolved": "6.0.2",
+        "contentHash": "ritKoo/YAhq3uKE5TB9nNlJtAtgiK3VKMhpDazksh+FYPJf9Jz3+/cW9jFpOwgeASpVBnTl5PxDgeRv8UvMHuA==",
+        "dependencies": {
+          "GraphQL.Client.Abstractions.Websocket": "6.0.2",
+          "Newtonsoft.Json": "13.0.3"
         }
       },
       "Kentico.Xperience.Core": {

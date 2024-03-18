@@ -19,7 +19,7 @@ public class ShopifyCollectionSelectorComponent : SelectorFormComponent<ShopifyC
     // Retrieves data to be displayed in the selector
     protected override IEnumerable<HtmlOptionItem> GetHtmlOptions()
     {
-        var collections = collectionService.GetCollectionListingAsync().GetAwaiter().GetResult();
+        var collections = collectionService.GetCollectionListing().GetAwaiter().GetResult();
 
         yield return new HtmlOptionItem()
         {

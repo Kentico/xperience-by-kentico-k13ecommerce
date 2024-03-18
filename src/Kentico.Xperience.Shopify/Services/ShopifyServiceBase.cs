@@ -1,18 +1,23 @@
-﻿using Kentico.Xperience.Shopify.Config;
+﻿using CMS.Core;
+using Kentico.Xperience.Shopify.Config;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ShopifySharp.Credentials;
 using ShopifySharp.Infrastructure;
 
 namespace Kentico.Xperience.Shopify.Services
 {
-    public abstract class ShopifyServiceBase
+    internal abstract class ShopifyServiceBase
     {
         protected readonly ShopifyApiCredentials shopifyCredentials;
+        protected readonly ILogger<ShopifyServiceBase> logger;
+
         protected ShopifyServiceBase(IOptionsMonitor<ShopifyConfig> options)
         {
-            var url = options.CurrentValue.ShopifyUrl;
-            var apiToken = options.CurrentValue.ApiToken;
+            string url = options.CurrentValue.ShopifyUrl;
+            string apiToken = options.CurrentValue.AdminApiToken;
             shopifyCredentials = new ShopifyApiCredentials(url, apiToken);
+            logger = Service.Resolve<ILogger<ShopifyServiceBase>>();
         }
 
         /// <summary>
@@ -31,8 +36,9 @@ namespace Kentico.Xperience.Shopify.Services
                 var result = await func.Invoke();
                 return result;
             }
-            catch (ShopifyHttpException)
+            catch (ShopifyHttpException e)
             {
+                logger.LogError(e, $"Error occured while calling Shopify API in {func.Method.Name} method.");
                 return defaultValue.Invoke();
             }
         }

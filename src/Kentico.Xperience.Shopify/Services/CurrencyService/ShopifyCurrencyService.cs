@@ -5,7 +5,7 @@ using ShopifySharp.Factories;
 
 namespace Kentico.Xperience.Shopify.Services
 {
-    public class ShopifyCurrencyService : ShopifyServiceBase, IShopifyCurrencyService
+    internal class ShopifyCurrencyService : ShopifyServiceBase, IShopifyCurrencyService
     {
         private readonly IShopService shopService;
         public ShopifyCurrencyService(IOptionsMonitor<ShopifyConfig> options, IShopServiceFactory shopServiceFactory) : base(options)

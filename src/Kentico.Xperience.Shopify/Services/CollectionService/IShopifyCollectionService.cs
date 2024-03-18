@@ -4,6 +4,6 @@ namespace Kentico.Xperience.Shopify.Services
 {
     public interface IShopifyCollectionService
     {
-        Task<IEnumerable<CollectionListingModel>> GetCollectionListingAsync();
+        Task<IEnumerable<CollectionListingModel>> GetCollectionListing();
     }
 }

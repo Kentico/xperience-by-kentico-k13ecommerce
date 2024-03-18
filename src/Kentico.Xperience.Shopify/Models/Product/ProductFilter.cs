@@ -7,5 +7,6 @@ namespace Kentico.Xperience.Shopify.Models
         public long? CollectionID { get; set; }
         public CurrencyCode? Currency { get; set; }
         public int? Limit { get; set; }
+        public IEnumerable<long>? Ids { get; set; }
     }
 }
