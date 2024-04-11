@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using CMS.ContentEngine;
-using Kentico.Xperience.Admin.Base.FormAnnotations;
+﻿using Kentico.Xperience.Admin.Base.FormAnnotations;
 
 namespace Kentico.Xperience.Shopify.Admin
 {
@@ -25,7 +23,6 @@ namespace Kentico.Xperience.Shopify.Admin
         [TextInputComponent(Label = "Storefront API version",
             Order = 4,
             ExplanationText = "Api version in format YYYY-MM. Admin API version is not needed since it is set by ShopifySharp NuGet package version")]
-        [RegexStringValidator(@"[0-9]{4}-[0-9]{2}")]
         [RequiredValidationRule]
         public string? StorefrontApiVersion { get; set; }
     }
