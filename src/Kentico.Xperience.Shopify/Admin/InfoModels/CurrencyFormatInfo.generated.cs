@@ -15,7 +15,7 @@ namespace Kentico.Xperience.Shopify.Admin
     /// Data container class for <see cref="CurrencyFormatInfo"/>.
     /// </summary>
     [Serializable]
-    public partial class CurrencyFormatInfo : AbstractInfo<CurrencyFormatInfo, IInfoProvider<CurrencyFormatInfo>>, IInfoWithId
+    public partial class CurrencyFormatInfo : AbstractInfo<CurrencyFormatInfo, IInfoProvider<CurrencyFormatInfo>>, IInfoWithId, IInfoWithName
     {
         /// <summary>
         /// Object type.
@@ -27,7 +27,7 @@ namespace Kentico.Xperience.Shopify.Admin
         /// Type information.
         /// </summary>
 #warning "You will need to configure the type info."
-        public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(IInfoProvider<CurrencyFormatInfo>), OBJECT_TYPE, "Shopify.CurrencyFormat", "CurrencyFormatID", null, null, null, null, null, null, null)
+        public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(IInfoProvider<CurrencyFormatInfo>), OBJECT_TYPE, "Shopify.CurrencyFormat", "CurrencyFormatID", null, null, "CurrencyCode", "CurrencyCode", null, null, null)
         {
             TouchCacheDependencies = true,
         };
