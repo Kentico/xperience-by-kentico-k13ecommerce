@@ -6,7 +6,6 @@ using Kentico.Xperience.Shopify.Services.ProductService;
 using Kentico.Xperience.Shopify.ShoppingCart;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using ShopifySharp.Extensions.DependencyInjection;
 
 namespace Kentico.Xperience.Shopify;
@@ -30,17 +29,21 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IProductSynchronizationService, ProductSynchronizationService>();
         services.AddScoped<IVariantSynchronizationService, VariantSynchronizationService>();
         services.AddScoped<IShoppingService, ShoppingService>();
+        services.AddScoped<IShopifyIntegrationSettingsService, ShopifyIntegrationSettingsService>();
 
         // Add Storefront API HTTP client
         services.AddHttpClient(ShopifyConstants.STOREFRONT_API_CLIENT_NAME, (sp, httpClient) =>
         {
-            var config = sp.GetRequiredService<IOptionsMonitor<ShopifyConfig>>();
-            var uriBuilder = new UriBuilder(config.CurrentValue.ShopifyUrl)
+            var scope = sp.CreateScope();
+            var settings = scope.ServiceProvider.GetRequiredService<IShopifyIntegrationSettingsService>().GetSettings()
+                ?? throw new InvalidOperationException("Shopify integration settings were not found");
+
+            var uriBuilder = new UriBuilder(settings.ShopifyUrl)
             {
-                Path = $"api/{config.CurrentValue.StorefrontApiVersion}/graphql.json"
+                Path = $"api/{settings.StorefrontApiVersion}/graphql.json"
             };
             httpClient.BaseAddress = uriBuilder.Uri;
-            httpClient.DefaultRequestHeaders.Add(ShopifyConstants.STOREFRONT_API_HEADER_TOKEN_NAME, config.CurrentValue.StorefrontApiToken);
+            httpClient.DefaultRequestHeaders.Add(ShopifyConstants.STOREFRONT_API_HEADER_TOKEN_NAME, settings.StorefrontApiKey);
         });
     }
 }
