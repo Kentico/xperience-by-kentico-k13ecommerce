@@ -1,8 +1,6 @@
 using System;
 using System.Data;
 using System.Runtime.Serialization;
-using System.Collections.Generic;
-using System.Linq;
 
 using CMS;
 using CMS.DataEngine;
@@ -28,12 +26,10 @@ namespace Kentico.Xperience.Shopify.Admin
         /// <summary>
         /// Type information.
         /// </summary>
+#warning "You will need to configure the type info."
         public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(IInfoProvider<IntegrationSettingsInfo>), OBJECT_TYPE, "Shopify.IntegrationSettings", "IntegrationSettingsID", null, null, null, null, null, null, null)
         {
             TouchCacheDependencies = true,
-            DependsOn = new List<ObjectDependency>()
-            {
-            },
         };
 
 
@@ -91,29 +87,6 @@ namespace Kentico.Xperience.Shopify.Admin
             set => SetValue(nameof(StorefrontApiVersion), value);
         }
 
-
-        /// <summary>
-        /// Currency formats.
-        /// </summary>
-        [DatabaseField]
-        [Obsolete("Property is deprecated and will be removed in the future. Use property CurrencyFormats instead.")]
-        public virtual string mCurrencyFormats
-        {
-            get => ValidationHelper.GetString(GetValue(nameof(CurrencyFormats)), String.Empty);
-            set => SetValue(nameof(CurrencyFormats), value);
-        }
-
-
-        /// <summary>
-        /// Currency formats.
-        /// </summary>
-        [DatabaseField(ValueType = typeof(string))]
-        public IEnumerable<string> CurrencyFormats
-        {
-            get => global::CMS.DataEngine.Internal.JsonDataTypeConverter.ConvertToModels<string>(GetValue(nameof(CurrencyFormats), String.Empty));
-            set => SetValue(nameof(CurrencyFormats), global::CMS.DataEngine.Internal.JsonDataTypeConverter.ConvertToString<IEnumerable<string>>(value, Enumerable.Empty<string>(), null));
-        }
-        
 
         /// <summary>
         /// Deletes the object using appropriate provider.
