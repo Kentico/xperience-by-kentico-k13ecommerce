@@ -27,7 +27,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IVariantSynchronizationService, VariantSynchronizationService>();
         services.AddScoped<IShoppingService, ShoppingService>();
         services.AddScoped<IShopifyIntegrationSettingsService, ShopifyIntegrationSettingsService>();
-        services.AddScoped<IShopifyCurrencyFormatService, ShopifyCurrencyFormatService>();
+
+        services.AddSingleton<IShopifyCurrencyFormatService, ShopifyCurrencyFormatService>();
 
         // Add Storefront API HTTP client
         services.AddHttpClient(ShopifyConstants.STOREFRONT_API_CLIENT_NAME, (sp, httpClient) =>
