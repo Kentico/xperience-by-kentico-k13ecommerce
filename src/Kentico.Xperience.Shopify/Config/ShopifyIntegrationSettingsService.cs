@@ -3,7 +3,7 @@ using Kentico.Xperience.Shopify.Admin;
 
 namespace Kentico.Xperience.Shopify.Config
 {
-    public class ShopifyIntegrationSettingsService : IShopifyIntegrationSettingsService
+    internal class ShopifyIntegrationSettingsService : IShopifyIntegrationSettingsService
     {
         private readonly IProgressiveCache cache;
 
