@@ -2,7 +2,7 @@
 
 namespace Kentico.Xperience.Shopify.Admin
 {
-    public class ShopifySettingsModel
+    public class ShopifyIntegrationSettingsModel
     {
         [UrlValidationRule]
         [TextInputComponent(Label = "Shopify store URL", Order = 1)]

@@ -12,7 +12,7 @@ using Kentico.Xperience.Shopify.Admin;
 
 namespace Kentico.Xperience.Shopify.Admin
 {
-    public class ShopifyIntegrationSettingsEdit : ModelEditPage<ShopifySettingsModel>
+    public class ShopifyIntegrationSettingsEdit : ModelEditPage<ShopifyIntegrationSettingsModel>
     {
         public ShopifyIntegrationSettingsEdit(Xperience.Admin.Base.Forms.Internal.IFormItemCollectionProvider formItemCollectionProvider, IFormDataBinder formDataBinder) : base(formItemCollectionProvider, formDataBinder)
         {
@@ -24,14 +24,14 @@ namespace Kentico.Xperience.Shopify.Admin
             .TopN(1)
             .FirstOrDefault();
 
-        private ShopifySettingsModel? model;
+        private ShopifyIntegrationSettingsModel? model;
 
 
-        protected override ShopifySettingsModel Model => model ??= CreateShopifySettingsModel(SettingsInfo);
+        protected override ShopifyIntegrationSettingsModel Model => model ??= CreateShopifySettingsModel(SettingsInfo);
 
 
 
-        protected override Task<ICommandResponse> ProcessFormData(ShopifySettingsModel model, ICollection<IFormItem> formItems)
+        protected override Task<ICommandResponse> ProcessFormData(ShopifyIntegrationSettingsModel model, ICollection<IFormItem> formItems)
         {
             var info = SettingsInfo ?? new IntegrationSettingsInfo();
 
@@ -45,14 +45,14 @@ namespace Kentico.Xperience.Shopify.Admin
             return base.ProcessFormData(model, formItems);
         }
 
-        private ShopifySettingsModel CreateShopifySettingsModel(IntegrationSettingsInfo? integrationSettings)
+        private ShopifyIntegrationSettingsModel CreateShopifySettingsModel(IntegrationSettingsInfo? integrationSettings)
         {
             if (integrationSettings == null)
             {
-                return new ShopifySettingsModel();
+                return new ShopifyIntegrationSettingsModel();
             }
 
-            return new ShopifySettingsModel()
+            return new ShopifyIntegrationSettingsModel()
             {
                 AdminApiKey = integrationSettings.AdminApiKey,
                 StorefrontApiKey = integrationSettings.StorefrontApiKey,
