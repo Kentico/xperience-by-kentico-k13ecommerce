@@ -1,7 +1,6 @@
 ﻿using CMS.Core;
 using Kentico.Xperience.Shopify.Config;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using ShopifySharp.Credentials;
 using ShopifySharp.Infrastructure;
 
@@ -12,10 +11,11 @@ namespace Kentico.Xperience.Shopify.Services
         protected readonly ShopifyApiCredentials shopifyCredentials;
         protected readonly ILogger<ShopifyServiceBase> logger;
 
-        protected ShopifyServiceBase(IOptionsMonitor<ShopifyConfig> options)
+        protected ShopifyServiceBase(IShopifyIntegrationSettingsService integrationSettingsService)
         {
-            string url = options.CurrentValue.ShopifyUrl;
-            string apiToken = options.CurrentValue.AdminApiToken;
+            var settings = integrationSettingsService.GetSettings();
+            string url = settings?.ShopifyUrl ?? string.Empty;
+            string apiToken = settings?.AdminApiKey ?? string.Empty;
             shopifyCredentials = new ShopifyApiCredentials(url, apiToken);
             logger = Service.Resolve<ILogger<ShopifyServiceBase>>();
         }

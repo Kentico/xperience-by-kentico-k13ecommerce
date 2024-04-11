@@ -1,6 +1,5 @@
 ﻿using Kentico.Xperience.Shopify.Config;
 using Kentico.Xperience.Shopify.Models;
-using Microsoft.Extensions.Options;
 using ShopifySharp;
 using ShopifySharp.Factories;
 using ShopifySharp.Filters;
@@ -12,7 +11,8 @@ internal class ShopifyPriceService : ShopifyServiceBase, IShopifyPriceService
 {
     private readonly IProductService productService;
 
-    public ShopifyPriceService(IProductServiceFactory productServiceFactory, IOptionsMonitor<ShopifyConfig> optionsMonitor) : base(optionsMonitor)
+    public ShopifyPriceService(IShopifyIntegrationSettingsService integrationSettingsService, IProductServiceFactory productServiceFactory)
+        : base(integrationSettingsService)
     {
         productService = productServiceFactory.Create(shopifyCredentials);
     }

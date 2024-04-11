@@ -1,5 +1,4 @@
 ﻿using Kentico.Xperience.Shopify.Config;
-using Microsoft.Extensions.Options;
 using ShopifySharp;
 using ShopifySharp.Factories;
 
@@ -8,7 +7,8 @@ namespace Kentico.Xperience.Shopify.Services
     internal class ShopifyCurrencyService : ShopifyServiceBase, IShopifyCurrencyService
     {
         private readonly IShopService shopService;
-        public ShopifyCurrencyService(IOptionsMonitor<ShopifyConfig> options, IShopServiceFactory shopServiceFactory) : base(options)
+        public ShopifyCurrencyService(IShopifyIntegrationSettingsService integrationSettingsService, IShopServiceFactory shopServiceFactory) 
+            : base(integrationSettingsService)
         {
             shopService = shopServiceFactory.Create(shopifyCredentials);
         }

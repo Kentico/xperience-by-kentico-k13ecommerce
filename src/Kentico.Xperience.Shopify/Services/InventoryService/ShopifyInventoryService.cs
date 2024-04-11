@@ -1,5 +1,4 @@
 ﻿using Kentico.Xperience.Shopify.Config;
-using Microsoft.Extensions.Options;
 using ShopifySharp;
 using ShopifySharp.Factories;
 using ShopifySharp.Filters;
@@ -10,7 +9,8 @@ namespace Kentico.Xperience.Shopify.Services.InventoryService
     {
         private readonly IInventoryItemService inventoryItemService;
 
-        public ShopifyInventoryService(IOptionsMonitor<ShopifyConfig> options, IInventoryItemServiceFactory inventoryItemServiceFactory) : base(options)
+        public ShopifyInventoryService(IShopifyIntegrationSettingsService integrationSettingsService, IInventoryItemServiceFactory inventoryItemServiceFactory)
+            : base(integrationSettingsService)
         {
             inventoryItemService = inventoryItemServiceFactory.Create(shopifyCredentials);
         }

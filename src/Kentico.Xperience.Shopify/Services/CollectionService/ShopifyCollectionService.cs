@@ -1,6 +1,5 @@
 ﻿using Kentico.Xperience.Shopify.Config;
 using Kentico.Xperience.Shopify.Models;
-using Microsoft.Extensions.Options;
 using ShopifySharp;
 using ShopifySharp.Factories;
 using ShopifySharp.Filters;
@@ -12,9 +11,9 @@ namespace Kentico.Xperience.Shopify.Services
         private readonly ICustomCollectionService customCollectionService;
         private readonly ISmartCollectionService smartCollectionService;
 
-        public ShopifyCollectionService(IOptionsMonitor<ShopifyConfig> options,
+        public ShopifyCollectionService(IShopifyIntegrationSettingsService integrationSettingsService,
             ICustomCollectionServiceFactory customCollectionServiceFactory,
-            ISmartCollectionServiceFactory smartCollectionServiceFactory) : base(options)
+            ISmartCollectionServiceFactory smartCollectionServiceFactory) : base(integrationSettingsService)
         {
             customCollectionService = customCollectionServiceFactory.Create(shopifyCredentials);
             smartCollectionService = smartCollectionServiceFactory.Create(shopifyCredentials);

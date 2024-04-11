@@ -5,7 +5,6 @@ using Kentico.Xperience.Shopify.Config;
 using Kentico.Xperience.Shopify.Models;
 using Kentico.Xperience.Shopify.Services.InventoryService;
 using Kentico.Xperience.Shopify.ShoppingCart;
-using Microsoft.Extensions.Options;
 using ShopifySharp;
 using ShopifySharp.Factories;
 using ShopifySharp.Filters;
@@ -30,13 +29,13 @@ namespace Kentico.Xperience.Shopify.Services.ProductService
         private string ShopifyFields => string.Join(",", _shopifyFields);
 
         public ShopifyProductService(
-            IOptionsMonitor<ShopifyConfig> options,
+            IShopifyIntegrationSettingsService integrationSettingsService,
             IProductServiceFactory productServiceFactory,
             IShopifyInventoryService inventoryService,
             IShoppingService shoppingService,
             IProgressiveCache progressiveCache,
             ISettingsService settingsService,
-            IConversionService conversionService) : base(options)
+            IConversionService conversionService) : base(integrationSettingsService)
         {
             this.progressiveCache = progressiveCache;
             this.inventoryService = inventoryService;
@@ -46,7 +45,7 @@ namespace Kentico.Xperience.Shopify.Services.ProductService
 
             productService = productServiceFactory.Create(shopifyCredentials);
 
-            var uriBuilder = new UriBuilder(options.CurrentValue.ShopifyUrl)
+            var uriBuilder = new UriBuilder(shopifyCredentials.ShopDomain)
             {
                 Path = "products"
             };
