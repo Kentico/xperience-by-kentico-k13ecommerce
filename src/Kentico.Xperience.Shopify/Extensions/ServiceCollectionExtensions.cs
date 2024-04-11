@@ -11,11 +11,8 @@ using ShopifySharp.Extensions.DependencyInjection;
 namespace Kentico.Xperience.Shopify;
 public static class ServiceCollectionExtensions
 {
-    public static void RegisterShopifyServices(this IServiceCollection services, ConfigurationManager configuration)
+    public static void RegisterShopifyServices(this IServiceCollection services)
     {
-        // Get Shopify config from appsettings.json
-        services.Configure<ShopifyConfig>(configuration.GetSection(ShopifyConfig.SECTION_NAME));
-
         // ShopifySharp dependency injection
         services.AddShopifySharpServiceFactories();
 
@@ -30,6 +27,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IVariantSynchronizationService, VariantSynchronizationService>();
         services.AddScoped<IShoppingService, ShoppingService>();
         services.AddScoped<IShopifyIntegrationSettingsService, ShopifyIntegrationSettingsService>();
+        services.AddScoped<IShopifyCurrencyFormatService, ShopifyCurrencyFormatService>();
 
         // Add Storefront API HTTP client
         services.AddHttpClient(ShopifyConstants.STOREFRONT_API_CLIENT_NAME, (sp, httpClient) =>
