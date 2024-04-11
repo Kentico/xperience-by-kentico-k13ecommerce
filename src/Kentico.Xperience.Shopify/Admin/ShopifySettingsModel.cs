@@ -1,5 +1,5 @@
-﻿using System.ComponentModel;
-using System.Configuration;
+﻿using System.Configuration;
+using CMS.ContentEngine;
 using Kentico.Xperience.Admin.Base.FormAnnotations;
 
 namespace Kentico.Xperience.Shopify.Admin
@@ -22,15 +22,11 @@ namespace Kentico.Xperience.Shopify.Admin
         public string? StorefrontApiKey { get; set; }
 
 
-        [TextInputComponent(Label = "Storefront API version", Order = 4)]
-        [Description("Api version in format YYYY-MM. Admin API version is not needed since it is set by ShopifySharp NuGet package version")]
+        [TextInputComponent(Label = "Storefront API version",
+            Order = 4,
+            ExplanationText = "Api version in format YYYY-MM. Admin API version is not needed since it is set by ShopifySharp NuGet package version")]
         [RegexStringValidator(@"[0-9]{4}-[0-9]{2}")]
         [RequiredValidationRule]
         public string? StorefrontApiVersion { get; set; }
-
-
-        [ObjectIdSelectorComponent(CurrencyFormatInfo.OBJECT_TYPE, Label = "Currency format", Order = 5)]
-        [RequiredValidationRule]
-        public IEnumerable<string>? CurrencyFormats { get; set; }
     }
 }
