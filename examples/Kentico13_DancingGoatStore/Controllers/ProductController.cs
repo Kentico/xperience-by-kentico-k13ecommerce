@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 using CMS.DocumentEngine.Types.DancingGoatCore;
 using CMS.Ecommerce;
 
@@ -35,7 +31,7 @@ namespace DancingGoat.Controllers
         private readonly ISKUInfoProvider skuInfoProvider;
 
 
-        public ProductController(IPageDataContextRetriever dataRetriever, ICalculationService calculationService, 
+        public ProductController(IPageDataContextRetriever dataRetriever, ICalculationService calculationService,
             VariantRepository variantRepository, TypedProductViewModelFactory typedProductViewModelFactory,
             IShoppingService shoppingService, ISKUInfoProvider skuInfoProvider)
         {

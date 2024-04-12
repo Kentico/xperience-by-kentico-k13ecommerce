@@ -21,7 +21,7 @@ namespace DancingGoat.InlineEditors
         }
 
 
-        public IViewComponentResult Invoke(string propertyName, bool hasImage, ImageTypeEnum imageType, bool useAbsolutePosition, 
+        public IViewComponentResult Invoke(string propertyName, bool hasImage, ImageTypeEnum imageType, bool useAbsolutePosition,
             PanelPositionEnum messagePosition)
         {
             var model = new ImageUploaderEditorViewModel
@@ -65,7 +65,7 @@ namespace DancingGoat.InlineEditors
                     {
                         libraryName = MEDIA_LIBRARY_NAME
                     },
-                    
+
                 });
 
                 return Url.Kentico().AuthenticateUrlRaw(url, false);

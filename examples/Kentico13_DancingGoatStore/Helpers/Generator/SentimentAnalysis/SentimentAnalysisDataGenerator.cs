@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using CMS.Activities;
+﻿using CMS.Activities;
 using CMS.Automation;
 using CMS.Base;
 using CMS.DataEngine;
@@ -39,7 +35,7 @@ namespace DancingGoat.Helpers.Generator
         private static readonly Guid ACTION_GUID = Guid.Parse("a79eadaf-2b57-46d0-b5bf-3e7f1d1fe02d");
         private static readonly Guid TRANSACTIONAL_EMAIL_ACTION = Guid.Parse("a578a254-b251-4f1e-abb7-533e5898f012");
         private static readonly Guid SEND_NEWSLETTER_ACTION = Guid.Parse("b33d5c68-235d-406e-89d7-4f1714078940");
-      
+
 
         private const string CONTACT_US_FORM = "DancingGoatCoreContactUsNew";
 
@@ -241,7 +237,8 @@ namespace DancingGoat.Helpers.Generator
                 Guid = CONDITION_SOURCE_POINT_ELSE,
                 Type = SourcePointTypeEnum.SwitchDefault,
                 Label = "If positive or unknown sentiment"
-            }); ;
+            });
+            ;
 
             step.StepDefinition = definition;
             step.Insert();
@@ -397,7 +394,7 @@ namespace DancingGoat.Helpers.Generator
             step.TimeoutEnabled = false;
             step.TimeoutTarget = Guid.Empty;
             step.Position = new GraphPoint(positionX, positionY);
-            
+
             step.SourcePoints = new List<CMS.WorkflowEngine.Definitions.SourcePoint>();
             if (sourcePointGuid != null)
             {

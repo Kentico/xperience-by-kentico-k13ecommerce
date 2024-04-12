@@ -1,0 +1,57 @@
+﻿@model DancingGoat.Models.CartContentViewModel
+
+<div class="checkout-container">
+    <div class="cart">
+        <div class="continue-shopping-link">
+            <a href="/Store">&larr; @HtmlLocalizer["continue shopping"]</a>
+        </div>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div asp-validation-summary="All" class="invalid-cart-content"></div>
+        }
+
+        <h2>@HtmlLocalizer["Your shopping cart"]</h2>
+        <div class="col-md-8 cart-content">
+            <hr class="first-separator" />
+            @if (Model.IsEmpty)
+            {
+                <span>@HtmlLocalizer["Shopping cart is empty"]</span>
+                <hr class="last-separator" />
+            }
+            else
+            {
+                <partial name="Partials/ShoppingCartContentEdit" />
+            }
+
+            @if (Model.RemainingAmountForFreeShipping > 0)
+            {
+                <section class="free-shipping-promotion">
+                    <div>
+                        <span>
+                            @HtmlLocalizer["Spend {0} more and get free delivery today!", Model.FormatPrice(Model.RemainingAmountForFreeShipping)]
+                        </span>
+                    </div>
+                </section>
+            }
+        </div>
+        <div class="col-md-4">
+            <div class="cart-right-panel floating-box">
+                <div>
+                    <partial name="Partials/CouponCodeEdit"/>
+                </div>
+                <hr>
+
+                <form asp-action="CartContentCheckout" asp-controller="Checkout" method="post">
+
+                    <partial name="Partials/ShoppingCartTotals" />
+
+                    <p>@HtmlLocalizer["Review your shopping cart and checkout"]</p>
+
+                    <input type="submit" value="@HtmlLocalizer["checkout"]" class="btn-primary checkout-button btn btn-default" />
+                    @Html.Kentico().PageData()
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DancingGoat.Models
+﻿namespace DancingGoat.Models
 {
     /// <summary>
     /// Represents a country code name with an optional state code name.

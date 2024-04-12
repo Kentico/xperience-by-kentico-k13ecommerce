@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Microsoft.AspNetCore.Mvc;
-
-using CMS.Personas;
+﻿using CMS.Personas;
 
 using Kentico.PageBuilder.Web.Mvc.Personalization;
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Personalization
 {
@@ -26,7 +23,7 @@ namespace DancingGoat.Personalization
         public ActionResult Index()
         {
             var conditionTypeParameters = GetParameters();
-   
+
             var viewModel = new IsInPersonaViewModel
             {
                 PersonaCodeName = conditionTypeParameters.PersonaName,

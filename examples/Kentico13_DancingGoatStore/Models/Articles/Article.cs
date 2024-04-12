@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CMS.DocumentEngine.Types.DancingGoatCore
+﻿namespace CMS.DocumentEngine.Types.DancingGoatCore
 {
     /// <summary>
     /// Custom Article members.

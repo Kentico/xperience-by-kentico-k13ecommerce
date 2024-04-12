@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
-
-using CMS.Activities;
+﻿using CMS.Activities;
 using CMS.Base;
 using CMS.ContactManagement;
-using CMS.Core;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
 using CMS.FormEngine;
@@ -41,7 +37,7 @@ namespace DancingGoat.Helpers.Generator
                                                                        .FirstOrDefault();
         private readonly ISiteInfo mSite;
         private readonly IActivityUrlHashService mHashService;
-        
+
         private ActivityTitleBuilder nameBuilder = new ActivityTitleBuilder();
 
 
@@ -87,7 +83,7 @@ namespace DancingGoat.Helpers.Generator
             CreateFormSubmission(contactsDocument, CONTACT_US_FORM_CODE_NAME, monicaKing);
             GeneratePurchaseActivity(20, monicaKing);
         }
-        
+
 
         private void GenerateDustinEvans()
         {
@@ -183,7 +179,7 @@ namespace DancingGoat.Helpers.Generator
 
         private void CreateFormSubmission(TreeNode document, string formName, ContactInfo contact)
         {
-            
+
             var form = BizFormInfo.Provider.Get(formName, mSite.SiteID);
             var classInfo = DataClassInfoProvider.GetDataClassInfo(form.FormClassID);
             var formItem = new BizFormItem(classInfo.ClassName);
@@ -236,7 +232,7 @@ namespace DancingGoat.Helpers.Generator
 
 
         private void GeneratePurchaseActivity(double spent, ContactInfo contact)
-        {            
+        {
             var activity = new ActivityInfo
             {
                 ActivityTitle = nameBuilder.CreateTitle(PredefinedActivityType.PURCHASE, "$" + spent),

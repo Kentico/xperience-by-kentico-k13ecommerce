@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-using CMS.DocumentEngine;
+﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using Kentico.Content.Web.Mvc;

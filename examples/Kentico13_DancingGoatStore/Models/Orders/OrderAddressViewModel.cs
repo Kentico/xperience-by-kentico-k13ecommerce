@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.Ecommerce;
+﻿using CMS.Ecommerce;
 using CMS.Globalization;
 
 namespace DancingGoat.Models

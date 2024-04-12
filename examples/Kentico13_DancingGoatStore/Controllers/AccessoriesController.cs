@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 using CMS.Ecommerce;
 
 using DancingGoat;
@@ -22,7 +19,7 @@ namespace DancingGoat.Controllers
     public class AccessoriesController : Controller
     {
         private readonly string[] accessoryClasses = new[] { FilterPack.CLASS_NAME, Tableware.CLASS_NAME };
-    
+
         private readonly ProductRepository productRepository;
         private readonly ICalculationService calculationService;
         private readonly IPageUrlRetriever pageUrlRetriever;
@@ -30,7 +27,7 @@ namespace DancingGoat.Controllers
 
         public AccessoriesController(ProductRepository productRepository, ICalculationService calculationService, IPageUrlRetriever pageUrlRetriever)
         {
-            this.productRepository  = productRepository;
+            this.productRepository = productRepository;
             this.calculationService = calculationService;
             this.pageUrlRetriever = pageUrlRetriever;
         }
@@ -73,7 +70,7 @@ namespace DancingGoat.Controllers
 
         private IEnumerable<ProductListItemViewModel> GetFilteredAccessories(AccessoryFilterViewModel filter)
         {
-            var accessories = productRepository.GetProducts(filter, accessoryClasses);                
+            var accessories = productRepository.GetProducts(filter, accessoryClasses);
 
             var items = accessories.Select(
                     accessory => new ProductListItemViewModel(

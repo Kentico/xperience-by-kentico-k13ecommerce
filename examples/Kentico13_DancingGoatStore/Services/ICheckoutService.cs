@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 using CMS.Ecommerce;
 using CMS.Globalization;
 

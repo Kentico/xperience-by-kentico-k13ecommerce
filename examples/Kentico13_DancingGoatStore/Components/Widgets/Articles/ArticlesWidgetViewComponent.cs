@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-using DancingGoat.Models;
+﻿using DancingGoat.Models;
 using DancingGoat.Widgets;
 
 using Kentico.Content.Web.Mvc;
@@ -23,8 +20,8 @@ namespace DancingGoat.Widgets
         /// Widget identifier.
         /// </summary>
         public const string IDENTIFIER = "DancingGoat.HomePage.ArticlesWidget";
-        
-        private static string[] dependency_keys = new[] { "node|dancinggoatcore|/articles|childnodes" };
+
+        private static readonly string[] dependency_keys = new[] { "node|dancinggoatcore|/articles|childnodes" };
 
         private readonly ArticleRepository repository;
         private readonly IPageUrlRetriever pageUrlRetriever;
@@ -36,6 +33,7 @@ namespace DancingGoat.Widgets
         /// </summary>
         /// <param name="repository">Article repository.</param>
         /// <param name="pageUrlRetriever">Retriever for page URLs.</param>
+        /// <param name="attachmentUrlRetriever"></param>
         public ArticlesWidgetViewComponent(ArticleRepository repository, IPageUrlRetriever pageUrlRetriever, IPageAttachmentUrlRetriever attachmentUrlRetriever)
         {
             this.repository = repository;
@@ -47,6 +45,7 @@ namespace DancingGoat.Widgets
         /// <summary>
         /// Returns the model used by widgets' view.
         /// </summary>
+        /// <param name="viewModel"></param>
         /// <param name="properties">Widget properties.</param>
         public ViewViewComponentResult Invoke(ComponentViewModel<ArticlesWidgetProperties> viewModel)
         {

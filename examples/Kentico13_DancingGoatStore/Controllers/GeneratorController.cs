@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
-
-using CMS.Base;
+﻿using CMS.Base;
 using CMS.Core;
 using CMS.DataEngine;
-using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 using CMS.Helpers;
 using CMS.Membership;
@@ -50,7 +46,7 @@ namespace DancingGoat.Controllers
 
         private const string DATA_PROTECTION_SETTINGS_KEY = "DataProtectionSamplesEnabled";
 
-        
+
         private readonly ISiteService siteService;
         private readonly IWebFarmService webFarmService;
 
@@ -228,7 +224,7 @@ namespace DancingGoat.Controllers
 
             var task = new TaskInfo
             {
-                TaskAssemblyName = "CMS.UIControls", 
+                TaskAssemblyName = "CMS.UIControls",
                 TaskClass = "Samples.DancingGoat.EnableDataProtectionSampleTask",
                 TaskEnabled = true,
                 TaskLastResult = string.Empty,

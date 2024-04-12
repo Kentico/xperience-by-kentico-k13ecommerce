@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using CMS.DocumentEngine;
 using CMS.SiteProvider;
-using CMS.DocumentEngine;
 
 using Kentico.Components.Web.Mvc.FormComponents;
 using Kentico.Forms.Web.Mvc;

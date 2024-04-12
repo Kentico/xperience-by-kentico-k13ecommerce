@@ -1,12 +1,8 @@
-﻿using System.Threading.Tasks;
-
-using CMS.Base;
+﻿using CMS.Base;
 using CMS.Core;
 using CMS.DataEngine;
 using CMS.Helpers;
 using CMS.Search;
-
-using Microsoft.AspNetCore.Http;
 
 namespace DancingGoat.Infrastructure
 {
@@ -38,8 +34,8 @@ namespace DancingGoat.Infrastructure
         /// </param>
         /// <param name="siteService">Site service.</param>
         /// <param name="searchIndexInfoProvider">Search index info provider.</param>
-        public SmartSearchIndexRebuildMiddleware(RequestDelegate next, 
-            ISiteService siteService, 
+        public SmartSearchIndexRebuildMiddleware(RequestDelegate next,
+            ISiteService siteService,
             ISearchIndexInfoProvider searchIndexInfoProvider,
             IEventLogService eventLogService)
         {

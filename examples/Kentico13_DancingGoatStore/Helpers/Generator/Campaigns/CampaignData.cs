@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DancingGoat.Helpers.Generator
+﻿namespace DancingGoat.Helpers.Generator
 {
     /// <summary>
     /// Represents campaign with all data.

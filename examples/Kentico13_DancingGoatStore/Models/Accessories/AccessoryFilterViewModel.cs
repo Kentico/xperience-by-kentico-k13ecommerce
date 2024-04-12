@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 
 using CMS.DataEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
@@ -60,7 +58,7 @@ namespace DancingGoat.Models
         {
             return Type
                .Select(type => string.Format($"{type.Value}:{type.IsChecked}"))
-               .Join(TextHelper.NewLine);            
+               .Join(TextHelper.NewLine);
         }
 
 

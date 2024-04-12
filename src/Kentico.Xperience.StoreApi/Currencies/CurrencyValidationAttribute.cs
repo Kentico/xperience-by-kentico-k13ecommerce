@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+
 using CMS.Ecommerce;
 using CMS.SiteProvider;
 
 namespace Kentico.Xperience.StoreApi.Currencies;
+
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
 internal class CurrencyValidationAttribute : ValidationAttribute
 {

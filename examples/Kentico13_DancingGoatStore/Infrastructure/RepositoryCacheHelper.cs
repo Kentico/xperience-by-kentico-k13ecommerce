@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Text;
 
 using CMS.DataEngine;
@@ -11,8 +8,6 @@ using CMS.SiteProvider;
 
 using Kentico.Content.Web.Mvc;
 using Kentico.Web.Mvc;
-
-using Microsoft.AspNetCore.Http;
 
 namespace DancingGoat.Infrastructure
 {
@@ -65,7 +60,7 @@ namespace DancingGoat.Infrastructure
                 return getData?.Invoke();
             }
 
-            
+
             Func<CacheSettings, TObjectType> provideData = (cacheSettings) =>
             {
                 var result = getData?.Invoke();

@@ -19,12 +19,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <OpenApiReference Include="KenticoStoreApi\swagger.json" CodeGenerator="NSwagCSharp" Options="/UseBaseUrl:false /JsonLibrary:SystemTextJson /GenerateOptionalParameters:true /GenerateOptionalPropertiesAsNullable:true /GenerateNullableReferenceTypes:true /ExposeJsonSerializerSettings:true" ClassName="KenticoStoreApiClient">
-	    <SourceUri>http://dev.dancinggoat.com:65375/swagger/storeapi/swagger.json</SourceUri>
-	  </OpenApiReference>
+		<OpenApiReference Include="StoreApi\swagger.json" CodeGenerator="NSwagCSharp" Options="/UseBaseUrl:false /JsonLibrary:SystemTextJson /GenerateOptionalParameters:true /GenerateOptionalPropertiesAsNullable:false /GenerateNullableReferenceTypes:true /ExposeJsonSerializerSettings:true /GenerateClientInterfaces:true /dateType:System.DateTime /dateTimeType:System.DateTime" 
+						  ClassName="KenticoStoreApiClient" Namespace="Kentico.Xperience.K13Ecommerce.StoreApi">
+			<SourceUri>http://dev.dancinggoat.com:65375/swagger/storeapi/swagger.json</SourceUri>
+		</OpenApiReference>
 	</ItemGroup>
 
 	<ItemGroup>		
+		<PackageReference Include="Duende.AccessTokenManagement.OpenIdConnect" />		
 		<PackageReference Include="Kentico.Xperience.Core" />		
 		<PackageReference Include="Microsoft.Extensions.ApiDescription.Client">
 		  <PrivateAssets>all</PrivateAssets>
@@ -34,6 +36,7 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>		
+		<PackageReference Include="Scrutor" />		
 	</ItemGroup>
 
 	<ItemGroup>

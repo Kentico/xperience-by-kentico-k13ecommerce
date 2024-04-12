@@ -1,9 +1,4 @@
-﻿
-using System;
-
-using Microsoft.AspNetCore.Http;
-
-namespace DancingGoat.Helpers
+﻿namespace DancingGoat.Helpers
 {
     public static class HttpRequestExtensions
     {

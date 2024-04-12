@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using DancingGoat.Models;
+﻿using DancingGoat.Models;
 using DancingGoat.Widgets;
 
 using Kentico.PageBuilder.Web.Mvc;

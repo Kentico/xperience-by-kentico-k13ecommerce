@@ -1,7 +1,9 @@
 ﻿using DancingGoat.Components.Widgets.Store.ProductListWidget;
+
 using Kentico.PageBuilder.Web.Mvc;
-using Kentico.Xperience.K13Ecommerce.KenticoStoreApi;
 using Kentico.Xperience.K13Ecommerce.Products;
+using Kentico.Xperience.K13Ecommerce.StoreApi;
+
 using Microsoft.AspNetCore.Mvc;
 
 [assembly: RegisterWidget(
@@ -12,21 +14,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Components.Widgets.Store.ProductListWidget;
 
-public class StoreProductListWidgetViewComponent(IKStoreApiService storeApiService) : ViewComponent
+public class StoreProductListWidgetViewComponent(IKenticoStoreApiClient storeApiClient) : ViewComponent
 {
     public const string IDENTIFIER = "DancingGoat.LandingPage.KenticoStoreProductList";
 
     public async Task<IViewComponentResult> InvokeAsync(StoreProductListWidgetProperties properties)
     {
         //@TODO cache results
-        var products = await storeApiService.GetProductPages(new ProductPageRequest
-        {
-            Path = properties.Path,
-            Culture = properties.Culture,
-            Currency = properties.CurrencyCode,
-            OrderBy = properties.OrderBy,
-            Limit = properties.Limit
-        });
+        var products = await storeApiClient.GetProductPagesAsync(path: properties.Path,
+            culture: properties.Culture,
+            currency: properties.CurrencyCode,
+            orderBy: properties.OrderBy,
+            limit: properties.Limit
+        );
 
         string currencyFormatString = products.FirstOrDefault()?.Sku?.Prices?.Currency?.CurrencyFormatString;
         var model = new StoreProductListWidgetViewModel

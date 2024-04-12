@@ -1,6 +1,6 @@
 using DancingGoat;
-using DancingGoat.Sections;
 using DancingGoat.PageTemplates;
+using DancingGoat.Sections;
 using DancingGoat.Widgets;
 
 using Kentico.PageBuilder.Web.Mvc;

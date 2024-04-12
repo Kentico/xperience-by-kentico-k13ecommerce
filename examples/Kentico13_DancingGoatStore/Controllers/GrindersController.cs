@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 using CMS.Ecommerce;
 
 using DancingGoat;
@@ -23,13 +20,13 @@ namespace DancingGoat.Controllers
     {
         private readonly string[] grinderClasses = new[] { ManualGrinder.CLASS_NAME, ElectricGrinder.CLASS_NAME };
 
-        private readonly ProductRepository productRepository;        
+        private readonly ProductRepository productRepository;
         private readonly ICalculationService calculationService;
         private readonly IPageUrlRetriever pageUrlRetriever;
 
 
         public GrindersController(ProductRepository productRepository, ICalculationService calculationService, IPageUrlRetriever pageUrlRetriever)
-        {            
+        {
             this.productRepository = productRepository;
             this.calculationService = calculationService;
             this.pageUrlRetriever = pageUrlRetriever;

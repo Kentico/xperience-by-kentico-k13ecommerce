@@ -1,6 +1,3 @@
-using System;
-using System.Threading.Tasks;
-
 using DancingGoat;
 using DancingGoat.Models;
 
@@ -10,18 +7,14 @@ using Kentico.Membership;
 using Kentico.OnlineMarketing.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Web.Mvc;
+using Kentico.Xperience.K13Ecommerce;
+using Kentico.Xperience.K13Ecommerce.ShoppingCart;
+using Kentico.Xperience.K13Ecommerce.Users;
 
-
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.DependencyInjection;
-using Kentico.Xperience.K13Ecommerce;
-
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,7 +50,10 @@ builder.Services.AddLocalization()
         options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResources));
     });
 
+builder.Services.AddSession();
+
 builder.Services.AddDancingGoatServices();
+
 
 ConfigureMembershipServices(builder.Services);
 
@@ -74,6 +70,7 @@ app.UseCookiePolicy();
 
 app.UseAuthentication();
 
+app.UseSession();
 
 app.UseKentico();
 
@@ -142,6 +139,22 @@ static void ConfigureMembershipServices(IServiceCollection services)
             ctx.Response.Redirect(url);
 
             return Task.CompletedTask;
+        };
+
+        //custom: clear token from cache when user sign in/sign out
+        options.Events.OnSignedIn = async context =>
+        {
+            var tokenManagementService = context.HttpContext.RequestServices.GetRequiredService<ITokenManagementService>();
+            await tokenManagementService.ClearTokenCache();
+            var shoppingService = context.HttpContext.RequestServices.GetRequiredService<IShoppingService>();
+            shoppingService.ClearCaches();
+        };
+        options.Events.OnSigningOut = async context =>
+        {
+            var tokenManagementService = context.HttpContext.RequestServices.GetRequiredService<ITokenManagementService>();
+            await tokenManagementService.ClearTokenCache();
+            var shoppingService = context.HttpContext.RequestServices.GetRequiredService<IShoppingService>();
+            shoppingService.ClearCaches();
         };
     });
 

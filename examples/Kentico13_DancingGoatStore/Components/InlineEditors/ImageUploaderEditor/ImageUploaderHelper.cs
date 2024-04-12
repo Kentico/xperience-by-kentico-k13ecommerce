@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-
-using CMS.IO;
-
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.InlineEditors
 {

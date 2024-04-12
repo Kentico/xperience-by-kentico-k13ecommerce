@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-using Kentico.Components.Web.Mvc.FormComponents;
+﻿using Kentico.Components.Web.Mvc.FormComponents;
 using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 

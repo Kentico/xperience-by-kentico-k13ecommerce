@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-using CMS.Ecommerce;
+﻿using CMS.Ecommerce;
 
 using DancingGoat.Infrastructure;
 

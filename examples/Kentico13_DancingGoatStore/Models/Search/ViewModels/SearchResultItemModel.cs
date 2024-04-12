@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.Helpers;
+﻿using CMS.Helpers;
 using CMS.Search;
 
 namespace DancingGoat.Models

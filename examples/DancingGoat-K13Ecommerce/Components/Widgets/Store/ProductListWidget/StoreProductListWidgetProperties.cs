@@ -1,8 +1,8 @@
-﻿using Kentico.Components.Web.Mvc.FormComponents;
+﻿using System.ComponentModel.DataAnnotations;
+
 using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Xperience.K13Ecommerce.Components.FormComponents.KenticoStorePropertySelector;
-using System.ComponentModel.DataAnnotations;
 
 namespace DancingGoat.Components.Widgets.Store.ProductListWidget;
 
@@ -14,7 +14,7 @@ public class StoreProductListWidgetProperties : IWidgetProperties
     [EditingComponent(KenticoStorePropertySelectorComponent.IDENTIFIER, Label = "Section", Order = 10)]
     [EditingComponentProperty(nameof(KenticoStorePropertySelectorProperties.Mode), KenticoStorePropertySelectorMode.Category)]
     public string Path { get; set; }
-    
+
     [EditingComponent(KenticoStorePropertySelectorComponent.IDENTIFIER, Label = "Culture", Order = 20)]
     [EditingComponentProperty(nameof(KenticoStorePropertySelectorProperties.Mode), KenticoStorePropertySelectorMode.Culture)]
     public string Culture { get; set; }

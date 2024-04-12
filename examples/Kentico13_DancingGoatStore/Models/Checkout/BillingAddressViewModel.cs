@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 using CMS.Ecommerce;
 
@@ -32,7 +31,7 @@ namespace DancingGoat.Models
         [Display(Name = "Postal code")]
         [MaxLength(20, ErrorMessage = "Maximum allowed length of the input text is {1}")]
         public string BillingAddressPostalCode { get; set; }
-        
+
 
         public CountryStateViewModel BillingAddressCountryStateSelector { get; set; }
 

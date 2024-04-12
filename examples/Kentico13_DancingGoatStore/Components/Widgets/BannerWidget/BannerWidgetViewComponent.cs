@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-using CMS.MediaLibrary;
+﻿using CMS.MediaLibrary;
 using CMS.SiteProvider;
 
 using DancingGoat.Widgets;

@@ -1,5 +1,5 @@
-﻿using CMS.Ecommerce;
-using Kentico.Xperience.StoreApi.Currencies;
+﻿using Kentico.Xperience.StoreApi.Currencies;
+using Kentico.Xperience.StoreApi.ShoppingCart;
 
 namespace Kentico.Xperience.StoreApi.Products.Prices;
 
@@ -13,5 +13,5 @@ public class KProductCatalogPrices
     public decimal Price { get; set; }
     public decimal Tax { get; set; }
     public decimal ListPrice { get; set; }
-    public ValuesSummary Discounts { get; set; }
+    public IEnumerable<KSummaryItem> Discounts { get; set; }
 }

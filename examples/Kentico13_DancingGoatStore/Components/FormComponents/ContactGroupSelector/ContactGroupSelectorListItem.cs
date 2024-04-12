@@ -15,7 +15,7 @@
             set;
         }
 
-        
+
         public bool Checked
         {
             get;

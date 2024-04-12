@@ -1,0 +1,11 @@
+﻿@using System.Web
+
+@model DancingGoat.Models.PaymentMethodViewModel
+
+<div class="payment-selector">
+    <label asp-for="PaymentMethodID" class="delivery-label"></label>
+    @Html.DropDownListFor(m => m.PaymentMethodID, Model.PaymentMethods, HtmlLocalizer["(Please select)"].Value)
+    <div class="message message-error">
+        <span asp-validation-for="PaymentMethodID"></span>
+    </div>
+</div>

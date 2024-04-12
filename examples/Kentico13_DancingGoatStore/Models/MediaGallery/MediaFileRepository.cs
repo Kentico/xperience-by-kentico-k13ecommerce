@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using CMS.MediaLibrary;
+﻿using CMS.MediaLibrary;
 using CMS.SiteProvider;
 
 using DancingGoat.Infrastructure;

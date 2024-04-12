@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using CMS.Base;
+﻿using CMS.Base;
 using CMS.Ecommerce;
 using CMS.Globalization;
 using CMS.Helpers;
@@ -29,7 +25,7 @@ namespace DancingGoat.Controllers
         private readonly IStateInfoProvider stateInfoProvider;
 
 
-        public CheckoutController(IShoppingService shoppingService, ContactRepository contactRepository, ProductRepository productRepository, 
+        public CheckoutController(IShoppingService shoppingService, ContactRepository contactRepository, ProductRepository productRepository,
             ICheckoutService checkoutService, IPageUrlRetriever pageUrlRetriever, ISKUInfoProvider skuInfoProvider, ICountryInfoProvider countryInfoProvider,
             IStateInfoProvider stateInfoProvider)
         {
@@ -258,7 +254,7 @@ namespace DancingGoat.Controllers
         [HttpPost]
         public JsonResult CustomerAddress(int addressID)
         {
-            var address = checkoutService.GetCustomerAddress(addressID); 
+            var address = checkoutService.GetCustomerAddress(addressID);
 
             if (address == null)
             {

@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-using CMS.DataEngine;
+﻿using CMS.DataEngine;
 
 namespace DancingGoat.Helpers.Generator
 {

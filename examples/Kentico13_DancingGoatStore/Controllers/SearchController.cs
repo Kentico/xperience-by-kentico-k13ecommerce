@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using CMS.Base;
+﻿using CMS.Base;
 using CMS.Membership;
 using CMS.Search;
 using CMS.WebAnalytics;

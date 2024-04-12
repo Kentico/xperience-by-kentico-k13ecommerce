@@ -7,8 +7,12 @@
       "commands": [
         "kentico-xperience-dbmanager"
       ]
+    },
+    "dotnet-ef": {
+      "version": "8.0.4",
+      "commands": [
+        "dotnet-ef"
+      ]
     }
   }
 }
-
-

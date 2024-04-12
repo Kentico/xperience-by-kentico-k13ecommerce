@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Routing;
 
 namespace DancingGoat.Helpers
 {
@@ -48,7 +46,7 @@ namespace DancingGoat.Helpers
     <div class=""message message-error"">{3}</div>
 </div>", label, editor, explanationTextHtml, message);
 
-            return  generatedHtml;
+            return generatedHtml;
         }
     }
 }

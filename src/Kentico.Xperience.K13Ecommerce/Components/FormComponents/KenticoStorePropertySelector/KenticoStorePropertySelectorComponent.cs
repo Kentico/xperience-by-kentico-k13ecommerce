@@ -1,21 +1,27 @@
 ﻿using Kentico.Forms.Web.Mvc;
 using Kentico.Web.Mvc;
 using Kentico.Xperience.K13Ecommerce.Components.FormComponents.KenticoStorePropertySelector;
-using Kentico.Xperience.K13Ecommerce.KenticoStoreApi;
+using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 [assembly: RegisterFormComponent(KenticoStorePropertySelectorComponent.IDENTIFIER, typeof(KenticoStorePropertySelectorComponent), "Kentico Store properties selector", IconClass = "icon-menu")]
+
 namespace Kentico.Xperience.K13Ecommerce.Components.FormComponents.KenticoStorePropertySelector;
 
-public class KenticoStorePropertySelectorComponent(IKStoreApiService storeApiService) : SelectorFormComponent<KenticoStorePropertySelectorProperties>
+/// <summary>
+/// KStore selector component for currencies,cultures and categories
+/// </summary>
+/// <param name="storeApiClient"></param>
+public class KenticoStorePropertySelectorComponent(IKenticoStoreApiClient storeApiClient) : SelectorFormComponent<KenticoStorePropertySelectorProperties>
 {
     public const string IDENTIFIER = "Kentico.Xperience.Store.PropertySelector";
+
 
     // Retrieves data to be displayed in the selector
     protected override IEnumerable<HtmlOptionItem> GetHtmlOptions()
     {
         if (Properties.Mode == KenticoStorePropertySelectorMode.Category)
         {
-            var categories = storeApiService.GetProductCategories().GetAwaiter().GetResult();
+            var categories = storeApiClient.GetProductCategoriesAsync().GetAwaiter().GetResult();
 
             yield return new HtmlOptionItem()
             {
@@ -34,7 +40,7 @@ public class KenticoStorePropertySelectorComponent(IKStoreApiService storeApiSer
         }
         else if (Properties.Mode == KenticoStorePropertySelectorMode.Culture)
         {
-            var currencies = storeApiService.GetCultures().GetAwaiter().GetResult();
+            var currencies = storeApiClient.GetCulturesAsync().GetAwaiter().GetResult();
 
             foreach (var c in currencies)
             {
@@ -47,7 +53,7 @@ public class KenticoStorePropertySelectorComponent(IKStoreApiService storeApiSer
         }
         else if (Properties.Mode == KenticoStorePropertySelectorMode.Currency)
         {
-            var currencies = storeApiService.GetCurrencies().GetAwaiter().GetResult();
+            var currencies = storeApiClient.GetCurrenciesAsync().GetAwaiter().GetResult();
 
             foreach (string c in currencies)
             {

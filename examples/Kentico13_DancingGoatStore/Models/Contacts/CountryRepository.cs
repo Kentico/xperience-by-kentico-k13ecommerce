@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-using CMS.Globalization;
+﻿using CMS.Globalization;
 
 using DancingGoat.Infrastructure;
 
@@ -69,7 +67,7 @@ namespace DancingGoat.Models
             }, $"{nameof(CountryRepository)}|{nameof(GetCountry)}|{countryName}");
         }
 
-        
+
         /// <summary>
         /// Returns all states in country with given ID.
         /// </summary>

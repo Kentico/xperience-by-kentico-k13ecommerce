@@ -1,5 +1,6 @@
 ﻿using CMS.Base;
 using CMS.Ecommerce;
+
 using Kentico.Xperience.StoreApi.Products.SKU;
 
 namespace DancingGoat.ShopApi;
@@ -9,9 +10,9 @@ namespace DancingGoat.ShopApi;
 /// </summary>
 public class CustomSKUConverter : ProductSKUConverter<CustomSKU>
 {
-    public override CustomSKU Convert(SKUInfo skuInfo, string currencyCode)
+    public override CustomSKU Convert(SKUInfo skuInfo, string currencyCode, bool withVariants)
     {
-        var model = base.Convert(skuInfo, currencyCode);
+        var model = base.Convert(skuInfo, currencyCode, withVariants);
         return model;
     }
 

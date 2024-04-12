@@ -1,6 +1,4 @@
-﻿using Kentico.Content.Web.Mvc;
-
-namespace DancingGoat.Personalization
+﻿namespace DancingGoat.Personalization
 {
     public class IsInPersonaListItemViewModel
     {

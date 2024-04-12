@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DancingGoat.Infrastructure
+﻿namespace DancingGoat.Infrastructure
 {
     /// <summary>
     /// Provides methods to format cache dependencies.
@@ -9,7 +7,7 @@ namespace DancingGoat.Infrastructure
     {
         private const string GENERIC_PAGES_KEY_FORMAT = "node|{0}|/|childnodes";
 
-        
+
         /// <summary>
         /// Cache key format for pages.
         /// </summary>

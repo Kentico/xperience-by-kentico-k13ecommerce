@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using CMS.Ecommerce;
+﻿using CMS.Ecommerce;
 
 using Kentico.Content.Web.Mvc;
 

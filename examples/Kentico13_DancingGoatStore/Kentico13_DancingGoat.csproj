@@ -8,6 +8,7 @@
 	<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
 	<Nullable>disable</Nullable>
 	<DisableCodeAnalysis>True</DisableCodeAnalysis>
+	<NoWarn>$(NoWarn);CS1570;CS1572</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="App_Data\CMSModules\WebFarm\webfarm.sync" />

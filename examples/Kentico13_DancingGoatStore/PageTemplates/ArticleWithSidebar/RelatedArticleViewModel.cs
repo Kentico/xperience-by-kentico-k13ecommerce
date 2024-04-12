@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using Kentico.Content.Web.Mvc;
 

@@ -1,8 +1,4 @@
-﻿
-using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using DancingGoat.Controllers;
 using DancingGoat.Models;
@@ -24,7 +20,7 @@ namespace DancingGoat.Controllers
         private readonly IStringLocalizer<SharedResources> localizer;
 
 
-        public ContactsController(ContactRepository contactRepository, 
+        public ContactsController(ContactRepository contactRepository,
             CountryRepository countryRepository,
             CafeRepository cafeRepository,
             IStringLocalizer<SharedResources> localizer)

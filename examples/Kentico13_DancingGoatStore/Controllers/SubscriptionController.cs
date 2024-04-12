@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.Helpers;
+﻿using CMS.Helpers;
 using CMS.Newsletters;
 using CMS.SiteProvider;
 
@@ -40,7 +38,7 @@ namespace DancingGoat.Web.Controllers
             if (!ModelState.IsValid)
             {
                 AddError("The confirmation link is not valid.");
-                
+
                 return View(model);
             }
 
@@ -92,7 +90,7 @@ namespace DancingGoat.Web.Controllers
             if (ModelState.IsValid)
             {
                 bool emailIsValid = emailHashValidator.ValidateEmailHash(model.Hash, model.Email);
-                
+
                 if (emailIsValid)
                 {
                     try

@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.MediaLibrary;
+﻿using CMS.MediaLibrary;
 
 using Kentico.Content.Web.Mvc;
 

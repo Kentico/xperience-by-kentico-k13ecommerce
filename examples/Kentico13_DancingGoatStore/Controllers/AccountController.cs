@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 using CMS.Activities.Loggers;
 using CMS.Base;
@@ -17,7 +15,6 @@ using Kentico.Membership;
 using Kentico.Web.Mvc;
 
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
@@ -340,7 +337,7 @@ namespace DancingGoat.Controllers
             try
             {
                 var user = await userManager.FindByNameAsync(User.Identity.Name);
-                
+
                 // Set full name only if it was automatically generated
                 if (user.FullName == UserInfoProvider.GetFullName(user.FirstName, null, user.LastName))
                 {

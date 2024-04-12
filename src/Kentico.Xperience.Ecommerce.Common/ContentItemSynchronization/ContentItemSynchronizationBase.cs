@@ -1,9 +1,14 @@
 ﻿using System.Reflection;
 using System.Text;
+
 using CMS.ContentEngine;
 using CMS.Helpers;
 
 namespace Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
+
+/// <summary>
+/// Synchronization base for content items
+/// </summary>
 public abstract class ContentItemSynchronizationBase
 {
     private const string CODE_CHARS = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -12,20 +17,23 @@ public abstract class ContentItemSynchronizationBase
 
     protected abstract string DisplayNameInternal { get; }
 
+
     public abstract string ContentTypeName { get; }
+
 
     /// <summary>
     /// Content item display name with max length of <see cref="NAME_LENGTH"/>
     /// </summary>
     public string DisplayName =>
-        DisplayNameInternal.Length > NAME_LENGTH ? (DisplayNameInternal?.Substring(0, NAME_LENGTH) ?? string.Empty) : DisplayNameInternal;
+        DisplayNameInternal.Length > NAME_LENGTH ? (DisplayNameInternal?[..NAME_LENGTH] ?? string.Empty) : DisplayNameInternal;
+
 
     /// <summary>
     /// Generate dictionary where keys are property names and values are property values.
     /// <see cref="ContentItemSynchronizationBase"/> properties are excluded.
     /// </summary>
     /// <returns></returns>
-    public Dictionary<string, object?> ToDict()
+    public virtual Dictionary<string, object?> ToDict()
     {
         var baseProperties = typeof(ContentItemSynchronizationBase)
             .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -50,14 +58,17 @@ public abstract class ContentItemSynchronizationBase
         return result;
     }
 
+
+#pragma warning disable CS1574 // XML comment has cref attribute that could not be resolved
     /// <summary>
     /// Get content item code name or generate if does not exist.
-    /// Generated code name consists of <see cref="DisplayName"/> that is transformed to code name using <see cref="ValidationHelper.GetCodeName"/> 
+    /// Generated code name consists of <see cref="DisplayName"/> that is transformed to code name using <see cref="ValidationHelper.GetCodeName()"/> 
     /// and random 8 characters long alphanumeric string. Maximum length will be <see cref="NAME_LENGTH"/>
     /// </summary>
     /// <returns>
     /// Generated code name
     /// </returns>
+#pragma warning restore CS1574 // XML comment has cref attribute that could not be resolved
     public string GenerateCodeName()
     {
         var random = Random.Shared;
@@ -79,7 +90,8 @@ public abstract class ContentItemSynchronizationBase
         return sb.ToString();
     }
 
-    protected bool ReferenceModified(IEnumerable<IContentItemBase> contentItems, IEnumerable<ContentItemReference> contentItemReferences)
+
+    protected bool ReferenceModified(IEnumerable<IContentItemFieldsSource> contentItems, IEnumerable<ContentItemReference> contentItemReferences)
     {
         if (contentItems.Count() != contentItemReferences.Count())
         {
@@ -98,5 +110,13 @@ public abstract class ContentItemSynchronizationBase
         }
 
         return false;
+    }
+
+    protected void SetPropsIfDiff<T>(T source, T dest, string key, Dictionary<string, object?> props)
+    {
+        if ((source is null && dest is not null) || (source is not null && !source.Equals(dest)))
+        {
+            props.TryAdd(key, dest);
+        }
     }
 }

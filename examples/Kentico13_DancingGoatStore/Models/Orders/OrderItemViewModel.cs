@@ -1,6 +1,4 @@
-﻿using Kentico.Content.Web.Mvc;
-
-namespace DancingGoat.Models
+﻿namespace DancingGoat.Models
 {
     public class OrderItemViewModel
     {

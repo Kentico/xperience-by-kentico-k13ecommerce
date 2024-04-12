@@ -8,5 +8,5 @@ namespace Kentico.Xperience.StoreApi.Products.SKU;
 /// <typeparam name="TModel"></typeparam>
 public interface IProductSKUConverter<out TModel>
 {
-    TModel Convert(SKUInfo skuInfo, string currencyCode);
+    TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants);
 }

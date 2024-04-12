@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using CMS.Activities;
+﻿using CMS.Activities;
 using CMS.Base;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
@@ -49,11 +45,11 @@ namespace DancingGoat.Helpers.Generator
         private const string CAMPAIGN_CAFE_SAMPLE_PROMOTION_FINISHED = "DancingGoatCore.CafeSamplePromotionTest";
 
 
-        private const string CONVERSION_PAGEVISIT_COFFEE_SAMPLES = "Coffee samples";        
+        private const string CONVERSION_PAGEVISIT_COFFEE_SAMPLES = "Coffee samples";
         private const string CONVERSION_FORMSUBMISSION_COFFEE_SAMPLE_LIST = "Coffee sample list";
         private const string CONVERSION_PURCHASE = "Purchase";
 
-        private const string PAGE_PATH_COFFEE_SAMPLES = ContentItemIdentifiers.LANDINGPAGE_COFFEESAMPLES;        
+        private const string PAGE_PATH_COFFEE_SAMPLES = ContentItemIdentifiers.LANDINGPAGE_COFFEESAMPLES;
 
         private const string COFFEE_SAMPLE_LIST_FORM_CODE_NAME = "DancingGoatCoreCoffeeSampleList";
 
@@ -167,7 +163,7 @@ namespace DancingGoat.Helpers.Generator
                 .ToList()
                 .ForEach(CampaignInfo.Provider.Delete);
 
-            /* Generate campaigns. */            
+            /* Generate campaigns. */
             GenerateCafePromotionSampleCampaign();
 
             /* Generate campaign objectives */
@@ -287,7 +283,7 @@ namespace DancingGoat.Helpers.Generator
             campaignCafePromotion.CampaignName = CAMPAIGN_CAFE_SAMPLE_PROMOTION_FINISHED;
             campaignCafePromotion.CampaignEmailPromotion = NEWSLETTER_COLOMBIA_COFFEE_SAMPLE_PROMOTION_TEST_ISSUE_GUID;
             campaignCafePromotion.CampaignDisplayName = "Cafe sample promotion test";
-            campaignCafePromotion.CampaignOpenTo = campaignCafePromotion.CampaignOpenFrom.AddDays(6);            
+            campaignCafePromotion.CampaignOpenTo = campaignCafePromotion.CampaignOpenFrom.AddDays(6);
             campaignCafePromotion.CampaignUTMCode = "cafe_sample_promotion_core_finished";
             campaignCafePromotion.CampaignContentInventory = new List<Guid>
                 {
@@ -301,7 +297,7 @@ namespace DancingGoat.Helpers.Generator
         private void GenerateActivities(string campaignName, Dictionary<string, IEnumerable<ActivityDataParameters>> conversionHits, int contactsCount)
         {
             var campaignCafePromotion = CampaignInfo.Provider.Get(campaignName, mSite.SiteID);
-            
+
             var pageVisitColombia = CampaignDataGeneratorHelpers.GetDocument(PAGE_PATH_COFFEE_SAMPLES);
             var formFreeSample = BizFormInfo.Provider.Get(COFFEE_SAMPLE_LIST_FORM_CODE_NAME, mSite.SiteID);
 
@@ -315,8 +311,9 @@ namespace DancingGoat.Helpers.Generator
         }
 
 
-        private IEnumerable<CampaignConversionData> PrepareCafeSamplePromotionConversions()        {
-            
+        private IEnumerable<CampaignConversionData> PrepareCafeSamplePromotionConversions()
+        {
+
             var pageCoffeeSamples = CampaignDataGeneratorHelpers.GetDocument(PAGE_PATH_COFFEE_SAMPLES);
             var formCoffeeSampleList = BizFormInfo.Provider.Get(COFFEE_SAMPLE_LIST_FORM_CODE_NAME, mSite.SiteID);
 
@@ -375,6 +372,6 @@ namespace DancingGoat.Helpers.Generator
                     ConversionIsFunnelStep = true
                 }
             };
-        }        
+        }
     }
 }

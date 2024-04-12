@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 
 namespace DancingGoat.Models
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.Personas;
+﻿using CMS.Personas;
 
 namespace DancingGoat.Helpers.Generator
 {
@@ -18,7 +16,7 @@ namespace DancingGoat.Helpers.Generator
         /// Represents Martina, the Coffee Geek.
         /// </summary>
         public const string PERSONA_COFEE_GEEK = "Martina_The_Cofee_Geek";
-        
+
 
         /// <summary>
         /// Generates two personas.
@@ -51,7 +49,7 @@ namespace DancingGoat.Helpers.Generator
             coffeeGeekPersona.CreateScoreForPersona();
         }
 
-        
+
         private void GenerateCafeOwnerPersona()
         {
             var coffeeOwnerPersona = PersonaInfo.Provider.Get(PERSONA_CAFE_OWNER);

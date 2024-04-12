@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.ContactManagement;
-using Kentico.Forms.Web.Mvc;
+﻿using CMS.ContactManagement;
 
 using DancingGoat.FormComponents;
+
+using Kentico.Forms.Web.Mvc;
 
 
 [assembly: RegisterFormComponent("DancingGoat.ContactGroupSelector", typeof(ContactGroupSelectorComponent), "Contact group selector", IsAvailableInFormBuilderEditor = false, ViewName = "~/Components/FormComponents/ContactGroupSelector/_ContactGroupSelector.cshtml")]
@@ -33,7 +31,7 @@ namespace DancingGoat.FormComponents
 
 
         public override void SetValue(List<string> value)
-        {           
+        {
             var items = GetItems();
             if (value != null)
             {

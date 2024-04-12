@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
+
 using CMS.Base;
 using CMS.Ecommerce;
+
+using Kentico.Xperience.StoreApi.Mapping;
 using Kentico.Xperience.StoreApi.Products.Prices;
 
 namespace Kentico.Xperience.StoreApi.Products.SKU;
@@ -23,12 +26,15 @@ public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
         mapper = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<StoreApiMappingProfile>();
-                cfg.CreateMap<SKUInfo, TModel>();
+                if (typeof(TModel) != typeof(KProductSKU))
+                {
+                    cfg.CreateMap<SKUInfo, TModel>().IncludeBase<SKUInfo, KProductSKU>();
+                }
             })
             .CreateMapper();
     }
 
-    public virtual TModel Convert(SKUInfo skuInfo, string currencyCode)
+    public virtual TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants)
     {
         var model = mapper.Map<TModel>(skuInfo);
 
@@ -42,10 +48,20 @@ public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
         var priceCalculator = catalogPriceCalculatorFactory.GetCalculator(siteService.CurrentSite.SiteID);
         var prices = priceCalculator.GetPrices(skuInfo, null, cart);
 
-        //@TODO move to standalone converter to enable easy customization of variant model
-        model.Variants = skuInfo.Children[SKUInfo.OBJECT_TYPE_VARIANT].OfType<SKUInfo>()
-            .Select(v => mapper.Map<KProductVariant>(v))
-            .ToList();
+        if (withVariants)
+        {
+            var skuVariants = skuInfo.Children[SKUInfo.OBJECT_TYPE_VARIANT].OfType<SKUInfo>();
+            var variants = new List<KProductVariant>();
+            foreach (var variantSku in skuVariants)
+            {
+                var pricesVariant = priceCalculator.GetPrices(variantSku, null, cart);
+                var productVariant = mapper.Map<KProductVariant>(variantSku);
+                productVariant.Prices = mapper.Map<KProductCatalogPrices>(pricesVariant);
+                variants.Add(productVariant);
+            }
+
+            model.Variants = variants;
+        }
 
         model.Prices = mapper.Map<KProductCatalogPrices>(prices);
 

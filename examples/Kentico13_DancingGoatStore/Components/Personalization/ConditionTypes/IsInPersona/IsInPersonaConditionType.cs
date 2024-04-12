@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.ContactManagement;
+﻿using CMS.ContactManagement;
 using CMS.Personas;
 
 using DancingGoat.Personalization;

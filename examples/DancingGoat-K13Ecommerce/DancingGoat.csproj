@@ -6,6 +6,7 @@
     <DisableCodeAnalysis>True</DisableCodeAnalysis>
     <NoWarn>$(NoWarn);CS1570;CS1572</NoWarn>
     <UserSecretsId>0674b988-fda9-4e92-817f-2662f79e8ebe</UserSecretsId>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="App_Data\CMSModules\WebFarm\webfarm.sync" />
@@ -27,6 +28,8 @@
     <PackageReference Include="kentico.xperience.azurestorage" />
     <PackageReference Include="kentico.xperience.imageprocessing" />
     <PackageReference Include="kentico.xperience.webapp" />
+    <PackageReference Include="Scrutor" />
+    <PackageReference Include="System.Linq.Async" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Kentico.Xperience.K13Ecommerce\Kentico.Xperience.K13Ecommerce.csproj" />

@@ -6,7 +6,7 @@
 
 
         public BillingAddressViewModel BillingAddress { get; set; }
-        
+
 
         public ShippingOptionViewModel ShippingOption { get; set; }
     }

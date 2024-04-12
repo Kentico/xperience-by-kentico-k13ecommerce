@@ -1,7 +1,11 @@
 ﻿using System.Net.Mime;
+
 using CMS.Base;
 using CMS.Ecommerce;
 using CMS.SiteProvider;
+
+using Kentico.Xperience.StoreApi.Routing;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,8 +14,10 @@ namespace Kentico.Xperience.StoreApi.StoreSite;
 /// <summary>
 /// API endpoints for site on global level
 /// </summary>
-[Route("api/store/site")]
+[Route($"{ApiRoute.ApiPrefix}/site")]
 [ApiController]
+[Produces(MediaTypeNames.Application.Json)]
+[ProducesResponseType(StatusCodes.Status200OK)]
 public class StoreSiteController : ControllerBase
 {
     private readonly ISiteService siteService;
@@ -25,9 +31,7 @@ public class StoreSiteController : ControllerBase
     /// Returns all enabled site cultures
     /// </summary>
     /// <returns></returns>
-    [HttpGet("cultures")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [HttpGet("cultures", Name = nameof(GetCultures))]
     public IEnumerable<KCulture> GetCultures()
         => CultureSiteInfoProvider.GetSiteCultures(siteService.CurrentSite.SiteName)
             .Select(c => new KCulture { CultureName = c.CultureName, CultureCode = c.CultureCode });
@@ -37,9 +41,7 @@ public class StoreSiteController : ControllerBase
     /// Returns all enabled site currencies
     /// </summary>
     /// <returns></returns>
-    [HttpGet("currencies")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [HttpGet("currencies", Name = nameof(GetCurrencies))]
     public async Task<IEnumerable<string>> GetCurrencies()
         => (await CurrencyInfoProvider.GetCurrencies(siteService.CurrentSite.SiteID).GetEnumerableTypedResultAsync())
             .Select(c => c.CurrencyCode);

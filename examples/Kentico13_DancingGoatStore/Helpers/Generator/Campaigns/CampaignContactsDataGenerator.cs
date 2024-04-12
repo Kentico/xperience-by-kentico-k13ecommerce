@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-using CMS.ContactManagement;
+﻿using CMS.ContactManagement;
 
 namespace DancingGoat.Helpers.Generator
 {

@@ -4,7 +4,7 @@
     {
         public DeliveryDetailsViewModel DeliveryDetails { get; set; }
 
-        
+
         public CartViewModel CartModel { get; set; }
 
 
@@ -12,9 +12,9 @@
 
 
         public BillingAddressViewModel BillingAddress => DeliveryDetails?.BillingAddress;
-        
 
-        public PaymentMethodViewModel PaymentMethod { get;  set; }
+
+        public PaymentMethodViewModel PaymentMethod { get; set; }
 
 
         public string ShippingName { get; set; }

@@ -26,7 +26,7 @@ namespace DancingGoat.ViewComponents
         {
             var contact = contactRepository.GetCompanyContact();
             var model = ContactViewModel.GetViewModel(contact, countryRepository, localizer);
-            
+
             return View("~/Components/ViewComponents/CompanyAddress/Default.cshtml", model);
         }
     }

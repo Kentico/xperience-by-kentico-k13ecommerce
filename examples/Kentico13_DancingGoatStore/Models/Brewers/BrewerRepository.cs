@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using Kentico.Content.Web.Mvc;
 
@@ -12,7 +10,7 @@ namespace DancingGoat.Models
     public class BrewerRepository
     {
         private readonly IPageRetriever pageRetriever;
-        
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BrewerRepository"/> class that returns brewers.

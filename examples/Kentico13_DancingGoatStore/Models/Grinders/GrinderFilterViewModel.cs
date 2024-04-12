@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 
 using CMS.DataEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
@@ -26,7 +24,7 @@ namespace DancingGoat.Models
 
         public GrinderFilterViewModel(ProductRepository productRepository)
         {
-            this.productRepository = productRepository;            
+            this.productRepository = productRepository;
         }
 
 
@@ -77,7 +75,7 @@ namespace DancingGoat.Models
             };
         }
 
-                
+
         private List<GrindersProductFilterCheckboxViewModel> GetTypes()
         {
             return new List<GrindersProductFilterCheckboxViewModel>

@@ -7,7 +7,7 @@
     {
         public const string MANUFACTURERS = "/Manufacturers";
         public const string HOME = "/Home";
-        public const string CONTACTS = "/Contacts"; 
+        public const string CONTACTS = "/Contacts";
         public const string ARTICLES = "/Articles";
         public const string ABOUT = "/About-Us";
         public const string CAFES = "/Cafes";

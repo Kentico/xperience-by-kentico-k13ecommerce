@@ -1,41 +1,30 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 using CMS.Helpers;
 
 using DancingGoat.Helpers;
 using DancingGoat.PageTemplates;
-using DancingGoat.ShopApi;
+
 using Kentico.Activities.Web.Mvc;
 using Kentico.CampaignLogging.Web.Mvc;
 using Kentico.Content.Web.Mvc;
 using Kentico.Content.Web.Mvc.Routing;
-using Kentico.Forms.Web.Mvc;
 using Kentico.Membership;
 using Kentico.Newsletters.Web.Mvc;
 using Kentico.OnlineMarketing.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Scheduler.Web.Mvc;
 using Kentico.Web.Mvc;
+using Kentico.Xperience.StoreApi;
+using Kentico.Xperience.StoreApi.Authentication;
 
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization.Routing;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Kentico.Xperience.StoreApi;
-using Kentico.Xperience.StoreApi.Products.Pages;
-using Kentico.Xperience.StoreApi.Products.SKU;
-using Kentico.Xperience.StoreApi.Serialization;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.OpenApi.Models;
-using Microsoft.SqlServer.Dac.Model;
+
 using ApplicationRole = Kentico.Membership.ApplicationRole;
 
 namespace DancingGoat
@@ -114,7 +103,12 @@ namespace DancingGoat
                 })
                 //shop api json configuration to support polymorphism
                 .AddJsonOptions(o =>
-                    o.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<KProductNode>()));
+                {
+                    //custom: if you are using customized objects you need this line of code for polymophic serialization
+                    //@TODO fix issues with polymophism
+                    //o.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<KProductNode>());
+                    o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                });
 
             services.Configure<KenticoRequestLocalizationOptions>(options =>
             {
@@ -127,15 +121,15 @@ namespace DancingGoat
 
             ConfigureMembershipServices(services);
             ConfigurePageBuilderFilters();
-            
+
             //Store API registration
-            services.AddKenticoStoreApi();
+            services.AddKenticoStoreApi(Configuration);
             services.AddKenticoStoreApiSwagger();
             // examples of customization for API data: can use custom converters or original converter with custom model for auto mapping
             // services.AddSingleton<IProductPageConverter<KProductNode>, CustomProductPageConverter>();
             // services.AddSingleton<IProductSKUConverter<KProductSKU>, CustomSKUConverter>();
-            services.AddScoped<IProductPageConverter<KProductNode>, ProductPageConverter<CustomProductPage>>();
-            services.AddScoped<IProductSKUConverter<KProductSKU>, ProductSKUConverter<CustomSKU>>();
+            // services.AddScoped<IProductPageConverter<KProductNode>, ProductPageConverter<CustomProductPage>>();
+            // services.AddScoped<IProductSKUConverter<KProductSKU>, ProductSKUConverter<CustomSKU>>();
         }
 
 
@@ -150,7 +144,7 @@ namespace DancingGoat
             app.UseStatusCodePagesWithReExecute("/error/{0}");
 
             app.UseStaticFiles();
-            
+
             //store api swagger
             app.UseStoreApiSwagger();
 
@@ -190,14 +184,14 @@ namespace DancingGoat
                         controller = CONSTRAINT_FOR_NON_ROUTER_PAGE_CONTROLLERS
                     }
                 );
-                
+
                 //attribute routing
                 endpoints.MapControllers();
             });
         }
 
 
-        private static void ConfigureMembershipServices(IServiceCollection services)
+        private void ConfigureMembershipServices(IServiceCollection services)
         {
             services.AddScoped<IPasswordHasher<ApplicationUser>, Kentico.Membership.PasswordHasher<ApplicationUser>>();
             services.AddScoped<IMessageService, MessageService>();
@@ -218,8 +212,11 @@ namespace DancingGoat
                     .AddUserManager<ApplicationUserManager<ApplicationUser>>()
                     .AddSignInManager<SignInManager<ApplicationUser>>();
 
+            services.AddAuthentication(o => o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme)
+                //Store API JWT authentication
+                .AddKenticoStoreApiJwtAuth(Configuration);
             services.AddAuthorization();
-            services.AddAuthentication();
+
 
             services.ConfigureApplicationCookie(c =>
             {

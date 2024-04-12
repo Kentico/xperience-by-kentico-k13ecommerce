@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-using CMS.DataEngine;
+﻿using CMS.DataEngine;
 
 using Kentico.Forms.Web.Mvc;
 

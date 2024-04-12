@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-using DancingGoat.Models;
+﻿using DancingGoat.Models;
 using DancingGoat.Widgets;
 
 using Kentico.Content.Web.Mvc;
@@ -31,7 +29,7 @@ namespace DancingGoat.Widgets
         /// <summary>
         /// Initializes an instance of <see cref="CafeCardWidgetViewComponent"/> class.
         /// </summary>
-        public CafeCardWidgetViewComponent( 
+        public CafeCardWidgetViewComponent(
             IPageAttachmentUrlRetriever attachmentUrlRetriever,
             CafeRepository repository)
         {

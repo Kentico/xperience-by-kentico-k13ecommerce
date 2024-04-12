@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DataEngine;
+﻿using CMS.DataEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 
 namespace DancingGoat.Models
@@ -18,7 +14,7 @@ namespace DancingGoat.Models
         }
 
 
-        public WhereCondition  GetWhereCondition()
+        public WhereCondition GetWhereCondition()
         {
             var where = new WhereCondition()
                 .And(GetManufacturerWhereCondition())

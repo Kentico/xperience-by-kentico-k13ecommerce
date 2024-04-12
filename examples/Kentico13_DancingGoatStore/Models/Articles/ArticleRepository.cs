@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine;
+﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using Kentico.Content.Web.Mvc;
@@ -12,20 +9,20 @@ namespace DancingGoat.Models
     /// Provides methods for retrieving pages of type Article.
     /// </summary>
     public class ArticleRepository
-	{
-		private readonly IPageRetriever pageRetriever;
-		private readonly IPageDataContextRetriever pageDataContextRetriever;
+    {
+        private readonly IPageRetriever pageRetriever;
+        private readonly IPageDataContextRetriever pageDataContextRetriever;
 
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ArticleRepository"/> class.
-		/// </summary>
-		/// <param name="pageRetriever">The pages retriever.</param>
-		public ArticleRepository(IPageRetriever pageRetriever, IPageDataContextRetriever pageDataContextRetriever)
-		{
-			this.pageRetriever = pageRetriever;
-			this.pageDataContextRetriever = pageDataContextRetriever;
-		}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArticleRepository"/> class.
+        /// </summary>
+        /// <param name="pageRetriever">The pages retriever.</param>
+        public ArticleRepository(IPageRetriever pageRetriever, IPageDataContextRetriever pageDataContextRetriever)
+        {
+            this.pageRetriever = pageRetriever;
+            this.pageDataContextRetriever = pageDataContextRetriever;
+        }
 
 
         /// <summary>
@@ -51,8 +48,8 @@ namespace DancingGoat.Models
         /// Returns current article.
         /// </summary>
         public virtual Article GetCurrent()
-		{
-			var page = pageDataContextRetriever.Retrieve<Article>().Page;
+        {
+            var page = pageDataContextRetriever.Retrieve<Article>().Page;
 
             return pageRetriever.Retrieve<Article>(
                 query => query
@@ -61,6 +58,6 @@ namespace DancingGoat.Models
                     .Key($"{nameof(ArticleRepository)}|{nameof(GetCurrent)}|{page.NodeID}")
                     .Dependencies((articles, deps) => deps.Pages(articles.First().Fields.RelatedArticles)))
                 .First();
-		}
-	}
+        }
+    }
 }

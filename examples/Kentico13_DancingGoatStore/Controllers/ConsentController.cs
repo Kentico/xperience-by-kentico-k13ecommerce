@@ -4,7 +4,6 @@ using CMS.Helpers;
 
 using DancingGoat.Helpers.Generator;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Controllers
@@ -34,10 +33,10 @@ namespace DancingGoat.Controllers
             if (consent != null)
             {
                 cookieLevelProvider.SetCurrentCookieLevel(CookieLevel.All);
-                
+
                 var contact = ContactManagementContext.CurrentContact;
-                if (contact != null) 
-                { 
+                if (contact != null)
+                {
                     consentAgreementService.Agree(contact, consent);
                 }
 

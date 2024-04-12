@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using Kentico.Content.Web.Mvc;
 
@@ -10,7 +6,7 @@ namespace DancingGoat.Models
 {
     public class ArticleViewModel
     {
-        public IPageAttachmentUrl TeaserUrl{ get; set; }
+        public IPageAttachmentUrl TeaserUrl { get; set; }
 
 
         public string Title { get; set; }

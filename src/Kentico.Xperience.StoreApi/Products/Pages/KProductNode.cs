@@ -8,6 +8,7 @@ public class KProductNode
 {
     public string DocumentSKUName { get; set; }
     public string DocumentSKUShortDescription { get; set; }
+    public string DocumentSKUDescription { get; set; }
     public string ClassName { get; set; }
     public string NodeAliasPath { get; set; }
     public Guid NodeGuid { get; set; }

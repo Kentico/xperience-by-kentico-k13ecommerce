@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-using CMS.Helpers;
+﻿using CMS.Helpers;
 using CMS.Newsletters;
 using CMS.SiteProvider;
 
@@ -48,8 +46,8 @@ namespace DancingGoat.Widgets
         /// <param name="contactProvider">Provider for contact retrieving.</param>
         /// <param name="newsletterInfoProvider">Provider for <see cref="NewsletterInfo"/> management.</param>
         public NewsletterSubscriptionWidgetController(
-            ApplicationUserManager<ApplicationUser> userManager, 
-            ISubscriptionService subscriptionService, 
+            ApplicationUserManager<ApplicationUser> userManager,
+            ISubscriptionService subscriptionService,
             IContactProvider contactProvider,
             INewsletterInfoProvider newsletterInfoProvider,
             IComponentPropertiesRetriever componentPropertiesRetriever,
@@ -87,7 +85,7 @@ namespace DancingGoat.Widgets
 
                 // The subscription service is configured to use double opt-in, but newsletter must allow for it
                 resultMessage = localizer[newsletter.NewsletterEnableOptIn ?
-                    "A confirmation link has been sent to your email." : 
+                    "A confirmation link has been sent to your email." :
                     "You have been subscribed."];
             }
             else

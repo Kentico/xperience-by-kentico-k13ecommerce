@@ -3,8 +3,6 @@ using DancingGoat.Models;
 using DancingGoat.PageTemplates;
 using DancingGoat.Services;
 
-using Microsoft.Extensions.DependencyInjection;
-
 namespace DancingGoat
 {
     public static class IServiceCollectionExtensions

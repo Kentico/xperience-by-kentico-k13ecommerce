@@ -1,6 +1,10 @@
 ﻿using CMS.ContentEngine;
 
 namespace Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
+
+/// <summary>
+/// 
+/// </summary>
 public interface IContentItemBase : IContentItemFieldsSource
 {
     string ContentTypeName { get; }

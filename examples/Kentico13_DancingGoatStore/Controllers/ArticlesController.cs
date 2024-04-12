@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using CMS.DocumentEngine;
+﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using DancingGoat.Controllers;
@@ -32,7 +31,7 @@ namespace DancingGoat.Controllers
         {
             var section = dataContextRetriever.Retrieve<TreeNode>().Page;
             var articles = articleRepository.GetArticles(section.NodeAliasPath);
-                
+
             return View(articles.Select(article => ArticleViewModel.GetViewModel(article, pageUrlRetriever, attachmentUrlRetriever)));
         }
 

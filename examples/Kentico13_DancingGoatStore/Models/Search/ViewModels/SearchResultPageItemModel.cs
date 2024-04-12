@@ -12,7 +12,7 @@ namespace DancingGoat.Models
 
 
         public string Url { get; set; }
-        
+
 
         public SearchResultPageItemModel(SearchResultItem resultItem, TreeNode page, IPageUrlRetriever pageUrlRetriever)
             : base(resultItem)

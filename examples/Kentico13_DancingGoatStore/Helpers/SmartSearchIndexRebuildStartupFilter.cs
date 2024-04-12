@@ -1,9 +1,4 @@
-﻿using System;
-
-using DancingGoat.Infrastructure;
-
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+﻿using DancingGoat.Infrastructure;
 
 namespace DancingGoat.Helpers
 {

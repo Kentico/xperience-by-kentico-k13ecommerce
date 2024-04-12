@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine;
+﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 using CMS.Ecommerce;
 using CMS.SiteProvider;
@@ -49,10 +46,10 @@ namespace DancingGoat.Models
 
                 return hotTipsPage?.Fields.HotTips
                     .OfType<SKUTreeNode>() ?? Enumerable.Empty<SKUTreeNode>();
-            }, $"{nameof(HotTipsRepository)}|{nameof(GetHotTipProducts)}|{parentAliasPath}", new[] 
+            }, $"{nameof(HotTipsRepository)}|{nameof(GetHotTipProducts)}|{parentAliasPath}", new[]
             {
                 CacheDependencyKeyProvider.GetDependencyCacheKeyForObjectType("cms.adhocrelationship"),
-                CacheDependencyKeyProvider.GetDependencyCacheKeyForObjectType("ecommerce.sku"), 
+                CacheDependencyKeyProvider.GetDependencyCacheKeyForObjectType("ecommerce.sku"),
                 $"node|{SiteContext.CurrentSiteName}|{parentAliasPath}"
             });
         }

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Net.Http.Headers;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Builder;
 
 namespace DancingGoat.Helpers
 {

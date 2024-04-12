@@ -1,13 +1,10 @@
-﻿using System;
-
-using CMS.Base.UploadExtensions;
+﻿using CMS.Base.UploadExtensions;
 using CMS.MediaLibrary;
 using CMS.Membership;
 using CMS.SiteProvider;
 
 using Kentico.PageBuilder.Web.Mvc;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.InlineEditors

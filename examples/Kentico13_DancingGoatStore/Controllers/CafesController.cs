@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine;
+﻿using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using DancingGoat.Controllers;
@@ -26,8 +23,8 @@ namespace DancingGoat.Controllers
         private readonly IPageAttachmentUrlRetriever attachmentUrlRetriever;
 
 
-        public CafesController(IPageDataContextRetriever dataContextRetriever, 
-            CafeRepository cafeRepository, 
+        public CafesController(IPageDataContextRetriever dataContextRetriever,
+            CafeRepository cafeRepository,
             CountryRepository countryRepository,
             IStringLocalizer<SharedResources> localizer,
             IPageAttachmentUrlRetriever attachmentUrlRetriever)
@@ -72,7 +69,7 @@ namespace DancingGoat.Controllers
                 }
                 else
                 {
-                    cityCafes.Add(city, new List<ContactViewModel> {contact});
+                    cityCafes.Add(city, new List<ContactViewModel> { contact });
                 }
             }
 

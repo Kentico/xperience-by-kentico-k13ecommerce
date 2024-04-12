@@ -1,8 +1,4 @@
-﻿using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using DancingGoat.Controllers;
 using DancingGoat.Models;
@@ -24,9 +20,9 @@ namespace DancingGoat.Controllers
         private readonly ReferenceRepository referenceRepository;
 
 
-        public AboutController(IPageDataContextRetriever dataRetriever, 
+        public AboutController(IPageDataContextRetriever dataRetriever,
             IPageAttachmentUrlRetriever pageAttachmentUrlRetriever,
-            AboutUsRepository aboutUsRepository, 
+            AboutUsRepository aboutUsRepository,
             ReferenceRepository referenceRepository)
         {
             this.dataRetriever = dataRetriever;

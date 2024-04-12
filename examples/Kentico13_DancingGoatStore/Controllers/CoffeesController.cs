@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 
 using DancingGoat;
 using DancingGoat.Controllers;
@@ -59,7 +56,7 @@ namespace DancingGoat.Controllers
             {
                 return NotFound();
             }
-               
+
             var items = GetFilteredCoffees(filter);
 
             return PartialView("CoffeeList", items);
@@ -69,7 +66,7 @@ namespace DancingGoat.Controllers
         private IEnumerable<ProductListItemViewModel> GetFilteredCoffees(IRepositoryFilter filter)
         {
             var coffees = coffeeRepository.GetCoffees(filter);
-           
+
             var items = coffees.Select(
                 coffee => new ProductListItemViewModel(
                     coffee,

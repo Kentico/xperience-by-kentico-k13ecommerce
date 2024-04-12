@@ -1,12 +1,18 @@
-﻿namespace Kentico.Xperience.StoreApi.Products.SKU;
+﻿using Kentico.Xperience.StoreApi.Products.Prices;
+
+namespace Kentico.Xperience.StoreApi.Products.SKU;
 
 /// <summary>
 /// Model for Kentico product variant
 /// </summary>
 public class KProductVariant
 {
+    public int SKUID { get; set; }
     public string SKUName { get; set; }
     public string SKUNumber { get; set; }
     public decimal SKUPrice { get; set; }
-    //@TODO calculate prices with catalog price calculator
+    public int SKUAvailableItems { get; set; }
+    public bool SKUEnabled { get; set; }
+
+    public KProductCatalogPrices Prices { get; set; }
 }

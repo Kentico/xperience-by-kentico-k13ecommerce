@@ -1,8 +1,6 @@
 ﻿using DancingGoat.Models;
 using DancingGoat.ViewComponents;
 
-using Microsoft.Extensions.DependencyInjection;
-
 namespace DancingGoat
 {
     public static class IServiceCollectionExtensions
@@ -14,7 +12,7 @@ namespace DancingGoat
         {
             AddViewComponentServices(services);
             AddRepositories(services);
-            
+
             services.AddSingleton<ICurrentWebsiteChannelPrimaryLanguageRetriever, CurrentWebsiteChannelPrimaryLanguageRetriever>();
         }
 
@@ -34,8 +32,14 @@ namespace DancingGoat
             services.AddSingleton<ContactsPageRepository>();
             services.AddSingleton<PrivacyPageRepository>();
             services.AddSingleton<LandingPageRepository>();
-        }
 
+            //K13 Store repositories
+            services.AddSingleton<StorePageRepository>();
+            services.AddSingleton<CategoryPageRepository>();
+            services.AddSingleton<ProductPageRepository>();
+            services.AddSingleton<CheckoutPageRepository>();
+            services.AddScoped<ICheckoutService, CheckoutService>();
+        }
 
         private static void AddViewComponentServices(IServiceCollection services)
         {

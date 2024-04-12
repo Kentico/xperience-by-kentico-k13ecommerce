@@ -1,20 +1,16 @@
-﻿using System;
-
-using CMS.Base;
+﻿using CMS.Base;
 using CMS.DocumentEngine;
 using CMS.Helpers;
 
 using Kentico.Content.Web.Mvc;
 using Kentico.Web.Mvc;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.AspNetCore.Routing;
 
 namespace DancingGoat.Helpers
 {
@@ -75,7 +71,7 @@ namespace DancingGoat.Helpers
             }
 
             // Clone the original route information
-            var newRouteValues = new RouteValueDictionary(originalRouteValues);            
+            var newRouteValues = new RouteValueDictionary(originalRouteValues);
 
             var queryParams = httpContext.Request.Query;
 
@@ -113,10 +109,10 @@ namespace DancingGoat.Helpers
                 routeValues.Remove("culture");
                 return htmlGenerator.GenerateRouteLink(ViewContext, LinkText, Startup.DEFAULT_WITHOUT_LANGUAGE_PREFIX_ROUTE_NAME, null, null, null, routeValues, null);
             }
-            
+
             // Ensure correct culture prefix
             routeValues["culture"] = CultureName;
-            return htmlGenerator.GenerateActionLink(ViewContext, LinkText, null, null, null, null, null, routeValues, null);            
+            return htmlGenerator.GenerateActionLink(ViewContext, LinkText, null, null, null, null, null, routeValues, null);
         }
     }
 }

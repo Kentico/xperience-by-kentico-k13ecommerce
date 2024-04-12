@@ -1,6 +1,4 @@
-﻿using System;
-
-using CMS.Base.UploadExtensions;
+﻿using CMS.Base.UploadExtensions;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
 using CMS.Membership;
@@ -8,7 +6,6 @@ using CMS.SiteProvider;
 
 using Kentico.PageBuilder.Web.Mvc;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Controllers.InlineEditors
@@ -32,13 +29,13 @@ namespace DancingGoat.Controllers.InlineEditors
             var dataContext = dataContextRetriever.Retrieve();
             if (!dataContext.EditMode)
             {
-                return StatusCode(403, new ObjectResult( "It is allowed to upload an image only when the page builder is in the edit mode."));
+                return StatusCode(403, new ObjectResult("It is allowed to upload an image only when the page builder is in the edit mode."));
             }
 
             var page = DocumentHelper.GetDocument(pageId, null);
             if (!CheckPagePermissions(page))
             {
-                return StatusCode(403, new ObjectResult( "You are not authorized to upload an image to the page."));
+                return StatusCode(403, new ObjectResult("You are not authorized to upload an image to the page."));
             }
 
             var imageGuid = Guid.Empty;

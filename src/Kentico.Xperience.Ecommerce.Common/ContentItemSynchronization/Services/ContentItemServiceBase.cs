@@ -36,6 +36,7 @@ public class ContentItemServiceBase : IContentItemService
         return itemID;
     }
 
+
     public async Task<bool> UpdateContentItem(ContentItemUpdateParams updateParams)
     {
         var contentItemManager = contentItemManagerFactory.Create(updateParams.UserID);
@@ -97,7 +98,7 @@ public class ContentItemServiceBase : IContentItemService
 
     public async Task DeleteContentItems(IEnumerable<int> contentItemIDs, string languageName, int userID)
     {
-        if (contentItemIDs == null || !contentItemIDs.Any())
+        if (!contentItemIDs.Any())
         {
             return;
         }

@@ -9,5 +9,5 @@ namespace Kentico.Xperience.StoreApi.Products.Pages;
 public interface IProductPageConverter<out TProduct>
     where TProduct : KProductNode
 {
-    TProduct Convert(SKUTreeNode skuTreeNode, IEnumerable<string> customFields, string currencyCode);
+    TProduct Convert(SKUTreeNode skuTreeNode, IEnumerable<string> customFields, string currencyCode, bool withVariants, bool withLongDescription);
 }

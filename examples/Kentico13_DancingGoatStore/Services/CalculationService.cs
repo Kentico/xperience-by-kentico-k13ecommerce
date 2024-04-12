@@ -1,7 +1,5 @@
 ﻿using CMS.Ecommerce;
 
-using System.Linq;
-
 namespace DancingGoat.Services
 {
     /// <summary>

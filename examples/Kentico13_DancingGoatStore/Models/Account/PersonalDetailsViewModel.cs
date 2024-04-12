@@ -24,7 +24,7 @@ namespace DancingGoat.Models
 
 
         public PersonalDetailsViewModel()
-        {            
+        {
         }
 
 

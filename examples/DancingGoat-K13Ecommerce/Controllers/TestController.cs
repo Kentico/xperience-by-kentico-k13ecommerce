@@ -1,22 +1,22 @@
-﻿using Kentico.Xperience.K13Ecommerce.KenticoStoreApi;
-using Kentico.Xperience.K13Ecommerce.Products;
+﻿using Kentico.Xperience.K13Ecommerce.StoreApi;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Controllers;
-
+#if DEBUG
 [Route("[controller]/[action]")]
-public class TestController : Controller
+public class TestController(IKenticoStoreApiClient storeApiClient) : Controller
 {
-    private readonly IKStoreApiService storeApiService;
-
-    public TestController(IKStoreApiService storeApiService)
-    {
-        this.storeApiService = storeApiService;
-    }
-
     public async Task<IActionResult> TestProducts()
     {
-        var products = await storeApiService.GetProductPages(new ProductPageRequest { Path = "/", Limit = 12});
+        var products = await storeApiClient.GetProductPagesAsync(path: "/", limit: 12);
         return Ok(products);
     }
+
+    public async Task<IActionResult> TestCart()
+    {
+        var cart = await storeApiClient.GetCurrentCartContentAsync();
+        return Ok(cart);
+    }
 }
+#endif

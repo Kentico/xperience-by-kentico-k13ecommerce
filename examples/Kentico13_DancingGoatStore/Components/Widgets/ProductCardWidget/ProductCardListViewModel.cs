@@ -1,8 +1,5 @@
 ﻿using CMS.Ecommerce;
 
-using System.Collections.Generic;
-using System.Linq;
-
 namespace DancingGoat.Widgets
 {
     /// <summary>

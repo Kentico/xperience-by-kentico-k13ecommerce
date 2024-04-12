@@ -22,7 +22,7 @@
     var language = currentLanguageRetriever.Get();
 
     var homePageUrl = (await webPageUrlRetriever.Retrieve(DancingGoatConstants.HOME_PAGE_PATH, websiteChannelContext.WebsiteChannelName, language)).RelativePath;
-
+    
     var routeDataLanguage = Convert.ToString(@ViewContext.RouteData.Values[WebPageRoutingOptions.LANGUAGE_ROUTE_VALUE_KEY]);
     var currentLanguage = routeDataLanguage.Equals("es", StringComparison.OrdinalIgnoreCase) ? "ES" : "EN";
 
@@ -109,6 +109,9 @@
                             </div>
                         </li>
                     }
+                    <li>
+                        <vc:shopping-cart-preview />
+                    </li>
                     <li class="nav-toggle">
                         <div class="nav-toggle-inner">
                             <span class="icon-bar"></span>
@@ -120,7 +123,7 @@
             </nav>
         </header>
         <div class="container">
-            <div class="page-container-inner">
+            <div class="@(ViewBag.HideBackground != null ? "" : "page-container-inner")">
                 @RenderBody()
 
                 <div class="clear"></div>

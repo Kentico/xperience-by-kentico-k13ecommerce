@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.Ecommerce;
+﻿using CMS.Ecommerce;
 
 
 namespace DancingGoat.Models

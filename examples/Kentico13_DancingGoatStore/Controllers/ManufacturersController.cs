@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using CMS.DocumentEngine.Types.DancingGoatCore;
+﻿using CMS.DocumentEngine.Types.DancingGoatCore;
 using CMS.Ecommerce;
 
 using DancingGoat.Controllers;
@@ -29,10 +26,10 @@ namespace DancingGoat.Controllers
 
 
         public ManufacturersController(IPageDataContextRetriever dataRetriever,
-            ManufacturerRepository manufacturerRepository, 
-            ProductRepository productRepository, 
+            ManufacturerRepository manufacturerRepository,
+            ProductRepository productRepository,
             ICalculationService calculationService,
-            PublicStatusRepository publicStatusRepository, 
+            PublicStatusRepository publicStatusRepository,
             IPageUrlRetriever pageUrlRetriever)
         {
             this.dataRetriever = dataRetriever;
@@ -77,9 +74,9 @@ namespace DancingGoat.Controllers
                     product,
                     calculationService.CalculatePrice(product.SKU),
                     publicStatusRepository.GetById(product.SKU.SKUPublicStatusID)?.PublicStatusDisplayName,
-                    pageUrlRetriever) 
+                    pageUrlRetriever)
                 {
-                    CategoryName = pageAlias 
+                    CategoryName = pageAlias
                 });
         }
     }

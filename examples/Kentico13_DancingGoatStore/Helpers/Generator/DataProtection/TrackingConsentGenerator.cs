@@ -45,7 +45,7 @@ namespace DancingGoat.Helpers.Generator
             CreateConsent();
             SetDefaultCookieLevel(mSite.SiteID);
         }
-        
+
 
         private void CreateConsent()
         {

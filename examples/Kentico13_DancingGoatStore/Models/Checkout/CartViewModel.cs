@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CMS.Ecommerce;
 
-using CMS.Ecommerce;
 using Kentico.Content.Web.Mvc;
 
 namespace DancingGoat.Models
@@ -19,7 +16,7 @@ namespace DancingGoat.Models
         public decimal GrandTotal { get; set; }
 
         public bool IsEmpty { get; set; }
-        
+
         public decimal RemainingAmountForFreeShipping { get; set; }
 
         public IEnumerable<string> AppliedCouponCodes { get; set; }
