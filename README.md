@@ -89,36 +89,21 @@ dotnet add package Kentico.Xperience.StoreApi
 ## Quick Start
 
 ### Shopify integration
-1. Fill settings to connect your Shopify instance
-```json
-{  
-  "CMSShopifyConfig": {
-    "ShopifyUrl": "https://quickstart-xxxxxxxxxx.myshopify.com/",
-    "AdminApiToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "StorefrontApiToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "StorefrontApiVersion": "YYYY-MM",
-    "CurrencyFormats": {
-      "USD": "$0.00",
-      "CZK": "0kč",
-      "...": "...."
-    }
-  }
-}
-```
-2. Add library to the application services
+1. Add library to the application services
 ```csharp
 // Program.cs
 
 // Registers Shopify services
 builder.Services.RegisterShopifyServices(builder.Configuration);
 ```
-3. Restore the continuous integration repository files to the database
+2. Restore the continuous integration repository files to the database
 ```powershell
-dotnet run --no-build --kxp-ci-restore
+dotnet run --kxp-ci-restore
 ```
-4. Copy product listing widget from Dancing Goat example project to your project. Sample widget is located in 
+3. Copy product listing widget from Dancing Goat example project to your project. Sample widget is located in 
 [here](./examples/DancingGoat-Shopify/Components/Widgets/Shopify/ProductListWidget).
-5. Start to you on your live site
+4. Start to you on your live site
+5. Configure Shopify API in XbyK administraion page. New module Shopify Integration should be created by restoring the objects data using continuous integration.
 
 ### Kentico Xperience 13 E-Commerce integration
 
