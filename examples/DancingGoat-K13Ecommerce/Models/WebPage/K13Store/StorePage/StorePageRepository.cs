@@ -22,6 +22,7 @@ public class StorePageRepository : StoreContentRepositoryBase
     private readonly ISettingsService settingsService;
     private readonly IConversionService conversionService;
 
+
     public StorePageRepository(
         IWebsiteChannelContext websiteChannelContext,
         IContentQueryExecutor executor,
@@ -47,6 +48,7 @@ public class StorePageRepository : StoreContentRepositoryBase
         this.contentQueryExecutor = contentQueryExecutor;
     }
 
+
     /// <summary>
     /// Returns <see cref="StorePage"/> content item.
     /// </summary>
@@ -63,6 +65,7 @@ public class StorePageRepository : StoreContentRepositoryBase
 
         return result.FirstOrDefault();
     }
+
 
     public async IAsyncEnumerable<CategoryPage> GetCategories(StorePage store, string languageName, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
@@ -128,6 +131,7 @@ public class StorePageRepository : StoreContentRepositoryBase
         return result;
     }
 
+
     public async Task<IEnumerable<ProductPage>> GetHottips(StorePage category, string languageName, CancellationToken cancellationToken = default)
     {
         var queryBuilder = GetProductsQueryBuilder(category.HotTipProducts.Select(x => x.WebPageGuid).ToArray(), languageName);
@@ -135,6 +139,7 @@ public class StorePageRepository : StoreContentRepositoryBase
         var cacheSettings = new CacheSettings(CacheMinutes, WebsiteChannelContext.WebsiteChannelName, nameof(ProductPage), languageName, category.SystemFields.WebPageItemID);
         return await GetCachedQueryResult<ProductPage>(queryBuilder, null, cacheSettings, (pages, token) => GetDependencyCacheKeys(pages, 1, cancellationToken), cancellationToken);
     }
+
 
     private ContentItemQueryBuilder GetProductsQueryBuilder(ICollection<Guid> webPageItemGUIDs, string languageName)
     {

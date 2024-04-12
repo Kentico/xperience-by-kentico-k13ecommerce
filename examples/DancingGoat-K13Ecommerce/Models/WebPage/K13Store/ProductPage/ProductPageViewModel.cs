@@ -32,11 +32,15 @@ public class ProductPageViewModel
 
     public int SKUID { get; init; }
 
+
     public string ImagePath { get; init; }
+
 
     public Dictionary<string, object> ParametersSection { get; init; }
 
+
     public IEnumerable<ProductVariant> Variants { get; init; }
+
 
     public static ProductPageViewModel GetViewModel(ProductSKU productSku, ProductPricesResponse pricesResponse)
     {
@@ -70,6 +74,7 @@ public class ProductPageViewModel
 
         return model;
     }
+
 
     private static ProductVariant GetCheapestVariant(ProductSKU productSku, ProductPricesResponse pricesResponse)
     {

@@ -13,6 +13,7 @@ public interface ICheckoutService
     /// </summary>
     Task<CartContentViewModel> PrepareCartViewModel();
 
+
     /// <summary>
     /// Creates view model for checkout delivery step.
     /// </summary>
@@ -23,6 +24,7 @@ public interface ICheckoutService
     Task<DeliveryDetailsViewModel> PrepareDeliveryDetailsViewModel(CustomerViewModel customer = null,
         BillingAddressViewModel billingAddress = null, ShippingOptionViewModel shippingOption = null,
         KShoppingCartDetails cartDetails = null);
+
 
     /// <summary>
     /// Checks if country exists.
@@ -40,6 +42,7 @@ public interface ICheckoutService
     /// <returns>True if state is not required or state belongs to the country.</returns>
     Task<bool> IsStateValid(int countryId, int? stateId);
 
+
     /// <summary>
     /// Gets the address with the specified identifier.
     /// </summary>
@@ -47,8 +50,10 @@ public interface ICheckoutService
     /// <param name="addressId"></param>
     Task<KAddress> GetAddress(int customerId, int addressId);
 
+
     Task<string> GetNextOrPreviousStepUrl<TCurrentStep>(Func<TCurrentStep, Guid> nextOrPreviousStepFunc)
         where TCurrentStep : IWebPageFieldsSource, new();
+
 
     /// <summary>
     /// Creates view model for checkout preview step.

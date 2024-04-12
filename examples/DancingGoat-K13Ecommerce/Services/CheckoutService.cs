@@ -24,6 +24,7 @@ public class CheckoutService : ICheckoutService
     private readonly CheckoutPageRepository checkoutPageRepository;
     private readonly IPreferredLanguageRetriever preferredLanguageRetriever;
 
+
     public CheckoutService(IShoppingService shoppingService,
         ICountryService countryService,
         ICustomerService customerService,
@@ -42,11 +43,13 @@ public class CheckoutService : ICheckoutService
         this.preferredLanguageRetriever = preferredLanguageRetriever;
     }
 
+
     public async Task<CartContentViewModel> PrepareCartViewModel()
     {
         var cart = await shoppingService.GetCurrentShoppingCartContent();
         return new CartContentViewModel(cart, await checkoutPageRepository.GetProductImages(cart, preferredLanguageRetriever.Get()));
     }
+
 
     public async Task<DeliveryDetailsViewModel> PrepareDeliveryDetailsViewModel(CustomerViewModel customer = null,
         BillingAddressViewModel billingAddress = null, ShippingOptionViewModel shippingOption = null,
@@ -59,7 +62,7 @@ public class CheckoutService : ICheckoutService
         var shippingOptions =
             CreateShippingOptionList(cartDetails.AvailableShippingOptions, currency.CurrencyFormatString);
 
-        customer = customer ?? new CustomerViewModel(cartDetails.Customer);
+        customer ??= new CustomerViewModel(cartDetails.Customer);
 
         var addresses = (cartDetails.Customer != null)
             ? await customerService.GetCustomerAddresses(cartDetails.Customer.CustomerId)
@@ -97,7 +100,9 @@ public class CheckoutService : ICheckoutService
         return viewModel;
     }
 
+
     public async Task<bool> IsCountryValid(int countryId) => await countryService.GetCountry(countryId) != null;
+
 
     public async Task<bool> IsStateValid(int countryId, int? stateId)
     {
@@ -106,10 +111,12 @@ public class CheckoutService : ICheckoutService
         return (states.Count < 1) || states.Exists(s => s.StateID == stateId);
     }
 
+
     public async Task<KAddress> GetAddress(int customerId, int addressId) =>
         customerId > 0 && addressId > 0
             ? (await customerService.GetCustomerAddresses(customerId)).FirstOrDefault(a => a.AddressId == addressId)
             : null;
+
 
     public async Task<string> GetNextOrPreviousStepUrl<TCurrentStep>(Func<TCurrentStep, Guid> nextOrPreviousStepFunc)
         where TCurrentStep : IWebPageFieldsSource, new()

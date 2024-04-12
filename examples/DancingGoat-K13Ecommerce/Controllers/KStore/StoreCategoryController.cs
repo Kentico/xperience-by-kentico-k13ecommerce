@@ -23,6 +23,7 @@ public class StoreCategoryController : Controller
     private readonly IWebPageUrlRetriever urlRetriever;
     private readonly IProductService productService;
 
+
     public StoreCategoryController(CategoryPageRepository categoryPageRepository,
         IWebPageDataContextRetriever webPageDataContextRetriever,
         IWebPageUrlRetriever urlRetriever,
@@ -33,6 +34,7 @@ public class StoreCategoryController : Controller
         this.urlRetriever = urlRetriever;
         this.productService = productService;
     }
+
 
     // GET
     public async Task<IActionResult> Index()

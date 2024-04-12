@@ -24,6 +24,7 @@ public class StoreController : Controller
     private readonly IWebPageUrlRetriever urlRetriever;
     private readonly IProductService productService;
 
+
     public StoreController(StorePageRepository storePageRepository,
         IWebPageDataContextRetriever webPageDataContextRetriever,
         IWebPageUrlRetriever urlRetriever, IProductService productService)
@@ -33,6 +34,7 @@ public class StoreController : Controller
         this.urlRetriever = urlRetriever;
         this.productService = productService;
     }
+
 
     public async Task<IActionResult> Index()
     {
@@ -53,6 +55,7 @@ public class StoreController : Controller
         return View(StorePageViewModel.GetViewModel(storePage, categories, bestsellers, hotTips));
     }
 
+
     private async Task<IEnumerable<ProductListItemViewModel>> MapProductsToListViewModel(IEnumerable<ProductPage> products, ILookup<int, ProductPricesResponse> prices)
     {
         var productModels = new List<ProductListItemViewModel>();
@@ -72,6 +75,7 @@ public class StoreController : Controller
         return productModels;
     }
 
+
     private async Task<IEnumerable<ProductListItemViewModel>> GetBestsellers(RoutedWebPage webPage)
     {
 
@@ -83,6 +87,7 @@ public class StoreController : Controller
         return await MapProductsToListViewModel(products, prices);
     }
 
+
     private async Task<IEnumerable<ProductListItemViewModel>> GetHottips(StorePage storePage, RoutedWebPage webPage)
     {
         var products = await storePageRepository.GetHottips(storePage, webPage.LanguageName);
@@ -92,5 +97,4 @@ public class StoreController : Controller
 
         return await MapProductsToListViewModel(products, prices);
     }
-
 }

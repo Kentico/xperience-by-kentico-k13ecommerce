@@ -11,17 +11,24 @@ namespace DancingGoat.Models
 
         public decimal TotalTax { get; set; }
 
+
         public decimal TotalShipping { get; set; }
+
 
         public decimal GrandTotal { get; set; }
 
+
         public bool IsEmpty { get; set; }
+
 
         public decimal RemainingAmountForFreeShipping { get; set; }
 
+
         public IEnumerable<string> AppliedCouponCodes { get; set; }
 
+
         public IEnumerable<CartItemViewModel> CartItems { get; set; }
+
 
         public CartContentViewModel(KShoppingCartContent cart, ILookup<int, ContentItemAsset> productsImages)
         {
@@ -48,9 +55,7 @@ namespace DancingGoat.Models
             });
         }
 
-        public string FormatPrice(decimal price)
-        {
-            return string.Format(currencyFormatString, price);
-        }
+
+        public string FormatPrice(decimal price) => string.Format(currencyFormatString, price);
     }
 }

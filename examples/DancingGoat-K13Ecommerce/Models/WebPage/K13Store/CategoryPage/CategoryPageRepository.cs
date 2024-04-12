@@ -16,6 +16,7 @@ public class CategoryPageRepository : StoreContentRepositoryBase
     {
     }
 
+
     /// <summary>
     /// Returns <see cref="CategoryPage"/> content item.
     /// </summary>
@@ -29,6 +30,7 @@ public class CategoryPageRepository : StoreContentRepositoryBase
         return result.FirstOrDefault();
     }
 
+
     public async Task<IEnumerable<ProductPage>> GetCategoryProducts(CategoryPage category, string languageName, CancellationToken cancellationToken = default)
     {
         var queryBuilder = GetProductsQueryBuilder(category.CategoryProducts.Select(x => x.WebPageGuid).ToArray(), languageName);
@@ -36,6 +38,7 @@ public class CategoryPageRepository : StoreContentRepositoryBase
         var cacheSettings = new CacheSettings(CacheMinutes, WebsiteChannelContext.WebsiteChannelName, nameof(ProductPage), languageName, category.SystemFields.WebPageItemID);
         return await GetCachedQueryResult<ProductPage>(queryBuilder, null, cacheSettings, (pages, token) => GetDependencyCacheKeys(pages, 1, cancellationToken), cancellationToken);
     }
+
 
     private ContentItemQueryBuilder GetProductsQueryBuilder(ICollection<Guid> webPageItemGUIDs, string languageName)
     {

@@ -41,6 +41,7 @@ namespace DancingGoat
             services.AddScoped<ICheckoutService, CheckoutService>();
         }
 
+
         private static void AddViewComponentServices(IServiceCollection services)
         {
             services.AddSingleton<NavigationService>();

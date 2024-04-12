@@ -17,6 +17,7 @@ public class CheckoutPageRepository : StoreContentRepositoryBase
     private readonly IWebPageQueryResultMapper pageMapper;
     private readonly IContentQueryResultMapper contentMapper;
 
+
     public CheckoutPageRepository(
         IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor, IWebPageQueryResultMapper pageMapper, IContentQueryResultMapper contentMapper,
         IProgressiveCache cache, IWebPageLinkedItemsDependencyAsyncRetriever webPageLinkedItemsDependencyRetriever,
@@ -28,6 +29,7 @@ public class CheckoutPageRepository : StoreContentRepositoryBase
         this.pageMapper = pageMapper;
         this.contentMapper = contentMapper;
     }
+
 
     public async Task<TPage> GetCartStepPage<TPage>(int webPageItemId, string languageName, string contentTypeName,
         CancellationToken cancellationToken = default)
@@ -43,6 +45,7 @@ public class CheckoutPageRepository : StoreContentRepositoryBase
         return result.FirstOrDefault();
     }
 
+
     public async Task<CartContent> GetCartContentPage(string languageName, CancellationToken cancellationToken = default)
     {
         var pageQueryBuilder = new ContentItemQueryBuilder()
@@ -57,6 +60,7 @@ public class CheckoutPageRepository : StoreContentRepositoryBase
 
         return result.FirstOrDefault();
     }
+
 
     public async Task<ProductPage> GetProductPageBySKUID(int skuId, string languageName)
     {
@@ -85,6 +89,7 @@ public class CheckoutPageRepository : StoreContentRepositoryBase
         return productDetailPage;
     }
 
+
     private async Task<IEnumerable<ProductSKU>> GetProductsByQuery(Action<ContentTypeQueryParameters> query, string languageName)
     {
         var builder = new ContentItemQueryBuilder()
@@ -93,6 +98,7 @@ public class CheckoutPageRepository : StoreContentRepositoryBase
 
         return await executor.GetResult(builder, c => contentMapper.Map<ProductSKU>(c));
     }
+
 
     public async Task<ILookup<int, ContentItemAsset>> GetProductImages(KShoppingCartContent cart, string languageName) =>
         (await GetProductsByQuery(q =>

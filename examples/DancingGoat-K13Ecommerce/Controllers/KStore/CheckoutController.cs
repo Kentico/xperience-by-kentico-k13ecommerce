@@ -48,6 +48,7 @@ public class CheckoutController : Controller
     private readonly IWebPageUrlRetriever webPageUrlRetriever;
     private readonly IShoppingService shoppingService;
 
+
     public CheckoutController(
         ICheckoutService checkoutService,
         IWebPageUrlRetriever webPageUrlRetriever,
@@ -64,6 +65,7 @@ public class CheckoutController : Controller
         this.shoppingService = shoppingService;
     }
 
+
     [HttpGet]
     public async Task<IActionResult> CartContent()
     {
@@ -72,6 +74,7 @@ public class CheckoutController : Controller
         ViewBag.HideBackground = true;
         return View(model);
     }
+
 
     [HttpPost("cart-content-checkout")]
     [ValidateAntiForgeryToken]
@@ -82,6 +85,7 @@ public class CheckoutController : Controller
         return Redirect(deliveryDetailsPageUrl);
     }
 
+
     [HttpPost("add-item")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> AddItem([FromForm] int skuId, [FromForm] int units)
@@ -89,6 +93,7 @@ public class CheckoutController : Controller
         await shoppingService.AddItemToCart(skuId, units);
         return await RedirectToCartContentPage();
     }
+
 
     [HttpPost("update-item")]
     [ValidateAntiForgeryToken]
@@ -100,6 +105,7 @@ public class CheckoutController : Controller
         return await RedirectToCartContentPage();
     }
 
+
     [HttpPost("remove-item")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> RemoveItem([FromForm] int cartItemId)
@@ -107,6 +113,7 @@ public class CheckoutController : Controller
         await shoppingService.RemoveItemFromCart(cartItemId);
         return await RedirectToCartContentPage();
     }
+
 
     [HttpGet("item-detail")]
     public async Task<IActionResult> ItemDetail(int skuId)
@@ -120,6 +127,7 @@ public class CheckoutController : Controller
         return Redirect((await webPageUrlRetriever.Retrieve(productPage)).RelativePath);
     }
 
+
     [HttpPost("add-coupon-code")]
     public async Task<IActionResult> AddCouponCode([FromForm][Required] string couponCode)
     {
@@ -127,12 +135,14 @@ public class CheckoutController : Controller
         return await RedirectToCartContentPage();
     }
 
+
     [HttpPost("remove-coupon-code")]
     public async Task<IActionResult> RemoveCouponCode([FromForm][Required] string couponCode)
     {
         await shoppingService.RemoveCouponCode(couponCode);
         return await RedirectToCartContentPage();
     }
+
 
     [HttpGet]
     public async Task<IActionResult> CartDeliveryDetails()
@@ -146,6 +156,7 @@ public class CheckoutController : Controller
         var model = await checkoutService.PrepareDeliveryDetailsViewModel();
         return View(model);
     }
+
 
     [HttpPost("cart-delivery-details")]
     [ValidateAntiForgeryToken]
@@ -218,6 +229,7 @@ public class CheckoutController : Controller
         return Redirect(summaryStepUrl);
     }
 
+
     [HttpPost("customer-address")]
     public async Task<JsonResult> CustomerAddress(int addressID)
     {
@@ -243,6 +255,7 @@ public class CheckoutController : Controller
         return Json(responseModel);
     }
 
+
     [HttpPost("country-states")]
     public async Task<JsonResult> CountryStates([FromForm] int countryId)
     {
@@ -251,6 +264,7 @@ public class CheckoutController : Controller
 
         return Json(responseModel);
     }
+
 
     [HttpGet]
     public async Task<IActionResult> CartSummary()
@@ -264,6 +278,7 @@ public class CheckoutController : Controller
         var viewModel = await checkoutService.PreparePreviewViewModel();
         return View(viewModel);
     }
+
 
     [HttpPost("finish-order")]
     [ValidateAntiForgeryToken]
@@ -315,6 +330,7 @@ public class CheckoutController : Controller
         return Redirect(orderCompletedUrl);
     }
 
+
     public async Task<ActionResult> ThankYou([FromServices] ContactRepository contactRepository, [FromServices] IPreferredLanguageRetriever currentLanguageRetriever)
     {
         string language = currentLanguageRetriever.Get();
@@ -327,6 +343,7 @@ public class CheckoutController : Controller
 
         return View(viewModel);
     }
+
 
     private async Task<RedirectResult> RedirectToCartContentPage()
     {

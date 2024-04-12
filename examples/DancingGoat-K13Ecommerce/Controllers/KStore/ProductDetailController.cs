@@ -20,6 +20,7 @@ public class ProductDetailController : Controller
     private readonly IWebPageDataContextRetriever webPageDataContextRetriever;
     private readonly IProductService productService;
 
+
     public ProductDetailController(ProductPageRepository productPageRepository,
         IWebPageDataContextRetriever webPageDataContextRetriever,
         IProductService productService)
@@ -28,6 +29,7 @@ public class ProductDetailController : Controller
         this.webPageDataContextRetriever = webPageDataContextRetriever;
         this.productService = productService;
     }
+
 
     [HttpGet]
     public async Task<IActionResult> Index()

@@ -13,10 +13,12 @@ public class ProductApiController : Controller
 {
     private readonly IProductService productService;
 
+
     public ProductApiController(IProductService productService)
     {
         this.productService = productService;
     }
+
 
     [HttpGet("inventory-price-info")]
     public async Task<VariantInventoryPriceInfo> GetVariantInfo([FromQuery] int variantSkuId, [FromServices] IStringLocalizer<SharedResources> localizer)
