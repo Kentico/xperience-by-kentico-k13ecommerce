@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.contenttype>
   <ClassContentTypeType>Website</ClassContentTypeType>
-  <ClassDisplayName>Shopify cart delivery</ClassDisplayName>
+  <ClassDisplayName>Shopify cart shipping options</ClassDisplayName>
   <ClassFormDefinition>
     <form>
-      <field column="ContentItemDataID" columntype="integer" enabled="true" guid="ef19132b-128b-4b27-a8a1-8eec2084489e" isPK="true" />
-      <field column="ContentItemDataCommonDataID" columntype="integer" enabled="true" guid="05b3001e-ae99-4605-a39a-afef124dd1b7" refobjtype="cms.contentitemcommondata" reftype="Required" system="true" />
-      <field column="ContentItemDataGUID" columntype="guid" enabled="true" guid="0cb7803d-c3ac-4009-9dd3-d115262d0af5" isunique="true" system="true" />
-      <field column="CartNextStep" columnprecision="0" columntype="webpages" enabled="true" guid="72c5ce5b-8adf-4f01-aa05-8269c9c64eb8" visible="true">
+      <field column="ContentItemDataID" columntype="integer" enabled="true" guid="e09e29c0-afc6-409b-9737-6ffc0ed8d238" isPK="true" />
+      <field column="ContentItemDataCommonDataID" columntype="integer" enabled="true" guid="f76d0806-54a0-474d-aade-465b8c29b7ee" refobjtype="cms.contentitemcommondata" reftype="Required" system="true" />
+      <field column="ContentItemDataGUID" columntype="guid" enabled="true" guid="8f959872-02b7-4364-be13-ffc3b48f4f45" isunique="true" system="true" />
+      <field column="CartNextStep" columnprecision="0" columntype="webpages" enabled="true" guid="381e5448-8c57-48fb-a5fe-fa82fc471f73" visible="true">
         <properties>
           <explanationtextashtml>False</explanationtextashtml>
           <fieldcaption>Next step</fieldcaption>
@@ -19,7 +19,7 @@
           <Sortable>False</Sortable>
         </settings>
       </field>
-      <field column="CartPreviousStep" columnprecision="0" columntype="webpages" enabled="true" guid="ef32d31b-ed9f-4af2-8674-0f687932f22b" visible="true">
+      <field column="CartPreviousStep" columnprecision="0" columntype="webpages" enabled="true" guid="d638e934-19d4-4e54-a28e-1945f977bf81" visible="true">
         <properties>
           <explanationtextashtml>False</explanationtextashtml>
           <fieldcaption>Previous step</fieldcaption>
@@ -33,11 +33,11 @@
       </field>
     </form>
   </ClassFormDefinition>
-  <ClassGUID>864bed3b-5157-40a4-8ccf-82a6970c3cb2</ClassGUID>
+  <ClassGUID>c7275f94-ea2d-4bb2-ac10-3241cf3b0bf3</ClassGUID>
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
-  <ClassIconClass>xp-l-forms-2</ClassIconClass>
-  <ClassName>Shopify.CartDelivery</ClassName>
-  <ClassTableName>Shopify_CartDelivery</ClassTableName>
+  <ClassIconClass>xp-truck</ClassIconClass>
+  <ClassName>Shopify.CartShippingOptions</ClassName>
+  <ClassTableName>Shopify_CartShippingOptions</ClassTableName>
   <ClassType>Content</ClassType>
   <ClassWebPageHasUrl>True</ClassWebPageHasUrl>
 </cms.contenttype>
