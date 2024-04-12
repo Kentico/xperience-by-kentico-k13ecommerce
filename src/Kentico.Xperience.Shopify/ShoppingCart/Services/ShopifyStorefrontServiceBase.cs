@@ -15,6 +15,12 @@ namespace Kentico.Xperience.Shopify.ShoppingCart.Services
 
         protected async Task<GraphQLResponse<TResponse>> PostQueryAsync<TResponse>(string query, object? variables)
         {
+            // No Shopify store URL was set yet
+            if (httpClient.BaseAddress is null)
+            {
+                return new GraphQLResponse<TResponse>();
+            }
+
             var client = GetClient();
             var request = new GraphQLRequest()
             {
@@ -27,6 +33,12 @@ namespace Kentico.Xperience.Shopify.ShoppingCart.Services
 
         protected async Task<GraphQLResponse<TResponse>> PostMutationAsync<TResponse>(string query, object? variables)
         {
+            // No Shopify store URL was set yet
+            if (httpClient.BaseAddress is null)
+            {
+                return new GraphQLResponse<TResponse>();
+            }
+
             var client = GetClient();
             var request = new GraphQLRequest()
             {

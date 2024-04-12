@@ -4,7 +4,6 @@ using Kentico.Xperience.Shopify.Services;
 using Kentico.Xperience.Shopify.Services.InventoryService;
 using Kentico.Xperience.Shopify.Services.ProductService;
 using Kentico.Xperience.Shopify.ShoppingCart;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ShopifySharp.Extensions.DependencyInjection;
 
@@ -31,18 +30,24 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IShopifyCurrencyFormatService, ShopifyCurrencyFormatService>();
 
         // Add Storefront API HTTP client
-        services.AddHttpClient(ShopifyConstants.STOREFRONT_API_CLIENT_NAME, (sp, httpClient) =>
-        {
-            var scope = sp.CreateScope();
-            var settings = scope.ServiceProvider.GetRequiredService<IShopifyIntegrationSettingsService>().GetSettings()
-                ?? throw new InvalidOperationException("Shopify integration settings were not found");
+        services.AddHttpClient(ShopifyConstants.STOREFRONT_API_CLIENT_NAME, SetupHttpClient);
+    }
 
-            var uriBuilder = new UriBuilder(settings.ShopifyUrl)
-            {
-                Path = $"api/{settings.StorefrontApiVersion}/graphql.json"
-            };
-            httpClient.BaseAddress = uriBuilder.Uri;
-            httpClient.DefaultRequestHeaders.Add(ShopifyConstants.STOREFRONT_API_HEADER_TOKEN_NAME, settings.StorefrontApiKey);
-        });
+    private static void SetupHttpClient(IServiceProvider sp, HttpClient httpClient)
+    {
+        var scope = sp.CreateScope();
+        var settings = scope.ServiceProvider.GetRequiredService<IShopifyIntegrationSettingsService>().GetSettings();
+
+        if (settings == null || !Uri.TryCreate(settings.ShopifyUrl, UriKind.Absolute, out var uri))
+        {
+            return;
+        }
+
+        var uriBuilder = new UriBuilder(uri!)
+        {
+            Path = $"api/{settings.StorefrontApiVersion}/graphql.json"
+        };
+        httpClient.BaseAddress = uriBuilder.Uri;
+        httpClient.DefaultRequestHeaders.Add(ShopifyConstants.STOREFRONT_API_HEADER_TOKEN_NAME, settings.StorefrontApiKey);
     }
 }

@@ -2,6 +2,7 @@
 using CMS.Base;
 using CMS.Core;
 using CMS.Membership;
+using Kentico.Xperience.Shopify.Config;
 using Kentico.Xperience.Shopify.ReusableContentTypes;
 using Kentico.Xperience.Shopify.Services.ProductService;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +44,20 @@ internal class ShopifyProductSynchronizationWorker : ThreadWorker<ShopifyProduct
     {
         using var serviceScope = Service.Resolve<IServiceProvider>().CreateScope();
         var provider = serviceScope.ServiceProvider;
+
+        var integrationSettings = provider.GetRequiredService<IShopifyIntegrationSettingsService>().GetSettings();
+        if (integrationSettings == null)
+        {
+            logger.LogError("Cannot start products synchronization. No Shopify integration settings provided.");
+            return;
+        }
+
+        if (!Uri.TryCreate(integrationSettings.ShopifyUrl, UriKind.Absolute, out var _))
+        {
+            logger.LogError("Cannot start products synchronization. Shopify store URL '{ShopifyUrl}' has incorrect format", integrationSettings.ShopifyUrl);
+            return;
+        }
+
         var productService = provider.GetRequiredService<IShopifyProductService>();
         var contentItemService = provider.GetRequiredService<IShopifyContentItemService>();
         var imageUploaderService = provider.GetRequiredService<IImageSynchronizationService>();
