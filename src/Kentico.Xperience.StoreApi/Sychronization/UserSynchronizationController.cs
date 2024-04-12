@@ -14,12 +14,18 @@ public class UserSynchronizationController : ControllerBase
 {
     private readonly ApplicationUserManager<ApplicationUser> userManager;
 
+
     public UserSynchronizationController(ApplicationUserManager<ApplicationUser> userManager)
     {
         this.userManager = userManager;
     }
 
 
+    /// <summary>
+    /// Creates new user
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns></returns>
     [HttpPost("user-synchronization")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -40,7 +46,7 @@ public class UserSynchronizationController : ControllerBase
             Enabled = true
         };
 
-        var registerResult = new IdentityResult();
+        IdentityResult registerResult;
 
         try
         {
@@ -50,7 +56,6 @@ public class UserSynchronizationController : ControllerBase
         {
             ModelState.AddModelError(string.Empty, e.Message);
             return ValidationProblem();
-
         }
 
         if (registerResult.Succeeded)
@@ -64,6 +69,5 @@ public class UserSynchronizationController : ControllerBase
         }
 
         return ValidationProblem();
-
     }
 }

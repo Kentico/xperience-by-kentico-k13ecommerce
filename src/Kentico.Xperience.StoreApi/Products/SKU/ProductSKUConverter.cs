@@ -19,6 +19,7 @@ public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
     private readonly ISiteService siteService;
     private readonly IMapper mapper;
 
+
     public ProductSKUConverter(ICatalogPriceCalculatorFactory catalogPriceCalculatorFactory, ISiteService siteService)
     {
         this.catalogPriceCalculatorFactory = catalogPriceCalculatorFactory;
@@ -33,6 +34,7 @@ public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
             })
             .CreateMapper();
     }
+
 
     public virtual TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants)
     {

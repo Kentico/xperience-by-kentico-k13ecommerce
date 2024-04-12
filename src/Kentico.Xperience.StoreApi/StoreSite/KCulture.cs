@@ -6,5 +6,6 @@
 public class KCulture
 {
     public string CultureName { get; set; }
+
     public string CultureCode { get; set; }
 }

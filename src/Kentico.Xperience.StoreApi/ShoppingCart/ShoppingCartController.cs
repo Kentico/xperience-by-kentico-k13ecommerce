@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kentico.Xperience.StoreApi.ShoppingCart;
+
 #pragma warning disable IDE0060 // Remove unused parameter
 [ApiController]
 [AuthorizeStore]
@@ -31,6 +32,7 @@ public class ShoppingCartController : ControllerBase
     private readonly IShippingOptionInfoProvider shippingOptionInfoProvider;
     private readonly IPaymentOptionInfoProvider paymentOptionInfoProvider;
 
+
     public ShoppingCartController(IShoppingService shoppingService, IMapper mapper, ISiteService siteService,
         IShippingOptionInfoProvider shippingOptionInfoProvider, IPaymentOptionInfoProvider paymentOptionInfoProvider)
     {
@@ -41,6 +43,11 @@ public class ShoppingCartController : ControllerBase
         this.paymentOptionInfoProvider = paymentOptionInfoProvider;
     }
 
+    /// <summary>
+    /// Returns current cart content for cart preview or cart content step
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <returns></returns>
     [HttpGet("content", Name = nameof(GetCurrentCartContent))]
     public ActionResult<KShoppingCartContent> GetCurrentCartContent(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -50,6 +57,11 @@ public class ShoppingCartController : ControllerBase
         return mapper.Map<KShoppingCartContent>(cart);
     }
 
+    /// <summary>
+    /// Returns current cart details for cart delivery details step
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <returns></returns>
     [HttpGet("details", Name = nameof(GetCurrentCartDetails))]
     public ActionResult<KShoppingCartDetails> GetCurrentCartDetails(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -60,6 +72,12 @@ public class ShoppingCartController : ControllerBase
         return Ok(cartDetails);
     }
 
+
+    /// <summary>
+    /// Returns current customer assigned to current cart
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <returns></returns>
     [HttpGet("customer", Name = nameof(GetCurrentCustomer))]
     public ActionResult<ShoppingCartResponse<KCustomer>> GetCurrentCustomer(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -74,6 +92,14 @@ public class ShoppingCartController : ControllerBase
         });
     }
 
+
+    /// <summary>
+    /// Adds item to cart
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="skuId"></param>
+    /// <param name="quantity"></param>
+    /// <returns></returns>
     [HttpPost("add-item", Name = nameof(AddItemToCart))]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartResponse<KShoppingCartItem>> AddItemToCart(
@@ -95,6 +121,14 @@ public class ShoppingCartController : ControllerBase
             });
         });
 
+
+    /// <summary>
+    /// Updates cart item quantity
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="itemId"></param>
+    /// <param name="quantity"></param>
+    /// <returns></returns>
     [HttpPut("update-item", Name = nameof(UpdateItemQuantity))]
     public ActionResult<ShoppingCartBaseResponse> UpdateItemQuantity(
         [Required] [FromHeader(Name = "ShoppingCartGUID")]
@@ -105,6 +139,13 @@ public class ShoppingCartController : ControllerBase
         return Ok(GetBaseResponse());
     }
 
+
+    /// <summary>
+    /// Removes item from cart
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="itemId"></param>
+    /// <returns></returns>
     [HttpDelete("remove-item", Name = nameof(RemoveItemFromCart))]
     public ActionResult<ShoppingCartBaseResponse> RemoveItemFromCart(
         [Required] [FromHeader(Name = "ShoppingCartGUID")]
@@ -115,6 +156,13 @@ public class ShoppingCartController : ControllerBase
         return Ok(GetBaseResponse());
     }
 
+
+    /// <summary>
+    /// Adds coupon code to cart
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="couponCode"></param>
+    /// <returns></returns>
     [HttpPost("add-coupon-code")]
     public ActionResult<ShoppingCartResponse<bool>> AddCouponCode(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -125,6 +173,13 @@ public class ShoppingCartController : ControllerBase
         return new ShoppingCartResponse<bool> { ShoppingCartGuid = cart.ShoppingCartGUID, Value = success };
     }
 
+
+    /// <summary>
+    /// Removes coupon code from cart
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="couponCode"></param>
+    /// <returns></returns>
     [HttpDelete("remove-coupon-code")]
     public ActionResult<ShoppingCartBaseResponse> RemoveCouponCode(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -134,6 +189,13 @@ public class ShoppingCartController : ControllerBase
         return Ok(GetBaseResponse());
     }
 
+
+    /// <summary>
+    /// Set shipping option
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="shippingOptionId"></param>
+    /// <returns></returns>
     [HttpPut("set-shipping-option")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetShippingOption(
@@ -145,6 +207,13 @@ public class ShoppingCartController : ControllerBase
             return Ok(GetBaseResponse());
         });
 
+
+    /// <summary>
+    /// Set payment option
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="paymentOptionId"></param>
+    /// <returns></returns>
     [HttpPut("set-payment-option")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetPaymentOption(
@@ -156,6 +225,14 @@ public class ShoppingCartController : ControllerBase
             return Ok(GetBaseResponse());
         });
 
+
+    /// <summary>
+    /// Set shipping and payment
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="shippingOptionId"></param>
+    /// <param name="paymentOptionId"></param>
+    /// <returns></returns>
     [HttpPut("set-shipping-and-payment")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetShippingAndPayment(
@@ -168,6 +245,13 @@ public class ShoppingCartController : ControllerBase
             return Ok(GetBaseResponse());
         });
 
+
+    /// <summary>
+    /// Set customer to cart
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="customer"></param>
+    /// <returns></returns>
     [HttpPut("set-customer")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetCustomer(
@@ -183,6 +267,13 @@ public class ShoppingCartController : ControllerBase
         });
     }
 
+
+    /// <summary>
+    /// Set billing address
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="billingAddress"></param>
+    /// <returns></returns>
     [HttpPut("set-billing-address")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetBillingAddress(
@@ -198,6 +289,13 @@ public class ShoppingCartController : ControllerBase
         });
     }
 
+
+    /// <summary>
+    /// Set shipping address
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="shippingAddress"></param>
+    /// <returns></returns>
     [HttpPut("set-shipping-address")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetShippingAddress(
@@ -213,6 +311,13 @@ public class ShoppingCartController : ControllerBase
         });
     }
 
+
+    /// <summary>
+    /// Set all delivery details (customer, addreses, shipping and payment)
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="deliveryDetails"></param>
+    /// <returns></returns>
     [HttpPut("set-delivery-details")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetDeliveryDetails(
@@ -252,6 +357,12 @@ public class ShoppingCartController : ControllerBase
         });
     }
 
+
+    /// <summary>
+    /// Returns all shopping cart data (content and details)
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <returns></returns>
     [HttpGet("summary", Name = nameof(GetCurrentCartSummary))]
     public ActionResult<KShoppingCartSummary> GetCurrentCartSummary(
         [FromHeader(Name = "ShoppingCartGUID")] [Required]
@@ -265,6 +376,13 @@ public class ShoppingCartController : ControllerBase
         });
     }
 
+
+    /// <summary>
+    /// Creates order from shopping cart
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <param name="note"></param>
+    /// <returns></returns>
     [HttpPost("create-order")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<KOrder> CreateOrder([FromHeader(Name = "ShoppingCartGUID")][Required] Guid shoppingCartGuid,
@@ -277,11 +395,13 @@ public class ShoppingCartController : ControllerBase
             return Ok(mapper.Map<KOrder>(orderInfo));
         });
 
+
     private ShoppingCartBaseResponse GetBaseResponse()
     {
         var cart = shoppingService.GetCurrentShoppingCart();
         return new ShoppingCartBaseResponse { ShoppingCartGuid = cart.ShoppingCartGUID };
     }
+
 
     private KShoppingCartDetails GetCartDetails(ShoppingCartInfo cart)
     {
@@ -301,6 +421,7 @@ public class ShoppingCartController : ControllerBase
                 .Where(p => PaymentOptionInfoProvider.IsPaymentOptionApplicable(cart, p)));
         return cartDetails;
     }
+
 
     private ActionResult<T> TryCatch<T>(Func<ActionResult<T>> func)
     {

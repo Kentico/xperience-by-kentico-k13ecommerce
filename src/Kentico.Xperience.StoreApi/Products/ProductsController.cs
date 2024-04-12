@@ -39,6 +39,7 @@ public class ProductsController : ControllerBase
     [HttpGet("test")]
     public IActionResult Test() => Ok("test");
 
+
     /// <summary>
     /// Returns product pages based on parameters
     /// </summary>
@@ -59,6 +60,7 @@ public class ProductsController : ControllerBase
         return Ok(productPages);
     }
 
+
     /// <summary>
     /// Returns all product categories translated for given culture
     /// </summary>
@@ -78,6 +80,12 @@ public class ProductsController : ControllerBase
         return Ok(categories);
     }
 
+    /// <summary>
+    /// Returns prices for product and it's variant when <paramref name="productSkuId"/> is main product or only variant prices when ID is for variant
+    /// </summary>
+    /// <param name="productSkuId">Main product or variant id</param>
+    /// <param name="currencyCode">Currency code</param>
+    /// <returns></returns>
     [HttpGet("prices/{productSkuId:int}", Name = nameof(GetProductPrices))]
     [AuthorizeStore]
     public async Task<ActionResult<ProductPricesResponse>> GetProductPrices(int productSkuId,
@@ -95,6 +103,13 @@ public class ProductsController : ControllerBase
         }
     }
 
+
+    /// <summary>
+    /// Returns prices for list of products
+    /// </summary>
+    /// <param name="productSkuId"></param>
+    /// <param name="currencyCode"></param>
+    /// <returns></returns>
     [HttpGet("prices-list", Name = nameof(GetProductPricesList))]
     [AuthorizeStore]
     public ActionResult<IAsyncEnumerable<ProductPricesResponse>> GetProductPricesList(
@@ -112,6 +127,13 @@ public class ProductsController : ControllerBase
         }
     }
 
+
+    /// <summary>
+    /// Returns inventory and price for given product/variant
+    /// </summary>
+    /// <param name="skuId"></param>
+    /// <param name="currencyCode"></param>
+    /// <returns></returns>
     [HttpGet("inventory-prices/{skuId:int}", Name = nameof(GetInventoryPrices))]
     [AuthorizeStore]
     public async Task<ActionResult<ProductInventoryPriceInfo>> GetInventoryPrices(int skuId, [FromQuery][CurrencyValidation] string currencyCode)

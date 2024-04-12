@@ -48,7 +48,7 @@ public class ProductPageRequest
 
 
     /// <summary>
-    /// If true, only no linked product pages are returned (default false)
+    /// If true, only not-linked product pages are returned (default false)
     /// </summary>
     public bool NoLinks { get; set; }
 }

@@ -1,8 +1,14 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
 namespace Kentico.Xperience.StoreApi;
+
 public static class StoreApiBuilderExtensions
 {
+    /// <summary>
+    /// Store API Swagger
+    /// </summary>
+    /// <param name="app"></param>
+    /// <returns></returns>
     public static IApplicationBuilder UseStoreApiSwagger(this IApplicationBuilder app)
     {
         app.UseSwagger();

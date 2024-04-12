@@ -15,6 +15,12 @@ namespace Kentico.Xperience.StoreApi;
 
 public static class StoreApiServiceCollectionExtensions
 {
+    /// <summary>
+    /// Registers store API services and options
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
     public static IServiceCollection AddKenticoStoreApi(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IKProductService, KProductService>();
@@ -26,6 +32,12 @@ public static class StoreApiServiceCollectionExtensions
         return services;
     }
 
+
+    /// <summary>
+    /// Adds Store API Swagger
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns></returns>
     public static IServiceCollection AddKenticoStoreApiSwagger(this IServiceCollection services)
     {
         services.AddSwaggerGen(c =>
@@ -66,6 +78,7 @@ public static class StoreApiServiceCollectionExtensions
         return services;
     }
 }
+
 
 internal class StoreApiDocumentFilter : IDocumentFilter
 {

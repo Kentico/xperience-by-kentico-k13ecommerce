@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.StoreApi.Orders;
 
+/// <summary>
+/// Request for order listing
+/// </summary>
 public class OrderListRequest
 {
     public int Page { get; set; }

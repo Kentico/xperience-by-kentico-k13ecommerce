@@ -23,6 +23,7 @@ internal class KProductService : IKProductService
     private readonly IMapper mapper;
     private readonly IShoppingService shoppingService;
 
+
     public KProductService(IPageRetriever pageRetriever, IProductPageConverter<KProductNode> productPageConverter,
         ISKUInfoProvider skuInfoProvider, ICatalogPriceCalculatorFactory catalogPriceCalculatorFactory,
         ISiteService siteService, IMapper mapper, IShoppingService shoppingService)
@@ -35,6 +36,7 @@ internal class KProductService : IKProductService
         this.mapper = mapper;
         this.shoppingService = shoppingService;
     }
+
 
     public async Task<IEnumerable<KProductNode>> GetProductPages(ProductPageRequest request)
     {
@@ -80,6 +82,7 @@ internal class KProductService : IKProductService
             .ToList();
     }
 
+
     public async Task<IEnumerable<KProductCategory>> GetProductCategories(string culture)
     {
         var categoriesTypes = (await DataClassInfoProvider.ProviderObject.Get()
@@ -100,6 +103,7 @@ internal class KProductService : IKProductService
             .Select(c => new KProductCategory { Name = c.DocumentName, Path = c.NodeAliasPath });
     }
 
+
     public async Task<ProductPricesResponse> GetProductPrices(int productSkuId, string currencyCode)
     {
         var sku = await skuInfoProvider.GetAsync(productSkuId) ??
@@ -107,6 +111,7 @@ internal class KProductService : IKProductService
 
         return GetProductPrices(sku, currencyCode);
     }
+
 
     public async Task<ProductInventoryPriceInfo> GetProductInventoryAndPrices(int skuId, string currencyCode)
     {
@@ -136,6 +141,7 @@ internal class KProductService : IKProductService
         return response;
     }
 
+
     public async IAsyncEnumerable<ProductPricesResponse> GetProductPrices(IEnumerable<int> productsSkuIds, string currencyCode)
     {
         var skus = await skuInfoProvider.Get()
@@ -147,6 +153,7 @@ internal class KProductService : IKProductService
             yield return GetProductPrices(sku, currencyCode);
         }
     }
+
 
     private ProductPricesResponse GetProductPrices(SKUInfo sku, string currencyCode)
     {

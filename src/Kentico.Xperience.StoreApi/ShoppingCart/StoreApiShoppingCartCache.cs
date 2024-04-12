@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Http;
 [assembly: RegisterImplementation(typeof(IShoppingCartCache), typeof(StoreApiShoppingCartCache))]
 namespace Kentico.Xperience.StoreApi.ShoppingCart;
 
-public class StoreApiShoppingCartCache : IShoppingCartCache
+internal class StoreApiShoppingCartCache : IShoppingCartCache
 {
     private const string ShoppingCartCacheKey = "CurrentShoppingCart";
     private readonly IShoppingCartCache defaultCache;
