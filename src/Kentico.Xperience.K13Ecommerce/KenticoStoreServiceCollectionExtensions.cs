@@ -3,6 +3,7 @@
 using IdentityModel.Client;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
+using Kentico.Xperience.K13Ecommerce.Activities;
 using Kentico.Xperience.K13Ecommerce.Config;
 using Kentico.Xperience.K13Ecommerce.Countries;
 using Kentico.Xperience.K13Ecommerce.Customers;
@@ -70,6 +71,7 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddScoped<IShoppingService, ShoppingService>();
         services.AddScoped<ICustomerService, CustomerService>();
         services.AddSingleton<ICountryService, CountryService>();
+        services.AddSingleton<IEcommerceActivityLogger, EcommerceActivityLogger>();
 
         return services;
     }

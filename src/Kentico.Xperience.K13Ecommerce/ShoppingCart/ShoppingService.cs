@@ -1,6 +1,7 @@
 ﻿using CMS.Helpers;
 using CMS.Membership;
 
+using Kentico.Xperience.K13Ecommerce.Activities;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 using Microsoft.AspNetCore.Http;
@@ -13,9 +14,10 @@ internal class ShoppingService(
     IKenticoStoreApiClient storeApiClient,
     IHttpContextAccessor httpContextAccessor,
     IMemberInfoProvider memberInfoProvider,
-    IProgressiveCache progressiveCache) : IShoppingService
+    IProgressiveCache progressiveCache,
+    IEcommerceActivityLogger activityLogger) : IShoppingService
 {
-    private const int cacheMinutes = 2;
+    private const int CacheMinutes = 2;
 
     public async Task<KShoppingCartContent> GetCurrentShoppingCartContent()
     {
@@ -28,11 +30,12 @@ internal class ShoppingService(
                 await storeApiClient.GetCurrentCartContentAsync(ShoppingCartGuid), clearCaches: false);
             cs.BoolCondition = ShoppingCartGuid != Guid.Empty;
             return res;
-        }, new CacheSettings(cacheMinutes, nameof(GetCurrentShoppingCartContent), ShoppingCartGuid));
+        }, new CacheSettings(CacheMinutes, nameof(GetCurrentShoppingCartContent), ShoppingCartGuid));
     }
 
     public async Task<KShoppingCartDetails> GetCurrentShoppingCartDetails()
-        => await ProcessAction(async () => await storeApiClient.GetCurrentCartDetailsAsync(ShoppingCartGuid), clearCaches: false);
+        => await ProcessAction(async () => await storeApiClient.GetCurrentCartDetailsAsync(ShoppingCartGuid),
+            clearCaches: false);
 
 
     public async Task<KShoppingCartSummary> GetCurrentShoppingCartSummaryAsync()
@@ -65,17 +68,62 @@ internal class ShoppingService(
 
 
     public async Task<KShoppingCartItem?> AddItemToCart(int skuId, int quantity)
-        => (await ProcessAction(async () => await storeApiClient.AddItemToCartAsync(ShoppingCartGuid, skuId, quantity)))
-            .Value;
+        => (await ProcessAction(async () =>
+        {
+            var response = await storeApiClient.AddItemToCartAsync(ShoppingCartGuid, skuId, quantity);
+
+            activityLogger.LogProductAddedToShoppingCartActivity(response.Value.ProductSKU,
+                response.Value.CartItemUnits, response.Value.VariantSKU);
+            return response;
+        })).Value;
 
 
     public async Task UpdateItemQuantity(int itemId, int quantity)
         => await ProcessAction(async () =>
-            await storeApiClient.UpdateItemQuantityAsync(ShoppingCartGuid, itemId, quantity), cartMustBeStored: true);
+            {
+                var response = await storeApiClient.UpdateItemQuantityAsync(ShoppingCartGuid, itemId, quantity);
+
+                var cart = await GetCurrentShoppingCartContent();
+                var cartItem = cart.CartProducts!.FirstOrDefault(p => p.CartItemId == itemId);
+                if (cartItem == null)
+                {
+                    return response;
+                }
+
+                if (cartItem.CartItemUnits > quantity)
+                {
+                    activityLogger.LogProductRemovedFromShoppingCartActivity(cartItem.ProductSKU,
+                        cartItem.CartItemUnits - quantity,
+                        cartItem.VariantSKU);
+                }
+                else
+                {
+                    activityLogger.LogProductAddedToShoppingCartActivity(cartItem.ProductSKU,
+                        quantity - cartItem.CartItemUnits, cartItem.VariantSKU);
+                }
+
+
+                return response;
+            }
+            , cartMustBeStored: true);
 
 
     public async Task RemoveItemFromCart(int itemId)
-        => await ProcessAction(async () => await storeApiClient.RemoveItemFromCartAsync(ShoppingCartGuid, itemId),
+        => await ProcessAction(async () =>
+            {
+                var cart = await GetCurrentShoppingCartContent();
+                var response = await storeApiClient.RemoveItemFromCartAsync(ShoppingCartGuid, itemId);
+
+                var cartItem = cart.CartProducts!.FirstOrDefault(p => p.CartItemId == itemId);
+                if (cartItem != null)
+                {
+                    activityLogger.LogProductRemovedFromShoppingCartActivity(cartItem.ProductSKU,
+                        cartItem.CartItemUnits,
+                        cartItem.VariantSKU);
+                }
+
+                return response;
+            },
             cartMustBeStored: true);
 
 
@@ -131,10 +179,19 @@ internal class ShoppingService(
             throw new InvalidOperationException("Shopping cart identifier is empty");
         }
 
+        var cart = await GetCurrentShoppingCartContent();
         var order = await storeApiClient.CreateOrderAsync(ShoppingCartGuid, note: note ?? string.Empty);
 
         sessionStorage.ClearCartGuid();
         clientStorage.ClearCartGuid();
+
+        foreach (var cartItem in cart.CartProducts!)
+        {
+            activityLogger.LogPurchasedProductActivity(cartItem.ProductSKU, cartItem.CartItemUnits, cartItem.VariantSKU);
+        }
+
+        activityLogger.LogPurchaseActivity(order.OrderId, order.OrderGrandTotalInMainCurrency,
+            string.Format(cart.Currency.CurrencyFormatString!, order.OrderGrandTotalInMainCurrency));
 
         return order;
     }
@@ -169,7 +226,8 @@ internal class ShoppingService(
     }
 
 
-    public void ClearCaches() => CacheHelper.Remove(CacheHelper.GetCacheItemName(null, nameof(GetCurrentShoppingCartContent),
+    public void ClearCaches() => CacheHelper.Remove(CacheHelper.GetCacheItemName(null,
+        nameof(GetCurrentShoppingCartContent),
         ShoppingCartGuid));
 
 
@@ -188,6 +246,7 @@ internal class ShoppingService(
             sessionStorage.ClearCartGuid();
             clientStorage.ClearCartGuid();
         }
+
         StoreCart(response.ShoppingCartGuid);
 
         if (clearCaches)

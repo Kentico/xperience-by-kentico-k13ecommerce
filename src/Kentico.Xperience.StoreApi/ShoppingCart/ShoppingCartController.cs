@@ -42,6 +42,7 @@ public class ShoppingCartController : ControllerBase
         this.shippingOptionInfoProvider = shippingOptionInfoProvider;
         this.paymentOptionInfoProvider = paymentOptionInfoProvider;
     }
+    
 
     /// <summary>
     /// Returns current cart content for cart preview or cart content step
@@ -56,6 +57,7 @@ public class ShoppingCartController : ControllerBase
         var cart = shoppingService.GetCurrentShoppingCart();
         return mapper.Map<KShoppingCartContent>(cart);
     }
+    
 
     /// <summary>
     /// Returns current cart details for cart delivery details step

@@ -22,7 +22,6 @@ internal class StoreApiCurrentShoppingCartService : ICurrentShoppingCartService
     private readonly IShoppingCartRepository mCartRepository;
     private readonly IShoppingCartFactory mCartFactory;
     private readonly IShoppingCartCache mCartCache;
-    private readonly IShoppingCartClientStorage mClientStorage;
     private readonly IConversionService conversionService;
     private const string ShoppingCartIdentifier = "ShoppingCartGUID";
 
@@ -33,7 +32,6 @@ internal class StoreApiCurrentShoppingCartService : ICurrentShoppingCartService
         IShoppingCartRepository cartRepository,
         IShoppingCartFactory cartFactory,
         IShoppingCartCache cartCache,
-        IShoppingCartClientStorage clientStorage,
         IConversionService conversionService
     )
     {
@@ -43,7 +41,6 @@ internal class StoreApiCurrentShoppingCartService : ICurrentShoppingCartService
         mCartRepository = cartRepository;
         mCartFactory = cartFactory;
         mCartCache = cartCache;
-        mClientStorage = clientStorage;
         this.conversionService = conversionService;
     }
 
