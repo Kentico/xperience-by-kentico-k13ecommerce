@@ -1,4 +1,6 @@
-﻿using K13Store;
+﻿using CMS.Base;
+
+using K13Store;
 
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 
@@ -61,7 +63,6 @@ public class ProductPageViewModel
             // Set SKU information
             SKUID = productSku.SKUID,
             ImagePath = productSku.ProductImages.FirstOrDefault()?.ProductImageAsset?.Url ?? string.Empty,
-
             IsInStock = isInStock,
             AllowSale = allowForSale,
 
@@ -69,7 +70,8 @@ public class ProductPageViewModel
             Prices = variant != null ? pricesResponse.VariantPrices![variant.SKUID.ToString()] : pricesResponse.Prices,
             SelectedVariantID = variant?.SKUID,
             ParametersSection = productSku.CustomFieldsDict,
-            Variants = productSku.ProductVariants.Where(v => v.SKUEnabled)
+            Variants = productSku.ProductVariants.Where(v => v.SKUEnabled).OrderBy(v =>
+                pricesResponse.VariantPrices?[v.SKUID.ToString()].Price ?? decimal.MaxValue).ToList()
         };
 
         return model;

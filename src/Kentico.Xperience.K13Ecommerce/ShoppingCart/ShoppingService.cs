@@ -1,4 +1,5 @@
-﻿using CMS.Helpers;
+﻿using CMS.ContactManagement;
+using CMS.Helpers;
 using CMS.Membership;
 
 using Kentico.Xperience.K13Ecommerce.Activities;
@@ -15,7 +16,8 @@ internal class ShoppingService(
     IHttpContextAccessor httpContextAccessor,
     IMemberInfoProvider memberInfoProvider,
     IProgressiveCache progressiveCache,
-    IEcommerceActivityLogger activityLogger) : IShoppingService
+    IEcommerceActivityLogger activityLogger,
+    IContactInfoProvider contactInfoProvider) : IShoppingService
 {
     private const int CacheMinutes = 2;
 
@@ -64,6 +66,7 @@ internal class ShoppingService(
         }
 
         await storeApiClient.SetCustomerAsync(ShoppingCartGuid, customer);
+        UpdateContactFromCustomer(customer);
     }
 
 
@@ -168,7 +171,12 @@ internal class ShoppingService(
 
     public async Task SetDeliveryDetails(KShoppingCartDeliveryDetails deliveryDetails)
         => await ProcessAction(
-            async () => await storeApiClient.SetDeliveryDetailsAsync(ShoppingCartGuid, deliveryDetails),
+            async () =>
+            {
+                var result = await storeApiClient.SetDeliveryDetailsAsync(ShoppingCartGuid, deliveryDetails);
+                UpdateContactFromCustomer(deliveryDetails.Customer);
+                return result;
+            },
             cartMustBeStored: true);
 
 
@@ -284,5 +292,22 @@ internal class ShoppingService(
 
         clientStorage.SetCartGuid(shoppingCartGuid.Value);
         sessionStorage.SetCartGuid(shoppingCartGuid.Value);
+    }
+
+    private void UpdateContactFromCustomer(KCustomer customer)
+    {
+        var contact = ContactManagementContext.CurrentContact;
+        if (contact == null)
+        {
+            return;
+        }
+
+        contact.ContactFirstName = customer.CustomerFirstName;
+        contact.ContactLastName = customer.CustomerLastName;
+        contact.ContactEmail = customer.CustomerEmail;
+        contact.ContactMobilePhone = customer.CustomerPhone;
+        contact.ContactCompanyName = customer.CustomerCompany;
+            
+        contactInfoProvider.Set(contact);
     }
 }

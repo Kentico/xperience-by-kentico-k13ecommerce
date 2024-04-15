@@ -13,7 +13,7 @@
                 </div>
             }
             <div class="cart-item-info">
-                @Html.ActionLink(cartItem.SKUName, "ItemDetail", new { skuId = cartItem.SKUID })
+                @Html.ActionLink(cartItem.SKUName, "ItemDetail", new { skuId = cartItem.ParentSKUID ?? cartItem.SKUID })
             </div>
             <div class="cart-item-amount">
                 <span>Qty</span>
