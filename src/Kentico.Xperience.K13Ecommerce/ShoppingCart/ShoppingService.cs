@@ -31,6 +31,10 @@ internal class ShoppingService(
             var res = await ProcessAction(async () =>
                 await storeApiClient.GetCurrentCartContentAsync(ShoppingCartGuid), clearCaches: false);
             cs.BoolCondition = ShoppingCartGuid != Guid.Empty;
+            if (cs.Cached)
+            {
+                cs.CacheDependency = CacheHelper.GetCacheDependency($"shoppingcart|{ShoppingCartGuid}");
+            }
             return res;
         }, new CacheSettings(CacheMinutes, nameof(GetCurrentShoppingCartContent), ShoppingCartGuid));
     }
@@ -234,9 +238,7 @@ internal class ShoppingService(
     }
 
 
-    public void ClearCaches() => CacheHelper.Remove(CacheHelper.GetCacheItemName(null,
-        nameof(GetCurrentShoppingCartContent),
-        ShoppingCartGuid));
+    public void ClearCaches() => CacheHelper.TouchKey($"shoppingcart|{ShoppingCartGuid}");
 
 
     protected virtual async Task<TResponse> ProcessAction<TResponse>(Func<Task<TResponse>> func,
@@ -259,8 +261,7 @@ internal class ShoppingService(
 
         if (clearCaches)
         {
-            CacheHelper.Remove(CacheHelper.GetCacheItemName(null, nameof(GetCurrentShoppingCartContent),
-                ShoppingCartGuid));
+            ClearCaches();
         }
 
         return response;
@@ -307,7 +308,7 @@ internal class ShoppingService(
         contact.ContactEmail = customer.CustomerEmail;
         contact.ContactMobilePhone = customer.CustomerPhone;
         contact.ContactCompanyName = customer.CustomerCompany;
-            
+
         contactInfoProvider.Set(contact);
     }
 }
