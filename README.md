@@ -103,7 +103,7 @@ dotnet run --kxp-ci-restore
 3. Copy product listing widget from Dancing Goat example project to your project. Sample widget is located in 
 [here](./examples/DancingGoat-Shopify/Components/Widgets/Shopify/ProductListWidget).
 4. Start to you on your live site
-5. Configure Shopify API in XbyK administraion page. New module Shopify Integration should be created by restoring the objects data using continuous integration.
+5. Configure Shopify API in XbyK administraion page. New module Shopify Integration should be created after restoring the data using continuous integration.
 
 ### Kentico Xperience 13 E-Commerce integration
 
