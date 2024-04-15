@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 
 using CMS.Helpers;
 using CMS.Websites;
@@ -44,6 +45,7 @@ public class CheckoutController : Controller
     private readonly CheckoutPageRepository checkoutPageRepository;
     private readonly ICountryService countryService;
     private readonly IPreferredLanguageRetriever preferredLanguageRetriever;
+    private readonly ILogger<CheckoutController> logger;
     private readonly ICheckoutService checkoutService;
     private readonly IWebPageUrlRetriever webPageUrlRetriever;
     private readonly IShoppingService shoppingService;
@@ -55,11 +57,13 @@ public class CheckoutController : Controller
         IShoppingService shoppingService,
         CheckoutPageRepository checkoutPageRepository,
         ICountryService countryService,
-        IPreferredLanguageRetriever preferredLanguageRetriever)
+        IPreferredLanguageRetriever preferredLanguageRetriever,
+        ILogger<CheckoutController> logger)
     {
         this.checkoutPageRepository = checkoutPageRepository;
         this.countryService = countryService;
         this.preferredLanguageRetriever = preferredLanguageRetriever;
+        this.logger = logger;
         this.checkoutService = checkoutService;
         this.webPageUrlRetriever = webPageUrlRetriever;
         this.shoppingService = shoppingService;
@@ -81,7 +85,8 @@ public class CheckoutController : Controller
     public async Task<IActionResult> CartContentCheckout()
     {
         string deliveryDetailsPageUrl = await checkoutService.GetNextOrPreviousStepUrl<CartContent>(s => s.CartNextStep.First().WebPageGuid);
-
+        // Currently there is no validation action in this step. For more accurate functionality standalone cart validation endpoint should be considered
+        // and called in this step
         return Redirect(deliveryDetailsPageUrl);
     }
 
@@ -216,12 +221,12 @@ public class CheckoutController : Controller
                 ShippingOptionId = model.ShippingOption?.ShippingOptionID ?? 0
             });
         }
-        catch (ApiException<ProblemDetails> e)
+        catch (ApiException<ProblemDetails> ex)
         {
-
+            logger.LogError(ex, "Error during updating delivery details");
             var viewModel = await checkoutService.PrepareDeliveryDetailsViewModel(model.Customer, model.BillingAddress,
                     model.ShippingOption);
-            ModelState.AddModelError(string.Empty, e.Result.Detail!);
+            ModelState.AddModelError(string.Empty, ex.Result.Detail ?? ex.Result.Title!);
             return View(viewModel);
         }
 
@@ -300,15 +305,6 @@ public class CheckoutController : Controller
             await shoppingService.SetPaymentOption(model.PaymentMethod.PaymentMethodID);
         }
 
-        //@TODO new endpoint for order validation?
-        // var validator = new CreateOrderValidator(cart, skuInfoProvider, countryInfoProvider, stateInfoProvider);
-        //
-        // if (!validator.Validate())
-        // {
-        //     ProcessCheckResult(validator.Errors);
-        // }
-        //
-
         if (!ModelState.IsValid)
         {
             var viewModel = await checkoutService.PreparePreviewViewModel(model.PaymentMethod);
@@ -321,7 +317,10 @@ public class CheckoutController : Controller
         }
         catch (ApiException<ProblemDetails> ex)
         {
-            ModelState.AddModelError("cart.createordererror", ex.Result.Detail);
+            // Example of formatted message in ex.Result.Detail: 'Order creation failed with following validation error: SKUDisabledOrExpiredValidationError.'
+            // for more handsome validation messages standalone validation endpoint should be considered
+            logger.LogError(ex, "Error during creating order. Detail: {JSON}: ", JsonSerializer.Serialize(ex.Result));
+            ModelState.AddModelError(string.Empty, ex.Result.Detail ?? ex.Result.Title!);
             var viewModel = await checkoutService.PreparePreviewViewModel(model.PaymentMethod);
             return View("CartSummary", viewModel);
         }

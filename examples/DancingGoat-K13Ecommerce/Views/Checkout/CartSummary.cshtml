@@ -12,12 +12,6 @@
         </div>
 
         <div asp-validation-summary="ModelOnly" class="ErrorLabel red">@HtmlLocalizer["Your order cannot be completed"]</div>
-        <div>
-            @Html.ValidationMessage("shipping", new { @class = "red" })
-        </div>
-        <div>
-            @Html.ValidationMessage("cart.empty", new { @class = "red" })
-        </div>
 
         <div class="col-md-8 cart-content">
             <div class="row">

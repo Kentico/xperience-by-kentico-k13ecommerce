@@ -42,7 +42,7 @@ public class ShoppingCartController : ControllerBase
         this.shippingOptionInfoProvider = shippingOptionInfoProvider;
         this.paymentOptionInfoProvider = paymentOptionInfoProvider;
     }
-    
+
 
     /// <summary>
     /// Returns current cart content for cart preview or cart content step
@@ -57,7 +57,7 @@ public class ShoppingCartController : ControllerBase
         var cart = shoppingService.GetCurrentShoppingCart();
         return mapper.Map<KShoppingCartContent>(cart);
     }
-    
+
 
     /// <summary>
     /// Returns current cart details for cart delivery details step
@@ -434,7 +434,7 @@ public class ShoppingCartController : ControllerBase
         catch (InvalidOperationException e)
         {
             ModelState.AddModelError(string.Empty, e.Message);
-            return ValidationProblem(statusCode: StatusCodes.Status422UnprocessableEntity);
+            return ValidationProblem(statusCode: StatusCodes.Status422UnprocessableEntity, detail: e.Message);
         }
     }
 }
