@@ -126,7 +126,8 @@ public class StorePageRepository : StoreContentRepositoryBase
                 .ForWebsite(websiteChannelContext.WebsiteChannelName))
             .InLanguage(languageName);
 
-        var result = await contentQueryExecutor.GetWebPageResult(queryBuilder, c => pageMapper.Map<ProductPage>(c));
+        var result = (await contentQueryExecutor.GetWebPageResult(queryBuilder, c => pageMapper.Map<ProductPage>(c)))
+            .Where(p => p.Product.FirstOrDefault()?.SKUEnabled is true);
 
         return result;
     }
@@ -137,7 +138,9 @@ public class StorePageRepository : StoreContentRepositoryBase
         var queryBuilder = GetProductsQueryBuilder(category.HotTipProducts.Select(x => x.WebPageGuid).ToArray(), languageName);
 
         var cacheSettings = new CacheSettings(CacheMinutes, WebsiteChannelContext.WebsiteChannelName, nameof(ProductPage), languageName, category.SystemFields.WebPageItemID);
-        return await GetCachedQueryResult<ProductPage>(queryBuilder, null, cacheSettings, (pages, token) => GetDependencyCacheKeys(pages, 1, cancellationToken), cancellationToken);
+        return (await GetCachedQueryResult<ProductPage>(queryBuilder, null, cacheSettings,
+                (pages, token) => GetDependencyCacheKeys(pages, 1, cancellationToken), cancellationToken))
+            .Where(p => p.Product.FirstOrDefault()?.SKUEnabled is true);
     }
 
 

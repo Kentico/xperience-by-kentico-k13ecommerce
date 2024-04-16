@@ -153,4 +153,11 @@ public interface IShoppingService
     /// 
     /// </summary>
     void ClearCaches();
+
+
+    /// <summary>
+    /// Validates shopping cart items and returns collection of validation messages
+    /// </summary>
+    /// <returns></returns>
+    Task<ICollection<KShoppingCartItemValidationError>> ValidateShoppingCartItems();
 }

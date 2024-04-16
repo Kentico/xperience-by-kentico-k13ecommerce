@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 
+using CMS.Base;
 using CMS.Ecommerce;
 using CMS.Helpers;
 
@@ -67,5 +68,11 @@ public class StoreApiMappingProfile : Profile
         CreateMap<OrderStatusInfo, KOrderStatus>();
         CreateMap<ContainerCustomData, Dictionary<string, object>>().ConvertUsing<ContainerCustomDataToDictionaryConverter>();
         CreateMap<SummaryItem, KSummaryItem>();
+
+        CreateMap<ShoppingCartItemValidationError, KShoppingCartItemValidationError>()
+            .AfterMap((source, dest, ctx) =>
+        {
+            dest.Message = source.GetMessage();
+        });
     }
 }

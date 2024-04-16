@@ -51,7 +51,6 @@ public class StoreController : Controller
 
         var hotTips = await GetHottips(storePage, webPage);
 
-        ViewBag.HideBackground = true;
         return View(StorePageViewModel.GetViewModel(storePage, categories, bestsellers, hotTips));
     }
 

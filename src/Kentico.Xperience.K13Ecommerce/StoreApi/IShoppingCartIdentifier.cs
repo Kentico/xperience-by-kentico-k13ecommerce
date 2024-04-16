@@ -37,3 +37,8 @@ public partial class BooleanShoppingCartResponse : IShoppingCartIdentifier
 {
     Guid? IShoppingCartIdentifier.ShoppingCartGuid => ShoppingCartGuid;
 }
+
+public partial class KShoppingCartItemValidationErrorIEnumerableShoppingCartResponse : IShoppingCartIdentifier
+{
+    Guid? IShoppingCartIdentifier.ShoppingCartGuid => ShoppingCartGuid;
+}

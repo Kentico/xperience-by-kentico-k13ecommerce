@@ -52,6 +52,7 @@ internal class ProductSynchronizationItem : ContentItemSynchronizationBase, ISyn
         SetPropsIfDiff(contentItem.SKUMinItemsInOrder, Item.Sku?.SkuMinItemsInOrder, nameof(ProductSKU.SKUMinItemsInOrder), modifiedProps);
         SetPropsIfDiff(contentItem.SKUMaxItemsInOrder, Item.Sku?.SkuMaxItemsInOrder, nameof(ProductSKU.SKUMaxItemsInOrder), modifiedProps);
         SetPropsIfDiff(contentItem.SKUInStoreFrom, Item.Sku?.SkuInStoreFrom, nameof(ProductSKU.SKUInStoreFrom), modifiedProps);
+        SetPropsIfDiff(contentItem.SKUAvailableItems, Item.Sku?.SkuAvailableItems, nameof(ProductSKU.SKUAvailableItems), modifiedProps);
 
         string customFieldsJson = JsonSerializer.Serialize(Item.CustomFields, jsonSerializerOptions);
 

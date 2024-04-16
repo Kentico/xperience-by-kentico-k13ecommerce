@@ -46,7 +46,6 @@ public class ProductDetailController : Controller
         var prices = await productService.GetProductPrices(productSku.SKUID);
 
         var model = ProductPageViewModel.GetViewModel(productSku, prices);
-        ViewBag.HideBackground = true;
         return View(model);
     }
 }

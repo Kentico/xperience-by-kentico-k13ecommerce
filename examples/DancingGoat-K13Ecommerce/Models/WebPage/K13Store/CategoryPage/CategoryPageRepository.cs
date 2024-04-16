@@ -36,7 +36,9 @@ public class CategoryPageRepository : StoreContentRepositoryBase
         var queryBuilder = GetProductsQueryBuilder(category.CategoryProducts.Select(x => x.WebPageGuid).ToArray(), languageName);
 
         var cacheSettings = new CacheSettings(CacheMinutes, WebsiteChannelContext.WebsiteChannelName, nameof(ProductPage), languageName, category.SystemFields.WebPageItemID);
-        return await GetCachedQueryResult<ProductPage>(queryBuilder, null, cacheSettings, (pages, token) => GetDependencyCacheKeys(pages, 1, cancellationToken), cancellationToken);
+        return (await GetCachedQueryResult<ProductPage>(queryBuilder, null, cacheSettings,
+                (pages, token) => GetDependencyCacheKeys(pages, 1, cancellationToken), cancellationToken))
+            .Where(p => p.Product.FirstOrDefault()?.SKUEnabled is true);
     }
 
 

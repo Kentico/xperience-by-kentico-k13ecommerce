@@ -2,6 +2,7 @@
 @model DancingGoat.Models.ProductPageViewModel
 @{
     var variantsSelect = Model.Variants.Select(v => new SelectListItem(v.SKUName, v.SKUID.ToString(), v.SKUID == Model.SelectedVariantID));
+    ViewData["PageClass"] = "inverted";
 }
 <div class="product-detail-wrapper">
     <article class="product-detail">

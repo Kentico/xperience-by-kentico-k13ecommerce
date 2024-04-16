@@ -398,6 +398,29 @@ public class ShoppingCartController : ControllerBase
         });
 
 
+    /// <summary>
+    /// Validates shopping cart items
+    /// </summary>
+    /// <param name="shoppingCartGuid"></param>
+    /// <returns></returns>
+    [HttpPut("validate-cart-items")]
+    public ActionResult<ShoppingCartResponse<IEnumerable<KShoppingCartItemValidationError>>> ValidateCartItems(
+        [FromHeader(Name = "ShoppingCartGUID")] [Required]
+        Guid shoppingCartGuid)
+    {
+        var cart = shoppingService.GetCurrentShoppingCart();
+
+        var validationErrors = ShoppingCartInfoProvider.ValidateShoppingCart(cart)
+            .OfType<ShoppingCartItemValidationError>();
+
+        return Ok(new ShoppingCartResponse<IEnumerable<KShoppingCartItemValidationError>>
+        {
+            ShoppingCartGuid = cart.ShoppingCartGUID,
+            Value = mapper.Map<IEnumerable<KShoppingCartItemValidationError>>(validationErrors)
+        });
+    }
+
+
     private ShoppingCartBaseResponse GetBaseResponse()
     {
         var cart = shoppingService.GetCurrentShoppingCart();

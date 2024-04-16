@@ -42,10 +42,8 @@ public class StoreCategoryController : Controller
         var webPage = webPageDataContextRetriever.Retrieve().WebPage;
         var categoryPage = await categoryPageRepository.GetCategoryPage(webPage.WebPageItemID, webPage.LanguageName, HttpContext.RequestAborted);
 
-        var products =
-            (await categoryPageRepository.GetCategoryProducts(categoryPage, webPage.LanguageName,
-                HttpContext.RequestAborted))
-            .Where(p => p.Product.Any());
+        var products = await categoryPageRepository.GetCategoryProducts(categoryPage, webPage.LanguageName,
+            HttpContext.RequestAborted);
 
         var prices = (await productService.GetProductsPrices(products.Select(p => p.Product.First().SKUID)))
             .ToLookup(p => p.ProductSkuId);
@@ -64,7 +62,6 @@ public class StoreCategoryController : Controller
         }
 
         var viewModel = CategoryPageViewModel.GetViewModel(categoryPage, productModels);
-        ViewBag.HideBackground = true;
         return View(viewModel);
     }
 }

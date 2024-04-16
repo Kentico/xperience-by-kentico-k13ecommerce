@@ -1580,6 +1580,46 @@
         }
       }
     },
+    "/api/store/cart/validate-cart-items": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KShoppingCartItemValidationErrorIEnumerableShoppingCartResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/store/site/cultures": {
       "get": {
         "tags": [
@@ -2766,6 +2806,39 @@
           },
           "value": {
             "$ref": "#/components/schemas/KShoppingCartItem"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shopping cart API response with model"
+      },
+      "KShoppingCartItemValidationError": {
+        "type": "object",
+        "properties": {
+          "skuId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.ShoppingCartItemValidationError"
+      },
+      "KShoppingCartItemValidationErrorIEnumerableShoppingCartResponse": {
+        "type": "object",
+        "properties": {
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KShoppingCartItemValidationError"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false,

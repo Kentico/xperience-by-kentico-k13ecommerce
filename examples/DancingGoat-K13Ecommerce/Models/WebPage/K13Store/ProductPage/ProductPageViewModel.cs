@@ -51,7 +51,7 @@ public class ProductPageViewModel
         bool isInStock = productSku.SKUTrackInventory == "Disabled" ||
                          (variant != null ? variant.SKUAvailableItems > 0 : productSku.SKUAvailableItems > 0);
 
-        bool allowForSale = isInStock || !productSku.SKUSellOnlyAvailable;
+        bool allowForSale = productSku.SKUEnabled && (isInStock || !productSku.SKUSellOnlyAvailable);
 
         var model = new ProductPageViewModel
         {

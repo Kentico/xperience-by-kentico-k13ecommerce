@@ -241,6 +241,10 @@ internal class ShoppingService(
     public void ClearCaches() => CacheHelper.TouchKey($"shoppingcart|{ShoppingCartGuid}");
 
 
+    public async Task<ICollection<KShoppingCartItemValidationError>> ValidateShoppingCartItems() =>
+        (await ProcessAction(async () => await storeApiClient.ValidateCartItemsAsync(ShoppingCartGuid))).Value!;
+
+
     protected virtual async Task<TResponse> ProcessAction<TResponse>(Func<Task<TResponse>> func,
         bool cartMustBeStored = false, bool clearCaches = true)
         where TResponse : IShoppingCartIdentifier

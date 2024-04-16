@@ -75,7 +75,6 @@ public class CheckoutController : Controller
     {
         var model = await checkoutService.PrepareCartViewModel();
 
-        ViewBag.HideBackground = true;
         return View(model);
     }
 
@@ -84,10 +83,31 @@ public class CheckoutController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CartContentCheckout()
     {
+        var validationErrors = await shoppingService.ValidateShoppingCartItems();
+        
+        if (validationErrors.Any())
+        {
+            ProcessCheckResult(validationErrors);
+            var model = await checkoutService.PrepareCartViewModel();
+            return View("CartContent", model);
+        }
+        
         string deliveryDetailsPageUrl = await checkoutService.GetNextOrPreviousStepUrl<CartContent>(s => s.CartNextStep.First().WebPageGuid);
-        // Currently there is no validation action in this step. For more accurate functionality standalone cart validation endpoint should be considered
-        // and called in this step
         return Redirect(deliveryDetailsPageUrl);
+    }
+    
+    
+    private void ProcessCheckResult(IEnumerable<KShoppingCartItemValidationError> validationErrors)
+    {
+        var itemErrors = validationErrors
+            .GroupBy(g => g.SkuId);
+
+        foreach (var errorGroup in itemErrors)
+        {
+            string errors = errorGroup.Select(e => e.Message).Join(", ");
+
+            ModelState.AddModelError(errorGroup.Key.ToString(), errors);
+        }
     }
 
 
