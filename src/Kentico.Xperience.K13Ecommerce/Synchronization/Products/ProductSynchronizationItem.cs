@@ -101,6 +101,6 @@ internal class ProductSynchronizationItem : ContentItemSynchronizationBase, ISyn
             [nameof(ProductSKU.ProductVariants)] = Variants,
             [nameof(ProductSKU.PublicStatusDisplayName)] = Item.Sku.PublicStatus?.PublicStatusDisplayName,
             [nameof(ProductSKU.ManufacturerDisplayName)] = Item.Sku.Manufacturer?.ManufacturerDisplayName,
-            [nameof(ProductSKU.DepartmentDisplayName)] = Item.Sku.Department.DepartmentDisplayName
+            [nameof(ProductSKU.DepartmentDisplayName)] = Item.Sku.Department?.DepartmentDisplayName
         };
 }

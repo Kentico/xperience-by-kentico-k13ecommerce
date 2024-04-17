@@ -21,10 +21,12 @@ namespace Kentico.Xperience.StoreApi.StoreSite;
 public class StoreSiteController : ControllerBase
 {
     private readonly ISiteService siteService;
+    private readonly ISettingServiceFactory settingServiceFactory;
 
-    public StoreSiteController(ISiteService siteService)
+    public StoreSiteController(ISiteService siteService, ISettingServiceFactory settingServiceFactory)
     {
         this.siteService = siteService;
+        this.settingServiceFactory = settingServiceFactory;
     }
 
     /// <summary>
@@ -33,8 +35,19 @@ public class StoreSiteController : ControllerBase
     /// <returns></returns>
     [HttpGet("cultures", Name = nameof(GetCultures))]
     public IEnumerable<KCulture> GetCultures()
-        => CultureSiteInfoProvider.GetSiteCultures(siteService.CurrentSite.SiteName)
-            .Select(c => new KCulture { CultureName = c.CultureName, CultureCode = c.CultureCode });
+    {
+        string defaultCultureCode = settingServiceFactory.GetSettingService(siteService.CurrentSite.SiteID).GetStringValue("CMSDefaultCultureCode");
+
+        var siteCultures = CultureSiteInfoProvider.GetSiteCultures(siteService.CurrentSite.SiteName)
+            .Select(c => new KCulture
+            {
+                CultureName = c.CultureName,
+                CultureCode = c.CultureCode,
+                CultureIsDefault = c.CultureCode.Equals(defaultCultureCode, StringComparison.InvariantCultureIgnoreCase)
+            });
+
+        return siteCultures;
+    }
 
 
     /// <summary>

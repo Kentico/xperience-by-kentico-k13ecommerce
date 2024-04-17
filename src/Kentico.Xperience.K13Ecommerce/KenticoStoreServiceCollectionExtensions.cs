@@ -9,6 +9,7 @@ using Kentico.Xperience.K13Ecommerce.Countries;
 using Kentico.Xperience.K13Ecommerce.Customers;
 using Kentico.Xperience.K13Ecommerce.Products;
 using Kentico.Xperience.K13Ecommerce.ShoppingCart;
+using Kentico.Xperience.K13Ecommerce.SiteStore;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 using Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
 using Kentico.Xperience.K13Ecommerce.Synchronization.Products;
@@ -72,6 +73,7 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddScoped<ICustomerService, CustomerService>();
         services.AddSingleton<ICountryService, CountryService>();
         services.AddSingleton<IEcommerceActivityLogger, EcommerceActivityLogger>();
+        services.AddScoped<ISiteStoreService, SiteStoreService>();
 
         return services;
     }

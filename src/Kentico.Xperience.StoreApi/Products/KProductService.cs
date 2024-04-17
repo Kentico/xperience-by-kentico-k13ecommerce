@@ -113,6 +113,19 @@ internal class KProductService : IKProductService
     }
 
 
+    public async IAsyncEnumerable<ProductPricesResponse> GetProductPrices(IEnumerable<int> productsSkuIds, string currencyCode)
+    {
+        var skus = await skuInfoProvider.Get()
+            .WhereIn(nameof(SKUInfo.SKUID), productsSkuIds.ToArray())
+            .GetEnumerableTypedResultAsync();
+
+        foreach (var sku in skus)
+        {
+            yield return GetProductPrices(sku, currencyCode);
+        }
+    }
+
+
     public async Task<ProductInventoryPriceInfo> GetProductInventoryAndPrices(int skuId, string currencyCode)
     {
         var sku = await skuInfoProvider.GetAsync(skuId) ??
@@ -139,19 +152,6 @@ internal class KProductService : IKProductService
         };
 
         return response;
-    }
-
-
-    public async IAsyncEnumerable<ProductPricesResponse> GetProductPrices(IEnumerable<int> productsSkuIds, string currencyCode)
-    {
-        var skus = await skuInfoProvider.Get()
-            .WhereIn(nameof(SKUInfo.SKUID), productsSkuIds.ToArray())
-            .GetEnumerableTypedResultAsync();
-
-        foreach (var sku in skus)
-        {
-            yield return GetProductPrices(sku, currencyCode);
-        }
     }
 
 

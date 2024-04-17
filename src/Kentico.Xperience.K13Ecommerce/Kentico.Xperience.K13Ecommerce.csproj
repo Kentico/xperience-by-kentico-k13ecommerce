@@ -19,8 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<OpenApiReference Include="StoreApi\swagger.json" CodeGenerator="NSwagCSharp" Options="/UseBaseUrl:false /JsonLibrary:SystemTextJson /GenerateOptionalParameters:true /GenerateOptionalPropertiesAsNullable:false /GenerateNullableReferenceTypes:true /ExposeJsonSerializerSettings:true /GenerateClientInterfaces:true /dateType:System.DateTime /dateTimeType:System.DateTime" 
-						  ClassName="KenticoStoreApiClient" Namespace="Kentico.Xperience.K13Ecommerce.StoreApi">
+		<OpenApiReference Include="StoreApi\swagger.json" CodeGenerator="NSwagCSharp" Options="/UseBaseUrl:false /JsonLibrary:SystemTextJson /GenerateOptionalParameters:true /GenerateOptionalPropertiesAsNullable:false /GenerateNullableReferenceTypes:true /ExposeJsonSerializerSettings:true /GenerateClientInterfaces:true /dateType:System.DateTime /dateTimeType:System.DateTime" ClassName="KenticoStoreApiClient" Namespace="Kentico.Xperience.K13Ecommerce.StoreApi">
 			<SourceUri>http://dev.dancinggoat.com:65375/swagger/storeapi/swagger.json</SourceUri>
 		</OpenApiReference>
 	</ItemGroup>

@@ -11,7 +11,6 @@ internal class ProductService(IKenticoStoreApiClient storeApiClient) : IProductS
 
     public async Task<ICollection<ProductPricesResponse>> GetProductsPrices(IEnumerable<int> productSkuIds,
         string? currencyCode = null) =>
-        //@TODO caching individually for each product to prevent next loading on product detail 
         await storeApiClient.GetProductPricesListAsync(productSkuIds, currencyCode);
 
 

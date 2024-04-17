@@ -1,4 +1,6 @@
-﻿using DancingGoat.Components.Widgets.Store.ProductListWidget;
+﻿using CMS.Helpers;
+
+using DancingGoat.Components.Widgets.Store.ProductListWidget;
 
 using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Xperience.K13Ecommerce.Products;
@@ -14,19 +16,26 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Components.Widgets.Store.ProductListWidget;
 
-public class StoreProductListWidgetViewComponent(IKenticoStoreApiClient storeApiClient) : ViewComponent
+/// <summary>
+/// Use this widget when you want to directly show product data from K13 Store
+/// </summary>
+/// <param name="storeApiClient"></param>
+public class StoreProductListWidgetViewComponent(IKenticoStoreApiClient storeApiClient, IProgressiveCache cache)
+    : ViewComponent
 {
     public const string IDENTIFIER = "DancingGoat.LandingPage.KenticoStoreProductList";
 
     public async Task<IViewComponentResult> InvokeAsync(StoreProductListWidgetProperties properties)
     {
-        //@TODO cache results
-        var products = await storeApiClient.GetProductPagesAsync(path: properties.Path,
-            culture: properties.Culture,
-            currency: properties.CurrencyCode,
-            orderBy: properties.OrderBy,
-            limit: properties.Limit
-        );
+        var products = await cache.LoadAsync(async _ =>
+                !string.IsNullOrWhiteSpace(properties.Path) ? await storeApiClient.GetProductPagesAsync(path: properties.Path,
+                    culture: properties.Culture,
+                    currency: properties.CurrencyCode,
+                    orderBy: properties.OrderBy,
+                    limit: properties.Limit
+                ) : Array.Empty<KProductNode>(),
+            new CacheSettings(5, "productpages", properties.Path, properties.Limit, properties.CurrencyCode,
+                properties.Culture, properties.OrderBy));
 
         string currencyFormatString = products.FirstOrDefault()?.Sku?.Prices?.Currency?.CurrencyFormatString;
         var model = new StoreProductListWidgetViewModel

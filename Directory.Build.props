@@ -41,7 +41,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
-  <ItemGroup Label="StaticCodeAnalysis" Condition=" $(DisableCodeAnalysis) != 'True' ">
+  <ItemGroup Label="StaticCodeAnalysis" Condition=" $(DisableCodeAnalysis) != 'True' And $(ProjectName) != 'Kentico.Xperience.StoreApi'">
     <PackageReference Include="SonarAnalyzer.CSharp">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

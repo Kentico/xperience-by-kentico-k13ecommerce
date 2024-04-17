@@ -1,10 +1,12 @@
 ﻿using CMS.ContentEngine;
+using CMS.DataEngine;
 using CMS.Membership;
 
 using K13Store;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 using Kentico.Xperience.K13Ecommerce.Products;
+using Kentico.Xperience.K13Ecommerce.SiteStore;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 using Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
 using Kentico.Xperience.K13Ecommerce.Synchronization.ProductVariants;
@@ -13,40 +15,29 @@ using Microsoft.Extensions.Logging;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.Products;
 
-internal class ProductSynchronizationService : SynchronizationServiceCommon, IProductSynchronizationService
+internal class ProductSynchronizationService(
+    ILogger<ProductSynchronizationService> logger,
+    IContentItemService contentItemService,
+    IProductService productService,
+    IProductVariantSynchronizationService variantSynchronizationService,
+    IProductImageSynchronizationService productImageSynchronizationService,
+    IHttpClientFactory httpClientFactory,
+    ISiteStoreService siteStoreService) : SynchronizationServiceCommon(httpClientFactory), IProductSynchronizationService
 {
-    private readonly ILogger<ProductSynchronizationService> logger;
-    private readonly IContentItemService contentItemService;
-    private readonly IProductService productService;
-    private readonly IProductVariantSynchronizationService variantSynchronizationService;
-    private readonly IProductImageSynchronizationService productImageSynchronizationService;
-
-
-    public ProductSynchronizationService(
-        ILogger<ProductSynchronizationService> logger,
-        IContentItemService contentItemService,
-        IProductService productService,
-        IProductVariantSynchronizationService variantSynchronizationService,
-        IProductImageSynchronizationService productImageSynchronizationService,
-        IHttpClientFactory httpClientFactory) : base(httpClientFactory)
-    {
-        this.logger = logger;
-        this.contentItemService = contentItemService;
-        this.productService = productService;
-        this.variantSynchronizationService = variantSynchronizationService;
-        this.productImageSynchronizationService = productImageSynchronizationService;
-    }
-
-
     public async Task SynchronizeProducts()
     {
-        string language = "en"; //@TODO next phase sync for all languages
+        //Current limitations: only synchronization from default culture is supported. XByK must have same language enabled as default culture in K13
+
+        string defaultCultureCode = ((await siteStoreService.GetCultures()).FirstOrDefault(c => c.CultureIsDefault)?.CultureCode)
+            ?? throw new InvalidOperationException("No default culture found on K13 Store");
+
+        string language = defaultCultureCode[..2];
 
         var kenticoStoreProducts =
             await productService.GetProductPages(new ProductPageRequest
             {
                 Path = "/",
-                Culture = "en-us",
+                Culture = defaultCultureCode,
                 Limit = 1000,
                 WithVariants = true,
                 WithLongDescription = true,
@@ -59,34 +50,52 @@ internal class ProductSynchronizationService : SynchronizationServiceCommon, IPr
         var (toCreate, toUpdate, toDelete) =
             ClassifyItems<KProductNode, ProductSKU, int>(kenticoStoreProducts, contentItemProducts);
 
-        //@TODO when some item (mainly image with 404) fail, try-catch it and continue
         int adminUserId = UserInfoProvider.AdministratorUser.UserID;
         foreach (var productToCreate in toCreate)
         {
-            var variantGuids = await variantSynchronizationService.ProcessVariants(
-                productToCreate.Sku?.Variants ?? Enumerable.Empty<KProductVariant>(),
-                Enumerable.Empty<ProductVariant>(), language, adminUserId);
+            try
+            {
+                //transaction is used to prevent variant/images orphans
+                using var transaction = new CMSTransactionScope();
 
-            var imagesGuids = await productImageSynchronizationService.ProcessImages(GetImageDtos(productToCreate),
-                Enumerable.Empty<ProductImage>(), language, adminUserId);
+                var variantGuids = await variantSynchronizationService.ProcessVariants(
+                    productToCreate.Sku?.Variants ?? Enumerable.Empty<KProductVariant>(),
+                    Enumerable.Empty<ProductVariant>(), language, adminUserId);
 
-            await CreateProduct(
-                GetProductSynchronizationItem(productToCreate, variantGuids, imagesGuids),
-                language, adminUserId);
+                var imagesGuids = await productImageSynchronizationService.ProcessImages(GetImageDtos(productToCreate),
+                    Enumerable.Empty<ProductImage>(), language, adminUserId);
+
+                await CreateProduct(
+                    GetProductSynchronizationItem(productToCreate, variantGuids, imagesGuids),
+                    language, adminUserId);
+
+                transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error during creating product with SKUID: {SKUID}", productToCreate.Sku?.Skuid);
+            }
         }
 
         foreach (var (storeProduct, contentItemProduct) in toUpdate)
         {
-            var variantGuid = await variantSynchronizationService.ProcessVariants(storeProduct.Sku?.Variants ??
-                Enumerable.Empty<KProductVariant>(),
-                contentItemProduct.ProductVariants, language, adminUserId);
+            try
+            {
+                var variantGuid = await variantSynchronizationService.ProcessVariants(storeProduct.Sku?.Variants ??
+                    Enumerable.Empty<KProductVariant>(),
+                    contentItemProduct.ProductVariants, language, adminUserId);
 
-            var imagesGuids = await productImageSynchronizationService.ProcessImages(GetImageDtos(storeProduct),
-                contentItemProduct.ProductImages, language, adminUserId);
+                var imagesGuids = await productImageSynchronizationService.ProcessImages(GetImageDtos(storeProduct),
+                    contentItemProduct.ProductImages, language, adminUserId);
 
-            await UpdateProduct(
-                GetProductSynchronizationItem(storeProduct, variantGuid, imagesGuids),
-                contentItemProduct, language, adminUserId);
+                await UpdateProduct(
+                    GetProductSynchronizationItem(storeProduct, variantGuid, imagesGuids),
+                    contentItemProduct, language, adminUserId);
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error during updating product with SKUID: {SKUID}", storeProduct.Sku?.Skuid);
+            }
         }
 
         await DeleteNotExistingProducts(toDelete, language, adminUserId);

@@ -1585,10 +1585,12 @@
         "tags": [
           "ShoppingCart"
         ],
+        "summary": "Validates shopping cart items",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
+            "description": "",
             "required": true,
             "schema": {
               "type": "string",
@@ -1902,6 +1904,9 @@
           "cultureCode": {
             "type": "string",
             "nullable": true
+          },
+          "cultureIsDefault": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false,

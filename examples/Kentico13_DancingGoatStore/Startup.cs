@@ -104,8 +104,8 @@ namespace DancingGoat
                 //shop api json configuration to support polymorphism
                 .AddJsonOptions(o =>
                 {
-                    //custom: if you are using customized objects you need this line of code for polymophic serialization
-                    //@TODO fix issues with polymophism
+                    //custom: if you are using customized objects you need this line of code for polymorphic serialization
+                    //@TODO fix issues with polymorphism
                     //o.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<KProductNode>());
                     o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });

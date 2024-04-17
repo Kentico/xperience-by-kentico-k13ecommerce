@@ -10,26 +10,27 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     [TestCase(19, 1)]//variant
     public async Task AddItemToCart_Valid_Product_And_Remove_It(int skuId, int quantity)
     {
-        var response = await storeApiClient.AddItemToCartAsync(skuId: skuId, quantity: quantity);
+        var response = await StoreApiClient.AddItemToCartAsync(skuId: skuId, quantity: quantity);
 
         AddItemToCartAsserts(response);
 
         await RemoveItem(response);
     }
 
+
     [Test]
     [TestCase(16, 1)]
     public async Task UpdateItemQuantity_ValidProduct_CheckContent(int skuId, int quantity)
     {
-        var response = await storeApiClient.AddItemToCartAsync(skuId: skuId, quantity: quantity);
+        var response = await StoreApiClient.AddItemToCartAsync(skuId: skuId, quantity: quantity);
         AddItemToCartAsserts(response);
 
-        var updateResponse = await storeApiClient.UpdateItemQuantityAsync(response!.ShoppingCartGuid,
+        var updateResponse = await StoreApiClient.UpdateItemQuantityAsync(response!.ShoppingCartGuid,
             response!.Value!.CartItemId, 2);
 
         AssertBaseResponse(updateResponse);
 
-        var content = await storeApiClient.GetCurrentCartContentAsync(response!.ShoppingCartGuid);
+        var content = await StoreApiClient.GetCurrentCartContentAsync(response!.ShoppingCartGuid);
 
         Assert.That(content.ShoppingCartGuid, Is.EqualTo(response.ShoppingCartGuid));
         Assert.That(content.CartProducts!.Count, Is.EqualTo(1));
@@ -39,81 +40,87 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         await RemoveItem(response);
     }
 
+
     [Test]
     [TestCase("COUPONNOTEXIST")]
     public async Task AddCouponCode_InvalidCode_FalseResult(string couponCode)
     {
-        var response = await storeApiClient.AddCouponCodeAsync(couponCode);
+        var response = await StoreApiClient.AddCouponCodeAsync(couponCode);
         Assert.That(response.Value, Is.False);
     }
+
 
     [Test]
     [TestCase("BDAY_CWPZ9")]
     public async Task AddCouponCode_ValidCoupon_CheckContent_RemoveCoupon(string couponCode)
     {
-        var response = await storeApiClient.AddCouponCodeAsync(couponCode);
+        var response = await StoreApiClient.AddCouponCodeAsync(couponCode);
         Assert.That(response.Value, Is.True);
 
-        var content = await storeApiClient.GetCurrentCartContentAsync();
+        var content = await StoreApiClient.GetCurrentCartContentAsync();
 
-        await storeApiClient.RemoveCouponCodeAsync(couponCode);
+        await StoreApiClient.RemoveCouponCodeAsync(couponCode);
 
         Assert.That(content.CouponCodes, Has.Count.EqualTo(1));
         Assert.That(content.OrderDiscountSummary, Has.Count.EqualTo(1));
 
-        var contentNoCoupon = await storeApiClient.GetCurrentCartContentAsync();
+        var contentNoCoupon = await StoreApiClient.GetCurrentCartContentAsync();
 
         Assert.That(contentNoCoupon.CouponCodes, Is.Empty);
         Assert.That(contentNoCoupon.OrderDiscountSummary, Is.Empty);
     }
 
+
     [Test]
     [TestCase(2)]
     public async Task SetShippingOption_Valid_CheckCartDetails(int shippingOptionId)
     {
-        var res = await storeApiClient.SetShippingOptionAsync(Guid.Empty, shippingOptionId);
+        var res = await StoreApiClient.SetShippingOptionAsync(Guid.Empty, shippingOptionId);
         AssertBaseResponse(res);
 
-        var cartDetails = await storeApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
+        var cartDetails = await StoreApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
 
         Assert.That(cartDetails.ShippingOptionId, Is.EqualTo(shippingOptionId));
     }
+
 
     [Test]
     [TestCase(2)]
     public async Task SetPaymentOption_Valid_CheckCartDetails(int paymentOptionId)
     {
-        var res = await storeApiClient.SetPaymentOptionAsync(Guid.Empty, paymentOptionId);
+        var res = await StoreApiClient.SetPaymentOptionAsync(Guid.Empty, paymentOptionId);
         AssertBaseResponse(res);
 
-        var cartDetails = await storeApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
+        var cartDetails = await StoreApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
 
         Assert.That(cartDetails.PaymentOptionId, Is.EqualTo(paymentOptionId));
     }
+
 
     [Test]
     [TestCase(2, 2)]
     public async Task SetShippingAndPayment_Valid_CheckCartDetails(int shippingOptionId, int paymentOptionId)
     {
-        var res = await storeApiClient.SetShippingAndPaymentAsync(Guid.Empty, shippingOptionId, paymentOptionId);
+        var res = await StoreApiClient.SetShippingAndPaymentAsync(Guid.Empty, shippingOptionId, paymentOptionId);
         AssertBaseResponse(res);
 
-        var cartDetails = await storeApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
+        var cartDetails = await StoreApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
 
         Assert.That(cartDetails.ShoppingCartGuid, Is.EqualTo(res.ShoppingCartGuid));
         Assert.That(cartDetails.ShippingOptionId, Is.EqualTo(shippingOptionId));
         Assert.That(cartDetails.PaymentOptionId, Is.EqualTo(paymentOptionId));
     }
 
+
     [Test]
     public async Task SetCustomer_CheckCartDetails()
     {
         var customer = GetCustomer();
 
-        var res = await storeApiClient.SetCustomerAsync(Guid.Empty, customer);
+        var res = await StoreApiClient.SetCustomerAsync(Guid.Empty, customer);
         AssertBaseResponse(res);
 
-        var cartDetails = await storeApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
+        var cartDetails = await StoreApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
 
         Assert.That(cartDetails.ShoppingCartGuid, Is.EqualTo(res.ShoppingCartGuid));
         Assert.That(cartDetails.Customer, Is.Not.Null);
@@ -122,11 +129,12 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         Assert.That(cartDetails.Customer.CustomerEmail, Is.EqualTo(customer.CustomerEmail));
     }
 
+
     [Test]
     public async Task SetBillingAddress_CheckCartDetails()
     {
         var customer = GetCustomer();
-        var res = await storeApiClient.SetCustomerAsync(Guid.Empty, customer);
+        var res = await StoreApiClient.SetCustomerAsync(Guid.Empty, customer);
 
         var address = new KAddress
         {
@@ -136,10 +144,10 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
             AddressCountryId = 326
         };
 
-        res = await storeApiClient.SetBillingAddressAsync(res.ShoppingCartGuid, address);
+        res = await StoreApiClient.SetBillingAddressAsync(res.ShoppingCartGuid, address);
         AssertBaseResponse(res);
 
-        var cartDetails = await storeApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
+        var cartDetails = await StoreApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
         Assert.That(cartDetails.ShoppingCartGuid, Is.EqualTo(res.ShoppingCartGuid));
         Assert.That(cartDetails.BillingAddress, Is.Not.Null);
         Assert.That(cartDetails.BillingAddress.AddressLine1, Is.EqualTo(address.AddressLine1));
@@ -148,11 +156,12 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         Assert.That(cartDetails.BillingAddress.AddressCountryId, Is.EqualTo(address.AddressCountryId));
     }
 
+
     [Test]
     public async Task SetShippingAddress_CheckCartDetails()
     {
         var customer = GetCustomer();
-        await storeApiClient.SetCustomerAsync(Guid.Empty, customer);
+        await StoreApiClient.SetCustomerAsync(Guid.Empty, customer);
 
         var address = new KAddress
         {
@@ -162,10 +171,10 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
             AddressCountryId = 326
         };
 
-        var res = await storeApiClient.SetShippingAddressAsync(Guid.Empty, address);
+        var res = await StoreApiClient.SetShippingAddressAsync(Guid.Empty, address);
         AssertBaseResponse(res);
 
-        var cartDetails = await storeApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
+        var cartDetails = await StoreApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
         Assert.That(cartDetails.ShoppingCartGuid, Is.EqualTo(res.ShoppingCartGuid));
         Assert.That(cartDetails.ShippingAddress, Is.Not.Null);
         Assert.That(cartDetails.ShippingAddress?.AddressLine1, Is.EqualTo(address.AddressLine1));
@@ -174,13 +183,14 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         Assert.That(cartDetails.ShippingAddress?.AddressCountryId, Is.EqualTo(address.AddressCountryId));
     }
 
+
     [Test]
     [TestCase(2, 2)]
     public async Task SetDeliveryDetails_CheckCartDetails(int shippingId, int paymementId)
     {
         var (customer, billingAddress, shippingAddress) = (GetCustomer(), GetBillingAddress(), GetShippingAddress());
 
-        var res = await storeApiClient.SetDeliveryDetailsAsync(Guid.Empty,
+        var res = await StoreApiClient.SetDeliveryDetailsAsync(Guid.Empty,
             new KShoppingCartDeliveryDetails
             {
                 Customer = customer,
@@ -192,7 +202,7 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
 
 
         AssertBaseResponse(res);
-        var cartDetails = await storeApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
+        var cartDetails = await StoreApiClient.GetCurrentCartDetailsAsync(res.ShoppingCartGuid);
 
         Assert.That(cartDetails.ShoppingCartGuid, Is.EqualTo(res.ShoppingCartGuid));
         Assert.That(cartDetails.Customer, Is.Not.Null);
@@ -216,11 +226,12 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         Assert.That(cartDetails.PaymentOptionId, Is.EqualTo(shippingId));
     }
 
+
     [Test]
     public async Task CreateOrder_TwoProducts()
     {
-        var res1 = await storeApiClient.AddItemToCartAsync(skuId: 19, quantity: 1);
-        var res2 = await storeApiClient.AddItemToCartAsync(res1.ShoppingCartGuid, skuId: 16, quantity: 1);
+        var res1 = await StoreApiClient.AddItemToCartAsync(skuId: 19, quantity: 1);
+        var res2 = await StoreApiClient.AddItemToCartAsync(res1.ShoppingCartGuid, skuId: 16, quantity: 1);
 
         Assert.That(res1.ShoppingCartGuid, Is.Not.Empty);
         Assert.That(res2.ShoppingCartGuid, Is.EqualTo(res1.ShoppingCartGuid));
@@ -229,7 +240,7 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
 
         (int shippingOptionId, int paymentOptionId) = (2, 2);
 
-        var res3 = await storeApiClient.SetDeliveryDetailsAsync(res2.ShoppingCartGuid,
+        var res3 = await StoreApiClient.SetDeliveryDetailsAsync(res2.ShoppingCartGuid,
             new KShoppingCartDeliveryDetails
             {
                 Customer = customer,
@@ -241,7 +252,7 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
 
         Assert.That(res3.ShoppingCartGuid, Is.EqualTo(res2.ShoppingCartGuid));
 
-        var order = await storeApiClient.CreateOrderAsync(res3.ShoppingCartGuid, "Order test");
+        var order = await StoreApiClient.CreateOrderAsync(res3.ShoppingCartGuid, "Order test");
 
         Assert.That(order.OrderItems, Has.Count.EqualTo(2));
         Assert.That(order.OrderItems!.Select(oi => oi.OrderItemSkuId), Does.Contain(16).And.Contain(19));
@@ -267,12 +278,14 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         Assert.That(order.OrderPaymentOption.PaymentOptionId, Is.EqualTo(paymentOptionId));
     }
 
+
     private KCustomer GetCustomer() => new()
     {
         CustomerFirstName = "Automation",
         CustomerLastName = "Test",
         CustomerEmail = "automation.test@test.com"
     };
+
 
     private KAddress GetBillingAddress() => new()
     {
@@ -282,6 +295,7 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         AddressCountryId = 326
     };
 
+
     private KAddress GetShippingAddress() => new()
     {
         AddressLine1 = "Automation Street 2",
@@ -290,12 +304,14 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         AddressCountryId = 326
     };
 
+
     private async Task RemoveItem(KShoppingCartItemShoppingCartResponse response)
     {
-        var removeResponse = await storeApiClient.RemoveItemFromCartAsync(response!.ShoppingCartGuid,
+        var removeResponse = await StoreApiClient.RemoveItemFromCartAsync(response!.ShoppingCartGuid,
             response!.Value!.CartItemId);
         AssertBaseResponse(removeResponse);
     }
+
 
     private void AddItemToCartAsserts(KShoppingCartItemShoppingCartResponse response)
     {
@@ -306,15 +322,19 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
         Assert.That(response.Value!.CartItemId, Is.GreaterThan(0));
     }
 
+
     private void AssertBaseResponse(ShoppingCartBaseResponse response)
     {
         Assert.That(response.ShoppingCartGuid, Is.Not.Empty.And.Not.Null);
     }
 
+
+#pragma warning disable S1135 // Track uses of "TODO" tags
     [TearDown]
     public new void TearDown()
     {
         base.TearDown();
         //@TODO DB objects cleanup - need to create endpoint for cart and other objects deletion (not high priority)
     }
+#pragma warning restore S1135 // Track uses of "TODO" tags
 }
