@@ -9,15 +9,9 @@ namespace Kentico.Xperience.StoreApi.Serialization;
 /// <typeparam name="T"></typeparam>
 public class PolymorphicJsonConverter<T> : JsonConverter<T> where T : class
 {
-    public override bool CanConvert(Type typeToConvert)
-    {
-        return typeof(T) == typeToConvert;
-    }
+    public override bool CanConvert(Type typeToConvert) => typeof(T) == typeToConvert;
 
-    protected virtual Type GetObjectType(JsonDocument jsonDocument)
-    {
-        return typeof(T);
-    }
+    protected virtual Type GetObjectType(JsonDocument jsonDocument) => typeof(T);
 
     public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
@@ -31,14 +25,13 @@ public class PolymorphicJsonConverter<T> : JsonConverter<T> where T : class
         var objectType = GetObjectType(jsonDocument);
         if (objectType.IsAbstract || objectType.IsInterface)
         {
-            throw new JsonException("Json object cannot be serialized into abstract type. Override GetObjectType method to specify non abstract destination type.");
+            throw new JsonException(
+                "Json object cannot be serialized into abstract type. Override GetObjectType method to specify non abstract destination type.");
         }
 
         return JsonSerializer.Deserialize(ref reader2, objectType, options) as T;
     }
 
-    public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
-    {
+    public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options) =>
         JsonSerializer.Serialize(writer, value, value?.GetType() ?? typeof(T), options);
-    }
 }

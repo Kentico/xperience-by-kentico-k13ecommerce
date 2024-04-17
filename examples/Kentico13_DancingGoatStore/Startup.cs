@@ -17,6 +17,9 @@ using Kentico.Scheduler.Web.Mvc;
 using Kentico.Web.Mvc;
 using Kentico.Xperience.StoreApi;
 using Kentico.Xperience.StoreApi.Authentication;
+using Kentico.Xperience.StoreApi.Products.Pages;
+using Kentico.Xperience.StoreApi.Products.SKU;
+using Kentico.Xperience.StoreApi.Serialization;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -104,10 +107,12 @@ namespace DancingGoat
                 //shop api json configuration to support polymorphism
                 .AddJsonOptions(o =>
                 {
-                    //custom: if you are using customized objects you need this line of code for polymorphic serialization
-                    //@TODO fix issues with polymorphism
-                    //o.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<KProductNode>());
                     o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                    //If you want to use customized objects you need this lines of code for polymorphic serialization
+                    //WARNING: uncomment only when you want to use custom converter with model derived from KProductNode/KProductSKU,
+                    //with same type you will get infinite loop!
+                    // o.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<KProductNode>());
+                    // o.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<KProductSKU>());
                 });
 
             services.Configure<KenticoRequestLocalizationOptions>(options =>
@@ -125,11 +130,11 @@ namespace DancingGoat
             //Store API registration
             services.AddKenticoStoreApi(Configuration);
             services.AddKenticoStoreApiSwagger();
-            // examples of customization for API data: can use custom converters or original converter with custom model for auto mapping
-            // services.AddSingleton<IProductPageConverter<KProductNode>, CustomProductPageConverter>();
-            // services.AddSingleton<IProductSKUConverter<KProductSKU>, CustomSKUConverter>();
-            // services.AddScoped<IProductPageConverter<KProductNode>, ProductPageConverter<CustomProductPage>>();
-            // services.AddScoped<IProductSKUConverter<KProductSKU>, ProductSKUConverter<CustomSKU>>();
+
+            // examples of customization for API data: can use custom converters with custom models to extend products API endpoint
+
+            //services.AddSingleton<IProductPageConverter<KProductNode>, CustomProductPageConverter>();
+            //services.AddSingleton<IProductSKUConverter<KProductSKU>, CustomSKUConverter>();
         }
 
 

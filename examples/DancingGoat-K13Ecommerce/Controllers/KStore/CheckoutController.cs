@@ -113,9 +113,12 @@ public class CheckoutController : Controller
 
     [HttpPost("add-item")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> AddItem([FromForm] int skuId, [FromForm] int units)
+    public async Task<IActionResult> AddItem([FromForm] int skuId, [FromForm][Range(0, short.MaxValue)] int units)
     {
-        await shoppingService.AddItemToCart(skuId, units);
+        if (ModelState.IsValid)
+        {
+            await shoppingService.AddItemToCart(skuId, units);
+        }
         return await RedirectToCartContentPage();
     }
 
@@ -126,7 +129,10 @@ public class CheckoutController : Controller
         [FromForm] int cartItemId,
         [FromForm][Range(0, short.MaxValue)] int units)
     {
-        await shoppingService.UpdateItemQuantity(cartItemId, units);
+        if (ModelState.IsValid)
+        {
+            await shoppingService.UpdateItemQuantity(cartItemId, units);
+        }
         return await RedirectToCartContentPage();
     }
 

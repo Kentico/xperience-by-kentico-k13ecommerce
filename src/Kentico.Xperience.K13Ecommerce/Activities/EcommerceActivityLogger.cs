@@ -19,7 +19,7 @@ internal class EcommerceActivityLogger(ICustomActivityLogger customActivityLogge
 
 
     public void LogProductRemovedFromShoppingCartActivity(KProductSKU sku, int quantity, KProductVariant? variant = null) =>
-        customActivityLogger.Log(EcommerceActivityTypes.ProductAddedToCartActivity, new CustomActivityData
+        customActivityLogger.Log(EcommerceActivityTypes.ProductRemovedFromCartActivity, new CustomActivityData
         {
             ActivityTitle = $"Product removed from shopping cart '{sku.SkuName}'",
             ActivityValue = quantity.ToString(),
@@ -29,7 +29,7 @@ internal class EcommerceActivityLogger(ICustomActivityLogger customActivityLogge
 
 
     public void LogPurchaseActivity(int orderId, decimal totalPrice, string totalPriceInCorrectCurrency) =>
-        customActivityLogger.Log(EcommerceActivityTypes.ProductAddedToCartActivity, new CustomActivityData
+        customActivityLogger.Log(EcommerceActivityTypes.PurchaseActivity, new CustomActivityData
         {
             ActivityTitle = $"Purchase for '{totalPriceInCorrectCurrency}'",
             ActivityValue = totalPrice.ToString(CultureInfo.InvariantCulture),
@@ -38,7 +38,7 @@ internal class EcommerceActivityLogger(ICustomActivityLogger customActivityLogge
 
 
     public void LogPurchasedProductActivity(KProductSKU sku, int quantity, KProductVariant? variant = null) =>
-        customActivityLogger.Log(EcommerceActivityTypes.ProductAddedToCartActivity, new CustomActivityData
+        customActivityLogger.Log(EcommerceActivityTypes.PurchasedProductActivity, new CustomActivityData
         {
             ActivityTitle = $"Purchased product '{sku.SkuName}'",
             ActivityValue = quantity.ToString(),

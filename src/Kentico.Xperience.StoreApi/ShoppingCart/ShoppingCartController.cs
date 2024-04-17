@@ -23,6 +23,7 @@ namespace Kentico.Xperience.StoreApi.ShoppingCart;
 [Route($"{ApiRoute.ApiPrefix}/cart")]
 [Produces(MediaTypeNames.Application.Json)]
 [ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
 [ProducesResponseType(StatusCodes.Status401Unauthorized)]
 public class ShoppingCartController : ControllerBase
 {
