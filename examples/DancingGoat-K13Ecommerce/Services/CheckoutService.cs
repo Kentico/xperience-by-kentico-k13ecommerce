@@ -62,7 +62,7 @@ public class CheckoutService : ICheckoutService
         var shippingOptions =
             CreateShippingOptionList(cartDetails.AvailableShippingOptions, currency.CurrencyFormatString);
 
-        customer ??= new CustomerViewModel(cartDetails.Customer);
+        customer ??= new CustomerViewModel(await shoppingService.GetCustomerOrCreateFromAuthenticatedUser(cartDetails.Customer));
 
         var addresses = (cartDetails.Customer != null)
             ? await customerService.GetCustomerAddresses(cartDetails.Customer.CustomerId)

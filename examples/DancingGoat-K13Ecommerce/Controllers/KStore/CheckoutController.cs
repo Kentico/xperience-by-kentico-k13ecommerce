@@ -227,9 +227,8 @@ public class CheckoutController : Controller
             return View(viewModel);
         }
 
-        var customer = await shoppingService.GetCustomerOrCreateFromAuthenticatedUser() ?? new KCustomer();
-        bool emailCanBeChanged =
-            !User.Identity?.IsAuthenticated == true || string.IsNullOrWhiteSpace(customer.CustomerEmail);
+        var customer = await shoppingService.GetCustomerOrCreateFromAuthenticatedUser(cartDetails.Customer) ?? new KCustomer();
+        bool emailCanBeChanged = User.Identity?.IsAuthenticated is not true || string.IsNullOrWhiteSpace(customer.CustomerEmail);
         model.Customer.ApplyToCustomer(customer, emailCanBeChanged);
 
         int modelAddressID = model.BillingAddress.BillingAddressSelector?.AddressID ?? 0;

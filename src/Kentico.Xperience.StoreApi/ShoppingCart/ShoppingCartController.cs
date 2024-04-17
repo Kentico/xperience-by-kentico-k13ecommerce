@@ -6,6 +6,7 @@ using AutoMapper;
 using CMS.Base;
 using CMS.DataEngine;
 using CMS.Ecommerce;
+using CMS.Membership;
 
 using Kentico.Xperience.StoreApi.Authentication;
 using Kentico.Xperience.StoreApi.Customers;
@@ -263,6 +264,11 @@ public class ShoppingCartController : ControllerBase
         [FromBody] KCustomer customer)
     {
         var customerInfo = mapper.Map(customer, shoppingService.GetCurrentCustomer());
+        if (customerInfo.CustomerUserID == 0 && !MembershipContext.AuthenticatedUser.IsPublic())
+        {
+            customerInfo.CustomerUserID = MembershipContext.AuthenticatedUser.UserID;
+        }
+
         return TryCatch<ShoppingCartBaseResponse>(() =>
         {
             shoppingService.SetCustomer(customerInfo);
@@ -330,6 +336,10 @@ public class ShoppingCartController : ControllerBase
     {
         var cart = shoppingService.GetCurrentShoppingCart();
         var customerInfo = mapper.Map(deliveryDetails.Customer, cart.Customer);
+        if (customerInfo.CustomerUserID == 0 && !MembershipContext.AuthenticatedUser.IsPublic())
+        {
+            customerInfo.CustomerUserID = MembershipContext.AuthenticatedUser.UserID;
+        }
         var billingAddressInfo = mapper.Map(deliveryDetails.BillingAddress, cart.ShoppingCartBillingAddress);
         var shippingAddressInfo = deliveryDetails.ShippingAddress != null ?
             mapper.Map(deliveryDetails.ShippingAddress, cart.ShoppingCartShippingAddress) :

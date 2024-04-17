@@ -146,7 +146,7 @@ public interface IShoppingService
     /// 
     /// </summary>
     /// <returns></returns>
-    Task<KCustomer?> GetCustomerOrCreateFromAuthenticatedUser();
+    Task<KCustomer?> GetCustomerOrCreateFromAuthenticatedUser(KCustomer? customer = null);
 
 
     /// <summary>

@@ -209,15 +209,12 @@ internal class ShoppingService(
     }
 
 
-    public async Task<KCustomer?> GetCustomerOrCreateFromAuthenticatedUser()
+    public async Task<KCustomer?> GetCustomerOrCreateFromAuthenticatedUser(KCustomer? customer = null)
     {
-        var cartDetails = await GetCurrentShoppingCartDetails();
-
-        if (cartDetails.Customer != null)
+        if (customer != null)
         {
-            return cartDetails.Customer;
+            return customer;
         }
-
 
         var user = httpContextAccessor.HttpContext?.User?.Identity;
 
