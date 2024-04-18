@@ -27,7 +27,6 @@ internal class ProductSynchronizationService(
     public async Task SynchronizeProducts()
     {
         //Current limitations: only synchronization from default culture is supported. XByK must have same language enabled as default culture in K13
-
         string defaultCultureCode = ((await siteStoreService.GetCultures()).FirstOrDefault(c => c.CultureIsDefault)?.CultureCode)
             ?? throw new InvalidOperationException("No default culture found on K13 Store");
 
@@ -144,7 +143,7 @@ internal class ProductSynchronizationService(
             new List<ProductImageDto>
             {
                 new() { ImageUrl = product.Sku.MainImageUrl!, ImageDescription = product.Sku.SkuName! }
-            }.Where(i => i.ExternalId != Guid.Empty) :
+            }.Where(i => !string.IsNullOrWhiteSpace(i.ExternalId)) :
             Enumerable.Empty<ProductImageDto>();
 
 

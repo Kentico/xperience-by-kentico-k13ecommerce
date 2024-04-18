@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contenttype>
+  <ClassContentTypeType>Website</ClassContentTypeType>
+  <ClassDisplayName>K13Store - Order complete</ClassDisplayName>
+  <ClassFormDefinition>
+    <form>
+      <field column="ContentItemDataID" columntype="integer" enabled="true" guid="9142a439-5319-46ec-bbcb-ddff88abd318" isPK="true" />
+      <field column="ContentItemDataCommonDataID" columntype="integer" enabled="true" guid="2a669717-3fb1-46ce-9920-e71ac7ae1011" refobjtype="cms.contentitemcommondata" reftype="Required" system="true" />
+      <field column="ContentItemDataGUID" columntype="guid" enabled="true" guid="465a6817-047d-4737-aad3-5f4fe29d4414" isunique="true" system="true" />
+    </form>
+  </ClassFormDefinition>
+  <ClassGUID>a0478c46-27fb-4eed-86fa-08964e7fad8d</ClassGUID>
+  <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
+  <ClassIconClass>xp-invoice</ClassIconClass>
+  <ClassName>K13Store.OrderComplete</ClassName>
+  <ClassTableName>K13Store_OrderComplete</ClassTableName>
+  <ClassType>Content</ClassType>
+  <ClassWebPageHasUrl>True</ClassWebPageHasUrl>
+</cms.contenttype>

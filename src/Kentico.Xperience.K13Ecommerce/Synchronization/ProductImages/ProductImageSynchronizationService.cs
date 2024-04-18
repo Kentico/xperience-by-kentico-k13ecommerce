@@ -24,7 +24,7 @@ public class ProductImageSynchronizationService : SynchronizationServiceCommon, 
     public async Task<IReadOnlySet<Guid>> ProcessImages(IEnumerable<ProductImageDto> images,
         IEnumerable<ProductImage> existingImages, string language, int userId)
     {
-        var (toCreate, toUpdate, toDelete) = ClassifyItems<ProductImageDto, ProductImage, Guid>(images, existingImages);
+        var (toCreate, toUpdate, toDelete) = ClassifyItems<ProductImageDto, ProductImage, string>(images, existingImages);
 
         var newContentsIDs = new HashSet<int>();
         foreach (var imageToCreate in toCreate)
@@ -84,7 +84,7 @@ public class ProductImageSynchronizationService : SynchronizationServiceCommon, 
         if (syncItem.GetModifiedProperties(existingImage, out var modifiedProps))
         {
             bool assetUpload = false;
-            if (modifiedProps.ContainsKey(nameof(ProductImage.ProductImageOriginalGUID)))
+            if (modifiedProps.ContainsKey(nameof(ProductImage.ProductImageOriginalPath)))
             {
                 syncItem.ImageAsset = await CreateAssetMetadata(productImage.ImageUrl, productImage.ImageDescription);
                 assetUpload = true;

@@ -47,6 +47,6 @@ namespace K13Store
 		/// <summary>
 		/// ProductImageOriginalGUID.
 		/// </summary>
-		public Guid ProductImageOriginalGUID { get; set; }
+		public string ProductImageOriginalPath { get; set; }
 	}
 }

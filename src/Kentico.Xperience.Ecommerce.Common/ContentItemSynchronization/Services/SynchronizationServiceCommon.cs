@@ -13,23 +13,22 @@ public abstract class SynchronizationServiceCommon(IHttpClientFactory httpClient
 {
     protected (IEnumerable<TStoreItem> ToCreate, IEnumerable<(TStoreItem StoreItem, TContentItem ContentItem)> ToUpdate,
         IEnumerable<TContentItem> ToDelete)
-        ClassifyItems<TStoreItem, TContentItem, TType>(IEnumerable<TStoreItem> storeProducts,
-            IEnumerable<TContentItem> existingProducts)
+        ClassifyItems<TStoreItem, TContentItem, TType>(IEnumerable<TStoreItem> storeItems,
+            IEnumerable<TContentItem> existingItems)
         where TStoreItem : IItemIdentifier<TType>
         where TContentItem : IItemIdentifier<TType>
-        where TType : struct
     {
-        var existingLookup = existingProducts.ToLookup(item => item.ExternalId);
-        var storeLookup = storeProducts.ToLookup(item => item.ExternalId);
+        var existingLookup = existingItems.ToLookup(item => item.ExternalId);
+        var storeLookup = storeItems.ToLookup(item => item.ExternalId);
 
-        var toCreate = storeProducts.Where(storeItem => !existingLookup.Contains(storeItem.ExternalId))
+        var toCreate = storeItems.Where(storeItem => !existingLookup.Contains(storeItem.ExternalId))
             .ToList();
 
-        var toUpdate = storeProducts.SelectMany(storeItem => existingLookup[storeItem.ExternalId],
+        var toUpdate = storeItems.SelectMany(storeItem => existingLookup[storeItem.ExternalId],
                 (storeItem, existingItem) => (storeItem, existingItem))
             .ToList();
 
-        var toDelete = existingProducts.Where(p => !storeLookup.Contains(p.ExternalId)).ToList();
+        var toDelete = existingItems.Where(p => !storeLookup.Contains(p.ExternalId)).ToList();
 
         return (toCreate, toUpdate, toDelete);
     }
@@ -48,7 +47,7 @@ public abstract class SynchronizationServiceCommon(IHttpClientFactory httpClient
 
         long length = bytes.LongLength;
         var dataWrapper = new BinaryDataWrapper(bytes);
-        var fileSource = new ContentItemAssetStreamSource((CancellationToken cancellationToken) => Task.FromResult(dataWrapper.Stream));
+        var fileSource = new ContentItemAssetStreamSource(cancellationToken => Task.FromResult(dataWrapper.Stream));
         string extension = Path.GetExtension(name);
         if (string.IsNullOrWhiteSpace(extension))
         {

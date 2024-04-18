@@ -25,7 +25,7 @@ internal class ProductImageSynchronizationItem : ContentItemSynchronizationBase,
     {
         modifiedProps = [];
         SetPropsIfDiff(contentItem.ProductImageDescription, Item.ImageDescription, nameof(ProductImage.ProductImageDescription), modifiedProps);
-        SetPropsIfDiff(contentItem.ProductImageOriginalGUID, Item.ExternalId, nameof(ProductImage.ProductImageOriginalGUID), modifiedProps);
+        SetPropsIfDiff(contentItem.ProductImageOriginalPath, Item.ExternalId, nameof(ProductImage.ProductImageOriginalPath), modifiedProps);
 
         return modifiedProps.Count > 0;
     }
@@ -34,7 +34,7 @@ internal class ProductImageSynchronizationItem : ContentItemSynchronizationBase,
     public override Dictionary<string, object?> ToDict() => new()
     {
         [nameof(ProductImage.ProductImageDescription)] = Item.ImageDescription,
-        [nameof(ProductImage.ProductImageOriginalGUID)] = Item.ExternalId,
+        [nameof(ProductImage.ProductImageOriginalPath)] = Item.ExternalId,
         [nameof(ProductImage.ProductImageAsset)] = ImageAsset
     };
 }

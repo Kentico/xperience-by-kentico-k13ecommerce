@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contenttype>
+  <ClassContentTypeType>Website</ClassContentTypeType>
+  <ClassDisplayName>K13Store - Store page</ClassDisplayName>
+  <ClassFormDefinition>
+    <form>
+      <field column="ContentItemDataID" columntype="integer" enabled="true" guid="8ce30398-8d71-4340-866d-fae6452f4aea" isPK="true" />
+      <field column="ContentItemDataCommonDataID" columntype="integer" enabled="true" guid="f97fd1f4-35f3-4efb-ae8d-6e28eae915ce" refobjtype="cms.contentitemcommondata" reftype="Required" system="true" />
+      <field column="ContentItemDataGUID" columntype="guid" enabled="true" guid="d2ecd256-cc6b-48ee-b41b-5781335cda36" isunique="true" system="true" />
+      <schema guid="7c7b596d-5b91-40a5-8ded-f2e4757d8e66" name="7c7b596d-5b91-40a5-8ded-f2e4757d8e66">
+        <properties>
+          <kxp.code.name>SEOFields</kxp.code.name>
+        </properties>
+      </schema>
+      <field column="HotTipProducts" columnprecision="0" columntype="webpages" enabled="true" guid="8c2710e7-71ad-4bef-b5f7-2dac1473297b" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Hot Tips</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.WebPageSelector</controlname>
+          <MaximumPages>4</MaximumPages>
+          <Sortable>False</Sortable>
+          <TreePath>/Store</TreePath>
+        </settings>
+      </field>
+    </form>
+  </ClassFormDefinition>
+  <ClassGUID>6cacae2b-adbd-4d87-a9d7-b6aa4e332ad2</ClassGUID>
+  <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
+  <ClassIconClass>xp-market</ClassIconClass>
+  <ClassName>K13Store.StorePage</ClassName>
+  <ClassTableName>K13Store_StorePage</ClassTableName>
+  <ClassType>Content</ClassType>
+  <ClassWebPageHasUrl>True</ClassWebPageHasUrl>
+</cms.contenttype>
