@@ -242,6 +242,10 @@ internal class ShoppingService(
         (await ProcessAction(async () => await storeApiClient.ValidateCartItemsAsync(ShoppingCartGuid))).Value!;
 
 
+    public async Task SetCurrency(string currencyCode) => await ProcessAction(
+        async () => await storeApiClient.SetCurrencyAsync(ShoppingCartGuid, currencyCode));
+
+
     protected virtual async Task<TResponse> ProcessAction<TResponse>(Func<Task<TResponse>> func,
         bool cartMustBeStored = false, bool clearCaches = true)
         where TResponse : IShoppingCartIdentifier

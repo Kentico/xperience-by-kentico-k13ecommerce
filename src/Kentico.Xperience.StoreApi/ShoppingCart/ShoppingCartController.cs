@@ -9,6 +9,7 @@ using CMS.Ecommerce;
 using CMS.Membership;
 
 using Kentico.Xperience.StoreApi.Authentication;
+using Kentico.Xperience.StoreApi.Currencies;
 using Kentico.Xperience.StoreApi.Customers;
 using Kentico.Xperience.StoreApi.Orders;
 using Kentico.Xperience.StoreApi.Routing;
@@ -33,16 +34,19 @@ public class ShoppingCartController : ControllerBase
     private readonly ISiteService siteService;
     private readonly IShippingOptionInfoProvider shippingOptionInfoProvider;
     private readonly IPaymentOptionInfoProvider paymentOptionInfoProvider;
+    private readonly ICurrencyInfoProvider currencyInfoProvider;
 
 
     public ShoppingCartController(IShoppingService shoppingService, IMapper mapper, ISiteService siteService,
-        IShippingOptionInfoProvider shippingOptionInfoProvider, IPaymentOptionInfoProvider paymentOptionInfoProvider)
+        IShippingOptionInfoProvider shippingOptionInfoProvider, IPaymentOptionInfoProvider paymentOptionInfoProvider,
+        ICurrencyInfoProvider currencyInfoProvider)
     {
         this.shoppingService = shoppingService;
         this.mapper = mapper;
         this.siteService = siteService;
         this.shippingOptionInfoProvider = shippingOptionInfoProvider;
         this.paymentOptionInfoProvider = paymentOptionInfoProvider;
+        this.currencyInfoProvider = currencyInfoProvider;
     }
 
 
@@ -428,6 +432,40 @@ public class ShoppingCartController : ControllerBase
         {
             ShoppingCartGuid = cart.ShoppingCartGUID,
             Value = mapper.Map<IEnumerable<KShoppingCartItemValidationError>>(validationErrors)
+        });
+    }
+
+
+    /// <summary>
+    /// Set currency to cart when currency is different than previous
+    /// </summary>
+    /// <param name="currencyCode"></param>
+    /// <returns></returns>
+    [HttpPut("set-currency")]
+    public ActionResult<ShoppingCartBaseResponse> SetCurrency(
+        [FromHeader(Name = "ShoppingCartGUID")][Required] Guid shoppingCartGuid,
+        [CurrencyValidation] string currencyCode)
+    {
+        var currencyInfo = currencyInfoProvider.Get()
+            .WhereEquals(nameof(CurrencyInfo.CurrencyCode), currencyCode)
+            .OnSite(ECommerceHelper.GetSiteID(siteService.CurrentSite.SiteID, "CMSStoreUseGlobalCurrencies"))
+            .FirstOrDefault();
+
+        if (currencyInfo is null)
+        {
+            return ValidationProblem($"Currency '{currencyCode}' not found");
+        }
+
+        return TryCatch<ShoppingCartBaseResponse>(() =>
+        {
+            var cart = shoppingService.GetCurrentShoppingCart();
+            if (cart.ShoppingCartCurrencyID != currencyInfo.CurrencyID)
+            {
+                cart.ShoppingCartCurrencyID = currencyInfo.CurrencyID;
+                shoppingService.SaveCart();
+            }
+
+            return Ok(GetBaseResponse());
         });
     }
 

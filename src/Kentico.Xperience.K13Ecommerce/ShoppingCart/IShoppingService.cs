@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.K13Ecommerce.ShoppingCart;
 
 /// <summary>
-/// Provides interface for integration with shopping cart K13 (communicate via store api)
+/// Provides interface for integration with shopping cart on K13 (communicates via store api)
 /// </summary>
 public interface IShoppingService
 {
@@ -160,4 +160,12 @@ public interface IShoppingService
     /// </summary>
     /// <returns></returns>
     Task<ICollection<KShoppingCartItemValidationError>> ValidateShoppingCartItems();
+
+
+    /// <summary>
+    /// Set currency to cart when currency is different than previous
+    /// </summary>
+    /// <param name="currencyCode"></param>
+    /// <returns></returns>
+    Task SetCurrency(string currencyCode);
 }

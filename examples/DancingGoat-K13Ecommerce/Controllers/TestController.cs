@@ -1,11 +1,12 @@
-﻿using Kentico.Xperience.K13Ecommerce.StoreApi;
+﻿using Kentico.Xperience.K13Ecommerce.ShoppingCart;
+using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 using Microsoft.AspNetCore.Mvc;
 
 namespace DancingGoat.Controllers;
 #if DEBUG
 [Route("[controller]/[action]")]
-public class TestController(IKenticoStoreApiClient storeApiClient) : Controller
+public class TestController(IKenticoStoreApiClient storeApiClient, IShoppingService shoppingService) : Controller
 {
     public async Task<IActionResult> TestProducts()
     {
@@ -17,6 +18,12 @@ public class TestController(IKenticoStoreApiClient storeApiClient) : Controller
     {
         var cart = await storeApiClient.GetCurrentCartContentAsync();
         return Ok(cart);
+    }
+
+    public async Task<IActionResult> TestSetCurrency(string currencyCode)
+    {
+        await shoppingService.SetCurrency(currencyCode);
+        return await TestCart();
     }
 }
 #endif
