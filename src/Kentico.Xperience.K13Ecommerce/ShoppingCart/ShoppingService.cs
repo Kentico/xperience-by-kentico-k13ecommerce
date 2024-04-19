@@ -204,6 +204,8 @@ internal class ShoppingService(
 
         activityLogger.LogPurchaseActivity(order.OrderId, order.OrderGrandTotalInMainCurrency,
             string.Format(cart.Currency.CurrencyFormatString!, order.OrderGrandTotalInMainCurrency));
+        
+        UpdateContactFromAddress(order.OrderBillingAddress);
 
         return order;
     }
@@ -313,6 +315,23 @@ internal class ShoppingService(
         contact.ContactEmail = customer.CustomerEmail;
         contact.ContactMobilePhone = customer.CustomerPhone;
         contact.ContactCompanyName = customer.CustomerCompany;
+
+        contactInfoProvider.Set(contact);
+    }
+
+    private void UpdateContactFromAddress(KAddress address)
+    {
+        var contact = ContactManagementContext.CurrentContact;
+        if (contact == null)
+        {
+            return;
+        }
+
+        contact.ContactAddress1 = address.AddressLine1;
+        contact.ContactCity = address.AddressCity;
+        contact.ContactZIP = address.AddressZip;
+        contact.ContactCountryID = address.AddressCountryId;
+        contact.ContactStateID = address.AddressStateId;
 
         contactInfoProvider.Set(contact);
     }
