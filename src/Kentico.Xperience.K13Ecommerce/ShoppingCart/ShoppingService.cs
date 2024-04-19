@@ -204,7 +204,7 @@ internal class ShoppingService(
 
         activityLogger.LogPurchaseActivity(order.OrderId, order.OrderGrandTotalInMainCurrency,
             string.Format(cart.Currency.CurrencyFormatString!, order.OrderGrandTotalInMainCurrency));
-        
+
         UpdateContactFromAddress(order.OrderBillingAddress);
 
         return order;
