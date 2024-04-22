@@ -19,6 +19,7 @@ namespace Kentico.Xperience.StoreApi.Products;
 /// Controller for product related api endpoints
 /// </summary>
 [ApiController]
+[AuthorizeStore]
 [Route($"{ApiRoute.ApiPrefix}/products")]
 [Produces(MediaTypeNames.Application.Json)]
 [ProducesResponseType(StatusCodes.Status200OK)]

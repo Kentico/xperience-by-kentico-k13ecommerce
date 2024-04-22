@@ -1,6 +1,7 @@
 ﻿using System.Net.Mime;
 
 using Kentico.Membership;
+using Kentico.Xperience.StoreApi.Authentication;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Kentico.Xperience.StoreApi.Sychronization;
 
 [ApiController]
+[AuthorizeStore]
 [Route("api/store/synchronization")]
 public class UserSynchronizationController : ControllerBase
 {
