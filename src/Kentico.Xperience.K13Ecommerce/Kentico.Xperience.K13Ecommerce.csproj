@@ -25,8 +25,8 @@
 	</ItemGroup>
 
 	<ItemGroup>		
-		<PackageReference Include="Duende.AccessTokenManagement.OpenIdConnect" />		
-		<PackageReference Include="Kentico.Xperience.Core" />		
+		<PackageReference Include="Duende.AccessTokenManagement.OpenIdConnect" />			
+		<PackageReference Include="Kentico.Xperience.WebApp" />
 		<PackageReference Include="Microsoft.Extensions.ApiDescription.Client">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -35,10 +35,10 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>		
-		<PackageReference Include="Scrutor" />		
+		<PackageReference Include="Scrutor" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj" />
+	  <ProjectReference Include="..\..\submodules\xperience-by-kentico-ecommerce-common\src\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj" />
 	</ItemGroup>
 </Project>

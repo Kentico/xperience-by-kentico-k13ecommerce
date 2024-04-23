@@ -1012,11 +1012,19 @@
           "System.IO.Hashing": "7.0.0"
         }
       },
+      "kentico.xperience.ecommerce.common": {
+        "type": "Project",
+        "dependencies": {
+          "Kentico.Xperience.Core": "[28.2.1, )",
+          "Microsoft.Extensions.Http": "[8.0.0, )"
+        }
+      },
       "kentico.xperience.k13ecommerce": {
         "type": "Project",
         "dependencies": {
           "Duende.AccessTokenManagement.OpenIdConnect": "[2.1.0, )",
-          "Kentico.Xperience.Core": "[28.2.1, )",
+          "Kentico.Xperience.Ecommerce.Common": "[1.0.0-prerelease-1, )",
+          "Kentico.Xperience.WebApp": "[28.2.1, )",
           "Scrutor": "[4.2.2, )"
         }
       },

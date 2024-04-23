@@ -12,27 +12,20 @@
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "8.0.0"
         }
       },
-      "Kentico.Xperience.Core": {
+      "Kentico.Xperience.WebApp": {
         "type": "Direct",
         "requested": "[28.2.1, )",
         "resolved": "28.2.1",
-        "contentHash": "f2T7+Ry/6oqdTBMHNIv2mdA61Z6C9S+vT9brwjvUC/XyqMtJUoSHRfzc3fHDWKb0djXoYtko0TwJWZp2uqU9TA==",
+        "contentHash": "781koL8+4yXFekO0cEZaUFDRgD83y0XhMc1dlNaBJ9VqpzXplEVhfgfhTPyJj19Amj/PZcKwBKbj7ebuaT6Nzg==",
         "dependencies": {
-          "AngleSharp": "0.17.1",
-          "MailKit": "4.3.0",
-          "Microsoft.Data.SqlClient": "5.1.4",
-          "Microsoft.Extensions.Caching.Memory": "6.0.1",
-          "Microsoft.Extensions.Configuration": "6.0.1",
-          "Microsoft.Extensions.Configuration.Binder": "6.0.0",
-          "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "Microsoft.Extensions.FileProviders.Physical": "6.0.0",
-          "Microsoft.Extensions.Hosting.Abstractions": "6.0.0",
+          "CommandLineParser": "2.9.1",
+          "HotChocolate.AspNetCore": "13.8.1",
+          "HotChocolate.Data": "13.8.1",
+          "HtmlSanitizer": "8.0.811",
+          "Kentico.Xperience.Core": "[28.2.1]",
+          "Microsoft.Extensions.FileProviders.Embedded": "6.0.26",
           "Microsoft.Extensions.Localization": "6.0.26",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0",
-          "Mono.Cecil": "0.11.5",
-          "Newtonsoft.Json": "13.0.3",
-          "System.CodeDom": "8.0.0",
-          "System.Configuration.ConfigurationManager": "6.0.1"
+          "System.Runtime.Caching": "8.0.0"
         }
       },
       "Microsoft.Extensions.ApiDescription.Client": {
@@ -406,18 +399,6 @@
         "resolved": "6.2.0",
         "contentHash": "4AXZ6Tp+DNwrSSeBziiX/231i8ZpD77A9nEMyc68gLSCWG0kgWsIBeFquYcBebiIPkfB7GEXzCYuuLeR1QZJIQ=="
       },
-      "Kentico.Aira.Client": {
-        "type": "Transitive",
-        "resolved": "1.0.23",
-        "contentHash": "16jt+oHW6Fa6fDmJlJBTJuMK+A6nwXDX7IcYygYFzq01Sek43oQB2wjhXPRhntsvFYhAbWcBwXPzn0ALlMggSQ==",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "Microsoft.Extensions.Http": "6.0.0",
-          "Microsoft.Extensions.Options": "6.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0",
-          "System.IdentityModel.Tokens.Jwt": "6.31.0"
-        }
-      },
       "MailKit": {
         "type": "Transitive",
         "resolved": "4.3.0",
@@ -432,14 +413,6 @@
         "contentHash": "vBAcj4GpCpvJXIXFnYXDVF0yQtsRAaGib+DiMc79KZNyb/TKhxpoHQwOP7v3aMAoIqUC0HUbf1RQJUoOygakbQ==",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.0.3"
-        }
-      },
-      "Microsoft.AspNetCore.SpaServices.Extensions": {
-        "type": "Transitive",
-        "resolved": "6.0.26",
-        "contentHash": "iqnTP4s0NpacmhdHdJwRfg0ot29+PjcCMEHolxdkfQvLmwPL+BgxEBmK5kRlMLp4YDggWeFigoX8xUaNi6nGog==",
-        "dependencies": {
-          "Microsoft.Extensions.FileProviders.Physical": "6.0.0"
         }
       },
       "Microsoft.Bcl.AsyncInterfaces": {
@@ -960,36 +933,31 @@
       "kentico.xperience.ecommerce.common": {
         "type": "Project",
         "dependencies": {
-          "Kentico.Xperience.Admin": "[28.2.1, )",
-          "Kentico.Xperience.Core": "[28.2.1, )"
+          "Kentico.Xperience.Core": "[28.2.1, )",
+          "Microsoft.Extensions.Http": "[8.0.0, )"
         }
       },
-      "Kentico.Xperience.Admin": {
+      "Kentico.Xperience.Core": {
         "type": "CentralTransitive",
         "requested": "[28.2.1, )",
         "resolved": "28.2.1",
-        "contentHash": "eyYU2pskDDGpEvjMnsNnS61YiaUtCkknhaNMa/+d3ljbuuXT8040gHJEyp1BminRClkdrK3oBiUzsYkQC1AN3A==",
+        "contentHash": "f2T7+Ry/6oqdTBMHNIv2mdA61Z6C9S+vT9brwjvUC/XyqMtJUoSHRfzc3fHDWKb0djXoYtko0TwJWZp2uqU9TA==",
         "dependencies": {
-          "Kentico.Aira.Client": "1.0.23",
-          "Kentico.Xperience.WebApp": "[28.2.1]",
-          "Microsoft.AspNetCore.SpaServices.Extensions": "6.0.26",
-          "Microsoft.Extensions.FileProviders.Embedded": "6.0.26"
-        }
-      },
-      "Kentico.Xperience.WebApp": {
-        "type": "CentralTransitive",
-        "requested": "[28.2.1, )",
-        "resolved": "28.2.1",
-        "contentHash": "781koL8+4yXFekO0cEZaUFDRgD83y0XhMc1dlNaBJ9VqpzXplEVhfgfhTPyJj19Amj/PZcKwBKbj7ebuaT6Nzg==",
-        "dependencies": {
-          "CommandLineParser": "2.9.1",
-          "HotChocolate.AspNetCore": "13.8.1",
-          "HotChocolate.Data": "13.8.1",
-          "HtmlSanitizer": "8.0.811",
-          "Kentico.Xperience.Core": "[28.2.1]",
-          "Microsoft.Extensions.FileProviders.Embedded": "6.0.26",
+          "AngleSharp": "0.17.1",
+          "MailKit": "4.3.0",
+          "Microsoft.Data.SqlClient": "5.1.4",
+          "Microsoft.Extensions.Caching.Memory": "6.0.1",
+          "Microsoft.Extensions.Configuration": "6.0.1",
+          "Microsoft.Extensions.Configuration.Binder": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection": "6.0.1",
+          "Microsoft.Extensions.FileProviders.Physical": "6.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "6.0.0",
           "Microsoft.Extensions.Localization": "6.0.26",
-          "System.Runtime.Caching": "8.0.0"
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0",
+          "Mono.Cecil": "0.11.5",
+          "Newtonsoft.Json": "13.0.3",
+          "System.CodeDom": "8.0.0",
+          "System.Configuration.ConfigurationManager": "6.0.1"
         }
       }
     }

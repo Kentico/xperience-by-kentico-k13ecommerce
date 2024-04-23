@@ -32,8 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{DDCE1F24-2
 		docs\Usage-Guide.md = docs\Usage-Guide.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.Ecommerce.Common", "src\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj", "{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.K13Ecommerce", "src\Kentico.Xperience.K13Ecommerce\Kentico.Xperience.K13Ecommerce.csproj", "{C30A7837-2BD6-4B0E-996D-2A2B9167173F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DancingGoat", "examples\DancingGoat-K13Ecommerce\DancingGoat.csproj", "{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7}"
@@ -42,9 +40,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico13_DancingGoat", "ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.StoreApi", "src\Kentico.Xperience.StoreApi\Kentico.Xperience.StoreApi.csproj", "{28755E8F-BB89-4196-AC65-2C5A823EF522}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.Xperience.Store.Rcl", "src\Kentico.Xperience.Store.Rcl\Kentico.Xperience.Store.Rcl.csproj", "{E0981D21-9E8F-4A5B-9A98-A84D14EFA250}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.Store.Rcl", "src\Kentico.Xperience.Store.Rcl\Kentico.Xperience.Store.Rcl.csproj", "{E0981D21-9E8F-4A5B-9A98-A84D14EFA250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kentico.Xperience.KStore.Tests", "test\Kentico.Xperience.KStore.Tests\Kentico.Xperience.KStore.Tests.csproj", "{0D6110FF-A1FF-4486-8682-DF2D4CEB4876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.KStore.Tests", "test\Kentico.Xperience.KStore.Tests\Kentico.Xperience.KStore.Tests.csproj", "{0D6110FF-A1FF-4486-8682-DF2D4CEB4876}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.Ecommerce.Common", "submodules\xperience-by-kentico-ecommerce-common\src\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj", "{96B93007-AB51-4A1C-A36D-1C014AD1F608}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,10 +52,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C30A7837-2BD6-4B0E-996D-2A2B9167173F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C30A7837-2BD6-4B0E-996D-2A2B9167173F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C30A7837-2BD6-4B0E-996D-2A2B9167173F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,18 +76,22 @@ Global
 		{0D6110FF-A1FF-4486-8682-DF2D4CEB4876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D6110FF-A1FF-4486-8682-DF2D4CEB4876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D6110FF-A1FF-4486-8682-DF2D4CEB4876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B93007-AB51-4A1C-A36D-1C014AD1F608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B93007-AB51-4A1C-A36D-1C014AD1F608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B93007-AB51-4A1C-A36D-1C014AD1F608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B93007-AB51-4A1C-A36D-1C014AD1F608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8EC1FE22-5A7C-4A98-ACB2-4E60C7FE7D92} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
 		{C30A7837-2BD6-4B0E-996D-2A2B9167173F} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
 		{2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7} = {6264600D-221E-4E51-9D7F-14411DF793DD}
 		{219565E2-67AC-4858-A3D1-5C9A27BED0A0} = {6264600D-221E-4E51-9D7F-14411DF793DD}
 		{28755E8F-BB89-4196-AC65-2C5A823EF522} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
 		{E0981D21-9E8F-4A5B-9A98-A84D14EFA250} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
 		{0D6110FF-A1FF-4486-8682-DF2D4CEB4876} = {7C8D51F1-E71F-4DFE-BAE3-8B1D9180EEB4}
+		{96B93007-AB51-4A1C-A36D-1C014AD1F608} = {A94EE676-9ABE-44EA-BF9E-22004E9D54C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B2A20BC-F57B-4AAE-B1C2-E4DC52EFCAC5}
