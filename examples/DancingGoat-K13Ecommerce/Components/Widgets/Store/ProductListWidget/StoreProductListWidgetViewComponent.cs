@@ -20,6 +20,7 @@ namespace DancingGoat.Components.Widgets.Store.ProductListWidget;
 /// Use this widget when you want to directly show product data from K13 Store
 /// </summary>
 /// <param name="storeApiClient"></param>
+/// <param name="cache"></param>
 public class StoreProductListWidgetViewComponent(IKenticoStoreApiClient storeApiClient, IProgressiveCache cache)
     : ViewComponent
 {

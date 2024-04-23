@@ -6,9 +6,6 @@
     <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="GraphQL" Version="7.8.0" />
-    <PackageVersion Include="GraphQL.Client" Version="6.0.2" />
-    <PackageVersion Include="GraphQL.Client.Serializer.Newtonsoft" Version="6.0.2" />
     <PackageVersion Include="Duende.AccessTokenManagement.OpenIdConnect" Version="2.1.0" />
     <PackageVersion Include="Kentico.Xperience.Admin" Version="28.2.1" />
     <PackageVersion Include="Kentico.Xperience.WebApp" Version="28.2.1" />
@@ -16,8 +13,6 @@
     <PackageVersion Include="kentico.xperience.imageprocessing" Version="28.2.1" />
     <PackageVersion Include="Kentico.Xperience.Core" Version="28.2.1" />
     <PackageVersion Include="Scrutor" Version="4.2.2" />
-    <PackageVersion Include="ShopifySharp" Version="6.13.0" />
-    <PackageVersion Include="ShopifySharp.Extensions.DependencyInjection" Version="1.4.0" />
     <PackageVersion Include="Microsoft.Extensions.ApiDescription.Client" Version="7.0.2" />
     <PackageVersion Include="NSwag.ApiDescription.Client" Version="13.18.2" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="9.17.0.82934" />
