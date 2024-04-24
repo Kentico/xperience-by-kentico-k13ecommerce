@@ -4,6 +4,7 @@ using CMS.Base;
 using CMS.Ecommerce;
 using CMS.SiteProvider;
 
+using Kentico.Xperience.StoreApi.Authentication;
 using Kentico.Xperience.StoreApi.Routing;
 
 using Microsoft.AspNetCore.Http;
@@ -15,6 +16,7 @@ namespace Kentico.Xperience.StoreApi.StoreSite;
 /// API endpoints for site on global level
 /// </summary>
 [Route($"{ApiRoute.ApiPrefix}/site")]
+[AuthorizeStore]
 [ApiController]
 [Produces(MediaTypeNames.Application.Json)]
 [ProducesResponseType(StatusCodes.Status200OK)]

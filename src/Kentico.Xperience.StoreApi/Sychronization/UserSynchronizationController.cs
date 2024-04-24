@@ -52,7 +52,7 @@ public class UserSynchronizationController : ControllerBase
 
         try
         {
-            registerResult = await userManager.CreateAsync(newUser, newUser.UserName);
+            registerResult = await userManager.CreateAsync(newUser, Guid.NewGuid().ToString());
         }
         catch (Exception e)
         {
