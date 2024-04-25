@@ -30,11 +30,12 @@ Solution covers several scenarios according to the complexity of integration bet
   - Product data (with variants and images) are synchronized to Content hub (can be turned off) 
   - Product listing, detail and checkout process is placed on XbyK (shopping cart is calculated still on KX 13)
   - Linking products to categories in Pages channels needs to be done manually from Content hub. 
- Page types are prepared to CI restore, details info in [this section of User Guide](./docs/Usage-Guide.md#store-setup).
+ Page types are prepared to CI restore, details info in [this section of User Guide](./docs/Usage-Guide.md#dancing-goat-example---setup).
 
 ## Screenshots
 
----If the integration has Administration UI or an impact on the UX/design of the live site, include some compelling screenshots here---
+![Cart content](./images/screenshots/cart_content.png "Cart content")
+![Products in content hub](./images/screenshots/products_content_hub.png "Products in content hub")
 
 ## Library Version Matrix
 
@@ -72,7 +73,7 @@ dotnet add package Kentico.Xperience.K13Ecommerce
 dotnet add package Kentico.Xperience.Store.Rcl
 ```
 
-Add this package to your Kentico Xperience 13 ASP.NET.Core application (live site or create standalone application for 
+Add this package to your Kentico Xperience 13 ASP.NET.Core application (live site or create standalone application 
 when your KX 13 live site is not running)
 
 ```powershell

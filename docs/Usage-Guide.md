@@ -1,14 +1,9 @@
 # Usage Guide
 
 ## Table of contents
-1. [Screenshots](#screenshots)
-2. [Store API (Kentico Xperience 13)](#store-api-kentico-xperience-13)
-3. [K13 Ecommerce integration (Xperience by Kentico)](#k13-ecommerce-integration-in-xperience-by-kentico)
-4. [Dancing Goat example - setup](#dancing-goat-example---setup)
-
-## Screenshots
-
--- screenshots here --
+1. [Store API (Kentico Xperience 13)](#store-api-kentico-xperience-13)
+2. [K13 Ecommerce integration (Xperience by Kentico)](#k13-ecommerce-integration-in-xperience-by-kentico)
+3. [Dancing Goat example - setup](#dancing-goat-example---setup)
 
 ## Store API (Kentico Xperience 13)
 
@@ -17,7 +12,7 @@ Store API (library `Kentico.Xperience.StoreApi`) is REST API which exposes KX 13
 
 API is exposed via Swagger (Open API 3 standard) on relative path `/swagger/storeapi/swagger.json`
 
-We recommend to use this API in combination with `Kentico.Xperience.K13Ecommerce` library for XByK applications,
+We recommend to use this API in combination with `Kentico.Xperience.K13Ecommerce` [library for XByK applications](#k13-ecommerce-integration-in-xperience-by-kentico),
 because there are services to simplify e-commerce integration (like `IShoppingService`) and NSwag API client is
 already generated there.
 
@@ -96,7 +91,7 @@ between client and KX app.
 
 **How to setup your Kentico 13 ASP.NET Core application**:
 
-Add this package to your Kentico Xperience 13 ASP.NET.Core application (live site or create standalone application for
+Add this package to your Kentico Xperience 13 ASP.NET.Core application (live site or create standalone application
 when your KX 13 live site is not running)
 
 ```powershell
@@ -274,6 +269,15 @@ For checkout process these page types are restored:
 
 3. Start Xperience By Kentico Dancing Goat application (`DancingGoat` in `.\examples`) configured with your own database.\
 Wait for product synchronization finish. Check `K13-Store product synchronization done.` in debug console or check Event log for errors.
-4. TBD
+4. Create pages for Store:
+   1. Store page (of type `K13Store - Store page`)
+   2. Product pages (of type `K13Store - Product page`) - for each page select corresponding Product SKU from content hub.
+   2. Categories pages (of type `K13Store - Category page`) - for each page select product pages in category
+   3. Cart/Checkout steps pages
+      1. Cart content page
+      2. Cart delivery details page
+      3. Cart summary page
+      4. Order complete page
+   
 
 
