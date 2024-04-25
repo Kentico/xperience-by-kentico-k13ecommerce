@@ -213,10 +213,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/KOrder"
-                  }
+                  "$ref": "#/components/schemas/OrderListResponse"
                 }
               }
             }
@@ -3128,6 +3125,28 @@
         },
         "additionalProperties": false,
         "description": "Represents model for synchronizing user"
+      },
+      "OrderListResponse": {
+        "type": "object",
+        "properties": {
+          "orders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KOrder"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxPage": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request for order response"
       },
       "ProblemDetails": {
         "type": "object",

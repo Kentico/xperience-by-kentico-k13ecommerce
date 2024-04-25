@@ -38,7 +38,7 @@ public class OrderController : ControllerBase
     /// <param name="request"></param>
     /// <returns></returns>
     [HttpGet("list", Name = nameof(OrderList))]
-    public async Task<ActionResult<IEnumerable<KOrder>>> OrderList([FromQuery] OrderListRequest request)
+    public async Task<ActionResult<OrderListResponse>> OrderList([FromQuery] OrderListRequest request)
     {
         int page = request.Page > 0 ? request.Page - 1 : 0;
         if (string.IsNullOrWhiteSpace(request.OrderBy))

@@ -7,6 +7,7 @@ using Kentico.Xperience.K13Ecommerce.Activities;
 using Kentico.Xperience.K13Ecommerce.Config;
 using Kentico.Xperience.K13Ecommerce.Countries;
 using Kentico.Xperience.K13Ecommerce.Customers;
+using Kentico.Xperience.K13Ecommerce.Orders;
 using Kentico.Xperience.K13Ecommerce.Products;
 using Kentico.Xperience.K13Ecommerce.ShoppingCart;
 using Kentico.Xperience.K13Ecommerce.SiteStore;
@@ -74,6 +75,7 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddSingleton<ICountryService, CountryService>();
         services.AddSingleton<IEcommerceActivityLogger, EcommerceActivityLogger>();
         services.AddScoped<ISiteStoreService, SiteStoreService>();
+        services.AddScoped<IOrderService, OrderService>();
 
         return services;
     }

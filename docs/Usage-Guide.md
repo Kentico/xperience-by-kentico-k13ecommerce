@@ -3,9 +3,8 @@
 ## Table of contents
 1. [Screenshots](#screenshots)
 2. [Store API (Kentico Xperience 13)](#store-api-kentico-xperience-13)
-3. [K13 Ecommerce integration (Xperience by Kentico)](#)
-4. [Product listing widget](#product-listing-widget)
-5. [Dancing Goat example - setup](#dancing-goat-example-setup)
+3. [K13 Ecommerce integration (Xperience by Kentico)](#k13-ecommerce-integration-in-xperience-by-kentico)
+4. [Dancing Goat example - setup](#dancing-goat-example---setup)
 
 ## Screenshots
 
@@ -161,15 +160,43 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
 ## K13 Ecommerce integration in Xperience By Kentico
 
 Library `Kentico.Xperience.K13Ecommerce` encapsulates Store API calls and exposes several services for KX 13 e-commerce
-integration:
+integration on XByK:
 
-- `IShoppingService`
-- `ICustomerService`
 - `IProductService`
+  - Listing products based on parameters, product categories, prices and inventory
+- `IShoppingService`
+  - Actions on shopping cart and order creation
+  - Service saves and retrieves the shopping cart identifier (`ShoppingCartGuid`) to session (uses `IShoppingCartSessionStorage`) 
+and to browser cookie (uses `IShoppingCartClientStorage`)
+- `ICustomerService`
+  - List of customer addresses
+- `IOrderService`
+  - List of orders - currently suitable for implementing listing orders in administration
 - `ISiteStoreService`
+  - Site cultures and currencies
 - `ICountryService`
+  - Countries and states - these objects are already on XByK, there is no Store API call
 
 ### Products synchronization
+
+Library also implements product synchronization to Content hub. These are 3 entities synchronized to reusable content items:
+- Products - Content type `K13Store.ProductSKU`
+  - All products associated with product pages are synced. **Standalone SKUs** aren't currently supported. 
+- Product variants - Content type `K13Store.ProductVariant`
+  - All products variant for parent products
+- Product images - Content type `K13Store.ProductImage`
+  - Main SKU images (from SKUImagePath column)
+
+Synchronization running in background thread worker periodically and can be disabled (`ProductSyncEnabled` setting).
+Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized data are updated when source value
+changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
+safely.
+
+No price data are synced, because catalog prices needs
+calculator evaluation in context of user's cart and standalone requests via `IProductService` are required.
+
+#### Limitations
+Currently products are synchronized only in default content culture. **Same language needs to be enabled in XByK**.
 
 ### Setup
 
@@ -202,8 +229,14 @@ builder.Services.AddKenticoStoreServices(builder.Configuration);
 3. For most simple scenario: copy product listing widget from Dancing Goat example project to your project and configure
    properties to display products from Kentico 13. Sample widget is located [here](./examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget).
 4. For more complex scenario with full e-shop, you can inspire how Dancing Goat sample Store on XbyK is implemented.
-   Check [Usage guide](./docs/Usage-Guide.md#store-setup) for detailed instructions how to configure categories, products and cart steps.
-5. Start to use on your live site
+   Check [Dancing Goat example - setup](./docs/Usage-Guide.md#store-setup) for detailed instructions how to configure categories, products and cart steps.
+5. Restore CI repository files to database (reusable content types, custom activities). CI files are located in
+   `.\examples\DancingGoat-K13Ecommerce\App_Data\CIRepository\` and you need to copy these files to your application.
+```powershell
+dotnet run --kxp-ci-restore
+```
+
+6. Start to use on your live site
 
 ### Library matrix
 
@@ -212,4 +245,35 @@ builder.Services.AddKenticoStoreServices(builder.Configuration);
 | Kentico.Xperience.Ecommerce.Common | \>= 28.2.1        | 1.0.0           |
 | Kentico.Xperience.K13Ecommerce     | \>= 28.2.1        | 1.0.0           |
 | Kentico.Xperience.Store.Rcl        | \>= 28.2.1        | 1.0.0           |
+
+
+## Dancing Goat example - setup
+
+1. Go to `./examples/DancingGoat-K13Ecommerce` folder and run CI restore for content types and cart pages:
+
+```powershell
+dotnet run --kxp-ci-restore
+```
+All content types and custom activities for e-ecommerce events are created.
+
+Except reusable content types used in product synchronization, additional page types are restored:
+
+For Store page, categories and product detail pages these page types are restored:
+
+- `K13Store.StorePage` - Main store page
+- `K13Store.CategoryPage` - Page type for categories linking products
+- `K13Store.ProductPage` - Page type for product detail page - only linking product SKU from content hub
+
+For checkout process these page types are restored:
+- `K13Store.CartContent` - used for shopping cart first step
+- `K13Store.CartDeliveryDetails`- used for shopping cart second step
+- `K13Store.CartSummary` - used for shopping cart third step
+- `K13Store.OrderComplete` - used for thank you page
+
+2. Start sample KX 13 Dancing Goat application (`Kentico13_DancingGoat` in `.\examples`) configured with your own database
+
+3. Start Xperience By Kentico Dancing Goat application (`DancingGoat` in `.\examples`) configured with your own database.\
+Wait for product synchronization finish. Check `K13-Store product synchronization done.` in debug console or check Event log for errors.
+4. TBD
+
 
