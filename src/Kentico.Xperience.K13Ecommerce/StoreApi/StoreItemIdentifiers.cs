@@ -1,4 +1,4 @@
-﻿using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization.Interfaces;
+﻿using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 
 namespace Kentico.Xperience.K13Ecommerce.StoreApi;
 

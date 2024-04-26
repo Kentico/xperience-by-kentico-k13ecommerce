@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization.Interfaces;
+using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 
 namespace K13Store;
 

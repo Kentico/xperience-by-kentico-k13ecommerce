@@ -3,7 +3,6 @@
 using K13Store;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
-using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization.Interfaces;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
 
