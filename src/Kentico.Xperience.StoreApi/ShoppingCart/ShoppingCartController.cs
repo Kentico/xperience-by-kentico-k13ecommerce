@@ -439,6 +439,7 @@ public class ShoppingCartController : ControllerBase
     /// <summary>
     /// Set currency to cart when currency is different than previous
     /// </summary>
+    /// <param name="shoppingCartGuid"></param>
     /// <param name="currencyCode"></param>
     /// <returns></returns>
     [HttpPut("set-currency")]
