@@ -1,6 +1,4 @@
-﻿using CMS.Base;
-
-using K13Store;
+﻿using K13Store;
 
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 

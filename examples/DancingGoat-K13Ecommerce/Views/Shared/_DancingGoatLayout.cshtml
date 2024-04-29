@@ -22,7 +22,7 @@
     var language = currentLanguageRetriever.Get();
 
     var homePageUrl = (await webPageUrlRetriever.Retrieve(DancingGoatConstants.HOME_PAGE_PATH, websiteChannelContext.WebsiteChannelName, language)).RelativePath;
-    
+
     var routeDataLanguage = Convert.ToString(@ViewContext.RouteData.Values[WebPageRoutingOptions.LANGUAGE_ROUTE_VALUE_KEY]);
     var currentLanguage = routeDataLanguage.Equals("es", StringComparison.OrdinalIgnoreCase) ? "ES" : "EN";
 
@@ -47,6 +47,10 @@
 <head id="head">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8" />
+    @if (!SEOSchemaModelDataRetriever.GetSearchIndexing(Model))
+    {
+        <meta name="robots" content="noindex,nofollow" />
+    }
     @if (!string.IsNullOrEmpty(description))
     {
         <meta name="description" content="@description">
@@ -123,7 +127,7 @@
             </nav>
         </header>
         <div class="container">
-            <div class="@(ViewBag.HideBackground != null ? "" : "page-container-inner")">
+            <div class="page-container-inner">
                 @RenderBody()
 
                 <div class="clear"></div>

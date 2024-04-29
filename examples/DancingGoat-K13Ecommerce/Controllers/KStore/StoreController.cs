@@ -55,9 +55,9 @@ public class StoreController : Controller
     }
 
 
-    private async Task<IEnumerable<ProductListItemViewModel>> MapProductsToListViewModel(IEnumerable<ProductPage> products, ILookup<int, ProductPricesResponse> prices)
+    private async Task<IEnumerable<StoreProductListItemViewModel>> MapProductsToListViewModel(IEnumerable<ProductPage> products, ILookup<int, ProductPricesResponse> prices)
     {
-        var productModels = new List<ProductListItemViewModel>();
+        var productModels = new List<StoreProductListItemViewModel>();
 
         foreach (var product in products)
         {
@@ -66,7 +66,7 @@ public class StoreController : Controller
             {
                 continue;
             }
-            var model = ProductListItemViewModel.GetViewModel(productSku,
+            var model = StoreProductListItemViewModel.GetViewModel(productSku,
                 (await urlRetriever.Retrieve(product)).RelativePath, prices[productSku.SKUID].First().Prices);
             productModels.Add(model);
         }
@@ -75,7 +75,7 @@ public class StoreController : Controller
     }
 
 
-    private async Task<IEnumerable<ProductListItemViewModel>> GetBestsellers(RoutedWebPage webPage)
+    private async Task<IEnumerable<StoreProductListItemViewModel>> GetBestsellers(RoutedWebPage webPage)
     {
 
         var products = await storePageRepository.GetBestsellers(webPage.LanguageName);
@@ -87,7 +87,7 @@ public class StoreController : Controller
     }
 
 
-    private async Task<IEnumerable<ProductListItemViewModel>> GetHottips(StorePage storePage, RoutedWebPage webPage)
+    private async Task<IEnumerable<StoreProductListItemViewModel>> GetHottips(StorePage storePage, RoutedWebPage webPage)
     {
         var products = await storePageRepository.GetHottips(storePage, webPage.LanguageName);
 

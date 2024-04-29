@@ -4,7 +4,7 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace DancingGoat.Models;
 
-public class ProductListItemViewModel
+public class StoreProductListItemViewModel
 {
     public string MainImageUrl { get; init; }
     public string ProductName { get; init; }
@@ -14,10 +14,10 @@ public class ProductListItemViewModel
     public string PublicStatusName { get; init; }
     public bool IsAvailable { get; set; }
 
-    public static ProductListItemViewModel GetViewModel(ProductSKU product, string url, KProductCatalogPrices prices)
+    public static StoreProductListItemViewModel GetViewModel(ProductSKU product, string url, KProductCatalogPrices prices)
     {
         var mainImage = product.ProductImages.FirstOrDefault();
-        return new ProductListItemViewModel()
+        return new StoreProductListItemViewModel()
         {
             MainImageUrl = mainImage?.ProductImageAsset.Url ?? string.Empty,
             ProductName = product.SKUName,

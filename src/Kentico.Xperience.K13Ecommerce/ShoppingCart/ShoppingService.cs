@@ -1,4 +1,5 @@
 ﻿using CMS.ContactManagement;
+using CMS.DataEngine;
 using CMS.Helpers;
 using CMS.Membership;
 
@@ -17,7 +18,7 @@ internal class ShoppingService(
     IMemberInfoProvider memberInfoProvider,
     IProgressiveCache progressiveCache,
     IEcommerceActivityLogger activityLogger,
-    IContactInfoProvider contactInfoProvider) : IShoppingService
+    IInfoProvider<ContactInfo> contactInfoProvider) : IShoppingService
 {
     private const int CacheMinutes = 2;
 

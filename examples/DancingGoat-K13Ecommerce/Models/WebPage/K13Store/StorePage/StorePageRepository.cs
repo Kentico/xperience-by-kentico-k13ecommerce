@@ -34,7 +34,7 @@ public class StorePageRepository : StoreContentRepositoryBase
         IContentQueryExecutor contentQueryExecutor,
         IContentQueryResultMapper contentMapper,
         IWebPageQueryResultMapper pageMapper)
-        : base(websiteChannelContext, executor, mapper, cache, webPageLinkedItemsDependencyRetriever, conversionService,
+        : base(websiteChannelContext, executor, cache, webPageLinkedItemsDependencyRetriever, conversionService,
             settingsService)
     {
         this.websiteChannelContext = websiteChannelContext;

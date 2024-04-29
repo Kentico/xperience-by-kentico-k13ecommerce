@@ -7,11 +7,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Duende.AccessTokenManagement.OpenIdConnect" Version="2.1.0" />
-    <PackageVersion Include="Kentico.Xperience.Admin" Version="28.2.1" />
-    <PackageVersion Include="Kentico.Xperience.WebApp" Version="28.2.1" />
-    <PackageVersion Include="kentico.xperience.azurestorage" Version="28.2.1" />
-    <PackageVersion Include="kentico.xperience.imageprocessing" Version="28.2.1" />
-    <PackageVersion Include="Kentico.Xperience.Core" Version="28.2.1" />
+    <PackageVersion Include="Kentico.Xperience.Admin" Version="29.0.1" />
+    <PackageVersion Include="Kentico.Xperience.WebApp" Version="29.0.1" />
+    <PackageVersion Include="kentico.xperience.azurestorage" Version="29.0.1" />
+    <PackageVersion Include="kentico.xperience.imageprocessing" Version="29.0.1" />
+    <PackageVersion Include="Kentico.Xperience.Core" Version="29.0.1" />
     <PackageVersion Include="Scrutor" Version="4.2.2" />
     <PackageVersion Include="Microsoft.Extensions.ApiDescription.Client" Version="7.0.2" />
     <PackageVersion Include="NSwag.ApiDescription.Client" Version="13.18.2" />

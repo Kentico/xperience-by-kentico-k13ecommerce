@@ -48,5 +48,11 @@ namespace DancingGoat.Models
 		/// SEOFieldsDescription.
 		/// </summary>
 		public string SEOFieldsDescription { get; set; }
-	}
+
+
+        /// <summary>
+		/// SEOFieldsAllowSearchIndexing.
+		/// </summary>
+        public bool SEOFieldsAllowSearchIndexing { get; set; }
+    }
 }

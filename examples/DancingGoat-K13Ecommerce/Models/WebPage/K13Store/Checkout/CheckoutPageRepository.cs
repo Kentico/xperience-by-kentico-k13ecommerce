@@ -22,7 +22,7 @@ public class CheckoutPageRepository : StoreContentRepositoryBase
         IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor, IWebPageQueryResultMapper pageMapper, IContentQueryResultMapper contentMapper,
         IProgressiveCache cache, IWebPageLinkedItemsDependencyAsyncRetriever webPageLinkedItemsDependencyRetriever,
         IConversionService conversionService, ISettingsService settingsService) : base(websiteChannelContext, executor,
-        pageMapper, cache, webPageLinkedItemsDependencyRetriever, conversionService, settingsService)
+        cache, webPageLinkedItemsDependencyRetriever, conversionService, settingsService)
     {
         this.websiteChannelContext = websiteChannelContext;
         this.executor = executor;

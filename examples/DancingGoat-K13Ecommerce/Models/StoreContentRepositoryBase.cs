@@ -17,11 +17,11 @@ public class StoreContentRepositoryBase : ContentRepositoryBase
     protected int CacheMinutes => conversionService.GetInteger(settingsService["CMSCacheMinutes"], 0);
 
     public StoreContentRepositoryBase(IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor,
-        IWebPageQueryResultMapper mapper, IProgressiveCache cache,
+        IProgressiveCache cache,
         IWebPageLinkedItemsDependencyAsyncRetriever webPageLinkedItemsDependencyRetriever,
         IConversionService conversionService,
         ISettingsService settingsService)
-        : base(websiteChannelContext, executor, mapper, cache)
+        : base(websiteChannelContext, executor, cache)
     {
         this.webPageLinkedItemsDependencyRetriever = webPageLinkedItemsDependencyRetriever;
         this.conversionService = conversionService;

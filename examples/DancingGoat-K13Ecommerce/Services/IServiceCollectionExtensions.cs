@@ -25,18 +25,20 @@ namespace DancingGoat
             services.AddSingleton<ArticlePageRepository>();
             services.AddSingleton<ArticlesSectionRepository>();
             services.AddSingleton<ConfirmationPageRepository>();
-            services.AddSingleton<CoffeeRepository>();
             services.AddSingleton<ImageRepository>();
             services.AddSingleton<CafeRepository>();
             services.AddSingleton<NavigationItemRepository>();
             services.AddSingleton<ContactsPageRepository>();
             services.AddSingleton<PrivacyPageRepository>();
             services.AddSingleton<LandingPageRepository>();
+            services.AddSingleton<ProductSectionRepository>();
+            services.AddSingleton<ProductPageRepository>();
+            services.AddSingleton<ProductRepository>();
 
             //K13 Store repositories
             services.AddSingleton<StorePageRepository>();
             services.AddSingleton<CategoryPageRepository>();
-            services.AddSingleton<ProductPageRepository>();
+            services.AddSingleton<StoreProductPageRepository>();
             services.AddSingleton<CheckoutPageRepository>();
             services.AddScoped<ICheckoutService, CheckoutService>();
         }

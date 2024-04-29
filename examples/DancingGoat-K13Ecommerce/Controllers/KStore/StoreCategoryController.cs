@@ -48,7 +48,7 @@ public class StoreCategoryController : Controller
         var prices = (await productService.GetProductsPrices(products.Select(p => p.Product.First().SKUID)))
             .ToLookup(p => p.ProductSkuId);
 
-        var productModels = new List<ProductListItemViewModel>();
+        var productModels = new List<StoreProductListItemViewModel>();
         foreach (var productPage in products)
         {
             var productSku = productPage.Product.First();
@@ -56,7 +56,7 @@ public class StoreCategoryController : Controller
             {
                 continue;
             }
-            var model = ProductListItemViewModel.GetViewModel(productSku,
+            var model = StoreProductListItemViewModel.GetViewModel(productSku,
                 (await urlRetriever.Retrieve(productPage)).RelativePath, prices[productSku.SKUID].First().Prices);
             productModels.Add(model);
         }

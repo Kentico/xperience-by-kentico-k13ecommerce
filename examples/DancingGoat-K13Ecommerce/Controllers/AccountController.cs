@@ -131,7 +131,7 @@ namespace DancingGoat.Controllers
             var member = new ApplicationUser
             {
                 UserName = model.UserName,
-                Email = model.UserName,
+                Email = model.Email,
                 Enabled = true
             };
 

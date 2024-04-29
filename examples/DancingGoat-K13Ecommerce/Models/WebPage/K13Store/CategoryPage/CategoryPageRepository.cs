@@ -9,10 +9,9 @@ namespace DancingGoat.Models;
 public class CategoryPageRepository : StoreContentRepositoryBase
 {
     public CategoryPageRepository(IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor,
-        IWebPageQueryResultMapper mapper, IProgressiveCache cache,
-        IWebPageLinkedItemsDependencyAsyncRetriever webPageLinkedItemsDependencyRetriever,
+        IProgressiveCache cache, IWebPageLinkedItemsDependencyAsyncRetriever webPageLinkedItemsDependencyRetriever,
         IConversionService conversionService, ISettingsService settingsService) : base(websiteChannelContext, executor,
-        mapper, cache, webPageLinkedItemsDependencyRetriever, conversionService, settingsService)
+        cache, webPageLinkedItemsDependencyRetriever, conversionService, settingsService)
     {
     }
 

@@ -1,14 +1,13 @@
 ﻿using CMS.ContentEngine;
 using CMS.Helpers;
-using CMS.Websites;
 using CMS.Websites.Routing;
 
 namespace DancingGoat.Models
 {
     public class ImageRepository : ContentRepositoryBase
     {
-        public ImageRepository(IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor, IWebPageQueryResultMapper mapper, IProgressiveCache cache)
-            : base(websiteChannelContext, executor, mapper, cache)
+        public ImageRepository(IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor, IProgressiveCache cache)
+            : base(websiteChannelContext, executor, cache)
         {
         }
 

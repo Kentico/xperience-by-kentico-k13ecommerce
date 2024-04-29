@@ -5,13 +5,13 @@ public class CategoryPageViewModel
     public string CategoryName { get; init; }
 
 
-    public IEnumerable<ProductListItemViewModel> Products { get; init; }
+    public IEnumerable<StoreProductListItemViewModel> Products { get; init; }
 
 
 
     public static CategoryPageViewModel GetViewModel(
         CategoryPage category,
-        IEnumerable<ProductListItemViewModel> products) =>
+        IEnumerable<StoreProductListItemViewModel> products) =>
         new()
         {
             CategoryName = category.CategoryName,

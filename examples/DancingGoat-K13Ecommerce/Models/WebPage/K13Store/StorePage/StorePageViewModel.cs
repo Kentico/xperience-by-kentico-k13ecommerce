@@ -10,14 +10,14 @@ public class StorePageViewModel : IWebPageBasedViewModel
 
     public IWebPageFieldsSource WebPage { get; init; }
 
-    public IEnumerable<ProductListItemViewModel> Bestsellers { get; set; }
+    public IEnumerable<StoreProductListItemViewModel> Bestsellers { get; set; }
 
-    public IEnumerable<ProductListItemViewModel> HotTips { get; set; }
+    public IEnumerable<StoreProductListItemViewModel> HotTips { get; set; }
 
     public static StorePageViewModel GetViewModel(StorePage storePage,
         IEnumerable<StoreCategoryListViewModel> categories,
-        IEnumerable<ProductListItemViewModel> bestsellers,
-        IEnumerable<ProductListItemViewModel> hotTips)
+        IEnumerable<StoreProductListItemViewModel> bestsellers,
+        IEnumerable<StoreProductListItemViewModel> hotTips)
     {
         ArgumentNullException.ThrowIfNull(storePage);
 

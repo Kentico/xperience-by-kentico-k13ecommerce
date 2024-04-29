@@ -1,4 +1,5 @@
 ﻿using CMS.ContactManagement;
+using CMS.DataEngine;
 using CMS.DataProtection;
 
 using DancingGoat;
@@ -21,7 +22,7 @@ namespace DancingGoat.Controllers
         private const string ERROR_RESULT = "error";
 
         private readonly IConsentAgreementService consentAgreementService;
-        private readonly IConsentInfoProvider consentInfoProvider;
+        private readonly IInfoProvider<ConsentInfo> consentInfoProvider;
         private readonly IPreferredLanguageRetriever currentLanguageRetriever;
         private readonly IWebPageDataContextRetriever webPageDataContextRetriever;
         private readonly PrivacyPageRepository privacyPageRepository;
@@ -42,7 +43,7 @@ namespace DancingGoat.Controllers
         }
 
 
-        public DancingGoatPrivacyController(PrivacyPageRepository privacyPageRepository, IConsentAgreementService consentAgreementService, IConsentInfoProvider consentInfoProvider, IPreferredLanguageRetriever currentLanguageRetriever, IWebPageDataContextRetriever webPageDataContextRetriever)
+        public DancingGoatPrivacyController(PrivacyPageRepository privacyPageRepository, IConsentAgreementService consentAgreementService, IInfoProvider<ConsentInfo> consentInfoProvider, IPreferredLanguageRetriever currentLanguageRetriever, IWebPageDataContextRetriever webPageDataContextRetriever)
         {
             this.privacyPageRepository = privacyPageRepository;
             this.consentAgreementService = consentAgreementService;

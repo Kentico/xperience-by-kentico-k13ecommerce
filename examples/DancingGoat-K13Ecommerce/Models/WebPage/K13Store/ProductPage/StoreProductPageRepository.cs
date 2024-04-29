@@ -6,13 +6,12 @@ using CMS.Websites.Routing;
 
 namespace DancingGoat.Models;
 
-public class ProductPageRepository : StoreContentRepositoryBase
+public class StoreProductPageRepository : StoreContentRepositoryBase
 {
-    public ProductPageRepository(IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor,
-        IWebPageQueryResultMapper mapper, IProgressiveCache cache,
-        IWebPageLinkedItemsDependencyAsyncRetriever webPageLinkedItemsDependencyRetriever,
+    public StoreProductPageRepository(IWebsiteChannelContext websiteChannelContext, IContentQueryExecutor executor,
+        IProgressiveCache cache, IWebPageLinkedItemsDependencyAsyncRetriever webPageLinkedItemsDependencyRetriever,
         IConversionService conversionService, ISettingsService settingsService) : base(websiteChannelContext, executor,
-        mapper, cache, webPageLinkedItemsDependencyRetriever, conversionService, settingsService)
+        cache, webPageLinkedItemsDependencyRetriever, conversionService, settingsService)
     {
     }
 

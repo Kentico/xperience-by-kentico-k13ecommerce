@@ -1,4 +1,4 @@
-using DancingGoat.Models;
+﻿using DancingGoat.Models;
 using DancingGoat.Widgets;
 
 using Kentico.Content.Web.Mvc.Routing;

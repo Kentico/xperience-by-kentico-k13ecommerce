@@ -16,12 +16,12 @@ namespace DancingGoat.Controllers.Store;
 
 public class ProductDetailController : Controller
 {
-    private readonly ProductPageRepository productPageRepository;
+    private readonly StoreProductPageRepository productPageRepository;
     private readonly IWebPageDataContextRetriever webPageDataContextRetriever;
     private readonly IProductService productService;
 
 
-    public ProductDetailController(ProductPageRepository productPageRepository,
+    public ProductDetailController(StoreProductPageRepository productPageRepository,
         IWebPageDataContextRetriever webPageDataContextRetriever,
         IProductService productService)
     {

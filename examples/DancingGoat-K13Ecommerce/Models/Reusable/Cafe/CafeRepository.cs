@@ -1,6 +1,5 @@
 ﻿using CMS.ContentEngine;
 using CMS.Helpers;
-using CMS.Websites;
 using CMS.Websites.Routing;
 
 namespace DancingGoat.Models
@@ -16,10 +15,9 @@ namespace DancingGoat.Models
         public CafeRepository(
             IWebsiteChannelContext websiteChannelContext,
             IContentQueryExecutor executor,
-            IWebPageQueryResultMapper mapper,
             IProgressiveCache cache,
             ILinkedItemsDependencyAsyncRetriever linkedItemsDependencyRetriever)
-            : base(websiteChannelContext, executor, mapper, cache)
+            : base(websiteChannelContext, executor, cache)
         {
             this.linkedItemsDependencyRetriever = linkedItemsDependencyRetriever;
         }

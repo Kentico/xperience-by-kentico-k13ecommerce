@@ -84,19 +84,19 @@ public class CheckoutController : Controller
     public async Task<IActionResult> CartContentCheckout()
     {
         var validationErrors = await shoppingService.ValidateShoppingCartItems();
-        
+
         if (validationErrors.Any())
         {
             ProcessCheckResult(validationErrors);
             var model = await checkoutService.PrepareCartViewModel();
             return View("CartContent", model);
         }
-        
+
         string deliveryDetailsPageUrl = await checkoutService.GetNextOrPreviousStepUrl<CartContent>(s => s.CartNextStep.First().WebPageGuid);
         return Redirect(deliveryDetailsPageUrl);
     }
-    
-    
+
+
     private void ProcessCheckResult(IEnumerable<KShoppingCartItemValidationError> validationErrors)
     {
         var itemErrors = validationErrors
