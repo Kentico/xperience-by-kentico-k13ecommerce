@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "environmentVariables": {dotnet run --no-build -- --kxp-codegen --type "PageContentTypes" --include "K13Store.*" --location "Models/WebPage/{dataClassNamespace}/{name}" --namespace "DancingGoat.Models"
+      "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
