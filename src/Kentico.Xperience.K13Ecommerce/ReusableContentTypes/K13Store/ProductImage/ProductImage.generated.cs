@@ -18,6 +18,7 @@ namespace K13Store
 	/// <summary>
 	/// Represents a content item of type <see cref="ProductImage"/>.
 	/// </summary>
+	[RegisterContentTypeMapping(CONTENT_TYPE_NAME)]
 	public partial class ProductImage : IContentItemFieldsSource
 	{
 		/// <summary>
@@ -29,6 +30,7 @@ namespace K13Store
 		/// <summary>
 		/// Represents system properties for a content item.
 		/// </summary>
+		[SystemField]
 		public ContentItemFields SystemFields { get; set; }
 
 
@@ -45,7 +47,7 @@ namespace K13Store
 
 
 		/// <summary>
-		/// ProductImageOriginalGUID.
+		/// ProductImageOriginalPath.
 		/// </summary>
 		public string ProductImageOriginalPath { get; set; }
 	}

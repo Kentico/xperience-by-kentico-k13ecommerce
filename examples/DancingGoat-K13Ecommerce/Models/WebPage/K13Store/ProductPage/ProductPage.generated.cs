@@ -11,7 +11,9 @@
 
 using System;
 using System.Collections.Generic;
+using CMS.ContentEngine;
 using CMS.Websites;
+
 using K13Store;
 
 namespace DancingGoat.Models
@@ -19,6 +21,7 @@ namespace DancingGoat.Models
 	/// <summary>
 	/// Represents a page of type <see cref="ProductPage"/>.
 	/// </summary>
+	[RegisterContentTypeMapping(CONTENT_TYPE_NAME)]
 	public partial class ProductPage : IWebPageFieldsSource
 	{
 		/// <summary>
@@ -30,6 +33,7 @@ namespace DancingGoat.Models
 		/// <summary>
 		/// Represents system properties for a web page item.
 		/// </summary>
+		[SystemField]
 		public WebPageFields SystemFields { get; set; }
 
 
