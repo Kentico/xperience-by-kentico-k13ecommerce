@@ -81,6 +81,7 @@ ClientBin/
 *.[Pp]ublish.xml
 # *.pfx
 *.publishsettings
+*.pubxml
 
 # SQL Server files
 App_Data/*.mdf
