@@ -235,7 +235,7 @@ dotnet_diagnostic.IDE0026.severity                                        = erro
 csharp_style_expression_bodied_accessors                                  = true : error
 dotnet_diagnostic.IDE0027.severity                                        = error
 
-csharp_style_expression_bodied_lambdas                                    = true : error
+csharp_style_expression_bodied_lambdas                                    = true : suggestion
 dotnet_diagnostic.IDE0053.severity                                        = suggestion
 
 csharp_style_expression_bodied_local_functions                            = true : error

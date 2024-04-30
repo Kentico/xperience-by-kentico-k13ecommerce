@@ -3,6 +3,7 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 namespace Kentico.Xperience.KStore.Tests;
 
 [TestFixture]
+[Category("IntegrationTests")]
 public class StoreApiShoppingCartTests : StoreApiTestBase
 {
     [Test]
@@ -333,7 +334,6 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     [TearDown]
     public new void TearDown()
     {
-        base.TearDown();
         //@TODO DB objects cleanup - need to create endpoint for cart and other objects deletion (not high priority)
     }
 #pragma warning restore S1135 // Track uses of "TODO" tags

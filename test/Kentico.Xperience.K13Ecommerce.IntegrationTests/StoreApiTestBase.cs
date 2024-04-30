@@ -13,6 +13,7 @@ public class StoreApiTestBase
     [OneTimeSetUp]
     public async Task Setup()
     {
+        // Setup address and credentials for Store API to run the tests
         HttpClient = new HttpClient { BaseAddress = new Uri("http://dev.dancinggoat.com:65375") };
 
         StoreApiClient = new KenticoStoreApiClient(HttpClient);

@@ -52,6 +52,7 @@ jobs:
       - name: Test Solution
         run: |
           dotnet test `
+            --filter TestCategory!~Integration `
             --configuration Release `
             --no-build `
             --no-restore
