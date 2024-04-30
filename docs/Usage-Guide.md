@@ -237,9 +237,9 @@ dotnet run --kxp-ci-restore
 
 | Library                            | Xperience Version | Library Version |
 |------------------------------------|-------------------| --------------- |
-| Kentico.Xperience.Ecommerce.Common | \>= 28.2.1        | 1.0.0           |
-| Kentico.Xperience.K13Ecommerce     | \>= 28.2.1        | 1.0.0           |
-| Kentico.Xperience.Store.Rcl        | \>= 28.2.1        | 1.0.0           |
+| Kentico.Xperience.Ecommerce.Common | \>= 29.0.1        | 1.0.0           |
+| Kentico.Xperience.K13Ecommerce     | \>= 29.0.1        | 1.0.0           |
+| Kentico.Xperience.Store.Rcl        | \>= 29.0.1        | 1.0.0           |
 
 
 ## Dancing Goat example - setup
