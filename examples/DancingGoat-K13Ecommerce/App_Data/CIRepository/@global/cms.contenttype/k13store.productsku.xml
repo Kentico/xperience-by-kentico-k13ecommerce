@@ -223,6 +223,7 @@ Bundle
             <![CDATA[["07a6d82c-09b8-41f4-bde4-bd365982e0da"]]]>
           </AllowedContentItemTypeIdentifiers>
           <controlname>Kentico.Administration.ContentItemSelector</controlname>
+          <SelectionType>contentTypes</SelectionType>
         </settings>
         <validationrulesdata>
           <ValidationRuleConfiguration>

@@ -80,6 +80,9 @@ internal class ProductSynchronizationService(
         {
             try
             {
+                //transaction is used to prevent variant/images orphans
+                using var transaction = new CMSTransactionScope();
+
                 var variantGuid = await variantSynchronizationService.ProcessVariants(storeProduct.Sku?.Variants ??
                     Enumerable.Empty<KProductVariant>(),
                     contentItemProduct.ProductVariants, language, adminUserId);
@@ -90,6 +93,8 @@ internal class ProductSynchronizationService(
                 await UpdateProduct(
                     GetProductSynchronizationItem(storeProduct, variantGuid, imagesGuids),
                     contentItemProduct, language, adminUserId);
+
+                transaction.Commit();
             }
             catch (Exception e)
             {
@@ -161,7 +166,7 @@ internal class ProductSynchronizationService(
     {
         if (await contentItemService.AddContentItem(addParams) == 0)
         {
-            logger.LogError("Could not create product {DisplayName}", addParams.ContentItem.DisplayName);
+            throw new InvalidOperationException("Could not create product " + addParams.ContentItem.DisplayName);
         }
     }
 
@@ -170,8 +175,7 @@ internal class ProductSynchronizationService(
     {
         if (!await contentItemService.UpdateContentItem(updateParams))
         {
-            logger.LogError("Could not update product with content item ID {ContentItemID}",
-                updateParams.ContentItemID);
+            throw new InvalidOperationException("Could not update product with content item ID " + updateParams.ContentItemID);
         }
     }
 
