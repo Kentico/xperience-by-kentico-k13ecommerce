@@ -15,6 +15,7 @@ internal class UserSynchronizationService : IUserSynchronizationService
     }
 
 
+    /// <inheritdoc/>
     public async Task SynchronizeUser(MemberInfo user)
     {
         await StoreApiClient.UserSynchronizationAsync(new KUserSynchronization()

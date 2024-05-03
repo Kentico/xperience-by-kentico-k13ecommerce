@@ -10,7 +10,7 @@ using Microsoft.IdentityModel.JsonWebTokens;
 namespace Kentico.Xperience.StoreApi.Authentication;
 
 /// <summary>
-/// Custom authorize attribute to handle authorization based on JWT, user is read from claims and set to <see cref="MembershipContext.AuthenticatedUser"/>
+/// Custom authorize attribute to handle authorization based on JWT, user is read from claims and set to <see cref="MembershipContext.AuthenticatedUser"/>.
 /// </summary>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 public class AuthorizeStoreAttribute : AuthorizeAttribute, IAsyncAuthorizationFilter

@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.K13Ecommerce.StoreApi;
 
 /// <summary>
-/// Partial class for customer extension
+/// Partial class for customer extension.
 /// </summary>
 public partial class KCustomer
 {

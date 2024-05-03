@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.StoreApi.Products.Pages;
 
 /// <summary>
-/// Represents product page
+/// Represents product page.
 /// </summary>
 public class KProductNode
 {
@@ -28,12 +28,12 @@ public class KProductNode
     public string AbsoluteUrl { get; set; }
 
     /// <summary>
-    /// Contains custom field values on given page type
+    /// Contains custom field values on given page type.
     /// </summary>
     public Dictionary<string, object> CustomFields { get; set; }
 
     /// <summary>
-    /// Product SKU
+    /// Product SKU.
     /// </summary>
     public KProductSKU SKU { get; set; }
 }

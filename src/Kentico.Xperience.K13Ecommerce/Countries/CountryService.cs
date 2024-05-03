@@ -67,7 +67,7 @@ internal class CountryService : ICountryService
     /// <summary>
     /// Returns all states in country with given ID.
     /// </summary>
-    /// <param name="countryId">Country identifier</param>
+    /// <param name="countryId">Country identifier.</param>
     /// <returns>Collection of all states in county.</returns>
     public async Task<IEnumerable<StateInfo>> GetCountryStates(int countryId)
     {

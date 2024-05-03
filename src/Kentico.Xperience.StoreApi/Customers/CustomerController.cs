@@ -31,7 +31,7 @@ public class CustomerController : ControllerBase
     }
 
     /// <summary>
-    /// Endpoint for customer addresses
+    /// Endpoint for customer addresses.
     /// </summary>
     /// <param name="customerId"></param>
     /// <returns></returns>

@@ -11,13 +11,15 @@ using Microsoft.Extensions.Logging;
 [assembly: RegisterModule(typeof(UserSynchronizationModule))]
 namespace Kentico.Xperience.K13Ecommerce.Users.UserSynchronization;
 
+/// <summary>
+/// Modules with global events for user synchronization from XbyK to K13.
+/// </summary>
 internal class UserSynchronizationModule() : Module(nameof(UserSynchronizationModule))
 {
     protected override void OnInit()
     {
         base.OnInit();
 
-        //CMS.Membership.Me
         MemberInfo.TYPEINFO.Events.Insert.After += SynchronizeUser;
     }
 

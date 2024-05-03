@@ -30,9 +30,9 @@ public class AuthenticationController : ControllerBase
 
 
     /// <summary>
-    /// Endpoint for getting JWT access token
+    /// Endpoint for getting JWT access token.
     /// </summary>
-    /// <param name="tokenRequest"></param>
+    /// <param name="tokenRequest">Request with client credentials.</param>
     /// <returns></returns>
     [HttpPost("token")]
     [Produces(MediaTypeNames.Application.Json)]

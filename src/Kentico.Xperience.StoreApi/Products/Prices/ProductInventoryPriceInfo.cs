@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.StoreApi.Products.Prices;
 
 /// <summary>
-/// Model for product/variant inventory and price
+/// Model for product/variant inventory and price.
 /// </summary>
 public class ProductInventoryPriceInfo
 {

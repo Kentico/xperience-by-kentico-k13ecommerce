@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Kentico.Xperience.StoreApi.Products;
 
 /// <summary>
-/// Controller for product related api endpoints
+/// Controller for product related api endpoints.
 /// </summary>
 [ApiController]
 [AuthorizeStore]
@@ -34,18 +34,16 @@ public class ProductsController : ControllerBase
     }
 
     /// <summary>
-    /// Test request
+    /// Test request.
     /// </summary>
-    /// <returns></returns>
     [HttpGet("test")]
     public IActionResult Test() => Ok("test");
 
 
     /// <summary>
-    /// Returns product pages based on parameters
+    /// Returns product pages based on parameters.
     /// </summary>
-    /// <param name="request"></param>    
-    /// <returns></returns>
+    /// <param name="request">Product pages request.</param>    
     [HttpGet("pages/listing", Name = nameof(GetProductPages))]
     public async Task<ActionResult<IEnumerable<KProductNode>>> GetProductPages(
         [FromQuery] ProductPageRequest request)
@@ -63,10 +61,9 @@ public class ProductsController : ControllerBase
 
 
     /// <summary>
-    /// Returns all product categories translated for given culture
+    /// Returns all product categories translated for given culture.
     /// </summary>
-    /// <param name="culture"></param>
-    /// <returns></returns>
+    /// <param name="culture">Culture.</param>
     [HttpGet("categories", Name = nameof(GetProductCategories))]
     public async Task<ActionResult<IEnumerable<KProductCategory>>> GetProductCategories(
         [FromQuery] [RegularExpression("[a-zA-Z]{2}-[a-zA-Z]{2}")]
@@ -82,10 +79,10 @@ public class ProductsController : ControllerBase
     }
 
     /// <summary>
-    /// Returns prices for product and it's variant when <paramref name="productSkuId"/> is main product or only variant prices when ID is for variant
+    /// Returns prices for product and it's variant when <paramref name="productSkuId"/> is main product or only variant prices when ID is for variant.
     /// </summary>
-    /// <param name="productSkuId">Main product or variant id</param>
-    /// <param name="currencyCode">Currency code</param>
+    /// <param name="productSkuId">Main product or variant id.</param>
+    /// <param name="currencyCode">Currency code.</param>
     /// <returns></returns>
     [HttpGet("prices/{productSkuId:int}", Name = nameof(GetProductPrices))]
     [AuthorizeStore]
@@ -106,11 +103,10 @@ public class ProductsController : ControllerBase
 
 
     /// <summary>
-    /// Returns prices for list of products
+    /// Returns prices for list of products.
     /// </summary>
-    /// <param name="productSkuId"></param>
-    /// <param name="currencyCode"></param>
-    /// <returns></returns>
+    /// <param name="productSkuId">Product or variant IDs.</param>
+    /// <param name="currencyCode">Currency code.</param>
     [HttpGet("prices-list", Name = nameof(GetProductPricesList))]
     [AuthorizeStore]
     public ActionResult<IAsyncEnumerable<ProductPricesResponse>> GetProductPricesList(
@@ -130,10 +126,10 @@ public class ProductsController : ControllerBase
 
 
     /// <summary>
-    /// Returns inventory and price for given product/variant
+    /// Returns inventory and price for given product/variant,
     /// </summary>
-    /// <param name="skuId"></param>
-    /// <param name="currencyCode"></param>
+    /// <param name="skuId">SKU ID.</param>
+    /// <param name="currencyCode">Currency code.</param>
     /// <returns></returns>
     [HttpGet("inventory-prices/{skuId:int}", Name = nameof(GetInventoryPrices))]
     [AuthorizeStore]

@@ -6,7 +6,7 @@
 public interface IShoppingCartClientStorage
 {
     /// <summary>
-    /// Get the GUID of the Shopping cart stored on client
+    /// Get the GUID of the Shopping cart stored on client.
     /// </summary>
     /// <returns>Shopping cart GUID from client or System.Guid.Empty when not found.</returns>
     Guid GetCartGuid();
@@ -20,7 +20,7 @@ public interface IShoppingCartClientStorage
 
 
     /// <summary>
-    /// Clear cart guid from client
+    /// Clear cart guid from client.
     /// </summary>
     void ClearCartGuid();
 }

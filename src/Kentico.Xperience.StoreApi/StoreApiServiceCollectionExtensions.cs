@@ -16,10 +16,10 @@ namespace Kentico.Xperience.StoreApi;
 public static class StoreApiServiceCollectionExtensions
 {
     /// <summary>
-    /// Registers store API services and options
+    /// Registers store API services and options.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
+    /// <param name="services">Service collection.</param>
+    /// <param name="configuration">Configuration.</param>
     /// <returns></returns>
     public static IServiceCollection AddKenticoStoreApi(this IServiceCollection services, IConfiguration configuration)
     {
@@ -34,9 +34,9 @@ public static class StoreApiServiceCollectionExtensions
 
 
     /// <summary>
-    /// Adds Store API Swagger
+    /// Adds Store API Swagger.
     /// </summary>
-    /// <param name="services"></param>
+    /// <param name="services">Service collection.</param>
     /// <returns></returns>
     public static IServiceCollection AddKenticoStoreApiSwagger(this IServiceCollection services)
     {
@@ -79,7 +79,9 @@ public static class StoreApiServiceCollectionExtensions
     }
 }
 
-
+/// <summary>
+/// Filter endpoints that are not related to the store API.
+/// </summary>
 internal class StoreApiDocumentFilter : IDocumentFilter
 {
     public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)

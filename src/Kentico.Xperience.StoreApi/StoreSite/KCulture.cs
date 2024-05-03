@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.StoreSite;
 
 /// <summary>
-/// Represents language culture for Store site
+/// Represents language culture for Store site.
 /// </summary>
 public class KCulture
 {

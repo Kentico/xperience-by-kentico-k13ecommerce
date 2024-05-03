@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kentico.Xperience.StoreApi.Authentication;
 
+/// <summary>
+/// Token request.
+/// </summary>
 public class TokenRequest
 {
     [RegularExpression("client_credentials")]

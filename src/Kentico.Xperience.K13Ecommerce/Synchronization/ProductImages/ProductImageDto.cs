@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
 
 /// <summary>
-/// Product image DTO
+/// Product image DTO.
 /// </summary>
 public class ProductImageDto : IItemIdentifier<string>
 {

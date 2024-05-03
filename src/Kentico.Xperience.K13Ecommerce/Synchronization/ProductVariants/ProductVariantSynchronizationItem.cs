@@ -11,12 +11,15 @@ internal class ProductVariantSynchronizationItem : ContentItemSynchronizationBas
     protected override string DisplayNameInternal => Item.SkuName!;
 
 
+    /// <inheritdoc/>
     public override string ContentTypeName => ProductVariant.CONTENT_TYPE_NAME;
 
 
+    /// <inheritdoc/>
     public required KProductVariant Item { get; set; }
 
 
+    /// <inheritdoc/>
     public bool GetModifiedProperties(ProductVariant contentItem, out Dictionary<string, object?> modifiedProps)
     {
         modifiedProps = [];
@@ -30,6 +33,7 @@ internal class ProductVariantSynchronizationItem : ContentItemSynchronizationBas
     }
 
 
+    /// <inheritdoc/>
     public override Dictionary<string, object?> ToDict()
         => new()
         {

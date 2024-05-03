@@ -13,6 +13,9 @@ using Kentico.Xperience.StoreApi.ShoppingCart;
 
 namespace Kentico.Xperience.StoreApi.Mapping;
 
+/// <summary>
+/// Profile with mapping configuration for Store API.
+/// </summary>
 public class StoreApiMappingProfile : Profile
 {
     public StoreApiMappingProfile()

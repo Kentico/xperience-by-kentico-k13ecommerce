@@ -3,7 +3,7 @@
 public interface IProductSynchronizationService
 {
     /// <summary>
-    /// Synchronize product from K13 shop to XByK content hub
+    /// Synchronize product from K13 shop to XByK content hub.
     /// </summary>
     /// <returns></returns>
     Task SynchronizeProducts();

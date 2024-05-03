@@ -51,10 +51,9 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Returns current cart content for cart preview or cart content step
+    /// Returns current cart content for cart preview or cart content step.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>    
     [HttpGet("content", Name = nameof(GetCurrentCartContent))]
     public ActionResult<KShoppingCartContent> GetCurrentCartContent(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -66,10 +65,9 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Returns current cart details for cart delivery details step
+    /// Returns current cart details for cart delivery details step.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
     [HttpGet("details", Name = nameof(GetCurrentCartDetails))]
     public ActionResult<KShoppingCartDetails> GetCurrentCartDetails(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -82,10 +80,9 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Returns current customer assigned to current cart
+    /// Returns current customer assigned to current cart.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
     [HttpGet("customer", Name = nameof(GetCurrentCustomer))]
     public ActionResult<ShoppingCartResponse<KCustomer>> GetCurrentCustomer(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -102,12 +99,11 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Adds item to cart
+    /// Adds item to cart.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="skuId"></param>
-    /// <param name="quantity"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="skuId">SKU ID.</param>
+    /// <param name="quantity">Quantity.</param>
     [HttpPost("add-item", Name = nameof(AddItemToCart))]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartResponse<KShoppingCartItem>> AddItemToCart(
@@ -131,12 +127,11 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Updates cart item quantity
+    /// Updates cart item quantity.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="itemId"></param>
-    /// <param name="quantity"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="itemId">Cart item ID.</param>
+    /// <param name="quantity">Quantity.</param>
     [HttpPut("update-item", Name = nameof(UpdateItemQuantity))]
     public ActionResult<ShoppingCartBaseResponse> UpdateItemQuantity(
         [Required] [FromHeader(Name = "ShoppingCartGUID")]
@@ -149,11 +144,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Removes item from cart
+    /// Removes item from cart.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="itemId"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="itemId">Cart item ID.</param>
     [HttpDelete("remove-item", Name = nameof(RemoveItemFromCart))]
     public ActionResult<ShoppingCartBaseResponse> RemoveItemFromCart(
         [Required] [FromHeader(Name = "ShoppingCartGUID")]
@@ -166,11 +160,11 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Adds coupon code to cart
+    /// Adds coupon code to cart.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="couponCode"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="couponCode">Coupon code.</param>
+    /// <returns>Base response with true when coupon was added.</returns>
     [HttpPost("add-coupon-code")]
     public ActionResult<ShoppingCartResponse<bool>> AddCouponCode(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -183,11 +177,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Removes coupon code from cart
+    /// Removes coupon code from cart.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="couponCode"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="couponCode">Coupon code.</param>
     [HttpDelete("remove-coupon-code")]
     public ActionResult<ShoppingCartBaseResponse> RemoveCouponCode(
         [FromHeader(Name = "ShoppingCartGUID")]
@@ -199,11 +192,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set shipping option
+    /// Set shipping option.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="shippingOptionId"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="shippingOptionId">Shipping option ID.</param>
     [HttpPut("set-shipping-option")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetShippingOption(
@@ -217,10 +209,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set payment option
+    /// Set payment option.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="paymentOptionId"></param>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="paymentOptionId">Payment option ID.</param>
     /// <returns></returns>
     [HttpPut("set-payment-option")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
@@ -235,12 +227,11 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set shipping and payment
+    /// Set shipping and payment.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="shippingOptionId"></param>
-    /// <param name="paymentOptionId"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="shippingOptionId">Shipping option ID.</param>
+    /// <param name="paymentOptionId">Payment option ID.</param>
     [HttpPut("set-shipping-and-payment")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetShippingAndPayment(
@@ -255,11 +246,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set customer to cart
+    /// Set customer to cart.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="customer"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="customer">Customer.</param>
     [HttpPut("set-customer")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetCustomer(
@@ -282,10 +272,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set billing address
+    /// Set billing address.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="billingAddress"></param>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="billingAddress">Billing address.</param>
     /// <returns></returns>
     [HttpPut("set-billing-address")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
@@ -304,11 +294,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set shipping address
+    /// Set shipping address.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="shippingAddress"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="shippingAddress">Shipping address.</param>
     [HttpPut("set-shipping-address")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetShippingAddress(
@@ -326,11 +315,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set all delivery details (customer, addreses, shipping and payment)
+    /// Set all delivery details (customer, addreses, shipping and payment).
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="deliveryDetails"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="deliveryDetails">Delivery details.</param>
     [HttpPut("set-delivery-details")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<ShoppingCartBaseResponse> SetDeliveryDetails(
@@ -376,10 +364,9 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Returns all shopping cart data (content and details)
+    /// Returns all shopping cart data (content and details).
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
     [HttpGet("summary", Name = nameof(GetCurrentCartSummary))]
     public ActionResult<KShoppingCartSummary> GetCurrentCartSummary(
         [FromHeader(Name = "ShoppingCartGUID")] [Required]
@@ -395,11 +382,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Creates order from shopping cart
+    /// Creates order from shopping cart.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="note"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="note">Order note.</param>
     [HttpPost("create-order")]
     [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public ActionResult<KOrder> CreateOrder([FromHeader(Name = "ShoppingCartGUID")][Required] Guid shoppingCartGuid,
@@ -414,10 +400,9 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Validates shopping cart items
+    /// Validates shopping cart items.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
     [HttpPut("validate-cart-items")]
     public ActionResult<ShoppingCartResponse<IEnumerable<KShoppingCartItemValidationError>>> ValidateCartItems(
         [FromHeader(Name = "ShoppingCartGUID")] [Required]
@@ -437,11 +422,10 @@ public class ShoppingCartController : ControllerBase
 
 
     /// <summary>
-    /// Set currency to cart when currency is different than previous
+    /// Set currency to cart when currency is different than previous.
     /// </summary>
-    /// <param name="shoppingCartGuid"></param>
-    /// <param name="currencyCode"></param>
-    /// <returns></returns>
+    /// <param name="shoppingCartGuid">Shopping cart GUID.</param>
+    /// <param name="currencyCode">Currency code.</param>
     [HttpPut("set-currency")]
     public ActionResult<ShoppingCartBaseResponse> SetCurrency(
         [FromHeader(Name = "ShoppingCartGUID")][Required] Guid shoppingCartGuid,

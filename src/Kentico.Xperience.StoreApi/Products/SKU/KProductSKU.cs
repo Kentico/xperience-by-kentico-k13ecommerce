@@ -8,7 +8,7 @@ using Kentico.Xperience.StoreApi.Products.Prices;
 namespace Kentico.Xperience.StoreApi.Products.SKU;
 
 /// <summary>
-/// Represents model for SKU <see cref="SKUInfo"/>
+/// Represents model for SKU <see cref="SKUInfo"/>.
 /// </summary>
 public class KProductSKU
 {
@@ -47,7 +47,7 @@ public class KProductSKU
     public DateTime SKUInStoreFrom { get; set; }
 
     /// <summary>
-    /// Overwrite this property when product image is saved differently
+    /// Overwrite this property when product image is saved differently.
     /// </summary>
     public virtual string MainImageUrl => URLHelper.GetAbsoluteUrl(SKUImagePath);
 

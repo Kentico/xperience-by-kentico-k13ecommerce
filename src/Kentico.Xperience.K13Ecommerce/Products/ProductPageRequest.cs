@@ -30,25 +30,25 @@ public class ProductPageRequest
 
 
     /// <summary>
-    /// Limit how many products to return
+    /// Limit how many products to return.
     /// </summary>
     public int? Limit { get; set; }
 
 
     /// <summary>
-    /// If true variants are loaded too for products with variants (default false)
+    /// If true variants are loaded too for products with variants (default false).
     /// </summary>
     public bool WithVariants { get; set; }
 
 
     /// <summary>
-    /// If true, DocumentSKUDescription is filled too (default false)
+    /// If true, DocumentSKUDescription is filled too (default false).
     /// </summary>
     public bool WithLongDescription { get; set; }
 
 
     /// <summary>
-    /// If true, only not-linked product pages are returned (default false)
+    /// If true, only not-linked product pages are returned (default false).
     /// </summary>
     public bool NoLinks { get; set; }
 }

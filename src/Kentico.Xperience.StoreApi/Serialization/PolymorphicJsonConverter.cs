@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace Kentico.Xperience.StoreApi.Serialization;
 
 /// <summary>
-/// Converter which enable polymorphism on models serialized/deserialized by System.Text.Json
+/// Converter which enable polymorphism on models serialized/deserialized by System.Text.Json.
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public class PolymorphicJsonConverter<T> : JsonConverter<T> where T : class

@@ -10,6 +10,9 @@ using Kentico.Xperience.K13Ecommerce.Synchronization.Products;
 namespace Kentico.Xperience.K13Ecommerce.Synchronization;
 
 
+/// <summary>
+/// Module which executes thread worker for product synchronization.
+/// </summary>
 internal class SynchronizationModule() : Module(nameof(SynchronizationModule))
 {
     protected override void OnInit(ModuleInitParameters parameters)

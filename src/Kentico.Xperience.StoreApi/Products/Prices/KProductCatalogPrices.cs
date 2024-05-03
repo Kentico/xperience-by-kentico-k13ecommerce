@@ -4,7 +4,7 @@ using Kentico.Xperience.StoreApi.ShoppingCart;
 namespace Kentico.Xperience.StoreApi.Products.Prices;
 
 /// <summary>
-/// Represents product catalog prices from catalog price calculator
+/// Represents product catalog prices from catalog price calculator.
 /// </summary>
 public class KProductCatalogPrices
 {

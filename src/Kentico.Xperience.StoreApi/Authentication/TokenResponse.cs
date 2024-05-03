@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.StoreApi.Authentication;
 
+/// <summary>
+/// Token response.
+/// </summary>
 public class TokenResponse
 {
     [JsonPropertyName("token_type")]

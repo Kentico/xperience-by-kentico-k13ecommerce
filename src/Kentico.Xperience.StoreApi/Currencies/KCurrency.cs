@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.Currencies;
 
 /// <summary>
-/// Represents currency from Store configuration
+/// Represents currency from Store configuration.
 /// </summary>
 public class KCurrency
 {

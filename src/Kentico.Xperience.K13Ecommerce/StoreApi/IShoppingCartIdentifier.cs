@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.K13Ecommerce.StoreApi;
 
 /// <summary>
-/// Interface for shopping cart identifier
+/// Interface for shopping cart identifier.
 /// </summary>
 public interface IShoppingCartIdentifier
 {

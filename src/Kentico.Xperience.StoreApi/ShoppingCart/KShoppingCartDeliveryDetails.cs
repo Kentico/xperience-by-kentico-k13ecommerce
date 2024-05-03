@@ -5,7 +5,7 @@ using Kentico.Xperience.StoreApi.Customers;
 namespace Kentico.Xperience.StoreApi.ShoppingCart;
 
 /// <summary>
-/// Model representing shopping cart delivery details
+/// Model representing shopping cart delivery details.
 /// </summary>
 public class KShoppingCartDeliveryDetails
 {

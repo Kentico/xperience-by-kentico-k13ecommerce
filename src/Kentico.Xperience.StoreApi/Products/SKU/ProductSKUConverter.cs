@@ -9,7 +9,7 @@ using Kentico.Xperience.StoreApi.Products.Prices;
 namespace Kentico.Xperience.StoreApi.Products.SKU;
 
 /// <summary>
-/// Implemented converter from Kentico SKU to sku model
+/// Implemented converter from Kentico SKU to sku model.
 /// </summary>
 /// <typeparam name="TModel"></typeparam>
 public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
@@ -36,6 +36,7 @@ public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
     }
 
 
+    /// <inheritdoc/>
     public virtual TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants)
     {
         var model = mapper.Map<TModel>(skuInfo);

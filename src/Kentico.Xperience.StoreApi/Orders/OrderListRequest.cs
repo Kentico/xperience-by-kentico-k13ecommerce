@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.StoreApi.Orders;
 
 /// <summary>
-/// Request for order listing
+/// Request for order listing.
 /// </summary>
 public class OrderListRequest
 {

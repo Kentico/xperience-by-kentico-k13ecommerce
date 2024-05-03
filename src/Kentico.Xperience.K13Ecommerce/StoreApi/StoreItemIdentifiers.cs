@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.K13Ecommerce.StoreApi;
 
 /// <summary>
-/// Partial class for product node extension to set external identifer
+/// Partial class for product node extension to set external identifer.
 /// </summary>
 public partial class KProductNode : IItemIdentifier<int>
 {
@@ -11,7 +11,7 @@ public partial class KProductNode : IItemIdentifier<int>
 }
 
 /// <summary>
-/// Partial class for product SKU to set external identifer
+/// Partial class for product SKU to set external identifer.
 /// </summary>
 public partial class KProductSKU : IItemIdentifier<int>
 {
@@ -19,7 +19,7 @@ public partial class KProductSKU : IItemIdentifier<int>
 }
 
 /// <summary>
-/// Partial class for product variant to set external identifer
+/// Partial class for product variant to set external identifer.
 /// </summary>
 public partial class KProductVariant : IItemIdentifier<int>
 {

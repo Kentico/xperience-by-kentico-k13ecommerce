@@ -5,50 +5,48 @@ using Kentico.Xperience.StoreApi.Products.Prices;
 namespace Kentico.Xperience.StoreApi.Products;
 
 /// <summary>
-/// Service for products related data (products, categories, inventory, prices etc.)
+/// Service for products related data (products, categories, inventory, prices etc.).
 /// </summary>
 public interface IKProductService
 {
     /// <summary>
-    /// Get product pages based on request
+    /// Get product pages based on request.
     /// </summary>
-    /// <param name="request"></param>
-    /// <returns></returns>
+    /// <param name="request">Product pages request.</param>
     Task<IEnumerable<KProductNode>> GetProductPages(ProductPageRequest request);
 
 
     /// <summary>
-    /// Get product categories for in given culture
+    /// Get product categories for in given culture.
     /// </summary>
-    /// <param name="culture"></param>
-    /// <returns></returns>
+    /// <param name="culture">Culture for which to display names.</param>
     Task<IEnumerable<KProductCategory>> GetProductCategories(string culture);
 
 
     /// <summary>
-    /// Get product prices for product in given currency
+    /// Get product prices for product in given currency.
     /// </summary>
-    /// <param name="productSkuId"></param>
-    /// <param name="currencyCode"></param>
+    /// <param name="productSkuId">Products or variants IDs.</param>
+    /// <param name="currencyCode">Currency code.</param>
     /// <returns></returns>
     Task<ProductPricesResponse> GetProductPrices(int productSkuId, string currencyCode);
 
 
     /// <summary>
-    /// Get product prices for list of products in given currency
+    /// Get product prices for list of products in given currency.
     /// </summary>
-    /// <param name="productsSkuIds"></param>
-    /// <param name="currencyCode"></param>
+    /// <param name="productsSkuIds">Products or variants IDs.</param>
+    /// <param name="currencyCode">Currency code.</param>
     /// <returns></returns>
 
     IAsyncEnumerable<ProductPricesResponse> GetProductPrices(IEnumerable<int> productsSkuIds, string currencyCode);
 
 
     /// <summary>
-    /// Get product invetory and price info for product/variant
+    /// Get product invetory and price info for product/variant.
     /// </summary>
-    /// <param name="skuId"></param>
-    /// <param name="currencyCode"></param>
+    /// <param name="skuId">SKU ID.</param>
+    /// <param name="currencyCode">Currency code.</param>
     /// <returns></returns>
     Task<ProductInventoryPriceInfo> GetProductInventoryAndPrices(int skuId, string currencyCode);
 }

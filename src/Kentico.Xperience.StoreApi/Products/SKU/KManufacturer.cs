@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.Products.SKU;
 
 /// <summary>
-/// Dto for <see cref="CMS.Ecommerce.ManufacturerInfo"/>
+/// Dto for <see cref="CMS.Ecommerce.ManufacturerInfo"/>.
 /// </summary>
 public class KManufacturer
 {

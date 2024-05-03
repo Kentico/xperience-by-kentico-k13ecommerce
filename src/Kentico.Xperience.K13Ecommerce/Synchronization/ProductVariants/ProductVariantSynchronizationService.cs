@@ -14,6 +14,7 @@ internal class ProductVariantSynchronizationService : SynchronizationServiceComm
     private readonly ILogger<ProductVariantSynchronizationService> logger;
 
 
+    /// <inheritdoc/>
     public ProductVariantSynchronizationService(IContentItemService contentItemService,
         ILogger<ProductVariantSynchronizationService> logger,
         IHttpClientFactory httpClientFactory) : base(httpClientFactory)
@@ -23,6 +24,7 @@ internal class ProductVariantSynchronizationService : SynchronizationServiceComm
     }
 
 
+    /// <inheritdoc/>
     public async Task<IReadOnlySet<Guid>> ProcessVariants(IEnumerable<KProductVariant> variants,
         IEnumerable<ProductVariant> existingVariants,
         string language, int userId)

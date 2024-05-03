@@ -11,6 +11,9 @@ using Microsoft.Extensions.Options;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.Products;
 
+/// <summary>
+/// Synchronization worker for product synchronization.
+/// </summary>
 internal class ProductSynchronizationWorker : ThreadWorker<ProductSynchronizationWorker>
 {
     private ILogger<ProductSynchronizationWorker> logger = null!;

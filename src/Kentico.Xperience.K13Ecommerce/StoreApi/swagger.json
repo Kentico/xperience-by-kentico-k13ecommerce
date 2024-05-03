@@ -10,7 +10,7 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Endpoint for getting JWT access token",
+        "summary": "Endpoint for getting JWT access token.",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -132,7 +132,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Endpoint for customer addresses",
+        "summary": "Endpoint for customer addresses.",
         "operationId": "CustomerAddresses",
         "parameters": [
           {
@@ -178,7 +178,7 @@
         "tags": [
           "Order"
         ],
-        "summary": "Endpoint for getting list of orders based on request",
+        "summary": "Endpoint for getting list of orders based on request.",
         "operationId": "OrderList",
         "parameters": [
           {
@@ -236,7 +236,7 @@
         "tags": [
           "Products"
         ],
-        "summary": "Test request",
+        "summary": "Test request.",
         "responses": {
           "200": {
             "description": "Success"
@@ -259,13 +259,13 @@
         "tags": [
           "Products"
         ],
-        "summary": "Returns product pages based on parameters",
+        "summary": "Returns product pages based on parameters.",
         "operationId": "GetProductPages",
         "parameters": [
           {
             "name": "Path",
             "in": "query",
-            "description": "Node alias path prefix",
+            "description": "Node alias path prefix.",
             "required": true,
             "schema": {
               "type": "string"
@@ -274,7 +274,7 @@
           {
             "name": "Culture",
             "in": "query",
-            "description": "Document culture",
+            "description": "Document culture.",
             "schema": {
               "pattern": "[a-zA-Z]{2}-[a-zA-Z]{2}",
               "type": "string"
@@ -283,7 +283,7 @@
           {
             "name": "Currency",
             "in": "query",
-            "description": "Product currency",
+            "description": "Product currency.",
             "schema": {
               "type": "string"
             }
@@ -291,7 +291,7 @@
           {
             "name": "OrderBy",
             "in": "query",
-            "description": "Order by SQL expression",
+            "description": "Order by SQL expression.",
             "schema": {
               "type": "string"
             }
@@ -299,7 +299,7 @@
           {
             "name": "Limit",
             "in": "query",
-            "description": "Limit how many products to return",
+            "description": "Limit how many products to return.",
             "schema": {
               "maximum": 1000,
               "minimum": 1,
@@ -311,7 +311,7 @@
           {
             "name": "WithVariants",
             "in": "query",
-            "description": "If true variants are loaded too for products with variants (default false)",
+            "description": "If true variants are loaded too for products with variants (default false).",
             "schema": {
               "type": "boolean"
             }
@@ -319,7 +319,7 @@
           {
             "name": "WithLongDescription",
             "in": "query",
-            "description": "If true, DocumentSKUDescription is filled too (default false)",
+            "description": "If true, DocumentSKUDescription is filled too (default false).",
             "schema": {
               "type": "boolean"
             }
@@ -327,7 +327,7 @@
           {
             "name": "NoLinks",
             "in": "query",
-            "description": "If true, only not-linked product pages are returned (default false)",
+            "description": "If true, only not-linked product pages are returned (default false).",
             "schema": {
               "type": "boolean"
             }
@@ -365,13 +365,13 @@
         "tags": [
           "Products"
         ],
-        "summary": "Returns all product categories translated for given culture",
+        "summary": "Returns all product categories translated for given culture.",
         "operationId": "GetProductCategories",
         "parameters": [
           {
             "name": "culture",
             "in": "query",
-            "description": "",
+            "description": "Culture.",
             "schema": {
               "pattern": "[a-zA-Z]{2}-[a-zA-Z]{2}",
               "type": "string"
@@ -410,13 +410,13 @@
         "tags": [
           "Products"
         ],
-        "summary": "Returns prices for product and it's variant when productSkuId is main product or only variant prices when ID is for variant",
+        "summary": "Returns prices for product and it's variant when productSkuId is main product or only variant prices when ID is for variant.",
         "operationId": "GetProductPrices",
         "parameters": [
           {
             "name": "productSkuId",
             "in": "path",
-            "description": "Main product or variant id",
+            "description": "Main product or variant id.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -426,7 +426,7 @@
           {
             "name": "currencyCode",
             "in": "query",
-            "description": "Currency code",
+            "description": "Currency code.",
             "schema": {
               "type": "string"
             }
@@ -461,13 +461,13 @@
         "tags": [
           "Products"
         ],
-        "summary": "Returns prices for list of products",
+        "summary": "Returns prices for list of products.",
         "operationId": "GetProductPricesList",
         "parameters": [
           {
             "name": "productSkuId",
             "in": "query",
-            "description": "",
+            "description": "Product or variant IDs.",
             "schema": {
               "type": "array",
               "items": {
@@ -479,7 +479,7 @@
           {
             "name": "currencyCode",
             "in": "query",
-            "description": "",
+            "description": "Currency code.",
             "schema": {
               "type": "string"
             }
@@ -517,13 +517,13 @@
         "tags": [
           "Products"
         ],
-        "summary": "Returns inventory and price for given product/variant",
+        "summary": "Returns inventory and price for given product/variant,",
         "operationId": "GetInventoryPrices",
         "parameters": [
           {
             "name": "skuId",
             "in": "path",
-            "description": "",
+            "description": "SKU ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -533,7 +533,7 @@
           {
             "name": "currencyCode",
             "in": "query",
-            "description": "",
+            "description": "Currency code.",
             "schema": {
               "type": "string"
             }
@@ -568,13 +568,13 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Returns current cart content for cart preview or cart content step",
+        "summary": "Returns current cart content for cart preview or cart content step.",
         "operationId": "GetCurrentCartContent",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -620,13 +620,13 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Returns current cart details for cart delivery details step",
+        "summary": "Returns current cart details for cart delivery details step.",
         "operationId": "GetCurrentCartDetails",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -672,13 +672,13 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Returns current customer assigned to current cart",
+        "summary": "Returns current customer assigned to current cart.",
         "operationId": "GetCurrentCustomer",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -724,13 +724,13 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Adds item to cart",
+        "summary": "Adds item to cart.",
         "operationId": "AddItemToCart",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -739,7 +739,7 @@
           {
             "name": "skuId",
             "in": "query",
-            "description": "",
+            "description": "SKU ID.",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -748,7 +748,7 @@
           {
             "name": "quantity",
             "in": "query",
-            "description": "",
+            "description": "Quantity.",
             "schema": {
               "maximum": 32767,
               "minimum": 1,
@@ -806,13 +806,13 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Updates cart item quantity",
+        "summary": "Updates cart item quantity.",
         "operationId": "UpdateItemQuantity",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -822,7 +822,7 @@
           {
             "name": "itemId",
             "in": "query",
-            "description": "",
+            "description": "Cart item ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -832,7 +832,7 @@
           {
             "name": "quantity",
             "in": "query",
-            "description": "",
+            "description": "Quantity.",
             "required": true,
             "schema": {
               "maximum": 32767,
@@ -881,13 +881,13 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Removes item from cart",
+        "summary": "Removes item from cart.",
         "operationId": "RemoveItemFromCart",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -897,7 +897,7 @@
           {
             "name": "itemId",
             "in": "query",
-            "description": "",
+            "description": "Cart item ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -944,12 +944,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Adds coupon code to cart",
+        "summary": "Adds coupon code to cart.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -958,7 +958,7 @@
           {
             "name": "couponCode",
             "in": "query",
-            "description": "",
+            "description": "Coupon code.",
             "required": true,
             "schema": {
               "type": "string"
@@ -1004,12 +1004,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Removes coupon code from cart",
+        "summary": "Removes coupon code from cart.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -1018,7 +1018,7 @@
           {
             "name": "couponCode",
             "in": "query",
-            "description": "",
+            "description": "Coupon code.",
             "required": true,
             "schema": {
               "type": "string"
@@ -1064,12 +1064,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set shipping option",
+        "summary": "Set shipping option.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1079,7 +1079,7 @@
           {
             "name": "shippingOptionId",
             "in": "query",
-            "description": "",
+            "description": "Shipping option ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1136,12 +1136,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set payment option",
+        "summary": "Set payment option.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1151,7 +1151,7 @@
           {
             "name": "paymentOptionId",
             "in": "query",
-            "description": "",
+            "description": "Payment option ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1208,12 +1208,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set shipping and payment",
+        "summary": "Set shipping and payment.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1223,7 +1223,7 @@
           {
             "name": "shippingOptionId",
             "in": "query",
-            "description": "",
+            "description": "Shipping option ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1233,7 +1233,7 @@
           {
             "name": "paymentOptionId",
             "in": "query",
-            "description": "",
+            "description": "Payment option ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1290,12 +1290,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set customer to cart",
+        "summary": "Set customer to cart.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1304,7 +1304,7 @@
           }
         ],
         "requestBody": {
-          "description": "",
+          "description": "Customer.",
           "content": {
             "application/json": {
               "schema": {
@@ -1372,12 +1372,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set billing address",
+        "summary": "Set billing address.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1386,7 +1386,7 @@
           }
         ],
         "requestBody": {
-          "description": "",
+          "description": "Billing address.",
           "content": {
             "application/json": {
               "schema": {
@@ -1454,12 +1454,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set shipping address",
+        "summary": "Set shipping address.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1468,7 +1468,7 @@
           }
         ],
         "requestBody": {
-          "description": "",
+          "description": "Shipping address.",
           "content": {
             "application/json": {
               "schema": {
@@ -1536,12 +1536,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set all delivery details (customer, addreses, shipping and payment)",
+        "summary": "Set all delivery details (customer, addreses, shipping and payment).",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1550,7 +1550,7 @@
           }
         ],
         "requestBody": {
-          "description": "",
+          "description": "Delivery details.",
           "content": {
             "application/json": {
               "schema": {
@@ -1618,13 +1618,13 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Returns all shopping cart data (content and details)",
+        "summary": "Returns all shopping cart data (content and details).",
         "operationId": "GetCurrentCartSummary",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1671,12 +1671,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Creates order from shopping cart",
+        "summary": "Creates order from shopping cart.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1752,12 +1752,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Validates shopping cart items",
+        "summary": "Validates shopping cart items.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
-            "description": "",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1804,11 +1804,12 @@
         "tags": [
           "ShoppingCart"
         ],
-        "summary": "Set currency to cart when currency is different than previous",
+        "summary": "Set currency to cart when currency is different than previous.",
         "parameters": [
           {
             "name": "ShoppingCartGUID",
             "in": "header",
+            "description": "Shopping cart GUID.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1818,7 +1819,7 @@
           {
             "name": "currencyCode",
             "in": "query",
-            "description": "",
+            "description": "Currency code.",
             "schema": {
               "type": "string"
             }
@@ -1863,7 +1864,7 @@
         "tags": [
           "StoreSite"
         ],
-        "summary": "Returns all enabled site cultures",
+        "summary": "Returns all enabled site cultures.",
         "operationId": "GetCultures",
         "responses": {
           "200": {
@@ -1887,7 +1888,7 @@
         "tags": [
           "StoreSite"
         ],
-        "summary": "Returns all enabled site currencies",
+        "summary": "Returns all enabled site currencies.",
         "operationId": "GetCurrencies",
         "responses": {
           "200": {
@@ -1911,9 +1912,9 @@
         "tags": [
           "UserSynchronization"
         ],
-        "summary": "Creates new user",
+        "summary": "Creates new user.",
         "requestBody": {
-          "description": "",
+          "description": "User to create.",
           "content": {
             "application/json": {
               "schema": {
@@ -1991,7 +1992,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Shopping cart API response with model"
+        "description": "Shopping cart API response with model."
       },
       "BrewersProductFilterCheckboxViewModel": {
         "type": "object",
@@ -2128,7 +2129,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.AddressInfo"
+        "description": "Dto for CMS.Ecommerce.AddressInfo."
       },
       "KCulture": {
         "type": "object",
@@ -2146,7 +2147,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents language culture for Store site"
+        "description": "Represents language culture for Store site."
       },
       "KCurrency": {
         "type": "object",
@@ -2161,7 +2162,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents currency from Store configuration"
+        "description": "Represents currency from Store configuration."
       },
       "KCustomer": {
         "required": [
@@ -2216,7 +2217,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.CustomerInfo"
+        "description": "Dto for CMS.Ecommerce.CustomerInfo."
       },
       "KCustomerShoppingCartResponse": {
         "type": "object",
@@ -2230,7 +2231,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Shopping cart API response with model"
+        "description": "Shopping cart API response with model."
       },
       "KDepartment": {
         "type": "object",
@@ -2249,7 +2250,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.DepartmentInfo"
+        "description": "Dto for CMS.Ecommerce.DepartmentInfo."
       },
       "KManufacturer": {
         "type": "object",
@@ -2268,7 +2269,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.ManufacturerInfo"
+        "description": "Dto for CMS.Ecommerce.ManufacturerInfo."
       },
       "KOrder": {
         "type": "object",
@@ -2393,7 +2394,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.OrderInfo"
+        "description": "Dto for CMS.Ecommerce.OrderInfo."
       },
       "KOrderItem": {
         "type": "object",
@@ -2459,7 +2460,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.OrderItemInfo"
+        "description": "Dto for CMS.Ecommerce.OrderItemInfo."
       },
       "KOrderStatus": {
         "type": "object",
@@ -2478,7 +2479,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.OrderStatusInfo"
+        "description": "Dto for CMS.Ecommerce.OrderStatusInfo."
       },
       "KPaymentOption": {
         "type": "object",
@@ -2501,7 +2502,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.PaymentOptionInfo"
+        "description": "Dto for CMS.Ecommerce.PaymentOptionInfo."
       },
       "KProductCatalogPrices": {
         "type": "object",
@@ -2534,7 +2535,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents product catalog prices from catalog price calculator"
+        "description": "Represents product catalog prices from catalog price calculator."
       },
       "KProductCategory": {
         "type": "object",
@@ -2549,7 +2550,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents products section (category) - Page type which has ClassIsProductSection true"
+        "description": "Represents products section (category) - Page type which has ClassIsProductSection true."
       },
       "KProductNode": {
         "type": "object",
@@ -2598,7 +2599,7 @@
             "additionalProperties": {
               "nullable": true
             },
-            "description": "Contains custom field values on given page type",
+            "description": "Contains custom field values on given page type.",
             "nullable": true
           },
           "sku": {
@@ -2606,7 +2607,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents product page"
+        "description": "Represents product page."
       },
       "KProductSKU": {
         "type": "object",
@@ -2672,7 +2673,7 @@
           },
           "mainImageUrl": {
             "type": "string",
-            "description": "Overwrite this property when product image is saved differently",
+            "description": "Overwrite this property when product image is saved differently.",
             "nullable": true,
             "readOnly": true
           },
@@ -2697,7 +2698,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents model for SKU CMS.Ecommerce.SKUInfo"
+        "description": "Represents model for SKU CMS.Ecommerce.SKUInfo."
       },
       "KProductVariant": {
         "type": "object",
@@ -2730,7 +2731,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Model for Kentico product variant"
+        "description": "Model for Kentico product variant."
       },
       "KPublicStatus": {
         "type": "object",
@@ -2749,7 +2750,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.PublicStatusInfo"
+        "description": "Dto for CMS.Ecommerce.PublicStatusInfo."
       },
       "KShippingOption": {
         "type": "object",
@@ -2780,7 +2781,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.ShippingOptionInfo"
+        "description": "Dto for CMS.Ecommerce.ShippingOptionInfo."
       },
       "KShoppingCartContent": {
         "type": "object",
@@ -2858,7 +2859,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Model representing shopping cart content"
+        "description": "Model representing shopping cart content."
       },
       "KShoppingCartDeliveryDetails": {
         "required": [
@@ -2886,7 +2887,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Model representing shopping cart delivery details"
+        "description": "Model representing shopping cart delivery details."
       },
       "KShoppingCartDetails": {
         "required": [
@@ -2947,7 +2948,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Model representing all shopping cart details"
+        "description": "Model representing all shopping cart details."
       },
       "KShoppingCartItem": {
         "type": "object",
@@ -3036,7 +3037,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.ShoppingCartItemInfo"
+        "description": "Dto for CMS.Ecommerce.ShoppingCartItemInfo."
       },
       "KShoppingCartItemShoppingCartResponse": {
         "type": "object",
@@ -3050,7 +3051,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Shopping cart API response with model"
+        "description": "Shopping cart API response with model."
       },
       "KShoppingCartItemValidationError": {
         "type": "object",
@@ -3065,7 +3066,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.ShoppingCartItemValidationError"
+        "description": "Dto for CMS.Ecommerce.ShoppingCartItemValidationError."
       },
       "KShoppingCartItemValidationErrorIEnumerableShoppingCartResponse": {
         "type": "object",
@@ -3083,7 +3084,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Shopping cart API response with model"
+        "description": "Shopping cart API response with model."
       },
       "KShoppingCartSummary": {
         "type": "object",
@@ -3096,7 +3097,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Model encapsulating all shopping cart data (content with details)"
+        "description": "Model encapsulating all shopping cart data (content with details)."
       },
       "KSummaryItem": {
         "type": "object",
@@ -3113,7 +3114,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Dto for CMS.Ecommerce.SummaryItem"
+        "description": "Dto for CMS.Ecommerce.SummaryItem."
       },
       "KUserSynchronization": {
         "type": "object",
@@ -3124,7 +3125,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents model for synchronizing user"
+        "description": "Represents model for synchronizing user."
       },
       "OrderListResponse": {
         "type": "object",
@@ -3146,7 +3147,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Request for order response"
+        "description": "Request for order response."
       },
       "ProblemDetails": {
         "type": "object",
@@ -3197,7 +3198,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Model for product/variant inventory and price"
+        "description": "Model for product/variant inventory and price."
       },
       "ProductPricesResponse": {
         "type": "object",
@@ -3218,7 +3219,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Prices for product and it's variants"
+        "description": "Prices for product and it's variants."
       },
       "SKUProductTypeEnum": {
         "enum": [
@@ -3239,7 +3240,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Base shopping cart response for Store API"
+        "description": "Base shopping cart response for Store API."
       },
       "TokenResponse": {
         "type": "object",
@@ -3257,7 +3258,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Token response."
       },
       "TrackInventoryTypeEnum": {
         "enum": [

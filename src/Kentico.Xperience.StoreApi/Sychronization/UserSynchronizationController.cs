@@ -24,10 +24,9 @@ public class UserSynchronizationController : ControllerBase
 
 
     /// <summary>
-    /// Creates new user
+    /// Creates new user.
     /// </summary>
-    /// <param name="user"></param>
-    /// <returns></returns>
+    /// <param name="user">User to create.</param>
     [HttpPost("user-synchronization")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]

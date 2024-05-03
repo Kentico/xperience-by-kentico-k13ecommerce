@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.Sychronization;
 
 /// <summary>
-/// Represents model for synchronizing user
+/// Represents model for synchronizing user.
 /// </summary>
 public class KUserSynchronization
 {

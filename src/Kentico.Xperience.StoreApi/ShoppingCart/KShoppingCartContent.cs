@@ -5,7 +5,7 @@ using Kentico.Xperience.StoreApi.Currencies;
 namespace Kentico.Xperience.StoreApi.ShoppingCart;
 
 /// <summary>
-/// Model representing shopping cart content
+/// Model representing shopping cart content.
 /// </summary>
 public class KShoppingCartContent : ShoppingCartBaseResponse
 {

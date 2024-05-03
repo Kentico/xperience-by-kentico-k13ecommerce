@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.Authentication;
 
 /// <summary>
-/// Json web token (JWT) config options
+/// Json web token (JWT) config options.
 /// </summary>
 public class JwtOptions
 {

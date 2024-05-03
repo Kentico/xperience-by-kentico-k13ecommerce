@@ -33,7 +33,7 @@ public class OrderController : ControllerBase
     }
 
     /// <summary>
-    /// Endpoint for getting list of orders based on request
+    /// Endpoint for getting list of orders based on request.
     /// </summary>
     /// <param name="request"></param>
     /// <returns></returns>

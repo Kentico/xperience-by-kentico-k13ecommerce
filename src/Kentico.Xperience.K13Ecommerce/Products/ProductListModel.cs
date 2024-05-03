@@ -2,48 +2,48 @@
 
 
 /// <summary>
-/// Model for product list item
+/// Model for product list item.
 /// </summary>
 public class ProductListModel
 {
     /// <summary>
-    /// Product name
+    /// Product name.
     /// </summary>
     public string? Name { get; set; }
 
 
     /// <summary>
-    /// Short description
+    /// Short description.
     /// </summary>
     public string? ShortDescription { get; set; }
 
 
     /// <summary>
-    /// Product url
+    /// Product url.
     /// </summary>
     public string? ProductUrl { get; set; }
 
 
     /// <summary>
-    /// Product image
+    /// Product image.
     /// </summary>
     public string? Image { get; set; }
 
 
     /// <summary>
-    /// Product image alt text
+    /// Product image alt text.
     /// </summary>
     public string? ImageAlt { get; set; }
 
 
     /// <summary>
-    /// Product price
+    /// Product price.
     /// </summary>
     public decimal? Price { get; set; }
 
 
     /// <summary>
-    /// Product retail price
+    /// Product retail price.
     /// </summary>
     public decimal? ListPrice { get; set; }
 }

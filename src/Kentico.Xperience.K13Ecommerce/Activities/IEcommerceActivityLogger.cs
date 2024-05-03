@@ -1,4 +1,4 @@
-﻿using Kentico.Xperience.K13Ecommerce.StoreApi;
+using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace Kentico.Xperience.K13Ecommerce.Activities;
 
@@ -27,7 +27,7 @@ public interface IEcommerceActivityLogger
 
     /// <summary>Logs product purchased activity.</summary>
     /// <param name="sku">SKUInfo object.</param>
-    /// <param name="quantity"></param>
-    /// <param name="variant"></param>
+    /// <param name="quantity">Quantity.</param>
+    /// <param name="variant">Product variant.</param>
     void LogPurchasedProductActivity(KProductSKU sku, int quantity, KProductVariant? variant = null);
 }

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
 
-public class ProductImageSynchronizationService : SynchronizationServiceCommon, IProductImageSynchronizationService
+internal class ProductImageSynchronizationService : SynchronizationServiceCommon, IProductImageSynchronizationService
 {
     private readonly IContentItemService contentItemService;
     private readonly ILogger<ProductImageSynchronizationService> logger;
@@ -21,6 +21,7 @@ public class ProductImageSynchronizationService : SynchronizationServiceCommon, 
     }
 
 
+    /// <inheritdoc/>
     public async Task<IReadOnlySet<Guid>> ProcessImages(IEnumerable<ProductImageDto> images,
         IEnumerable<ProductImage> existingImages, string language, int userId)
     {

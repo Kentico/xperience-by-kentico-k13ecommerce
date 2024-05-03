@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.ShoppingCart;
 
 /// <summary>
-/// Model encapsulating all shopping cart data (content with details)
+/// Model encapsulating all shopping cart data (content with details).
 /// </summary>
 public class KShoppingCartSummary
 {

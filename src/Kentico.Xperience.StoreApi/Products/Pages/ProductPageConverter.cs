@@ -7,10 +7,7 @@ using Kentico.Xperience.StoreApi.Products.SKU;
 
 namespace Kentico.Xperience.StoreApi.Products.Pages;
 
-/// <summary>
-/// Implemented converter from Kentico product page to product page model
-/// </summary>
-/// <typeparam name="TProduct"></typeparam>
+/// <inheritdoc/>
 public class ProductPageConverter<TProduct> : IProductPageConverter<TProduct>
     where TProduct : KProductNode, new()
 {

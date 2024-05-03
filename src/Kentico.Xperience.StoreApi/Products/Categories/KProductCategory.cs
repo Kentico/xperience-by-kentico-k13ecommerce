@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.Products.Categories;
 
 /// <summary>
-/// Represents products section (category) - Page type which has ClassIsProductSection true
+/// Represents products section (category) - Page type which has ClassIsProductSection true.
 /// </summary>
 public class KProductCategory
 {

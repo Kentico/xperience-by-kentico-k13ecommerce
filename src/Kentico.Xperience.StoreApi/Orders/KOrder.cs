@@ -4,7 +4,7 @@ using Kentico.Xperience.StoreApi.ShoppingCart;
 namespace Kentico.Xperience.StoreApi.Orders;
 
 /// <summary>
-/// Dto for <see cref="CMS.Ecommerce.OrderInfo"/>
+/// Dto for <see cref="CMS.Ecommerce.OrderInfo"/>.
 /// </summary>
 public class KOrder
 {

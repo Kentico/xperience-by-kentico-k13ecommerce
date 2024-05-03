@@ -12,13 +12,16 @@ internal class ShoppingCartClientStorage
     private const string ShoppingCartKey = "ShoppingCartGUID";
 
 
+    /// <inheritdoc/>
     public Guid GetCartGuid() => conversionService.GetGuid(cookieAccessor.Get(ShoppingCartKey), Guid.Empty);
 
 
+    /// <inheritdoc/>
     public void SetCartGuid(Guid cartGuid) =>
         cookieAccessor.Set(ShoppingCartKey, cartGuid.ToString(),
             new CookieOptions { HttpOnly = true, Expires = DateTimeOffset.Now.AddMonths(1), SameSite = SameSiteMode.Strict });
 
 
+    /// <inheritdoc/>
     public void ClearCartGuid() => cookieAccessor.Remove(ShoppingCartKey);
 }

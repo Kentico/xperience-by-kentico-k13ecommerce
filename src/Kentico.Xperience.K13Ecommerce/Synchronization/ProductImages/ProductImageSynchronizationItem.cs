@@ -14,12 +14,15 @@ internal class ProductImageSynchronizationItem : ContentItemSynchronizationBase,
     public override string ContentTypeName => ProductImage.CONTENT_TYPE_NAME;
 
 
+    /// <inheritdoc/>
     public required ProductImageDto Item { get; set; }
 
 
+    /// <inheritdoc/>
     public ContentItemAssetMetadataWithSource? ImageAsset { get; set; }
 
 
+    /// <inheritdoc/>
     public bool GetModifiedProperties(ProductImage contentItem, out Dictionary<string, object?> modifiedProps)
     {
         modifiedProps = [];
@@ -30,6 +33,7 @@ internal class ProductImageSynchronizationItem : ContentItemSynchronizationBase,
     }
 
 
+    /// <inheritdoc/>
     public override Dictionary<string, object?> ToDict() => new()
     {
         [nameof(ProductImage.ProductImageDescription)] = Item.ImageDescription,

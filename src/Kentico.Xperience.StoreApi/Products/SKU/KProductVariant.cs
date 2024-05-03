@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.StoreApi.Products.SKU;
 
 /// <summary>
-/// Model for Kentico product variant
+/// Model for Kentico product variant.
 /// </summary>
 public class KProductVariant
 {

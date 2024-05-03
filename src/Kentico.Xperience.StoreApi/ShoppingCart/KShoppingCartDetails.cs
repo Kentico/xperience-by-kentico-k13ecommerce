@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.StoreApi.ShoppingCart;
 
 /// <summary>
-/// Model representing all shopping cart details
+/// Model representing all shopping cart details.
 /// </summary>
 public class KShoppingCartDetails : KShoppingCartDeliveryDetails
 {

@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.Orders;
 
 /// <summary>
-/// Dto for <see cref="CMS.Ecommerce.OrderItemInfo"/>
+/// Dto for <see cref="CMS.Ecommerce.OrderItemInfo"/>.
 /// </summary>
 public class KOrderItem
 {

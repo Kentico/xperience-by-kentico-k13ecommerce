@@ -3,7 +3,7 @@
 namespace Kentico.Xperience.StoreApi.Customers;
 
 /// <summary>
-/// Dto for <see cref="CMS.Ecommerce.AddressInfo"/>
+/// Dto for <see cref="CMS.Ecommerce.AddressInfo"/>.
 /// </summary>
 public class KAddress
 {

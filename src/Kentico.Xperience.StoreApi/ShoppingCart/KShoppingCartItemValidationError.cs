@@ -1,7 +1,7 @@
 ﻿namespace Kentico.Xperience.StoreApi.ShoppingCart;
 
 /// <summary>
-/// Dto for <see cref="CMS.Ecommerce.ShoppingCartItemValidationError"/>
+/// Dto for <see cref="CMS.Ecommerce.ShoppingCartItemValidationError"/>.
 /// </summary>
 public class KShoppingCartItemValidationError
 {

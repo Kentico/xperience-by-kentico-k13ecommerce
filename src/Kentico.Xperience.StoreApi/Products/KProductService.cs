@@ -13,6 +13,7 @@ using Kentico.Xperience.StoreApi.Products.Prices;
 
 namespace Kentico.Xperience.StoreApi.Products;
 
+/// <inheritdoc/>
 internal class KProductService : IKProductService
 {
     private readonly IPageRetriever pageRetriever;
@@ -38,6 +39,7 @@ internal class KProductService : IKProductService
     }
 
 
+    /// <inheritdoc/>
     public async Task<IEnumerable<KProductNode>> GetProductPages(ProductPageRequest request)
     {
         var (path, culture, currencyCode, orderBy, limit, withVariants, withLongDescription, noLinks) = request;
@@ -83,9 +85,10 @@ internal class KProductService : IKProductService
     }
 
 
+    /// <inheritdoc/>
     public async Task<IEnumerable<KProductCategory>> GetProductCategories(string culture)
     {
-        var categoriesTypes = (await DataClassInfoProvider.ProviderObject.Get()
+        string[] categoriesTypes = (await DataClassInfoProvider.ProviderObject.Get()
                 .WhereTrue(nameof(DataClassInfo.ClassIsProductSection))
                 .Column(nameof(DataClassInfo.ClassName))
                 .GetEnumerableTypedResultAsync())
@@ -104,6 +107,7 @@ internal class KProductService : IKProductService
     }
 
 
+    /// <inheritdoc/>
     public async Task<ProductPricesResponse> GetProductPrices(int productSkuId, string currencyCode)
     {
         var sku = await skuInfoProvider.GetAsync(productSkuId) ??
@@ -113,6 +117,7 @@ internal class KProductService : IKProductService
     }
 
 
+    /// <inheritdoc/>
     public async IAsyncEnumerable<ProductPricesResponse> GetProductPrices(IEnumerable<int> productsSkuIds, string currencyCode)
     {
         var skus = await skuInfoProvider.Get()
@@ -126,6 +131,7 @@ internal class KProductService : IKProductService
     }
 
 
+    /// <inheritdoc/>
     public async Task<ProductInventoryPriceInfo> GetProductInventoryAndPrices(int skuId, string currencyCode)
     {
         var sku = await skuInfoProvider.GetAsync(skuId) ??

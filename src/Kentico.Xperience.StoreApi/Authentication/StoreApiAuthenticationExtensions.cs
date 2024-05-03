@@ -9,6 +9,11 @@ namespace Kentico.Xperience.StoreApi.Authentication;
 
 public static class StoreApiAuthenticationExtensions
 {
+    /// <summary>
+    /// Adds JWT authentication for the Store API.
+    /// </summary>
+    /// <param name="builder">Auth builder.</param>
+    /// <param name="configuration">Configuration.</param>
     public static void AddKenticoStoreApiJwtAuth(this AuthenticationBuilder builder, IConfiguration configuration)
     {
         var jwtOptions = configuration.GetSection("CMSStoreApi:Jwt").Get<JwtOptions>();

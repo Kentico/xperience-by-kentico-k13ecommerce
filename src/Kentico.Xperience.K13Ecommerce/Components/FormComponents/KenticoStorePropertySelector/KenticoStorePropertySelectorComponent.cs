@@ -8,9 +8,9 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 namespace Kentico.Xperience.K13Ecommerce.Components.FormComponents.KenticoStorePropertySelector;
 
 /// <summary>
-/// KStore selector component for currencies,cultures and categories
+/// KStore selector component for currencies,cultures and categories.
 /// </summary>
-/// <param name="storeApiClient"></param>
+/// <param name="storeApiClient">Store API client.</param>
 public class KenticoStorePropertySelectorComponent(IKenticoStoreApiClient storeApiClient) : SelectorFormComponent<KenticoStorePropertySelectorProperties>
 {
     public const string IDENTIFIER = "Kentico.Xperience.Store.PropertySelector";

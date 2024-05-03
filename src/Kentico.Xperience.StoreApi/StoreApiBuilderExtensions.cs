@@ -5,10 +5,9 @@ namespace Kentico.Xperience.StoreApi;
 public static class StoreApiBuilderExtensions
 {
     /// <summary>
-    /// Store API Swagger
+    /// Store API Swagger.
     /// </summary>
-    /// <param name="app"></param>
-    /// <returns></returns>
+    /// <param name="app">App builder.</param>
     public static IApplicationBuilder UseStoreApiSwagger(this IApplicationBuilder app)
     {
         app.UseSwagger();

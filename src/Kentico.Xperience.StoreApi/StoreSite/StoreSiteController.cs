@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Kentico.Xperience.StoreApi.StoreSite;
 
 /// <summary>
-/// API endpoints for site on global level
+/// API endpoints for site on global level.
 /// </summary>
 [Route($"{ApiRoute.ApiPrefix}/site")]
 [AuthorizeStore]
@@ -32,9 +32,8 @@ public class StoreSiteController : ControllerBase
     }
 
     /// <summary>
-    /// Returns all enabled site cultures
+    /// Returns all enabled site cultures.
     /// </summary>
-    /// <returns></returns>
     [HttpGet("cultures", Name = nameof(GetCultures))]
     public IEnumerable<KCulture> GetCultures()
     {
@@ -53,9 +52,8 @@ public class StoreSiteController : ControllerBase
 
 
     /// <summary>
-    /// Returns all enabled site currencies
+    /// Returns all enabled site currencies.
     /// </summary>
-    /// <returns></returns>
     [HttpGet("currencies", Name = nameof(GetCurrencies))]
     public async Task<IEnumerable<string>> GetCurrencies()
         => (await CurrencyInfoProvider.GetCurrencies(siteService.CurrentSite.SiteID).GetEnumerableTypedResultAsync())

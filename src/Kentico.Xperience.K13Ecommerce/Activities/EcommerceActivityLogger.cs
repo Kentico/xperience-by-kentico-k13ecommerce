@@ -8,6 +8,7 @@ namespace Kentico.Xperience.K13Ecommerce.Activities;
 
 internal class EcommerceActivityLogger(ICustomActivityLogger customActivityLogger) : IEcommerceActivityLogger
 {
+    /// <inheritdoc/>
     public void LogProductAddedToShoppingCartActivity(KProductSKU sku, int quantity, KProductVariant? variant = null) =>
         customActivityLogger.Log(EcommerceActivityTypes.ProductAddedToCartActivity, new CustomActivityData
         {
@@ -18,6 +19,7 @@ internal class EcommerceActivityLogger(ICustomActivityLogger customActivityLogge
         });
 
 
+    /// <inheritdoc/>
     public void LogProductRemovedFromShoppingCartActivity(KProductSKU sku, int quantity, KProductVariant? variant = null) =>
         customActivityLogger.Log(EcommerceActivityTypes.ProductRemovedFromCartActivity, new CustomActivityData
         {
@@ -28,6 +30,7 @@ internal class EcommerceActivityLogger(ICustomActivityLogger customActivityLogge
         });
 
 
+    /// <inheritdoc/>
     public void LogPurchaseActivity(int orderId, decimal totalPrice, string totalPriceInCorrectCurrency) =>
         customActivityLogger.Log(EcommerceActivityTypes.PurchaseActivity, new CustomActivityData
         {
@@ -37,6 +40,7 @@ internal class EcommerceActivityLogger(ICustomActivityLogger customActivityLogge
         });
 
 
+    /// <inheritdoc/>
     public void LogPurchasedProductActivity(KProductSKU sku, int quantity, KProductVariant? variant = null) =>
         customActivityLogger.Log(EcommerceActivityTypes.PurchasedProductActivity, new CustomActivityData
         {
