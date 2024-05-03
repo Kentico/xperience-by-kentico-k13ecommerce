@@ -314,7 +314,7 @@ public class CheckoutController : Controller
     [ValidateAntiForgeryToken]
     public async Task<ActionResult> FinishOrder(SummaryViewModel model, [FromServices] IStringLocalizer<SharedResources> localizer)
     {
-        var cart = await shoppingService.GetCurrentShoppingCartSummaryAsync();
+        var cart = await shoppingService.GetCurrentShoppingCartSummary();
 
         if (cart.CartContent.IsEmpty)
         {

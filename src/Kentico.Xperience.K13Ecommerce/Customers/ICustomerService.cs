@@ -7,7 +7,7 @@ public interface ICustomerService
     /// <summary>
     /// Get list of addresses for given customer
     /// </summary>
-    /// <param name="customerId"></param>
+    /// <param name="customerId">Customer ID</param>
     /// <returns></returns>
     Task<ICollection<KAddress>> GetCustomerAddresses(int customerId);
 }

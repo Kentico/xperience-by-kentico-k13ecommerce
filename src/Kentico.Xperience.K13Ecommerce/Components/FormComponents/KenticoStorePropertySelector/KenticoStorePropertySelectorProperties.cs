@@ -11,6 +11,9 @@ public class KenticoStorePropertySelectorProperties : SelectorProperties
 }
 
 
+/// <summary>
+/// Enum to specify the mode of selector component, f.e. <see cref="KenticoStorePropertySelectorComponent"/>
+/// </summary>
 public enum KenticoStorePropertySelectorMode
 {
     Category,

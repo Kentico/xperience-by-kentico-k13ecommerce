@@ -14,6 +14,9 @@ public partial class ProductSKU : IItemIdentifier<int>
 
     private Dictionary<string, object>? customFieldsDict;
 
+    /// <summary>
+    /// Custom fields as dictionary
+    /// </summary>
     public Dictionary<string, object> CustomFieldsDict => customFieldsDict ??=
         (JsonSerializer.Deserialize<Dictionary<string, object>>(CustomFields) ?? []);
 }

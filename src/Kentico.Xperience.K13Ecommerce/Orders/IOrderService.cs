@@ -7,7 +7,7 @@ public interface IOrderService
     /// <summary>
     /// Get orders based on parameters
     /// </summary>
-    /// <param name="request"></param>
-    /// <returns></returns>
+    /// <param name="request">Request parameters for order listing</param>
+    /// <returns>Paged list of orders</returns>
     Task<OrderListResponse> GetOrderList(OrderListRequest request);
 }

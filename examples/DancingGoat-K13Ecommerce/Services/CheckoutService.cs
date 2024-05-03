@@ -137,7 +137,7 @@ public class CheckoutService : ICheckoutService
     /// <param name="paymentMethod">Payment method selected on preview step</param>
     public async Task<SummaryViewModel> PreparePreviewViewModel(PaymentMethodViewModel paymentMethod = null)
     {
-        var cart = await shoppingService.GetCurrentShoppingCartSummaryAsync();
+        var cart = await shoppingService.GetCurrentShoppingCartSummary();
         var billingAddress = cart.CartDetails.BillingAddress;
 
         var shippingOption = cart.CartDetails.ShippingOption;

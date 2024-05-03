@@ -10,147 +10,132 @@ public interface IShoppingService
     /// <summary>
     /// Get current cart content content
     /// </summary>
-    /// <returns></returns>
     Task<KShoppingCartContent> GetCurrentShoppingCartContent();
 
 
     /// <summary>
     /// Get current cart details
     /// </summary>
-    /// <returns></returns>
     Task<KShoppingCartDetails> GetCurrentShoppingCartDetails();
 
 
     /// <summary>
     /// Get current cart summary (cart content + details)
     /// </summary>
-    /// <returns></returns>
-    Task<KShoppingCartSummary> GetCurrentShoppingCartSummaryAsync();
+    Task<KShoppingCartSummary> GetCurrentShoppingCartSummary();
 
 
     /// <summary>
-    /// 
+    /// Add item to cart
     /// </summary>
-    /// <param name="skuId"></param>
-    /// <param name="quantity"></param>
-    /// <returns></returns>
+    /// <param name="skuId">The SKU ID of the item to add</param>
+    /// <param name="quantity">The quantity of the item to add</param>
     Task<KShoppingCartItem?> AddItemToCart(int skuId, int quantity);
 
 
     /// <summary>
-    /// 
+    /// Update item quantity in cart
     /// </summary>
-    /// <param name="itemId"></param>
-    /// <param name="quantity"></param>
-    /// <returns></returns>
+    /// <param name="itemId">The ID of the item to update</param>
+    /// <param name="quantity">The new quantity of the item</param>
     Task UpdateItemQuantity(int itemId, int quantity);
 
 
     /// <summary>
-    /// 
+    /// Remove item from cart
     /// </summary>
-    /// <param name="itemId"></param>
-    /// <returns></returns>
+    /// <param name="itemId">The ID of the item to remove</param>
     Task RemoveItemFromCart(int itemId);
 
 
     /// <summary>
-    /// 
+    /// Add coupon code to cart
     /// </summary>
-    /// <param name="couponCode"></param>
-    /// <returns></returns>
+    /// <param name="couponCode">The coupon code to add</param>
+    /// <returns>True when coupon code has been added else False</returns>
     Task<bool> AddCouponCode(string couponCode);
 
 
     /// <summary>
-    /// 
+    /// Remove coupon code from cart
     /// </summary>
-    /// <param name="couponCode"></param>
-    /// <returns></returns>
+    /// <param name="couponCode">The coupon code to remove</param>
     Task RemoveCouponCode(string couponCode);
 
 
     /// <summary>
-    /// 
+    /// Get current customer
     /// </summary>
-    /// <returns></returns>
     Task<KCustomer?> GetCurrentCustomer();
 
 
     /// <summary>
-    /// 
+    /// Set customer to cart
     /// </summary>
-    /// <param name="customer"></param>
-    /// <returns></returns>
+    /// <param name="customer">The customer to set</param>
     Task SetCustomer(KCustomer customer);
 
 
     /// <summary>
-    /// 
+    /// Set shipping option to cart
     /// </summary>
-    /// <param name="shippingOptionId"></param>
-    /// <returns></returns>
+    /// <param name="shippingOptionId">The ID of the shipping option to set</param>
     Task SetShippingOption(int shippingOptionId);
 
 
     /// <summary>
-    /// 
+    /// Set payment option to cart
     /// </summary>
-    /// <param name="paymentOptionId"></param>
-    /// <returns></returns>
+    /// <param name="paymentOptionId">The ID of the payment option to set</param>
     Task SetPaymentOption(int paymentOptionId);
 
 
     /// <summary>
-    /// 
+    /// Set shipping and payment option to cart
     /// </summary>
-    /// <param name="shippingOptionId"></param>
-    /// <param name="paymentOptionId"></param>
+    /// <param name="shippingOptionId">The ID of the shipping option to set</param>
+    /// <param name="paymentOptionId">The ID of the payment option to set</param>
     /// <returns></returns>
     Task SetShippingAndPayment(int shippingOptionId, int paymentOptionId);
 
 
     /// <summary>
-    /// 
+    /// Set billing address to cart
     /// </summary>
-    /// <param name="billingAddress"></param>
-    /// <returns></returns>
+    /// <param name="billingAddress">Billing address</param>
     Task SetBillingAddress(KAddress billingAddress);
 
 
     /// <summary>
-    /// 
+    /// Set shipping address to cart
     /// </summary>
-    /// <param name="shippingAddress"></param>
-    /// <returns></returns>
+    /// <param name="shippingAddress">Shipping address</param>
     Task SetShippingAddress(KAddress shippingAddress);
 
 
     /// <summary>
-    /// 
+    /// Set delivery details (customer, shipping address, billing address, shipping option, payment option) to cart
     /// </summary>
-    /// <param name="deliveryDetails"></param>
-    /// <returns></returns>
+    /// <param name="deliveryDetails">Delivery details to set</param>
     Task SetDeliveryDetails(KShoppingCartDeliveryDetails deliveryDetails);
 
 
     /// <summary>
-    /// 
+    /// Create order from cart
     /// </summary>
-    /// <param name="note"></param>
-    /// <returns></returns>
+    /// <param name="note">Order note</param>
     Task<KOrder> CreateOrder(string? note = null);
 
 
     /// <summary>
-    /// 
+    /// Get customer from authenticated user or create new customer
     /// </summary>
-    /// <returns></returns>
+    /// <param name="customer">Existing customer</param>    
     Task<KCustomer?> GetCustomerOrCreateFromAuthenticatedUser(KCustomer? customer = null);
 
 
     /// <summary>
-    /// 
+    /// Clear caches
     /// </summary>
     void ClearCaches();
 
@@ -158,14 +143,12 @@ public interface IShoppingService
     /// <summary>
     /// Validates shopping cart items and returns collection of validation messages
     /// </summary>
-    /// <returns></returns>
     Task<ICollection<KShoppingCartItemValidationError>> ValidateShoppingCartItems();
 
 
     /// <summary>
     /// Set currency to cart when currency is different than previous
     /// </summary>
-    /// <param name="currencyCode"></param>
-    /// <returns></returns>
+    /// <param name="currencyCode">Currency code</param>    
     Task SetCurrency(string currencyCode);
 }

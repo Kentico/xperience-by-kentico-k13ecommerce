@@ -29,6 +29,7 @@ public class ProductListModel
     /// </summary>
     public string? Image { get; set; }
 
+
     /// <summary>
     /// Product image alt text
     /// </summary>

@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 [assembly: RegisterModule(typeof(UserSynchronizationModule))]
 namespace Kentico.Xperience.K13Ecommerce.Users.UserSynchronization;
 
-
 internal class UserSynchronizationModule() : Module(nameof(UserSynchronizationModule))
 {
     protected override void OnInit()

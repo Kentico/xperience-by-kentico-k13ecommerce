@@ -22,6 +22,7 @@ internal class ShoppingService(
 {
     private const int CacheMinutes = 2;
 
+    /// <inheritdoc/>
     public async Task<KShoppingCartContent> GetCurrentShoppingCartContent()
     {
         //when cart guid retrieved from client, call with anonymize parameter to ensure same security as K13 e-comm
@@ -40,12 +41,14 @@ internal class ShoppingService(
         }, new CacheSettings(CacheMinutes, nameof(GetCurrentShoppingCartContent), ShoppingCartGuid));
     }
 
+    /// <inheritdoc/>
     public async Task<KShoppingCartDetails> GetCurrentShoppingCartDetails()
         => await ProcessAction(async () => await storeApiClient.GetCurrentCartDetailsAsync(ShoppingCartGuid),
             clearCaches: false);
 
 
-    public async Task<KShoppingCartSummary> GetCurrentShoppingCartSummaryAsync()
+    /// <inheritdoc/>
+    public async Task<KShoppingCartSummary> GetCurrentShoppingCartSummary()
     {
         if (ShoppingCartGuid == Guid.Empty)
         {
@@ -58,11 +61,13 @@ internal class ShoppingService(
     }
 
 
+    /// <inheritdoc/>
     public async Task<KCustomer?> GetCurrentCustomer()
         => (await ProcessAction(async () => await storeApiClient.GetCurrentCustomerAsync(ShoppingCartGuid),
             clearCaches: false)).Value;
 
 
+    /// <inheritdoc/>
     public async Task SetCustomer(KCustomer customer)
     {
         if (ShoppingCartGuid == Guid.Empty)
@@ -75,6 +80,7 @@ internal class ShoppingService(
     }
 
 
+    /// <inheritdoc/>
     public async Task<KShoppingCartItem?> AddItemToCart(int skuId, int quantity)
         => (await ProcessAction(async () =>
         {
@@ -86,6 +92,7 @@ internal class ShoppingService(
         })).Value;
 
 
+    /// <inheritdoc/>
     public async Task UpdateItemQuantity(int itemId, int quantity)
         => await ProcessAction(async () =>
             {
@@ -116,6 +123,7 @@ internal class ShoppingService(
             , cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task RemoveItemFromCart(int itemId)
         => await ProcessAction(async () =>
             {
@@ -135,45 +143,53 @@ internal class ShoppingService(
             cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task<bool> AddCouponCode(string couponCode)
         => (await ProcessAction(async () => await storeApiClient.AddCouponCodeAsync(couponCode, ShoppingCartGuid)))
             .Value;
 
 
+    /// <inheritdoc/>
     public async Task RemoveCouponCode(string couponCode)
         => await ProcessAction(async () => await storeApiClient.RemoveCouponCodeAsync(couponCode, ShoppingCartGuid));
 
 
+    /// <inheritdoc/>
     public async Task SetShippingOption(int shippingOptionId)
         => await ProcessAction(
             async () => await storeApiClient.SetShippingOptionAsync(ShoppingCartGuid, shippingOptionId),
             cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task SetPaymentOption(int paymentOptionId)
         => await ProcessAction(
             async () => await storeApiClient.SetPaymentOptionAsync(ShoppingCartGuid, paymentOptionId),
             cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task SetShippingAndPayment(int shippingOptionId, int paymentOptionId)
         => await ProcessAction(
             async () => await storeApiClient.SetShippingAndPaymentAsync(ShoppingCartGuid, shippingOptionId,
                 paymentOptionId), cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task SetBillingAddress(KAddress billingAddress)
         => await ProcessAction(
             async () => await storeApiClient.SetBillingAddressAsync(ShoppingCartGuid, billingAddress),
             cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task SetShippingAddress(KAddress shippingAddress)
         => await ProcessAction(
             async () => await storeApiClient.SetShippingAddressAsync(ShoppingCartGuid, shippingAddress),
             cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task SetDeliveryDetails(KShoppingCartDeliveryDetails deliveryDetails)
         => await ProcessAction(
             async () =>
@@ -185,6 +201,7 @@ internal class ShoppingService(
             cartMustBeStored: true);
 
 
+    /// <inheritdoc/>
     public async Task<KOrder> CreateOrder(string? note = null)
     {
         if (ShoppingCartGuid == Guid.Empty)
@@ -212,6 +229,7 @@ internal class ShoppingService(
     }
 
 
+    /// <inheritdoc/>
     public async Task<KCustomer?> GetCustomerOrCreateFromAuthenticatedUser(KCustomer? customer = null)
     {
         if (customer != null)
@@ -238,13 +256,16 @@ internal class ShoppingService(
     }
 
 
+    /// <inheritdoc/>
     public void ClearCaches() => CacheHelper.TouchKey($"shoppingcart|{ShoppingCartGuid}");
 
 
+    /// <inheritdoc/>
     public async Task<ICollection<KShoppingCartItemValidationError>> ValidateShoppingCartItems() =>
         (await ProcessAction(async () => await storeApiClient.ValidateCartItemsAsync(ShoppingCartGuid))).Value!;
 
 
+    /// <inheritdoc/>
     public async Task SetCurrency(string currencyCode) => await ProcessAction(
         async () => await storeApiClient.SetCurrencyAsync(ShoppingCartGuid, currencyCode));
 

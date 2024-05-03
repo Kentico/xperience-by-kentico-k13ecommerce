@@ -7,5 +7,8 @@ namespace K13Store;
 /// </summary>
 public partial class ProductImage : IItemIdentifier<string>
 {
+    /// <summary>
+    /// External Id for product image is original image path
+    /// </summary>
     public string ExternalId => ProductImageOriginalPath;
 }

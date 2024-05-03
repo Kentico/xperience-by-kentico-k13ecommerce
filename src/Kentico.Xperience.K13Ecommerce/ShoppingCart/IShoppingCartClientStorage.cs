@@ -1,29 +1,21 @@
 ﻿namespace Kentico.Xperience.K13Ecommerce.ShoppingCart;
 
-//
-// Summary:
-//     Interface for storing shopping cart GUID on the client's side.
+/// <summary>
+/// Interface for storing shopping cart GUID on the client's side.
+/// </summary>
 public interface IShoppingCartClientStorage
 {
-    //
-    // Summary:
-    //     Gets the GUID of the CMS.Ecommerce.ShoppingCartInfo stored on client.
-    //
-    // Returns:
-    //     Shopping cart GUID from client or System.Guid.Empty when not found.
+    /// <summary>
+    /// Get the GUID of the Shopping cart stored on client
+    /// </summary>
+    /// <returns>Shopping cart GUID from client or System.Guid.Empty when not found.</returns>
     Guid GetCartGuid();
 
 
-    //
-    // Summary:
-    //     Stores the GUID of the CMS.Ecommerce.ShoppingCartInfo to the client.
-    //
-    // Parameters:
-    //   cartGuid:
-    //     GUID of the shopping cart to be stored on the client's side.
-    //
-    // Remarks:
-    //     It is recommended to save the value to the client only if the value has changed.
+    /// <summary>
+    /// Stores the GUID of the Shopping cart to the client.
+    /// </summary>
+    /// <param name="cartGuid">GUID of the shopping cart to be stored on the client's side.</param>
     void SetCartGuid(Guid cartGuid);
 
 
