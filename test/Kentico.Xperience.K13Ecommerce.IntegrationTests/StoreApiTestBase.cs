@@ -42,7 +42,7 @@ public class StoreApiTestBase
 
 
     /// <summary>
-    /// 
+    /// Tear down for Store API integration tests.
     /// </summary>
     [OneTimeTearDown]
     public void TearDown()
