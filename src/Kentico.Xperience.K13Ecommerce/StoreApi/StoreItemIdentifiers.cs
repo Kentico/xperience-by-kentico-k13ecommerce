@@ -7,6 +7,7 @@ namespace Kentico.Xperience.K13Ecommerce.StoreApi;
 /// </summary>
 public partial class KProductNode : IItemIdentifier<int>
 {
+    /// <inheritdoc/>
     public int ExternalId => Sku.Skuid;
 }
 
@@ -15,6 +16,7 @@ public partial class KProductNode : IItemIdentifier<int>
 /// </summary>
 public partial class KProductSKU : IItemIdentifier<int>
 {
+    /// <inheritdoc/>
     public int ExternalId => Skuid;
 }
 
@@ -23,5 +25,6 @@ public partial class KProductSKU : IItemIdentifier<int>
 /// </summary>
 public partial class KProductVariant : IItemIdentifier<int>
 {
+    /// <inheritdoc/>
     public int ExternalId => Skuid;
 }

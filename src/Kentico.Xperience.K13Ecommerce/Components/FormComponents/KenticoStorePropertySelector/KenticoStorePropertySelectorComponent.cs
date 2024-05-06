@@ -13,10 +13,13 @@ namespace Kentico.Xperience.K13Ecommerce.Components.FormComponents.KenticoStoreP
 /// <param name="storeApiClient">Store API client.</param>
 public class KenticoStorePropertySelectorComponent(IKenticoStoreApiClient storeApiClient) : SelectorFormComponent<KenticoStorePropertySelectorProperties>
 {
+    /// <summary>
+    /// Store property selector identifier.
+    /// </summary>
     public const string IDENTIFIER = "Kentico.Xperience.Store.PropertySelector";
 
 
-    // Retrieves data to be displayed in the selector
+    /// <inheritdoc/>
     protected override IEnumerable<HtmlOptionItem> GetHtmlOptions()
     {
         if (Properties.Mode == KenticoStorePropertySelectorMode.Category)

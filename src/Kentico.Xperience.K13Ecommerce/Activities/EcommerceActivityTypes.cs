@@ -1,5 +1,8 @@
 ﻿namespace Kentico.Xperience.K13Ecommerce.Activities;
 
+/// <summary>
+/// E-commerce activity types constants.
+/// </summary>
 public static class EcommerceActivityTypes
 {
     /// <summary>

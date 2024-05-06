@@ -2,6 +2,9 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace Kentico.Xperience.K13Ecommerce.Activities;
 
+/// <summary>
+/// Activity logger for ecommerce activities.
+/// </summary>
 public interface IEcommerceActivityLogger
 {
     /// <summary>Logs activity product added to shopping cart.</summary>

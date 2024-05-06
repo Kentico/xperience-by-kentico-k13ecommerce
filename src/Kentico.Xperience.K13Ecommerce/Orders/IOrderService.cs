@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.K13Ecommerce.Orders;
 
+/// <summary>
+/// Order service.
+/// </summary>
 public interface IOrderService
 {
     /// <summary>

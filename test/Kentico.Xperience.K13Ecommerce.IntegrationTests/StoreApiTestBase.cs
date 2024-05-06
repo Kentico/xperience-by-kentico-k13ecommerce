@@ -4,12 +4,26 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace Kentico.Xperience.KStore.Tests;
 
+/// <summary>
+/// Base class for Store API integration tests.
+/// </summary>
 public class StoreApiTestBase
 {
+    /// <summary>
+    /// HttpClient for Store API.
+    /// </summary>
     protected HttpClient HttpClient = null!;
+
+    /// <summary>
+    /// Store API client.
+    /// </summary>
     protected IKenticoStoreApiClient StoreApiClient = null!;
 
 
+    /// <summary>
+    /// Setup for Store API integration tests.
+    /// </summary>
+    /// <returns></returns>
     [OneTimeSetUp]
     public async Task Setup()
     {
@@ -27,6 +41,9 @@ public class StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// 
+    /// </summary>
     [OneTimeTearDown]
     public void TearDown()
     {

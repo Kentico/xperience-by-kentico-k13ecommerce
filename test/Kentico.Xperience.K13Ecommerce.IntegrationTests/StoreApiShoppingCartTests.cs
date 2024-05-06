@@ -2,10 +2,18 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace Kentico.Xperience.KStore.Tests;
 
+/// <summary>
+/// Store API shopping cart integration tests.
+/// </summary>
 [TestFixture]
 [Category("IntegrationTests")]
 public class StoreApiShoppingCartTests : StoreApiTestBase
 {
+    /// <summary>
+    /// Add item to cart with valid product and remove it.
+    /// </summary>
+    /// <param name="skuId">SKUID.</param>
+    /// <param name="quantity">Quantity.</param>
     [Test]
     [TestCase(16, 1)]//product
     [TestCase(19, 1)]//variant
@@ -19,6 +27,11 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Update item quantity with valid product and check content.
+    /// </summary>
+    /// <param name="skuId">SKUID.</param>
+    /// <param name="quantity">Quantity.</param>
     [Test]
     [TestCase(16, 1)]
     public async Task UpdateItemQuantity_ValidProduct_CheckContent(int skuId, int quantity)
@@ -42,6 +55,10 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Add coupon code with invalid code and check content.
+    /// </summary>
+    /// <param name="couponCode">Coupon code.</param>
     [Test]
     [TestCase("COUPONNOTEXIST")]
     public async Task AddCouponCode_InvalidCode_FalseResult(string couponCode)
@@ -51,6 +68,10 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Add coupon code with valid code and remove code and check content.
+    /// </summary>
+    /// <param name="couponCode">Coupon code.</param>
     [Test]
     [TestCase("BDAY_CWPZ9")]
     public async Task AddCouponCode_ValidCoupon_CheckContent_RemoveCoupon(string couponCode)
@@ -72,6 +93,10 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Set shipping option with valid option and check cart details.
+    /// </summary>
+    /// <param name="shippingOptionId">Shipping option ID.</param>
     [Test]
     [TestCase(2)]
     public async Task SetShippingOption_Valid_CheckCartDetails(int shippingOptionId)
@@ -85,6 +110,10 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Set payment option with valid option and check cart details.
+    /// </summary>
+    /// <param name="paymentOptionId">Payment option ID.</param>
     [Test]
     [TestCase(2)]
     public async Task SetPaymentOption_Valid_CheckCartDetails(int paymentOptionId)
@@ -98,6 +127,11 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Set shipping and payment with valid options and check cart details.
+    /// </summary>
+    /// <param name="shippingOptionId">Shipping option ID.</param>
+    /// <param name="paymentOptionId">Payment option ID.</param>
     [Test]
     [TestCase(2, 2)]
     public async Task SetShippingAndPayment_Valid_CheckCartDetails(int shippingOptionId, int paymentOptionId)
@@ -113,6 +147,9 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Set customer and check cart details.
+    /// </summary>
     [Test]
     public async Task SetCustomer_CheckCartDetails()
     {
@@ -131,6 +168,9 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Set billing address and check cart details.
+    /// </summary>
     [Test]
     public async Task SetBillingAddress_CheckCartDetails()
     {
@@ -158,6 +198,9 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Set shipping address and check cart details.
+    /// </summary>
     [Test]
     public async Task SetShippingAddress_CheckCartDetails()
     {
@@ -185,6 +228,11 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Set delivery details and check cart details.
+    /// </summary>
+    /// <param name="shippingId">Shipping option ID.</param>
+    /// <param name="paymementId">Payment option ID.</param>
     [Test]
     [TestCase(2, 2)]
     public async Task SetDeliveryDetails_CheckCartDetails(int shippingId, int paymementId)
@@ -228,6 +276,9 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
     }
 
 
+    /// <summary>
+    /// Create order with two products.
+    /// </summary>
     [Test]
     public async Task CreateOrder_TwoProducts()
     {
@@ -331,6 +382,9 @@ public class StoreApiShoppingCartTests : StoreApiTestBase
 
 
 #pragma warning disable S1135 // Track uses of "TODO" tags
+    /// <summary>
+    /// Test cleanup.
+    /// </summary>
     [TearDown]
     public new void TearDown()
     {

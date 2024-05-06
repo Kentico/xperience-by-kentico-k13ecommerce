@@ -5,6 +5,9 @@
 /// </summary>
 public partial class KCustomer
 {
+    /// <summary>
+    /// Returns true if customer has company information.
+    /// </summary>
     public virtual bool CustomerHasCompanyInfo
     {
         get

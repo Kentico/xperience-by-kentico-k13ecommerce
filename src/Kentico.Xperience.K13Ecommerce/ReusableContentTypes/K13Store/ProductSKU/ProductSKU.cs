@@ -9,6 +9,7 @@ namespace K13Store;
 /// </summary>
 public partial class ProductSKU : IItemIdentifier<int>
 {
+    /// <inheritdoc/>
     public int ExternalId => SKUID;
 
 

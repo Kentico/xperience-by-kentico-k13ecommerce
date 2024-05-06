@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.K13Ecommerce.Customers;
 
+/// <summary>
+/// Customer service.
+/// </summary>
 public interface ICustomerService
 {
     /// <summary>

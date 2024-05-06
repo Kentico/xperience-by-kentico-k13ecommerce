@@ -5,6 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+		<NoWarn>$(NoWarn);1591;S101;S1121</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>

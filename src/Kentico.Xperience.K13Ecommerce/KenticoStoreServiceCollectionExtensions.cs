@@ -23,8 +23,19 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
 namespace Kentico.Xperience.K13Ecommerce;
+
+/// <summary>
+/// Service collection extensions for Kentico Store.
+/// </summary>
 public static class KenticoStoreServiceCollectionExtensions
 {
+    /// <summary>
+    /// Adds Kentico Store services to the service collection.
+    /// </summary>
+    /// <param name="services">Service collection.</param>
+    /// <param name="configuration">Application configuration.</param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public static IServiceCollection AddKenticoStoreServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddOptions<KenticoStoreConfig>().Bind(configuration.GetSection("CMS" + nameof(KenticoStoreConfig)));

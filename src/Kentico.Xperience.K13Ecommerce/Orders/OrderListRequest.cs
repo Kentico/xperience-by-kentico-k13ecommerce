@@ -1,5 +1,8 @@
 ﻿namespace Kentico.Xperience.K13Ecommerce.Orders;
 
+/// <summary>
+/// Order list request.
+/// </summary>
 public class OrderListRequest
 {
     /// <summary>

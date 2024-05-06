@@ -5,6 +5,9 @@
 /// </summary>
 public interface IShoppingCartIdentifier
 {
+    /// <summary>
+    /// Shopping cart GUID.
+    /// </summary>
     public Guid? ShoppingCartGuid { get; }
 }
 

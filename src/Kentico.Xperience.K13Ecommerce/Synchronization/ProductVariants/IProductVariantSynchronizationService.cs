@@ -4,6 +4,9 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductVariants;
 
+/// <summary>
+/// Product variant synchronization service.
+/// </summary>
 public interface IProductVariantSynchronizationService
 {
     /// <summary>

@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
 
+/// <summary>
+/// Product image synchronization service.
+/// </summary>
 public interface IProductImageSynchronizationService
 {
     /// <summary>

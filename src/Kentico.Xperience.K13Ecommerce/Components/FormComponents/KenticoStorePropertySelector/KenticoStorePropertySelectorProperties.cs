@@ -7,6 +7,9 @@ namespace Kentico.Xperience.K13Ecommerce.Components.FormComponents.KenticoStoreP
 /// </summary>
 public class KenticoStorePropertySelectorProperties : SelectorProperties
 {
+    /// <summary>
+    /// Mode of the selector.
+    /// </summary>
     public KenticoStorePropertySelectorMode Mode { get; set; }
 }
 
@@ -16,7 +19,18 @@ public class KenticoStorePropertySelectorProperties : SelectorProperties
 /// </summary>
 public enum KenticoStorePropertySelectorMode
 {
+    /// <summary>
+    /// Selector enum for categories.
+    /// </summary>
     Category,
+
+    /// <summary>
+    /// Selector enum for currencies.
+    /// </summary>
     Currency,
+
+    /// <summary>
+    /// Selector enum for cultures.
+    /// </summary>
     Culture
 }

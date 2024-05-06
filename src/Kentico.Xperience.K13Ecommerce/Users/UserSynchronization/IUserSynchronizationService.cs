@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.K13Ecommerce.Users.UserSynchronization;
 
+/// <summary>
+/// User synchronization service.
+/// </summary>
 public interface IUserSynchronizationService
 {
     /// <summary>

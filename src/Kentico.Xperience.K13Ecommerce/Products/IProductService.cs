@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.K13Ecommerce.Products;
 
+/// <summary>
+/// Product service.
+/// </summary>
 public interface IProductService
 {
     /// <summary>
