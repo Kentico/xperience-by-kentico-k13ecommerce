@@ -56,18 +56,30 @@ public class StoreApiMappingProfile : Profile
         CreateMap<OrderInfo, KOrder>()
             .AfterMap((source, dest, ctx) =>
             {
-                dest.OrderCurrencyCode = CurrencyInfoProvider.ProviderObject.Get(source.OrderCurrencyID)?.CurrencyCode;
+                dest.OrderCurrency =
+                    ctx.Mapper.Map<KCurrency>(CurrencyInfoProvider.ProviderObject.Get(source.OrderCurrencyID));
                 dest.OrderCustomer =
                     ctx.Mapper.Map<KCustomer>(CustomerInfoProvider.ProviderObject.Get(source.OrderCustomerID));
                 dest.OrderShippingOption =
                     ctx.Mapper.Map<KShippingOption>(ShippingOptionInfo.Provider.Get(source.OrderShippingOptionID));
-                dest.OrderPaymentOption = ctx.Mapper.Map<KPaymentOption>(PaymentOptionInfo.Provider.Get(source.OrderPaymentOptionID));
-                dest.OrderItems = ctx.Mapper.Map<IEnumerable<KOrderItem>>(OrderItemInfoProvider.GetOrderItems(source.OrderID));
-                dest.OrderStatus = ctx.Mapper.Map<KOrderStatus>(OrderStatusInfoProvider.ProviderObject.Get(source.OrderStatusID));
-            });
+                dest.OrderPaymentOption =
+                    ctx.Mapper.Map<KPaymentOption>(PaymentOptionInfo.Provider.Get(source.OrderPaymentOptionID));
+                dest.OrderItems =
+                    ctx.Mapper.Map<IEnumerable<KOrderItem>>(OrderItemInfoProvider.GetOrderItems(source.OrderID));
+                dest.OrderStatus =
+                    ctx.Mapper.Map<KOrderStatus>(OrderStatusInfoProvider.ProviderObject.Get(source.OrderStatusID));
+            })
+            .ReverseMap()
+            .ForPath(s => s.OrderCurrencyID, m => m.MapFrom(d => d.OrderCurrency.CurrencyId))
+            .ForPath(s => s.OrderCustomerID, m => m.MapFrom(d => d.OrderCustomer.CustomerId))
+            .ForPath(s => s.OrderShippingOptionID, m => m.MapFrom(d => d.OrderShippingOption.ShippingOptionId))
+            .ForPath(s => s.OrderPaymentOptionID, m => m.MapFrom(d => d.OrderPaymentOption.PaymentOptionId))
+            .ForPath(s => s.OrderStatusID, m => m.MapFrom(d => d.OrderStatus.StatusId))
+            .ForPath(s => s.OrderBillingAddress, m => m.MapFrom(d => d.OrderBillingAddress))
+            .ForPath(s => s.OrderShippingAddress, m => m.MapFrom(d => d.OrderShippingAddress));
 
         CreateMap<OrderItemInfo, KOrderItem>();
-        CreateMap<OrderAddressInfo, KAddress>();
+        CreateMap<OrderAddressInfo, KAddress>().ReverseMap();
         CreateMap<OrderStatusInfo, KOrderStatus>();
         CreateMap<ContainerCustomData, Dictionary<string, object>>().ConvertUsing<ContainerCustomDataToDictionaryConverter>();
         CreateMap<SummaryItem, KSummaryItem>();

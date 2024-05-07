@@ -205,6 +205,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "CustomerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
@@ -217,6 +225,127 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/order/detail/{orderId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Returns order by ID.",
+        "operationId": "OrderDetail",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "Order ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/order/statuses/list": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Endpoint for listing order statuses.",
+        "operationId": "OrderStatusesList",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KOrderStatus"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/order/update": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Updates order. Updates all fields on order level and addresses on sub-level. Customer data cannot be updated.",
+        "operationId": "UpdateOrder",
+        "requestBody": {
+          "description": "Order dto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KOrder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KOrder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KOrder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
           },
           "401": {
             "description": "Unauthorized",
@@ -2152,6 +2281,10 @@
       "KCurrency": {
         "type": "object",
         "properties": {
+          "currencyId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "currencyCode": {
             "type": "string",
             "nullable": true
@@ -2162,7 +2295,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents currency from Store configuration."
+        "description": "Represents currency from Store configuration. CMS.Ecommerce.CurrencyInfo"
       },
       "KCustomer": {
         "required": [
@@ -2272,6 +2405,12 @@
         "description": "Dto for CMS.Ecommerce.ManufacturerInfo."
       },
       "KOrder": {
+        "required": [
+          "orderGrandTotal",
+          "orderId",
+          "orderTotalPrice",
+          "orderTotalTax"
+        ],
         "type": "object",
         "properties": {
           "orderId": {
@@ -2290,9 +2429,8 @@
             "type": "string",
             "nullable": true
           },
-          "orderCurrencyCode": {
-            "type": "string",
-            "nullable": true
+          "orderCurrency": {
+            "$ref": "#/components/schemas/KCurrency"
           },
           "orderShippingOption": {
             "$ref": "#/components/schemas/KShippingOption"
