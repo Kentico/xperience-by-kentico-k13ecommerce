@@ -1,0 +1,41 @@
+﻿@using DancingGoat.Models
+
+@model StorePageViewModel
+
+@{
+    ViewData["PageClass"] = "inverted";
+}
+
+<div class="sub-menu row">
+    <h1>@Model.Title</h1>
+    <div class="store-menu-list row">
+        <ul>
+            @foreach (var category in Model.Categories)
+            {
+                <li>
+                    <a href="@Url.Content(category.CategoryUrl)">
+                        @category.CategoryName
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+<h2>@HtmlLocalizer["Bestsellers"]</h2>
+<div class="product-category">
+    <div class="col-md-8 col-lg-9 product-list">
+        @foreach (var product in Model.Bestsellers)
+        {
+            <partial name="~/Views/Shared/KStore/ProductListItem.cshtml" model="product"/>
+        }
+    </div>
+</div>
+<h2>@HtmlLocalizer["Hot tips"]</h2>
+<div class="product-category">
+    <div class="col-md-8 col-lg-9 product-list">
+        @foreach (var product in Model.HotTips)
+        {
+            <partial name="~/Views/Shared/KStore/ProductListItem.cshtml" model="product"/>
+        }
+    </div>
+</div>

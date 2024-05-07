@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contenttype>
+  <ClassContentTypeType>Reusable</ClassContentTypeType>
+  <ClassDisplayName>K13Store - Product SKU</ClassDisplayName>
+  <ClassFormDefinition>
+    <form>
+      <field column="ContentItemDataID" columntype="integer" enabled="true" guid="1d64ff1f-0ea3-4be7-81fa-41d979a06cb2" isPK="true" />
+      <field column="ContentItemDataCommonDataID" columntype="integer" enabled="true" guid="94fff490-7908-40fe-8b24-4c9b59609781" refobjtype="cms.contentitemcommondata" reftype="Required" system="true" />
+      <field column="ContentItemDataGUID" columntype="guid" enabled="true" guid="0c4b84ab-1381-4a97-9c9c-75e81267da77" isunique="true" system="true" />
+      <field allowempty="true" column="SKUID" columnprecision="0" columntype="integer" enabled="true" guid="0cb3f6cf-8aeb-4b3f-8a7a-cb460c0f18ab" visible="true">
+        <properties>
+          <defaultvalue>0</defaultvalue>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>SKUID</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.NumberWithLabel</controlname>
+        </settings>
+      </field>
+      <field column="SKUName" columnprecision="0" columnsize="440" columntype="text" enabled="true" guid="0c9e7a74-e00d-4a68-889d-be02a11160fa" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Product name</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextInput</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUShortDescription" columnprecision="0" columntype="longtext" enabled="true" guid="41d1da58-29cb-4c26-ad39-f43a0d952586" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Short description</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.RichTextEditor</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUDescription" columnprecision="0" columntype="longtext" enabled="true" guid="fc18bc0b-dced-4bce-8836-549d9b508055" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Description</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.RichTextEditor</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUNumber" columnprecision="0" columnsize="200" columntype="text" enabled="true" guid="c46fea1f-4486-43c6-a65a-190ff2ac35ef" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>SKU number</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextInput</controlname>
+        </settings>
+      </field>
+      <field column="SKUEnabled" columnprecision="0" columntype="boolean" enabled="true" guid="990f8c9e-3344-47b1-9977-2514f0539376" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Allow for sale</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.Checkbox</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUTrackInventory" columnprecision="0" columnsize="50" columntype="text" enabled="true" guid="258453b4-2436-455a-9f61-f19792748efa" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Track inventory</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextInput</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUSellOnlyAvailable" columnprecision="0" columntype="boolean" enabled="true" guid="4f7dccd2-5cc3-413a-9df3-1ba94f879f9d" visible="true">
+        <properties>
+          <defaultvalue>False</defaultvalue>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Sell only if items available</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.Checkbox</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUAvailableItems" columnprecision="0" columntype="integer" enabled="true" guid="a7fbd2fe-dff6-45a2-b032-1b41adbd851d" visible="true">
+        <properties>
+          <defaultvalue>0</defaultvalue>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Available items</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.NumberWithLabel</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUReorderAt" columnprecision="0" columntype="integer" enabled="true" guid="3e691cea-b2a7-40e1-b2b0-6ed25f59cf45" visible="true">
+        <properties>
+          <defaultvalue>0</defaultvalue>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Reorder at</fieldcaption>
+          <fielddescription>
+            <![CDATA[Indicates at which quantity you/your on-line store administrators should reorder the product.]]>
+          </fielddescription>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.NumberWithLabel</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUProductType" columnprecision="0" columnsize="50" columntype="text" enabled="true" guid="f7c238ad-40a5-4897-930f-582875bc3455" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Representing</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.DropDownSelector</controlname>
+          <Options>
+<![CDATA[
+Standard product
+Membership
+E-Product
+Bundle
+]]>
+          </Options>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUNeedsShipping" columnprecision="0" columntype="boolean" enabled="true" guid="8e100454-1692-45ea-a33e-eca654b2873e" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Needs shipping</fieldcaption>
+          <fielddescription>
+            <![CDATA[Indicates if the product requires shipping. If unchecked, the customer does not need to select the shipping method.]]>
+          </fielddescription>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.Checkbox</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUMinItemsInOrder" columnprecision="0" columntype="integer" enabled="true" guid="fea40db9-b98a-4970-a7c2-d035058bbb7a" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Min items in one order</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.NumberInput</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUMaxItemsInOrder" columnprecision="0" columntype="integer" enabled="true" guid="5c94b84e-ba86-4426-9f3d-3467f0bff79b" visible="true">
+        <properties>
+          <defaultvalue>0</defaultvalue>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Max items in one order</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.NumberInput</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="SKUInStoreFrom" columnprecision="7" columntype="datetime" enabled="true" guid="2cce9255-fd33-4bfa-9b82-1c02e01bc1d9" visible="true">
+        <properties>
+          <explanationtext>Enter a date: MM/DD/YYYY hh:mm AM/PM</explanationtext>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>In store from</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.DateTimeInput</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="CustomFields" columnprecision="0" columntype="longtext" enabled="true" guid="3c449c9a-4529-4e8b-bc88-250701362164" />
+      <field allowempty="true" column="ClassName" columnprecision="0" columnsize="200" columntype="text" enabled="true" guid="f48236f3-9b78-4eda-be89-611646d6f8a0" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Class name</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextWithLabel</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="NodeAliasPath" columnprecision="0" columnsize="450" columntype="text" enabled="true" guid="2aa70088-9d3d-4046-96d8-51731511d769" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Node alias path</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextWithLabel</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="NodeGUID" columnprecision="0" columntype="guid" enabled="true" guid="25e8232c-6876-481a-825a-4b90c48807b2" />
+      <field allowempty="true" column="ProductVariants" columnprecision="0" columntype="contentitemreference" enabled="true" guid="248a34ce-68e7-4ec8-ad47-ae1c6de9a53d" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Variants</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <AllowedContentItemTypeIdentifiers>
+            <![CDATA[["7866b3e7-7e08-471d-bef8-7891df3d05f5"]]]>
+          </AllowedContentItemTypeIdentifiers>
+          <controlname>Kentico.Administration.ContentItemSelector</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="ProductImages" columnprecision="0" columntype="contentitemreference" enabled="true" guid="eb316d51-1773-458b-9973-9ca8230fe7f0" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Product images</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <AllowedContentItemTypeIdentifiers>
+            <![CDATA[["07a6d82c-09b8-41f4-bde4-bd365982e0da"]]]>
+          </AllowedContentItemTypeIdentifiers>
+          <controlname>Kentico.Administration.ContentItemSelector</controlname>
+          <SelectionType>contentTypes</SelectionType>
+        </settings>
+        <validationrulesdata>
+          <ValidationRuleConfiguration>
+            <ValidationRuleIdentifier>Kentico.Administration.RequiredValue</ValidationRuleIdentifier>
+            <RuleValues />
+          </ValidationRuleConfiguration>
+        </validationrulesdata>
+      </field>
+      <field allowempty="true" column="PublicStatusDisplayName" columnprecision="0" columnsize="200" columntype="text" enabled="true" guid="6dcf24f0-bb96-4534-b0d8-e73d0da3af5a" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Public status</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextInput</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="DepartmentDisplayName" columnprecision="0" columnsize="200" columntype="text" enabled="true" guid="b6afabfd-fa28-4d4f-a923-1d4ce6db0d01" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Department</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextInput</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="ManufacturerDisplayName" columnprecision="0" columnsize="200" columntype="text" enabled="true" guid="e3902c30-fa8c-4ca7-89f6-43ec181a0c1f" visible="true">
+        <properties>
+          <explanationtextashtml>False</explanationtextashtml>
+          <fieldcaption>Manufacturer</fieldcaption>
+          <fielddescriptionashtml>False</fielddescriptionashtml>
+        </properties>
+        <settings>
+          <controlname>Kentico.Administration.TextInput</controlname>
+        </settings>
+      </field>
+    </form>
+  </ClassFormDefinition>
+  <ClassGUID>6cae7e67-4cbf-4155-a3f6-c74773ac3836</ClassGUID>
+  <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
+  <ClassIconClass>xp-box</ClassIconClass>
+  <ClassName>K13Store.ProductSKU</ClassName>
+  <ClassShortName>K13StoreProductSKU</ClassShortName>
+  <ClassTableName>K13Store_ProductSKU</ClassTableName>
+  <ClassType>Content</ClassType>
+  <ClassWebPageHasUrl>False</ClassWebPageHasUrl>
+</cms.contenttype>

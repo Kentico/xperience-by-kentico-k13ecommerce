@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Product>Xperience by Kentico - K13 Ecommerce integration</Product>
+		<Title>$(Product)</Title>
+		<Description>Xperience By Kentico - K13 Ecommerce integration</Description>
+		<PackageId>Kentico.Xperience.K13Ecommerce</PackageId>
+		<RootNamespace>Kentico.Xperience.K13Ecommerce</RootNamespace>
+		<PackageTags>$(PackageTags)</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="CMS.AssemblyDiscoverableAttribute">
+		</AssemblyAttribute>
+	</ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<OpenApiReference Include="StoreApi\swagger.json" CodeGenerator="NSwagCSharp" Options="/UseBaseUrl:false /JsonLibrary:SystemTextJson /GenerateOptionalParameters:true /GenerateOptionalPropertiesAsNullable:false /GenerateNullableReferenceTypes:true /ExposeJsonSerializerSettings:true /GenerateClientInterfaces:true /dateType:System.DateTime /dateTimeType:System.DateTime" ClassName="KenticoStoreApiClient" Namespace="Kentico.Xperience.K13Ecommerce.StoreApi">
+			<SourceUri>http://dev.dancinggoat.com:65375/swagger/storeapi/swagger.json</SourceUri>
+		</OpenApiReference>
+	</ItemGroup>
+
+	<ItemGroup>		
+		<PackageReference Include="Duende.AccessTokenManagement.OpenIdConnect" />			
+		<PackageReference Include="Kentico.Xperience.WebApp" />
+		<PackageReference Include="Microsoft.Extensions.ApiDescription.Client">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>		
+		<PackageReference Include="NSwag.ApiDescription.Client">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>		
+		<PackageReference Include="Scrutor" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\submodules\xperience-by-kentico-ecommerce-common\src\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿@namespace Kentico.Xperience.Shopify.Rcl.Views.Shared.FormComponents
+
+@using Kentico.Web.Mvc
+@using Kentico.Forms.Web.Mvc
+@using Kentico.Xperience.K13Ecommerce.Components.FormComponents.KenticoStorePropertySelector
+
+@model KenticoStorePropertySelectorComponent
+
+@{
+    var htmlAttributes = ViewData.Kentico().GetEditorHtmlAttributes();
+}
+
+@Html.DropDownListFor(x => x.SelectedValue, Model.HtmlOptions.ToSelectListItems(), null, htmlAttributes)

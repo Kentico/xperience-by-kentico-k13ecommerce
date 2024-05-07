@@ -30,6 +30,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -50,6 +52,7 @@ jobs:
       - name: Test Solution
         run: |
           dotnet test `
+            --filter TestCategory!~Integration `
             --configuration Release `
             --no-build `
             --no-restore

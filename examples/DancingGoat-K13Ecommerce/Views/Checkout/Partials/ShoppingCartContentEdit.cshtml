@@ -1,0 +1,35 @@
+﻿@model DancingGoat.Models.CartContentViewModel
+
+@foreach (var cartItem in Model.CartItems)
+{
+    <div class="row">
+        <div class="col-md-10">
+            @if (!string.IsNullOrEmpty(cartItem.SKUImagePath))
+            {
+                <div class="cart-item-image">
+                    <a href="@Url.Action("ItemDetail", new { skuId = cartItem.ParentSKUID ?? cartItem.SKUID })">
+                        <img src="@cartItem.SKUImagePath" alt="@cartItem.SKUName" title="@cartItem.SKUName" style="width: 70px" />
+                    </a>
+                </div>
+            }
+            <div class="cart-item-info">
+                @Html.ActionLink(cartItem.SKUName, "ItemDetail", new { skuId = cartItem.ParentSKUID ?? cartItem.SKUID })
+            </div>
+            <form method="post">
+                <div class="cart-item-amount">
+                    <span>Qty</span>
+                    <input type="hidden" name="cartItemId" value="@cartItem.CartItemID" />
+                    <input type="text" name="Units" value="@cartItem.CartItemUnits" class="form-control" />
+                    <input asp-action="UpdateItem" asp-controller="Checkout" type="submit" name="update" value="@HtmlLocalizer["update"]" class="btn btn-default" />
+                    <input asp-action="RemoveItem" asp-controller="Checkout" type="submit" name="remove" value="@HtmlLocalizer["remove"]" class="btn btn-default" />
+                </div>
+            </form>
+            
+            @Html.ValidationMessage(cartItem.CartItemID.ToString(), new { @class = "red"})
+        </div>
+        <div class="col-md-2 cart-item-subtotal">
+            <span>@Model.FormatPrice(cartItem.TotalPrice)</span>
+        </div>
+    </div>
+    <hr />
+}

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.K13Ecommerce", "Kentico.Xperience.K13Ecommerce\Kentico.Xperience.K13Ecommerce.csproj", "{E291D856-00DF-4567-847F-1026E2D9990D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.Store.Rcl", "Kentico.Xperience.Store.Rcl\Kentico.Xperience.Store.Rcl.csproj", "{B107AC69-7447-4FD9-8619-6CC47635C8D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.StoreApi", "Kentico.Xperience.StoreApi\Kentico.Xperience.StoreApi.csproj", "{B417F9D5-5D6F-42D5-82B2-96848D7742DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.Ecommerce.Common", "..\submodules\xperience-by-kentico-ecommerce-common\src\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj", "{2BB0EAE9-28B4-45E4-8945-127053B1779F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E291D856-00DF-4567-847F-1026E2D9990D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E291D856-00DF-4567-847F-1026E2D9990D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E291D856-00DF-4567-847F-1026E2D9990D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E291D856-00DF-4567-847F-1026E2D9990D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B107AC69-7447-4FD9-8619-6CC47635C8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B107AC69-7447-4FD9-8619-6CC47635C8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B107AC69-7447-4FD9-8619-6CC47635C8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B107AC69-7447-4FD9-8619-6CC47635C8D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B417F9D5-5D6F-42D5-82B2-96848D7742DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B417F9D5-5D6F-42D5-82B2-96848D7742DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B417F9D5-5D6F-42D5-82B2-96848D7742DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B417F9D5-5D6F-42D5-82B2-96848D7742DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB0EAE9-28B4-45E4-8945-127053B1779F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB0EAE9-28B4-45E4-8945-127053B1779F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB0EAE9-28B4-45E4-8945-127053B1779F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB0EAE9-28B4-45E4-8945-127053B1779F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F83D46CB-086C-46CB-B39B-8E74B7DA5C14}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,3287 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Kentico Xperience 13 Store API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/store/auth/token": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Endpoint for getting JWT access token.",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "client_id",
+                  "client_secret"
+                ],
+                "type": "object",
+                "properties": {
+                  "grant_type": {
+                    "pattern": "client_credentials",
+                    "type": "string",
+                    "default": "client_credentials"
+                  },
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "grant_type": {
+                  "style": "form"
+                },
+                "client_id": {
+                  "style": "form"
+                },
+                "client_secret": {
+                  "style": "form"
+                },
+                "username": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "client_id",
+                  "client_secret"
+                ],
+                "type": "object",
+                "properties": {
+                  "grant_type": {
+                    "pattern": "client_credentials",
+                    "type": "string",
+                    "default": "client_credentials"
+                  },
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "grant_type": {
+                  "style": "form"
+                },
+                "client_id": {
+                  "style": "form"
+                },
+                "client_secret": {
+                  "style": "form"
+                },
+                "username": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/customer/addresses": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Endpoint for customer addresses.",
+        "operationId": "CustomerAddresses",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KAddress"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/order/list": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Endpoint for getting list of orders based on request.",
+        "operationId": "OrderList",
+        "parameters": [
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/products/test": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Test request.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/products/pages/listing": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns product pages based on parameters.",
+        "operationId": "GetProductPages",
+        "parameters": [
+          {
+            "name": "Path",
+            "in": "query",
+            "description": "Node alias path prefix.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Culture",
+            "in": "query",
+            "description": "Document culture.",
+            "schema": {
+              "pattern": "[a-zA-Z]{2}-[a-zA-Z]{2}",
+              "type": "string"
+            }
+          },
+          {
+            "name": "Currency",
+            "in": "query",
+            "description": "Product currency.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "description": "Order by SQL expression.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Limit how many products to return.",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 12
+            }
+          },
+          {
+            "name": "WithVariants",
+            "in": "query",
+            "description": "If true variants are loaded too for products with variants (default false).",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "WithLongDescription",
+            "in": "query",
+            "description": "If true, DocumentSKUDescription is filled too (default false).",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "NoLinks",
+            "in": "query",
+            "description": "If true, only not-linked product pages are returned (default false).",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KProductNode"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/products/categories": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns all product categories translated for given culture.",
+        "operationId": "GetProductCategories",
+        "parameters": [
+          {
+            "name": "culture",
+            "in": "query",
+            "description": "Culture.",
+            "schema": {
+              "pattern": "[a-zA-Z]{2}-[a-zA-Z]{2}",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KProductCategory"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/products/prices/{productSkuId}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns prices for product and it's variant when productSkuId is main product or only variant prices when ID is for variant.",
+        "operationId": "GetProductPrices",
+        "parameters": [
+          {
+            "name": "productSkuId",
+            "in": "path",
+            "description": "Main product or variant id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "currencyCode",
+            "in": "query",
+            "description": "Currency code.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductPricesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/products/prices-list": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns prices for list of products.",
+        "operationId": "GetProductPricesList",
+        "parameters": [
+          {
+            "name": "productSkuId",
+            "in": "query",
+            "description": "Product or variant IDs.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          {
+            "name": "currencyCode",
+            "in": "query",
+            "description": "Currency code.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductPricesResponse"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/products/inventory-prices/{skuId}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns inventory and price for given product/variant,",
+        "operationId": "GetInventoryPrices",
+        "parameters": [
+          {
+            "name": "skuId",
+            "in": "path",
+            "description": "SKU ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "currencyCode",
+            "in": "query",
+            "description": "Currency code.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductInventoryPriceInfo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/content": {
+      "get": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Returns current cart content for cart preview or cart content step.",
+        "operationId": "GetCurrentCartContent",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KShoppingCartContent"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/details": {
+      "get": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Returns current cart details for cart delivery details step.",
+        "operationId": "GetCurrentCartDetails",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KShoppingCartDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/customer": {
+      "get": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Returns current customer assigned to current cart.",
+        "operationId": "GetCurrentCustomer",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KCustomerShoppingCartResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/add-item": {
+      "post": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Adds item to cart.",
+        "operationId": "AddItemToCart",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "skuId",
+            "in": "query",
+            "description": "SKU ID.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "quantity",
+            "in": "query",
+            "description": "Quantity.",
+            "schema": {
+              "maximum": 32767,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KShoppingCartItemShoppingCartResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/update-item": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Updates cart item quantity.",
+        "operationId": "UpdateItemQuantity",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "query",
+            "description": "Cart item ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "quantity",
+            "in": "query",
+            "description": "Quantity.",
+            "required": true,
+            "schema": {
+              "maximum": 32767,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/remove-item": {
+      "delete": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Removes item from cart.",
+        "operationId": "RemoveItemFromCart",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "query",
+            "description": "Cart item ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/add-coupon-code": {
+      "post": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Adds coupon code to cart.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "couponCode",
+            "in": "query",
+            "description": "Coupon code.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooleanShoppingCartResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/remove-coupon-code": {
+      "delete": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Removes coupon code from cart.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "couponCode",
+            "in": "query",
+            "description": "Coupon code.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-shipping-option": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set shipping option.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "shippingOptionId",
+            "in": "query",
+            "description": "Shipping option ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-payment-option": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set payment option.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "paymentOptionId",
+            "in": "query",
+            "description": "Payment option ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-shipping-and-payment": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set shipping and payment.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "shippingOptionId",
+            "in": "query",
+            "description": "Shipping option ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "paymentOptionId",
+            "in": "query",
+            "description": "Payment option ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-customer": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set customer to cart.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Customer.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KCustomer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KCustomer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KCustomer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-billing-address": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set billing address.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Billing address.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KAddress"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KAddress"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KAddress"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-shipping-address": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set shipping address.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Shipping address.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KAddress"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KAddress"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KAddress"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-delivery-details": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set all delivery details (customer, addreses, shipping and payment).",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Delivery details.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KShoppingCartDeliveryDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KShoppingCartDeliveryDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KShoppingCartDeliveryDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/summary": {
+      "get": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Returns all shopping cart data (content and details).",
+        "operationId": "GetCurrentCartSummary",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KShoppingCartSummary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/create-order": {
+      "post": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Creates order from shopping cart.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "note": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "note": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/validate-cart-items": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Validates shopping cart items.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KShoppingCartItemValidationErrorIEnumerableShoppingCartResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/cart/set-currency": {
+      "put": {
+        "tags": [
+          "ShoppingCart"
+        ],
+        "summary": "Set currency to cart when currency is different than previous.",
+        "parameters": [
+          {
+            "name": "ShoppingCartGUID",
+            "in": "header",
+            "description": "Shopping cart GUID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "currencyCode",
+            "in": "query",
+            "description": "Currency code.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShoppingCartBaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/site/cultures": {
+      "get": {
+        "tags": [
+          "StoreSite"
+        ],
+        "summary": "Returns all enabled site cultures.",
+        "operationId": "GetCultures",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KCulture"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/site/currencies": {
+      "get": {
+        "tags": [
+          "StoreSite"
+        ],
+        "summary": "Returns all enabled site currencies.",
+        "operationId": "GetCurrencies",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/synchronization/user-synchronization": {
+      "post": {
+        "tags": [
+          "UserSynchronization"
+        ],
+        "summary": "Creates new user.",
+        "requestBody": {
+          "description": "User to create.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KUserSynchronization"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KUserSynchronization"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KUserSynchronization"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccessoryProductFilterCheckboxViewModel": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isChecked": {
+            "type": "boolean"
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BooleanShoppingCartResponse": {
+        "type": "object",
+        "properties": {
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shopping cart API response with model."
+      },
+      "BrewersProductFilterCheckboxViewModel": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isChecked": {
+            "type": "boolean"
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CoffeeProductFilterCheckboxViewModel": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "isChecked": {
+            "type": "boolean"
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CouponCodeApplicationStatusEnum": {
+        "enum": [
+          "Invalid",
+          "NotAppliedInCart",
+          "AppliedInCart",
+          "AppliedInOrder",
+          "GiftCardCorrection"
+        ],
+        "type": "string"
+      },
+      "GrindersProductFilterCheckboxViewModel": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isChecked": {
+            "type": "boolean"
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ICouponCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "valueInMainCurrency": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "applicationStatus": {
+            "$ref": "#/components/schemas/CouponCodeApplicationStatusEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KAddress": {
+        "required": [
+          "addressCity",
+          "addressCountryId",
+          "addressLine1",
+          "addressZip"
+        ],
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "addressCustomerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "addressLine1": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressCity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "addressZip": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "addressPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressName": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressPersonalName": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressCountryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "addressStateId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.AddressInfo."
+      },
+      "KCulture": {
+        "type": "object",
+        "properties": {
+          "cultureName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cultureCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "cultureIsDefault": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents language culture for Store site."
+      },
+      "KCurrency": {
+        "type": "object",
+        "properties": {
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyFormatString": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents currency from Store configuration."
+      },
+      "KCustomer": {
+        "required": [
+          "customerFirstName",
+          "customerLastName"
+        ],
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "customerFirstName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "customerLastName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "customerCompany": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerFax": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "customerOrganizationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerTaxRegistrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerIsRegistered": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.CustomerInfo."
+      },
+      "KCustomerShoppingCartResponse": {
+        "type": "object",
+        "properties": {
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "$ref": "#/components/schemas/KCustomer"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shopping cart API response with model."
+      },
+      "KDepartment": {
+        "type": "object",
+        "properties": {
+          "departmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "departmentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "departmentDisplayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.DepartmentInfo."
+      },
+      "KManufacturer": {
+        "type": "object",
+        "properties": {
+          "manufacturerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "manufacturerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "manufacturerDisplayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.ManufacturerInfo."
+      },
+      "KOrder": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderTotalTax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderTaxSummary": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderInvoiceNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderCurrencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderShippingOption": {
+            "$ref": "#/components/schemas/KShippingOption"
+          },
+          "orderPaymentOption": {
+            "$ref": "#/components/schemas/KPaymentOption"
+          },
+          "orderNote": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderCustomer": {
+            "$ref": "#/components/schemas/KCustomer"
+          },
+          "orderStatus": {
+            "$ref": "#/components/schemas/KOrderStatus"
+          },
+          "orderGrandTotal": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderGrandTotalInMainCurrency": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderTotalPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderTotalPriceInMainCurrency": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderTotalShipping": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "orderIsPaid": {
+            "type": "boolean"
+          },
+          "orderCulture": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderDiscounts": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderOtherPayments": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderCouponCodes": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderPaymentFormattedResult": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderTrackingNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderSiteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderLastModified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "orderCustomData": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "orderBillingAddress": {
+            "$ref": "#/components/schemas/KAddress"
+          },
+          "orderShippingAddress": {
+            "$ref": "#/components/schemas/KAddress"
+          },
+          "orderCompanyAddress": {
+            "$ref": "#/components/schemas/KAddress"
+          },
+          "orderItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KOrderItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.OrderInfo."
+      },
+      "KOrderItem": {
+        "type": "object",
+        "properties": {
+          "orderItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderItemUnitPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderItemTotalPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderItemTotalPriceInMainCurrency": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderItemOrderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderItemSkuName": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderItemSkuId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderItemUnitCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderItemGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderItemParentGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderItemBundleGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderItemSendNotification": {
+            "type": "boolean"
+          },
+          "orderItemText": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderItemProductDiscounts": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderItemDiscountSummary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.OrderItemInfo."
+      },
+      "KOrderStatus": {
+        "type": "object",
+        "properties": {
+          "statusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "statusName": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusDisplayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.OrderStatusInfo."
+      },
+      "KPaymentOption": {
+        "type": "object",
+        "properties": {
+          "paymentOptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentOptionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentOptionDisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentOptionDescription": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.PaymentOptionInfo."
+      },
+      "KProductCatalogPrices": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "$ref": "#/components/schemas/KCurrency"
+          },
+          "standardPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "price": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "tax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "listPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "discounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KSummaryItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents product catalog prices from catalog price calculator."
+      },
+      "KProductCategory": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "path": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents products section (category) - Page type which has ClassIsProductSection true."
+      },
+      "KProductNode": {
+        "type": "object",
+        "properties": {
+          "documentSKUName": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentSKUShortDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentSKUDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "className": {
+            "type": "string",
+            "nullable": true
+          },
+          "nodeAliasPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "nodeGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nodeOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "documentCulture": {
+            "type": "string",
+            "nullable": true
+          },
+          "isLink": {
+            "type": "boolean"
+          },
+          "absoluteUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "customFields": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "description": "Contains custom field values on given page type.",
+            "nullable": true
+          },
+          "sku": {
+            "$ref": "#/components/schemas/KProductSKU"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents product page."
+      },
+      "KProductSKU": {
+        "type": "object",
+        "properties": {
+          "skuid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuName": {
+            "type": "string",
+            "nullable": true
+          },
+          "skuShortDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "skuNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "skuEnabled": {
+            "type": "boolean"
+          },
+          "skuAvailableInDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuSiteID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuTrackInventory": {
+            "$ref": "#/components/schemas/TrackInventoryTypeEnum"
+          },
+          "skuSellOnlyAvailable": {
+            "type": "boolean"
+          },
+          "skuAvailableItems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuReorderAt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuProductType": {
+            "$ref": "#/components/schemas/SKUProductTypeEnum"
+          },
+          "skuNeedsShipping": {
+            "type": "boolean"
+          },
+          "skuMinItemsInOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuMaxItemsInOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuInStoreFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "mainImageUrl": {
+            "type": "string",
+            "description": "Overwrite this property when product image is saved differently.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KProductVariant"
+            },
+            "nullable": true
+          },
+          "prices": {
+            "$ref": "#/components/schemas/KProductCatalogPrices"
+          },
+          "publicStatus": {
+            "$ref": "#/components/schemas/KPublicStatus"
+          },
+          "department": {
+            "$ref": "#/components/schemas/KDepartment"
+          },
+          "manufacturer": {
+            "$ref": "#/components/schemas/KManufacturer"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents model for SKU CMS.Ecommerce.SKUInfo."
+      },
+      "KProductVariant": {
+        "type": "object",
+        "properties": {
+          "skuid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuName": {
+            "type": "string",
+            "nullable": true
+          },
+          "skuNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "skuPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "skuAvailableItems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skuEnabled": {
+            "type": "boolean"
+          },
+          "prices": {
+            "$ref": "#/components/schemas/KProductCatalogPrices"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for Kentico product variant."
+      },
+      "KPublicStatus": {
+        "type": "object",
+        "properties": {
+          "publicStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "publicStatusName": {
+            "type": "string",
+            "nullable": true
+          },
+          "publicStatusDisplayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.PublicStatusInfo."
+      },
+      "KShippingOption": {
+        "type": "object",
+        "properties": {
+          "shippingOptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shippingOptionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingOptionDisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingOptionDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingOptionThumbnailUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingOptionPrice": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.ShippingOptionInfo."
+      },
+      "KShoppingCartContent": {
+        "type": "object",
+        "properties": {
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "grandTotal": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalItemsPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "otherPayments": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "orderDiscount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "taxSummary": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KSummaryItem"
+            },
+            "nullable": true
+          },
+          "orderDiscountSummary": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KSummaryItem"
+            },
+            "nullable": true
+          },
+          "itemsDiscount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalTax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalShipping": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "remainingAmountForFreeShipping": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/KCurrency"
+          },
+          "couponCodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ICouponCode"
+            },
+            "nullable": true
+          },
+          "cartProducts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KShoppingCartItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model representing shopping cart content."
+      },
+      "KShoppingCartDeliveryDetails": {
+        "required": [
+          "billingAddress",
+          "customer"
+        ],
+        "type": "object",
+        "properties": {
+          "customer": {
+            "$ref": "#/components/schemas/KCustomer"
+          },
+          "billingAddress": {
+            "$ref": "#/components/schemas/KAddress"
+          },
+          "shippingAddress": {
+            "$ref": "#/components/schemas/KAddress"
+          },
+          "shippingOptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentOptionId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model representing shopping cart delivery details."
+      },
+      "KShoppingCartDetails": {
+        "required": [
+          "billingAddress",
+          "customer",
+          "shoppingCartGuid"
+        ],
+        "type": "object",
+        "properties": {
+          "customer": {
+            "$ref": "#/components/schemas/KCustomer"
+          },
+          "billingAddress": {
+            "$ref": "#/components/schemas/KAddress"
+          },
+          "shippingAddress": {
+            "$ref": "#/components/schemas/KAddress"
+          },
+          "shippingOptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentOptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "isShippingNeeded": {
+            "type": "boolean"
+          },
+          "availableShippingOptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KShippingOption"
+            },
+            "nullable": true
+          },
+          "availablePaymentOptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KPaymentOption"
+            },
+            "nullable": true
+          },
+          "customData": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model representing all shopping cart details."
+      },
+      "KShoppingCartItem": {
+        "type": "object",
+        "properties": {
+          "cartItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cartItemUnits": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cartItemValidTo": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cartItemAutoAddedUnits": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cartItemText": {
+            "type": "string",
+            "nullable": true
+          },
+          "unitDiscountSummary": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KSummaryItem"
+            },
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "unitTotalDiscount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalPriceIncludingOptions": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalDiscount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "discountSummary": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KSummaryItem"
+            },
+            "nullable": true
+          },
+          "unitWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "productOptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KShoppingCartItem"
+            },
+            "nullable": true
+          },
+          "bundleItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KShoppingCartItem"
+            },
+            "nullable": true
+          },
+          "productSKU": {
+            "$ref": "#/components/schemas/KProductSKU"
+          },
+          "variantSKU": {
+            "$ref": "#/components/schemas/KProductVariant"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.ShoppingCartItemInfo."
+      },
+      "KShoppingCartItemShoppingCartResponse": {
+        "type": "object",
+        "properties": {
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "$ref": "#/components/schemas/KShoppingCartItem"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shopping cart API response with model."
+      },
+      "KShoppingCartItemValidationError": {
+        "type": "object",
+        "properties": {
+          "skuId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.ShoppingCartItemValidationError."
+      },
+      "KShoppingCartItemValidationErrorIEnumerableShoppingCartResponse": {
+        "type": "object",
+        "properties": {
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KShoppingCartItemValidationError"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shopping cart API response with model."
+      },
+      "KShoppingCartSummary": {
+        "type": "object",
+        "properties": {
+          "cartContent": {
+            "$ref": "#/components/schemas/KShoppingCartContent"
+          },
+          "cartDetails": {
+            "$ref": "#/components/schemas/KShoppingCartDetails"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model encapsulating all shopping cart data (content with details)."
+      },
+      "KSummaryItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Summary item name used for displaying in Invoice, Email template and Shopping cart.",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "description": "Summary item value in shopping cart currency used for displaying in Invoice, Email template and Shopping cart.",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto for CMS.Ecommerce.SummaryItem."
+      },
+      "KUserSynchronization": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents model for synchronizing user."
+      },
+      "OrderListResponse": {
+        "type": "object",
+        "properties": {
+          "orders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KOrder"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxPage": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request for order response."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "ProductInventoryPriceInfo": {
+        "type": "object",
+        "properties": {
+          "skuId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "prices": {
+            "$ref": "#/components/schemas/KProductCatalogPrices"
+          },
+          "skuTrackInventory": {
+            "$ref": "#/components/schemas/TrackInventoryTypeEnum"
+          },
+          "skuSellOnlyAvailable": {
+            "type": "boolean"
+          },
+          "skuAvailableItems": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for product/variant inventory and price."
+      },
+      "ProductPricesResponse": {
+        "type": "object",
+        "properties": {
+          "productSkuId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "prices": {
+            "$ref": "#/components/schemas/KProductCatalogPrices"
+          },
+          "variantPrices": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/KProductCatalogPrices"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Prices for product and it's variants."
+      },
+      "SKUProductTypeEnum": {
+        "enum": [
+          "Product",
+          "Membership",
+          "EProduct",
+          "Bundle",
+          "Text"
+        ],
+        "type": "string"
+      },
+      "ShoppingCartBaseResponse": {
+        "type": "object",
+        "properties": {
+          "shoppingCartGuid": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Base shopping cart response for Store API."
+      },
+      "TokenResponse": {
+        "type": "object",
+        "properties": {
+          "token_type": {
+            "type": "string",
+            "nullable": true
+          },
+          "access_token": {
+            "type": "string",
+            "nullable": true
+          },
+          "expires_in": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Token response."
+      },
+      "TrackInventoryTypeEnum": {
+        "enum": [
+          "Disabled",
+          "ByProduct",
+          "ByVariants"
+        ],
+        "type": "string"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Please enter a valid token",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

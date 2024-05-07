@@ -1,0 +1,96 @@
+﻿@using DancingGoat.Controllers.KStore
+@model DancingGoat.Models.ProductPageViewModel
+@{
+    var variantsSelect = Model.Variants.Select(v => new SelectListItem(v.SKUName, v.SKUID.ToString(), v.SKUID == Model.SelectedVariantID));
+    ViewData["PageClass"] = "inverted";
+}
+<div class="product-detail-wrapper">
+    <article class="product-detail">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-detail-header">
+                    <h2>@Model.Name</h2>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row-fluid">
+            <div class="col-lg-7 col-md-6">
+                @if (!string.IsNullOrEmpty(Model.ImagePath))
+                {
+                    <figure class="image">
+                        <img src="@Model.ImagePath" alt="@Model.Name" title="@Model.Name"/>
+                    </figure>
+                }
+                <div class="description">
+                    @Html.Raw(Model.Description)
+    
+                    <div class="product-detail-properties">
+                        <h4>@HtmlLocalizer["Parameters"]</h4>
+                        <dl class="row">
+                            @foreach (var kv in Model.ParametersSection)
+                            {
+                                <dt class="col-xs-12 col-sm-4">@HtmlLocalizer[kv.Key]</dt>
+                                <dd class="col-xs-12 col-sm-8">
+                                    @kv.Value
+                                </dd>
+                            }
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5 product-detail-right col-md-offset-1 col-lg-offset-1">
+                <div class="product-price">
+                    <div class="cart-item-selector-container">
+                        <div class="stock-container">
+                            @if (Model.IsInStock)
+                            {
+                                <span id="stockMessage" class="stock available">@HtmlLocalizer["In stock"]</span>
+                            }
+                            else
+                            {
+                                <span id="stockMessage" class="stock unavailable">@HtmlLocalizer["Out of stock"]</span>
+                            }
+                        </div>
+                    </div>
+    
+                    <form asp-controller="Checkout" asp-action="AddItem" method="post">
+                    
+                        <partial name="Partials/PriceDetails" model="@Model.Prices"/>
+                        @if (Model.Variants.Any())
+                        {
+                            <div class="cart-item-selector form-horizontal">
+                                <div class="form-group">
+                                    <div class="editing-form-label-cell option-category-name control-label">
+                                        <label>Package</label>
+                                    </div>
+                                    <select asp-for="SKUID" asp-items="@variantsSelect" class="js-variant-selector"></select>
+                                </div>
+                            </div>
+                        }
+                    
+                        <div class="total-price-container">
+                            <span class="total-price-label">@HtmlLocalizer["Total"]</span>
+                            <span id="totalPrice" class="total-price">@(string.Format(Model.Prices.Currency.CurrencyFormatString!, Model.Prices.Price))</span>
+                        </div>
+                    
+                        <div class="add-to-cart-container">
+                            @if (!Model.Variants.Any())
+                            {
+                                <input type="hidden" id="selectedProductSkuId" name="SKUID" value="@Model.SKUID"/>
+                            }
+                            <input type="hidden" id="js-parent-product-id" name="ParentSKUID" value="@(Model.SKUID)"/>
+                            <label class="units-label">Qty</label>
+                            <input type="text" name="Units" value="1" class="add-to-cart-textbox"/>
+                            <input type="submit" id="js-submit-add-to-cart" value="Add to cart" class="btn btn-primary add-to-cart-button @(Model.AllowSale ? "" : "btn-disabled")" disabled="@(!Model.AllowSale)"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/variantSelector.js" type="text/javascript"></script>
+}
