@@ -1,5 +1,8 @@
 # Usage Guide
 
+This user guide covers more detailed instructions for Xperience By Kentico (XbyK) integration to Kentico Xperience 13 (KX 13) E-Commerce features
+to create E-Commerce solution on XbyK.
+
 ## Table of contents
 1. [Store API (Kentico Xperience 13)](#store-api-kentico-xperience-13)
 2. [K13 Ecommerce integration (Xperience by Kentico)](#k13-ecommerce-integration-in-xperience-by-kentico)
@@ -40,8 +43,8 @@ These endpoints have prefix `/api/store/products` and cover these domains:
 These endpoints have prefix `api/store/cart` and cover work with current shopping cart. Many actions correspond
 to functionality in KX 13 `CMS.Ecommerce.IShoppingService` (adding/removing items to cart, set delivery data, creating order etc.).
 All endpoints use `ShoppingCartGUID` parameter sent 
-in HTTP header to identify current shopping cart. Client application needs to manage this identifier (this already covers
-`Kentico.Xperience.K13Ecommerce` library for XByK applications). 
+in HTTP header to identify current shopping cart. Client application (XbyK) needs to manage this identifier (this already covers
+`Kentico.Xperience.K13Ecommerce` library for XByK applications).
 
 All calls internally use IShoppingService with some
 noticeable customizations to handle [retrieving cart](https://docs.kentico.com/13/e-commerce-features/customizing-on-line-stores/shopping-cart-related-customizing/retrieving-the-current-shopping-cart) in RESTful manner.
@@ -53,7 +56,7 @@ more frequent retrieving from database.
 - Custom `ICurrentShoppingCartService` - session and cookie access is removed, current shopping cart is retrieved from
 `ShoppingCartGUID` header value.
 
-In all API responses current `ShoppingCartGuid` is always sent to ensure correct shopping cart is always saved on client
+In all API responses current `ShoppingCartGuid` is always sent to ensure correct shopping cart is always saved on client application (XbyK)
 in cases like user log in/log out.
 
 #### Discounts
@@ -79,17 +82,17 @@ via API.
 
 ### User synchronization
 - Endpoint `api/store/synchronization/user-synchronization` creates new user
-  - Client app should use this to ensure all new users on client's are synchronized to KX 13, this is necessary when client's
+  - Client app (XbyK) should use this to ensure all new users on client's are synchronized to KX 13, this is necessary when client's
 e-commerce solution allows users to log in. Users are created with random generated password and are used only for
 API authorization and assigning to MembershipContext.
 
 #### Current known limitations
 User's roles synchronization isn't currently supported. We assume before start of using this API, users are already synchronized
-between client and KX app.
+between client (XbyK) and KX app.
 
 ### Setup
 
-**How to setup your Kentico 13 ASP.NET Core application**:
+**How to set up your Kentico 13 ASP.NET Core application**:
 
 Add this package to your Kentico Xperience 13 ASP.NET.Core application (live site or create standalone application
 when your KX 13 live site is not running)
@@ -98,7 +101,7 @@ when your KX 13 live site is not running)
 dotnet add package Kentico.Xperience.StoreApi
 ```
 
-1. Setup your own settings for Store REST API authentication (based on JWT and OAuth client credentials flow)
+1. Set up your own settings for Store REST API authentication (based on JWT and OAuth client credentials flow)
 ```json
 {
   "CMSStoreApi": {
@@ -152,7 +155,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
 |------------------------------------|-------------------| --------------- |-------------|
 | Kentico.Xperience.StoreApi         | \>= 13.0.131      | 1.0.0           | \>= .NET 6  |
 
-## K13 Ecommerce integration in Xperience By Kentico
+## KX 13 E-Commerce integration in Xperience By Kentico
 
 Library `Kentico.Xperience.K13Ecommerce` encapsulates Store API calls and exposes several services for KX 13 e-commerce
 integration on XByK:

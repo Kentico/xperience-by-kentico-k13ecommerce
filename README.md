@@ -3,9 +3,16 @@
 [![Kentico Labs](https://img.shields.io/badge/Kentico_Labs-grey?labelColor=orange&logo=data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ic3ZnLWljb24iIHN0eWxlPSJ3aWR0aDogMWVtOyBoZWlnaHQ6IDFlbTt2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO2ZpbGw6IGN1cnJlbnRDb2xvcjtvdmVyZmxvdzogaGlkZGVuOyIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik05NTYuMjg4IDgwNC40OEw2NDAgMjc3LjQ0VjY0aDMyYzE3LjYgMCAzMi0xNC40IDMyLTMycy0xNC40LTMyLTMyLTMyaC0zMjBjLTE3LjYgMC0zMiAxNC40LTMyIDMyczE0LjQgMzIgMzIgMzJIMzg0djIxMy40NEw2Ny43MTIgODA0LjQ4Qy00LjczNiA5MjUuMTg0IDUxLjIgMTAyNCAxOTIgMTAyNGg2NDBjMTQwLjggMCAxOTYuNzM2LTk4Ljc1MiAxMjQuMjg4LTIxOS41MnpNMjQxLjAyNCA2NDBMNDQ4IDI5NS4wNFY2NGgxMjh2MjMxLjA0TDc4Mi45NzYgNjQwSDI0MS4wMjR6IiAgLz48L3N2Zz4=)](https://github.com/Kentico/.github/blob/main/SUPPORT.md#labs-limited-support)
 [![CI: Build and Test](https://github.com/Kentico/xperience-by-kentico-ecommerce/actions/workflows/ci.yml/badge.svg)](https://github.com/Kentico/xperience-by-kentico-ecommerce/actions/workflows/ci.yml)
 
+| Name | Package |
+| ------------- |:-------------:|
+| Kentico.Xperience.Ecommerce.Common | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.Ecommerce.Common.svg)](https://www.nuget.org/packages/Kentico.Xperience.Ecommerce.Common) |
+| Kentico.Xperience.K13Ecommerce | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.K13Ecommerce.svg)](https://www.nuget.org/packages/Kentico.Xperience.K13Ecommerce) |
+| Kentico.Xperience.Store.Rcl | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.Store.Rcl.svg)](https://www.nuget.org/packages/Kentico.Xperience.Store.Rcl) |
+| Kentico.Xperience.StoreApi  | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.StoreApi.svg)](https://www.nuget.org/packages/Kentico.Xperience.StoreApi) |
+
 ## Description
 
-Repository contains solution with Xperience By Kentico integration to Kentico Xperience 13 E-Commerce features
+This repository contains solution with Xperience By Kentico (XbyK) integration to Kentico Xperience 13 (KX 13) E-Commerce features
 to create E-Commerce solution on XByK.
 Currently there are 2 solutions:
 - Kentico.Xperience.K13Ecommerce.sln
@@ -17,7 +24,7 @@ Currently there are 2 solutions:
     - Sample Dancing Goat sites
       - DancingGoat.csproj - XbyK Dancing Goat enriched with integration to KX 13 Dancing Goat to show how to
 create simple e-shop with product listing, product detail and checkout process on XByK
-      - Kentico13_DancingGoat.csproj - KX 13 Dancing Goat example with configured Store API to show you how you can setup
+      - Kentico13_DancingGoat.csproj - KX 13 Dancing Goat example with configured Store API to demonstrate how you can set up
 REST Store API on you own KX 13 e-commerce solution 
 - Kentico.Xperience.K13Ecommerce.Libs.sln
   - Contains only libraries without sample sites
@@ -84,9 +91,9 @@ dotnet add package Kentico.Xperience.StoreApi
 
 ### Kentico Xperience 13 E-Commerce integration
 
-**First setup your Kentico 13 ASP.NET Core application**:
+**First set up your Kentico 13 ASP.NET Core application**:
 
-1. Setup your own settings for Store REST API authentication (based on JWT and OAuth client credentials flow)
+1. Set up your own settings for Store REST API authentication (based on JWT and OAuth client credentials flow)
 ```json
 {
   "CMSStoreApi": {
@@ -122,7 +129,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
 }
 ```
 
-**Then setup your Xperience By Kentico application**
+**Then set up your Xperience By Kentico application**
 
 1. Fill settings to connect your Kentico Xperience 13 instance
 ```json
