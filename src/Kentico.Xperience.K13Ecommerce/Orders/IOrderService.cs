@@ -13,21 +13,21 @@ public interface IOrderService
     /// <param name="request">Request parameters for order listing.</param>
     /// <returns>Paged list of orders.</returns>
     Task<OrderListResponse> GetOrderList(OrderListRequest request);
-    
-    
+
+
     /// <summary>
     /// Get order by id.
     /// </summary>
     /// <param name="orderId">Order ID.</param>
     Task<KOrder> GetOrder(int orderId);
-    
-    
+
+
     /// <summary>
     /// Returns list of enabled order statuses.
     /// </summary>
     Task<ICollection<KOrderStatus>> GetOrderStatuses();
 
-    
+
     /// <summary>
     /// Updates order.
     /// </summary>

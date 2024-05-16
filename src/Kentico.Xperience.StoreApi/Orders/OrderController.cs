@@ -66,10 +66,12 @@ public class OrderController : ControllerBase
 
         return Ok(new OrderListResponse
         {
-            Orders = orders, Page = page + 1, MaxPage = (orderQuery.TotalRecords / request.PageSize) + 1
+            Orders = orders,
+            Page = page + 1,
+            MaxPage = (orderQuery.TotalRecords / request.PageSize) + 1
         });
     }
-    
+
     /// <summary>
     /// Returns order by ID.
     /// </summary>
@@ -82,11 +84,11 @@ public class OrderController : ControllerBase
         {
             return NotFound();
         }
-        
+
         return Ok(mapper.Map<KOrder>(order));
     }
-    
-    
+
+
     /// <summary>
     /// Endpoint for listing order statuses.
     /// </summary>
@@ -95,15 +97,15 @@ public class OrderController : ControllerBase
     public async Task<ActionResult<IEnumerable<KOrderStatus>>> OrderStatusesList()
     {
         int siteId = ECommerceHelper.GetSiteID(siteService.CurrentSite.SiteID, "CMSStoreUseGlobalOrderStatus");
-        
+
         var orderStatuses = await orderStatusInfoProvider.Get()
             .OnSite(siteId, includeGlobal: siteId == 0)
             .OrderBy(nameof(OrderStatusInfo.StatusOrder))
             .GetEnumerableTypedResultAsync();
-        
+
         return Ok(mapper.Map<IEnumerable<KOrderStatus>>(orderStatuses));
     }
-    
+
     /// <summary>
     /// Updates order. Updates all fields on order level and addresses on sub-level. Customer data and order items cannot be updated.
     /// </summary>
@@ -116,19 +118,19 @@ public class OrderController : ControllerBase
         {
             return NotFound();
         }
-        
+
         orderInfo = mapper.Map(order, orderInfo);
-        
+
         if (orderInfo.OrderBillingAddress.HasChanged)
         {
             orderInfo.OrderBillingAddress.Update();
         }
-        
+
         if (orderInfo.OrderShippingAddress.HasChanged)
         {
             orderInfo.OrderShippingAddress.Update();
         }
-        
+
         orderInfoProvider.Set(orderInfo);
 
         return Ok();
