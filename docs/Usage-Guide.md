@@ -13,19 +13,22 @@ to create E-Commerce solution on XbyK.
 Store API (library `Kentico.Xperience.StoreApi`) is REST API which exposes KX 13 E-Commerce features to consume then from another sources 
 (primary intended for Xperience By Kentico, but you are completely free to use it any way you want).
 
-API is exposed via Swagger (Open API 3 standard) on relative path `/swagger/storeapi/swagger.json`
+API is exposed via [Swagger](https://swagger.io/) ([Open API 3 standard](https://swagger.io/specification/)) on relative path `/swagger/storeapi/swagger.json`
+
+> **_NOTE:_** To list all current endpoints with their request and response formats, run example project `Kentico13_DancingGoat`
+> and go to address [Project_URL]/swagger with Swagger UI tool.
 
 We recommend to use this API in combination with `Kentico.Xperience.K13Ecommerce` [library for XByK applications](#k13-ecommerce-integration-in-xperience-by-kentico),
-because there are services to simplify e-commerce integration (like `IShoppingService`) and NSwag API client is
+because there are services to simplify e-commerce integration (like `IShoppingService`) and [NSwag API client](https://learn.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-nswag?view=aspnetcore-8.0&tabs=visual-studio) is
 already generated there.
 
 ### Authentication
 
-API is intended to use with OAuth 2.0 client credentials flow, when ClientId and ClientSecret is shared between
-client application (XByK) and KX 13 application. Access tokens are generated in JWT standard (from endpoint `/api/store/auth/token`).
+API is intended to use with [OAuth 2.0 client credentials flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4), when ClientId and ClientSecret is shared between
+client application (XByK) and KX 13 application. Access tokens are generated in [JWT standard](https://jwt.io/introduction) (from endpoint `/api/store/auth/token`).
 Token request can contain `username` parameter to identify for which user token is generated.
 This user name is validated that exists and then embedded in token as `sub` and `name` claims. All subsequent 
-requests needs to be sent with Bearer token in Authorization header.
+requests needs to be [sent with Bearer token](https://www.dofactory.com/code-examples/csharp/authorization-header) in [Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) header.
 
 All API controllers are secured by custom authorization attribute and filter `AuthorizeStore`. This filter checks
 user claim and when this user exists and is enabled, then is assigned to `MembershipContext.AuthenticatedUser`. When
@@ -34,7 +37,7 @@ specific user name isn't provided, AuthenticatedUser remains as public user.
 ### Products
 
 These endpoints have prefix `/api/store/products` and cover these domains:
-- Getting product pages based on parameters (returned data can be [customized](#todo))
+- Getting product pages based on parameters (returned data can be [customized](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/Kentico13_DancingGoatStore/Startup.cs#L134))
 - Getting all product categories for given culture
 - Getting prices and inventory info
 
@@ -101,7 +104,7 @@ when your KX 13 live site is not running)
 dotnet add package Kentico.Xperience.StoreApi
 ```
 
-1. Set up your own settings for Store REST API authentication (based on JWT and OAuth client credentials flow)
+1. Set up your own [settings](..\examples\Kentico13_DancingGoatStore\appsettings.json) for Store REST API authentication (based on JWT and OAuth client credentials flow)
 ```json
 {
   "CMSStoreApi": {
@@ -120,16 +123,16 @@ dotnet add package Kentico.Xperience.StoreApi
 
 | Setting                        | Description                                                                   |
 |--------------------------------|-------------------------------------------------------------------------------|
-| CMSStoreApi:Jwt:Key            | Your unique secret key for signing JWT access tokens (at least 64 chars long) |
-| CMSStoreApi:Jwt:Issuer         | Fill arbitrary value for this claim (like your domain)                        |
-| CMSStoreApi:Jwt:Audience       | Fill arbitrary value for this claim to identify recipients                    |
-| CMSStoreApi:Jwt:TokenExpiresIn | Duration in minutes for token validity                                        |
-| ClientId                       | Fill your value, used for getting token (client credentials OAuth 2.0 flow)   |
-| ClientSecret                   | Fill your value, used for getting token (client credentials OAuth 2.0 flow)   |   
+| Jwt:Key            | Your unique secret key for signing JWT access tokens (at least 64 chars long) |
+| Jwt:Issuer         | Fill arbitrary value for this claim (like your domain)                        |
+| Jwt:Audience       | Fill arbitrary value for this claim to identify recipients                    |
+| Jwt:TokenExpiresIn | Duration in minutes for token validity                                        |
+| ClientId           | Fill your value, used for getting token (client credentials OAuth 2.0 flow)   |
+| ClientSecret       | Fill your value, used for getting token (client credentials OAuth 2.0 flow)   |
 
 
 
-2. Add Store API services to application services and configure Swagger
+2. Add [Store API services](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/Kentico13_DancingGoatStore/Startup.cs#L130) to application services and configure Swagger
 ```csharp
 // Startup.cs
 
@@ -147,6 +150,26 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
     //Registers Swagger endpoint middleware and swagger UI
     app.UseStoreApiSwagger();
 }
+```
+or in [Minimal API](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/overview?view=aspnetcore-8.0) approach:
+```csharp
+// Program.cs
+
+var builder = WebApplication.CreateBuilder(args);
+
+// ...
+//Store API registration
+builder.Services.AddKenticoStoreApi();
+//Registers Swagger generation
+builder.Services.AddKenticoStoreApiSwagger();
+
+var app = builder.Build();
+
+//Registers Swagger endpoint middleware and swagger UI
+app.UseStoreApiSwagger();
+
+app.Run();
+
 ```
 
 ### Library matrix
@@ -217,6 +240,17 @@ dotnet add package Kentico.Xperience.Store.Rcl
   }
 }
 ```
+**Setting description**
+
+| Setting                        | Description                                                        |
+|--------------------------------|--------------------------------------------------------------------|
+| StoreApiUrl            | Fill main URL (without path) to KX 13 live app instance            |
+| ClientId         | Fill same value which is defined on KX 13 side                     |
+| ClientSecret      | Fill same value which is defined on KX 13 side                     |
+| ProductSyncEnabled | If true, product synchronization is enabled                        |
+| ProductSyncInterval                       | Interval in minutes specifies how often synchronization is running | 
+
+
 2. Add K13Ecommerce library to the application services
 ```csharp
 // Program.cs
@@ -225,8 +259,8 @@ dotnet add package Kentico.Xperience.Store.Rcl
 builder.Services.AddKenticoStoreServices(builder.Configuration);
 ```
 3. For most simple scenario: copy product listing widget from Dancing Goat example project to your project and configure
-   properties to display products from Kentico 13. Sample widget is located [here](./examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget).
-4. For more complex scenario with full e-shop, you can inspire how Dancing Goat sample Store on XbyK is implemented.
+   properties to display products from Kentico 13. Sample widget is located [here](../examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget).
+4. For more complex scenario with full e-shop, you can inspire how [Dancing Goat sample Store](..\examples\DancingGoat-K13Ecommerce) on XbyK is implemented.
    Check [Dancing Goat example - setup](./docs/Usage-Guide.md#store-setup) for detailed instructions how to configure categories, products and cart steps.
 5. Restore CI repository files to database (reusable content types, custom activities). CI files are located in
    `.\examples\DancingGoat-K13Ecommerce\App_Data\CIRepository\` and you need to copy these files to your application.

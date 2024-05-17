@@ -32,10 +32,13 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
 ### Full scale e-commerce solution
   - We recommend it to use it for possible partial migration of existing e-commerce projects from KX 13 to XbyK.
   - Product data (with variants and images) are [synchronized to Content hub](./docs/Usage-Guide.md#products-synchronization) (can be [turned off](./Usage-Guide.md#setup-1)).
+    ![Products in content hub](./images/screenshots/products_content_hub.png "Products in content hub")
   - Product listing, detail and checkout process is placed on XbyK (shopping cart is saved and calculated still on KX 13).
+    ![Cart content](./images/screenshots/cart_content.png "Cart content")
   - Orders are created from cart and order related data are saved on KX 13 side.
   - Linking products to categories in Pages channels needs to be done manually from Content hub.
     Page types are prepared to CI restore, details info in [this section of User Guide](./docs/Usage-Guide.md#dancing-goat-example---setup).
+    ![Store pages](./images/screenshots/store_pages.png "Store pages")
   - [Sample XbyK Dancing Goat site](./examples/DancingGoat-K13Ecommerce) implements store functionality and can be used as a example how to migrate existing e-commerce projects to new XbyK.
 
   There are a couple of services which cover this actions:
@@ -46,8 +49,6 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
   - Listing site cultures and currencies
   - Check [this part of User Guide](./docs/Usage-Guide.md#k13-ecommerce-integration-in-xperience-by-kentico) for more specific description 
 
-![Products in content hub](./images/screenshots/products_content_hub.png "Products in content hub")
-![Cart content](./images/screenshots/cart_content.png "Cart content")
 
 ### Project structure
 
