@@ -15,33 +15,33 @@
 
 ## Description
 
-This integration is primary intended for a existing Kentico 13 (KX 13) E-Commerce projects to enable them migrate
-to new Xperience By Kentico (XbyK) and still use the KX 13 E-Commerce functionality.\
-It can also be used as a basis for new projects where E-Commerce data will be stored on the KX 13, but further development is necessary to achieve this goal.
+This integration is primary intended for existing Kentico 13 (KX 13) E-Commerce projects to enable them to migrate
+to new Xperience By Kentico (XbyK) and still use KX 13 E-Commerce functionality.\
+It can also be used as a basis for new projects where E-Commerce data will be stored on KX 13, but further development is necessary to achieve this goal.
 
 This solution covers several scenarios according to the complexity of integration between XByK and KX 13:
 
 ### Product listing widget
-- We recommend to use this widget for simple scenarios like Landing page offers etc.
+- We recommend to use this widget for simple scenarios such as Landing page offers, etc.
 - [Product listing widget example](./examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget/StoreProductListWidgetViewComponent.cs)
 is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecommerce).
-- The widget is used to display products directly from the KX 13, purchase itself still takes place on Kentico 13.
-- The widget has a couple properties based on [Store property selector](./src/Kentico.Xperience.K13Ecommerce/Components/FormComponents/KenticoStorePropertySelector/KenticoStorePropertySelectorComponent.cs) which enable to display products for given category, culture and currency.
+- The widget is used to display products directly from KX 13, purchase itself still takes place on Kentico 13.
+- The widget has a couple of properties based on the [Store property selector](./src/Kentico.Xperience.K13Ecommerce/Components/FormComponents/KenticoStorePropertySelector/KenticoStorePropertySelectorComponent.cs) which enable to display products for given category, culture and currency.
 
 ![Product listing widget](./images/screenshots/product_listing_widget.png "Product listing widget")
 ### Full scale e-commerce solution
-  - We recommend it to use it for possible partial migration of existing e-commerce projects from KX 13 to XbyK.
+  - We recommend to use for possible partial migration of existing e-commerce projects from KX 13 to XbyK.
   - Product data (with variants and images) are [synchronized to Content hub](./docs/Usage-Guide.md#products-synchronization) (can be [turned off](./Usage-Guide.md#setup-1)).
     ![Products in content hub](./images/screenshots/products_content_hub.png "Products in content hub")
-  - Product listing, detail and checkout process is placed on XbyK (shopping cart is saved and calculated still on KX 13).
+  - Product listing, detail and checkout process are placed on XbyK (shopping cart is saved and calculated still on KX 13).
     ![Cart content](./images/screenshots/cart_content.png "Cart content")
-  - Orders are created from cart and order related data are saved on KX 13 side.
-  - Linking products to categories in Pages channels needs to be done manually from Content hub.
+  - Orders are created from cart, order related data are saved on KX 13 side.
+  - Linking products to categories in Pages channels need to be done manually from Content hub.
     Page types are prepared to CI restore, details info in [this section of User Guide](./docs/Usage-Guide.md#dancing-goat-example---setup).
     ![Store pages](./images/screenshots/store_pages.png "Store pages")
-  - [Sample XbyK Dancing Goat site](./examples/DancingGoat-K13Ecommerce) implements store functionality and can be used as a example how to migrate existing e-commerce projects to new XbyK.
+  - [Sample XbyK Dancing Goat site](./examples/DancingGoat-K13Ecommerce) implements store functionality and can be used as an example of migration of existing e-commerce projects to new XbyK.
 
-  There are a couple of services which cover this actions:
+  There are a couple of services which cover these actions:
   - Listing products based on parameters, product categories, prices and inventory
   - Actions with shopping cart, changing currency and order creation
   - Listing of orders (currently suitable for implementing listing orders in administration, not in My account)
@@ -52,7 +52,7 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
 
 ### Project structure
 
-Currently there are 2 solutions:
+There are currently 2 solutions:
 
 #### Kentico.Xperience.K13Ecommerce.sln
 
@@ -65,7 +65,7 @@ Complete solution with all libraries and sample sites:
   - `DancingGoat.csproj` - XbyK Dancing Goat (live site channel + administration) enriched with integration to KX 13 Dancing Goat to show how to
 create simple e-shop with product listing, product detail and checkout process on XByK.
   - `Kentico13_DancingGoat.csproj` - KX 13 Dancing Goat example (live site) with configured Store API to demonstrate how you can set up
-REST Store API on you own KX 13 e-commerce solution.
+REST Store API on your own KX 13 e-commerce solution.
 - **KX 13 administration project (CMSApp) is not part of this solution!**
 
 ![Project diagram](./images/project_diagram.png "Project diagram")
@@ -181,10 +181,10 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
 // Registers Kentico Store API and services for e-commerce support
 builder.Services.AddKenticoStoreServices(builder.Configuration);
 ```
-3. For most simple scenario: copy [product listing widget](./examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget) from Dancing Goat example project to your project and configure
+3. For the simplest scenario: copy [product listing widget](./examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget) from Dancing Goat example project to your project and configure
 properties to display products from KX 13.
-4. For more complex scenario with full e-shop, you can inspire how [Dancing Goat sample Store](.\examples\DancingGoat-K13Ecommerce) on XbyK is implemented.
-Check [Usage guide](./docs/Usage-Guide.md#store-setup) for detailed instructions how to configure categories, products and cart steps.
+4. For more complex scenario with full e-shop, you can be inspired by implementation of [Dancing Goat sample Store](.\examples\DancingGoat-K13Ecommerce) on XbyK.
+Check [Usage guide](./docs/Usage-Guide.md#store-setup) for detailed instructions to configure categories, products and cart steps.
 5. Restore CI repository files to database (reusable content types, custom activities). CI files are located in
 `.\examples\DancingGoat-K13Ecommerce\App_Data\CIRepository\` and you need to copy these files to your application.
 ```powershell
