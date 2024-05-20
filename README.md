@@ -30,7 +30,7 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
 ![Product listing widget](./images/screenshots/product_listing_widget.png "Product listing widget")
 ### Full scale e-commerce solution
   - We recommend to use for possible partial migration of existing e-commerce projects from KX 13 to XbyK.
-  - Product data (with variants and images) are [synchronized to Content hub](./docs/Usage-Guide.md#products-synchronization) (can be [turned off](./Usage-Guide.md#setup-1)).
+  - Product data (with variants and images) are [synchronized to Content hub](./docs/Usage-Guide.md#products-synchronization) (can be [turned off](./docs/Usage-Guide.md#setup-1)).
     ![Products in content hub](./images/screenshots/products_content_hub.png "Products in content hub")
   - Product listing, detail and checkout process are placed on XbyK (shopping cart is saved and calculated still on KX 13).
     ![Cart content](./images/screenshots/cart_content.png "Cart content")
@@ -46,7 +46,7 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
   - Listing of orders (currently suitable for implementing listing orders in administration, not in My account)
     - **Order updates and listing for specific customers are under development**
   - Listing site cultures and currencies
-  - Check [this part of User Guide](./docs/Usage-Guide.md#k13-ecommerce-integration-in-xperience-by-kentico) for more specific description 
+  - Check [this part of User Guide](./docs/Usage-Guide.md#kx-13-e-commerce-integration-in-xperience-by-kentico) for more specific description 
 
 
 ### Project structure
