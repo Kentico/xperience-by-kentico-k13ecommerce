@@ -7,6 +7,7 @@ to create E-Commerce solution on XbyK.
 1. [Store API (Kentico Xperience 13)](#store-api-kentico-xperience-13)
 2. [K13 Ecommerce integration (Xperience by Kentico)](#k13-ecommerce-integration-in-xperience-by-kentico)
 3. [Dancing Goat example - setup](#dancing-goat-example---setup)
+4. [Scenarios](#scenarios)
 
 ## Store API (Kentico Xperience 13)
 
@@ -70,7 +71,7 @@ By default shopping is calculated in main site's currency. Cart's currency can b
 All enabled currencies can be retrieved from `api/store/site/currencies`.
 
 #### Current known limitations
-Not all cart's data can be changed, e.g. custom data (properties like ShoppingCartCustomData) cannot be currenly changed
+Not all cart's data can be changed, e.g. custom data (properties like ShoppingCartCustomData) cannot be currently changed
 via API.
 
 ### Orders
@@ -84,6 +85,11 @@ via API.
 - Endpoint `api/store/site/currencies` returns all enabled site currencies
 
 ### User synchronization
+When user is created on XbyK, this user needs to be synchronized to KX 13, then user can be used for API authorization.
+(user identity is generated in JWT). 
+We suppose that users are already synchronized between client (XbyK) and KX app before starting using this API.
+Complete synchronization is not part of this PoC solution.
+
 - Endpoint `api/store/synchronization/user-synchronization` creates new user
   - Client app (XbyK) should use this to be ensured that all new users on client's are synchronized to KX 13, this is necessary when client's
 e-commerce solution allows users to log in. Users are created with random generated password and are used only for
@@ -184,18 +190,35 @@ integration on XByK:
 
 - `IProductService`
   - Listing products based on parameters, product categories, prices and inventory
+  - Service is used e.g in [product synchronization](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/Synchronization/Products/ProductSynchronizationService.cs#L36)
+  or [in product list](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/StoreCategoryController.cs#L48) where prices are retrieved for listed products. 
 - `IShoppingService`
-  - Actions on shopping cart and order creation
+  - Actions on shopping cart and order creation:
+    - Adding/removing products to/from cart
+    - Updating product quantity in cart
+    - Adding/removing coupon codes
+    - Retrieving cart content and delivery details
+    - Retrieving current customer
+    - Set shipping option and payment option
+    - Set customer, billing and shipping address
+    - Validate cart items
+    - Change cart's currency
+    - Create order
   - Service saves and retrieves the shopping cart identifier (`ShoppingCartGuid`) to session (uses `IShoppingCartSessionStorage`) 
 and to browser cookie (uses `IShoppingCartClientStorage`)
+  - See [CheckoutController in Dancing Goat example](../examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs) 
+  where checkout process is implemented using this service.
 - `ICustomerService`
   - List of customer addresses
+  - Service is used e.g. in [CheckoutService in Dancing Goat example](../examples/DancingGoat-K13Ecommerce/Services/CheckoutService.cs) 
+  where customer's addresses are retrieved in cart's second step.
 - `IOrderService`
   - List of orders - currently suitable for implementing listing orders in administration
 - `ISiteStoreService`
-  - Site cultures and currencies
+  - Use for retrieving site's [list of enabled cultures](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L13), e.g. for implementation of language selector
+  - Use for retrieving site's [list of enabled currencies](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L18), e.g. for implementation of currency selector
 - `ICountryService`
-  - Countries and states - these objects are already on XByK, there is no Store API call
+  - [Countries and states](../src/Kentico.Xperience.K13Ecommerce/Countries/ICountryService.cs) - these objects are already on XByK, there is no Store API call
 
 ### Products synchronization
 
@@ -207,7 +230,7 @@ Library also implements product synchronization to Content hub. These are 3 enti
 - Product images - Content type `K13Store.ProductImage`
   - Main SKU images (from SKUImagePath column)
 
-In background running synchronization threads worker periodically and can be disabled (`ProductSyncEnabled` setting).
+Synchronization running in background thread worker periodically and can be disabled (`ProductSyncEnabled` setting).
 Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized data are updated when source value
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
 safely.
@@ -217,6 +240,34 @@ calculator evaluation in context of user's cart and standalone requests via `IPr
 
 #### Limitations
 Products are currently synchronized only in default content culture. **Same language needs to be enabled in XByK**.
+
+### Activity logging
+When you are using `IShoppingService` for shopping cart actions, these actions are logged to XByK [Online marketing activities](https://docs.kentico.com/developers-and-admins/digital-marketing-setup/set-up-activities)
+for current contact:
+
+| Activity display name | Activity name | Description                                |
+|---------------|---------------|--------------------------------------------|
+| Product added to shopping cart | custom_productaddedtoshoppingcart     | Product added to cart                      |
+| Product removed from shopping cart | custom_productremovedfromshoppingcart | Product removed from cart                  |
+| Purchased product | custom_purchasedproduct            | Purchased product (after order is created) |
+| Purchase | custom_purchase               | Order created                              |
+
+You need to ensure these [custom activity types](https://docs.kentico.com/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities) 
+are created (via CI restore - see [Setup section](#setup-1) or [manually](https://docs.kentico.com/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#add-custom-activity-types)).
+
+### Email notifications
+Currently all e-commerce email notifications are sent from KX 13 application. 
+You need to have [configured email sending](https://docs.kentico.com/13/configuring-xperience/configuring-smtp-servers) and 
+[e-commerce email templates](https://docs.kentico.com/13/e-commerce-features/configuring-on-line-stores/configuring-e-commerce-email-notifications).
+
+### Product listing widget
+- We recommend to use this widget for simple scenarios such as Landing page offers, etc.
+- [Product listing widget example](../examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget/StoreProductListWidgetViewComponent.cs)
+  is located in [Dancing Goat XbyK example project](../examples/DancingGoat-K13Ecommerce).
+- The widget is used to display products directly from KX 13, purchase itself still takes place on Kentico 13.
+- The widget has a couple of properties based on the [Store property selector](../src/Kentico.Xperience.K13Ecommerce/Components/FormComponents/KenticoStorePropertySelector/KenticoStorePropertySelectorComponent.cs) which enable to display products for given category, culture and currency.
+
+![Product listing widget](../images/screenshots/product_listing_widget.png "Product listing widget")
 
 ### Setup
 
@@ -314,6 +365,49 @@ Let the product synchronization finish. Check `K13-Store product synchronization
       2. Cart delivery details page
       3. Cart summary page
       4. Order complete page
+
+## Scenarios
+
+### How to add products onto website?
+The product synchronization creates reusable content items for products, product variants and product images.
+It's on you how to display these product on your website. But you can use the approach from 
+[Dancing Goat example](#dancing-goat-example---setup):
+1. Create pages for products (e.g. in folder structure) in your web site channel and link them to product content items 
+(of type `K13Store.ProductSKU`). You can use `K13Store.ProductPage` page type for this.
+![Link product pages](../images/screenshots/linking_products_webchannel.png "Link product pages")
+2. Create Store page (use `K13Store.StorePage` page type) which represents entry point for your store. You can display here main categories 
+and Hot tip products. Skip this step when you don't need this type of page.
+3. Create pages for categories (use `K13Store.CategoryPage` page type) and select product pages in Products in category field.
+![Products in category](../images/screenshots/category_products.png "Products in category")
+
+### How to display products on your website?
+
+1. For displaying products on your live site, see [StoreCategoryController](../examples/DancingGoat-K13Ecommerce/Controllers/KStore/StoreCategoryController.cs)
+on Dancing Goat example site. Products pages are retrieved for current category and current prices are retrieved for these products via `IProductService`.
+2. You can also to consider using [Product listing widget](#product-listing-widget) for simple scenarios like Landing pages with product offer.
+
+### How to implement shopping cart / checkout process?
+
+1. Create pages representing cart steps
+   1. Cart content page
+   2. Cart delivery details page
+   3. Cart summary page
+   4. Order complete page\
+   Set Cart next steps / Cart previous step fields for each step page. 
+   ![Cart steps](../images/screenshots/cart_steps.png "Cart steps")
+   This approach has the advantage that you can use [page builder features](https://docs.kentico.com/developers-and-admins/development/builders/page-builder) for each step.
+2. For shopping cart and checkout process implementation, see [CheckoutController](../examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs)
+
+Here are links for some specific parts of shopping cart:
+
+- [Shopping cart content](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L84)
+- [Discount / Coupon codes](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L163)
+- [Delivery details + shipping](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L194)
+- [Payment](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L330)
+- Payment gateway - Is not part of this PoC solution, you need to implement integration with specific payment gateway. **API for updating orders (and their statuses) is under development**.
+- [Order creation](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L315)
+
+
    
 
 
