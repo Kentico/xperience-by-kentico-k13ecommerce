@@ -7,7 +7,6 @@
 
 | Name | Package |
 | ------------- |:-------------:|
-| Kentico.Xperience.Ecommerce.Common | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.Ecommerce.Common.svg)](https://www.nuget.org/packages/Kentico.Xperience.Ecommerce.Common) |
 | Kentico.Xperience.K13Ecommerce | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.K13Ecommerce.svg)](https://www.nuget.org/packages/Kentico.Xperience.K13Ecommerce) |
 | Kentico.Xperience.Store.Rcl | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.Store.Rcl.svg)](https://www.nuget.org/packages/Kentico.Xperience.Store.Rcl) |
 | Kentico.Xperience.StoreApi  | [![NuGet Package](https://img.shields.io/nuget/v/Kentico.Xperience.StoreApi.svg)](https://www.nuget.org/packages/Kentico.Xperience.StoreApi) |
