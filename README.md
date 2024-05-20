@@ -182,8 +182,8 @@ builder.Services.AddKenticoStoreServices(builder.Configuration);
 ```
 3. For the simplest scenario: copy [product listing widget](./examples/DancingGoat-K13Ecommerce/Components/Widgets/Store/ProductListWidget) from Dancing Goat example project to your project and configure
 properties to display products from KX 13.
-4. For more complex scenario with full e-shop, you can be inspired by implementation of [Dancing Goat sample Store](.\examples\DancingGoat-K13Ecommerce) on XbyK.
-Check [Usage guide](./docs/Usage-Guide.md#store-setup) for detailed instructions to configure categories, products and cart steps.
+4. For more complex scenario with full e-shop, you can be inspired by implementation of [Dancing Goat sample Store](./examples/DancingGoat-K13Ecommerce) on XbyK.
+Check [Usage guide](./docs/Usage-Guide.md#dancing-goat-example---setup) for detailed instructions to configure categories, products and cart steps.
 5. Restore CI repository files to database (reusable content types, custom activities). CI files are located in
 `.\examples\DancingGoat-K13Ecommerce\App_Data\CIRepository\` and you need to copy these files to your application.
 ```powershell
