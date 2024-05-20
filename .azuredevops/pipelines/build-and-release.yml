@@ -51,6 +51,9 @@ stages:
             value: src/Kentico.Xperience.K13Ecommerce.Libs.sln
 
         steps:
+          - checkout: self
+            submodules: true
+
           - task: DotNetCoreCLI@2
             displayName: Restore dotnet tools
             inputs:
