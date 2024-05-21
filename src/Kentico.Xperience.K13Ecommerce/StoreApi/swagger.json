@@ -27,9 +27,11 @@
                     "default": "client_credentials"
                   },
                   "client_id": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "client_secret": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "username": {
@@ -66,9 +68,11 @@
                     "default": "client_credentials"
                   },
                   "client_id": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "client_secret": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "username": {
@@ -3117,10 +3121,20 @@
         "description": "Dto for CMS.Ecommerce.SummaryItem."
       },
       "KUserSynchronization": {
+        "required": [
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "userName": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 254,
             "type": "string",
+            "format": "email",
             "nullable": true
           }
         },

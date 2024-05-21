@@ -2,6 +2,7 @@
 
 using Kentico.Membership;
 using Kentico.Xperience.StoreApi.Authentication;
+using Kentico.Xperience.StoreApi.Helpers;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -43,7 +44,7 @@ public class UserSynchronizationController : ControllerBase
         var newUser = new ApplicationUser
         {
             UserName = user.UserName,
-            Email = user.UserName,
+            Email = user.Email,
             Enabled = true
         };
 
@@ -51,7 +52,7 @@ public class UserSynchronizationController : ControllerBase
 
         try
         {
-            registerResult = await userManager.CreateAsync(newUser, Guid.NewGuid().ToString());
+            registerResult = await userManager.CreateAsync(newUser, PasswordHelper.GeneratePassword(32));
         }
         catch (Exception e)
         {

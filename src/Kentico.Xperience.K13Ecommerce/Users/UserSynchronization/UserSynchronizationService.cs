@@ -4,23 +4,15 @@ using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace Kentico.Xperience.K13Ecommerce.Users.UserSynchronization;
 
-internal class UserSynchronizationService : IUserSynchronizationService
+internal class UserSynchronizationService(IKenticoStoreApiClient storeApiClient) : IUserSynchronizationService
 {
-    private IKenticoStoreApiClient StoreApiClient { get; }
-
-
-    public UserSynchronizationService(IKenticoStoreApiClient storeApiClient)
-    {
-        StoreApiClient = storeApiClient;
-    }
+    private IKenticoStoreApiClient StoreApiClient { get; } = storeApiClient;
 
 
     /// <inheritdoc/>
-    public async Task SynchronizeUser(MemberInfo user)
+    public async Task SynchronizeUser(MemberInfo user) => await StoreApiClient.UserSynchronizationAsync(new KUserSynchronization()
     {
-        await StoreApiClient.UserSynchronizationAsync(new KUserSynchronization()
-        {
-            UserName = user.MemberEmail
-        });
-    }
+        UserName = user.MemberName,
+        Email = user.MemberEmail
+    });
 }
