@@ -15,4 +15,8 @@ internal class UserSynchronizationService(IKenticoStoreApiClient storeApiClient)
         UserName = user.MemberName,
         Email = user.MemberEmail
     });
+
+    /// <inheritdoc/>
+    public async Task<bool> UserExists(string userName) =>
+        !string.IsNullOrEmpty(userName) && await StoreApiClient.UserExistsAsync(userName);
 }

@@ -1,4 +1,5 @@
-﻿using System.Net.Mime;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Net.Mime;
 
 using Kentico.Membership;
 using Kentico.Xperience.StoreApi.Authentication;
@@ -18,10 +19,7 @@ public class UserSynchronizationController : ControllerBase
     private readonly ApplicationUserManager<ApplicationUser> userManager;
 
 
-    public UserSynchronizationController(ApplicationUserManager<ApplicationUser> userManager)
-    {
-        this.userManager = userManager;
-    }
+    public UserSynchronizationController(ApplicationUserManager<ApplicationUser> userManager) => this.userManager = userManager;
 
 
     /// <summary>
@@ -72,4 +70,15 @@ public class UserSynchronizationController : ControllerBase
 
         return ValidationProblem();
     }
+
+
+    /// <summary>
+    /// Checks if user exists.
+    /// </summary>
+    /// <param name="userName">User name</param>
+    /// <returns>True if exists</returns>
+    [HttpGet("user-exists")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<bool> UserExists([FromQuery][Required] string userName) => await userManager.FindByNameAsync(userName) is not null;
 }

@@ -1963,6 +1963,37 @@
           }
         }
       }
+    },
+    "/api/store/synchronization/user-exists": {
+      "get": {
+        "tags": [
+          "UserSynchronization"
+        ],
+        "summary": "Checks if user exists.",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "User name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
