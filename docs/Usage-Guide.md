@@ -95,6 +95,9 @@ Complete synchronization is not part of this PoC solution.
 e-commerce solution allows users to log in. Users are created with random generated password and are used only for
 API authorization and assigning to MembershipContext.
 
+> **_NOTE:_** Please implement double opt-in mechanism for user registration to ensure users's are paired safely between
+> XbyK and KX 13. In current Dancing Goat example, we dont't have double opt-in mechanism implemented, but we recommend  it as best practice.
+
 #### Current known limitations
 User's roles synchronization isn't currently supported. We assume users to be already synchronized between client (XbyK) and KX app before starting using this API.
 
