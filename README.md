@@ -14,7 +14,7 @@
 
 ## Description
 
-This integration is primary intended for existing Kentico 13 (KX 13) E-Commerce projects to enable them to migrate
+This integration is primary intended for existing Kentico Xperience 13 (KX 13) E-Commerce projects to enable them to migrate
 to new Xperience By Kentico (XbyK) and still use KX 13 E-Commerce functionality.\
 It can also be used as a basis for new projects where E-Commerce data will be stored on KX 13, but further development is necessary to achieve this goal.
 
@@ -30,20 +30,20 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
 ![Product listing widget](./images/screenshots/product_listing_widget.png "Product listing widget")
 ### Full scale e-commerce solution
   - We recommend to use for possible partial migration of existing e-commerce projects from KX 13 to XbyK.
-  - Product data (with variants and images) are [synchronized to Content hub](./docs/Usage-Guide.md#products-synchronization) (can be [turned off](./docs/Usage-Guide.md#setup-1)).
+  - Product data (with variants and images) is [synchronized to Content hub](./docs/Usage-Guide.md#products-synchronization) (can be [turned off](./docs/Usage-Guide.md#setup-1)).
     ![Products in content hub](./images/screenshots/products_content_hub.png "Products in content hub")
   - Product listing, detail and checkout process are placed on XbyK (shopping cart is saved and calculated still on KX 13).
     ![Cart content](./images/screenshots/cart_content.png "Cart content")
-  - Orders are created from cart, order related data are saved on KX 13 side.
-  - Linking products to categories in Pages channels need to be done manually from Content hub.
-    Page types are prepared to CI restore, details info in [this section of User Guide](./docs/Usage-Guide.md#dancing-goat-example---setup).
+  - Orders are created from cart, order related data is saved on KX 13 side.
+  - Products need to be manually linked from Content hub to pages in website channel applications. You can use CI to restore examples of content types for pages that display products. 
+    See [this section of User Guide](./docs/Usage-Guide.md#dancing-goat-example---setup) for detailed information.
     ![Store pages](./images/screenshots/store_pages.png "Store pages")
   - [Sample XbyK Dancing Goat site](./examples/DancingGoat-K13Ecommerce) implements store functionality and can be used as an example of migration of existing e-commerce projects to new XbyK.
 
-  There are a couple of services which cover these actions:
+The integration provides an API with services for implementing the following scenarios:
   - Listing products based on parameters, product categories, prices and inventory
   - Actions with shopping cart, changing currency and order creation
-  - Listing of orders (currently suitable for implementing listing orders in administration, not in My account)
+  - Listing of orders (currently suitable for implementing listing orders in administration)
     - **Order updates and listing for specific customers are under development**
   - Listing site cultures and currencies
   - Check [this part of User Guide](./docs/Usage-Guide.md#kx-13-e-commerce-integration-in-xperience-by-kentico) for more specific description 
@@ -70,7 +70,7 @@ REST Store API on your own KX 13 e-commerce solution.
 ![Project diagram](./images/project_diagram.png "Project diagram")
 
 #### Kentico.Xperience.K13Ecommerce.Libs.sln
-  - Contains only libraries without sample sites, used for publishing of nuget packages
+  - Contains only libraries without sample sites, used for publishing of NuGet packages
 
 ## Library Version Matrix
 
@@ -89,11 +89,11 @@ Summary of libraries which are supported by the following versions Xperince by K
 
 Xperience by Kentico application:
 - [ASP.NET Core 8.0](https://dotnet.microsoft.com/en-us/download)
-- [Xperience by Kentico](https://docs.xperience.io/xp/changelog)
+- [Xperience by Kentico](https://docs.kentico.com/x/6wocCQ)
 
 Kentico Xperience 13 application (or standalone API app):
 - [ASP.NET Core 6.0](https://dotnet.microsoft.com/en-us/download)
-- [Kentico Xperience 13 Refresh 11](https://docs.kentico.com/13/release-notes-xperience-13)
+- [Kentico Xperience 13 Refresh 11](https://docs.kentico.com/x/GQeRBg)
 
 ## Package Installation
 

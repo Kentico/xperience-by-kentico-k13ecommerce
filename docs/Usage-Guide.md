@@ -11,7 +11,7 @@ to create E-Commerce solution on XbyK.
 
 ## Store API (Kentico Xperience 13)
 
-Store API (library `Kentico.Xperience.StoreApi`) is REST API which exposes KX 13 E-Commerce features to consume then from another sources 
+Store API (library `Kentico.Xperience.StoreApi`) is a REST API which exposes KX 13 E-Commerce features, and allows them to be consumed from other sources. 
 (primary intended for Xperience By Kentico, but you are completely free to use it any way you want).
 
 API is exposed via [Swagger](https://swagger.io/) ([Open API 3 standard](https://swagger.io/specification/)) on relative path `/swagger/storeapi/swagger.json`
@@ -28,7 +28,7 @@ already generated there.
 API is intended to use with [OAuth 2.0 client credentials flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4), when ClientId and ClientSecret are shared between
 client application (XByK) and KX 13 application. Access tokens are generated in [JWT standard](https://jwt.io/introduction) (from endpoint `/api/store/auth/token`).
 Token request can contain `username` parameter to identify for which user token is generated.
-This user name's existence is validated and then embedded in token as `sub` and `name` claims. All subsequent 
+The endpoint validates that the username exists, and then embeds it into the token as `sub` and `name` claims. All subsequent 
 requests need to be [sent with Bearer token](https://www.dofactory.com/code-examples/csharp/authorization-header) in [Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) header.
 
 All API controllers are secured by custom authorization attribute and filter `AuthorizeStore`. This filter checks
@@ -47,11 +47,11 @@ These endpoints have prefix `/api/store/products` and cover these domains:
 These endpoints have prefix `api/store/cart` and cover work with current shopping cart. Many actions correspond
 to functionality in KX 13 `CMS.Ecommerce.IShoppingService` (adding/removing items to cart, set delivery data, creating order etc.).
 All endpoints use `ShoppingCartGUID` parameter sent 
-in HTTP header to identify current shopping cart. Client application (XbyK) needs to manage this identifier (this already covers
-`Kentico.Xperience.K13Ecommerce` library for XByK applications).
+in HTTP header to identify current shopping cart.
+Management of this identifier is automatically handled in client (XByK) applications by the `Kentico.Xperience.K13Ecommerce` package.
 
 All calls internally use IShoppingService with some
-noticeable customizations to handle [retrieving cart](https://docs.kentico.com/13/e-commerce-features/customizing-on-line-stores/shopping-cart-related-customizing/retrieving-the-current-shopping-cart) in RESTful manner.
+notable customizations to handle [retrieving cart](https://docs.kentico.com/x/gQuRBg) in RESTful manner.
 These customizations are applied only on request with `api/store` prefix to not break default e-commerce functionality:
 - Custom `IShoppingCartCache` - session usage is removed, cache key for cart's cache token identifier (`jti` claim) is
 used instead.
@@ -86,13 +86,13 @@ via API.
 
 ### User synchronization
 When user is created on XbyK, this user needs to be synchronized to KX 13, then user can be used for API authorization.
-(user identity is generated in JWT). 
-We suppose that users are already synchronized between client (XbyK) and KX app before starting using this API.
+(user identity is generated in JWT).
+Before you start using the Store API, you need to synchronize all website members between the client (XbyK) and your KX 13 application.
 Complete synchronization is not part of this PoC solution.
 
 - Endpoint `api/store/synchronization/user-synchronization` creates new user
-  - Client app (XbyK) should use this to be ensured that all new users on client's are synchronized to KX 13, this is necessary when client's
-e-commerce solution allows users to log in. Users are created with random generated password and are used only for
+  - Client app (XbyK) should use this to be ensured that all new members on client's are synchronized to KX 13, this is necessary when client's
+e-commerce solution allows visitors to log in. KX 13 users are created with random generated password and are used only for
 API authorization and assigning to MembershipContext.
 
 #### Current known limitations
@@ -109,7 +109,7 @@ when your KX 13 live site is not running)
 dotnet add package Kentico.Xperience.StoreApi
 ```
 
-1. Set up your own [settings](..\examples\Kentico13_DancingGoatStore\appsettings.json) for Store REST API authentication (based on JWT and OAuth client credentials flow)
+1. Set up your own [settings](../examples/Kentico13_DancingGoatStore/appsettings.json) for Store REST API authentication (based on JWT and OAuth client credentials flow)
 ```json
 {
   "CMSStoreApi": {
@@ -214,6 +214,7 @@ and to browser cookie (uses `IShoppingCartClientStorage`)
   where customer's addresses are retrieved in cart's second step.
 - `IOrderService`
   - List of orders - currently suitable for implementing listing orders in administration
+    - **Order updates and listing for specific customers are under development** 
 - `ISiteStoreService`
   - Use for retrieving site's [list of enabled cultures](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L13), e.g. for implementation of language selector
   - Use for retrieving site's [list of enabled currencies](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L18), e.g. for implementation of currency selector
@@ -230,19 +231,19 @@ Library also implements product synchronization to Content hub. These are 3 enti
 - Product images - Content type `K13Store.ProductImage`
   - Main SKU images (from SKUImagePath column)
 
-Synchronization running in background thread worker periodically and can be disabled (`ProductSyncEnabled` setting).
-Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized data are updated when source value
+The synchronization runs in a background thread worker periodically and can be disabled (`ProductSyncEnabled` setting).
+Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized data is updated when source value
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
 safely.
 
-No price data are synced, because catalog prices need
+No price data is synced, because catalog prices need
 calculator evaluation in context of user's cart and standalone requests via `IProductService` are required.
 
 #### Limitations
 Products are currently synchronized only in default content culture. **Same language needs to be enabled in XByK**.
 
 ### Activity logging
-When you are using `IShoppingService` for shopping cart actions, these actions are logged to XByK [Online marketing activities](https://docs.kentico.com/developers-and-admins/digital-marketing-setup/set-up-activities)
+When you are using `IShoppingService` for shopping cart actions, these actions are logged to XByK [Online marketing activities](https://docs.kentico.com/x/dY3WCQ)
 for current contact:
 
 | Activity display name | Activity name | Description                                |
@@ -252,13 +253,13 @@ for current contact:
 | Purchased product | custom_purchasedproduct            | Purchased product (after order is created) |
 | Purchase | custom_purchase               | Order created                              |
 
-You need to ensure these [custom activity types](https://docs.kentico.com/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities) 
+You need to ensure these [custom activity types](https://docs.kentico.com/x/xoouCw) 
 are created (via CI restore - see [Setup section](#setup-1) or [manually](https://docs.kentico.com/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#add-custom-activity-types)).
 
 ### Email notifications
 Currently all e-commerce email notifications are sent from KX 13 application. 
-You need to have [configured email sending](https://docs.kentico.com/13/configuring-xperience/configuring-smtp-servers) and 
-[e-commerce email templates](https://docs.kentico.com/13/e-commerce-features/configuring-on-line-stores/configuring-e-commerce-email-notifications).
+You need to have [configured email sending](https://docs.kentico.com/x/IQ_RBg) and 
+[e-commerce email templates](https://docs.kentico.com/x/-wuRBg).
 
 ### Product listing widget
 - We recommend to use this widget for simple scenarios such as Landing page offers, etc.
@@ -338,15 +339,15 @@ dotnet run --kxp-ci-restore
 ```
 All content types and custom activities for e-ecommerce events are created.
 
-Except reusable content types used in product synchronization, additional page types are restored:
+Except reusable content types used in product synchronization, additional content types for pages are restored:
 
-These page types are restored for Store page, categories and product detail pages:
+These content types are restored for Store page, categories and product detail pages:
 
 - `K13Store.StorePage` - Main store page
-- `K13Store.CategoryPage` - Page type for categories linking products
-- `K13Store.ProductPage` - Page type for product detail page - only linking product SKU from content hub
+- `K13Store.CategoryPage` - Content type for category pages (with linking product pages)
+- `K13Store.ProductPage` - Content type for product detail page - only linking product SKU from content hub
 
-For checkout process these page types are restored:
+For checkout process these content types (for pages) are restored:
 - `K13Store.CartContent` - used for the shopping cart first step
 - `K13Store.CartDeliveryDetails`- used for the shopping cart second step
 - `K13Store.CartSummary` - used for the shopping cart third step
@@ -373,11 +374,11 @@ The product synchronization creates reusable content items for products, product
 It's on you how to display these product on your website. But you can use the approach from 
 [Dancing Goat example](#dancing-goat-example---setup):
 1. Create pages for products (e.g. in folder structure) in your web site channel and link them to product content items 
-(of type `K13Store.ProductSKU`). You can use `K13Store.ProductPage` page type for this.
+(of type `K13Store.ProductSKU`). You can use `K13Store.ProductPage` content type for this.
 ![Link product pages](../images/screenshots/linking_products_webchannel.png "Link product pages")
-2. Create Store page (use `K13Store.StorePage` page type) which represents entry point for your store. You can display here main categories 
+2. Create Store page (use `K13Store.StorePage` content type) which represents entry point for your store. You can display here main categories 
 and Hot tip products. Skip this step when you don't need this type of page.
-3. Create pages for categories (use `K13Store.CategoryPage` page type) and select product pages in Products in category field.
+3. Create pages for categories (use `K13Store.CategoryPage` content type) and select product pages in Products in category field.
 ![Products in category](../images/screenshots/category_products.png "Products in category")
 
 ### How to display products on your website?
@@ -395,7 +396,7 @@ on Dancing Goat example site. Products pages are retrieved for current category 
    4. Order complete page\
    Set Cart next steps / Cart previous step fields for each step page. 
    ![Cart steps](../images/screenshots/cart_steps.png "Cart steps")
-   This approach has the advantage that you can use [page builder features](https://docs.kentico.com/developers-and-admins/development/builders/page-builder) for each step.
+   This approach has the advantage that you can use [page builder features](https://docs.kentico.com/x/6QWiCQ) for each step.
 2. For shopping cart and checkout process implementation, see [CheckoutController](../examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs)
 
 Here are links for some specific parts of shopping cart:
