@@ -25,6 +25,6 @@ public class TokenRequest
     [MinLength(16)]
     public string ClientSecret { get; set; }
 
-    [FromForm(Name = "userEmail")]
+    [FromForm(Name = "user_email")]
     public string UserEmail { get; set; }
 }
