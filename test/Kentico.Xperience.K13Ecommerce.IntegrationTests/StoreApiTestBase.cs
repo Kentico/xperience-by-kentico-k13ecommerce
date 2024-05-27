@@ -35,7 +35,8 @@ public class StoreApiTestBase
         //Fill your K13 Store API client credentials
         var tokenResponse = await StoreApiClient.TokenAsync("client_credentials",
             client_id: "",
-            client_secret: "");
+            client_secret: "",
+            userEmail: string.Empty);
 
         HttpClient.DefaultRequestHeaders.Authorization =
             new AuthenticationHeaderValue("Bearer", tokenResponse.Access_token);
