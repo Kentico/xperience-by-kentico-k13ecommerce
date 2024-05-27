@@ -32,9 +32,10 @@ public class StoreApiTestBase
 
         StoreApiClient = new KenticoStoreApiClient(HttpClient);
 
+        //Fill your K13 Store API client credentials
         var tokenResponse = await StoreApiClient.TokenAsync("client_credentials",
-            client_id: "3ef7fe1b-696c-4afa-8b56-d3176b7bea95",
-            client_secret: "dgKQeq0y3E59qCcSICAl", username: "public");
+            client_id: "",
+            client_secret: "");
 
         HttpClient.DefaultRequestHeaders.Authorization =
             new AuthenticationHeaderValue("Bearer", tokenResponse.Access_token);
