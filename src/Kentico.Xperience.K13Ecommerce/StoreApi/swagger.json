@@ -34,7 +34,7 @@
                     "minLength": 16,
                     "type": "string"
                   },
-                  "username": {
+                  "userEmail": {
                     "type": "string"
                   }
                 }
@@ -49,7 +49,7 @@
                 "client_secret": {
                   "style": "form"
                 },
-                "username": {
+                "userEmail": {
                   "style": "form"
                 }
               }
@@ -75,7 +75,7 @@
                     "minLength": 16,
                     "type": "string"
                   },
-                  "username": {
+                  "userEmail": {
                     "type": "string"
                   }
                 }
@@ -90,7 +90,7 @@
                 "client_secret": {
                   "style": "form"
                 },
-                "username": {
+                "userEmail": {
                   "style": "form"
                 }
               }

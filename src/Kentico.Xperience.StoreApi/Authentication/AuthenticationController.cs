@@ -47,13 +47,14 @@ public class AuthenticationController : ControllerBase
             return Unauthorized();
         }
 
-        var user = string.IsNullOrEmpty(tokenRequest.UserName) || tokenRequest.UserName == AuthenticationHelper.GlobalPublicUser.UserName
+        var user = string.IsNullOrEmpty(tokenRequest.UserEmail)
             ? AuthenticationHelper.GlobalPublicUser
-            : await userInfoProvider.GetAsync(tokenRequest.UserName);
+            : (await userInfoProvider.Get().TopN(1)
+            .WhereEquals(nameof(UserInfo.Email), tokenRequest.UserEmail).GetEnumerableTypedResultAsync()).FirstOrDefault();
 
         if (user is null)
         {
-            return BadRequest("Invalid user name");
+            return BadRequest("Invalid user");
         }
 
         string issuer = jwtOptions.Issuer;

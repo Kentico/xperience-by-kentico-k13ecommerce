@@ -9,7 +9,6 @@ using DancingGoat.Models;
 
 using Kentico.Content.Web.Mvc.Routing;
 using Kentico.Membership;
-using Kentico.Xperience.K13Ecommerce.Users.UserSynchronization;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -28,7 +27,6 @@ namespace DancingGoat.Controllers
         private readonly IWebPageUrlRetriever webPageUrlRetriever;
         private readonly IWebsiteChannelContext websiteChannelContext;
         private readonly IPreferredLanguageRetriever currentLanguageRetriever;
-        private readonly IUserSynchronizationService userSynchronizationService;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
 
@@ -41,8 +39,7 @@ namespace DancingGoat.Controllers
             IInfoProvider<WebsiteChannelInfo> websiteChannelProvider,
             IWebPageUrlRetriever webPageUrlRetriever,
             IWebsiteChannelContext websiteChannelContext,
-            IPreferredLanguageRetriever preferredLanguageRetriever,
-            IUserSynchronizationService userSynchronizationService)
+            IPreferredLanguageRetriever preferredLanguageRetriever)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -52,7 +49,6 @@ namespace DancingGoat.Controllers
             this.webPageUrlRetriever = webPageUrlRetriever;
             this.websiteChannelContext = websiteChannelContext;
             this.currentLanguageRetriever = preferredLanguageRetriever;
-            this.userSynchronizationService = userSynchronizationService;
         }
 
 
@@ -140,14 +136,6 @@ namespace DancingGoat.Controllers
             };
 
             var registerResult = new IdentityResult();
-
-            // Checks if user already exists on K13, if yes, users aren't synced correctly and then registration is not allowed
-            // Two sync of users is not currenctly part of this PoC solution
-            if (await userSynchronizationService.UserExists(model.UserName))
-            {
-                ModelState.AddModelError(string.Empty, localizer["User with this username already exists on K13."]);
-                return View(model);
-            }
 
             try
             {
