@@ -36,7 +36,7 @@ public class StoreApiTestBase
         var tokenResponse = await StoreApiClient.TokenAsync("client_credentials",
             client_id: "",
             client_secret: "",
-            userEmail: string.Empty);
+            user_email: string.Empty);
 
         HttpClient.DefaultRequestHeaders.Authorization =
             new AuthenticationHeaderValue("Bearer", tokenResponse.Access_token);
