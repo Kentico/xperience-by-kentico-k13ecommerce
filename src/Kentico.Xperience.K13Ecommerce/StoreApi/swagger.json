@@ -27,12 +27,14 @@
                     "default": "client_credentials"
                   },
                   "client_id": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "client_secret": {
+                    "minLength": 16,
                     "type": "string"
                   },
-                  "username": {
+                  "user_email": {
                     "type": "string"
                   }
                 }
@@ -47,7 +49,7 @@
                 "client_secret": {
                   "style": "form"
                 },
-                "username": {
+                "user_email": {
                   "style": "form"
                 }
               }
@@ -66,12 +68,14 @@
                     "default": "client_credentials"
                   },
                   "client_id": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "client_secret": {
+                    "minLength": 16,
                     "type": "string"
                   },
-                  "username": {
+                  "user_email": {
                     "type": "string"
                   }
                 }
@@ -86,7 +90,7 @@
                 "client_secret": {
                   "style": "form"
                 },
-                "username": {
+                "user_email": {
                   "style": "form"
                 }
               }
@@ -1959,6 +1963,37 @@
           }
         }
       }
+    },
+    "/api/store/synchronization/user-exists": {
+      "get": {
+        "tags": [
+          "UserSynchronization"
+        ],
+        "summary": "Checks if user exists.",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "User name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3117,10 +3152,20 @@
         "description": "Dto for CMS.Ecommerce.SummaryItem."
       },
       "KUserSynchronization": {
+        "required": [
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "userName": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 254,
             "type": "string",
+            "format": "email",
             "nullable": true
           }
         },

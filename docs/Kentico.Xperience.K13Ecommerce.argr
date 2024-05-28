@@ -1,0 +1,21 @@
+<ArchitectureGraph>
+  <Module Identifier="C30A7837-2BD6-4B0E-996D-2A2B9167173F" Name="Kentico.Xperience.K13Ecommerce" />
+  <Module Identifier="96B93007-AB51-4A1C-A36D-1C014AD1F608" Name="Kentico.Xperience.Ecommerce.Common" />
+  <Module Identifier="28755E8F-BB89-4196-AC65-2C5A823EF522" Name="Kentico.Xperience.StoreApi" />
+  <Module Identifier="E0981D21-9E8F-4A5B-9A98-A84D14EFA250" Name="Kentico.Xperience.Store.Rcl" />
+  <Module Identifier="4222D570-F1A2-4410-8441-7761011BC52A" Name="Kentico.Xperience.K13Ecommerce.IntegrationTests" />
+  <Module Identifier="2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7" Name="DancingGoat" />
+  <Module Identifier="219565E2-67AC-4858-A3D1-5C9A27BED0A0" Name="Kentico13_DancingGoat" />
+  <Module Identifier="622B0A21-4664-42CB-A7B7-31553B56F249" Name="Kentico.Xperience.K13Ecommerce.UnitTests" />
+  <Reference Identifier="C30A7837-2BD6-4B0E-996D-2A2B9167173F/r:Kentico.Xperience.Ecommerce.Common" SourceId="C30A7837-2BD6-4B0E-996D-2A2B9167173F" Name="Kentico.Xperience.Ecommerce.Common" TargetId="96B93007-AB51-4A1C-A36D-1C014AD1F608" />
+  <Reference Identifier="E0981D21-9E8F-4A5B-9A98-A84D14EFA250/r:Kentico.Xperience.K13Ecommerce" SourceId="E0981D21-9E8F-4A5B-9A98-A84D14EFA250" Name="Kentico.Xperience.K13Ecommerce" TargetId="C30A7837-2BD6-4B0E-996D-2A2B9167173F" />
+  <Reference Identifier="E0981D21-9E8F-4A5B-9A98-A84D14EFA250/r:Kentico.Xperience.Ecommerce.Common" SourceId="E0981D21-9E8F-4A5B-9A98-A84D14EFA250" Name="Kentico.Xperience.Ecommerce.Common" TargetId="96B93007-AB51-4A1C-A36D-1C014AD1F608" />
+  <Reference Identifier="4222D570-F1A2-4410-8441-7761011BC52A/r:Kentico.Xperience.K13Ecommerce" SourceId="4222D570-F1A2-4410-8441-7761011BC52A" Name="Kentico.Xperience.K13Ecommerce" TargetId="C30A7837-2BD6-4B0E-996D-2A2B9167173F" />
+  <Reference Identifier="4222D570-F1A2-4410-8441-7761011BC52A/r:Kentico.Xperience.Ecommerce.Common" SourceId="4222D570-F1A2-4410-8441-7761011BC52A" Name="Kentico.Xperience.Ecommerce.Common" TargetId="96B93007-AB51-4A1C-A36D-1C014AD1F608" />
+  <Reference Identifier="2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7/r:Kentico.Xperience.Store.Rcl" SourceId="2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7" Name="Kentico.Xperience.Store.Rcl" TargetId="E0981D21-9E8F-4A5B-9A98-A84D14EFA250" />
+  <Reference Identifier="2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7/r:Kentico.Xperience.Ecommerce.Common" SourceId="2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7" Name="Kentico.Xperience.Ecommerce.Common" TargetId="96B93007-AB51-4A1C-A36D-1C014AD1F608" />
+  <Reference Identifier="2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7/r:Kentico.Xperience.K13Ecommerce" SourceId="2FD89E1B-DD9F-48C3-88C2-DD4C3C1340E7" Name="Kentico.Xperience.K13Ecommerce" TargetId="C30A7837-2BD6-4B0E-996D-2A2B9167173F" />
+  <Reference Identifier="219565E2-67AC-4858-A3D1-5C9A27BED0A0/r:Kentico.Xperience.StoreApi" SourceId="219565E2-67AC-4858-A3D1-5C9A27BED0A0" Name="Kentico.Xperience.StoreApi" TargetId="28755E8F-BB89-4196-AC65-2C5A823EF522" />
+  <Reference Identifier="622B0A21-4664-42CB-A7B7-31553B56F249/r:Kentico.Xperience.K13Ecommerce" SourceId="622B0A21-4664-42CB-A7B7-31553B56F249" Name="Kentico.Xperience.K13Ecommerce" TargetId="C30A7837-2BD6-4B0E-996D-2A2B9167173F" />
+  <Reference Identifier="622B0A21-4664-42CB-A7B7-31553B56F249/r:Kentico.Xperience.Ecommerce.Common" SourceId="622B0A21-4664-42CB-A7B7-31553B56F249" Name="Kentico.Xperience.Ecommerce.Common" TargetId="96B93007-AB51-4A1C-A36D-1C014AD1F608" />
+</ArchitectureGraph>

@@ -17,12 +17,14 @@ public class TokenRequest
 
     [Required]
     [FromForm(Name = "client_id")]
+    [MinLength(16)]
     public string ClientId { get; set; }
 
     [Required]
     [FromForm(Name = "client_secret")]
+    [MinLength(16)]
     public string ClientSecret { get; set; }
 
-    [FromForm(Name = "username")]
-    public string UserName { get; set; }
+    [FromForm(Name = "user_email")]
+    public string UserEmail { get; set; }
 }
