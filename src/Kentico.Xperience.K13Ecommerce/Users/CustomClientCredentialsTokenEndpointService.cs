@@ -36,7 +36,7 @@ internal class CustomClientCredentialsTokenEndpointService : ClientCredentialsTo
             .WhereEquals(nameof(MemberInfo.MemberName), userName)
             .GetEnumerableTypedResultAsync()).FirstOrDefault()?.MemberEmail ?? string.Empty : string.Empty;
 
-        parameters.Parameters.Add("userEmail", userEmail);
+        parameters.Parameters.Add("user_email", userEmail);
         return await base.RequestToken(clientName, parameters, cancellationToken);
     }
 }
