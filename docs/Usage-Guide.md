@@ -223,6 +223,8 @@ and to browser cookie (uses `IShoppingCartClientStorage`)
   - Use for retrieving site's [list of enabled currencies](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L18), e.g. for implementation of currency selector
 - `ICountryService`
   - [Countries and states](../src/Kentico.Xperience.K13Ecommerce/Countries/ICountryService.cs) - these objects are already on XByK, there is no Store API call
+    > **_NOTE:_** Countries and states are not synchronized between KX 13 and XbyK. As a result, any modifications or 
+    additions to countries and states in KX 13 are currently not supported.
 
 ### Products synchronization
 

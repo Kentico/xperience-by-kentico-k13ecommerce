@@ -121,7 +121,7 @@ dotnet add package Kentico.Xperience.StoreApi
 
 **First set up your Kentico 13 ASP.NET Core application**:
 
-1. Set up your own [settings](.\examples\Kentico13_DancingGoatStore\appsettings.json) for Store REST API authentication (based on JWT and OAuth client credentials flow)
+1. Set up your own [settings](./examples/Kentico13_DancingGoatStore/appsettings.json) for Store REST API authentication (based on JWT and OAuth client credentials flow)
 ```json
 {
   "CMSStoreApi": {
@@ -161,7 +161,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
 
 **Then set up your Xperience By Kentico application**
 
-1. Fill [settings](.\examples\DancingGoat-K13Ecommerce\appsettings.json) to connect your Kentico Xperience 13 instance
+1. Fill [settings](./examples/DancingGoat-K13Ecommerce/appsettings.json) to connect your Kentico Xperience 13 instance
 ```json
 {
   "CMSKenticoStoreConfig": {
