@@ -8,9 +8,14 @@ namespace Kentico.Xperience.K13Ecommerce.Customers;
 public interface ICustomerService
 {
     /// <summary>
-    /// Get list of addresses for given customer.
+    /// Get list of addresses for current customer.
+    /// </summary>    
+    Task<ICollection<KAddress>> GetCurrentCustomerAddresses();
+
+
+    /// <summary>
+    /// Get list of addresses for customer with specified ID to display in XByK administration.
     /// </summary>
-    /// <param name="customerId">Customer ID.</param>
-    /// <returns></returns>
-    Task<ICollection<KAddress>> GetCustomerAddresses(int customerId);
+    /// <param name="customerId">Customer ID.</param>    
+    Task<ICollection<KAddress>> GetAdminCustomerAddresses(int customerId);
 }

@@ -96,7 +96,7 @@ e-commerce solution allows visitors to log in. KX 13 users are created with rand
 API authorization and assigning to MembershipContext.
 
 > **_NOTE:_** Please implement double opt-in mechanism for user registration to ensure users's are paired safely between
-> XbyK and KX 13. In current Dancing Goat example, we dont't have double opt-in mechanism implemented, but we recommend  it as best practice.
+> XbyK and KX 13. In current Dancing Goat example, we dont't have double opt-in mechanism implemented, but we recommend it as best practice.
 
 #### Current known limitations
 Roles synchronization isn't currently supported. We assume website members to be already synchronized between client (XbyK) and KX app before starting using this API.
