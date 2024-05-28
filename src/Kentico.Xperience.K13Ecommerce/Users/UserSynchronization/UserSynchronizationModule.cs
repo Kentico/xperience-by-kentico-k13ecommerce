@@ -29,13 +29,11 @@ internal class UserSynchronizationModule() : Module(nameof(UserSynchronizationMo
         try
         {
             var user = (MemberInfo)e.Object;
-            if (user != null)
-            {
-                using var serviceScope = Service.Resolve<IServiceProvider>().CreateScope();
-                var provider = serviceScope.ServiceProvider;
-                var userSynchronizationService = provider.GetRequiredService<IUserSynchronizationService>();
-                userSynchronizationService.SynchronizeUser(user).GetAwaiter().GetResult();
-            }
+
+            using var serviceScope = Service.Resolve<IServiceProvider>().CreateScope();
+            var provider = serviceScope.ServiceProvider;
+            var userSynchronizationService = provider.GetRequiredService<IUserSynchronizationService>();
+            userSynchronizationService.SynchronizeUser(user).GetAwaiter().GetResult();
         }
         catch (Exception ex)
         {
