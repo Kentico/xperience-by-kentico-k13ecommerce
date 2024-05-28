@@ -74,7 +74,7 @@ REST Store API on your own KX 13 e-commerce solution.
 
 ## Library Version Matrix
 
-Summary of libraries which are supported by the following versions Xperince by Kentico / Kentico Xperience 13
+Summary of libraries which are supported by the following versions Xperience by Kentico / Kentico Xperience 13
 
 ### Kentico Xperience 13 E-Commerce integration
 
