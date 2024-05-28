@@ -27,13 +27,13 @@ already generated there.
 
 API is intended to use with [OAuth 2.0 client credentials flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4), when ClientId and ClientSecret are shared between
 client application (XByK) and KX 13 application. Access tokens are generated in [JWT standard](https://jwt.io/introduction) (from endpoint `/api/store/auth/token`).
-Token request can contain `username` parameter to identify for which user token is generated.
-The endpoint validates that the username exists, and then embeds it into the token as `sub` and `name` claims. All subsequent 
+Token request can contain `user_email` parameter to identify for which user token is generated.
+The endpoint validates that the user for given email exists, and then embeds it into the token as `sub` and `name` claims. All subsequent 
 requests need to be [sent with Bearer token](https://www.dofactory.com/code-examples/csharp/authorization-header) in [Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) header.
 
 All API controllers are secured by custom authorization attribute and filter `AuthorizeStore`. This filter checks
 user claim and when this user exists and is enabled, is then assigned to `MembershipContext.AuthenticatedUser`. When
-specific user name isn't provided, AuthenticatedUser remains as public user.
+specific user email isn't provided, AuthenticatedUser remains as public user.
 
 ### Products
 
@@ -95,8 +95,8 @@ Complete synchronization is not part of this PoC solution.
 e-commerce solution allows visitors to log in. KX 13 users are created with random generated password and are used only for
 API authorization and assigning to MembershipContext.
 
-> **_NOTE:_** Please implement double opt-in mechanism for user registration to ensure users's are paired safely between
-> XbyK and KX 13. In current Dancing Goat example, we dont't have double opt-in mechanism implemented, but we recommend  it as best practice.
+> **_NOTE:_** Please implement double opt-in mechanism for user registration to ensure the users are paired safely between
+> XbyK and KX 13. In current Dancing Goat example, we don't have double opt-in mechanism implemented, but we recommend  it as best practice.
 
 #### Current known limitations
 Roles synchronization isn't currently supported. We assume website members to be already synchronized between client (XbyK) and KX app before starting using this API.
