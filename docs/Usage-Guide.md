@@ -84,19 +84,19 @@ via API.
 - Endpoint `api/store/site/cultures` returns all enabled site cultures
 - Endpoint `api/store/site/currencies` returns all enabled site currencies
 
-### User synchronization
-When user is created on XbyK, this user needs to be synchronized to KX 13, then user can be used for API authorization.
-(user identity is generated in JWT).
+### Members synchronization
+When [member](https://docs.kentico.com/x/BIsuCw) is created on XbyK, this member needs to be synchronized to KX 13 as user.
+It is subsequently used for API authorization (member/user identity is generated in JWT).
 Before you start using the Store API, you need to synchronize all website members between the client (XbyK) and your KX 13 application.
 Complete synchronization is not part of this PoC solution.
 
-- Endpoint `api/store/synchronization/user-synchronization` creates new user
+- Endpoint `api/store/synchronization/user-synchronization` creates new user in KX 13
   - Client app (XbyK) should use this to be ensured that all new members on client's are synchronized to KX 13, this is necessary when client's
 e-commerce solution allows visitors to log in. KX 13 users are created with random generated password and are used only for
 API authorization and assigning to MembershipContext.
 
 #### Current known limitations
-User's roles synchronization isn't currently supported. We assume users to be already synchronized between client (XbyK) and KX app before starting using this API.
+Roles synchronization isn't currently supported. We assume website members to be already synchronized between client (XbyK) and KX app before starting using this API.
 
 ### Setup
 

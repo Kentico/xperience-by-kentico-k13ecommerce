@@ -67,7 +67,7 @@ create simple e-shop with product listing, product detail and checkout process o
 REST Store API on your own KX 13 e-commerce solution.
 - **KX 13 administration project (CMSApp) is not part of this solution!**
 
-![Project diagram](./images/project_diagram.png "Project diagram")
+![Project diagram](./images/kentico_ecommerce_diagram.svg "Project diagram")
 
 #### Kentico.Xperience.K13Ecommerce.Libs.sln
   - Contains only libraries without sample sites, used for publishing of NuGet packages
