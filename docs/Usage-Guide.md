@@ -27,13 +27,13 @@ already generated there.
 
 API is intended to use with [OAuth 2.0 client credentials flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4), when ClientId and ClientSecret are shared between
 client application (XByK) and KX 13 application. Access tokens are generated in [JWT standard](https://jwt.io/introduction) (from endpoint `/api/store/auth/token`).
-Token request can contain `username` parameter to identify for which user token is generated.
-The endpoint validates that the username exists, and then embeds it into the token as `sub` and `name` claims. All subsequent 
+Token request can contain `user_email` parameter to identify for which user token is generated.
+The endpoint validates that the user for given email exists, and then embeds it into the token as `sub` and `name` claims. All subsequent 
 requests need to be [sent with Bearer token](https://www.dofactory.com/code-examples/csharp/authorization-header) in [Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) header.
 
 All API controllers are secured by custom authorization attribute and filter `AuthorizeStore`. This filter checks
 user claim and when this user exists and is enabled, is then assigned to `MembershipContext.AuthenticatedUser`. When
-specific user name isn't provided, AuthenticatedUser remains as public user.
+specific user email isn't provided, AuthenticatedUser remains as public user.
 
 ### Products
 
@@ -87,18 +87,18 @@ via API.
 - Endpoint `api/store/site/currencies` returns all enabled site currencies
 
 ### Members synchronization
-When [member](https://docs.kentico.com/x/BIsuCw) is created on XbyK, this member needs to be synchronized to KX 13 as user.
+When [member](https://docs.kentico.com/x/BIsuCw) is created on XbyK (for example when a new customer registers), this member needs to be synchronized to KX 13 as a user.
 It is subsequently used for API authorization (member/user identity is generated in JWT).
 Before you start using the Store API, you need to synchronize all website members between the client (XbyK) and your KX 13 application.
 Complete synchronization is not part of this PoC solution.
 
-- Endpoint `api/store/synchronization/user-synchronization` creates new user in KX 13
-  - Client app (XbyK) should use this to be ensured that all new members on client's are synchronized to KX 13, this is necessary when client's
-e-commerce solution allows visitors to log in. KX 13 users are created with random generated password and are used only for
+- Endpoint `api/store/synchronization/user-synchronization` can be used to create a new user in KX 13
+  - The client application (XbyK) should use this to ensure that all new members are synchronized to KX 13. This is necessary when client's
+e-commerce solution allows visitors to sign in. KX 13 users are created with random generated password and are used only for
 API authorization and assigning to MembershipContext.
 
-> **_NOTE:_** Please implement double opt-in mechanism for user registration to ensure users's are paired safely between
-> XbyK and KX 13. In current Dancing Goat example, we dont't have double opt-in mechanism implemented, but we recommend it as best practice.
+> **_NOTE:_** Please implement double opt-in mechanism for user registration to ensure the users are paired safely between
+> XbyK and KX 13. The current Dancing Goat example does not have a double opt-in mechanism implemented, but we recommend it as a best practice.
 
 #### Current known limitations
 Roles synchronization isn't currently supported. We assume website members to be already synchronized between client (XbyK) and KX app before starting using this API.
@@ -225,6 +225,8 @@ and to browser cookie (uses `IShoppingCartClientStorage`)
   - Use for retrieving site's [list of enabled currencies](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L18), e.g. for implementation of currency selector
 - `ICountryService`
   - [Countries and states](../src/Kentico.Xperience.K13Ecommerce/Countries/ICountryService.cs) - these objects are already on XByK, there is no Store API call
+    > **_NOTE:_** Countries and states are not synchronized between KX 13 and XbyK. As a result, any modifications or 
+    additions to countries and states in KX 13 are currently not supported.
 
 ### Products synchronization
 
