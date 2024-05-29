@@ -75,10 +75,12 @@ Not all cart's data can be changed, e.g. custom data (properties like ShoppingCa
 via API.
 
 ### Orders
-- Endpoint `api/store/order/list` for retrieving list of orders based on request (supports paging)
+- Endpoint `api/store/order/list` for retrieving list of orders for current customer based on request (supports paging)
+- Endpoint `api/store/order/admin/list` for retrieving list of orders (for all customers) based on request (supports paging) to display in XbyK administration (supports paging)
 
 ### Customers
-- Endpoint `api/store/customer/addresses` for retrieving customer's addresses
+- Endpoint `api/store/customer/addresses` for retrieving current customer's addresses
+- Endpoint `api/store/customer/admin/addresses` for retrieving addresses of specific customer to display in XbyK administration
 
 ### Store site
 - Endpoint `api/store/site/cultures` returns all enabled site cultures

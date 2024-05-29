@@ -28,6 +28,6 @@ public class TestController(IKenticoStoreApiClient storeApiClient, IShoppingServ
     }
 
     public async Task<JsonResult> TestOrders([FromServices] IOrderService orderService)
-        => Json(await orderService.GetOrderList(new OrderListRequest { Page = 1, PageSize = 10, OrderBy = "OrderID DESC" }));
+        => Json(await orderService.GetCurrentCustomerOrderList(new OrderListRequest { Page = 1, PageSize = 10, OrderBy = "OrderID DESC" }));
 }
 #endif

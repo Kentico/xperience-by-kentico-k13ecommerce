@@ -136,13 +136,47 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Endpoint for customer addresses.",
-        "operationId": "CustomerAddresses",
+        "summary": "Endpoint for current customer addresses.",
+        "operationId": "CurrentCustomerAddresses",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KAddress"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/customer/admin/addresses": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Endpoint for given customer addresses to display in XbyK administration.",
+        "operationId": "AdminCustomerAddresses",
         "parameters": [
           {
             "name": "customerId",
             "in": "query",
-            "description": "",
+            "description": "Customer ID",
             "required": true,
             "schema": {
               "type": "integer",
@@ -182,8 +216,66 @@
         "tags": [
           "Order"
         ],
-        "summary": "Endpoint for getting list of orders based on request.",
-        "operationId": "OrderList",
+        "summary": "Endpoint for getting list of current customer's orders based on request.",
+        "operationId": "CurrentCustomerOrderList",
+        "parameters": [
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/order/admin/list": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Endpoint for getting list of orders based on request to display in XbyK administration.",
+        "operationId": "AdminOrderList",
         "parameters": [
           {
             "name": "Page",
