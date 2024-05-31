@@ -65,7 +65,7 @@ public class CheckoutService : ICheckoutService
         customer ??= new CustomerViewModel(await shoppingService.GetCustomerOrCreateFromAuthenticatedUser(cartDetails.Customer));
 
         var addresses = (cartDetails.Customer != null)
-            ? await customerService.GetCustomerAddresses(cartDetails.Customer.CustomerId)
+            ? await customerService.GetCurrentCustomerAddresses()
             : Enumerable.Empty<KAddress>();
 
         var billingAddresses = new SelectList(addresses, nameof(KAddress.AddressId), nameof(KAddress.AddressName));
@@ -114,7 +114,7 @@ public class CheckoutService : ICheckoutService
 
     public async Task<KAddress> GetAddress(int customerId, int addressId) =>
         customerId > 0 && addressId > 0
-            ? (await customerService.GetCustomerAddresses(customerId)).FirstOrDefault(a => a.AddressId == addressId)
+            ? (await customerService.GetCurrentCustomerAddresses()).FirstOrDefault(a => a.AddressId == addressId)
             : null;
 
 

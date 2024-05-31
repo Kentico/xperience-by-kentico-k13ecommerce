@@ -27,12 +27,14 @@
                     "default": "client_credentials"
                   },
                   "client_id": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "client_secret": {
+                    "minLength": 16,
                     "type": "string"
                   },
-                  "username": {
+                  "user_email": {
                     "type": "string"
                   }
                 }
@@ -47,7 +49,7 @@
                 "client_secret": {
                   "style": "form"
                 },
-                "username": {
+                "user_email": {
                   "style": "form"
                 }
               }
@@ -66,12 +68,14 @@
                     "default": "client_credentials"
                   },
                   "client_id": {
+                    "minLength": 16,
                     "type": "string"
                   },
                   "client_secret": {
+                    "minLength": 16,
                     "type": "string"
                   },
-                  "username": {
+                  "user_email": {
                     "type": "string"
                   }
                 }
@@ -86,7 +90,7 @@
                 "client_secret": {
                   "style": "form"
                 },
-                "username": {
+                "user_email": {
                   "style": "form"
                 }
               }
@@ -132,13 +136,47 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Endpoint for customer addresses.",
-        "operationId": "CustomerAddresses",
+        "summary": "Endpoint for current customer addresses.",
+        "operationId": "CurrentCustomerAddresses",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KAddress"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/customer/admin/addresses": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Endpoint for given customer addresses to display in XbyK administration.",
+        "operationId": "AdminCustomerAddresses",
         "parameters": [
           {
             "name": "customerId",
             "in": "query",
-            "description": "",
+            "description": "Customer ID",
             "required": true,
             "schema": {
               "type": "integer",
@@ -178,8 +216,74 @@
         "tags": [
           "Order"
         ],
-        "summary": "Endpoint for getting list of orders based on request.",
-        "operationId": "OrderList",
+        "summary": "Endpoint for getting list of current customer's orders based on request.",
+        "operationId": "CurrentCustomerOrderList",
+        "parameters": [
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CustomerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/order/admin/list": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Endpoint for getting list of orders based on request to display in XbyK administration.",
+        "operationId": "AdminOrderList",
         "parameters": [
           {
             "name": "Page",
@@ -321,7 +425,7 @@
         "tags": [
           "Order"
         ],
-        "summary": "Updates order. Updates all fields on order level and addresses on sub-level. Customer data cannot be updated.",
+        "summary": "Updates order. Updates all fields on order level and addresses on sub-level. Customer data and order items cannot be updated.",
         "operationId": "UpdateOrder",
         "requestBody": {
           "description": "Order dto",
@@ -2088,6 +2192,37 @@
           }
         }
       }
+    },
+    "/api/store/synchronization/user-exists": {
+      "get": {
+        "tags": [
+          "UserSynchronization"
+        ],
+        "summary": "Checks if user exists.",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "User name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3255,10 +3390,20 @@
         "description": "Dto for CMS.Ecommerce.SummaryItem."
       },
       "KUserSynchronization": {
+        "required": [
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "userName": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 254,
             "type": "string",
+            "format": "email",
             "nullable": true
           }
         },
