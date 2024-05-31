@@ -2664,6 +2664,9 @@
               "$ref": "#/components/schemas/KOrderItem"
             },
             "nullable": true
+          },
+          "orderPaymentResult": {
+            "$ref": "#/components/schemas/KPaymentResult"
           }
         },
         "additionalProperties": false,
@@ -2776,6 +2779,57 @@
         },
         "additionalProperties": false,
         "description": "Dto for CMS.Ecommerce.PaymentOptionInfo."
+      },
+      "KPaymentResult": {
+        "type": "object",
+        "properties": {
+          "paymentDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentIsCompleted": {
+            "type": "boolean"
+          },
+          "paymentIsFailed": {
+            "type": "boolean"
+          },
+          "paymentIsAuthorized": {
+            "type": "boolean"
+          },
+          "paymentDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentTransactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentAuthorizationID": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodName": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentStatusValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatusName": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentApprovalUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "KProductCatalogPrices": {
         "type": "object",

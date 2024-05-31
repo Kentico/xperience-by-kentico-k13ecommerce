@@ -70,4 +70,6 @@ public class KOrder
     public KAddress OrderCompanyAddress { get; set; }
 
     public IEnumerable<KOrderItem> OrderItems { get; set; }
+
+    public KPaymentResult OrderPaymentResult { get; set; }
 }

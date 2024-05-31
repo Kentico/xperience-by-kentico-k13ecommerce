@@ -55,6 +55,13 @@ public class TestController(IKenticoStoreApiClient storeApiClient, IShoppingServ
 
         order.OrderShippingOption = new KShippingOption { ShippingOptionId = 2 };
         order.OrderPaymentOption = new KPaymentOption { PaymentOptionId = 1 };
+        
+        order.OrderPaymentResult = new KPaymentResult
+        {
+            PaymentIsCompleted = true,
+            PaymentMethodName = "Test",
+            PaymentStatusName = "Test status"
+        };
 
         await orderService.UpdateOrder(order);
 

@@ -83,6 +83,7 @@ public class StoreApiMappingProfile : Profile
         CreateMap<OrderStatusInfo, KOrderStatus>();
         CreateMap<ContainerCustomData, Dictionary<string, object>>().ConvertUsing<ContainerCustomDataToDictionaryConverter>();
         CreateMap<SummaryItem, KSummaryItem>();
+        CreateMap<PaymentResultInfo, KPaymentResult>().ReverseMap();
 
         CreateMap<ShoppingCartItemValidationError, KShoppingCartItemValidationError>()
             .AfterMap((source, dest, ctx) =>
