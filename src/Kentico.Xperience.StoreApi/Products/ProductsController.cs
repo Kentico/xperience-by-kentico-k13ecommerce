@@ -8,6 +8,7 @@ using Kentico.Xperience.StoreApi.Currencies;
 using Kentico.Xperience.StoreApi.Products.Categories;
 using Kentico.Xperience.StoreApi.Products.Pages;
 using Kentico.Xperience.StoreApi.Products.Prices;
+using Kentico.Xperience.StoreApi.Products.SKU;
 using Kentico.Xperience.StoreApi.Routing;
 
 using Microsoft.AspNetCore.Http;
@@ -145,5 +146,25 @@ public class ProductsController : ControllerBase
             ModelState.AddModelError(string.Empty, e.Message);
             return ValidationProblem();
         }
+    }
+
+
+    /// <summary>
+    /// Returns all standalone products.
+    /// </summary>
+    /// <param name="request">Product request parameters.</param>
+    /// <returns></returns>
+    [HttpGet("standalone-products", Name = nameof(GetStandaloneProducts))]
+    [AuthorizeStore]
+    public async Task<ActionResult<IEnumerable<KProductSKU>>> GetStandaloneProducts([FromQuery] ProductRequest request)
+    {
+        if (request.Culture is not null &&
+            !CultureSiteInfoProvider.IsCultureOnSite(request.Culture, SiteContext.CurrentSiteName))
+        {
+            return BadRequest($"Culture '{request.Culture}' is not assigned for site");
+        }
+
+        var products = await productService.GetStandaloneProducts(request);
+        return Ok(products);
     }
 }

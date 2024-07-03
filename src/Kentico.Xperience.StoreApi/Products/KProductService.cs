@@ -10,6 +10,7 @@ using Kentico.Content.Web.Mvc;
 using Kentico.Xperience.StoreApi.Products.Categories;
 using Kentico.Xperience.StoreApi.Products.Pages;
 using Kentico.Xperience.StoreApi.Products.Prices;
+using Kentico.Xperience.StoreApi.Products.SKU;
 
 namespace Kentico.Xperience.StoreApi.Products;
 
@@ -18,6 +19,7 @@ internal class KProductService : IKProductService
 {
     private readonly IPageRetriever pageRetriever;
     private readonly IProductPageConverter<KProductNode> productPageConverter;
+    private readonly IProductSKUConverter<KProductSKU> productSKUConverter;
     private readonly ISKUInfoProvider skuInfoProvider;
     private readonly ICatalogPriceCalculatorFactory catalogPriceCalculatorFactory;
     private readonly ISiteService siteService;
@@ -25,12 +27,14 @@ internal class KProductService : IKProductService
     private readonly IShoppingService shoppingService;
 
 
-    public KProductService(IPageRetriever pageRetriever, IProductPageConverter<KProductNode> productPageConverter,
+    public KProductService(
+        IPageRetriever pageRetriever, IProductPageConverter<KProductNode> productPageConverter, IProductSKUConverter<KProductSKU> productSKUConverter,
         ISKUInfoProvider skuInfoProvider, ICatalogPriceCalculatorFactory catalogPriceCalculatorFactory,
         ISiteService siteService, IMapper mapper, IShoppingService shoppingService)
     {
         this.pageRetriever = pageRetriever;
         this.productPageConverter = productPageConverter;
+        this.productSKUConverter = productSKUConverter;
         this.skuInfoProvider = skuInfoProvider;
         this.catalogPriceCalculatorFactory = catalogPriceCalculatorFactory;
         this.siteService = siteService;
@@ -48,10 +52,7 @@ internal class KProductService : IKProductService
             orderBy = "DocumentSKUName ASC";
         }
 
-        var productTypes = (await DataClassInfoProvider.ProviderObject.Get()
-                .WhereTrue(nameof(DataClassInfo.ClassIsProduct))
-                .Columns(nameof(DataClassInfo.ClassName), nameof(DataClassInfo.ClassFormDefinition))
-                .GetEnumerableTypedResultAsync())
+        var productTypes = (await GetProductDataClasses())
             .Select(p => new
             {
                 p.ClassName,
@@ -161,6 +162,38 @@ internal class KProductService : IKProductService
     }
 
 
+    /// <inheritdoc/>
+    public async Task<IEnumerable<KProductSKU>> GetStandaloneProducts(ProductRequest request)
+    {
+        var (culture, currencyCode, orderBy, limit, withVariants) = request;
+
+        string[] productTypes = (await GetProductDataClasses())
+            .Select(p => p.ClassName)
+            .ToArray();
+
+        var skuInfos = skuInfoProvider.Get()
+            .TopN(limit)
+            .OrderBy(orderBy);
+
+        if (productTypes.Length > 0)
+        {
+            var query = new MultiDocumentQuery()
+                .Types(productTypes)
+                .Column(nameof(SKUTreeNode.NodeSKUID));
+
+            if (!string.IsNullOrEmpty(culture))
+            {
+                query = query.Culture(culture);
+            }
+
+            skuInfos = skuInfos.WhereNotIn(nameof(SKUInfo.SKUID), query);
+        }
+
+        return (await skuInfos.GetEnumerableTypedResultAsync())
+            .Select(x => productSKUConverter.Convert(x, currencyCode, withVariants));
+    }
+
+
     private ProductPricesResponse GetProductPrices(SKUInfo sku, string currencyCode)
     {
         var calculator = catalogPriceCalculatorFactory.GetCalculator(siteService.CurrentSite.SiteID);
@@ -185,4 +218,11 @@ internal class KProductService : IKProductService
 
         return response;
     }
+
+
+    private async Task<IEnumerable<DataClassInfo>> GetProductDataClasses()
+        => await DataClassInfoProvider.ProviderObject.Get()
+                .WhereTrue(nameof(DataClassInfo.ClassIsProduct))
+                .Columns(nameof(DataClassInfo.ClassName), nameof(DataClassInfo.ClassFormDefinition))
+                .GetEnumerableTypedResultAsync();
 }
