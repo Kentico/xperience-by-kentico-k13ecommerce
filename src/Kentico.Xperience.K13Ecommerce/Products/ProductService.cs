@@ -6,8 +6,8 @@ internal class ProductService(IKenticoStoreApiClient storeApiClient) : IProductS
 {
     /// <inheritdoc/>
     public async Task<ICollection<KProductNode>> GetProductPages(ProductPageRequest request)
-        => await storeApiClient.GetProductPagesAsync(request.Path, request.Culture, request.Currency, request.OrderBy,
-            request.Limit, request.WithVariants, request.WithLongDescription, request.NoLinks);
+        => await storeApiClient.GetProductPagesAsync(request.Path, request.WithLongDescription, request.NoLinks, request.Culture,
+            request.Currency, request.OrderBy, request.Limit, request.WithVariants);
 
 
     /// <inheritdoc/>
@@ -24,4 +24,8 @@ internal class ProductService(IKenticoStoreApiClient storeApiClient) : IProductS
     /// <inheritdoc/>
     public async Task<ProductInventoryPriceInfo> GetVariantInventoryPriceInfo(int skuId, string? currencyCode = null)
         => await storeApiClient.GetInventoryPricesAsync(skuId, currencyCode);
+
+    /// <inheritdoc/>
+    public async Task<ICollection<KProductSKU>> GetStandaloneProducts(ProductRequest request) =>
+        await storeApiClient.GetStandaloneProductsAsync(request.Culture, request.Currency, request.OrderBy, request.Limit, request.WithVariants);
 }
