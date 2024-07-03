@@ -172,6 +172,8 @@ internal class KProductService : IKProductService
             .ToArray();
 
         var skuInfos = skuInfoProvider.Get()
+            .WhereEqualsOrNull(nameof(SKUInfo.SKUOptionCategoryID), 0)
+            .WhereEqualsOrNull(nameof(SKUInfo.SKUParentSKUID), 0)
             .TopN(limit)
             .OrderBy(orderBy);
 

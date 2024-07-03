@@ -43,11 +43,18 @@ internal class ProductSynchronizationService(
                 NoLinks = true
             });
 
+        var kenticoStandaloneProducts = (await productService.GetStandaloneProducts(new ProductRequest
+        {
+            Culture = defaultCultureCode,
+            Limit = 1000,
+            WithVariants = true
+        })).Select(p => new KProductNode(p));
+
         var contentItemProducts =
             await contentItemService.GetContentItems<ProductSKU>(ProductSKU.CONTENT_TYPE_NAME, linkedItemsLevel: 2);
 
         var (toCreate, toUpdate, toDelete) =
-            ClassifyItems<KProductNode, ProductSKU, int>(kenticoStoreProducts, contentItemProducts);
+            ClassifyItems<KProductNode, ProductSKU, int>(kenticoStoreProducts.Concat(kenticoStandaloneProducts), contentItemProducts);
 
         int adminUserId = UserInfoProvider.AdministratorUser.UserID;
         foreach (var productToCreate in toCreate)
