@@ -368,9 +368,25 @@
             }
           },
           {
+            "name": "WithLongDescription",
+            "in": "query",
+            "description": "If true, DocumentSKUDescription is filled too (default false).",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "NoLinks",
+            "in": "query",
+            "description": "If true, only not-linked product pages are returned (default false).",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "Culture",
             "in": "query",
-            "description": "Document culture.",
+            "description": "To determine if product has its page, culture needs to be provided\r\nso documents in the specific culture will be checked.",
             "schema": {
               "pattern": "[a-zA-Z]{2}-[a-zA-Z]{2}",
               "type": "string"
@@ -408,22 +424,6 @@
             "name": "WithVariants",
             "in": "query",
             "description": "If true variants are loaded too for products with variants (default false).",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "WithLongDescription",
-            "in": "query",
-            "description": "If true, DocumentSKUDescription is filled too (default false).",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "NoLinks",
-            "in": "query",
-            "description": "If true, only not-linked product pages are returned (default false).",
             "schema": {
               "type": "boolean"
             }
@@ -642,6 +642,87 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProductInventoryPriceInfo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/products/standalone-products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns all standalone products.",
+        "operationId": "GetStandaloneProducts",
+        "parameters": [
+          {
+            "name": "Culture",
+            "in": "query",
+            "description": "To determine if product has its page, culture needs to be provided\r\nso documents in the specific culture will be checked.",
+            "schema": {
+              "pattern": "[a-zA-Z]{2}-[a-zA-Z]{2}",
+              "type": "string"
+            }
+          },
+          {
+            "name": "Currency",
+            "in": "query",
+            "description": "Product currency.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "description": "Order by SQL expression.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "description": "Limit how many products to return.",
+            "schema": {
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 12
+            }
+          },
+          {
+            "name": "WithVariants",
+            "in": "query",
+            "description": "If true variants are loaded too for products with variants (default false).",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KProductSKU"
+                  }
                 }
               }
             }
@@ -3311,7 +3392,7 @@
             "nullable": true
           }
         },
-        "additionalProperties": { }
+        "additionalProperties": {}
       },
       "ProductInventoryPriceInfo": {
         "type": "object",
@@ -3418,7 +3499,7 @@
   },
   "security": [
     {
-      "Bearer": [ ]
+      "Bearer": []
     }
   ]
 }
