@@ -187,7 +187,7 @@ internal class KProductService : IKProductService
 
 
         return (await skuInfos.GetEnumerableTypedResultAsync())
-            .Select(x => productSKUConverter.Convert(x, currencyCode, withVariants));
+            .Select(x => productSKUConverter.Convert(x, currencyCode, withVariants, true));
     }
 
 

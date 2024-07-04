@@ -18,6 +18,8 @@ public class KProductSKU
 
     public string SKUShortDescription { get; set; }
 
+    public string SKULongDescription { get; set; }
+
     public string SKUNumber { get; set; }
 
     public bool SKUEnabled { get; set; }
