@@ -17,6 +17,11 @@ public partial class KProductNode : IItemIdentifier<int>
     public KProductNode(KProductSKU sku)
     {
         Sku = sku;
+        DocumentSKUName = sku.SkuName;
+        DocumentSKUDescription = sku.SkuLongDescription;
+        DocumentSKUShortDescription = sku.SkuShortDescription;
+        ClassName = string.Empty;
+        NodeAliasPath = string.Empty;
     }
 }
 
