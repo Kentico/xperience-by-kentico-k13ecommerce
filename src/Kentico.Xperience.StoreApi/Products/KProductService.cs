@@ -167,29 +167,24 @@ internal class KProductService : IKProductService
     {
         var (culture, currencyCode, orderBy, limit, withVariants) = request;
 
-        string[] productTypes = (await GetProductDataClasses())
-            .Select(p => p.ClassName)
-            .ToArray();
-
         var skuInfos = skuInfoProvider.Get()
             .WhereEqualsOrNull(nameof(SKUInfo.SKUOptionCategoryID), 0)
             .WhereEqualsOrNull(nameof(SKUInfo.SKUParentSKUID), 0)
             .TopN(limit)
             .OrderBy(orderBy);
 
-        if (productTypes.Length > 0)
+
+        var query = DocumentHelper.GetDocuments()
+            .WhereNotNull(nameof(TreeNode.NodeSKUID))
+            .Column(nameof(TreeNode.NodeSKUID));
+
+        if (!string.IsNullOrEmpty(culture))
         {
-            var query = new MultiDocumentQuery()
-                .Types(productTypes)
-                .Column(nameof(SKUTreeNode.NodeSKUID));
-
-            if (!string.IsNullOrEmpty(culture))
-            {
-                query = query.Culture(culture);
-            }
-
-            skuInfos = skuInfos.WhereNotIn(nameof(SKUInfo.SKUID), query);
+            query = query.Culture(culture);
         }
+
+        skuInfos = skuInfos.WhereNotIn(nameof(SKUInfo.SKUID), query);
+
 
         return (await skuInfos.GetEnumerableTypedResultAsync())
             .Select(x => productSKUConverter.Convert(x, currencyCode, withVariants));
