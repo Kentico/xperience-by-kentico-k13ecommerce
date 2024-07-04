@@ -241,7 +241,7 @@ Library also implements product synchronization to Content hub. These are 3 enti
 The synchronization runs in a background thread worker periodically and can be disabled (`ProductSyncEnabled` setting).
 Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized data is updated when source value
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
-safely. You can decide, wether include [standalone SKUs](https://docs.kentico.com/x/3gqRBg) or not (`StandaloneProductsSync` setting).
+safely. You can decide, whether include [standalone SKUs](https://docs.kentico.com/x/3gqRBg) or not (`StandaloneProductsSync` setting).
 
 No price data is synced, because catalog prices need
 calculator evaluation in context of user's cart and standalone requests via `IProductService` are required.
