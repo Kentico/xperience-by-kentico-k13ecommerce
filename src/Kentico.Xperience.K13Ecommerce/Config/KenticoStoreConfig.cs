@@ -23,7 +23,7 @@ public class KenticoStoreConfig
     /// <summary>
     /// Synchronize also standalone products without page representation.
     /// </summary>
-    public required bool StandaloneProductsSync { get; set; } = true;
+    public required bool StandaloneProductSync { get; set; } = true;
 
     /// <summary>
     /// When true, product synchronization is enabled.

@@ -46,7 +46,7 @@ internal class ProductSynchronizationService(
                 NoLinks = true
             })).ToList();
 
-        if (config.CurrentValue.StandaloneProductsSync)
+        if (config.CurrentValue.StandaloneProductSync)
         {
             var kenticoStandaloneProducts = (await productService.GetStandaloneProducts(new ProductRequest
             {
