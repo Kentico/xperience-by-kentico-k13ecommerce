@@ -117,14 +117,40 @@ public class OrderController : ControllerBase
         });
     }
 
+
     /// <summary>
-    /// Returns order by ID.
+    /// Returns order by ID only if order belongs to current customer.
     /// </summary>
     /// <param name="orderId">Order ID.</param>
     [HttpGet("detail/{orderId:int}", Name = nameof(OrderDetail))]
     public async Task<ActionResult<KOrder>> OrderDetail([FromRoute] int orderId)
     {
+        var customer = shoppingService.GetCurrentCustomer();
+        if (customer == null)
+        {
+            return NotFound();
+        }
+
         var order = await orderInfoProvider.GetAsync(orderId);
+
+        if (order == null || order.OrderCustomerID != customer.CustomerID)
+        {
+            return NotFound();
+        }
+
+        return Ok(mapper.Map<KOrder>(order));
+    }
+
+
+    /// <summary>
+    /// Returns order by ID.
+    /// </summary>
+    /// <param name="orderId">Order ID.</param>
+    [HttpGet("admin/detail/{orderId:int}", Name = nameof(AdminOrderDetail))]
+    public async Task<ActionResult<KOrder>> AdminOrderDetail([FromRoute] int orderId)
+    {
+        var order = await orderInfoProvider.GetAsync(orderId);
+
         if (order == null)
         {
             return NotFound();
