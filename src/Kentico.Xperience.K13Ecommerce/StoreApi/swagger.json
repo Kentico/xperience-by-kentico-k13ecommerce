@@ -348,8 +348,51 @@
         "tags": [
           "Order"
         ],
-        "summary": "Returns order by ID.",
+        "summary": "Returns order by ID only if order belongs to current customer.",
         "operationId": "OrderDetail",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "Order ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KOrder"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/store/order/admin/detail/{orderId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Returns order by ID.",
+        "operationId": "AdminOrderDetail",
         "parameters": [
           {
             "name": "orderId",
@@ -3511,7 +3554,7 @@
             "nullable": true
           }
         },
-        "additionalProperties": { }
+        "additionalProperties": {}
       },
       "ProductInventoryPriceInfo": {
         "type": "object",
@@ -3618,7 +3661,7 @@
   },
   "security": [
     {
-      "Bearer": [ ]
+      "Bearer": []
     }
   ]
 }

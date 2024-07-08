@@ -24,10 +24,17 @@ public interface IOrderService
 
 
     /// <summary>
-    /// Get order by id.
+    /// Get order by id for current customer.
     /// </summary>
     /// <param name="orderId">Order ID.</param>
-    Task<KOrder> GetOrder(int orderId);
+    Task<KOrder> GetCurrentCustomerOrder(int orderId);
+
+
+    /// <summary>
+    /// Get order by ID to display in XbyK administration.
+    /// </summary>
+    /// <param name="orderId"></param>
+    Task<KOrder> GetAdminOrder(int orderId);
 
 
     /// <summary>

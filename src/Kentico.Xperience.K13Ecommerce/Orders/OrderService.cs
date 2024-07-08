@@ -15,7 +15,11 @@ internal class OrderService(IKenticoStoreApiClient storeApiClient) : IOrderServi
 
 
     /// <inheritdoc/>
-    public async Task<KOrder> GetOrder(int orderId) => await storeApiClient.OrderDetailAsync(orderId);
+    public async Task<KOrder> GetCurrentCustomerOrder(int orderId) => await storeApiClient.OrderDetailAsync(orderId);
+
+
+    /// <inheritdoc/>
+    public async Task<KOrder> GetAdminOrder(int orderId) => await storeApiClient.AdminOrderDetailAsync(orderId);
 
 
     /// <inheritdoc/>
