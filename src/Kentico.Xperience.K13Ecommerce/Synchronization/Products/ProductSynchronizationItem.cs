@@ -90,6 +90,7 @@ internal class ProductSynchronizationItem : ContentItemSynchronizationBase, ISyn
             [nameof(ProductSKU.SKUReorderAt)] = Item.Sku.SkuReorderAt,
             [nameof(ProductSKU.SKUProductType)] = Item.Sku.SkuProductType.ToString(),
             [nameof(ProductSKU.SKUNeedsShipping)] = Item.Sku.SkuNeedsShipping,
+            [nameof(ProductSKU.SKUAvailableItems)] = Item.Sku.SkuAvailableItems,
             [nameof(ProductSKU.SKUMinItemsInOrder)] = Item.Sku.SkuMinItemsInOrder,
             [nameof(ProductSKU.SKUMaxItemsInOrder)] = Item.Sku.SkuMaxItemsInOrder,
             [nameof(ProductSKU.SKUInStoreFrom)] = Item.Sku.SkuInStoreFrom,
