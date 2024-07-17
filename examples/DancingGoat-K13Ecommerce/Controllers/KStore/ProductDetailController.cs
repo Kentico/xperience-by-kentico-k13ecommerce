@@ -4,6 +4,7 @@ using DancingGoat.Models;
 
 using Kentico.Content.Web.Mvc;
 using Kentico.Content.Web.Mvc.Routing;
+using Kentico.Xperience.K13Ecommerce.ProductPages;
 using Kentico.Xperience.K13Ecommerce.Products;
 
 using Microsoft.AspNetCore.Mvc;

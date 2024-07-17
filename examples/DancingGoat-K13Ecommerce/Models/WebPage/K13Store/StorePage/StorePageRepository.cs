@@ -8,6 +8,8 @@ using CMS.Websites.Routing;
 
 using K13Store;
 
+using Kentico.Xperience.K13Ecommerce.ProductPages;
+
 namespace DancingGoat.Models;
 
 public class StorePageRepository : StoreContentRepositoryBase
