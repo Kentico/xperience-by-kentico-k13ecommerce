@@ -4,6 +4,7 @@ using IdentityModel.Client;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 using Kentico.Xperience.K13Ecommerce.Activities;
+using Kentico.Xperience.K13Ecommerce.Admin;
 using Kentico.Xperience.K13Ecommerce.Config;
 using Kentico.Xperience.K13Ecommerce.Countries;
 using Kentico.Xperience.K13Ecommerce.Customers;
@@ -91,6 +92,7 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddScoped<ISiteStoreService, SiteStoreService>();
         services.AddScoped<IOrderService, OrderService>();
 
+        services.AddSingleton<IK13EcommerceModuleInstaller, K13EcommerceModuleInstaller>();
         services.AddSingleton<IWebsiteChannelProvider, WebsiteChannelProvider>();
 
         return services;
