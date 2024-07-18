@@ -1,6 +1,4 @@
-﻿
-
-using Kentico.Xperience.Admin.Base.Forms;
+﻿using Kentico.Xperience.Admin.Base.Forms;
 
 namespace Kentico.Xperience.K13Ecommerce.Admin.Validations;
 
@@ -28,7 +26,7 @@ internal class XbKPagePathValidationRule : ValidationRule<string>
         return ValidationResult.FailResult(errorMessage);
     }
 
-    public static bool ValidatePathTokensConsistency(string k13NodeAliasPath, string xbkPagePath, out string errorMessage)
+    private static bool ValidatePathTokensConsistency(string k13NodeAliasPath, string xbkPagePath, out string errorMessage)
     {
         string[] k13NodeAliasPathSegments = k13NodeAliasPath.Split('/');
         string[] xbkPagePathSegments = xbkPagePath.Split('/');

@@ -14,7 +14,7 @@ internal partial class NodeAliasPathValidationRule : ValidationRule<string>
 
     public override Task<ValidationResult> Validate(string value, IFormFieldValueProvider formFieldValueProvider)
     {
-        if (string.IsNullOrWhiteSpace(value) || ValidatePathStructure(value, out var errorMessage))
+        if (string.IsNullOrWhiteSpace(value) || ValidatePathStructure(value, out string errorMessage))
         {
             return ValidationResult.SuccessResult();
         }

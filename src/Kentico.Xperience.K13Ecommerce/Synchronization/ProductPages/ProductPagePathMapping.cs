@@ -26,7 +26,7 @@ namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductPages
             // Extract token names from the user pattern.
             var tokenNames = new List<string>();
             // Either {Variable} or three dots.
-            var tokenRegex = tokenRegexCompiled();
+            var tokenRegex = TokenRegexCompiled();
             var matches = tokenRegex.Matches(pattern);
 
             // Scan for variables or three dots.
@@ -40,8 +40,8 @@ namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductPages
             for (int i = 0; i < tokenNames.Count; i++)
             {
                 regexPattern = i == tokenNames.Count - 1
-                    ? regexPattern.Replace("{" + tokenNames[i] + "}", $"(.+)")
-                    : regexPattern.Replace("{" + tokenNames[i] + "}", $"([^/]+)");
+                    ? regexPattern.Replace(tokenNames[i], $"(.+)")
+                    : regexPattern.Replace(tokenNames[i], $"([^/]+)");
             }
             regexPattern = regexPattern.Replace("...", "(.+)");
             regexPattern = "^" + regexPattern + "$";
@@ -50,7 +50,7 @@ namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductPages
             string regexReplacement = replacement;
             for (int i = 0; i < tokenNames.Count; i++)
             {
-                regexReplacement = regexReplacement.Replace("{" + tokenNames[i] + "}", $"${i + 1}");
+                regexReplacement = regexReplacement.Replace(tokenNames[i], $"${i + 1}");
             }
 
             if (Regex.Match(path, regexPattern).Success)
@@ -63,7 +63,7 @@ namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductPages
             return false;
         }
 
-        [GeneratedRegex(@"\{([^}]+)\}|(\.\.\.)")]
-        private static partial Regex tokenRegexCompiled();
+        [GeneratedRegex(@"(\{[^}]+\})|(\.\.\.)")]
+        private static partial Regex TokenRegexCompiled();
     }
 }

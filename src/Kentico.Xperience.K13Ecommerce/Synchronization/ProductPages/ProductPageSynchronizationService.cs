@@ -11,6 +11,7 @@ using K13Store;
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 using Kentico.Xperience.K13Ecommerce.ProductPages;
 using Kentico.Xperience.K13Ecommerce.SiteStore;
+using Kentico.Xperience.K13Ecommerce.WebPageFolders;
 using Kentico.Xperience.K13Ecommerce.WebsiteChannel;
 
 using Microsoft.Extensions.Logging;
@@ -23,35 +24,37 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
     private readonly IWebPageManagerFactory webPageManagerFactory;
     private readonly ISiteStoreService siteStoreService;
     private readonly ILogger<ProductPageSynchronizationService> logger;
-    private readonly IWebPageFolderRetriever folderRetriever;
     private readonly IContentQueryExecutor contentQueryExecutor;
     private readonly IInfoProvider<PagePathMappingRuleInfo> pagePathMappingRuleInfoProvider;
     private readonly IWebsiteChannelProvider websiteChannelProvider;
     private readonly IProgressiveCache progressiveCache;
+    private readonly IWebPageFolderService webPageFolderService;
+    private readonly IContentItemCodeNameProvider contentItemCodeNameProvider;
 
     private readonly Dictionary<string, IWebPageManager> webPageManagers = [];
-    private readonly Dictionary<(string FolderPath, string ChannelName), WebPageFolder?> webPageFolders = [];
 
     public ProductPageSynchronizationService(
         IContentItemService contentItemService,
         ILogger<ProductPageSynchronizationService> logger,
         IWebPageManagerFactory webPageManagerFactory,
         ISiteStoreService siteStoreService,
-        IWebPageFolderRetriever folderRetriever,
         IContentQueryExecutor contentQueryExecutor,
         IInfoProvider<PagePathMappingRuleInfo> pagePathMappingRuleInfoProvider,
         IWebsiteChannelProvider websiteChannelProvider,
-        IProgressiveCache progressiveCache)
+        IProgressiveCache progressiveCache,
+        IWebPageFolderService webPageFolderService,
+        IContentItemCodeNameProvider contentItemCodeNameProvider)
     {
         this.contentItemService = contentItemService;
         this.logger = logger;
         this.siteStoreService = siteStoreService;
-        this.folderRetriever = folderRetriever;
         this.contentQueryExecutor = contentQueryExecutor;
         this.pagePathMappingRuleInfoProvider = pagePathMappingRuleInfoProvider;
         this.websiteChannelProvider = websiteChannelProvider;
         this.webPageManagerFactory = webPageManagerFactory;
         this.progressiveCache = progressiveCache;
+        this.webPageFolderService = webPageFolderService;
+        this.contentItemCodeNameProvider = contentItemCodeNameProvider;
     }
 
     public async Task SynchronizeProductPages()
@@ -90,9 +93,9 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
     /// </summary>
     /// <param name="product"></param>
     /// <param name="rules"></param>
-    /// <param name="language"></param>
+    /// <param name="languageName"></param>
     /// <returns></returns>
-    private async Task SynchronizeProductPageByRules(ProductSKU product, List<PagePathMappingRuleInfo> rules, string language)
+    private async Task SynchronizeProductPageByRules(ProductSKU product, List<PagePathMappingRuleInfo> rules, string languageName)
     {
         var productPageModel = ProductPagePathMapping.MapPath(product.NodeAliasPath, rules);
         if (productPageModel is null)
@@ -100,11 +103,11 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
             logger.LogWarning("There is no rule for product with NodeAliasPath '{NodeAliasPath}'.", product.NodeAliasPath);
             return;
         }
-        var (mappedPath, channelName) = productPageModel;
+        var (mappedPath, websiteChannelName) = productPageModel;
 
 
         var (folderPath, pageName) = ProcessPagePath(mappedPath);
-        var folder = await GetWebPageFolder(folderPath, channelName);
+        var folder = await webPageFolderService.CreateWebPageFolder(folderPath, websiteChannelName, languageName);
 
         if (folder is null)
         {
@@ -112,26 +115,26 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
             return;
         }
 
-        var webPageManager = await GetChannelWebPageManager(channelName);
+        var webPageManager = await GetChannelWebPageManager(websiteChannelName);
         if (webPageManager is null)
         {
-            logger.LogWarning("Website channel '{WebsiteChannel}' does not exist", channelName);
+            logger.LogWarning("Website channel '{WebsiteChannel}' does not exist", websiteChannelName);
             return;
         }
 
-        var productPage = await GetProductPage(folderPath, product.SKUName, channelName);
+        var productPage = await GetProductPage(folderPath, product.SKUName, websiteChannelName);
 
         var itemData = CreateContentItemData(product);
 
         if (productPage is null)
         {
             // Create product page
-            var webPageParameters = CreateWebPageParameters(product, folder, pageName, language, itemData);
+            var webPageParameters = await CreateWebPageParameters(product, folder, pageName, languageName, itemData);
 
             try
             {
                 int productPageId = await webPageManager.Create(webPageParameters);
-                await webPageManager.TryPublish(productPageId, language);
+                await webPageManager.TryPublish(productPageId, languageName);
             }
             catch (UrlPathCollisionException e)
             {
@@ -144,14 +147,14 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
             {
                 // Need to update product page
                 int productPageId = productPage.SystemFields.WebPageItemID;
-                await webPageManager.TryCreateDraft(productPageId, language);
-                await webPageManager.TryUpdateDraft(productPageId, language, new UpdateDraftData(itemData));
-                await webPageManager.TryPublish(productPageId, language);
+                await webPageManager.TryCreateDraft(productPageId, languageName);
+                await webPageManager.TryUpdateDraft(productPageId, languageName, new UpdateDraftData(itemData));
+                await webPageManager.TryPublish(productPageId, languageName);
             }
         }
     }
 
-    private static CreateWebPageParameters CreateWebPageParameters(ProductSKU product, WebPageFolder folder, string pageName, string language, ContentItemData itemData)
+    private async Task<CreateWebPageParameters> CreateWebPageParameters(ProductSKU product, WebPageFolder folder, string pageName, string language, ContentItemData itemData)
     {
         var contentItemParameters = new ContentItemParameters(ProductPage.CONTENT_TYPE_NAME, itemData);
 
@@ -162,7 +165,7 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
         )
         {
             ParentWebPageItemID = folder.WebPageItemID,
-            UrlSlug = pageName,
+            UrlSlug = await contentItemCodeNameProvider.Get(pageName),
         };
         return createPageParameters;
     }
@@ -198,36 +201,6 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
         }
 
         return webPageManager;
-    }
-
-    private async Task<WebPageFolder?> GetWebPageFolder(string folderPath, string channelName)
-    {
-        if (!webPageFolders.TryGetValue((folderPath, channelName), out var folder))
-        {
-            folder = await progressiveCache.LoadAsync(
-                async cacheSettings =>
-                {
-                    var result = await folderRetriever.Retrieve(channelName, PathMatch.Single(folderPath));
-
-                    cacheSettings.CacheDependency = CacheHelper.GetCacheDependency(
-                        CacheHelper.BuildCacheItemName(new[]
-                        {
-                            "webpageitem",
-                            "bychannel",
-                            channelName,
-                            "bypath",
-                            folderPath
-                        })
-                    );
-                    return result.FirstOrDefault();
-                },
-                new CacheSettings(TimeSpan.FromHours(1).TotalMinutes, $"{channelName}|WebPageFolder|{folderPath}")
-            );
-
-            webPageFolders[(folderPath, channelName)] = folder;
-        }
-
-        return folder;
     }
 
     private async Task<ProductPage?> GetProductPage(string folderPath, string pageDisplayName, string channelName)

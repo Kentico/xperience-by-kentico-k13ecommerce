@@ -19,6 +19,7 @@ using Kentico.Xperience.K13Ecommerce.Synchronization.Products;
 using Kentico.Xperience.K13Ecommerce.Synchronization.ProductVariants;
 using Kentico.Xperience.K13Ecommerce.Users;
 using Kentico.Xperience.K13Ecommerce.Users.UserSynchronization;
+using Kentico.Xperience.K13Ecommerce.WebPageFolders;
 using Kentico.Xperience.K13Ecommerce.WebsiteChannel;
 
 using Microsoft.Extensions.Configuration;
@@ -91,6 +92,7 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddSingleton<IEcommerceActivityLogger, EcommerceActivityLogger>();
         services.AddScoped<ISiteStoreService, SiteStoreService>();
         services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<IWebPageFolderService, WebPageFolderService>();
 
         services.AddSingleton<IK13EcommerceModuleInstaller, K13EcommerceModuleInstaller>();
         services.AddSingleton<IWebsiteChannelProvider, WebsiteChannelProvider>();

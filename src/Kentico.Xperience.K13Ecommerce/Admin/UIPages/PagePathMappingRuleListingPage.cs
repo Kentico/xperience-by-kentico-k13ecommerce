@@ -1,5 +1,4 @@
-﻿using CMS.DataEngine;
-using CMS.Integration.K13Ecommerce;
+﻿using CMS.Integration.K13Ecommerce;
 using CMS.Membership;
 
 using Kentico.Xperience.Admin.Base;
@@ -17,15 +16,6 @@ namespace Kentico.Xperience.K13Ecommerce.Admin.UIPages;
 
 internal class PagePathMappingRuleListingPage : ListingPage
 {
-    private readonly IInfoProvider<PagePathMappingRuleInfo> pagePathMappingRuleInfoProvider;
-    private readonly IPageUrlGenerator pageUrlGenerator;
-
-    public PagePathMappingRuleListingPage(IInfoProvider<PagePathMappingRuleInfo> pagePathMappingRuleInfoProvider, IPageUrlGenerator pageUrlGenerator)
-    {
-        this.pagePathMappingRuleInfoProvider = pagePathMappingRuleInfoProvider;
-        this.pageUrlGenerator = pageUrlGenerator;
-    }
-
     protected override string ObjectType => PagePathMappingRuleInfo.OBJECT_TYPE;
 
     public override Task ConfigurePage()
