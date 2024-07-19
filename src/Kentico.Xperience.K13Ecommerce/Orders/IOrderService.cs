@@ -33,7 +33,7 @@ public interface IOrderService
     /// <summary>
     /// Get order by ID to display in XbyK administration.
     /// </summary>
-    /// <param name="orderId"></param>
+    /// <param name="orderId">Order ID.</param>
     Task<KOrder> GetAdminOrder(int orderId);
 
 
