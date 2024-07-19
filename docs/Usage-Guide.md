@@ -232,7 +232,7 @@ and to browser cookie (uses `IShoppingCartClientStorage`)
 
 Library also implements product synchronization to Content hub. These are 3 entities synchronized to reusable content items:
 - Products - Content type `K13Store.ProductSKU`
-  - All products associated with product pages are synced. **Standalone SKUs** aren't currently supported. 
+  - All products associated with product pages are synced. **Standalone SKUs** synchronization can be set via `StandaloneProductsSync` setting.
 - Product variants - Content type `K13Store.ProductVariant`
   - All products variant for parent products
 - Product images - Content type `K13Store.ProductImage`
@@ -241,7 +241,7 @@ Library also implements product synchronization to Content hub. These are 3 enti
 The synchronization runs in a background thread worker periodically and can be disabled (`ProductSyncEnabled` setting).
 Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized data is updated when source value
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
-safely.
+safely. You can decide, whether include [standalone SKUs](https://docs.kentico.com/x/3gqRBg) or not (`StandaloneProductsSync` setting).
 
 No price data is synced, because catalog prices need
 calculator evaluation in context of user's cart and standalone requests via `IProductService` are required.
@@ -294,6 +294,7 @@ dotnet add package Kentico.Xperience.Store.Rcl
     "ClientId": "3ef7fe1b-696c-4afa-8b56-d3176b7bea95",
     "ClientSecret": "********************",
     "ProductSyncEnabled": true,
+    "StandaloneProductSync": true,
     "ProductSyncInterval": 10
   }
 }
@@ -306,6 +307,7 @@ dotnet add package Kentico.Xperience.Store.Rcl
 | ClientId         | Fill same value which is defined on KX 13 side                     |
 | ClientSecret      | Fill same value which is defined on KX 13 side                     |
 | ProductSyncEnabled | If true, product synchronization is enabled                        |
+| StandaloneProductSync | If true, [standalone SKUs](https://docs.kentico.com/x/3gqRBg) are synchronized as well                        |
 | ProductSyncInterval                       | Interval in minutes specifies how often synchronization is running | 
 
 

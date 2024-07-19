@@ -10,9 +10,9 @@ namespace DancingGoat.ShopApi;
 /// </summary>
 public class CustomSKUConverter : ProductSKUConverter<CustomSKU>
 {
-    public override CustomSKU Convert(SKUInfo skuInfo, string currencyCode, bool withVariants)
+    public override CustomSKU Convert(SKUInfo skuInfo, string currencyCode, bool withVariants, bool withLongDescription)
     {
-        var model = base.Convert(skuInfo, currencyCode, withVariants);
+        var model = base.Convert(skuInfo, currencyCode, withVariants, withLongDescription);
         return model;
     }
 

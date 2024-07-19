@@ -30,7 +30,7 @@ public class ProductPageConverter<TProduct> : IProductPageConverter<TProduct>
     {
         var model = mapper.Map<TProduct>(skuTreeNode);
         model.AbsoluteUrl = DocumentURLProvider.GetAbsoluteUrl(skuTreeNode);
-        model.SKU = skuConverter.Convert(skuTreeNode.SKU, currencyCode, withVariants);
+        model.SKU = skuConverter.Convert(skuTreeNode.SKU, currencyCode, withVariants, false);
         model.CustomFields = customFields.ToDictionary(f => f, f => skuTreeNode.GetValue(f));
         if (withLongDescription)
         {

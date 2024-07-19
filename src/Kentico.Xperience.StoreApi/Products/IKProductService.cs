@@ -1,6 +1,7 @@
 ﻿using Kentico.Xperience.StoreApi.Products.Categories;
 using Kentico.Xperience.StoreApi.Products.Pages;
 using Kentico.Xperience.StoreApi.Products.Prices;
+using Kentico.Xperience.StoreApi.Products.SKU;
 
 namespace Kentico.Xperience.StoreApi.Products;
 
@@ -49,4 +50,12 @@ public interface IKProductService
     /// <param name="currencyCode">Currency code.</param>
     /// <returns></returns>
     Task<ProductInventoryPriceInfo> GetProductInventoryAndPrices(int skuId, string currencyCode);
+
+
+    /// <summary>
+    /// Get all standalone products in specific culture.
+    /// </summary>
+    /// <param name="request">Standalone products parameters.</param>
+    /// <returns></returns>
+    Task<IEnumerable<KProductSKU>> GetStandaloneProducts(ProductRequest request);
 }

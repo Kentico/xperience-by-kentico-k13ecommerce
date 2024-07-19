@@ -169,6 +169,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
     "ClientId": "3ef7fe1b-696c-4afa-8b56-d3176b7bea95",
     "ClientSecret": "********************",
     "ProductSyncEnabled": true,
+    "StandaloneProductSync": true,
     "ProductSyncInterval": 10
   }
 }
