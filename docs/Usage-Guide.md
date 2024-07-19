@@ -77,6 +77,10 @@ via API.
 ### Orders
 - Endpoint `api/store/order/list` for retrieving list of orders for current customer based on request (supports paging)
 - Endpoint `api/store/order/admin/list` for retrieving list of orders (for all customers) based on request (supports paging) to display in XbyK administration (supports paging)
+- Endpoint `api/store/order/detail/{orderID}` for retrieving order detail for current customer. If the order order belongs to another customer, no order is retrieved
+- Endpoint `api/store/order/admin/detail/{orderID}` for retrieving order detail(without verifying if order belongs to current customer)
+- Endpoint `api/store/order/statuses/list` for retrieving all order statuses
+- Endpoint `api/store/order/update` for updating order(update order status, set order payment, etc.)
 
 ### Customers
 - Endpoint `api/store/customer/addresses` for retrieving current customer's addresses
@@ -218,8 +222,12 @@ and to browser cookie (uses `IShoppingCartClientStorage`)
   - Service is used e.g. in [CheckoutService in Dancing Goat example](../examples/DancingGoat-K13Ecommerce/Services/CheckoutService.cs) 
   where customer's addresses are retrieved in cart's second step.
 - `IOrderService`
-  - List of orders - currently suitable for implementing listing orders in administration
-    - **Order updates and listing for specific customers are under development** 
+  - List of orders from all customers(for implementing listing orders in administration)
+  - List of orders for current customer(based on request)
+  - Order detail for current customer(only for orders that belong to the customer)
+  - Order detail for administrator(without verifying if order belongs to current customer)
+  - List of all order statuses
+  - Update order
 - `ISiteStoreService`
   - Use for retrieving site's [list of enabled cultures](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L13), e.g. for implementation of language selector
   - Use for retrieving site's [list of enabled currencies](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L18), e.g. for implementation of currency selector
@@ -414,10 +422,11 @@ Here are links for some specific parts of shopping cart:
 - [Discount / Coupon codes](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L163)
 - [Delivery details + shipping](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L194)
 - [Payment](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L330)
-- Payment gateway - Is not part of this PoC solution, you need to implement integration with specific payment gateway. **API for updating orders (and their statuses) is under development**.
+- Payment gateway - Is not part of this PoC solution, you need to implement integration with specific payment gateway.
 - [Order creation](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L315)
 
 
-   
-
-
+### How to handle order payments?
+1. Implement your own payment method.
+2. Retrieve all order statuses using `IOrderService` if needed.
+3. Use `UpdateOrder` method of `IOrderService` to update order status and to set `OrderIsPaid` flag according to the payment result.

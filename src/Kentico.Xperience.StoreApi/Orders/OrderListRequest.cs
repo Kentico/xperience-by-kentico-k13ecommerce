@@ -13,4 +13,6 @@ public class OrderListRequest
     public int PageSize { get; set; }
 
     public string OrderBy { get; set; }
+
+    public int? CustomerId { get; set; }
 }
