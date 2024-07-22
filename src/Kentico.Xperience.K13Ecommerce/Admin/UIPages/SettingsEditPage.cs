@@ -9,7 +9,7 @@ using Kentico.Xperience.K13Ecommerce.Admin.UIPages;
     parentType: typeof(K13EcommerceApplicationPage),
     slug: "editsettings",
     uiPageType: typeof(SettingsEditPage),
-    name: "Edit K13Ecommerce settings",
+    name: "K13Ecommerce settings",
     templateName: TemplateNames.EDIT,
     order: UIPageOrder.First)]
 
