@@ -59,15 +59,6 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
 
     public async Task SynchronizeProductPages()
     {
-        var contentItemProducts =
-            await contentItemService.GetContentItems<ProductSKU>(ProductSKU.CONTENT_TYPE_NAME, linkedItemsLevel: 0);
-
-        //Current limitations: only synchronization from default culture is supported. XByK must have same language enabled as default culture in K13
-        string defaultCultureCode = ((await siteStoreService.GetCultures()).FirstOrDefault(c => c.CultureIsDefault)?.CultureCode)
-            ?? throw new InvalidOperationException("No default culture found on K13 Store");
-
-        string language = defaultCultureCode[..2];
-
         var rules = await progressiveCache.LoadAsync(
             async cacheSettings =>
             {
@@ -80,6 +71,20 @@ internal class ProductPageSynchronizationService : IProductPageSynchronizationSe
             },
             new CacheSettings(TimeSpan.FromHours(1).TotalMinutes, $"{nameof(SynchronizeProductPages)}|PagePathMappingRules")
         );
+
+        if (rules.Count == 0)
+        {
+            return;
+        }
+
+        var contentItemProducts =
+            await contentItemService.GetContentItems<ProductSKU>(ProductSKU.CONTENT_TYPE_NAME, linkedItemsLevel: 0);
+
+        //Current limitations: only synchronization from default culture is supported. XByK must have same language enabled as default culture in K13
+        string defaultCultureCode = ((await siteStoreService.GetCultures()).FirstOrDefault(c => c.CultureIsDefault)?.CultureCode)
+            ?? throw new InvalidOperationException("No default culture found on K13 Store");
+
+        string language = defaultCultureCode[..2];
 
         foreach (var product in contentItemProducts)
         {
