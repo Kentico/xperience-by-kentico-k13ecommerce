@@ -1,4 +1,5 @@
 ﻿using CMS.ContentEngine;
+using CMS.ContentEngine.Internal;
 using CMS.DataEngine;
 using CMS.Integration.K13Ecommerce;
 using CMS.Membership;
@@ -44,9 +45,16 @@ internal class ContentItemFolderSynchronizationService : IContentItemFolderSynch
     {
         if (folderId != 0)
         {
-            var builder = new ContentItemQueryBuilder().ForContentType(contentTypeName);
-            var ids = await contentQueryExecutor.GetResult(builder, rowData => rowData.ContentItemID, cancellationToken: cancellationToken);
-            await contentFolderManager.MoveItems(folderId, ids, cancellationToken);
+            var builder = new ContentItemQueryBuilder().ForContentType(contentTypeName, config => config
+                .Where(p => p.WhereNotEquals(nameof(ContentItemInfo.ContentItemContentFolderID), folderId))
+                .Columns(nameof(ContentItemInfo.ContentItemID))
+            );
+            var ids = (await contentQueryExecutor.GetResult(builder, rowData => rowData.ContentItemID, cancellationToken: cancellationToken))
+                .ToList();
+            if (ids.Count > 0)
+            {
+                await contentFolderManager.MoveItems(folderId, ids, cancellationToken);
+            }
         }
     }
 }
