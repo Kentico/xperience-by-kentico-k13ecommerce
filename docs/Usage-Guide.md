@@ -243,6 +243,9 @@ Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized dat
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
 safely.
 
+User can select content item folders where content items are synchronized. Content item folders can be selected independently for each content type. These settings can be found in
+Configuration -> K13Ecommerce -> K13Ecommerce settings.
+
 No price data is synced, because catalog prices need
 calculator evaluation in context of user's cart and standalone requests via `IProductService` are required.
 
@@ -333,8 +336,8 @@ dotnet run --kxp-ci-restore
 | Library                            | Xperience Version | Library Version |
 |------------------------------------|-------------------| --------------- |
 | Kentico.Xperience.Ecommerce.Common | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.K13Ecommerce     | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.Store.Rcl        | \>= 29.0.1        | 1.0.0           |
+| Kentico.Xperience.K13Ecommerce     | \>= 29.2.0        | 1.0.0           |
+| Kentico.Xperience.Store.Rcl        | \>= 29.2.0        | 1.0.0           |
 
 
 ## Dancing Goat example - setup

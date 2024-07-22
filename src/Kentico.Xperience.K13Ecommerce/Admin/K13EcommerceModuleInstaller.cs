@@ -13,18 +13,90 @@ internal interface IK13EcommerceModuleInstaller
 internal class K13EcommerceModuleInstaller : IK13EcommerceModuleInstaller
 {
     private readonly IInfoProvider<ResourceInfo> resourceInfoProvider;
+    private readonly IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider;
 
-    public K13EcommerceModuleInstaller(IInfoProvider<ResourceInfo> resourceInfoProvider) => this.resourceInfoProvider = resourceInfoProvider;
+    public K13EcommerceModuleInstaller(IInfoProvider<ResourceInfo> resourceInfoProvider, IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider)
+    {
+        this.resourceInfoProvider = resourceInfoProvider;
+        this.k13EcommerceSettingsInfoProvider = k13EcommerceSettingsInfoProvider;
+    }
+
     public void Install()
     {
         var resourceInfo = InstallModule();
         InstallPagePathMappingRuleInfo(resourceInfo);
+        InstallSettingsInfo(resourceInfo);
+    }
+
+    private void InstallSettingsInfo(ResourceInfo resourceInfo)
+    {
+        var info = DataClassInfoProvider.GetDataClassInfo(K13EcommerceSettingsInfo.TYPEINFO.ObjectClassName) ??
+            DataClassInfo.New(K13EcommerceSettingsInfo.OBJECT_TYPE);
+
+        info.ClassName = K13EcommerceSettingsInfo.TYPEINFO.ObjectClassName;
+        info.ClassTableName = K13EcommerceSettingsInfo.TYPEINFO.ObjectClassName.Replace(".", "_");
+        info.ClassDisplayName = "K13Ecommerce Settings info";
+        info.ClassResourceID = resourceInfo.ResourceID;
+        info.ClassType = ClassType.OTHER;
+
+        var formInfo = FormHelper.GetBasicFormDefinition(nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsID));
+        var formItem = new FormFieldInfo
+        {
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductSKUFolderID),
+            Visible = true,
+            DataType = FieldDataType.Integer,
+            Caption = K13EcommerceSettingsConstants.SettingsProductSKUFolderID,
+            Enabled = true,
+            AllowEmpty = false,
+        };
+        formInfo.AddFormItem(formItem);
+
+        formItem = new FormFieldInfo
+        {
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductVariantFolderID),
+            Visible = true,
+            DataType = FieldDataType.Integer,
+            Caption = K13EcommerceSettingsConstants.SettingsProductVariantFolderID,
+            Enabled = true,
+            AllowEmpty = false,
+        };
+        formInfo.AddFormItem(formItem);
+
+        formItem = new FormFieldInfo
+        {
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductImageFolderID),
+            Visible = true,
+            DataType = FieldDataType.Integer,
+            Caption = K13EcommerceSettingsConstants.SettingsProductImageFolderID,
+            Enabled = true,
+            AllowEmpty = false,
+        };
+        formInfo.AddFormItem(formItem);
+
+        SetFormDefinition(info, formInfo);
+
+        if (info.HasChanged)
+        {
+            DataClassInfoProvider.SetDataClassInfo(info);
+        }
+
+        var settings = k13EcommerceSettingsInfoProvider.Get().TopN(1).GetEnumerableTypedResult().FirstOrDefault();
+        if (settings is null)
+        {
+            settings = new K13EcommerceSettingsInfo()
+            {
+                K13EcommerceSettingsProductSKUFolderID = 0,
+                K13EcommerceSettingsProductVariantFolderID = 0,
+                K13EcommerceSettingsProductImageFolderID = 0,
+            };
+            settings.Insert();
+        }
     }
 
     private static void InstallPagePathMappingRuleInfo(ResourceInfo resourceInfo)
     {
         var info = DataClassInfoProvider.GetDataClassInfo(PagePathMappingRuleInfo.TYPEINFO.ObjectClassName) ??
-                                      DataClassInfo.New(PagePathMappingRuleInfo.OBJECT_TYPE);
+            DataClassInfo.New(PagePathMappingRuleInfo.OBJECT_TYPE);
 
         info.ClassName = PagePathMappingRuleInfo.TYPEINFO.ObjectClassName;
         info.ClassTableName = PagePathMappingRuleInfo.TYPEINFO.ObjectClassName.Replace(".", "_");
