@@ -43,18 +43,25 @@ internal class ContentItemFolderSynchronizationService : IContentItemFolderSynch
 
     private async Task SynchronizeProductFolder(int folderId, string contentTypeName, CancellationToken cancellationToken = default)
     {
-        if (folderId != 0)
+        if (folderId == 0)
         {
-            var builder = new ContentItemQueryBuilder().ForContentType(contentTypeName, config => config
-                .Where(p => p.WhereNotEquals(nameof(ContentItemInfo.ContentItemContentFolderID), folderId))
-                .Columns(nameof(ContentItemInfo.ContentItemID))
-            );
-            var ids = (await contentQueryExecutor.GetResult(builder, rowData => rowData.ContentItemID, cancellationToken: cancellationToken))
-                .ToList();
-            if (ids.Count > 0)
-            {
-                await contentFolderManager.MoveItems(folderId, ids, cancellationToken);
-            }
+            return;
+        }
+
+        var root = await contentFolderManager.GetRoot(cancellationToken);
+        var builder = new ContentItemQueryBuilder().ForContentType(contentTypeName, config => config
+            .Where(p => p
+                .WhereNotEquals(nameof(ContentItemInfo.ContentItemContentFolderID), folderId)
+                .WhereEquals(nameof(ContentItemInfo.ContentItemContentFolderID), root.ContentFolderID)
+            )
+            .Columns(nameof(ContentItemInfo.ContentItemID))
+        );
+        var ids = (await contentQueryExecutor.GetResult(builder, rowData => rowData.ContentItemID, cancellationToken: cancellationToken))
+            .ToList();
+
+        if (ids.Count > 0)
+        {
+            await contentFolderManager.MoveItems(folderId, ids, cancellationToken);
         }
     }
 }
