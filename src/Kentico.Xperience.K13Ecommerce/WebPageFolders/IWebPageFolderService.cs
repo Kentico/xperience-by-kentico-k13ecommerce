@@ -2,6 +2,9 @@
 
 namespace Kentico.Xperience.K13Ecommerce.WebPageFolders;
 
+/// <summary>
+/// Web page folder service
+/// </summary>
 public interface IWebPageFolderService
 {
     /// <summary>

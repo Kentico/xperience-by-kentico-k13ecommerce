@@ -29,6 +29,12 @@ internal partial class NodeAliasPathValidationRule : ValidationRule<string>
             return false;
         }
 
+        if (path.EndsWith('/'))
+        {
+            errorMessage = "Pattern cannot end with forward slash";
+            return false;
+        }
+
         // Skip first forward slash
         path = path[1..];
         string[] segments = path.Split('/');
