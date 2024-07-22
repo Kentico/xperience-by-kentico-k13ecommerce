@@ -45,28 +45,31 @@ namespace Kentico.Xperience.K13Ecommerce.WebPageFolders
                 }
             }
 
-            if (lastExistingFolderIndex == maxFoldersIndex || currentFolder is null)
+            if (lastExistingFolderIndex == maxFoldersIndex)
             {
-                // Folder is created or invalid path provided.
+                // Folder is already created.
                 return currentFolder;
             }
 
             int websiteChannelId = await websiteChannelProvider.GetWebsiteChannelId(websiteChannelName, cancellationToken);
             var webPageManager = webPageManagerFactory.Create(websiteChannelId, UserInfoProvider.AdministratorUser.UserID);
-            int currentFolderId = currentFolder.WebPageItemID;
+            // if null, then current folder is root.
+            int? currentFolderId = currentFolder?.WebPageItemID;
             // Create any necessary folders starting from the first non-existing folder
             for (int i = lastExistingFolderIndex + 1; i < folders.Length; i++)
             {
                 string folderToCreate = folders[i];
 
-                var createFolderParameters = new CreateFolderParameters(folderToCreate, languageName)
+                var createFolderParameters = new CreateFolderParameters(folderToCreate, languageName);
+                if (currentFolderId.HasValue)
                 {
-                    ParentWebPageItemID = currentFolderId
-                };
+                    createFolderParameters.ParentWebPageItemID = currentFolderId.Value;
+                }
+
                 currentFolderId = await webPageManager.CreateFolder(createFolderParameters, cancellationToken);
             }
 
-            // Folder is already created
+            // Folder is now created
             return await GetFolderByPath(folderPath, websiteChannelName);
         }
 
