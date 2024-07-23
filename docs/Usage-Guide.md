@@ -77,10 +77,10 @@ via API.
 ### Orders
 - Endpoint `api/store/order/list` for retrieving list of orders for current customer based on request (supports paging)
 - Endpoint `api/store/order/admin/list` for retrieving list of orders (for all customers) based on request (supports paging) to display in XbyK administration (supports paging)
-- Endpoint `api/store/order/detail/{orderID}` for retrieving order detail for current customer. If the order order belongs to another customer, no order is retrieved
-- Endpoint `api/store/order/admin/detail/{orderID}` for retrieving order detail(without verifying if order belongs to current customer)
+- Endpoint `api/store/order/detail/{orderID}` for retrieving order details for the current customer. If the order belongs to another customer, no order is retrieved
+- Endpoint `api/store/order/admin/detail/{orderID}` for retrieving order details (without verifying if the order belongs to the current customer)
 - Endpoint `api/store/order/statuses/list` for retrieving all order statuses
-- Endpoint `api/store/order/update` for updating order(update order status, set order payment, etc.)
+- Endpoint `api/store/order/update` for updating orders (update order status, set order payment, etc.). Primarily intended to be used via `IOrderService` available in the [integration API](https://github.com/Kentico/xperience-by-kentico-k13ecommerce/pull/16#kx-13-e-commerce-integration-in-xperience-by-kentico)
 
 ### Customers
 - Endpoint `api/store/customer/addresses` for retrieving current customer's addresses
@@ -94,7 +94,7 @@ via API.
 When [member](https://docs.kentico.com/x/BIsuCw) is created on XbyK (for example when a new customer registers), this member needs to be synchronized to KX 13 as a user.
 It is subsequently used for API authorization (member/user identity is generated in JWT).
 Before you start using the Store API, you need to synchronize all website members between the client (XbyK) and your KX 13 application.
-Complete synchronization is not part of this PoC solution.
+Complete synchronization is currently not a part of this solution.
 
 - Endpoint `api/store/synchronization/user-synchronization` can be used to create a new user in KX 13
   - The client application (XbyK) should use this to ensure that all new members are synchronized to KX 13. This is necessary when client's
@@ -222,12 +222,12 @@ and to browser cookie (uses `IShoppingCartClientStorage`)
   - Service is used e.g. in [CheckoutService in Dancing Goat example](../examples/DancingGoat-K13Ecommerce/Services/CheckoutService.cs) 
   where customer's addresses are retrieved in cart's second step.
 - `IOrderService`
-  - List of orders from all customers(for implementing listing orders in administration)
-  - List of orders for current customer(based on request)
-  - Order detail for current customer(only for orders that belong to the customer)
-  - Order detail for administrator(without verifying if order belongs to current customer)
-  - List of all order statuses
-  - Update order
+  - List orders from all customers (for implementing order listings in the administration)
+  - List orders for the current customer (based on the request context)
+  - Retrieve order details for the current customer (only for orders that belong to the customer)
+  - Retrieve order details for administrators (without verifying if the order belongs to the current customer)
+  - List all order statuses
+  - Update existing orders (order status, payment, etc.)
 - `ISiteStoreService`
   - Use for retrieving site's [list of enabled cultures](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L13), e.g. for implementation of language selector
   - Use for retrieving site's [list of enabled currencies](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/src/Kentico.Xperience.K13Ecommerce/SiteStore/ISiteStoreService.cs#L18), e.g. for implementation of currency selector
@@ -240,7 +240,7 @@ and to browser cookie (uses `IShoppingCartClientStorage`)
 
 Library also implements product synchronization to Content hub. These are 3 entities synchronized to reusable content items:
 - Products - Content type `K13Store.ProductSKU`
-  - All products associated with product pages are synced. **Standalone SKUs** synchronization can be set via `StandaloneProductsSync` setting.
+  - All products associated with product pages are synced. **Standalone SKUs** synchronization can be set via `StandaloneProductSync` setting.
 - Product variants - Content type `K13Store.ProductVariant`
   - All products variant for parent products
 - Product images - Content type `K13Store.ProductImage`
@@ -249,7 +249,7 @@ Library also implements product synchronization to Content hub. These are 3 enti
 The synchronization runs in a background thread worker periodically and can be disabled (`ProductSyncEnabled` setting).
 Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized data is updated when source value
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
-safely. You can decide, whether include [standalone SKUs](https://docs.kentico.com/x/3gqRBg) or not (`StandaloneProductsSync` setting).
+safely. You can decide, whether include [standalone SKUs](https://docs.kentico.com/x/3gqRBg) or not (`StandaloneProductSync` setting).
 
 No price data is synced, because catalog prices need
 calculator evaluation in context of user's cart and standalone requests via `IProductService` are required.
@@ -315,7 +315,7 @@ dotnet add package Kentico.Xperience.Store.Rcl
 | ClientId         | Fill same value which is defined on KX 13 side                     |
 | ClientSecret      | Fill same value which is defined on KX 13 side                     |
 | ProductSyncEnabled | If true, product synchronization is enabled                        |
-| StandaloneProductSync | If true, [standalone SKUs](https://docs.kentico.com/x/3gqRBg) are synchronized as well                        |
+| StandaloneProductSync | If this setting along with `ProductSyncEnabled` is true, [standalone SKUs](https://docs.kentico.com/x/3gqRBg) are synchronized as well (if `ProductSyncEnabled` is false, no products are synchronized).                        |
 | ProductSyncInterval                       | Interval in minutes specifies how often synchronization is running | 
 
 
@@ -422,7 +422,7 @@ Here are links for some specific parts of shopping cart:
 - [Discount / Coupon codes](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L163)
 - [Delivery details + shipping](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L194)
 - [Payment](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L330)
-- Payment gateway - Is not part of this PoC solution, you need to implement integration with specific payment gateway.
+- Payment gateway - Is not currently part of the solution. You need to implement integration with a specific payment gateway.
 - [Order creation](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L315)
 
 
