@@ -430,9 +430,11 @@ Synchronization is disabled when rules are empty.
 By creating mapping rule you can specify how KX 13 NodeAliasPath (stored in content item) should be mapped into XbyK page path.
 Rules are ordered. The first rule that matches NodeAliasPath will be used. You can use variable tokens when creating mapping rules - see below.
 
+For achieving desired XbyK page path structure, all required folders are automatically created. .
+
 Examples:
 
-1. Straightforward copying structure from KX 13 to XbyK:
+1. Direct structure copying from KX 13 to XbyK:
    - Mapping rule:
       - K13 NodeAliasPath: /\{Product\}
       - XbK Page path: /\{Product\}
@@ -441,7 +443,7 @@ Examples:
       - /DancingGoatStore/Coffee/Arabica -> /DancingGoatStore/Coffee/Arabica
       - /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15 -> /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15
 
-2. Copying only items which are place in category folder as subfolder of DancingGoatStore. Items which are not placed in DancingGoatStore could be
+2. Copying only items which are placed in the category folder as a subfolder of DancingGoatStore. Items which are not placed in DancingGoatStore could be
 mapped e.g. in another folder or web channel:
    - Mapping rule:
       - K13 NodeAliasPath: /DancingGoatStore/\{Category\}/\{Product\}
@@ -453,16 +455,18 @@ mapped e.g. in another folder or web channel:
       - /DancingGoatStore/Paper_Filter would not be matched (as the path is not compound from at least two parts of path after "DancingGoatStore")
       - /AnotherStore/Coffee/Robusta would not be matched (as the path does not start with "DancingGoatStore")
 
-3. Is it possible to skip part of NodeAliasPath (only once) for creating flattened structure:
+3. When creating a flattened structure, it is possible to omit part of the NodeAliasPath (only once):
    - Mapping rule:
       - K13 NodeAliasPath: /.../\{Product\}
       - XbK Page path: /Store/\{Product\}
       - Channel name: Dancing Goat Pages
-   - In variable `Product` will be stored only last part of NodeAliasPath (so product name) and mapped in folder "Store" in XbyK web channel:
+   - In variable `Product` will be stored only last part of the NodeAliasPath (product name) and mapped in the folder "Store" in XbyK web channel:
       - /DancingGoatStore/Coffee/Arabica -> /Store/Arabica
       - /DancingGoatStore/Paper_Filter -> /Store/Paper_Filter
       - /AnotherStore/Coffee/Robusta -> /Store/Robusta
 
-
+#### Known limitations
 It is up to the user's responsibility not to create rules that map different content items NodeAliasPath to a single product page tree path.
 Such a case leads to an overwrite of the linked content item for a particular page.
+
+If user changes some of the mapping rules, already created pages will not be moved accordingly. Instead, they will be created in a new location
