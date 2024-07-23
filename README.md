@@ -208,7 +208,7 @@ Distributed under the MIT License. See [`LICENSE.md`](./LICENSE.md) for more inf
 
 ## Support
 
-This contribution has __Kentico Labs Full support by 7-day bug-fix policy__.
+This project has **Full support by 7-day bug-fix policy**.
 
 See [`SUPPORT.md`](https://github.com/Kentico/.github/blob/main/SUPPORT.md) for more information.
 
