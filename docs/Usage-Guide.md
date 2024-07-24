@@ -429,7 +429,7 @@ from synchronized content items of type `K13Store.ProductSKU`.
 
 Synchronization is disabled when rules are empty.
 
-![XbK mapping rules](../images/screenshots/XbK_mapping_rules "XbK mapping rules")
+![XbyK mapping rules](../images/screenshots/XbK_mapping_rules.png "XbyK mapping rules")
 
 By creating mapping rule you can specify how KX 13 NodeAliasPath (stored in content item) should be mapped into XbyK page path.
 Rules are ordered. The first rule that matches NodeAliasPath will be used. You can use wildcards when creating mapping rules. 
