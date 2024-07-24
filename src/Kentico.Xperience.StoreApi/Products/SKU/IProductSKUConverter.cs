@@ -14,6 +14,7 @@ public interface IProductSKUConverter<out TModel>
     /// <param name="skuInfo">SKU info.</param>
     /// <param name="currencyCode">Currency code in which evaluates prices.</param>
     /// <param name="withVariants">If true, variants are included.</param>
+    /// <param name="withLongDescription">If true, <see cref="SKUInfo.SKUDescription"/> is included.</param>
     /// <returns></returns>
-    TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants);
+    TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants, bool withLongDescription);
 }

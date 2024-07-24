@@ -1,22 +1,25 @@
-﻿using Kentico.Xperience.StoreApi.Customers;
+﻿using System.ComponentModel.DataAnnotations;
+
+using Kentico.Xperience.StoreApi.Currencies;
+using Kentico.Xperience.StoreApi.Customers;
 using Kentico.Xperience.StoreApi.ShoppingCart;
 
 namespace Kentico.Xperience.StoreApi.Orders;
 
 /// <summary>
-/// Dto for <see cref="CMS.Ecommerce.OrderInfo"/>.
+/// Dto for <see cref="CMS.Ecommerce.OrderInfo" />.
 /// </summary>
 public class KOrder
 {
-    public int OrderId { get; set; }
+    [Required] public int OrderId { get; set; }
 
-    public decimal OrderTotalTax { get; set; }
+    [Required] public decimal OrderTotalTax { get; set; }
 
     public string OrderTaxSummary { get; set; }
 
     public string OrderInvoiceNumber { get; set; }
 
-    public string OrderCurrencyCode { get; set; }
+    public KCurrency OrderCurrency { get; set; }
 
     public KShippingOption OrderShippingOption { get; set; }
 
@@ -28,11 +31,11 @@ public class KOrder
 
     public KOrderStatus OrderStatus { get; set; }
 
-    public decimal OrderGrandTotal { get; set; }
+    [Required] public decimal OrderGrandTotal { get; set; }
 
     public decimal OrderGrandTotalInMainCurrency { get; set; }
 
-    public decimal OrderTotalPrice { get; set; }
+    [Required] public decimal OrderTotalPrice { get; set; }
 
     public decimal OrderTotalPriceInMainCurrency { get; set; }
 
@@ -67,4 +70,6 @@ public class KOrder
     public KAddress OrderCompanyAddress { get; set; }
 
     public IEnumerable<KOrderItem> OrderItems { get; set; }
+
+    public KPaymentResult OrderPaymentResult { get; set; }
 }

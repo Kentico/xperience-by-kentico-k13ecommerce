@@ -9,6 +9,20 @@ public partial class KProductNode : IItemIdentifier<int>
 {
     /// <inheritdoc/>
     public int ExternalId => Sku.Skuid;
+
+    /// <summary>
+    /// Create product node from product SKU.
+    /// </summary>
+    /// <param name="sku"></param>
+    public KProductNode(KProductSKU sku)
+    {
+        Sku = sku;
+        DocumentSKUName = sku.SkuName;
+        DocumentSKUDescription = sku.SkuLongDescription;
+        DocumentSKUShortDescription = sku.SkuShortDescription;
+        ClassName = string.Empty;
+        NodeAliasPath = string.Empty;
+    }
 }
 
 /// <summary>
