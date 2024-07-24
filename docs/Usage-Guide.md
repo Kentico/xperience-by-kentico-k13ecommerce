@@ -243,10 +243,12 @@ Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized dat
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
 safely.
 
-User can select content item folders where content items are synchronized. Content item folders can be selected independently for each content type. These settings can be found in
-Configuration -> K13Ecommerce -> K13Ecommerce settings. Content items are not moved if root folder is selected.
+You can select content item folders where content items are synchronized. Content item folders can be selected independently for each content type in KX 13 administration UI. Go to
+**Configuration** -> **K13Ecommerce** -> **K13Ecommerce settings**. Content items are not moved if root folder is selected.
 
-With enabled product page synchronization (see [How to enable automatic product page synchronization?](#prodpagesync)) content type `K13Store.ProductPage` (in chosen web channel) 
+![K13Ecommerce settings](../images/screenshots/module_settings.png "K13Ecommerce settings")
+
+With enabled product page synchronization (see [How to enable automatic product page synchronization?](#prodpagesync)) content type `K13Store.ProductPage` (in chosen website channel) 
 is created for every content item of type `K13Store.ProductSKU`.
 
 No price data is synced, because catalog prices need
@@ -422,15 +424,18 @@ Here are links for some specific parts of shopping cart:
 - [Order creation](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L315)
 
 ### <a name="prodpagesync"></a>How to enable automatic product page synchronization?
-Go to Configuration -> K13Ecommerce -> Page Path mapping rules. Here you can manage rules for automatic creating product pages (`K13Store.ProductPage`)
+In KX13 administration UI go to **Configuration** -> **K13Ecommerce** -> **Page Path mapping rules**. Here you can manage rules for automatic creating product pages (`K13Store.ProductPage`)
 from synchronized content items of type `K13Store.ProductSKU`.
 
 Synchronization is disabled when rules are empty.
 
-By creating mapping rule you can specify how KX 13 NodeAliasPath (stored in content item) should be mapped into XbyK page path.
-Rules are ordered. The first rule that matches NodeAliasPath will be used. You can use variable tokens when creating mapping rules - see below.
+![XbK mapping rules](../images/screenshots/XbK_mapping_rules "XbK mapping rules")
 
-For achieving desired XbyK page path structure, all required folders are automatically created. .
+By creating mapping rule you can specify how KX 13 NodeAliasPath (stored in content item) should be mapped into XbyK page path.
+Rules are ordered. The first rule that matches NodeAliasPath will be used. You can use wildcards when creating mapping rules. 
+Each rule can contain any number of wildcards (with arbitrary names). See the examples below for details.
+
+The synchronization automatically creates all required folders in the website channel content tree to achieve the desired XbyK page path structure.
 
 Examples:
 
@@ -439,17 +444,17 @@ Examples:
       - K13 NodeAliasPath: /\{Product\}
       - XbK Page path: /\{Product\}
       - Channel name: Dancing Goat Pages
-   - In variable `Product` will be stored whole NodeAliasPath and as such will be mapped to tree path of created product page. E.g.:
+   - The `Product` wildcard will store the whole NodeAliasPath and as such will be mapped to tree path of created product page. E.g.:
       - /DancingGoatStore/Coffee/Arabica -> /DancingGoatStore/Coffee/Arabica
       - /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15 -> /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15
 
 2. Copying only items which are placed in the category folder as a subfolder of DancingGoatStore. Items which are not placed in DancingGoatStore could be
-mapped e.g. in another folder or web channel:
+mapped e.g. in another folder or website channel:
    - Mapping rule:
       - K13 NodeAliasPath: /DancingGoatStore/\{Category\}/\{Product\}
       - XbK Page path: /Store/Products/\{Category\}/\{Product\}
       - Channel name: Dancing Goat Pages
-   - In variable `Category` will be stored first folder after "DancingGoatStore", `Product` will be rest of path. E.g.:
+   - The `Category` wildcard will store the first folder after "DancingGoatStore", `Product` will be rest of path. E.g.:
       - /DancingGoatStore/Coffee/Arabica -> /Store/Products/Coffee/Arabica
       - /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15 -> /Store/Products/Grinders/Electric/Grinder_GAGGIA_MD_15
       - /DancingGoatStore/Paper_Filter would not be matched (as the path is not compound from at least two parts of path after "DancingGoatStore")
@@ -460,13 +465,12 @@ mapped e.g. in another folder or web channel:
       - K13 NodeAliasPath: /.../\{Product\}
       - XbK Page path: /Store/\{Product\}
       - Channel name: Dancing Goat Pages
-   - In variable `Product` will be stored only last part of the NodeAliasPath (product name) and mapped in the folder "Store" in XbyK web channel:
+   - The `Product` wildcard will store only the last part of the NodeAliasPath (product name) and be mapped to the folder "Store" in XbyK website channel:
       - /DancingGoatStore/Coffee/Arabica -> /Store/Arabica
       - /DancingGoatStore/Paper_Filter -> /Store/Paper_Filter
       - /AnotherStore/Coffee/Robusta -> /Store/Robusta
 
 #### Known limitations
-It is up to the user's responsibility not to create rules that map different content items NodeAliasPath to a single product page tree path.
-Such a case leads to an overwrite of the linked content item for a particular page.
+Avoid creating rules that map the NodeAliasPath of different content items to a single product page tree path. Such rules cause the linked content item to be overwritten for particular pages.
 
-If user changes some of the mapping rules, already created pages will not be moved accordingly. Instead, they will be created in a new location
+If you change existing mapping rules, already created pages will not be moved accordingly. Instead, they will be created in the new location.
