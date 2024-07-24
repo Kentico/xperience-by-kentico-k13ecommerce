@@ -37,7 +37,7 @@ public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
 
 
     /// <inheritdoc/>
-    public virtual TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants)
+    public virtual TModel Convert(SKUInfo skuInfo, string currencyCode, bool withVariants, bool withLongDescription)
     {
         var model = mapper.Map<TModel>(skuInfo);
 
@@ -64,6 +64,11 @@ public class ProductSKUConverter<TModel> : IProductSKUConverter<TModel>
             }
 
             model.Variants = variants;
+        }
+
+        if (withLongDescription)
+        {
+            model.SKULongDescription = skuInfo.SKUDescription;
         }
 
         model.Prices = mapper.Map<KProductCatalogPrices>(prices);

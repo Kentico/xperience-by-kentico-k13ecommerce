@@ -19,4 +19,9 @@ public class OrderListRequest
     /// Order by.
     /// </summary>
     public required string OrderBy { get; set; }
+
+    /// <summary>
+    /// Customer ID, leave null or zero for all customers.
+    /// </summary>
+    public int? CustomerId { get; set; }
 }

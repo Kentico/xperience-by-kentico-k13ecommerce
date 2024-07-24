@@ -21,6 +21,11 @@ public class KenticoStoreConfig
     public required string ClientSecret { get; set; } = string.Empty;
 
     /// <summary>
+    /// Synchronize also standalone products without page representation.
+    /// </summary>
+    public required bool StandaloneProductSync { get; set; } = true;
+
+    /// <summary>
     /// When true, product synchronization is enabled.
     /// </summary>
     public required bool ProductSyncEnabled { get; set; } = true;

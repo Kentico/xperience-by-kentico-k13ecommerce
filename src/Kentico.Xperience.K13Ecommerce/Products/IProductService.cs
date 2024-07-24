@@ -36,4 +36,12 @@ public interface IProductService
     /// <param name="skuId">SKUID for product or variant.</param>
     /// <param name="currencyCode">Currency code.</param>    
     Task<ProductInventoryPriceInfo> GetVariantInventoryPriceInfo(int skuId, string? currencyCode = null);
+
+
+    /// <summary>
+    /// Gets all standalone products.
+    /// </summary>
+    /// <param name="request">Stanadlone product params.</param>
+    /// <returns></returns>
+    Task<ICollection<KProductSKU>> GetStandaloneProducts(ProductRequest request);
 }
