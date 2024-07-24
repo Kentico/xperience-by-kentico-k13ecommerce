@@ -6,6 +6,7 @@ using CMS.Websites.Routing;
 
 using K13Store;
 
+using Kentico.Xperience.K13Ecommerce.ProductPages;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 
 namespace DancingGoat.Models;

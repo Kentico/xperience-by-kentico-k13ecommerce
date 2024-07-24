@@ -993,6 +993,7 @@
         "type": "Project",
         "dependencies": {
           "Duende.AccessTokenManagement.OpenIdConnect": "[2.1.0, )",
+          "Kentico.Xperience.Admin": "[29.2.0, )",
           "Kentico.Xperience.Ecommerce.Common": "[1.0.0-prerelease-1, )",
           "Kentico.Xperience.WebApp": "[29.2.0, )",
           "Scrutor": "[4.2.2, )"

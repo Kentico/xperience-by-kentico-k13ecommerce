@@ -251,6 +251,14 @@ Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized dat
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
 safely. You can decide, whether include [standalone SKUs](https://docs.kentico.com/x/3gqRBg) or not (`StandaloneProductSync` setting).
 
+You can select content item folders where content items are synchronized. Content item folders can be selected independently for each content type in XbyK administration UI. Go to
+**Configuration** -> **K13Ecommerce** -> **K13Ecommerce settings**. Content items are not moved if root folder is selected.
+
+![XbyK K13Ecommerce settings](../images/screenshots/module_settings.png "XbyK K13Ecommerce settings")
+
+With enabled product page synchronization (see [How to enable automatic product page synchronization?](#prodpagesync)) content type `K13Store.ProductPage` (in chosen website channel) 
+is created for every content item of type `K13Store.ProductSKU`.
+
 No price data is synced, because catalog prices need
 calculator evaluation in context of user's cart and standalone requests via `IProductService` are required.
 
@@ -343,8 +351,8 @@ dotnet run --kxp-ci-restore
 | Library                            | Xperience Version | Library Version |
 |------------------------------------|-------------------| --------------- |
 | Kentico.Xperience.Ecommerce.Common | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.K13Ecommerce     | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.Store.Rcl        | \>= 29.0.1        | 1.0.0           |
+| Kentico.Xperience.K13Ecommerce     | \>= 29.2.0        | 1.0.0           |
+| Kentico.Xperience.Store.Rcl        | \>= 29.2.0        | 1.0.0           |
 
 
 ## Dancing Goat example - setup
@@ -376,7 +384,7 @@ For checkout process these content types (for pages) are restored:
 Let the product synchronization finish. Check `K13-Store product synchronization done.` in debug console or check Event log for errors.
 4. Create pages for Store:
    1. Store page (of type `K13Store - Store page`)
-   2. Product pages (of type `K13Store - Product page`) - for each page select corresponding Product SKU from content hub.
+   2. Product pages (of type `K13Store - Product page`) - for each page select corresponding Product SKU from content hub (or use automatic synchronization as described [here](#prodpagesync)).
    2. Categories pages (of type `K13Store - Category page`) - for each page select product pages in category
    3. Cart/Checkout steps pages
       1. Cart content page
@@ -425,6 +433,57 @@ Here are links for some specific parts of shopping cart:
 - Payment gateway - Is not currently part of the solution. You need to implement integration with a specific payment gateway.
 - [Order creation](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L315)
 
+### <a name="prodpagesync"></a>How to enable automatic product page synchronization?
+In XbyK administration UI go to **Configuration** -> **K13Ecommerce** -> **Page Path mapping rules**. Here you can manage rules for automatic creating product pages (`K13Store.ProductPage`)
+from synchronized content items of type `K13Store.ProductSKU`.
+
+Synchronization is disabled when rules are empty.
+
+![XbyK mapping rules](../images/screenshots/XbK_mapping_rules.png "XbyK mapping rules")
+
+By creating mapping rule you can specify how KX 13 NodeAliasPath (stored in content item) should be mapped into XbyK page path.
+Rules are ordered. The first rule that matches NodeAliasPath will be used. You can use wildcards when creating mapping rules. 
+Each rule can contain any number of wildcards (with arbitrary names). See the examples below for details.
+
+The synchronization automatically creates all required folders in the website channel content tree to achieve the desired XbyK page path structure.
+
+Examples:
+
+1. Direct structure copying from KX 13 to XbyK:
+   - Mapping rule:
+      - K13 NodeAliasPath: /\{Product\}
+      - XbK Page path: /\{Product\}
+      - Channel name: Dancing Goat Pages
+   - The `Product` wildcard will store the whole NodeAliasPath and as such will be mapped to tree path of created product page. E.g.:
+      - /DancingGoatStore/Coffee/Arabica -> /DancingGoatStore/Coffee/Arabica
+      - /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15 -> /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15
+
+2. Copying only items which are placed in the category folder as a subfolder of DancingGoatStore. Items which are not placed in DancingGoatStore could be
+mapped e.g. in another folder or website channel:
+   - Mapping rule:
+      - K13 NodeAliasPath: /DancingGoatStore/\{Category\}/\{Product\}
+      - XbK Page path: /Store/Products/\{Category\}/\{Product\}
+      - Channel name: Dancing Goat Pages
+   - The `Category` wildcard will store the first folder after "DancingGoatStore", `Product` will be rest of path. E.g.:
+      - /DancingGoatStore/Coffee/Arabica -> /Store/Products/Coffee/Arabica
+      - /DancingGoatStore/Grinders/Electric/Grinder_GAGGIA_MD_15 -> /Store/Products/Grinders/Electric/Grinder_GAGGIA_MD_15
+      - /DancingGoatStore/Paper_Filter would not be matched (as the path is not compound from at least two parts of path after "DancingGoatStore")
+      - /AnotherStore/Coffee/Robusta would not be matched (as the path does not start with "DancingGoatStore")
+
+3. When creating a flattened structure, it is possible to omit part of the NodeAliasPath (only once):
+   - Mapping rule:
+      - K13 NodeAliasPath: /.../\{Product\}
+      - XbK Page path: /Store/\{Product\}
+      - Channel name: Dancing Goat Pages
+   - The `Product` wildcard will store only the last part of the NodeAliasPath (product name) and be mapped to the folder "Store" in XbyK website channel:
+      - /DancingGoatStore/Coffee/Arabica -> /Store/Arabica
+      - /DancingGoatStore/Paper_Filter -> /Store/Paper_Filter
+      - /AnotherStore/Coffee/Robusta -> /Store/Robusta
+
+#### Known limitations
+Avoid creating rules that map the NodeAliasPath of different content items to a single product page tree path. Such rules cause the linked content item to be overwritten for particular pages.
+
+If you change existing mapping rules, already created pages will not be moved accordingly. Instead, they will be created in the new location.
 
 ### How to handle order payments?
 1. Implement your own payment method.

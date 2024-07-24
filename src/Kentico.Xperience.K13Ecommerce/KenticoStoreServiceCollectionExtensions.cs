@@ -4,6 +4,7 @@ using IdentityModel.Client;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 using Kentico.Xperience.K13Ecommerce.Activities;
+using Kentico.Xperience.K13Ecommerce.Admin;
 using Kentico.Xperience.K13Ecommerce.Config;
 using Kentico.Xperience.K13Ecommerce.Countries;
 using Kentico.Xperience.K13Ecommerce.Customers;
@@ -12,11 +13,15 @@ using Kentico.Xperience.K13Ecommerce.Products;
 using Kentico.Xperience.K13Ecommerce.ShoppingCart;
 using Kentico.Xperience.K13Ecommerce.SiteStore;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
+using Kentico.Xperience.K13Ecommerce.Synchronization.ContentItems;
 using Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
+using Kentico.Xperience.K13Ecommerce.Synchronization.ProductPages;
 using Kentico.Xperience.K13Ecommerce.Synchronization.Products;
 using Kentico.Xperience.K13Ecommerce.Synchronization.ProductVariants;
 using Kentico.Xperience.K13Ecommerce.Users;
 using Kentico.Xperience.K13Ecommerce.Users.UserSynchronization;
+using Kentico.Xperience.K13Ecommerce.WebPageFolders;
+using Kentico.Xperience.K13Ecommerce.WebsiteChannel;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -78,6 +83,7 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddScoped<IProductImageSynchronizationService, ProductImageSynchronizationService>();
         services.AddScoped<IProductVariantSynchronizationService, ProductVariantSynchronizationService>();
         services.AddScoped<IProductSynchronizationService, ProductSynchronizationService>();
+        services.AddScoped<IProductPageSynchronizationService, ProductPageSynchronizationService>();
         services.AddScoped<IUserSynchronizationService, UserSynchronizationService>();
         services.AddScoped<IShoppingCartSessionStorage, ShoppingCartSessionStorage>();
         services.AddScoped<IShoppingCartClientStorage, ShoppingCartClientStorage>();
@@ -87,6 +93,11 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddSingleton<IEcommerceActivityLogger, EcommerceActivityLogger>();
         services.AddScoped<ISiteStoreService, SiteStoreService>();
         services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<IWebPageFolderService, WebPageFolderService>();
+        services.AddScoped<IContentItemFolderSynchronizationService, ContentItemFolderSynchronizationService>();
+
+        services.AddSingleton<IK13EcommerceModuleInstaller, K13EcommerceModuleInstaller>();
+        services.AddSingleton<IWebsiteChannelProvider, WebsiteChannelProvider>();
 
         return services;
     }

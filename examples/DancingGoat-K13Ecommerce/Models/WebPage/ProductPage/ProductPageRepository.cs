@@ -3,6 +3,8 @@ using CMS.Helpers;
 using CMS.Websites;
 using CMS.Websites.Routing;
 
+using Kentico.Xperience.K13Ecommerce.ProductPages;
+
 namespace DancingGoat.Models
 {
     /// <summary>

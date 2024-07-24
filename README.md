@@ -33,7 +33,7 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
   - Product listing, detail and checkout process are placed on XbyK (shopping cart is saved and calculated still on KX 13).
     ![Cart content](./images/screenshots/cart_content.png "Cart content")
   - Orders are created from cart, order related data is saved on KX 13 side.
-  - Products need to be manually linked from Content hub to pages in website channel applications. You can use CI to restore examples of content types for pages that display products. 
+  - Products need to be linked from Content hub to pages in website channel applications. This can either be done manually or using automatic product page synchronization. You can use CI to restore examples of content types for pages that display products. 
     See [this section of User Guide](./docs/Usage-Guide.md#dancing-goat-example---setup) for detailed information.
     ![Store pages](./images/screenshots/store_pages.png "Store pages")
   - [Sample XbyK Dancing Goat site](./examples/DancingGoat-K13Ecommerce) implements store functionality and can be used as an example of migration of existing e-commerce projects to new XbyK.
@@ -81,8 +81,8 @@ Summary of libraries which are supported by the following versions Xperience by 
 | Library                            | Xperience Version | Library Version |
 |------------------------------------|-------------------| --------------- |
 | Kentico.Xperience.Ecommerce.Common | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.K13Ecommerce     | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.Store.Rcl        | \>= 29.0.1        | 1.0.0           |
+| Kentico.Xperience.K13Ecommerce     | \>= 29.2.0        | 1.0.0           |
+| Kentico.Xperience.Store.Rcl        | \>= 29.2.0        | 1.0.0           |
 | Kentico.Xperience.StoreApi         | \>= 13.0.131      | 1.0.0           |
 
 ### Dependencies
