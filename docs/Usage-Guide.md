@@ -243,10 +243,10 @@ Interval can be set in minutes (`ProductSyncInterval` setting). Synchronized dat
 changes, so data cannot be edited in XbyK safely, but new custom or reusable fields can be added and edited
 safely.
 
-You can select content item folders where content items are synchronized. Content item folders can be selected independently for each content type in KX 13 administration UI. Go to
+You can select content item folders where content items are synchronized. Content item folders can be selected independently for each content type in XbyK administration UI. Go to
 **Configuration** -> **K13Ecommerce** -> **K13Ecommerce settings**. Content items are not moved if root folder is selected.
 
-![K13Ecommerce settings](../images/screenshots/module_settings.png "K13Ecommerce settings")
+![XbyK K13Ecommerce settings](../images/screenshots/module_settings.png "XbyK K13Ecommerce settings")
 
 With enabled product page synchronization (see [How to enable automatic product page synchronization?](#prodpagesync)) content type `K13Store.ProductPage` (in chosen website channel) 
 is created for every content item of type `K13Store.ProductSKU`.
@@ -424,7 +424,7 @@ Here are links for some specific parts of shopping cart:
 - [Order creation](https://github.com/Kentico/xperience-by-kentico-ecommerce/blob/main/examples/DancingGoat-K13Ecommerce/Controllers/KStore/CheckoutController.cs#L315)
 
 ### <a name="prodpagesync"></a>How to enable automatic product page synchronization?
-In KX13 administration UI go to **Configuration** -> **K13Ecommerce** -> **Page Path mapping rules**. Here you can manage rules for automatic creating product pages (`K13Store.ProductPage`)
+In XbyK administration UI go to **Configuration** -> **K13Ecommerce** -> **Page Path mapping rules**. Here you can manage rules for automatic creating product pages (`K13Store.ProductPage`)
 from synchronized content items of type `K13Store.ProductSKU`.
 
 Synchronization is disabled when rules are empty.
