@@ -25,7 +25,8 @@
 	</ItemGroup>
 
 	<ItemGroup>		
-		<PackageReference Include="Duende.AccessTokenManagement.OpenIdConnect" />			
+		<PackageReference Include="Duende.AccessTokenManagement.OpenIdConnect" />		
+		<PackageReference Include="Kentico.Xperience.Admin" />			
 		<PackageReference Include="Kentico.Xperience.WebApp" />
 		<PackageReference Include="Microsoft.Extensions.ApiDescription.Client">
 		  <PrivateAssets>all</PrivateAssets>

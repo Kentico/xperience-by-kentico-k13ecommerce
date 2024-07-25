@@ -16,8 +16,8 @@ using CMS.Websites;
 
 using K13Store;
 
-namespace DancingGoat.Models
-{
+namespace Kentico.Xperience.K13Ecommerce.ProductPages;
+
 	/// <summary>
 	/// Represents a page of type <see cref="ProductPage"/>.
 	/// </summary>
@@ -42,4 +42,3 @@ namespace DancingGoat.Models
 		/// </summary>
 		public IEnumerable<ProductSKU> Product { get; set; }
 	}
-}

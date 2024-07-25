@@ -5,6 +5,7 @@ using CMS.Membership;
 using K13Store;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
+using Kentico.Xperience.K13Ecommerce.Config;
 using Kentico.Xperience.K13Ecommerce.Products;
 using Kentico.Xperience.K13Ecommerce.SiteStore;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
@@ -12,6 +13,7 @@ using Kentico.Xperience.K13Ecommerce.Synchronization.ProductImages;
 using Kentico.Xperience.K13Ecommerce.Synchronization.ProductVariants;
 
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.Products;
 
@@ -22,7 +24,8 @@ internal class ProductSynchronizationService(
     IProductVariantSynchronizationService variantSynchronizationService,
     IProductImageSynchronizationService productImageSynchronizationService,
     IHttpClientFactory httpClientFactory,
-    ISiteStoreService siteStoreService) : SynchronizationServiceCommon(httpClientFactory), IProductSynchronizationService
+    ISiteStoreService siteStoreService,
+    IOptionsMonitor<KenticoStoreConfig> config) : SynchronizationServiceCommon(httpClientFactory), IProductSynchronizationService
 {
     public async Task SynchronizeProducts()
     {
@@ -33,7 +36,7 @@ internal class ProductSynchronizationService(
         string language = defaultCultureCode[..2];
 
         var kenticoStoreProducts =
-            await productService.GetProductPages(new ProductPageRequest
+            (await productService.GetProductPages(new ProductPageRequest
             {
                 Path = "/",
                 Culture = defaultCultureCode,
@@ -41,7 +44,20 @@ internal class ProductSynchronizationService(
                 WithVariants = true,
                 WithLongDescription = true,
                 NoLinks = true
-            });
+            })).ToList();
+
+        if (config.CurrentValue.StandaloneProductSync)
+        {
+            var kenticoStandaloneProducts = (await productService.GetStandaloneProducts(new ProductRequest
+            {
+                Culture = defaultCultureCode,
+                Limit = 1000,
+                WithVariants = true
+            })).Select(p => new KProductNode(p));
+
+            kenticoStoreProducts.AddRange(kenticoStandaloneProducts);
+        }
+
 
         var contentItemProducts =
             await contentItemService.GetContentItems<ProductSKU>(ProductSKU.CONTENT_TYPE_NAME, linkedItemsLevel: 2);

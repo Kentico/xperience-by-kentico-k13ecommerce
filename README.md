@@ -1,8 +1,7 @@
-# Xperience by Kentico - KX 13 E-Commerce integration
+# Xperience by Kentico - Kentico Xperience 13 E-commerce
 
 [![7-day bug-fix policy](https://img.shields.io/badge/-7--days_bug--fixing_policy-grey?labelColor=orange&logo=data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ic3ZnLWljb24iIHN0eWxlPSJ3aWR0aDogMWVtOyBoZWlnaHQ6IDFlbTt2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO2ZpbGw6IGN1cnJlbnRDb2xvcjtvdmVyZmxvdzogaGlkZGVuOyIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik04ODguNDkgMjIyLjY4NnYtMzEuNTRsLTY1LjY3Mi0wLjk1NWgtMC4yMDVhNDY1LjcxNSA0NjUuNzE1IDAgMCAxLTE0NC4zMTUtMzEuMzM0Yy03Ny4wMDUtMzEuMTk4LTEyNi4yOTQtNjYuNzY1LTEyNi43MDMtNjcuMTA3bC0zOS44LTI4LjY3Mi0zOS4xODUgMjguNDY4Yy0yLjA0OCAxLjUwMS00OS45MDMgMzYuMDQ0LTEyNi45MDggNjcuMzFhNDQ3LjQyIDQ0Ny40MiAwIDAgMS0xNDQuNTIgMzEuMzM1bC02NS44NzcgMC45NTZ2Mzc4Ljg4YzAgODcuMDQgNDkuODM0IDE4NC42NjEgMTM3LjAxIDI2Ny44MSAzNy41NDcgMzUuODQgNzkuMjU4IDY2LjM1NSAxMjAuODMzIDg4LjIgNDMuMjggMjIuNzMzIDg0LjI0IDM0LjYxMiAxMTguODUyIDM0LjYxMiAzNC40MDYgMCA3NS43NzYtMTIuMTUyIDExOS42MDMtMzUuMTU4YTU0Ny45NzcgNTQ3Ljk3NyAwIDAgMCAxMjAuMDEzLTg3LjY1NCA1MTUuMjA5IDUxNS4yMDkgMCAwIDAgOTYuMTg4LTEyMi44OGMyNy4xMDItNDkuNTYyIDQwLjgyMy05OC4zMDQgNDAuODIzLTE0NC45OTlsLTAuMTM2LTM0Ny4yMDR6TTUxMC4wOSAxNDMuNDI4bDEuNzA2LTEuMzY1IDEuNzc1IDEuMzY1YzUuODAzIDQuMTY1IDU5LjUyOSA0MS44NDggMTQwLjM1NiA3NC43NTIgNzkuMTkgMzIuMDg2IDE1My42IDM1LjYzNSAxNjcuNjYzIDM2LjA0NWwyLjU5NCAwLjA2OCAwLjIwNSAzMTUuNzM0YzAuMTM3IDY5LjQ5NS00Mi41OTggMTUwLjE4Ni0xMTcuMDc3IDIyMS40NTdDNjQxLjU3IDg1NC4yODkgNTYzLjEzIDg5Ni40NzggNTEyIDg5Ni40NzhjLTIzLjY4OSAwLTU1LjU3LTkuODk5LTg5LjcwMi0yNy43ODVhNDc4LjgyMiA0NzguODIyIDAgMCAxLTEwNS42MDktNzcuMjc4QzI0Mi4yMSA3MjAuMjEzIDE5OS40NzUgNjM5LjUyMiAxOTkuNDc1IDU2OS44OVYyNTQuMjI1bDIuNzMtMC4xMzZjMy4yNzggMCA4Mi42MDQtMS41MDIgMTY3LjY2NC0zNS45NzdhNzM5Ljk0MiA3MzkuOTQyIDAgMCAwIDE0MC4yMi03NC42MTV2LTAuMDY5eiIgIC8+PHBhdGggZD0iTTcxMy4zMTggMzY4LjY0YTMyLjIyMiAzMi4yMjIgMCAwIDAtNDUuMzI5IDBMNDQ5LjE5NSA1ODcuNDM1bC05My4xODQtOTMuMTE2YTMyLjIyMiAzMi4yMjIgMCAwIDAtNDUuMzMgMCAzMi4yMjIgMzIuMjIyIDAgMCAwIDAgNDUuMjZsMTE1Ljg1IDExNS44NWEzMi4yOSAzMi4yOSAwIDAgMCA0NS4zMjggMEw3MTMuMzIgNDEzLjlhMzIuMjIyIDMyLjIyMiAwIDAgMCAwLTQ1LjMzeiIgIC8+PC9zdmc+)](https://github.com/Kentico/.github/blob/main/SUPPORT.md#full-support)
 [![CI: Build and Test](https://github.com/Kentico/xperience-by-kentico-k13ecommerce/actions/workflows/ci.yml/badge.svg)](https://github.com/Kentico/xperience-by-kentico-k13ecommerce/actions/workflows/ci.yml)
-
 
 | Name | Package |
 | ------------- |:-------------:|
@@ -34,7 +33,7 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
   - Product listing, detail and checkout process are placed on XbyK (shopping cart is saved and calculated still on KX 13).
     ![Cart content](./images/screenshots/cart_content.png "Cart content")
   - Orders are created from cart, order related data is saved on KX 13 side.
-  - Products need to be manually linked from Content hub to pages in website channel applications. You can use CI to restore examples of content types for pages that display products. 
+  - Products need to be linked from Content hub to pages in website channel applications. This can either be done manually or using automatic product page synchronization. You can use CI to restore examples of content types for pages that display products. 
     See [this section of User Guide](./docs/Usage-Guide.md#dancing-goat-example---setup) for detailed information.
     ![Store pages](./images/screenshots/store_pages.png "Store pages")
   - [Sample XbyK Dancing Goat site](./examples/DancingGoat-K13Ecommerce) implements store functionality and can be used as an example of migration of existing e-commerce projects to new XbyK.
@@ -42,8 +41,10 @@ is located in [Dancing Goat XbyK example project](./examples/DancingGoat-K13Ecom
 The integration provides an API with services for implementing the following scenarios:
   - Listing products based on parameters, product categories, prices and inventory
   - Actions with shopping cart, changing currency and order creation
-  - Listing of orders (currently suitable for implementing listing orders in administration)
-    - **Order updates and listing for specific customers are under development**
+  - Listing of orders in the administration
+  - Listing of orders on the live site for the current customer
+  - Updates of existing orders
+  - Retrieving and listing order statuses
   - Listing site cultures and currencies
   - Check [this part of User Guide](./docs/Usage-Guide.md#kx-13-e-commerce-integration-in-xperience-by-kentico) for more specific description 
 
@@ -80,8 +81,8 @@ Summary of libraries which are supported by the following versions Xperience by 
 | Library                            | Xperience Version | Library Version |
 |------------------------------------|-------------------| --------------- |
 | Kentico.Xperience.Ecommerce.Common | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.K13Ecommerce     | \>= 29.0.1        | 1.0.0           |
-| Kentico.Xperience.Store.Rcl        | \>= 29.0.1        | 1.0.0           |
+| Kentico.Xperience.K13Ecommerce     | \>= 29.2.0        | 1.0.0           |
+| Kentico.Xperience.Store.Rcl        | \>= 29.2.0        | 1.0.0           |
 | Kentico.Xperience.StoreApi         | \>= 13.0.131      | 1.0.0           |
 
 ### Dependencies
@@ -168,6 +169,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
     "ClientId": "3ef7fe1b-696c-4afa-8b56-d3176b7bea95",
     "ClientSecret": "********************",
     "ProductSyncEnabled": true,
+    "StandaloneProductSync": true,
     "ProductSyncInterval": 10
   }
 }
@@ -206,8 +208,9 @@ Distributed under the MIT License. See [`LICENSE.md`](./LICENSE.md) for more inf
 
 ## Support
 
-This project has **Full support by 7-day bug-fix policy**.
 
-See [`SUPPORT.md`](https://github.com/Kentico/.github/blob/main/SUPPORT.md#labs-limited-support) for more information.
+This contribution has __Full Support__.
+
+See [`SUPPORT.md`](https://github.com/Kentico/.github/blob/main/SUPPORT.md) for more information.
 
 For any security issues see [`SECURITY.md`](https://github.com/Kentico/.github/blob/main/SECURITY.md).
