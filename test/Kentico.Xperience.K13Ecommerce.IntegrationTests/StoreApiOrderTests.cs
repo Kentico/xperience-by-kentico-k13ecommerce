@@ -45,11 +45,12 @@ public class StoreApiOrderTests : StoreApiTestBase
     /// <param name="orderId">Order ID.</param>
     [Test]
     [TestCase(99999)]
-    public async Task OrderDetail_NonExistingOrder(int orderId)
+    public Task OrderDetail_NonExistingOrder(int orderId)
     {
         // test that exception has status code 404
         var exception = Assert.ThrowsAsync<ApiException>(async () => await StoreApiClient.OrderDetailAsync(orderId));
         Assert.That(exception!.StatusCode, Is.EqualTo(404));
+        return Task.CompletedTask;
     }
 
     /// <summary>
