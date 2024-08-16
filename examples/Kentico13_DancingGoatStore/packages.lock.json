@@ -28,9 +28,9 @@
       },
       "Microsoft.jQuery.Unobtrusive.Ajax": {
         "type": "Direct",
-        "requested": "[3.2.5, )",
-        "resolved": "3.2.5",
-        "contentHash": "NBjWsx9UwnDbyFzZHQSi79VAWLzFwB3kdmd2OMg7xvSemQoM1KK5Pu2AisyGucC22igqjlPQZiv2c82Agzlsuw==",
+        "requested": "[3.2.6, )",
+        "resolved": "3.2.6",
+        "contentHash": "udg7ZBszgqxloQ+ShJRONKQAzPnJIlUhKZB+AIvZdKh7CDc5Nms69T9X0hN5i+NqMmQE6njkzdCcEb16lPdJTw==",
         "dependencies": {
           "jQuery": "1.8.0"
         }

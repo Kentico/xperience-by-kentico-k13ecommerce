@@ -13,8 +13,8 @@ namespace Samples.DancingGoat
     internal class SampleContactDataCollector : IPersonalDataCollector
     {
         private readonly IInfoProvider<ActivityInfo> activityInfoProvider;
-        private readonly ICountryInfoProvider countryInfoProvider;
-        private readonly IStateInfoProvider stateInfoProvider;
+        private readonly IInfoProvider<CountryInfo> countryInfoProvider;
+        private readonly IInfoProvider<StateInfo> stateInfoProvider;
         private readonly IInfoProvider<ConsentAgreementInfo> consentAgreementInfoProvider;
         private readonly IInfoProvider<AccountContactInfo> accountContactInfoProvider;
         private readonly IInfoProvider<AccountInfo> accountInfoProvider;
@@ -33,8 +33,8 @@ namespace Samples.DancingGoat
         /// <param name="bizFormInfoProvider">BizForm info provider.</param>
         public SampleContactDataCollector(
             IInfoProvider<ActivityInfo> activityInfoProvider,
-            ICountryInfoProvider countryInfoProvider,
-            IStateInfoProvider stateInfoProvider,
+            IInfoProvider<CountryInfo> countryInfoProvider,
+            IInfoProvider<StateInfo> stateInfoProvider,
             IInfoProvider<ConsentAgreementInfo> consentAgreementInfoProvider,
             IInfoProvider<AccountContactInfo> accountContactInfoProvider,
             IInfoProvider<AccountInfo> accountInfoProvider,
@@ -58,29 +58,23 @@ namespace Samples.DancingGoat
         /// <returns><see cref="PersonalDataCollectorResult"/> containing personal data.</returns>
         public PersonalDataCollectorResult Collect(IEnumerable<BaseInfo> identities, string outputFormat)
         {
-            using (var writer = CreateWriter(outputFormat))
+            using var writer = CreateWriter(outputFormat);
+            var dataCollector = new SampleContactDataCollectorCore(writer, activityInfoProvider, countryInfoProvider, stateInfoProvider, consentAgreementInfoProvider,
+                accountContactInfoProvider, accountInfoProvider, bizFormInfoProvider);
+            return new PersonalDataCollectorResult
             {
-                var dataCollector = new SampleContactDataCollectorCore(writer, activityInfoProvider, countryInfoProvider, stateInfoProvider, consentAgreementInfoProvider,
-                    accountContactInfoProvider, accountInfoProvider, bizFormInfoProvider);
-                return new PersonalDataCollectorResult
-                {
-                    Text = dataCollector.CollectData(identities)
-                };
-            }
+                Text = dataCollector.CollectData(identities)
+            };
         }
 
 
         private IPersonalDataWriter CreateWriter(string outputFormat)
         {
-            switch (outputFormat.ToLowerInvariant())
+            return outputFormat.ToLowerInvariant() switch
             {
-                case PersonalDataFormat.MACHINE_READABLE:
-                    return new XmlPersonalDataWriter();
-
-                case PersonalDataFormat.HUMAN_READABLE:
-                default:
-                    return new HumanReadablePersonalDataWriter();
-            }
+                PersonalDataFormat.MACHINE_READABLE => new XmlPersonalDataWriter(),
+                _ => new HumanReadablePersonalDataWriter(),
+            };
         }
     }
 }
