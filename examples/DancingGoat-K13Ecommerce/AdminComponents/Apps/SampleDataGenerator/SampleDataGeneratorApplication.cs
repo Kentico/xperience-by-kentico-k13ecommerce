@@ -39,7 +39,7 @@ namespace DancingGoat.AdminComponents
         private readonly IInfoProvider<ConsentInfo> consentInfoProvider;
         private readonly IInfoProvider<BizFormInfo> bizFormInfoProvider;
         private readonly IInfoProvider<ContactGroupInfo> contactGroupInfoProvider;
-        private readonly ISettingsKeyInfoProvider settingsKeyInfoProvider;
+        private readonly IInfoProvider<SettingsKeyInfo> settingsKeyInfoProvider;
         private readonly IInfoProvider<WebsiteChannelInfo> websiteChannelInfoProvider;
 
 
@@ -59,7 +59,7 @@ namespace DancingGoat.AdminComponents
             IInfoProvider<ConsentInfo> consentInfoProvider,
             IInfoProvider<BizFormInfo> bizFormInfoProvider,
             IInfoProvider<ContactGroupInfo> contactGroupInfoProvider,
-            ISettingsKeyInfoProvider settingsKeyInfoProvider,
+            IInfoProvider<SettingsKeyInfo> settingsKeyInfoProvider,
             IInfoProvider<WebsiteChannelInfo> websiteChannelInfoProvider)
         {
             this.formBuilderConfigurationSerializer = formBuilderConfigurationSerializer;
@@ -141,14 +141,14 @@ namespace DancingGoat.AdminComponents
                         ButtonColor = ButtonColor.Secondary
                     }
                 },
-                Components = new List<IOverviewCardComponent>()
-                {
+                Components =
+                [
                     new StringContentCardComponent
                     {
                         Content =  @"Generates data and enables demonstration of giving consents, personal data portability, right to access, and right to be forgotten features.
                             Once enabled, the demo functionality cannot be disabled. Use on demo instances only."
                     }
-                }
+                ]
             };
         }
 

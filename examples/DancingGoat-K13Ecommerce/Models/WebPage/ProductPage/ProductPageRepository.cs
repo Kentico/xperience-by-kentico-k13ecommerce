@@ -135,13 +135,13 @@ namespace DancingGoat.Models
                 return Enumerable.Empty<string>();
             }
 
-            return new List<string>()
-            {
+            return
+            [
                 CacheHelper.BuildCacheItemName(new[] { "webpageitem", "byid", product.SystemFields.WebPageItemID.ToString() }, false),
                 CacheHelper.BuildCacheItemName(new[] { "webpageitem", "bychannel", WebsiteChannelContext.WebsiteChannelName, "bypath", product.SystemFields.WebPageItemTreePath }, false),
                 CacheHelper.BuildCacheItemName(new[] { "webpageitem", "bychannel", WebsiteChannelContext.WebsiteChannelName, "childrenofpath", DataHelper.GetParentPath(product.SystemFields.WebPageItemTreePath) }, false),
                 CacheHelper.GetCacheItemName(null, ContentLanguageInfo.OBJECT_TYPE, "all")
-            };
+            ];
         }
     }
 }

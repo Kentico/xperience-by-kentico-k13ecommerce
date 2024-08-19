@@ -1,4 +1,5 @@
-﻿using CMS.Globalization;
+﻿using CMS.DataEngine;
+using CMS.Globalization;
 using CMS.Helpers;
 
 namespace Kentico.Xperience.K13Ecommerce.Countries;
@@ -8,8 +9,8 @@ namespace Kentico.Xperience.K13Ecommerce.Countries;
 /// </summary>
 internal class CountryService : ICountryService
 {
-    private readonly ICountryInfoProvider countryInfoProvider;
-    private readonly IStateInfoProvider stateInfoProvider;
+    private readonly IInfoProvider<CountryInfo> countryInfoProvider;
+    private readonly IInfoProvider<StateInfo> stateInfoProvider;
     private readonly IProgressiveCache cache;
 
 
@@ -19,7 +20,7 @@ internal class CountryService : ICountryService
     /// <param name="countryInfoProvider">Provider for <see cref="CountryInfo"/> management.</param>
     /// <param name="stateInfoProvider">Provider for <see cref="StateInfo"/> management.</param>
     /// <param name="cache"></param>
-    public CountryService(ICountryInfoProvider countryInfoProvider, IStateInfoProvider stateInfoProvider,
+    public CountryService(IInfoProvider<CountryInfo> countryInfoProvider, IInfoProvider<StateInfo> stateInfoProvider,
         IProgressiveCache cache)
     {
         this.countryInfoProvider = countryInfoProvider;

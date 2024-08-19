@@ -22,7 +22,7 @@
   <ItemGroup>
     <PackageReference Include="kentico.xperience.aspnetcore.webapp" Version="13.0.131" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.8" />
-    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.5" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Kentico.Xperience.StoreApi\Kentico.Xperience.StoreApi.csproj" />
