@@ -254,6 +254,8 @@ safely. You can decide, whether include [standalone SKUs](https://docs.kentico.c
 You can select content item folders where content items are synchronized. Content item folders can be selected independently for each content type in XbyK administration UI. Go to
 **Configuration** -> **K13Ecommerce** -> **K13Ecommerce settings**. Content items are not moved if root folder is selected.
 
+Once the folder is changed, only new content items are moved to this folder (to not break possible manual structure for old items)
+
 ![XbyK K13Ecommerce settings](../images/screenshots/module_settings.png "XbyK K13Ecommerce settings")
 
 With enabled product page synchronization (see [How to enable automatic product page synchronization?](#prodpagesync)) content type `K13Store.ProductPage` (in chosen website channel) 
