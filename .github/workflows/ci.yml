@@ -39,7 +39,7 @@ jobs:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_NOLOGO: 1
-      PROJECT_NAME: Kentico.Xperience.K13Ecommerce
+      PROJECT_NAME: DancingGoat
       ASPNETCORE_URLS: https://localhost:14066
       STATUS_CHECK_URL: https://localhost:14066/status
 
@@ -116,7 +116,7 @@ jobs:
       - name: Publish Application
         run: |
           dotnet publish `
-            ./src/${{ env.PROJECT_NAME }} `
+            ./examples/DancingGoat-K13Ecommerce `
             -c Release `
             -o ./publish `
             --no-build `
