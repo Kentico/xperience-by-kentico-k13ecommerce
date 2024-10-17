@@ -18,13 +18,17 @@ namespace Kentico.Xperience.K13Ecommerce.Admin.UIPages;
 internal class PagePathMappingRuleCreatePage : ModelEditPage<PagePathMappingRuleConfigurationModel>
 {
     private readonly IInfoProvider<PagePathMappingRuleInfo> pagePathMappingRuleInfoProvider;
-    private readonly IPageUrlGenerator pageUrlGenerator;
+    private readonly IPageLinkGenerator pageLinkGenerator;
 
-    public PagePathMappingRuleCreatePage(Xperience.Admin.Base.Forms.Internal.IFormItemCollectionProvider formItemCollectionProvider, IFormDataBinder formDataBinder, IInfoProvider<PagePathMappingRuleInfo> pagePathMappingRuleInfoProvider, IPageUrlGenerator pageUrlGenerator)
+    public PagePathMappingRuleCreatePage(
+        Xperience.Admin.Base.Forms.Internal.IFormItemCollectionProvider formItemCollectionProvider,
+        IFormDataBinder formDataBinder,
+        IInfoProvider<PagePathMappingRuleInfo> pagePathMappingRuleInfoProvider,
+        IPageLinkGenerator pageLinkGenerator)
         : base(formItemCollectionProvider, formDataBinder)
     {
         this.pagePathMappingRuleInfoProvider = pagePathMappingRuleInfoProvider;
-        this.pageUrlGenerator = pageUrlGenerator;
+        this.pageLinkGenerator = pageLinkGenerator;
     }
 
     private PagePathMappingRuleConfigurationModel? model;
@@ -46,7 +50,7 @@ internal class PagePathMappingRuleCreatePage : ModelEditPage<PagePathMappingRule
         var baseResult = await base.ProcessFormData(model, formItems);
 
         var navigateResponse = NavigateTo(
-            pageUrlGenerator.GenerateUrl<PagePathMappingRuleListingPage>());
+            pageLinkGenerator.GetPath<PagePathMappingRuleListingPage>());
 
         foreach (var message in baseResult.Messages)
         {
