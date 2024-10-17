@@ -50,6 +50,8 @@ builder.Services.AddLocalization()
         options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResources));
     });
 
+builder.Services.AddHealthChecks();
+
 builder.Services.AddSession();
 
 builder.Services.AddDancingGoatServices();
@@ -85,6 +87,8 @@ app.MapControllerRoute(
    pattern: "error/{code}",
    defaults: new { controller = "HttpErrors", action = "Error" }
 );
+
+app.MapHealthChecks("/status");
 
 app.MapControllerRoute(
     name: DancingGoatConstants.DEFAULT_ROUTE_NAME,

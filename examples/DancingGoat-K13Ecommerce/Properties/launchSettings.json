@@ -18,9 +18,17 @@
     "DancingGoat": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:14066",
+      "applicationUrl": "https://localhost:14066",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "K13Ecommerce.WebCI": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:14066",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "CI"
       }
     }
   }

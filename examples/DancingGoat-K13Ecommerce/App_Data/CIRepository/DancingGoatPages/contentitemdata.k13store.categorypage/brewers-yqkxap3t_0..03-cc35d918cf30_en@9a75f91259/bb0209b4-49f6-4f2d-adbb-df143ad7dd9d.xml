@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.categorypage>
+  <CategoryName>Brewers</CategoryName>
+  <CategoryProducts>
+    <![CDATA[[{"WebPageGuid":"138f502b-c21d-4a4b-b891-35f12a14bc02"},{"WebPageGuid":"f912b5cc-af8f-43ab-8242-a6cd87a2b993"},{"WebPageGuid":"c8628dca-9fe6-4cc9-a6e5-194bad63fc52"},{"WebPageGuid":"e93ac542-a344-4eb4-b6fc-1b5ff009dd31"}]]]>
+  </CategoryProducts>
+  <ContentItemDataCommonDataID>
+    <GUID>0394e0be-e964-4bef-8003-cc35d918cf30</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Brewers-yqkxap3t</CodeName>
+      <GUID>27a53fe5-0084-430e-8778-14d9d51249ea</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>bb0209b4-49f6-4f2d-adbb-df143ad7dd9d</ContentItemDataGUID>
+</contentitemdata.k13store.categorypage>

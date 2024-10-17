@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>e7268638-3b76-463c-b53b-053dbccbbe30</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA-tukqextv</CodeName>
+      <GUID>6befb60d-ac65-413f-9140-bc472fe6d00d</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>65f58b85-a53a-492c-999b-c6fa07592efd</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"10be2b20-9759-41ff-a976-2fa27a12725d"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

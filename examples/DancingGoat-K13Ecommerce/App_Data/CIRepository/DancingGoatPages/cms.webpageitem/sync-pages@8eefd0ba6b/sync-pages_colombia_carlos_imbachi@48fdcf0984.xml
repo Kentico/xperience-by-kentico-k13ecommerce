@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>ColombiaCarlosImbachi-3bqx5r8c</CodeName>
+    <GUID>e1edefae-116f-4a62-bf2a-bc315c42d5ac</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>b923c4a9-354b-4400-92a5-ef293d6d2bb2</WebPageItemGUID>
+  <WebPageItemName>ColombiaCarlosImbachi-3bqx5r8c</WebPageItemName>
+  <WebPageItemOrder>8</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Sync-pages-99nf5vkx</CodeName>
+    <GUID>8fcb3cb6-f712-42a5-88f2-891a0351adad</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>/sync-pages/Colombia_Carlos_Imbachi</WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

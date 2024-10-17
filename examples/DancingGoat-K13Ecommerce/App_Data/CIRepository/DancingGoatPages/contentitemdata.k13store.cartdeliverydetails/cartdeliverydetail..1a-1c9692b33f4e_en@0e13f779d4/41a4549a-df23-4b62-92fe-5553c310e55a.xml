@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.cartdeliverydetails>
+  <CartNextStep>
+    <![CDATA[[{"WebPageGuid":"f99906d6-441f-4852-810b-e9cc4f286da1"}]]]>
+  </CartNextStep>
+  <CartPreviousStep>
+    <![CDATA[[{"WebPageGuid":"b6979143-7ffa-4f0d-9016-48d61efbd451"}]]]>
+  </CartPreviousStep>
+  <ContentItemDataCommonDataID>
+    <GUID>7e3c8e70-4cab-45d0-941a-1c9692b33f4e</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>CartDeliveryDetails-g2xlgvwm</CodeName>
+      <GUID>17007188-9a3d-4e80-bbdb-88f2699fbf06</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>41a4549a-df23-4b62-92fe-5553c310e55a</ContentItemDataGUID>
+</contentitemdata.k13store.cartdeliverydetails>

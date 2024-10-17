@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>cd3a3dc9-c795-48de-b891-ff307c8156b9</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GuatemalaFincaElInjerto-xawxgulj</CodeName>
+      <GUID>d2065557-f945-4f80-b32f-d2fdc06b2415</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>13a18795-cf7e-4d33-a107-4998ae188a1c</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"6ed5a707-7fa1-48f0-bfd1-fe0d69c8710b"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

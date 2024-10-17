@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>2d731c3f-9d6c-46b7-af3a-64bd2ac18d58</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaFincaIllimani-shaqr8ix</CodeName>
+      <GUID>a579da14-5b6f-4a0f-8e45-f8d78eb33d84</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>a8580c90-8acf-4adf-95a1-ff5cf7d048c5</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"acd780a2-b3f1-474f-8c86-64dcabce214d"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>
