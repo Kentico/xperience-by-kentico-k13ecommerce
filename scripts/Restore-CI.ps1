@@ -2,7 +2,6 @@ Import-Module (Resolve-Path Utilities) `
     -Function `
     Get-WebProjectPath, `
     Invoke-ExpressionWithException, `
-    Get-ConnectionString, `
     Write-Status `
     -Force
 

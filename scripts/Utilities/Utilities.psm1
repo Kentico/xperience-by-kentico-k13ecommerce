@@ -2,8 +2,8 @@
 
 $scriptConfig = @{}
 $scriptConfig.WorkspaceFolder = ".."
-$scriptConfig.SolutionFileName = "Kentico.Community.Portal.sln"
-$scriptConfig.AssemblyName = "Kentico.Community.Portal.Web"
+$scriptConfig.SolutionFileName = "Kentico.Xperience.K13Ecommerce.sln"
+$scriptConfig.AssemblyName = "DancingGoat"
 
 <#
     .DESCRIPTION
@@ -26,39 +26,39 @@ function Get-SolutionPath {
         Returns the web application folder path from the workspace root
 #>
 function Get-WebProjectPath {
-    return Resolve-Path(Join-Path $($scriptConfig.WorkspaceFolder) "src/Kentico.Community.Portal.Web")
+    return Resolve-Path(Join-Path $($scriptConfig.WorkspaceFolder) "examples/DancingGoat-K13Ecommerce")
 }
 
 <#
     .DESCRIPTION
         Returns the admin application folder path from the workspace root
 #>
-function Get-AdminProjectPath {
+<#function Get-AdminProjectPath {
     return Resolve-Path(Join-Path $($scriptConfig.WorkspaceFolder) "src/Kentico.Community.Portal.Admin")
-}
+}#>
 
 <#
     .DESCRIPTION
         Returns the admin client application folder path from the workspace root
 #>
-function Get-AdminClientProjectPath {
+<#function Get-AdminClientProjectPath {
     return Resolve-Path(Join-Path $($scriptConfig.WorkspaceFolder) "src/Kentico.Community.Portal.Admin/Client")
-}
+}#>
 
 <#
     .DESCRIPTION
         Returns the Core project folder path from the workspace root
 #>
-function Get-CoreProjectPath {
+<#function Get-CoreProjectPath {
     return Resolve-Path(Join-Path $($scriptConfig.WorkspaceFolder) "src/Kentico.Community.Portal.Core")
-}
+}#>
 
 
 <#
     .DESCRIPTION
         Gets the database connection string from the user secrets or appsettings.json file
 #>
-function Get-ConnectionString {
+<#function Get-ConnectionString {
     $projectPath = Get-WebProjectPath
 
     # Try to get the connection string from user secrets first
@@ -92,7 +92,7 @@ function Get-ConnectionString {
     }
 
     return $connectionString;
-}
+}#>
 
 <#
 .DESCRIPTION
