@@ -42,6 +42,7 @@ jobs:
       PROJECT_NAME: DancingGoat
       ASPNETCORE_URLS: https://localhost:14066
       STATUS_CHECK_URL: https://localhost:14066/status
+      XPERIENCE_BY_KENTICO_LICENSE: ${{ secrets.XPERIENCE_BY_KENTICO_LICENSE }}
 
     steps:
       - uses: actions/checkout@v4
@@ -94,19 +95,15 @@ jobs:
             -U "sa" `
             -P "Pass@12345" `
             -Q "RESTORE DATABASE [XByK_DancingGoat_K13Ecommerce] FROM DISK='/var/opt/mssql/backup/${{ env.DATABASE_BACKUP_FILENAME }}' WITH MOVE 'XByK_DancingGoat_K13Ecommerce' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce.mdf', MOVE 'XByK_DancingGoat_K13Ecommerce_log' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce_log.ldf'"
-        if: endsWith(env.DATABASE_BACKUP_FILENAME, '.bak')
 
-      - name: Restore Database .bacpac
+      - name: Imports license key to DB
         run: |
-          sqlpackage `
-            /a:Import `
-            /tsn:localhost `
-            /tdn:XByK_DancingGoat_K13Ecommerce `
-            /tu:sa `
-            /tp:Pass@12345 `
-            /sf:"./database/${{ env.DATABASE_BACKUP_FILENAME }}" `
-            /tec:False
-        if: endsWith(env.DATABASE_BACKUP_FILENAME, '.bacpac')
+          sqlcmd `
+            -S localhost `
+            -d XByK_DancingGoat_K13Ecommerce `
+            -U "sa" `
+            -P "Pass@12345" `
+            -Q "INSERT INTO [dbo].[CMS_LicenseKey] VALUES ('localhost', '${{ env.XPERIENCE_BY_KENTICO_LICENSE }}', 'X', 'LicenseInfoProvider.FullLicense', 0);"
       
       - name: Restore CI Repository
         working-directory: "./scripts"
