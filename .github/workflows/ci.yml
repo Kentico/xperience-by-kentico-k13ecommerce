@@ -117,7 +117,7 @@ jobs:
             -U "sa" `
             -P "Pass@12345" `
             -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
-          sqlcmd
+          sqlcmd `
             -S localhost `
             -d Kentico13_DancingGoat `
             -U "sa" `
