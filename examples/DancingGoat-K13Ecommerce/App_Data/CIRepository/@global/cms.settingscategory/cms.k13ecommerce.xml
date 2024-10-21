@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingscategory>
+  <CategoryDisplayName>K13 e-commerce</CategoryDisplayName>
+  <CategoryIsCustom>False</CategoryIsCustom>
+  <CategoryIsGroup>True</CategoryIsGroup>
+  <CategoryName>CMS.K13Ecommerce</CategoryName>
+  <CategoryOrder>15</CategoryOrder>
+  <CategoryParentID>
+    <CodeName>CMS.Settings</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </CategoryParentID>
+  <CategoryResourceID>
+    <CodeName>CMS.Integration.K13Ecommerce</CodeName>
+    <GUID>58704b77-b9ed-4063-990b-8b7f0ae487c8</GUID>
+    <ObjectType>cms.resource</ObjectType>
+  </CategoryResourceID>
+</cms.settingscategory>

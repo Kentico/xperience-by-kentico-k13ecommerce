@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>268379f6-4a55-4477-b194-5c08fe56312f</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose-2j0x9i7r</CodeName>
+      <GUID>ec64773a-4e0b-4f04-8e29-acfdceb3ee6e</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>48d3ea42-61e9-415f-af8b-0463630005b8</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"2651aa32-f299-4bdf-90c7-4ce141fa6c86"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

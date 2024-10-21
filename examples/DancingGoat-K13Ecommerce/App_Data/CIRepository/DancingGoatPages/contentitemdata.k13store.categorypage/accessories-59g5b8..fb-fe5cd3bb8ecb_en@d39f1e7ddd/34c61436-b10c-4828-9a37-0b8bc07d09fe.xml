@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.categorypage>
+  <CategoryName>Accessories</CategoryName>
+  <CategoryProducts>
+    <![CDATA[[{"WebPageGuid":"697b7999-9776-4423-ab88-9fc99734bd72"},{"WebPageGuid":"a420072a-e847-468f-a327-5db0298c4a3b"},{"WebPageGuid":"08640f70-3d7c-4c22-b6a9-a165ac0c3765"},{"WebPageGuid":"3b32240b-5204-48dd-9c8f-f64b3992c1b2"}]]]>
+  </CategoryProducts>
+  <ContentItemDataCommonDataID>
+    <GUID>abf945ab-c4dc-47d1-b3fb-fe5cd3bb8ecb</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Accessories-59g5b8lf</CodeName>
+      <GUID>e48350e6-3937-4615-8911-099ba020d68f</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>34c61436-b10c-4828-9a37-0b8bc07d09fe</ContentItemDataGUID>
+</contentitemdata.k13store.categorypage>

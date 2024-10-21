@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.resource>
+  <ResourceDescription>
+    <![CDATA[The module integrates connection betweeen XbK and K13 Ecommerce store.]]>
+  </ResourceDescription>
+  <ResourceDisplayName>Kentico Integration - K13Ecommerce</ResourceDisplayName>
+  <ResourceGUID>58704b77-b9ed-4063-990b-8b7f0ae487c8</ResourceGUID>
+  <ResourceIsInDevelopment>False</ResourceIsInDevelopment>
+  <ResourceName>CMS.Integration.K13Ecommerce</ResourceName>
+</cms.resource>

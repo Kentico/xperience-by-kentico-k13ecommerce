@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>c7cf1ddd-a229-468d-8841-351d709b6d61</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande-pzru0eo2</CodeName>
+      <GUID>5eb77a26-1964-4775-8409-8f886b426f40</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>44ff1a9f-eefb-4bec-83fb-e9c755954629</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"ef810fbb-576f-4753-b729-de07395cf837"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>
