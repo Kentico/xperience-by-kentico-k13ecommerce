@@ -103,7 +103,7 @@ jobs:
             -d XByK_DancingGoat_K13Ecommerce `
             -U "sa" `
             -P "Pass@12345" `
-            -Q "INSERT INTO [dbo].[CMS_LicenseKey] VALUES ('localhost', '${{ env.XPERIENCE_BY_KENTICO_LICENSE }}', 'X', 'LicenseInfoProvider.FullLicense', 0);"
+            -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
       
       - name: Restore CI Repository
         working-directory: "./scripts"
