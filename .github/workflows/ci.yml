@@ -35,14 +35,18 @@ jobs:
 
     env:
       ASPNETCORE_ENVIRONMENT: CI
-      DATABASE_BACKUP_FILENAME: ""
+      XBK_DATABASE_BACKUP_FILENAME: ""
+      K13_DATABASE_BACKUP_FILENAME: ""
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_NOLOGO: 1
-      PROJECT_NAME: DancingGoat
+      XBK_PROJECT_NAME: DancingGoat
+      K13_PROJECT_NAME: Kentico13_DancingGoat
       ASPNETCORE_URLS: https://localhost:14066
-      STATUS_CHECK_URL: https://localhost:14066/status
+      XBK_STATUS_CHECK_URL: https://localhost:14066/status
+      K13_STATUS_CHECK_URL: https://localhost:65375/status
       XPERIENCE_BY_KENTICO_LICENSE: ${{ secrets.XPERIENCE_BY_KENTICO_LICENSE }}
+      KENTICO_XPERIENCE_13_LICENSE: ${{ secrets.KENTICO_XPERIENCE_13_LICENSE }}
 
     steps:
       - uses: actions/checkout@v4
@@ -67,34 +71,43 @@ jobs:
 
       - name: Get Database Backup Name
         run: |
-          $latestBackup = Get-Content -Path "./database/backups.txt" -TotalCount 1
-          "DATABASE_BACKUP_FILENAME=$latestBackup" >> $env:GITHUB_ENV
+          $latestBackups = Get-Content -Path "./database/backups.txt" -TotalCount 2
+          "XBK_DATABASE_BACKUP_FILENAME=$($latestBackups[0])" >> $env:GITHUB_ENV
+          "K13_DATABASE_BACKUP_FILENAME=$($latestBackups[1])" >> $env:GITHUB_ENV
 
       - name: Extract Database Backup
         run: |
           Expand-Archive `
-            -Path "./database/${{ env.DATABASE_BACKUP_FILENAME }}.zip" `
+            -Path "./database/${{ env.XBK_DATABASE_BACKUP_FILENAME }}.zip" `
+            -DestinationPath "./database"
+          Expand-Archive `
+            -Path "./database/${{ env.K13_DATABASE_BACKUP_FILENAME }}.zip" `
             -DestinationPath "./database"
 
       - name: Install a SQL Server suite of tools (SQLEngine, SQLPackage)
         uses: potatoqualitee/mssqlsuite@9a0136e208df60b8ecb62909f076bc34854fa55a # set as a commit hash for security - v1.7
         with:
           install: sqlpackage, sqlengine
-          # TODO: Heslo v otevřené podobě?
           sa-password: Pass@12345
           version: 2022
 
       - name: Restore Database .bak
-        # TODO: Heslo v otevřené podobě?
         run: |
           docker exec sql mkdir /var/opt/mssql/backup
-          docker cp "./database/${{ env.DATABASE_BACKUP_FILENAME }}" sql:/var/opt/mssql/backup
+          docker cp "./database/${{ env.XBK_DATABASE_BACKUP_FILENAME }}" sql:/var/opt/mssql/backup
           sqlcmd `
             -S localhost `
             -d master `
             -U "sa" `
             -P "Pass@12345" `
-            -Q "RESTORE DATABASE [XByK_DancingGoat_K13Ecommerce] FROM DISK='/var/opt/mssql/backup/${{ env.DATABASE_BACKUP_FILENAME }}' WITH MOVE 'XByK_DancingGoat_K13Ecommerce' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce.mdf', MOVE 'XByK_DancingGoat_K13Ecommerce_log' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce_log.ldf'"
+            -Q "RESTORE DATABASE [XByK_DancingGoat_K13Ecommerce] FROM DISK='/var/opt/mssql/backup/${{ env.XBK_DATABASE_BACKUP_FILENAME }}' WITH MOVE 'XByK_DancingGoat_K13Ecommerce' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce.mdf', MOVE 'XByK_DancingGoat_K13Ecommerce_log' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce_log.ldf'"
+          docker cp "./database/${{ env.K13_DATABASE_BACKUP_FILENAME }}" sql:/var/opt/mssql/backup
+          sqlcmd `
+            -S localhost `
+            -d master `
+            -U "sa" `
+            -P "Pass@12345" `
+            -Q "RESTORE DATABASE [Kentico13_DancingGoat] FROM DISK='/var/opt/mssql/backup/${{ env.K13_DATABASE_BACKUP_FILENAME }}' WITH MOVE 'Kentico13_DancingGoat' TO '/var/opt/mssql/data/Kentico13_DancingGoat.mdf', MOVE 'Kentico13_DancingGoat_log' TO '/var/opt/mssql/data/Kentico13_DancingGoat_log.ldf'"
 
       - name: Imports license key to DB
         run: |
@@ -104,6 +117,12 @@ jobs:
             -U "sa" `
             -P "Pass@12345" `
             -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
+          sqlcmd
+            -S localhost `
+            -d Kentico13_DancingGoat `
+            -U "sa" `
+            -P "Pass@12345" `
+            -Q "INSERT INTO [dbo].[CMS_LicenseKey] VALUES ('localhost', '${{ env.KENTICO_XPERIENCE_13_LICENSE }}', 'X', '10/20/2025', 1);"
       
       - name: Restore CI Repository
         working-directory: "./scripts"
@@ -115,7 +134,13 @@ jobs:
           dotnet publish `
             ./examples/DancingGoat-K13Ecommerce `
             -c Release `
-            -o ./publish `
+            -o ./publish/XbK `
+            --no-build `
+            --no-restore
+          dotnet publish `
+            ./examples/Kentico13_DancingGoatStore `
+            -c Release `
+            -o ./publish/K13 `
             --no-build `
             --no-restore
 
@@ -136,13 +161,13 @@ jobs:
             --no-build `
             --no-restore
 
-      - name: Run Application and E2E Tests
+      - name: Run K13 Store
         run: |
           # Run the ASP.NET Core app as a background job
-          cd ./publish
-          Start-Job -ScriptBlock { dotnet ./${{ env.PROJECT_NAME }}.dll } -Name ${{ env.PROJECT_NAME }}
-          Receive-Job -Name ${{ env.PROJECT_NAME }}
-          cd ../
+          cd ./publish/K13
+          Start-Job -ScriptBlock { dotnet ./${{ env.K13_PROJECT_NAME }}.dll } -Name ${{ env.K13_PROJECT_NAME }}
+          Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
+          cd ../../
 
           # The ASP.NET Core app can take a few seconds to start, so we delay running tests
           #   until it is ready, and fail if we go over a maximum wait time
@@ -153,9 +178,9 @@ jobs:
           while ($attempts -lt $limit -and -not $success) {
               Start-Sleep -Seconds 1
               try {
-                  $response = Invoke-WebRequest -Uri ${{ env.STATUS_CHECK_URL }} -Method Get -SkipCertificateCheck
+                  $response = Invoke-WebRequest -Uri ${{ env.K13_STATUS_CHECK_URL }} -Method Get -SkipCertificateCheck
                   if ($response.StatusCode -eq 200) {
-                      Write-Output "Application is ready."
+                      Write-Output "K13 store: Application is ready."
                       $success = $true
                   }
               }
@@ -166,13 +191,50 @@ jobs:
           }
 
           if (-not $success) {
-              Write-Output "Application did not respond in time."
+              Write-Output "K13 store: Application did not respond in time."
+              exit 1
+          }
+
+      - name: Run Application and E2E Tests
+        run: |
+          # Run the ASP.NET Core app as a background job
+          cd ./publish/XbK
+          Start-Job -ScriptBlock { dotnet ./${{ env.XBK_PROJECT_NAME }}.dll } -Name ${{ env.XBK_PROJECT_NAME }}
+          Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
+          cd ../../
+
+          # The ASP.NET Core app can take a few seconds to start, so we delay running tests
+          #   until it is ready, and fail if we go over a maximum wait time
+          $limit = 10
+          $attempts = 0
+          $success = $false
+
+          while ($attempts -lt $limit -and -not $success) {
+              Start-Sleep -Seconds 1
+              try {
+                  $response = Invoke-WebRequest -Uri ${{ env.XBK_STATUS_CHECK_URL }} -Method Get -SkipCertificateCheck
+                  if ($response.StatusCode -eq 200) {
+                      Write-Output "XbK Application is ready."
+                      $success = $true
+                  }
+              }
+              catch {
+                  Write-Output "Attempt $attempts - Application not ready yet."
+              }
+              $attempts++
+          }
+
+          if (-not $success) {
+              Write-Output "XbK Application did not respond in time."
               exit 1
           }
 
           # TODO: Run the E2E tests
 
           # Stop the background ASP.NET Core application
-          Receive-Job -Name ${{ env.PROJECT_NAME }}
-          Stop-Job -Name ${{ env.PROJECT_NAME }}
-          Remove-Job -Name ${{ env.PROJECT_NAME }}
+          Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
+          Stop-Job -Name ${{ env.K13_PROJECT_NAME }}
+          Remove-Job -Name ${{ env.K13_PROJECT_NAME }}
+          Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
+          Stop-Job -Name ${{ env.XBK_PROJECT_NAME }}
+          Remove-Job -Name ${{ env.XBK_PROJECT_NAME }}
