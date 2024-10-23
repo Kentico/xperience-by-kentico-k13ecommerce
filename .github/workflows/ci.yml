@@ -42,8 +42,6 @@ jobs:
       DOTNET_NOLOGO: 1
       XBK_PROJECT_NAME: DancingGoat
       K13_PROJECT_NAME: Kentico13_DancingGoat
-      XBK_URL: https://localhost:14066
-      K13_URL: https://localhost:65375
       XBK_STATUS_CHECK_URL: https://localhost:14066/status
       K13_STATUS_CHECK_URL: https://localhost:65375/status
       XPERIENCE_BY_KENTICO_LICENSE: ${{ secrets.XPERIENCE_BY_KENTICO_LICENSE }}
@@ -162,46 +160,44 @@ jobs:
             --no-build `
             --no-restore
 
-      # - name: Run K13 Store
-      #   run: |
-      #     # Run the ASP.NET Core app as a background job
-      #     cd ./publish/K13
-      #     "ASPNETCORE_URLS=${{ env.K13_URL }}" >> $env:GITHUB_ENV
-      #     Start-Job -ScriptBlock { dotnet ./${{ env.K13_PROJECT_NAME }}.dll } -Name ${{ env.K13_PROJECT_NAME }}
-      #     Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
-      #     cd ../../
+      - name: Run K13 Store
+        run: |
+          # Run the ASP.NET Core app as a background job
+          cd ./publish/K13
+          Start-Job -ScriptBlock { dotnet ./${{ env.K13_PROJECT_NAME }}.dll } -Name ${{ env.K13_PROJECT_NAME }}
+          Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
+          cd ../../
 
-      #     # The ASP.NET Core app can take a few seconds to start, so we delay running tests
-      #     #   until it is ready, and fail if we go over a maximum wait time
-      #     $limit = 10
-      #     $attempts = 0
-      #     $success = $false
+          # The ASP.NET Core app can take a few seconds to start, so we delay running tests
+          #   until it is ready, and fail if we go over a maximum wait time
+          $limit = 10
+          $attempts = 0
+          $success = $false
 
-      #     while ($attempts -lt $limit -and -not $success) {
-      #         Start-Sleep -Seconds 1
-      #         try {
-      #             $response = Invoke-WebRequest -Uri ${{ env.K13_STATUS_CHECK_URL }} -Method Get -SkipCertificateCheck
-      #             if ($response.StatusCode -eq 200) {
-      #                 Write-Output "K13 store: Application is ready."
-      #                 $success = $true
-      #             }
-      #         }
-      #         catch {
-      #             Write-Output "Attempt $attempts - Application not ready yet."
-      #         }
-      #         $attempts++
-      #     }
+          while ($attempts -lt $limit -and -not $success) {
+              Start-Sleep -Seconds 1
+              try {
+                  $response = Invoke-WebRequest -Uri ${{ env.K13_STATUS_CHECK_URL }} -Method Get -SkipCertificateCheck
+                  if ($response.StatusCode -eq 200) {
+                      Write-Output "K13 store: Application is ready."
+                      $success = $true
+                  }
+              }
+              catch {
+                  Write-Output "Attempt $attempts - Application not ready yet."
+              }
+              $attempts++
+          }
 
-      #     if (-not $success) {
-      #         Write-Output "K13 store: Application did not respond in time."
-      #         exit 1
-      #     }
+          if (-not $success) {
+              Write-Output "K13 store: Application did not respond in time."
+              exit 1
+          }
 
       - name: Run Application and E2E Tests
         run: |
           # Run the ASP.NET Core app as a background job
           cd ./publish/XbK
-          "ASPNETCORE_URLS=${{ env.XBK_URL }}" >> $env:GITHUB_ENV
           Start-Job -ScriptBlock { dotnet ./${{ env.XBK_PROJECT_NAME }}.dll } -Name ${{ env.XBK_PROJECT_NAME }}
           Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
           cd ../../
