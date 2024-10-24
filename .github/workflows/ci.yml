@@ -59,14 +59,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          dotnet restore `
-            --locked-mode
-
-      - name: Build Solution
-        run: |
-          dotnet build `
-            --configuration Release `
-            --no-restore
+          dotnet restore
 
       - name: Get Database Backup Name
         run: |
@@ -122,6 +115,12 @@ jobs:
             -U "sa" `
             -P "Pass@12345" `
             -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
+
+      - name: Build Solution
+        run: |
+          dotnet build `
+            --configuration Release `
+            --no-restore
       
       - name: Restore CI Repository
         working-directory: "./scripts"
