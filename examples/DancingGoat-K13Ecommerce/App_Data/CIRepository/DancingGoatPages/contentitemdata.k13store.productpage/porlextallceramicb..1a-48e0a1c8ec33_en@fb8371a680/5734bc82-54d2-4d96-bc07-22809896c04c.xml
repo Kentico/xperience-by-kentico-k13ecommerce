@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>46a6a1ce-37f4-4f41-b01a-48e0a1c8ec33</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PorlexTallCeramicBurrGrinder-iddpj4pi</CodeName>
+      <GUID>33f39fa6-48ff-4ba2-90ab-2354c65ad222</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>5734bc82-54d2-4d96-bc07-22809896c04c</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"b1a261e7-4fa7-41f1-ae6f-3cc1d206ae15"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

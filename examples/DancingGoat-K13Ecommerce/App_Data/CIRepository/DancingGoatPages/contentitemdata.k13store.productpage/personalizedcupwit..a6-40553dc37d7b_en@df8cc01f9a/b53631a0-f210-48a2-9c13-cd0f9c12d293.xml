@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>58a10604-07a8-48d1-bda6-40553dc37d7b</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PersonalizedCupWithSaucer-g1gm0vf5</CodeName>
+      <GUID>f21a6b47-e777-4523-b162-889369736bfe</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>b53631a0-f210-48a2-9c13-cd0f9c12d293</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"8a2007a2-0b0f-46c8-ad61-a2ac09abef32"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>80f5869c-5baf-417a-accf-75e27b6ee0bf</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaFincaIllimani_8Oz-lna92y10</CodeName>
+      <GUID>9cca0000-3dd1-4eee-99f7-b8c6393ad6ed</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>38d10c0b-3868-4c95-a5e6-6f8c1de84e09</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>91</SKUID>
+  <SKUName>Bolivia Finca Illimani (8 oz)</SKUName>
+  <SKUNumber>CO-BOL-CASCARA-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

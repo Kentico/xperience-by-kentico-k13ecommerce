@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>46c262f1-e2db-4ea1-9e05-7979d7d53bd6</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Glass_White_8Cups-kcd4wnh8</CodeName>
+      <GUID>2813d8f7-cdc7-4e1b-b5fa-5397272070db</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>b1d3df2f-76ab-4684-b5f6-e799069b3e2e</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>40</SKUID>
+  <SKUName>Hario V60 (Glass, White, 8 cups)</SKUName>
+  <SKUNumber>HAR-V60-Glass-White-8-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

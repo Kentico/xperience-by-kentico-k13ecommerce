@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.ManualGrinder</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>5e2b4619-e53c-48eb-a497-2f1a04ff1101</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioSkertonHandGrinder-41ejvzpt</CodeName>
+      <GUID>12156ed3-503f-4cd8-a36a-ea2c3ba792ed</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>a5b79f14-0e41-4f8c-812c-cf91d006fe00</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"ManualGrinderPromotionTitle":null,"ManualGrinderPromotionDescription":null,"ManualGrinderBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Grinders</DepartmentDisplayName>
+  <ManufacturerDisplayName>Hario</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Grinders/Hario-Skerton-Hand-Grinder</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"45d4878d-35d3-4eac-896b-5e6ba7c3fb40"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>89</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+This grinder is rather small, but it&#39;s quick, easy-to-use, and precise. Choose your favorite brewing method and those strong conical ceramic burrs of high quality with thick and durable glass assure you that you won&#39;t regret it. But this grinder not only makes good grounds, it&#39;s also a pleasure to use! On the bottom, there&#39;s anti-slip rubber, and the handle feels awesome. After use, just put it in the dishwasher or wash it by hand, it&#39;s so easy.<br />
+<br />
+The Hario Skerton Hand Grinder is also usable if you are a traveler. With the included screw top cover, grounds stay fresh and inside the grinder, even on bumpy roads.
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>16</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:54:02Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Hario Skerton Hand Grinder</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>HAR-GR-SKERTON</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Small but quick, an easy-to-use and precise grinder with strong conical ceramic burrs.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

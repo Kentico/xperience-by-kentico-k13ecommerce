@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>31d3771e-a732-4898-865c-240053976aef</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60-z4glc2rl</CodeName>
+      <GUID>40d33746-9837-4ae2-8b68-8c066333dc19</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>48cd2b51-8c31-49e6-a33b-5fb1bd88800a</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"b9e6b9f2-5cc9-4ac3-979b-3be58244b007","Name":"Hario V60.jpg","Extension":".jpg","Size":39859,"LastModified":"2024-10-24T14:39:03.7859819Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Hario V60</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/82d19e17-cea2-478c-989f-026d81fc2c01/hario-v60]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>AeroPress-ixs428i6</CodeName>
+    <GUID>57dd073f-f351-4597-b26b-592f2b4fc085</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>597e1cf8-ec35-4810-ba79-a7b2a6afeda5</WebPageItemGUID>
+  <WebPageItemName>AeroPress-ixs428i6</WebPageItemName>
+  <WebPageItemOrder>7</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Brewers-b9tkrah3</CodeName>
+    <GUID>16a63bfb-f391-496e-9c47-f28a8ddf14e3</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>/Store/Products/Brewers/AeroPress</WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitem>
+  <ContentItemContentFolderID>
+    <CodeName>SKUs-bk5n2769</CodeName>
+    <GUID>99e70773-fe93-498b-91bd-1417a5ef8f4c</GUID>
+    <ObjectType>cms.contentfolder</ObjectType>
+  </ContentItemContentFolderID>
+  <ContentItemContentTypeID>
+    <CodeName>K13Store.ProductSKU</CodeName>
+    <GUID>6cae7e67-4cbf-4155-a3f6-c74773ac3836</GUID>
+    <ObjectType>cms.contenttype</ObjectType>
+  </ContentItemContentTypeID>
+  <ContentItemGUID>27504109-3555-4b4c-a769-e56d1e806293</ContentItemGUID>
+  <ContentItemIsReusable>True</ContentItemIsReusable>
+  <ContentItemIsSecured>False</ContentItemIsSecured>
+  <ContentItemName>ElSalvadorFincaSanJose-kkan6326</ContentItemName>
+</cms.contentitem>

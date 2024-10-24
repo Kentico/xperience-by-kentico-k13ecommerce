@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>ca5ab4a4-a1d7-4fdd-bebe-9a05128d09e2</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AnfimSuperCaimano-ccyph6g4</CodeName>
+      <GUID>bccbe52a-8597-49e3-bfed-64cd957ab351</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>5dc37d3b-2f35-4030-9af1-3cd6abf4f196</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"0b620d99-d1f6-4bb8-a809-1f22c5ff5784","Name":"Anfim Super Caimano.jpg","Extension":".jpg","Size":25422,"LastModified":"2024-10-24T14:38:43.0825453Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Anfim Super Caimano</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/018e2d39-c435-4015-8f68-d5e4610ac068/anfim-super-caimano]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

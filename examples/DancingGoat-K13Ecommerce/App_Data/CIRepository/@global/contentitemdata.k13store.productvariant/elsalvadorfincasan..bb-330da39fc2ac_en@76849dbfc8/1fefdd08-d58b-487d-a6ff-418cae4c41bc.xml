@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>ba534e35-70d8-4fcf-91bb-330da39fc2ac</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose_8Oz-14kq62ds</CodeName>
+      <GUID>5798a094-08af-4633-ba7d-ea5dc51448e5</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>1fefdd08-d58b-487d-a6ff-418cae4c41bc</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>122</SKUID>
+  <SKUName>El Salvador Finca San Jose (8 oz)</SKUName>
+  <SKUNumber>CO-SAL-SANJOSE-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

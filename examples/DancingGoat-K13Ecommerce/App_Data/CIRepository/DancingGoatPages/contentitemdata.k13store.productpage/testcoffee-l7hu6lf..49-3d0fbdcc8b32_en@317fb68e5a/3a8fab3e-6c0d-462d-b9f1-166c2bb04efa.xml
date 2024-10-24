@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>afe8f8a2-9c3e-4d7f-8249-3d0fbdcc8b32</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>TestCoffee-l7hu6lfu</CodeName>
+      <GUID>cca301f1-a84d-423b-81d0-a359362488df</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3a8fab3e-6c0d-462d-b9f1-166c2bb04efa</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"a6bd20f0-cd86-4267-95ad-fff657315e36"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

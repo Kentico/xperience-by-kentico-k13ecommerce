@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitemcommondata>
+  <ContentItemCommonDataContentItemID>
+    <CodeName>PorlexTallCeramicBurrGrinder-iddpj4pi</CodeName>
+    <GUID>33f39fa6-48ff-4ba2-90ab-2354c65ad222</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </ContentItemCommonDataContentItemID>
+  <ContentItemCommonDataContentLanguageID>
+    <CodeName>en</CodeName>
+    <GUID>e4a8fb12-ebc2-45d0-930f-c9fba2780c85</GUID>
+    <ObjectType>cms.contentlanguage</ObjectType>
+  </ContentItemCommonDataContentLanguageID>
+  <ContentItemCommonDataFirstPublishedWhen>2024-10-24 14:46:20Z</ContentItemCommonDataFirstPublishedWhen>
+  <ContentItemCommonDataGUID>46a6a1ce-37f4-4f41-b01a-48e0a1c8ec33</ContentItemCommonDataGUID>
+  <ContentItemCommonDataIsLatest>True</ContentItemCommonDataIsLatest>
+  <ContentItemCommonDataLastPublishedWhen>2024-10-24 14:46:20Z</ContentItemCommonDataLastPublishedWhen>
+  <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
+  <ContentItemReferences>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>c4a1368b-5560-4ec9-b87e-465bd5a00608</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>385b26f3-96dd-4ec8-af5b-80a432668489</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>46a6a1ce-37f4-4f41-b01a-48e0a1c8ec33</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>PorlexTallCeramicBurrGrinder-yvjfb5ge</CodeName>
+        <GUID>b1a261e7-4fa7-41f1-ae6f-3cc1d206ae15</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+  </ContentItemReferences>
+</cms.contentitemcommondata>

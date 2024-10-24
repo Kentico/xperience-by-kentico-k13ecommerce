@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>d07b9e1b-23b8-41f6-876b-e481077601c5</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose_2Lb-hybav764</CodeName>
+      <GUID>be0df2e5-513c-4752-ba0e-6fdaf46bec0c</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>997a0861-e0ef-41b5-b5ee-57472ed40a09</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>124</SKUID>
+  <SKUName>El Salvador Finca San Jose (2 lb)</SKUName>
+  <SKUNumber>CO-SAL-SANJOSE-2-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

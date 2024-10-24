@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>ebdbd6b8-e0c4-45a3-ba44-3420d2b5021c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi-q5uifv9x</CodeName>
+      <GUID>74a2a8d6-be89-4c0b-a4bf-9ec4cd52e7f6</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>95d0e96d-8151-4c54-80b2-8fdd7fb69e10</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"b1772190-3f44-4e88-b0e5-bbb16a4b310d"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

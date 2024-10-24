@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>f35212e5-6bdf-4168-b1aa-6c24768802c7</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioVacuumPot-231ex0o1</CodeName>
+      <GUID>737d1853-8f1a-49d6-9d5d-db55bf606be5</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>05598290-c987-419c-8b0c-530953c4a6ba</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"60f0458c-4f04-406b-8867-fcc449acf034"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

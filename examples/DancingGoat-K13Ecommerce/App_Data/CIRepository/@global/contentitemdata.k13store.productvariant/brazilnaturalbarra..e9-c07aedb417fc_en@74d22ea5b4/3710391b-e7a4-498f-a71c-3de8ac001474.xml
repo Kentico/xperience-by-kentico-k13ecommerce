@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c8078bb9-0e74-4c40-8ae9-c07aedb417fc</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande_5Lb-ym2uigo8</CodeName>
+      <GUID>126c06c7-5599-4bb1-82f2-f0a5df991502</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3710391b-e7a4-498f-a71c-3de8ac001474</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>74</SKUID>
+  <SKUName>Brazil Natural Barra Grande (5 lb)</SKUName>
+  <SKUNumber>CO-BRA-BARRAGRANDE-5-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

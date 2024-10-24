@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>b93f73ab-4f7c-477a-978c-2adc09324389</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BleachedPaperFiltersV60-01-bjda4hrd</CodeName>
+      <GUID>81edd841-b14b-4573-9edb-90a58615e0d2</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>d2d77a00-3604-41e7-85c1-29e62e98274e</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"50234556-21f3-4248-b7d8-828fc38aa7b5"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.class>
+  <ClassDisplayName>Page Path Mapping Rule info</ClassDisplayName>
+  <ClassFormDefinition>
+    <form>
+      <field column="PagePathMappingRuleID" columntype="integer" enabled="true" guid="35faa3d5-3ba8-49ef-bb60-c97d8c5b5d85" isPK="true" />
+      <field column="PagePathMappingRuleK13NodeAliasPath" columnsize="500" columntype="text" enabled="true" guid="4cc4e4cf-6de3-4bfe-9b04-6d8b89b7488b" visible="true">
+        <properties>
+          <fieldcaption>K13 NodeAliasPath</fieldcaption>
+        </properties>
+      </field>
+      <field column="PagePathMappingRuleXbKPagePath" columnsize="500" columntype="text" enabled="true" guid="b82b7e7e-aa9b-436a-821c-33f0867ff4f1" visible="true">
+        <properties>
+          <fieldcaption>XbK Page path</fieldcaption>
+        </properties>
+      </field>
+      <field column="PagePathMappingRuleChannelName" columntype="text" guid="e287164a-0a1c-4ea9-91f6-d6315f03f6d6">
+        <properties>
+          <fieldcaption>Channel name</fieldcaption>
+        </properties>
+      </field>
+      <field column="PagePathMappingRuleOrder" columntype="integer" guid="c61b978d-d894-4a49-97f4-3085f2fb20c1">
+        <properties>
+          <fieldcaption>Order</fieldcaption>
+        </properties>
+      </field>
+    </form>
+  </ClassFormDefinition>
+  <ClassGUID>4ed4a708-3c01-4516-9c91-5162fd0242f3</ClassGUID>
+  <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
+  <ClassName>KenticoK13ecommerce.PagePathMappingRule</ClassName>
+  <ClassResourceID>
+    <CodeName>CMS.Integration.K13Ecommerce</CodeName>
+    <GUID>58704b77-b9ed-4063-990b-8b7f0ae487c8</GUID>
+    <ObjectType>cms.resource</ObjectType>
+  </ClassResourceID>
+  <ClassTableName>KenticoK13ecommerce_PagePathMappingRule</ClassTableName>
+  <ClassType>Other</ClassType>
+</cms.class>

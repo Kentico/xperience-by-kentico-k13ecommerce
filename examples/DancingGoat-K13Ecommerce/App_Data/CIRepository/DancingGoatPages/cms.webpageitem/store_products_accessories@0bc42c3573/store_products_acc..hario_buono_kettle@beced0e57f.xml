@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>HarioBuonoKettle-k0m9brgj</CodeName>
+    <GUID>e045a1d5-52b9-45eb-a607-81b4796e3432</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>0902f3c8-b125-4051-97d0-2ea5bbe5e6bb</WebPageItemGUID>
+  <WebPageItemName>HarioBuonoKettle-k0m9brgj</WebPageItemName>
+  <WebPageItemOrder>3</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Accessories-hcdyad5q</CodeName>
+    <GUID>420ae4a6-95c0-4933-a4d2-e1e6c05b8c19</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>/Store/Products/Accessories/Hario_Buono_Kettle</WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

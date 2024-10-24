@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>79e92a59-898f-46af-b257-adb12246c3f5</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EthiopiaYirgacheffe_decaf-vsne3lhn</CodeName>
+      <GUID>b0044ecc-b2b3-47d2-be00-061739c43d41</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>6253abb2-b483-435c-be0f-3d009b9fd386</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"f29d301d-523d-44f3-a22c-f25a7f3dfa1b"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

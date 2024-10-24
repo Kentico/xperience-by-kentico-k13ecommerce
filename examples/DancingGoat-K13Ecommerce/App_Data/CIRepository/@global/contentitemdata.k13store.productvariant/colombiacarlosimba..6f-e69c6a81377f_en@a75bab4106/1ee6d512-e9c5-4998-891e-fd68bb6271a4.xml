@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c3921d7c-eb82-446b-976f-e69c6a81377f</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi_5Lb-292fyjm4</CodeName>
+      <GUID>2a4d96b2-50db-4d05-b62a-10bec2517525</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>1ee6d512-e9c5-4998-891e-fd68bb6271a4</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>115</SKUID>
+  <SKUName>Colombia Carlos Imbachi (5 lb)</SKUName>
+  <SKUNumber>CO-COL-IMBACHI-5-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

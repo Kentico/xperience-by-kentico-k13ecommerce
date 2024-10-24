@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>35f3050f-5881-43f0-bb3e-8e8bd1a29a86</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose_4Oz-0ioybzaj</CodeName>
+      <GUID>751ad162-5c3e-4e93-aaf1-6f052d90ef7d</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>1f92a586-03e7-4e07-9e46-b568cde4cea5</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>121</SKUID>
+  <SKUName>El Salvador Finca San Jose (4 oz)</SKUName>
+  <SKUNumber>CO-SAL-SANJOSE-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

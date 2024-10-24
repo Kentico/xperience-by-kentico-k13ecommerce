@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>14791428-cece-449b-91df-71c4c1b697c9</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande_2Lb-ck8pcn7x</CodeName>
+      <GUID>f13124ad-6a28-44c5-994c-0d98fbad8527</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>653cc284-dc63-40db-9827-af6bb088ac52</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>72</SKUID>
+  <SKUName>Brazil Natural Barra Grande (2 lb)</SKUName>
+  <SKUNumber>CO-BRA-BARRAGRANDE-2-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>37c14f2d-a47a-4c69-a610-c2e0b3f1527b</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose-v75clqmn</CodeName>
+      <GUID>31326f8c-a482-4c05-8fc2-734466842f9b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3adf2cff-13a2-4283-be9c-4ca0eb989a7d</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"b8ce88eb-9e35-490b-8385-25f02ee2d98a","Name":"El Salvador Finca San Jose.jpg","Extension":".jpg","Size":137109,"LastModified":"2024-10-24T14:38:52.7901856Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>El Salvador Finca San Jose</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/8c55f372-beba-454b-b992-612a0ff2f6b4/salvador]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

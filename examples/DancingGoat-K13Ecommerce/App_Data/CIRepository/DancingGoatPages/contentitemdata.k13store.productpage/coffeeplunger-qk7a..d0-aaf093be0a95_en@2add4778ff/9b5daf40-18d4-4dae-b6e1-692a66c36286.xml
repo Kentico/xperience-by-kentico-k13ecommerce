@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>810ff02e-8c0b-46b8-89d0-aaf093be0a95</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>CoffeePlunger-qk7axuf7</CodeName>
+      <GUID>21dc0acf-24ce-4e5c-98cc-698a7596b615</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>9b5daf40-18d4-4dae-b6e1-692a66c36286</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"38617564-4004-4a13-ad8e-8d1cf4e40be3"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

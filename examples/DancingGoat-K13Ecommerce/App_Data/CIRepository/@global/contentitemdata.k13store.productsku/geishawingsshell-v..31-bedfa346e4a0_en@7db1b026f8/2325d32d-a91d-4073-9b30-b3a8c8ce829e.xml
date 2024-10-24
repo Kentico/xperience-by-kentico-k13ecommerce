@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName />
+  <ContentItemDataCommonDataID>
+    <GUID>9caa68e5-673e-4abc-bc31-bedfa346e4a0</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GeishaWingsShell-vx6orkso</CodeName>
+      <GUID>ab8248fa-122d-475a-a93e-07e4706c979a</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>2325d32d-a91d-4073-9b30-b3a8c8ce829e</ContentItemDataGUID>
+  <CustomFields>null</CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName>Mazzer</ManufacturerDisplayName>
+  <NodeAliasPath />
+  <ProductImages>
+    <![CDATA[[{"Identifier":"d7c9773a-805d-49f5-aee3-36a14b9f079c"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>100</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+Cascara is nothing new. This drink is even older than coffee as we know it today. Coffee roasting did not appear until the fifteenth century, but the skins of coffee cherries were routinely brewed hundreds of years before to prepare a hot drink. But after the discovery of roasting, this method almost disappeared in our part of the world, and coffee husks were used only as fertilizer on farms. At the same time, cascara is sweet, has similar fresh coffee notes, a slightly smoky aroma and is a simple way to enjoy coffee a little differently.<br />
+<br />
+Cascara comes from the farm Las Alasitas, which is located at an altitude of 1,600 m above sea level. The farm is taken care of by the Rodriguez family, whose company Agricafe is advocating a return to the cultivation of selected coffee in Bolivia. With its approach, it supports dozens of farms and tries to offer growers an alternative to growing coca. Alasitas farm is very young. In 2014, the Rodriguez family bought about 20 hectares of land in the Caranavi region to create a model farm and processing plant. The farm grows caturra, java and geisha varieties.
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>127</SKUID>
+  <SKUInStoreFrom>2024-07-04 08:37:36Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>10</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>1</SKUMinItemsInOrder>
+  <SKUName>Geisha Wings Shell</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>GEISHA_SHELL_BL</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>10</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[It&#39;s not coffee, but it&#39;s full of coffee flavors, caffeine, and comes from the same plant. Cascara is a tea made from the dried pulp of coffee cherries. This one comes from a geisha coffee plant from the Bolivian farm Alasitas.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

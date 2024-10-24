@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Tableware</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>45920d91-d44b-4c76-bada-350d0b5eb31f</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PersonalizedCupWithSaucer-134zxpe7</CodeName>
+      <GUID>8a2007a2-0b0f-46c8-ad61-a2ac09abef32</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ea8049b4-7b5b-4e70-b1ec-832a1f382d27</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"TablewarePromotionTitle":null,"TablewarePromotionDescription":null,"TablewareBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Accessories</DepartmentDisplayName>
+  <NodeAliasPath>/Store/Accessories/Personalized-cup-with-saucer</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"744c98e9-750f-4656-bb1e-d63100d94a64"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>78</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+Make your kitchen special and purchase this personalized white ceramic cup with saucer. Why is this cup so extraordinary? It&#39;s because you can put your own text on it and display a modicum of pride to the world.<br />
+<br />
+Look at the cup and try and say it&#39;s not beautiful... Yes, that&#39;s right, it&#39;s not possible. Besides, the cup is made of a special kind of ceramic that helps keep your coffee hot.<br />
+<br />
+So, don&#39;t forget to add your own inscription before you make an order and then seize the day with this lovely cup. Carpe diem.
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>70</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:44:23Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Personalized cup with saucer</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CUP-PER</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>cupcup</SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

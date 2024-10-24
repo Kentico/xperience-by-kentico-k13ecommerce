@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c9449fc8-5f13-4908-bf5c-05c9d8110502</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GuatemalaFincaElInjerto_16Oz-xslknndh</CodeName>
+      <GUID>06ec2834-aefb-4de0-8885-d10dd513faab</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>0bd19eee-8856-45f3-846f-cc2e3b5a1d9e</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>107</SKUID>
+  <SKUName>Guatemala Finca El Injerto (16 oz)</SKUName>
+  <SKUNumber>CO-GUA-ELINJERTO-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

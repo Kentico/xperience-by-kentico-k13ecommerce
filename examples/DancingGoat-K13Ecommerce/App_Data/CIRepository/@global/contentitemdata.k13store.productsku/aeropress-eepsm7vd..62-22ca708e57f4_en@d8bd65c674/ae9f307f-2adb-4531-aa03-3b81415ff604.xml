@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Brewer</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>fe78e70a-79a4-4078-a462-22ca708e57f4</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AeroPress-eepsm7vd</CodeName>
+      <GUID>e4a7c213-ff9b-4817-9acf-4a71b811e378</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ae9f307f-2adb-4531-aa03-3b81415ff604</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"BrewerIsDishwasherSafe":true}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+  <ManufacturerDisplayName>Aerobie</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Brewers/AeroPress</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"63bc7302-7782-4e3d-a5c8-45bb48d9d9ba"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName>Bestseller</PublicStatusDisplayName>
+  <SKUAvailableItems>9</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>Presenting a coffee-making revolution, the AeroPress Coffee Maker.</p>
+
+<p>Affordable and straightforward for producing top notch coffee with. If you enjoy delicious and smooth coffee, you&#39;ve come to the right place. With the innovative AeroPress, you&#39;ll be enjoying your perfect cup in no time.</p>
+
+<p>Using this device, you&#39;ll be amazed at how good your coffee can taste. Its ease of use will amaze you even more. Coffee making with the versatile brewing technique offered by AeroPress. Any kind of coffee, from any part of the world will taste its best when combined with AeroPress. If you just want to enjoy the perfect quick cup, or you enjoy tinkering with the delicacies of coffee brewing, the AeroPress Coffee Maker will hit the spot!</p>
+
+<p>Each AeroPress comes with a pack of filters included in the box.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>84</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:05:19Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>AeroPress</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>AER-AP</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>True</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[AeroPress presents this coffee-making revolution which is affordable and makes delicious and smooth coffee.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

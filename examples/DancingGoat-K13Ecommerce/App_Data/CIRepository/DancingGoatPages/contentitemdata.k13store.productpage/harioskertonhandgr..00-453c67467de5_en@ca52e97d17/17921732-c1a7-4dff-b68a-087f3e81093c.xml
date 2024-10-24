@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>1d85207b-96a4-4ced-b700-453c67467de5</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioSkertonHandGrinder-0i7sj5nn</CodeName>
+      <GUID>be7541fe-2d44-43fa-bfa6-6b68bd3efd08</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>17921732-c1a7-4dff-b68a-087f3e81093c</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"12156ed3-503f-4cd8-a36a-ea2c3ba792ed"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

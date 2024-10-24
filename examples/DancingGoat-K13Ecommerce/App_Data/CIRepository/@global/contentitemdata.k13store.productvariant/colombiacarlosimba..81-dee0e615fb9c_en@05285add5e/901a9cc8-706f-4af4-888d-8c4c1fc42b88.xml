@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>4890b3ba-57db-4450-8381-dee0e615fb9c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi_8Oz-e8c4r1mc</CodeName>
+      <GUID>63afbee0-34a0-4c16-a632-f3833314e8c4</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>901a9cc8-706f-4af4-888d-8c4c1fc42b88</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>114</SKUID>
+  <SKUName>Colombia Carlos Imbachi (8 oz)</SKUName>
+  <SKUNumber>CO-COL-IMBACHI-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

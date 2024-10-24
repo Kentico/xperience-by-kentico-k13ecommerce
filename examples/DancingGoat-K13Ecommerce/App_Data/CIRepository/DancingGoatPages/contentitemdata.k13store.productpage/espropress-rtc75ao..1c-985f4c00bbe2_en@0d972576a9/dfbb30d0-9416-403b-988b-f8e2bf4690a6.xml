@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>df329c4d-8ff2-45d8-a01c-985f4c00bbe2</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EsproPress-rtc75ao8</CodeName>
+      <GUID>1e0d564b-fc44-4579-b5ff-fe28f303dcb4</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>dfbb30d0-9416-403b-988b-f8e2bf4690a6</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"e17abce4-f9ac-40dd-9205-3174783bdaa3"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>BrazilNaturalBarraGrande-xcbn6liz</CodeName>
+    <GUID>959eacef-b119-40f4-bbeb-9fd51289bde0</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>ab8bf91d-01a2-4bed-802f-31511c8262d7</WebPageItemGUID>
+  <WebPageItemName>BrazilNaturalBarraGrande-xcbn6liz</WebPageItemName>
+  <WebPageItemOrder>9</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Coffees-kg4txlkt</CodeName>
+    <GUID>7900e0b8-0209-4208-b7c2-e8c22aa6d93c</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>
+    <![CDATA[/Store/Products/Coffees/Brazil_Natural_Barra_Grande]]>
+  </WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

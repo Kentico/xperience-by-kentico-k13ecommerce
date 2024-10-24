@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>3572e2ae-05ba-4122-866c-d039a594d59a</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioMiniMillSlim-dgupvivl</CodeName>
+      <GUID>c23e4f3a-e973-4fb6-be41-b2c01635f7b6</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>f5db77d8-3a7e-452c-b9ed-a77507762641</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"ffc23703-85d8-443b-aac6-7d08de587003","Name":"Hario Mini Mill Slim.jpg","Extension":".jpg","Size":15730,"LastModified":"2024-10-24T14:38:57.9303526Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Hario Mini Mill Slim</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/8cea1b8c-6561-47db-9d00-42ab2b234604/hario-mini-mill]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

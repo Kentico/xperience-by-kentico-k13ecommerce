@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>d212f6eb-2bf0-4b2d-bd19-68b8fec0eae5</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>MacapM2D-uarmzixo</CodeName>
+      <GUID>376a1d8d-0085-40c7-b44e-665610c4bc2b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>2d6f7541-9223-47e9-a8ff-1198d1f7da5e</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"0a578e50-e214-4330-bfad-8c2c6148cf29"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

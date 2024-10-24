@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>7025089d-3f70-45a7-a529-f93042a10864</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA_8Oz-jsobszj2</CodeName>
+      <GUID>6d2db35c-02e7-4e84-86b6-56e77db77513</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>bd238cab-40b8-4575-b42c-d44502b0d690</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>21</SKUID>
+  <SKUName>Kenya Gakuyuni AA (8 oz)</SKUName>
+  <SKUNumber>CO-KEN-GAKUYUNI-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

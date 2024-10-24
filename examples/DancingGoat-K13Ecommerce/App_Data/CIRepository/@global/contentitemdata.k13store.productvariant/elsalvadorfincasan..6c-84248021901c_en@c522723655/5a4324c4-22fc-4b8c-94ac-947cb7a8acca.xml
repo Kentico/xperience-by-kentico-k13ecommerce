@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>3553bf81-dc3a-4804-a86c-84248021901c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose_5Lb-02jyghyy</CodeName>
+      <GUID>2542f769-2507-408b-bbba-ba40bd9d0d57</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>5a4324c4-22fc-4b8c-94ac-947cb7a8acca</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>120</SKUID>
+  <SKUName>El Salvador Finca San Jose (5 lb)</SKUName>
+  <SKUNumber>CO-SAL-SANJOSE-5-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

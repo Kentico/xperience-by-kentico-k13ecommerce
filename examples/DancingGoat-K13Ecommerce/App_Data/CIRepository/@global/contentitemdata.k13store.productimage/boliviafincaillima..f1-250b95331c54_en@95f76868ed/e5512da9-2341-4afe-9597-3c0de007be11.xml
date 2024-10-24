@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>a7decfcd-5ac3-4bb3-90f1-250b95331c54</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaFincaIllimani-5qkxtvo5</CodeName>
+      <GUID>4b6b4f4d-e85c-4e4c-8d36-5e49a5b3cdae</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>e5512da9-2341-4afe-9597-3c0de007be11</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"e74873f9-a34b-470d-b4d6-d25391dc4dd9","Name":"Bolivia Finca Illimani.jpg","Extension":".jpg","Size":134956,"LastModified":"2024-10-24T14:38:46.1585293Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Bolivia Finca Illimani</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/8dbbcfb8-742f-4bdc-a107-d01fbb3fdc1b/bolivia]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

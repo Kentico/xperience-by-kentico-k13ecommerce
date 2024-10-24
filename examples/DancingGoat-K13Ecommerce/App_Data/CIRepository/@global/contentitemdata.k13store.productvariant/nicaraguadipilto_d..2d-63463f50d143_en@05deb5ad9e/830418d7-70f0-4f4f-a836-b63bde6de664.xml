@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>13099cf6-100a-4479-9c2d-63463f50d143</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>NicaraguaDipilto_decaf_8Oz-3ks0xt5v</CodeName>
+      <GUID>b9089045-d48d-42d8-b03a-69bced3f8abb</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>830418d7-70f0-4f4f-a836-b63bde6de664</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>29</SKUID>
+  <SKUName>Nicaragua Dipilto (decaf) (8 oz)</SKUName>
+  <SKUNumber>CO-NIC-DIPILTO-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

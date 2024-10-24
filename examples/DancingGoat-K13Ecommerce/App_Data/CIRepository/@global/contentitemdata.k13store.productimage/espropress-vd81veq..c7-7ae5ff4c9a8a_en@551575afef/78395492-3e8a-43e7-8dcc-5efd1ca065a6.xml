@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>fc4296a5-0c07-4122-80c7-7ae5ff4c9a8a</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EsproPress-vd81veqb</CodeName>
+      <GUID>394f612a-6807-4573-bbec-53da3d8ca18f</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>78395492-3e8a-43e7-8dcc-5efd1ca065a6</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"9b1db0f2-2182-4f4e-a7bc-ac84a1a1c70c","Name":"Espro Press.jpg","Extension":".jpg","Size":71891,"LastModified":"2024-10-24T14:38:53.4439353Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Espro Press</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/10d141e3-caaf-4203-8579-aa47263857a3/espro-press]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>
