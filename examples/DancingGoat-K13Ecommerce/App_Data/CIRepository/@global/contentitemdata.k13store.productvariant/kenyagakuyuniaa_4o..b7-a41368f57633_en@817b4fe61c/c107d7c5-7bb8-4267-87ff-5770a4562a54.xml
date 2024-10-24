@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>e3494d05-7330-443f-8cb7-a41368f57633</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA_4Oz-elgoqlrb</CodeName>
+      <GUID>b23f5def-3208-491d-a053-739ef39d9975</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>c107d7c5-7bb8-4267-87ff-5770a4562a54</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>20</SKUID>
+  <SKUName>Kenya Gakuyuni AA (4 oz)</SKUName>
+  <SKUNumber>CO-KEN-GAKUYUNI-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

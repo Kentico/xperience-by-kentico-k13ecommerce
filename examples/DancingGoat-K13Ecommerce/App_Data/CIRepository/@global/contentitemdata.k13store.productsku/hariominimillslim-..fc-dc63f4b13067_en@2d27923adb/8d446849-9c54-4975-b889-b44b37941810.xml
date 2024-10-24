@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.ManualGrinder</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>39faba4f-8665-4cf7-bcfc-dc63f4b13067</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioMiniMillSlim-lc6y3gh0</CodeName>
+      <GUID>84e4f7b9-de80-467f-af0e-ae8e61da67ba</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>8d446849-9c54-4975-b889-b44b37941810</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"ManualGrinderPromotionTitle":null,"ManualGrinderPromotionDescription":null,"ManualGrinderBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Grinders</DepartmentDisplayName>
+  <ManufacturerDisplayName>Hario</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Grinders/Hario-Mini-Mill-Slim</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"c23e4f3a-e973-4fb6-be41-b2c01635f7b6"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>98</SKUAvailableItems>
+  <SKUDescription>
+    <![CDATA[Are you a traveler? Then this is a grinder for you. It&#39;s so small, it fits backpacks and suitcases, light because of its plastic but elegant body, and also durable, so it can sustain even the longest journeys. Although it&#39;s compact, you can hold up to 24 grams. After use, just put it in a dishwasher or wash it by hand, it&#39;s so easy. Simply choose any brewing method you like.]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>17</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:53:14Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Hario Mini Mill Slim</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>HAR-GR-SLIM</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[The Hario Mini Mill Slim is super suitable for traveling, can be hold up to 24 grams of coffee, and has an elegant plastic body.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

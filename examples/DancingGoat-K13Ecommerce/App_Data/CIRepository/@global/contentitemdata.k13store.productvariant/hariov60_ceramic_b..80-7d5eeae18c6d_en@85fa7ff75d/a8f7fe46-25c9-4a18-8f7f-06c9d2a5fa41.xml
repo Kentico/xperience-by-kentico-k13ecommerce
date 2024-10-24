@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>b03f601f-d576-4bf3-a880-7d5eeae18c6d</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Ceramic_Brown_8Cups-trrp1bs7</CodeName>
+      <GUID>df579ab0-fdd2-4ebb-a292-1aaaf99f760d</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>a8f7fe46-25c9-4a18-8f7f-06c9d2a5fa41</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>66</SKUID>
+  <SKUName>Hario V60 (Ceramic, Brown, 8 cups)</SKUName>
+  <SKUNumber>HAR-V60-Ceramic-Brown-8-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

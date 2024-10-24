@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>6aebd93e-02fa-4504-bbaf-39dcf12437bd</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney_8Oz-9kwkzutu</CodeName>
+      <GUID>cea3ec7a-1675-48d5-81ab-7be9cd03dbbf</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>01233cfd-8dba-4107-949b-869530489489</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>82</SKUID>
+  <SKUName>Panama Los Lajones Honey (8 oz)</SKUName>
+  <SKUNumber>CO-PAN-LAJONES-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

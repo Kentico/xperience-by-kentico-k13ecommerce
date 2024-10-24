@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>4ce892d4-105b-46a3-8f17-508ddc541687</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Ceramic_Clear_4Cups-cb1z1yj8</CodeName>
+      <GUID>b56cb515-b050-4a33-a239-be4f1951640c</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>1f1fc16e-e990-4e08-97c6-df2eaa01adb0</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>50</SKUID>
+  <SKUName>Hario V60 (Ceramic, Clear, 4 cups)</SKUName>
+  <SKUNumber>HAR-V60-Ceramic-Clear-4-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

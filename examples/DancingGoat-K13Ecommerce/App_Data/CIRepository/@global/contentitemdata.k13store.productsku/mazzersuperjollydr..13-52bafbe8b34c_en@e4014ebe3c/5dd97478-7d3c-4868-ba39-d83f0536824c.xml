@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.ElectricGrinder</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>3194592c-3168-4ec6-8613-52bafbe8b34c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>MazzerSuperJollyDR-lmq4c9eo</CodeName>
+      <GUID>bf804de2-17ff-45cf-9036-a2e7f63e5840</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>5dd97478-7d3c-4868-ba39-d83f0536824c</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"ElectricGrinderPower":350,"ElectricGrinderPromotionTitle":null,"ElectricGrinderPromotionDescription":null,"ElectricGrinderBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Grinders</DepartmentDisplayName>
+  <ManufacturerDisplayName>Mazzer</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Grinders/Mazzer-Super-Jolly-DR</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"e894a6de-fe2c-45ab-87bd-ca97b180b51a"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>99</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>If you are a pro or at least serious about making coffee, the Mazzer Super Jolly DR is a great choice. Luxury cars are powerful and spacious; it&#39;s the same with this grinder. It provides you with a large hopper and doser with high-rev strong steel burrs powered by a 350-Watt engine.<br />
+<br />
+Even though it may seem very powerful, engineers constructed the grinder very carefully so that it&#39;s also very precise. Pull the dosing lever quickly and a pre-set amount of coffee dispenses into the portafilter. Besides that, any setting you can think of is an easy job for the Mazzer. Choose a drip coffee, an espresso or a French press, and just turn the grind adjustment disc under the hopper.</p>
+
+<ul>
+	<li>Suitable for drip coffees, espressos, and French presses</li>
+	<li>Lot of possible settings</li>
+	<li>Lever to dispense a pre-set amount of coffee (5.5&ndash;9 g)</li>
+	<li>Plastic 2.7 lb (1.2 kg) hopper</li>
+	<li>0.7 lb (280 g) doser</li>
+</ul>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>83</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:56:54Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Mazzer Super Jolly DR</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>MAZ-GR-JOLLY</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[For those who are serious about making coffee. With a large hopper and doser with high-rev strong steel burrs.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

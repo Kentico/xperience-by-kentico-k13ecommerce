@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>baa77dbb-8870-4d2b-a0f6-7808594076b0</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande-9y5e8dcj</CodeName>
+      <GUID>89d0fc75-80b4-4888-bf1e-5dd73a0b6286</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>e1e74a61-9ee9-4fea-a8c3-09a19166cce1</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"Sitio Barra Grande","CoffeeCountry":"Brazil","CoffeeVariety":"Yellow Catuai, Mundo Novo","CoffeeProcessing":"natural","CoffeeAltitude":3900,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <NodeAliasPath>/Store/Coffees/Brazil-Natural-Barra-Grande</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"31651c86-e6ea-4aab-84a4-2420d6037899"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"55ab7d16-d5b0-4827-a8d2-b69f5d550f9c"},{"Identifier":"f13124ad-6a28-44c5-994c-0d98fbad8527"},{"Identifier":"8f862b8d-4ccd-44f5-b813-168c7abd2833"},{"Identifier":"126c06c7-5599-4bb1-82f2-f0a5df991502"},{"Identifier":"7c8bcb8c-f2aa-446b-b697-9f75096bfe8b"}]]]>
+  </ProductVariants>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>Taste Natural Barra Grande from the high altitudes of Poco Fundo in&nbsp;Minas Gerais in Brazil, where a family business with a strong keenness&nbsp;on natural processing has been growing coffee for three generations.</p>
+
+<p>The path of the Barra Grande has not always been so smooth. The father of Sildes Caixeta, the current owner, was forced to sell their company when Sildes was just&nbsp;five years old. After long years of waiting, Sildes&nbsp;managed to buy the company back and now says that this patience is the family secret&nbsp;for growing good coffee and&nbsp;has taught&nbsp;this motto to his son.</p>
+
+<p>This coffee is a blend of Yellow Catuai and Mundo Novo,&nbsp;whose excellent large beans are patio dried and create a creamy mouth sensation and a cherry flavor with a pinch of chocolate and caramel.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>71</SKUID>
+  <SKUInStoreFrom>2020-08-03 08:36:15Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Brazil Natural Barra Grande</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-BRA-BARRAGRANDE</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>True</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Naturally processed Brazilian coffee grown with the nurturing and kindness of the family grower with a creamy mouth sensation,&nbsp;and a cherry and chocolaty flavor.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByVariants</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

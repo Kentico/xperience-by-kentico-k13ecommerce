@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>0fcc2982-13c0-4b90-9146-9d49be49bc6d</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Plastic_Red_8Cups-ek1c5198</CodeName>
+      <GUID>b2a8b44d-137a-4a73-8e59-51bb28b58c1f</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>525c0da2-7f8b-42be-93b6-d5ae143a6c6c</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>51</SKUID>
+  <SKUName>Hario V60 (Plastic, Red, 8 cups)</SKUName>
+  <SKUNumber>HAR-V60-Plastic-Red-8-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

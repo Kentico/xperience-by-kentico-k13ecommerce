@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitem>
+  <ContentItemContentFolderID>
+    <CodeName>Variants-4nccxboa</CodeName>
+    <GUID>f876a103-8118-484a-b0c9-3e1dae921f66</GUID>
+    <ObjectType>cms.contentfolder</ObjectType>
+  </ContentItemContentFolderID>
+  <ContentItemContentTypeID>
+    <CodeName>K13Store.ProductVariant</CodeName>
+    <GUID>7866b3e7-7e08-471d-bef8-7891df3d05f5</GUID>
+    <ObjectType>cms.contenttype</ObjectType>
+  </ContentItemContentTypeID>
+  <ContentItemGUID>a79201dd-e9c4-46e0-9333-8305825ca6fe</ContentItemGUID>
+  <ContentItemIsReusable>True</ContentItemIsReusable>
+  <ContentItemIsSecured>False</ContentItemIsSecured>
+  <ContentItemName>BoliviaFincaIllimani_5Lb-hqck1jyi</ContentItemName>
+</cms.contentitem>

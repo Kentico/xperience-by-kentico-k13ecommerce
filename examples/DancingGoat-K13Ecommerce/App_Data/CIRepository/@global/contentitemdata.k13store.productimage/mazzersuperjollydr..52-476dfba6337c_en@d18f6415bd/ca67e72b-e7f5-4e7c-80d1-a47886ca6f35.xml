@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>231a06a5-0ea6-43ad-9052-476dfba6337c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>MazzerSuperJollyDR-w6ul18i2</CodeName>
+      <GUID>e894a6de-fe2c-45ab-87bd-ca97b180b51a</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ca67e72b-e7f5-4e7c-80d1-a47886ca6f35</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"a21e73f6-0c56-4d56-bf36-f1d90e688f40","Name":"Mazzer Super Jolly DR.jpg","Extension":".jpg","Size":23615,"LastModified":"2024-10-24T14:39:06.1766112Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Mazzer Super Jolly DR</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/9e8379e2-2762-49d9-aab4-9031f9e78ef1/mazer-super-jolly-dr]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

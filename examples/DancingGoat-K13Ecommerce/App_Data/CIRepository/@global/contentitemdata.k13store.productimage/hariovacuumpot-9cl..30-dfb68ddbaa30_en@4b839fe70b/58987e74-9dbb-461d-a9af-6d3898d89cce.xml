@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>7cc6d9c5-cd20-48de-8230-dfb68ddbaa30</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioVacuumPot-9cl8eh3j</CodeName>
+      <GUID>9de58e5b-9597-41fa-8070-a728d4cc905a</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>58987e74-9dbb-461d-a9af-6d3898d89cce</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"8607ef5e-929e-4b00-9664-7acff2b07a65","Name":"Hario Vacuum Pot.jpg","Extension":".jpg","Size":32429,"LastModified":"2024-10-24T14:39:04.196453Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Hario Vacuum Pot</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/30815444-9d11-48e6-9ee3-35d0ac1d61da/hario-vacuum-pot]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>45a4bf90-5997-4a8f-b621-29271c9909db</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Ceramic_White_8Cups-8rk4emc2</CodeName>
+      <GUID>4a0fb488-34ef-419b-acca-a8a93c269c29</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>52d0061e-28af-4ebd-9243-69696939265c</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>58</SKUID>
+  <SKUName>Hario V60 (Ceramic, White, 8 cups)</SKUName>
+  <SKUNumber>HAR-V60-Ceramic-White-8-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

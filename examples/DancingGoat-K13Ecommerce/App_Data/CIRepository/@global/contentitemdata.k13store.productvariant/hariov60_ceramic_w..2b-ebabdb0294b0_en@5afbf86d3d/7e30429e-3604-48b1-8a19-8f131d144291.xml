@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>605dadf0-3e4e-4ab8-ad2b-ebabdb0294b0</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Ceramic_White_4Cups-wn42lszr</CodeName>
+      <GUID>6ea3f36d-9330-449f-8d1a-381627dbf502</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>7e30429e-3604-48b1-8a19-8f131d144291</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>64</SKUID>
+  <SKUName>Hario V60 (Ceramic, White, 4 cups)</SKUName>
+  <SKUNumber>HAR-V60-Ceramic-White-4-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

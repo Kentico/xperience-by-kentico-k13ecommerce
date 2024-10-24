@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.dancinggoat.navigationitem>
+  <ContentItemDataCommonDataID>
+    <GUID>75db940e-2abb-4777-81e3-b67185d991a2</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ProductsWidget-i4m0obmu</CodeName>
+      <GUID>4c6524b4-0d93-4ab9-89bb-0f2221f47b31</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ab8aec3b-4ecc-4394-aa78-743c445e701d</ContentItemDataGUID>
+  <NavigationItemLink>
+    <![CDATA[[{"WebPageGuid":"37306960-ceff-4570-b384-4309ffe7d25a"}]]]>
+  </NavigationItemLink>
+  <NavigationItemName>Products widget</NavigationItemName>
+</contentitemdata.dancinggoat.navigationitem>

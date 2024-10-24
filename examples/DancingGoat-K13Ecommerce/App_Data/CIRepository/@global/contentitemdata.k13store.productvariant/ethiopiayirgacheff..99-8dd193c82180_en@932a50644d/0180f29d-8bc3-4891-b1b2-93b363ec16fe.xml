@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>4c906892-96de-48cc-b999-8dd193c82180</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EthiopiaYirgacheffe_decaf_4Oz-j5l45zzv</CodeName>
+      <GUID>be2b741f-c559-4172-abba-7b9ae57d5223</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>0180f29d-8bc3-4891-b1b2-93b363ec16fe</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>97</SKUID>
+  <SKUName>Ethiopia Yirgacheffe (decaf) (4 oz)</SKUName>
+  <SKUNumber>CO-ETH-YIRGACHEFFE-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

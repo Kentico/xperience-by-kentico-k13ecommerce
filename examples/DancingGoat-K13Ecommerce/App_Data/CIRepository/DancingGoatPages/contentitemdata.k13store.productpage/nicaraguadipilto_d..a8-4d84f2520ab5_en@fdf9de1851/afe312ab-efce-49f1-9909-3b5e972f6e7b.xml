@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>9cb989e6-8214-40b5-8ba8-4d84f2520ab5</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>NicaraguaDipilto_decaf-0umrd1nn</CodeName>
+      <GUID>5e592dae-7357-4884-ba0c-c913c42737a4</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>afe312ab-efce-49f1-9909-3b5e972f6e7b</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"890bd4a2-0d0a-4807-883b-eb1c6d94be09"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

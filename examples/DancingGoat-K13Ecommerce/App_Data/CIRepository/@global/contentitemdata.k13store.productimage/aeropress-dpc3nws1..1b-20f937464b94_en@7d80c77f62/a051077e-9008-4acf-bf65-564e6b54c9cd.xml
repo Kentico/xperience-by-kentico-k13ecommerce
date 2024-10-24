@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>778d06e8-9ce3-4487-861b-20f937464b94</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AeroPress-dpc3nws1</CodeName>
+      <GUID>63bc7302-7782-4e3d-a5c8-45bb48d9d9ba</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>a051077e-9008-4acf-bf65-564e6b54c9cd</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"688b9877-5b0e-4dee-8f60-49aa4f926f47","Name":"AeroPress.jpg","Extension":".jpg","Size":33160,"LastModified":"2024-10-24T14:38:40.1699254Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>AeroPress</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/c0c16438-c9a2-40ef-b31f-eb2c4907af8f/aeropress]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Brewer</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>1d4da2e2-7a3e-4663-a0ef-f2cc19239eb8</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioVacuumPot-ezzyifa3</CodeName>
+      <GUID>60f0458c-4f04-406b-8867-fcc449acf034</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>dd455b7d-b0a4-4648-8aa1-f6a66a4816ee</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"BrewerIsDishwasherSafe":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+  <ManufacturerDisplayName>Hario</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Brewers/Hario-Vacuum-Pot</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"9de58e5b-9597-41fa-8070-a728d4cc905a"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+    <![CDATA[Another Hario product in our store. This is a classic, but it takes a little while to master. The results, however, are more than worth it. Perfect when you want a specialty device that allows you to experiment with different techniques, tastes, and strengths in a novel way. Your friends will think you&#39;re a born alchemist.]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>118</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:12:27Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Hario Vacuum Pot</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>HAR-VP</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[A&nbsp;brewing classic with proven results. Experiment with different techniques with the Hario Vacuum Pot.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

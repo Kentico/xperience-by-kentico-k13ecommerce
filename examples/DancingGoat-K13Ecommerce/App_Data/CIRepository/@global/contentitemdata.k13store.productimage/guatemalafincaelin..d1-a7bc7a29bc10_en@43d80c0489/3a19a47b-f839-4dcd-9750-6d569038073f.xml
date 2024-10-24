@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>4ed48486-9e03-4119-99d1-a7bc7a29bc10</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GuatemalaFincaElInjerto-bnhvugi3</CodeName>
+      <GUID>cc2cfe17-91cd-4e20-8be3-8bbd192fc13c</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3a19a47b-f839-4dcd-9750-6d569038073f</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"85876afc-99e8-41bd-9b1b-704b0c6ca56e","Name":"Guatemala Finca El Injerto.jpg","Extension":".jpg","Size":136579,"LastModified":"2024-10-24T14:38:56.8653783Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Guatemala Finca El Injerto</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/d7010eab-92e7-431e-a4ce-43dba95faaf0/guatemala]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

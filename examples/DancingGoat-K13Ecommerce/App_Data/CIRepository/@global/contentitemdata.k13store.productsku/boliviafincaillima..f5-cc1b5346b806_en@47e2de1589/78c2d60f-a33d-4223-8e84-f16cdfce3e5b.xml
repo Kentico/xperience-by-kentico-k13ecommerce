@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>a5f316f9-1ae9-4088-b1f5-cc1b5346b806</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaFincaIllimani-9dhh7h9m</CodeName>
+      <GUID>19cf0c36-7592-40d1-b26b-00fdefbd50b6</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>78c2d60f-a33d-4223-8e84-f16cdfce3e5b</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"Finca Illimani","CoffeeCountry":"Bolivia","CoffeeVariety":"Criolla, Caturra","CoffeeProcessing":"washed","CoffeeAltitude":5250,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <NodeAliasPath>/Store/Coffees/Bolivia-Finca-Illimani</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"4b6b4f4d-e85c-4e4c-8d36-5e49a5b3cdae"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"cf791a2d-21b7-4485-842f-674fe4564ef6"},{"Identifier":"088824b3-fc63-4927-9e05-b27d9087dddb"},{"Identifier":"22404c38-4418-48b3-80bd-18169d41fdbf"},{"Identifier":"a79201dd-e9c4-46e0-9333-8305825ca6fe"},{"Identifier":"9cca0000-3dd1-4eee-99f7-b8c6393ad6ed"}]]]>
+  </ProductVariants>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>This is the story of a man&nbsp;that&nbsp;had&nbsp;worked long hard years since his childhood on a coffee farm. His lifelong dream was to have his own coffee farm. Then, in his thirties, he was able to buy a farm located near Caranvi in the Bolivian Andes. However, even though his farm isn&#39;t far from La Paz, there are no roads, and he and his employees have to carry their crop to the nearest road. Too much work, you say? Well, just taste the coffee and you will change your opinion very quickly.</p>
+
+<p>The flavor of the Finca Illimani Anastacio Cadena Cascara is like marmalade, nothing more, just this, pure and simple, not fussy at all.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>88</SKUID>
+  <SKUInStoreFrom>2020-08-03 07:56:45Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Bolivia Finca Illimani</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-BOL-CASCARA</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Coming from the Bolivian Andes, Finca Illimani tastes of pure marmalade, just like you&#39;ve always&nbsp;dreamt of.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

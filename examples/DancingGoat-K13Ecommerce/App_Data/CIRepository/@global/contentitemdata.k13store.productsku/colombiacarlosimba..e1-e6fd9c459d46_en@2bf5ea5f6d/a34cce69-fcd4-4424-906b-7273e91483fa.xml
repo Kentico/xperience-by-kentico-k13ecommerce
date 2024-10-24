@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>a1303c69-348e-4a17-aee1-e6fd9c459d46</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi-wlw1ya3j</CodeName>
+      <GUID>b1772190-3f44-4e88-b0e5-bbb16a4b310d</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>a34cce69-fcd4-4424-906b-7273e91483fa</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"Finca Buenavista - Carlos Imbachi","CoffeeCountry":"Colombia","CoffeeVariety":"Caturra","CoffeeProcessing":"washed","CoffeeAltitude":5700,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <NodeAliasPath>/Store/Coffees/Colombia-Carlos-Imbachi</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"13c32bff-e334-42ee-8537-325ddb58c253"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"41504164-6c53-4a2e-b37f-1cb82cb9db1a"},{"Identifier":"370a8542-0d8f-4f0c-9914-85fd2e7486c4"},{"Identifier":"7890a5ce-8fde-4ff5-a5fa-71170914c445"},{"Identifier":"2a4d96b2-50db-4d05-b62a-10bec2517525"},{"Identifier":"63afbee0-34a0-4c16-a632-f3833314e8c4"}]]]>
+  </ProductVariants>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>As a part of our farmer-direct Colombia program, we bring you a special (above 88!) farm-specific number. We had some very special cupping samples sent to us straight from Colombia. And although they were all fantastic, this one really stood out from the others. Previously, we offered the &quot;First Place SCAA Coffee of the Year&quot; Carlos Imbachi. Just so you know what we&#39;re on about here, the famous Panama Esmeralda Especial Gesha ended up in 2nd place to Carlos Imbachi. Take this as another testament to the greatness and potential of Colombian coffee.</p>
+
+<p>One cupping of this specialty was enough to recognize the unprecedented quality and character of this coffee. Mr. Imbachi&#39;s farm is located in the San Augustin region of Hulia, where he grows this coffee at an altitude of 5,700 feet.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>112</SKUID>
+  <SKUInStoreFrom>2020-08-03 08:38:51Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Colombia Carlos Imbachi</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-COL-IMBACHI</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[The Colombian gold in the form of top quality coffee, recognizable&nbsp;for its character.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

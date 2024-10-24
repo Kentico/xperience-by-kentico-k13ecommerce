@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.FilterPack</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>8ea0bb0f-fe30-452d-99e7-f0263456d912</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PaperFiltersForChemex-vlobyrwm</CodeName>
+      <GUID>5ef72ba3-d81f-4896-b4f3-649b80c94d95</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>d7d7a7be-f12e-48e4-b64b-cfd0e4691892</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"FilterPackQuantity":100,"FilterPromotionTitle":null,"FilterPromotionDescription":null,"FilterBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Accessories</DepartmentDisplayName>
+  <ManufacturerDisplayName>Chemex</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Accessories/Paper-Filters-for-Chemex</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"43adb39f-b0cd-419f-99db-6793d9dee39c"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>48</SKUAvailableItems>
+  <SKUDescription>
+    <![CDATA[Absolutely no grounds and easy-to-use filters? Yes, it is possible. These paper filters for Chemex coffee makers are different. Their thickness and shape may look strange, but the result will amaze you. Just wash them in hot water before starting and you&#39;re ready to go.]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>95</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:43:26Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Paper Filters for Chemex</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CM-F</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>10</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[These weirdly shaped filters will astonish you&nbsp;by the&nbsp;quality of your coffee.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

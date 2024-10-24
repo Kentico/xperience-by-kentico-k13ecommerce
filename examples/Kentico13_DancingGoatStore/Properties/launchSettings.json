@@ -17,10 +17,18 @@
     },
     "DancingGoatCore": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "applicationUrl": "http://localhost:65375",
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:65375",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "K13Ecommerce.WebCI": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:65375",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "CI"
       }
     }
   }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>ab71a40e-a0b4-433d-9467-c047335906f6</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>CleverDripper-5kwrvvf6</CodeName>
+      <GUID>0333a69e-b880-4ab9-b8a9-224209cbb034</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>9c6c4a07-ddbc-4520-a4d8-a9674a0b368d</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"b742139a-1a88-443a-a907-65914b8b6811"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

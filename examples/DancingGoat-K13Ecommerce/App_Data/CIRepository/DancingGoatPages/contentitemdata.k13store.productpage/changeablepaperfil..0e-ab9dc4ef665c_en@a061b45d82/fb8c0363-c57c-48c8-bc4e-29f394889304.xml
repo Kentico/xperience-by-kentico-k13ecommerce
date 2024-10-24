@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>b15105a5-017e-4bb2-b20e-ab9dc4ef665c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ChangeablePaperFiltersForVacuumPot-k1h0zui7</CodeName>
+      <GUID>57fe375b-c01d-4249-a0dd-99b9d295f3ae</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>fb8c0363-c57c-48c8-bc4e-29f394889304</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"22bff91d-386d-442f-adde-ce054f342694"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

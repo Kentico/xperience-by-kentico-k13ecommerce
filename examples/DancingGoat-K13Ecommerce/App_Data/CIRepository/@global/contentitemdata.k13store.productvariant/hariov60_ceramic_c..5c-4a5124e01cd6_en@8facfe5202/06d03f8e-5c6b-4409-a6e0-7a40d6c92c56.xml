@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>eda2d422-403e-4836-bb5c-4a5124e01cd6</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Ceramic_Clear_8Cups-2jogb763</CodeName>
+      <GUID>065a1248-0f3d-412c-b577-3e4bbee7e69b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>06d03f8e-5c6b-4409-a6e0-7a40d6c92c56</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>43</SKUID>
+  <SKUName>Hario V60 (Ceramic, Clear, 8 cups)</SKUName>
+  <SKUNumber>HAR-V60-Ceramic-Clear-8-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

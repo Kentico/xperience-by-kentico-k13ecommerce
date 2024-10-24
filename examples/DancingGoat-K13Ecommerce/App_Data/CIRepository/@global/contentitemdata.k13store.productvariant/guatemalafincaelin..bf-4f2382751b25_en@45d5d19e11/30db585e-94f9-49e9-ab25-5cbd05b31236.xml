@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>cb5e06fc-1e96-46fa-a2bf-4f2382751b25</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GuatemalaFincaElInjerto_2Lb-t7yhoohz</CodeName>
+      <GUID>862fcb49-4d2c-4e0b-a199-587f766d58a3</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>30db585e-94f9-49e9-ab25-5cbd05b31236</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>105</SKUID>
+  <SKUName>Guatemala Finca El Injerto (2 lb)</SKUName>
+  <SKUNumber>CO-GUA-ELINJERTO-2-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

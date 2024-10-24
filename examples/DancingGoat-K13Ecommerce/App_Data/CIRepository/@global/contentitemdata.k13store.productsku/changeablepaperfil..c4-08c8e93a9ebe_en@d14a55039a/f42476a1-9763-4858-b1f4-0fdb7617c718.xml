@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.FilterPack</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>d550ee7e-b8ec-4640-a0c4-08c8e93a9ebe</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ChangeablePaperFiltersForVacuumPot-9vliamjj</CodeName>
+      <GUID>22bff91d-386d-442f-adde-ce054f342694</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>f42476a1-9763-4858-b1f4-0fdb7617c718</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"FilterPackQuantity":100,"FilterPromotionTitle":null,"FilterPromotionDescription":null,"FilterBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Accessories</DepartmentDisplayName>
+  <ManufacturerDisplayName>Hario</ManufacturerDisplayName>
+  <NodeAliasPath>
+    <![CDATA[/Store/Accessories/Changeable-Paper-Filters-for-Vacuum-Pot]]>
+  </NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"14778d25-d421-484d-b73e-c2c4da472afd"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>14</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>Throw away the impractical cotton filter that you got&nbsp;with your Vacuum Pot Hario TCA-2 and replace it with these easy-to-use paper filters.</p>
+
+<p>No need for&nbsp;cleaning, just use&nbsp;one and throw it away. The quickest and cleanest way to make a cup of coffee. Paper filters allow the coffee to flow through the filter. Additionally, they trap the coffee grounds inside the filter.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>24</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:37:54Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Changeable Paper Filters for Vacuum Pot</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>HAR-VP-F</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>10</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Easy-to-use paper filters for Vacuum Pot Hario TCA-2 ,replacing the original impractical cotton filter.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

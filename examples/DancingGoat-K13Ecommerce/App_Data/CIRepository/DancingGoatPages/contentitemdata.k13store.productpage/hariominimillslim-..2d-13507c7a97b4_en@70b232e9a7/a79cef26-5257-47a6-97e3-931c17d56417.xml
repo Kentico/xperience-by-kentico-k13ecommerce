@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>0c2ff167-eedb-4341-bd2d-13507c7a97b4</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioMiniMillSlim-3ln3luo1</CodeName>
+      <GUID>c035a80b-ce62-44eb-ada1-2e87285f71dc</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>a79cef26-5257-47a6-97e3-931c17d56417</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"84e4f7b9-de80-467f-af0e-ae8e61da67ba"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

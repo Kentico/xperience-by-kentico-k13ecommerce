@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>cc72a19a-0115-4911-ab96-0b6dfcbd480e</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney_16Oz-chw2c3cj</CodeName>
+      <GUID>65ece48f-9b3d-4927-939a-9de72b7c78bd</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ecaf9c45-e691-422f-a35d-0c66c4653a13</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>80</SKUID>
+  <SKUName>Panama Los Lajones Honey (16 oz)</SKUName>
+  <SKUNumber>CO-PAN-LAJONES-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

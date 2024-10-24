@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>93067064-bcb4-4312-8422-7dd8d965a620</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>NicaraguaDipilto_decaf-69n4s5js</CodeName>
+      <GUID>b2c04262-e319-40ec-b285-c1bf09b62a98</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>76f324c9-745a-43d1-bd0b-5d60cabe1f05</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"7f232712-b42e-460c-a2c9-6b26e06b371f","Name":"Nicaragua Dipilto (decaf).jpg","Extension":".jpg","Size":136379,"LastModified":"2024-10-24T14:39:07.1299097Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Nicaragua Dipilto (decaf)</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/1b28cc65-bd01-47c3-ab9f-111bf8231783/nicaragua]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>9df39db8-283a-4930-997b-cf04cdce7cdb</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande-fhqshxk6</CodeName>
+      <GUID>31651c86-e6ea-4aab-84a4-2420d6037899</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>63eaf39b-d402-4143-8996-d22dbbc28874</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"e164168b-d547-4508-9284-39b4743fbc71","Name":"Brazil Natural Barra Grande.jpg","Extension":".jpg","Size":135002,"LastModified":"2024-10-24T14:38:47.747791Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Brazil Natural Barra Grande</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/3f1272fa-86a8-4e27-ac21-1e3e6bb73b84/brazil]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

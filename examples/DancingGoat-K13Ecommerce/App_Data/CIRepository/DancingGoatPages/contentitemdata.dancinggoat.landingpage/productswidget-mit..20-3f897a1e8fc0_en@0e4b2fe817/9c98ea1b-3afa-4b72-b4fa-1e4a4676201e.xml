@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.dancinggoat.landingpage>
+  <ContentItemDataCommonDataID>
+    <GUID>5538ac99-3ed6-47a7-bb20-3f897a1e8fc0</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ProductsWidget-mithvszw</CodeName>
+      <GUID>2a2874ab-e5c1-45f2-bfdf-49ce4b055bb2</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>9c98ea1b-3afa-4b72-b4fa-1e4a4676201e</ContentItemDataGUID>
+</contentitemdata.dancinggoat.landingpage>

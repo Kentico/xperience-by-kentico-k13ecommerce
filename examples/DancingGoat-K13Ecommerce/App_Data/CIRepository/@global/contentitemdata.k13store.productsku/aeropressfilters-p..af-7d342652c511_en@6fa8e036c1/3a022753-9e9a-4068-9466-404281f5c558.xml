@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.FilterPack</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>45418ecd-1c28-4c73-b3af-7d342652c511</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AeroPressFilters-pubuczcq</CodeName>
+      <GUID>a8c1b10b-b7e6-4d99-8962-7ce0978e82de</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3a022753-9e9a-4068-9466-404281f5c558</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"FilterPackQuantity":350,"FilterPromotionTitle":null,"FilterPromotionDescription":null,"FilterBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Accessories</DepartmentDisplayName>
+  <ManufacturerDisplayName>Aerobie</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Accessories/AeroPress-Filters</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"9339eaad-0f53-4cc3-acfe-9c19b679a0be"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName>Bestseller</PublicStatusDisplayName>
+  <SKUAvailableItems>-8</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>Bleached paper filters 1.5&quot; (3.8 cm) wide for AeroPress&nbsp;coffee makers.</p>
+
+<p>A new and clean filter that gives you a wonderful taste of coffee. These paper filters allow the coffee to flow through the filter while at the same time trapping the coffee grounds inside.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>False</SKUEnabled>
+  <SKUID>125</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:32:05Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>AeroPress Filters</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>AER-AP-F</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>10</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Bleached paper filters for AeroPress coffee makers.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

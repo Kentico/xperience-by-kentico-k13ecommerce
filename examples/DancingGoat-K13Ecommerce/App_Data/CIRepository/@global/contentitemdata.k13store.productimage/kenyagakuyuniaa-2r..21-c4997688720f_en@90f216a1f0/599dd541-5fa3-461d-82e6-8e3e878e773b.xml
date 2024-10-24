@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>bad023d9-2dc0-461e-a121-c4997688720f</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA-2rpjzz74</CodeName>
+      <GUID>0864cb70-e2f1-49d9-93bf-7e3e87d6173f</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>599dd541-5fa3-461d-82e6-8e3e878e773b</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"a5886fca-21ab-4b2a-b2e0-dbf64b011a82","Name":"Kenya Gakuyuni AA.jpg","Extension":".jpg","Size":134297,"LastModified":"2024-10-24T14:39:05.1453304Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Kenya Gakuyuni AA</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/13093933-3544-4854-ad2e-ccd657617fd5/kenya]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

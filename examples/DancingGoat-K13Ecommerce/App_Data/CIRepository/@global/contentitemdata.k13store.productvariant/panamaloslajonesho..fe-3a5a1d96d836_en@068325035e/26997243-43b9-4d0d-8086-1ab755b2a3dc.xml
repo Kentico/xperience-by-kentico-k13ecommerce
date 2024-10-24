@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>68d66244-792f-4bac-8ffe-3a5a1d96d836</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney_4Oz-ntqp3xap</CodeName>
+      <GUID>3c640a6c-d952-480a-8c4d-ebe973ebac81</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>26997243-43b9-4d0d-8086-1ab755b2a3dc</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>False</SKUEnabled>
+  <SKUID>81</SKUID>
+  <SKUName>Panama Los Lajones Honey (4 oz)</SKUName>
+  <SKUNumber>CO-PAN-LAJONES-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

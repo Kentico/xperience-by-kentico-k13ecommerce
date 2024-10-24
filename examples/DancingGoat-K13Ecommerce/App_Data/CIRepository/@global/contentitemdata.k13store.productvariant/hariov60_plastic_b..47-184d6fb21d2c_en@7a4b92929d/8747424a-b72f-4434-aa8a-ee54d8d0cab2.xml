@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>8234dabb-8bc3-4757-9347-184d6fb21d2c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Plastic_Brown_4Cups-j5tgkesc</CodeName>
+      <GUID>baa8df30-a864-45f0-98f1-78f3c072ea95</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>8747424a-b72f-4434-aa8a-ee54d8d0cab2</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>48</SKUID>
+  <SKUName>Hario V60 (Plastic, Brown, 4 cups)</SKUName>
+  <SKUNumber>HAR-V60-Plastic-Brown-4-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>8dda4b06-196c-4220-830b-e134774a2c7e</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>MazzerSuperJollyDR-ty49rv8a</CodeName>
+      <GUID>13a9d85f-69aa-42c1-b3e8-5432f2fb7cc7</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>766f98f3-9232-40d8-87b2-d25434068710</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"bf804de2-17ff-45cf-9036-a2e7f63e5840"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

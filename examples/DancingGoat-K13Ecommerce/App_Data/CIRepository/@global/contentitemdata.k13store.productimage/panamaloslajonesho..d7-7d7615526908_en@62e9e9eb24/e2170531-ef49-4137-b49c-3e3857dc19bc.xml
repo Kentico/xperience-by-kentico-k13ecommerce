@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>6dbf3e52-9e6b-4241-9dd7-7d7615526908</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney-7wp0zn6r</CodeName>
+      <GUID>5e889993-18ce-48d7-a4b9-b6ee634ee21a</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>e2170531-ef49-4137-b49c-3e3857dc19bc</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"852a1bbc-6060-4aee-9745-d5e49063745a","Name":"Panama Los Lajones Honey.jpg","Extension":".jpg","Size":136691,"LastModified":"2024-10-24T14:39:08.1675746Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Panama Los Lajones Honey</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/42d19bc9-6400-4120-96f0-4fd10f82993a/panama]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

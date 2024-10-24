@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>c73b0924-fb7b-41b0-a29b-6eb201fd13b0</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Chemex-9o0uo6rm</CodeName>
+      <GUID>ed698889-455a-4351-b9b7-a535d2184c87</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>f0f2e91a-7b22-4a53-9ccc-0851073e579d</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"ccb6f01f-d348-423c-a1fd-86a1f1393c69","Name":"Chemex.jpg","Extension":".jpg","Size":31128,"LastModified":"2024-10-24T14:38:49.0727947Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Chemex</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/90fb1e0c-241e-46e7-8244-0f0343aabac1/chemex]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

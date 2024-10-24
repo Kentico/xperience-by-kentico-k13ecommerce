@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>00cb1321-b763-4ef6-83a0-c5575f51c1f6</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA-tbxua43i</CodeName>
+      <GUID>59c81f38-9f55-4d67-baa9-41d1b18358be</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>abe902bf-64b5-49c1-8b1b-cc4e1c8e4fd9</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"Gakuyuni, Thirikwa Farmers Cooperative Society","CoffeeCountry":"Kenya","CoffeeVariety":"SL28 / SL34","CoffeeProcessing":"washed","CoffeeAltitude":5300,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <NodeAliasPath>/Store/Coffees/Kenya-Gakuyuni-AA</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"0864cb70-e2f1-49d9-93bf-7e3e87d6173f"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"5ad59cf0-0dba-4850-a951-da28aa519c10"},{"Identifier":"e7831f60-5268-4486-b7f9-55fdf7b5e782"},{"Identifier":"b23f5def-3208-491d-a053-739ef39d9975"},{"Identifier":"f189f46e-dd1e-42f8-8daa-40d106dc21ca"},{"Identifier":"6d2db35c-02e7-4e84-86b6-56e77db77513"}]]]>
+  </ProductVariants>
+  <PublicStatusDisplayName>Bestseller</PublicStatusDisplayName>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>What are the best beans for filtered coffees, you may ask? Well, what about a coffee with the sweet flavor of acidity, where you can also taste plums, rhubarb, or tangerines? Yes, this amazing coffee comes from Mt. Kenya in the Ngariama region of Kenya and will fulfill all your needs.</p>
+Gakuyuni AA is made by a small business where they grow a hybrid variety of the Arabica coffee plant, so you can be assured that you are drinking a rare and unique coffee.
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>18</SKUID>
+  <SKUInStoreFrom>2020-08-03 08:59:13Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Kenya Gakuyuni AA</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-KEN-GAKUYUNI</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Plums, rhubarb, tangerines? Yes, that&#39;s the taste of Kenya Gakuyuni AA, made from the Arabica coffee plant.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

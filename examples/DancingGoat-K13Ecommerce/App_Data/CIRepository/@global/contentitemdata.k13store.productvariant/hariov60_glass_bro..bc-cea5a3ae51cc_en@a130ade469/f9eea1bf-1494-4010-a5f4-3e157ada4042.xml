@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>4192a826-ce0e-406a-b7bc-cea5a3ae51cc</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Glass_Brown_4Cups-4rbfh1hf</CodeName>
+      <GUID>bf96a6ce-1436-4706-8c96-8fb4465e8e06</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>f9eea1bf-1494-4010-a5f4-3e157ada4042</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>41</SKUID>
+  <SKUName>Hario V60 (Glass, Brown, 4 cups)</SKUName>
+  <SKUNumber>HAR-V60-Glass-Brown-4-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

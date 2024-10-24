@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>a17e23e1-15c3-48a4-9037-0fd74e9609ee</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>NicaraguaDipilto_decaf_4Oz-ofel9m2g</CodeName>
+      <GUID>f1634cf0-22a0-4431-9ab3-e64a29015717</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>e643047a-5c98-4b62-845d-7273e592fe74</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>28</SKUID>
+  <SKUName>Nicaragua Dipilto (decaf) (4 oz)</SKUName>
+  <SKUNumber>CO-NIC-DIPILTO-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

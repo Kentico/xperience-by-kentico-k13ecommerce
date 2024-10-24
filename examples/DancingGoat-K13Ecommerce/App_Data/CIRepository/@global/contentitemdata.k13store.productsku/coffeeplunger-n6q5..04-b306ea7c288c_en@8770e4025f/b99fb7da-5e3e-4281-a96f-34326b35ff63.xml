@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Brewer</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>0bc90aea-90a6-42ab-b904-b306ea7c288c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>CoffeePlunger-n6q5z57v</CodeName>
+      <GUID>38617564-4004-4a13-ad8e-8d1cf4e40be3</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>b99fb7da-5e3e-4281-a96f-34326b35ff63</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"BrewerIsDishwasherSafe":true}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+  <NodeAliasPath>/Store/Brewers/Coffee-Plunger</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"87bdc66a-f539-45d1-9d34-98f405de6a9a"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+    <![CDATA[Eight cups of coffee in a single plunger. Super easy to use and perfect for everyone to serve for themselves.]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>94</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:08:55Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Coffee Plunger</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>COF-PLNG</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Eight cups of coffee in a single plunger. Super easy to use and perfect for everyone to serve for themselves.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

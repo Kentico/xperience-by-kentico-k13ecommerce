@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c534945f-481d-442a-b590-1ce0d521d178</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Glass_Red_8Cups-ydpl4pg8</CodeName>
+      <GUID>bc249768-a796-4709-915d-cc7b5c6ce5bc</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>a1898930-a9b6-46f7-a467-aed882a547a4</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>47</SKUID>
+  <SKUName>Hario V60 (Glass, Red, 8 cups)</SKUName>
+  <SKUNumber>HAR-V60-Glass-Red-8-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

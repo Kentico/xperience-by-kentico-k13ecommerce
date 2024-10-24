@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>3d396934-17d4-42da-baca-09245898c82a</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaLaLlamaGeisha-b8odi7vf</CodeName>
+      <GUID>c4cbac50-c771-4607-9658-c648d4be52a5</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>b3bc00c4-f471-4670-8b73-ea6956b55abc</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"827e31a5-4762-424c-a2ba-621d4136a359","Name":"Bolivia La Llama Geisha.webp","Extension":".webp","Size":10972,"LastModified":"2024-10-24T14:39:10.1891311Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Bolivia La Llama Geisha</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/0acbef3f-7619-4f3f-9734-3fcd0fe20b44/218f71ad5f81d9fb2aa18025c7c8]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

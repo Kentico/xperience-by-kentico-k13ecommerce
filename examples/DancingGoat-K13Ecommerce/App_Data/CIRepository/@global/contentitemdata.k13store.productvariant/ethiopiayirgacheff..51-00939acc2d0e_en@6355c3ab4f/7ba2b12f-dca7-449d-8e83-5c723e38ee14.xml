@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>2f0d09cc-c91d-4745-ad51-00939acc2d0e</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EthiopiaYirgacheffe_decaf_16Oz-evzcfrua</CodeName>
+      <GUID>b0d2189b-227c-490e-bb12-13bde285ac34</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>7ba2b12f-dca7-449d-8e83-5c723e38ee14</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>99</SKUID>
+  <SKUName>Ethiopia Yirgacheffe (decaf) (16 oz)</SKUName>
+  <SKUNumber>CO-ETH-YIRGACHEFFE-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

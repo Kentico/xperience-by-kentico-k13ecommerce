@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>607ae4d0-67d2-4dfe-b7d7-98c0e35d0a82</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi_2Lb-snmrm9xj</CodeName>
+      <GUID>370a8542-0d8f-4f0c-9914-85fd2e7486c4</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ea290a75-93f2-44b9-b6f2-7cd43489e951</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>116</SKUID>
+  <SKUName>Colombia Carlos Imbachi (2 lb)</SKUName>
+  <SKUNumber>CO-COL-IMBACHI-2-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

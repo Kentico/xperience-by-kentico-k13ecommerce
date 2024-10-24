@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>4af6088f-24bd-4c0e-9eb3-22f7b15ae44d</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi-obbo26tg</CodeName>
+      <GUID>13c32bff-e334-42ee-8537-325ddb58c253</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>950e72ac-c2d4-40d9-954d-2295452e8a97</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"b0b93b78-9aa5-40d8-8e19-59725d4e4819","Name":"Colombia Carlos Imbachi.jpg","Extension":".jpg","Size":135881,"LastModified":"2024-10-24T14:38:51.1991656Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Colombia Carlos Imbachi</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/5bf6a8f6-7263-4382-9adf-6485568496e6/colombia]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

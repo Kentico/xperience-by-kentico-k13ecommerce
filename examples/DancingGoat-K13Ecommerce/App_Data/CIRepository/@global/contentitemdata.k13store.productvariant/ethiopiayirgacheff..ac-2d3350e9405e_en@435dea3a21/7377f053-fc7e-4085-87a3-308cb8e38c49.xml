@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>97e8b1c8-b846-4fe9-97ac-2d3350e9405e</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EthiopiaYirgacheffe_decaf_5Lb-3888b87d</CodeName>
+      <GUID>c741e138-1695-4554-9293-73ef68a18217</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>7377f053-fc7e-4085-87a3-308cb8e38c49</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>98</SKUID>
+  <SKUName>Ethiopia Yirgacheffe (decaf) (5 lb)</SKUName>
+  <SKUNumber>CO-ETH-YIRGACHEFFE-5-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

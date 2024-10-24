@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>f365f388-6bc1-4277-b469-6714d16c8a87</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AeroPress-ixs428i6</CodeName>
+      <GUID>57dd073f-f351-4597-b26b-592f2b4fc085</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>b2e8013e-c302-4560-804a-d8cca5bedacb</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"e4a7c213-ff9b-4817-9acf-4a71b811e378"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

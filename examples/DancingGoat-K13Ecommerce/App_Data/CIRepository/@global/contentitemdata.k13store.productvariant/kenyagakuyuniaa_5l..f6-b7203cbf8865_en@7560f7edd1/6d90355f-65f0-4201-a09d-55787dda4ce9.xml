@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c6e5b542-a1f8-4d30-bdf6-b7203cbf8865</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA_5Lb-jr0r8hyi</CodeName>
+      <GUID>f189f46e-dd1e-42f8-8daa-40d106dc21ca</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>6d90355f-65f0-4201-a09d-55787dda4ce9</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>22</SKUID>
+  <SKUName>Kenya Gakuyuni AA (5 lb)</SKUName>
+  <SKUNumber>CO-KEN-GAKUYUNI-5-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

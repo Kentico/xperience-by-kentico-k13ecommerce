@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitem>
+  <ContentItemContentFolderID>
+    <CodeName>SKUs-bk5n2769</CodeName>
+    <GUID>99e70773-fe93-498b-91bd-1417a5ef8f4c</GUID>
+    <ObjectType>cms.contentfolder</ObjectType>
+  </ContentItemContentFolderID>
+  <ContentItemContentTypeID>
+    <CodeName>K13Store.ProductSKU</CodeName>
+    <GUID>6cae7e67-4cbf-4155-a3f6-c74773ac3836</GUID>
+    <ObjectType>cms.contenttype</ObjectType>
+  </ContentItemContentTypeID>
+  <ContentItemGUID>50234556-21f3-4248-b7d8-828fc38aa7b5</ContentItemGUID>
+  <ContentItemIsReusable>True</ContentItemIsReusable>
+  <ContentItemIsSecured>False</ContentItemIsSecured>
+  <ContentItemName>BleachedPaperFiltersV60-01-r5trvog8</ContentItemName>
+</cms.contentitem>

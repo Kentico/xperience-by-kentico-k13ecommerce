@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>adbe09c1-fecf-4abb-b9c9-c4b8e03ff408</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Plastic_White_2Cups-tj8lyfp4</CodeName>
+      <GUID>52c9b7fc-3ca4-4838-9d2f-061606dbd640</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>43cf21b5-64e4-4df0-ad89-ea5656c39680</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>56</SKUID>
+  <SKUName>Hario V60 (Plastic, White, 2 cups)</SKUName>
+  <SKUNumber>HAR-V60-Plastic-White-2-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

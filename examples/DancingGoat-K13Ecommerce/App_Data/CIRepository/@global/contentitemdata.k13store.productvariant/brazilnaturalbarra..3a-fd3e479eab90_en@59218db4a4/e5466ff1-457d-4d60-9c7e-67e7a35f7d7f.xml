@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>345cf71a-c83c-4e7b-983a-fd3e479eab90</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande_16Oz-nfl7cv7m</CodeName>
+      <GUID>55ab7d16-d5b0-4827-a8d2-b69f5d550f9c</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>e5466ff1-457d-4d60-9c7e-67e7a35f7d7f</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>73</SKUID>
+  <SKUName>Brazil Natural Barra Grande (16 oz)</SKUName>
+  <SKUNumber>CO-BRA-BARRAGRANDE-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

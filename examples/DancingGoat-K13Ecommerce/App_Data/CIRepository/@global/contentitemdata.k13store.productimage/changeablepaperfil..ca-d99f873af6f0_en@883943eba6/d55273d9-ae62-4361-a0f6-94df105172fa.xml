@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>5463372f-b4a8-41fb-85ca-d99f873af6f0</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ChangeablePaperFiltersForVacuumPot-gds1jije</CodeName>
+      <GUID>14778d25-d421-484d-b73e-c2c4da472afd</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>d55273d9-ae62-4361-a0f6-94df105172fa</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"c004b9fb-8f60-4871-9493-874aead19981","Name":"Changeable Paper Filters for Vacuum Pot.jpg","Extension":".jpg","Size":25587,"LastModified":"2024-10-24T14:38:48.4996529Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Changeable Paper Filters for Vacuum Pot</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/96e1cd9f-e2c3-41fc-8cdf-d3a45f87bfa0/vacuum-pot-filters]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>53aeb505-7006-4b0d-a464-a7791ab77218</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney-kavav2l0</CodeName>
+      <GUID>cd496f0e-f101-44e0-b27b-9e133af5e5a0</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>c8cad213-eccb-4d89-838f-f69cff93c3ff</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"5a330d2d-10b0-4e20-932b-85e8e318eedf"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>2afd3df2-66fe-4dec-8f1b-1e785afacf21</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi_16Oz-zrj8hbtp</CodeName>
+      <GUID>41504164-6c53-4a2e-b37f-1cb82cb9db1a</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>fb431e54-9913-4745-a0b8-eb1d0ab32422</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>113</SKUID>
+  <SKUName>Colombia Carlos Imbachi (16 oz)</SKUName>
+  <SKUNumber>CO-COL-IMBACHI-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

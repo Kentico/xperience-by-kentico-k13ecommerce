@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>efa5054b-c769-468c-8ff0-32b72611a779</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AeroPressFilters-8e4ede8s</CodeName>
+      <GUID>0cf00e9c-8672-461a-ba16-344a1e7bbce7</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3ded75ac-067c-4f12-b5a9-c58c591e7532</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"a8c1b10b-b7e6-4d99-8962-7ce0978e82de"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

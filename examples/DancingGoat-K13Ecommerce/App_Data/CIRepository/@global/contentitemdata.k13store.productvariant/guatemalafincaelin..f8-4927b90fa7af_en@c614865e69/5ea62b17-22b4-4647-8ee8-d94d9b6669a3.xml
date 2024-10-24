@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>dd6bb132-04e9-493d-8ff8-4927b90fa7af</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GuatemalaFincaElInjerto_8Oz-a88adv7y</CodeName>
+      <GUID>7f75f453-bde4-4c52-ab18-7babf43644df</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>5ea62b17-22b4-4647-8ee8-d94d9b6669a3</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>109</SKUID>
+  <SKUName>Guatemala Finca El Injerto (8 oz)</SKUName>
+  <SKUNumber>CO-GUA-ELINJERTO-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

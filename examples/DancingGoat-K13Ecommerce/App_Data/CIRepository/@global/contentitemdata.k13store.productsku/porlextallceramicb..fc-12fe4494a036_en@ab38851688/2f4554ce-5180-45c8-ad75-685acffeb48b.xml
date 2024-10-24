@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.ManualGrinder</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>9f5a9e93-4a11-4886-94fc-12fe4494a036</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PorlexTallCeramicBurrGrinder-yvjfb5ge</CodeName>
+      <GUID>b1a261e7-4fa7-41f1-ae6f-3cc1d206ae15</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>2f4554ce-5180-45c8-ad75-685acffeb48b</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"ManualGrinderPromotionTitle":null,"ManualGrinderPromotionDescription":null,"ManualGrinderBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Grinders</DepartmentDisplayName>
+  <ManufacturerDisplayName>Porlex</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Grinders/Porlex-Tall-Ceramic-Burr-Grinder</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"b4b13703-f04e-405f-9f1f-2a40e769e101"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>100</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+Are you looking for a firm, extra-durable, but also a little static grinder? The Porlex Tall Ceramic Burr Grinder is all from stainless steel except for the burrs. Those strong conical burrs are ceramic, so they won&#39;t rust and are also sharper than steel burrs will ever be. The grinder is also able to be adjusted for many different variants of grind setting to cover all your needs.<br />
+<br />
+As to the size, the grinder is 7.3&quot; (18.5 cm) tall and 1.9&quot; (4.9 cm)&nbsp; in diameter, without the handle, so it perfectly fits your hands. You can put up to 1 oz (30 g) of beans inside. It&#39;s also very easy to wash.
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>85</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:57:54Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Porlex Tall Ceramic Burr Grinder</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>POR-GR-TALL</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[An extra-durable grinder with strong conical ceramic burrs&nbsp;that fits perfectly in your hands.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

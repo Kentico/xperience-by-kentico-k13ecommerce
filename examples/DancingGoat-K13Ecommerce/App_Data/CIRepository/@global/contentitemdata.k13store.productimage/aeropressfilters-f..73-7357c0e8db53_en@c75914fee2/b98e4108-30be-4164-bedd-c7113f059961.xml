@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>34f09b73-5683-42cb-9873-7357c0e8db53</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AeroPressFilters-fjsrhpwg</CodeName>
+      <GUID>9339eaad-0f53-4cc3-acfe-9c19b679a0be</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>b98e4108-30be-4164-bedd-c7113f059961</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"71e2a48e-89cc-42e2-a027-23e338e3c7b0","Name":"AeroPress Filters.jpg","Extension":".jpg","Size":33521,"LastModified":"2024-10-24T14:38:42.4869369Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>AeroPress Filters</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/06513de6-230e-4328-895b-9734c7e9bf98/aero-press-filters]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

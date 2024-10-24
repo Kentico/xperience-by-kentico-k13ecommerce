@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.storepage>
+  <ContentItemDataCommonDataID>
+    <GUID>e7e13542-48e9-4ba9-859d-1ea0d3c720b4</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Store-f9ds4x0c</CodeName>
+      <GUID>c86ebd91-a96d-4cc4-8014-f411a83900fc</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3e2e52a8-1089-43ac-87df-4e731b3094a0</ContentItemDataGUID>
+  <HotTipProducts>
+    <![CDATA[[{"WebPageGuid":"597e1cf8-ec35-4810-ba79-a7b2a6afeda5"},{"WebPageGuid":"d4c8b710-e9cf-4cdf-9ff0-fcc75ef2a3f6"},{"WebPageGuid":"d5b18e9c-acf1-4936-8d70-5e7ea9da7c6a"}]]]>
+  </HotTipProducts>
+</contentitemdata.k13store.storepage>

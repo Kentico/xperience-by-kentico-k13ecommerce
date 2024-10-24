@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>c6aedf9f-6712-4152-bfe7-aebdda38dddb</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>MacapM4D-sr9wu8xf</CodeName>
+      <GUID>a5719a7e-54b0-4ba9-80c0-50e24ec65769</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>b5a88248-0b65-43da-ac96-f4cfc2c636e9</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"df25173f-742f-4c27-87e2-a8e4a7b45576","Name":"Macap M4D.jpg","Extension":".jpg","Size":23639,"LastModified":"2024-10-24T14:39:05.8474946Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Macap M4D</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/b2b5f42d-d719-4602-ba30-fa1cf387623a/macap-m4d]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

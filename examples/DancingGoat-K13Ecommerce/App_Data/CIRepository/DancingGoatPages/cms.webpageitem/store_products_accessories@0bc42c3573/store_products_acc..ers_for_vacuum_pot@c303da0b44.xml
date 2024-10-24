@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>ChangeablePaperFiltersForVacuumPot-k1h0zui7</CodeName>
+    <GUID>57fe375b-c01d-4249-a0dd-99b9d295f3ae</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>02a972b5-a10f-4041-804c-4682ab60cd31</WebPageItemGUID>
+  <WebPageItemName>ChangeablePaperFiltersForVacuumPot-k1h0zui7</WebPageItemName>
+  <WebPageItemOrder>4</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Accessories-hcdyad5q</CodeName>
+    <GUID>420ae4a6-95c0-4933-a4d2-e1e6c05b8c19</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>
+    <![CDATA[/Store/Products/Accessories/Changeable_Paper_Filters_for_Vacuum_Pot]]>
+  </WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

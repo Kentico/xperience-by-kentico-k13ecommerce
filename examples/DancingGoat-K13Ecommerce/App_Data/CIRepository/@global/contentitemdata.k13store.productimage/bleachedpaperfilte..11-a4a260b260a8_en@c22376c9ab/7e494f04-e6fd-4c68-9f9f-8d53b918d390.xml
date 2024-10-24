@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>7d78af63-8528-483b-9511-a4a260b260a8</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BleachedPaperFiltersV60-01-5f9vb7ct</CodeName>
+      <GUID>8bc53c35-1919-4fec-bf76-1a4a5de7eaec</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>7e494f04-e6fd-4c68-9f9f-8d53b918d390</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"fff014c4-9534-4e0d-bfaa-1b095c0bf20e","Name":"Bleached Paper Filters V60-01.jpg","Extension":".jpg","Size":26321,"LastModified":"2024-10-24T14:38:43.8984202Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Bleached Paper Filters V60-01</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/33f015a5-5808-4c34-aeec-bbf1bc9480ae/bleached-paper-filters]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

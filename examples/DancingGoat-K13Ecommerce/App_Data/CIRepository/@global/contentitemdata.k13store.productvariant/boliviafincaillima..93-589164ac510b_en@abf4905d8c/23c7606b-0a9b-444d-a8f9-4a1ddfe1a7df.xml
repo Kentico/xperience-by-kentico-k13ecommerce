@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>a246b420-bd87-4207-8893-589164ac510b</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaFincaIllimani_5Lb-hqck1jyi</CodeName>
+      <GUID>a79201dd-e9c4-46e0-9333-8305825ca6fe</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>23c7606b-0a9b-444d-a8f9-4a1ddfe1a7df</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>90</SKUID>
+  <SKUName>Bolivia Finca Illimani (5 lb)</SKUName>
+  <SKUNumber>CO-BOL-CASCARA-5-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

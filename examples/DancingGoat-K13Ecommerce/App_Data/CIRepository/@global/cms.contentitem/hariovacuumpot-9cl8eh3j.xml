@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitem>
+  <ContentItemContentFolderID>
+    <CodeName>Images-suv9wjts</CodeName>
+    <GUID>873e581a-dcc7-4b79-87e8-aac93a0bd6a2</GUID>
+    <ObjectType>cms.contentfolder</ObjectType>
+  </ContentItemContentFolderID>
+  <ContentItemContentTypeID>
+    <CodeName>K13Store.ProductImage</CodeName>
+    <GUID>07a6d82c-09b8-41f4-bde4-bd365982e0da</GUID>
+    <ObjectType>cms.contenttype</ObjectType>
+  </ContentItemContentTypeID>
+  <ContentItemGUID>9de58e5b-9597-41fa-8070-a728d4cc905a</ContentItemGUID>
+  <ContentItemIsReusable>True</ContentItemIsReusable>
+  <ContentItemIsSecured>False</ContentItemIsSecured>
+  <ContentItemName>HarioVacuumPot-9cl8eh3j</ContentItemName>
+</cms.contentitem>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>b6c2cc85-eb64-4f0d-81d5-a17d2e9bdccf</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioBuonoKettle-j0xf45s3</CodeName>
+      <GUID>9fe99638-c08f-47c2-ab14-4116651b4176</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>e8723aa0-f411-4909-8c09-37cad99b32b7</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"225d56eb-d062-4144-905a-59e4555739f1","Name":"Hario Buono Kettle.jpg","Extension":".jpg","Size":22799,"LastModified":"2024-10-24T14:38:57.4278999Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Hario Buono Kettle</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/ec937007-f48e-4c9a-b078-46cfff257c53/hario-buono-kettle]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

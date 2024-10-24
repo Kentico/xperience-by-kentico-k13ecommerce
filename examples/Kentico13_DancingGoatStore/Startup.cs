@@ -17,9 +17,6 @@ using Kentico.Scheduler.Web.Mvc;
 using Kentico.Web.Mvc;
 using Kentico.Xperience.StoreApi;
 using Kentico.Xperience.StoreApi.Authentication;
-using Kentico.Xperience.StoreApi.Products.Pages;
-using Kentico.Xperience.StoreApi.Products.SKU;
-using Kentico.Xperience.StoreApi.Serialization;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -91,6 +88,8 @@ namespace DancingGoat
             {
                 kenticoServiceCollection.DisableVirtualContextSecurityForLocalhost();
             }
+
+            services.AddHealthChecks();
 
             services.AddDancingGoatServices();
 
@@ -170,6 +169,8 @@ namespace DancingGoat
                    pattern: "error/{code}",
                    defaults: new { controller = "HttpErrors", action = "Error" }
                 );
+
+                endpoints.MapHealthChecks("/status");
 
                 endpoints.MapControllerRoute(
                    name: "default",

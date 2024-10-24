@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>e2db3a32-2950-4f5c-82c6-e9d757e7db1c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PaperFiltersForChemex-2q8jf6p3</CodeName>
+      <GUID>43adb39f-b0cd-419f-99db-6793d9dee39c</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>72003132-425d-412d-8f4e-694edc8242cc</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"4a4bce20-9329-4e69-a695-a15a99d6551f","Name":"Paper Filters for Chemex.jpg","Extension":".jpg","Size":28619,"LastModified":"2024-10-24T14:39:08.6164979Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Paper Filters for Chemex</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/c063e4d0-73d8-443e-a808-ef37181c3b59/chemex-filters]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

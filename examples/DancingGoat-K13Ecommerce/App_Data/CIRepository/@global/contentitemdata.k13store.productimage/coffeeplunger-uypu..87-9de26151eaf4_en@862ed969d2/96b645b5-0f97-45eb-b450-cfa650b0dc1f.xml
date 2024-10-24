@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>9dae3288-28ae-4b6d-8887-9de26151eaf4</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>CoffeePlunger-uypu6d92</CodeName>
+      <GUID>87bdc66a-f539-45d1-9d34-98f405de6a9a</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>96b645b5-0f97-45eb-b450-cfa650b0dc1f</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"768d58df-4ae7-4da7-8e5b-0147216bdfa6","Name":"Coffee Plunger.jpg","Extension":".jpg","Size":64911,"LastModified":"2024-10-24T14:38:49.9892206Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Coffee Plunger</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/310ab9b1-2ddb-47c9-b49c-7e53d65f9a87/coffee-plunger]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

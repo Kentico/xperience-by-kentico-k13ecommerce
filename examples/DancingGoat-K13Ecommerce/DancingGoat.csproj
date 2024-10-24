@@ -35,4 +35,14 @@
     <ProjectReference Include="..\..\src\Kentico.Xperience.K13Ecommerce\Kentico.Xperience.K13Ecommerce.csproj" />
     <ProjectReference Include="..\..\src\Kentico.Xperience.Store.Rcl\Kentico.Xperience.Store.Rcl.csproj" />
   </ItemGroup>
+  <Target Name="DisableCI" BeforeTargets="Rebuild">
+    <Exec Command="powershell -ExecutionPolicy Bypass -File ..\..\scripts\ToggleCI_CI.ps1" Condition="'$(ASPNETCORE_ENVIRONMENT)' == 'CI'" />
+    <Exec Command="powershell -ExecutionPolicy Bypass -File ..\..\scripts\ToggleCI_DEV.ps1" Condition="'$(ASPNETCORE_ENVIRONMENT)' != 'CI'" />
+  </Target>
+  <Target Name="UpgradeXbK" AfterTargets="Rebuild">
+    <Exec Command="dotnet run --no-build -- --kxp-update --skip-confirmation" />
+    <Exec Command="powershell -ExecutionPolicy Bypass -File ..\..\scripts\ToggleCI_CI.ps1 -CIEnabled" Condition="'$(ASPNETCORE_ENVIRONMENT)' == 'CI'" />
+    <Exec Command="powershell -ExecutionPolicy Bypass -File ..\..\scripts\ToggleCI_DEV.ps1 -CIEnabled" Condition="'$(ASPNETCORE_ENVIRONMENT)' != 'CI'" />
+    <Exec Command="dotnet run --no-build -- --kxp-codegen --type ReusableContentTypes --namespace K13Store --location ../../src/Kentico.Xperience.K13Ecommerce/{type}/{dataClassNamespace}/{name}/ --skip-confirmation --include K13Store.*" />
+  </Target>
 </Project>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>9cacf0d5-bedd-4d4a-8793-159df3666a73</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PersonalizedCupWithSaucer-lc2ezfio</CodeName>
+      <GUID>744c98e9-750f-4656-bb1e-d63100d94a64</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>bc9e50c3-6f0b-4151-aa95-be29431e064d</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"2356030f-ea67-4c98-a539-1229884a3335","Name":"Personalized cup with saucer.jpg","Extension":".jpg","Size":18747,"LastModified":"2024-10-24T14:39:08.9548489Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Personalized cup with saucer</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/01a4223b-fc43-4635-8658-878a7539b8c5/cup-personalized-small]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>7f5f4907-6ca3-4868-a5b6-f8736087e5cc</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>NicaraguaDipilto_decaf_2Lb-gpqkt1d0</CodeName>
+      <GUID>d073a71d-14af-46c8-b78f-c070c5f96cd9</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>466ca38f-c45e-44a2-b9de-89984dd41d38</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>27</SKUID>
+  <SKUName>Nicaragua Dipilto (decaf) (2 lb)</SKUName>
+  <SKUNumber>CO-NIC-DIPILTO-2-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

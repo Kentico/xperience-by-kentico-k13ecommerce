@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>fe975cfb-4f34-4372-9a6f-af85f5f9f37c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ColombiaCarlosImbachi_4Oz-clikcdod</CodeName>
+      <GUID>7890a5ce-8fde-4ff5-a5fa-71170914c445</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>c1d90eaa-7129-4e71-955a-5cc9da78eeb1</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>117</SKUID>
+  <SKUName>Colombia Carlos Imbachi (4 oz)</SKUName>
+  <SKUNumber>CO-COL-IMBACHI-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

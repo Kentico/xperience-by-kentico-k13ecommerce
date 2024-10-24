@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>60db6ce7-845c-4fa4-8ee6-74b22eb8b326</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Ceramic_White_2Cups-305r2ljf</CodeName>
+      <GUID>4466496d-21f1-4a5d-97fb-f703b1843ca8</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>40f15143-ffba-44c7-be5a-9c8f1cc471c8</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>61</SKUID>
+  <SKUName>Hario V60 (Ceramic, White, 2 cups)</SKUName>
+  <SKUNumber>HAR-V60-Ceramic-White-2-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

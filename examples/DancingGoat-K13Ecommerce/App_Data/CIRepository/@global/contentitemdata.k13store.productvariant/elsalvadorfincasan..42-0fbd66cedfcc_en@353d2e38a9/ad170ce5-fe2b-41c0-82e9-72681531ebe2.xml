@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c6f9f20e-b29b-4da8-b442-0fbd66cedfcc</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose_16Oz-kuyn4wi8</CodeName>
+      <GUID>fc46bef6-fbc8-4a31-9c74-66b087e36c16</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ad170ce5-fe2b-41c0-82e9-72681531ebe2</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>123</SKUID>
+  <SKUName>El Salvador Finca San Jose (16 oz)</SKUName>
+  <SKUNumber>CO-SAL-SANJOSE-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

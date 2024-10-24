@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>974ebe63-ca18-4be0-a7c2-15751aba702d</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA_16Oz-j0xeak6f</CodeName>
+      <GUID>5ad59cf0-0dba-4850-a951-da28aa519c10</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>465d290c-e729-4d6b-8ab9-2a901f2a0e32</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>19</SKUID>
+  <SKUName>Kenya Gakuyuni AA (16 oz)</SKUName>
+  <SKUNumber>CO-KEN-GAKUYUNI-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

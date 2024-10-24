@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>81c7a15b-0312-4b6b-b63d-a903da6cb6f1</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>MacapM4D-qin4ettc</CodeName>
+      <GUID>2cf82ea5-853b-4866-9d54-09edfd236f56</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>f74061b2-cd9a-4476-aa93-2184b94dbdfd</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"508a29fe-bdf8-47f0-9cf7-a929137a63bb"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

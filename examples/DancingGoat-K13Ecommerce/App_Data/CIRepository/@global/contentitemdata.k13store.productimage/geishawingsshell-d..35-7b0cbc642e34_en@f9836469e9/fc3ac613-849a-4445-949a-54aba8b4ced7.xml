@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>2ae42d55-1ddd-414f-bd35-7b0cbc642e34</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GeishaWingsShell-dgfgfkkx</CodeName>
+      <GUID>d7c9773a-805d-49f5-aee3-36a14b9f079c</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>fc3ac613-849a-4445-949a-54aba8b4ced7</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"8a5f88dd-1a96-49d3-b3aa-9d8904d4a6d8","Name":"Geisha Wings Shell.webp","Extension":".webp","Size":21550,"LastModified":"2024-10-24T14:39:09.8328336Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Geisha Wings Shell</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/6a3547d4-87a0-4e0b-96e7-90b67ead630f/1c2672d4e0de0f6fbce172a65420]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

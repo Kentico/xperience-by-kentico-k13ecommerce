@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>ded394a4-04a1-4470-97eb-ca6962b00789</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaFincaIllimani_16Oz-1hzuu6b0</CodeName>
+      <GUID>cf791a2d-21b7-4485-842f-674fe4564ef6</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>505ef548-a452-4984-ab76-ec75eb431fca</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>92</SKUID>
+  <SKUName>Bolivia Finca Illimani (16 oz)</SKUName>
+  <SKUNumber>CO-BOL-CASCARA-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

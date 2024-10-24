@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>f1c03049-6fa2-4469-b68e-15ea3ab4e1f4</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney-5vek25ur</CodeName>
+      <GUID>5a330d2d-10b0-4e20-932b-85e8e318eedf</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>21fff02e-f764-4d4e-8729-6a63525b4eae</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"Los Lajones, Boquete","CoffeeCountry":"Panama","CoffeeVariety":"Caturra, Yellow Catuai","CoffeeProcessing":"semiwashed","CoffeeAltitude":6500,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <NodeAliasPath>/Store/Coffees/Panama-Los-Lajones-Honey</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"5e889993-18ce-48d7-a4b9-b6ee634ee21a"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"65ece48f-9b3d-4927-939a-9de72b7c78bd"},{"Identifier":"28e68fe4-b6c5-4ed3-a1ce-1de49b23dc4b"},{"Identifier":"3c640a6c-d952-480a-8c4d-ebe973ebac81"},{"Identifier":"fa63dc98-942b-4250-a4fc-3cbc25560bc2"},{"Identifier":"cea3ec7a-1675-48d5-81ab-7be9cd03dbbf"}]]]>
+  </ProductVariants>
+  <PublicStatusDisplayName>Bestseller</PublicStatusDisplayName>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>Los Lajones comes from Canas Verdes, which is located on the steep slopes of the Baru Volcano in Panama. You can find the farm at a very high altitude, and by that we mean around 2,000 meters. That puts Los Lajones among the highest located coffee farms in the world. Besides that, Los Lajones is the first Panamanian bio-certified farm where only local people are employed and also well paid.</p>
+
+<p>But their most genuine specialty is the way they process their coffee beans. It&#39;s called honey-processing and Graciano Cruz, the owner of Los Lajones, has significantly refined this approach and has started to win different regional and international competitions with this coffee. He even teaches it to his competitors in other countries. And what is honey-processing about? The key is in drying the coffee berries on beds along with their flesh.</p>
+
+<p>After the processing all the gifts of their Catuai trees, you can taste the extraordinary flavor of velvety chocolate peaches and figs.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>77</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:03:08Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Panama Los Lajones Honey</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-PAN-LAJONES</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[From one of the highest located coffee farms, Panama Los Lajones Honey is a Panamanian bio-certified honey-processed coffee.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

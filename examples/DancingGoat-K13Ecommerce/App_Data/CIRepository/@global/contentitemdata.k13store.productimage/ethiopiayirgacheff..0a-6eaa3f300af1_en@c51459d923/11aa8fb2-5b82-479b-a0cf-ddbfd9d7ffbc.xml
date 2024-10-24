@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>e0953c24-a11d-4696-860a-6eaa3f300af1</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EthiopiaYirgacheffe_decaf-sepru434</CodeName>
+      <GUID>d44cd718-8bf4-46f1-bb49-99c8c9f8b18b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>11aa8fb2-5b82-479b-a0cf-ddbfd9d7ffbc</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"59ec4aa4-9f78-4bc1-ac8f-c222fca01417","Name":"Ethiopia Yirgacheffe (decaf).jpg","Extension":".jpg","Size":135030,"LastModified":"2024-10-24T14:38:55.0740053Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Ethiopia Yirgacheffe (decaf)</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/3419ea63-6531-486f-9277-99218d6f1001/ethiopia]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>
