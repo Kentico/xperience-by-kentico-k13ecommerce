@@ -160,7 +160,7 @@ jobs:
             --no-build `
             --no-restore
 
-      - name: Run K13 Store
+      - name: Run Applications and E2E Tests
         run: |
           # Run the ASP.NET Core app as a background job
           cd ./publish/K13
@@ -194,8 +194,6 @@ jobs:
               exit 1
           }
 
-      - name: Run Application and E2E Tests
-        run: |
           # Run the ASP.NET Core app as a background job
           cd ./publish/XbK
           Start-Job -ScriptBlock { dotnet ./${{ env.XBK_PROJECT_NAME }}.dll } -Name ${{ env.XBK_PROJECT_NAME }}
