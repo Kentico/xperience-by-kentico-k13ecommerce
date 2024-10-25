@@ -57,10 +57,6 @@ jobs:
         with:
           global-json-file: global.json
 
-      - name: Install dependencies
-        run: |
-          dotnet restore
-
       - name: Get Database Backup Name
         run: |
           $latestBackups = Get-Content -Path "./database/backups.txt" -TotalCount 2
@@ -120,12 +116,7 @@ jobs:
         run: |
           dotnet build `
             --configuration Release `
-            --no-restore
-      
-      - name: Restore CI Repository
-        working-directory: "./scripts"
-        run: |
-          ./Restore-CI.ps1
+            -t:Rebuild
 
       - name: Publish Application
         run: |
