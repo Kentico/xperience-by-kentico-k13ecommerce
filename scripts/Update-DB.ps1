@@ -10,9 +10,10 @@ dotnet run `
     --launch-profile $launchProfile `
     -c $configuration `
     --no-build `
-    --no-restore `
-    --kxp-ci-restore
+    -- `
+    --kxp-update `
+    --skip-confirmation
 
 Write-Host ""
-Write-Host "CI files processed" -ForegroundColor Green
+Write-Host "Updated DB to latest hotfix" -ForegroundColor Green
 Write-Host ""

@@ -22,4 +22,4 @@ if ($Env:ASPNETCORE_ENVIRONMENT -eq "CI") {
         -Q "UPDATE CMS_SettingsKey SET KeyValue='$keyValue' WHERE KeyName='CMSEnableCI'"
 }
 
-Write-Output "CI restore for Enabled=$keyValue"
+Write-Host "CI restore for Enabled=$keyValue" -ForegroundColor Green
