@@ -6,7 +6,7 @@
     <DisableCodeAnalysis>True</DisableCodeAnalysis>
     <NoWarn>$(NoWarn);CS1570;CS1572;1591</NoWarn>
     <UserSecretsId>0674b988-fda9-4e92-817f-2662f79e8ebe</UserSecretsId>
-	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="App_Data\CMSModules\WebFarm\webfarm.sync" />
@@ -35,13 +35,15 @@
     <ProjectReference Include="..\..\src\Kentico.Xperience.K13Ecommerce\Kentico.Xperience.K13Ecommerce.csproj" />
     <ProjectReference Include="..\..\src\Kentico.Xperience.Store.Rcl\Kentico.Xperience.Store.Rcl.csproj" />
   </ItemGroup>
-  <Target Name="DisableCI" BeforeTargets="Rebuild">
-    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Toggle-CI.ps1" />
+  <Target Name="CIRestore" AfterTargets="Build">
+    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Toggle-CI.ps1 -CIEnabled" />
+    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Restore-CI.ps1" Condition="'$(ASPNETCORE_ENVIRONMENT)' == 'CI'" />
   </Target>
   <Target Name="UpgradeXbK" AfterTargets="Rebuild">
+    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Toggle-CI.ps1" />
     <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Update-DB.ps1" />
     <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Toggle-CI.ps1 -CIEnabled" />
-    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Restore-CI.ps1" />
-    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Generate-ContentTypes.ps1" />
+    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Restore-CI.ps1" Condition="'$(Configuration)' == 'Debug'" />
+    <Exec Command="pwsh -ExecutionPolicy Bypass -File ../../scripts/Generate-ContentTypes.ps1" Condition="'$(Configuration)' == 'Debug'" />
   </Target>
 </Project>

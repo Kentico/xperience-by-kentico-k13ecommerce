@@ -111,12 +111,18 @@ jobs:
             -U "sa" `
             -P "Pass@12345" `
             -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
-
+      
+      - name: CI restore for DB backup
+        run: |
+          dotnet build `
+            --configuration Release
+      
       - name: Build Solution
         run: |
           dotnet build `
             --configuration Release `
-            -t:Rebuild
+            -t:Rebuild `
+            -p:XbyKVersion=*
 
       - name: Publish Application
         run: |

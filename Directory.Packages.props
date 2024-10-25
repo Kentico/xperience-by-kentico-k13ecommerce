@@ -5,14 +5,15 @@
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
     <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
+    <XbyKVersion Condition="'$(XbyKVersion)' == ''">29.5.3</XbyKVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Duende.AccessTokenManagement.OpenIdConnect" Version="3.0.0" />
-    <PackageVersion Include="Kentico.Xperience.Admin" Version="*" />
-    <PackageVersion Include="Kentico.Xperience.WebApp" Version="*" />
-    <PackageVersion Include="kentico.xperience.azurestorage" Version="*" />
-    <PackageVersion Include="kentico.xperience.imageprocessing" Version="*" />
-    <PackageVersion Include="Kentico.Xperience.Core" Version="*" />
+    <PackageVersion Include="Kentico.Xperience.Admin" Version="$(XbyKVersion)" />
+    <PackageVersion Include="Kentico.Xperience.WebApp" Version="$(XbyKVersion)" />
+    <PackageVersion Include="kentico.xperience.azurestorage" Version="$(XbyKVersion)" />
+    <PackageVersion Include="kentico.xperience.imageprocessing" Version="$(XbyKVersion)" />
+    <PackageVersion Include="Kentico.Xperience.Core" Version="$(XbyKVersion)" />
     <PackageVersion Include="Scrutor" Version="4.2.2" />
     <PackageVersion Include="Microsoft.Extensions.ApiDescription.Client" Version="8.0.8" />
     <PackageVersion Include="NSwag.ApiDescription.Client" Version="14.1.0" />
