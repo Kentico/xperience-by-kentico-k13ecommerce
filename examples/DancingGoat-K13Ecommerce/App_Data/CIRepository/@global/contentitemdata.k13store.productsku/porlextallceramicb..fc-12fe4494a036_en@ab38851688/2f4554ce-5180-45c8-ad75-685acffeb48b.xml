@@ -17,10 +17,12 @@
   <DepartmentDisplayName>Grinders</DepartmentDisplayName>
   <ManufacturerDisplayName>Porlex</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Grinders/Porlex-Tall-Ceramic-Burr-Grinder</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"b4b13703-f04e-405f-9f1f-2a40e769e101"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>100</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

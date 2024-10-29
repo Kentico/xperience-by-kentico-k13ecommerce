@@ -15,13 +15,16 @@
     <![CDATA[{"CoffeeFarm":"Finca Illimani","CoffeeCountry":"Bolivia","CoffeeVariety":"Criolla, Caturra","CoffeeProcessing":"washed","CoffeeAltitude":5250,"CoffeeIsDecaf":false}]]>
   </CustomFields>
   <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Coffees/Bolivia-Finca-Illimani</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"4b6b4f4d-e85c-4e4c-8d36-5e49a5b3cdae"}]]]>
   </ProductImages>
   <ProductVariants>
     <![CDATA[[{"Identifier":"cf791a2d-21b7-4485-842f-674fe4564ef6"},{"Identifier":"088824b3-fc63-4927-9e05-b27d9087dddb"},{"Identifier":"22404c38-4418-48b3-80bd-18169d41fdbf"},{"Identifier":"a79201dd-e9c4-46e0-9333-8305825ca6fe"},{"Identifier":"9cca0000-3dd1-4eee-99f7-b8c6393ad6ed"}]]]>
   </ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

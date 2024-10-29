@@ -17,10 +17,12 @@
   <DepartmentDisplayName>Grinders</DepartmentDisplayName>
   <ManufacturerDisplayName>Mazzer</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Grinders/Mazzer-Super-Jolly-DR</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"e894a6de-fe2c-45ab-87bd-ca97b180b51a"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>99</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

@@ -15,13 +15,16 @@
     <![CDATA[{"CoffeeFarm":"El Progreso, Dipilto","CoffeeCountry":"Nicaragua","CoffeeVariety":"Catura","CoffeeProcessing":"washed","CoffeeAltitude":5050,"CoffeeIsDecaf":true}]]>
   </CustomFields>
   <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Coffees/Nicaragua-Dipilto-(decaf)</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"b2c04262-e319-40ec-b285-c1bf09b62a98"}]]]>
   </ProductImages>
   <ProductVariants>
     <![CDATA[[{"Identifier":"2597c2e7-516d-42f8-af61-e9b44a157988"},{"Identifier":"d073a71d-14af-46c8-b78f-c070c5f96cd9"},{"Identifier":"f1634cf0-22a0-4431-9ab3-e64a29015717"},{"Identifier":"fdf8a0dc-b8c7-48b0-8396-2980348f13b4"},{"Identifier":"b9089045-d48d-42d8-b03a-69bced3f8abb"}]]]>
   </ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

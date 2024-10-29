@@ -15,13 +15,16 @@
     <![CDATA[{"CoffeeFarm":"Finca San Jose","CoffeeCountry":"ElSalvador","CoffeeVariety":"Red Bourbon","CoffeeProcessing":"washed","CoffeeAltitude":5000,"CoffeeIsDecaf":false}]]>
   </CustomFields>
   <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Coffees/El-Salvador-Finca-San-Jose</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"31326f8c-a482-4c05-8fc2-734466842f9b"}]]]>
   </ProductImages>
   <ProductVariants>
     <![CDATA[[{"Identifier":"fc46bef6-fbc8-4a31-9c74-66b087e36c16"},{"Identifier":"be0df2e5-513c-4752-ba0e-6fdaf46bec0c"},{"Identifier":"751ad162-5c3e-4e93-aaf1-6f052d90ef7d"},{"Identifier":"2542f769-2507-408b-bbba-ba40bd9d0d57"},{"Identifier":"5798a094-08af-4633-ba7d-ea5dc51448e5"}]]]>
   </ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

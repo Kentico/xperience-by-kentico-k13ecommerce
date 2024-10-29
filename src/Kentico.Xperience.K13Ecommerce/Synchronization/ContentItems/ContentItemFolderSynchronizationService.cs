@@ -36,22 +36,33 @@ internal class ContentItemFolderSynchronizationService : IContentItemFolderSynch
             return;
         }
 
-        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductSKUFolderID, ProductSKU.CONTENT_TYPE_NAME, cancellationToken);
-        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductVariantFolderID, ProductVariant.CONTENT_TYPE_NAME, cancellationToken);
-        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductImageFolderID, ProductImage.CONTENT_TYPE_NAME, cancellationToken);
+        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductSKUFolderGuid, ProductSKU.CONTENT_TYPE_NAME, cancellationToken);
+        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductVariantFolderGuid, ProductVariant.CONTENT_TYPE_NAME, cancellationToken);
+        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductImageFolderGuid, ProductImage.CONTENT_TYPE_NAME, cancellationToken);
     }
 
-    private async Task SynchronizeProductFolder(int folderId, string contentTypeName, CancellationToken cancellationToken = default)
+    private async Task SynchronizeProductFolder(Guid targetFolderGuid, string contentTypeName, CancellationToken cancellationToken = default)
     {
-        if (folderId == 0)
+        if (targetFolderGuid == Guid.Empty)
         {
             return;
         }
 
+        var folder = await contentFolderManager.Get(targetFolderGuid, cancellationToken);
+        if (folder == null)
+        {
+            return;
+        }
+        int targetFolderId = folder.ContentFolderID;
         var root = await contentFolderManager.GetRoot(cancellationToken);
+
+        if (targetFolderId == root.ContentFolderID)
+        {
+            return;
+        }
+
         var builder = new ContentItemQueryBuilder().ForContentType(contentTypeName, config => config
             .Where(p => p
-                .WhereNotEquals(nameof(ContentItemInfo.ContentItemContentFolderID), folderId)
                 .WhereEquals(nameof(ContentItemInfo.ContentItemContentFolderID), root.ContentFolderID)
             )
             .Columns(nameof(ContentItemInfo.ContentItemID))
@@ -61,7 +72,7 @@ internal class ContentItemFolderSynchronizationService : IContentItemFolderSynch
 
         if (ids.Count > 0)
         {
-            await contentFolderManager.MoveItems(folderId, ids, cancellationToken);
+            await contentFolderManager.MoveItems(targetFolderId, ids, cancellationToken);
         }
     }
 }

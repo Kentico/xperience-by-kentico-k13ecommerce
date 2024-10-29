@@ -15,11 +15,14 @@
     <![CDATA[{"BrewerIsDishwasherSafe":true}]]>
   </CustomFields>
   <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Brewers/Clever-Dripper</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"aeb37de3-9069-4749-80fc-1193c3237db0"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

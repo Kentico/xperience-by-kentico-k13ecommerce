@@ -15,13 +15,16 @@
     <![CDATA[{"CoffeeFarm":null,"CoffeeCountry":"Ethiopia","CoffeeVariety":"Heirloom varietals","CoffeeProcessing":"washed","CoffeeAltitude":6500,"CoffeeIsDecaf":true}]]>
   </CustomFields>
   <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Coffees/Ethiopia-Yirgacheffe-(decaf)</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"d44cd718-8bf4-46f1-bb49-99c8c9f8b18b"}]]]>
   </ProductImages>
   <ProductVariants>
     <![CDATA[[{"Identifier":"b0d2189b-227c-490e-bb12-13bde285ac34"},{"Identifier":"5757eede-9782-4e68-9793-d4e5d584b9a8"},{"Identifier":"be2b741f-c559-4172-abba-7b9ae57d5223"},{"Identifier":"c741e138-1695-4554-9293-73ef68a18217"},{"Identifier":"b28498bf-d976-4e85-9d2a-5bd0f6f59e0b"}]]]>
   </ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

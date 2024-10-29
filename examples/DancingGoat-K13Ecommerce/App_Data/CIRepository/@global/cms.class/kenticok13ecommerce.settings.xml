@@ -3,31 +3,32 @@
   <ClassDisplayName>K13Ecommerce Settings info</ClassDisplayName>
   <ClassFormDefinition>
     <form>
-      <field column="K13EcommerceSettingsID" columntype="integer" enabled="true" guid="a62f8367-9a44-44a6-a2a0-5700833b38b7" isPK="true" />
-      <field column="K13EcommerceSettingsProductSKUFolderID" columntype="integer" enabled="true" guid="3227c874-0c07-4cf9-afa4-a962093fe972" visible="true">
+      <field column="K13EcommerceSettingsID" columntype="integer" enabled="true" guid="a2008fc6-4c01-4ed8-af17-8d8dbd3236f9" isPK="true" />
+      <field column="K13EcommerceSettingsProductSKUFolderGuid" columntype="guid" enabled="true" guid="cbd9637f-ba3e-4d79-8562-ddd7a2682808" visible="true">
         <properties>
           <fieldcaption>
             <![CDATA[Content item folder for 'K13Store.ProductSKU']]>
           </fieldcaption>
         </properties>
       </field>
-      <field column="K13EcommerceSettingsProductVariantFolderID" columntype="integer" enabled="true" guid="b37dd575-ce6a-4fc7-a9f6-aec6d505310f" visible="true">
+      <field column="K13EcommerceSettingsProductVariantFolderGuid" columntype="guid" enabled="true" guid="8df567e4-3669-47e1-a0a1-5c282ae4c36e" visible="true">
         <properties>
           <fieldcaption>
             <![CDATA[Content item folder for 'K13Store.ProductVariant']]>
           </fieldcaption>
         </properties>
       </field>
-      <field column="K13EcommerceSettingsProductImageFolderID" columntype="integer" enabled="true" guid="5ef99366-c665-49d8-8747-8225feb0e5fe" visible="true">
+      <field column="K13EcommerceSettingsProductImageFolderGuid" columntype="guid" enabled="true" guid="46505e1c-0abd-493e-83bb-47b3694a44fb" visible="true">
         <properties>
           <fieldcaption>
             <![CDATA[Content item folder for 'K13Store.ProductImage']]>
           </fieldcaption>
         </properties>
       </field>
+      <field column="K13EcommerceSettingsGuid" columntype="guid" enabled="true" guid="bd3983ee-8b88-4db7-b305-c425f345fa1d" />
     </form>
   </ClassFormDefinition>
-  <ClassGUID>a282da81-0c44-4c7f-937c-d6034738fe28</ClassGUID>
+  <ClassGUID>82912681-2a63-4932-a30a-af98b3e8e669</ClassGUID>
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
   <ClassName>KenticoK13ecommerce.Settings</ClassName>
   <ClassResourceID>

@@ -15,11 +15,14 @@
     <![CDATA[{"TablewarePromotionTitle":null,"TablewarePromotionDescription":null,"TablewareBannerText":null}]]>
   </CustomFields>
   <DepartmentDisplayName>Accessories</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Accessories/Personalized-cup-with-saucer</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"744c98e9-750f-4656-bb1e-d63100d94a64"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>78</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

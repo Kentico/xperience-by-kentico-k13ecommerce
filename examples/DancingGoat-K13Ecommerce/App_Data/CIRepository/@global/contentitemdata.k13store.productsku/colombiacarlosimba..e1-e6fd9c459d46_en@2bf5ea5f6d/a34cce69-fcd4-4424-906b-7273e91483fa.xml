@@ -15,13 +15,16 @@
     <![CDATA[{"CoffeeFarm":"Finca Buenavista - Carlos Imbachi","CoffeeCountry":"Colombia","CoffeeVariety":"Caturra","CoffeeProcessing":"washed","CoffeeAltitude":5700,"CoffeeIsDecaf":false}]]>
   </CustomFields>
   <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Coffees/Colombia-Carlos-Imbachi</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"13c32bff-e334-42ee-8537-325ddb58c253"}]]]>
   </ProductImages>
   <ProductVariants>
     <![CDATA[[{"Identifier":"41504164-6c53-4a2e-b37f-1cb82cb9db1a"},{"Identifier":"370a8542-0d8f-4f0c-9914-85fd2e7486c4"},{"Identifier":"7890a5ce-8fde-4ff5-a5fa-71170914c445"},{"Identifier":"2a4d96b2-50db-4d05-b62a-10bec2517525"},{"Identifier":"63afbee0-34a0-4c16-a632-f3833314e8c4"}]]]>
   </ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

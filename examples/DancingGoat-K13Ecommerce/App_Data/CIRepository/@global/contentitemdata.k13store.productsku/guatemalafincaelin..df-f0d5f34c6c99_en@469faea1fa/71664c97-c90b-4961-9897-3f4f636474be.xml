@@ -15,13 +15,16 @@
     <![CDATA[{"CoffeeFarm":"Finca El Injerto","CoffeeCountry":"Guatemala","CoffeeVariety":"Bourbon","CoffeeProcessing":"washed","CoffeeAltitude":5600,"CoffeeIsDecaf":false}]]>
   </CustomFields>
   <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Coffees/Guatemala-Finca-El-Injerto</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"cc2cfe17-91cd-4e20-8be3-8bbd192fc13c"}]]]>
   </ProductImages>
   <ProductVariants>
     <![CDATA[[{"Identifier":"06ec2834-aefb-4de0-8885-d10dd513faab"},{"Identifier":"862fcb49-4d2c-4e0b-a199-587f766d58a3"},{"Identifier":"f3082763-8686-49fd-b93f-33a9c0ca40b2"},{"Identifier":"bccbe4cb-33e0-413e-ae32-23db4f48c2c9"},{"Identifier":"7f75f453-bde4-4c52-ab18-7babf43644df"}]]]>
   </ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

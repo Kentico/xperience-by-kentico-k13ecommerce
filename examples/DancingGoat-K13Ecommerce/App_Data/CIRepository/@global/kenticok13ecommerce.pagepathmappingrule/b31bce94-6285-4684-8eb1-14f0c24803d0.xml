@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<kenticok13ecommerce.pagepathmappingrule>
+  <PagePathMappingRuleChannelName>DancingGoatPages</PagePathMappingRuleChannelName>
+  <PagePathMappingRuleGuid>b31bce94-6285-4684-8eb1-14f0c24803d0</PagePathMappingRuleGuid>
+  <PagePathMappingRuleK13NodeAliasPath>/Store/{Category}/{Product}</PagePathMappingRuleK13NodeAliasPath>
+  <PagePathMappingRuleOrder>1</PagePathMappingRuleOrder>
+  <PagePathMappingRuleXbKPagePath>/Store/Products/{Category}/{Product}</PagePathMappingRuleXbKPagePath>
+</kenticok13ecommerce.pagepathmappingrule>

@@ -17,10 +17,12 @@
   <DepartmentDisplayName>Grinders</DepartmentDisplayName>
   <ManufacturerDisplayName>Anfim</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Grinders/Anfim-Super-Caimano</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"bccbe52a-8597-49e3-bfed-64cd957ab351"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>99</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

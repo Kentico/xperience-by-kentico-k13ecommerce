@@ -17,10 +17,12 @@
   <DepartmentDisplayName>Grinders</DepartmentDisplayName>
   <ManufacturerDisplayName>Macap</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Grinders/Macap-M2D</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"aa130310-93a6-4c61-af3a-cc85324589c7"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>100</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

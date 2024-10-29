@@ -17,10 +17,12 @@
   <DepartmentDisplayName>Accessories</DepartmentDisplayName>
   <ManufacturerDisplayName>Hario</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Accessories/Hario-Buono-Kettle</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"9fe99638-c08f-47c2-ab14-4116651b4176"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>20</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

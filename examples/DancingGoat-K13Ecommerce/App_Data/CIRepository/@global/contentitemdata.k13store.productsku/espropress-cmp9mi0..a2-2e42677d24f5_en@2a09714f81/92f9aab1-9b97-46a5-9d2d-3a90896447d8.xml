@@ -17,10 +17,12 @@
   <DepartmentDisplayName>Brewers</DepartmentDisplayName>
   <ManufacturerDisplayName>Espro</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Brewers/Espro-Press</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"394f612a-6807-4573-bbec-53da3d8ca18f"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

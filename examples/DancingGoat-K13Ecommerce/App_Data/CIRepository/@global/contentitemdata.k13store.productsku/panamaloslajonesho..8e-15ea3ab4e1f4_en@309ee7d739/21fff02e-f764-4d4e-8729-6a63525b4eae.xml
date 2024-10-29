@@ -15,7 +15,9 @@
     <![CDATA[{"CoffeeFarm":"Los Lajones, Boquete","CoffeeCountry":"Panama","CoffeeVariety":"Caturra, Yellow Catuai","CoffeeProcessing":"semiwashed","CoffeeAltitude":6500,"CoffeeIsDecaf":false}]]>
   </CustomFields>
   <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
   <NodeAliasPath>/Store/Coffees/Panama-Los-Lajones-Honey</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"5e889993-18ce-48d7-a4b9-b6ee634ee21a"}]]]>
   </ProductImages>

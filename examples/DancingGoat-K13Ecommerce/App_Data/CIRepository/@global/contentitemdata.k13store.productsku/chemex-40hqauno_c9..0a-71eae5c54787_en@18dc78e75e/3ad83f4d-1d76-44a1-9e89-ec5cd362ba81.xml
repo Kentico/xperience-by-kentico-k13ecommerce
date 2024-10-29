@@ -17,10 +17,12 @@
   <DepartmentDisplayName>Brewers</DepartmentDisplayName>
   <ManufacturerDisplayName>Chemex</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Brewers/Chemex</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"ed698889-455a-4351-b9b7-a535d2184c87"}]]]>
   </ProductImages>
   <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
   <SKUAvailableItems>0</SKUAvailableItems>
   <SKUDescription>
 <![CDATA[

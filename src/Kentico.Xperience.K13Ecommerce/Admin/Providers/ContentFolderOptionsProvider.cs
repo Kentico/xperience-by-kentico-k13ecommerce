@@ -25,7 +25,7 @@ internal class ContentFolderOptionsProvider : IDropDownOptionsProvider
             string displayName = await GetFolderDisplayNameLocation(folder);
             result.Add(new DropDownOptionItem()
             {
-                Value = folder.ContentFolderID.ToString(),
+                Value = folder.ContentFolderGUID.ToString(),
                 Text = displayName
             });
         }

@@ -17,6 +17,7 @@
   <DepartmentDisplayName>Brewers</DepartmentDisplayName>
   <ManufacturerDisplayName>Aerobie</ManufacturerDisplayName>
   <NodeAliasPath>/Store/Brewers/AeroPress</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
   <ProductImages>
     <![CDATA[[{"Identifier":"63bc7302-7782-4e3d-a5c8-45bb48d9d9ba"}]]]>
   </ProductImages>
