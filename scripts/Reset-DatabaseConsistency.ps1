@@ -11,5 +11,5 @@ param (
 ./Update-DB.ps1;
 ./Toggle-CI.ps1 -CIEnabled;
 if (-not $ExcludeCIRestore) {
-	./Restore-CI.ps1;
+    ./Restore-CI.ps1;
 }

@@ -116,14 +116,18 @@ jobs:
         run: |
           dotnet build `
             --configuration Release
-           ./scripts/Reset-DatabaseConsistency.ps1
+          cd scripts
+          ./Reset-DatabaseConsistency.ps1
+          cd ..
       
       - name: Build Solution for last hotfix
         run: |
           dotnet build `
             --configuration Release `
             -p:XbyKVersion=*
-          ./scripts/Reset-DatabaseConsistency.ps1 -ExcludeCIRestore
+          cd scripts
+          ./Reset-DatabaseConsistency.ps1 -ExcludeCIRestore
+          cd ..
 
       - name: Publish Application
         run: |
