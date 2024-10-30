@@ -1,3 +1,18 @@
+<#
+.Synopsis
+    Updates the local database with all the objects in the CI repository
+#>
+
+
+Import-Module (Resolve-Path Utilities) `
+    -Function `
+    Get-WebProjectPath, `
+    Invoke-ExpressionWithException, `
+    Write-Status `
+    -Force
+
+$projectPath = Get-WebProjectPath
+$repositoryPath = Join-Path $projectPath "App_Data/CIRepository"
 if ($Env:ASPNETCORE_ENVIRONMENT -eq "CI") {
     $launchProfile = "K13Ecommerce.WebCI"
     $configuration = "Release"
@@ -6,13 +21,16 @@ if ($Env:ASPNETCORE_ENVIRONMENT -eq "CI") {
     $configuration = "Debug"
 }
 
-dotnet run `
-    --launch-profile $launchProfile `
-    -c $configuration `
-    --no-build `
-    --no-restore `
-    --kxp-ci-restore
+$command = "dotnet run " + `
+    "--launch-profile $launchProfile " + `
+    "-c $configuration " + `
+    "--no-build " + `
+    "--no-restore " + `
+    "--project $projectPath " + `
+    "--kxp-ci-restore"
 
-Write-Host ""
-Write-Host "CI files processed" -ForegroundColor Green
-Write-Host ""
+Invoke-ExpressionWithException $command
+
+Write-Host "`n"
+Write-Status "CI files processed"
+Write-Host "`n"

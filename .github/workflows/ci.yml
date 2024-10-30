@@ -112,17 +112,18 @@ jobs:
             -P "Pass@12345" `
             -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
       
-      - name: CI restore for DB backup
+      - name: Reset DB consistency for last applied hotfix
         run: |
           dotnet build `
             --configuration Release
+           ./scripts/Reset-DatabaseConsistency.ps1
       
-      - name: Build Solution
+      - name: Build Solution for last hotfix
         run: |
           dotnet build `
             --configuration Release `
-            -t:Rebuild `
             -p:XbyKVersion=*
+          ./scripts/Reset-DatabaseConsistency.ps1 -ExcludeCIRestore
 
       - name: Publish Application
         run: |
