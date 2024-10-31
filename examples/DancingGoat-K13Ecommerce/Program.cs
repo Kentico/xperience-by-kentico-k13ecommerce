@@ -1,4 +1,8 @@
+using System.Text.Json;
+
 using DancingGoat;
+using DancingGoat.HealthChecks;
+using DancingGoat.Helpers;
 using DancingGoat.Models;
 
 using Kentico.Activities.Web.Mvc;
@@ -11,6 +15,7 @@ using Kentico.Xperience.K13Ecommerce;
 using Kentico.Xperience.K13Ecommerce.ShoppingCart;
 using Kentico.Xperience.K13Ecommerce.Users;
 
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
@@ -50,7 +55,17 @@ builder.Services.AddLocalization()
         options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResources));
     });
 
-builder.Services.AddHealthChecks();
+// K13 Store helath check
+builder.Services.AddHttpClient(
+    nameof(K13StoreApiHealthCheck),
+    client =>
+    {
+        client.BaseAddress = new Uri(builder.Configuration.GetSection("CMSKenticoStoreConfig:StoreApiUrl").Value);
+        client.Timeout = TimeSpan.FromSeconds(5);
+    }
+);
+builder.Services.AddHealthChecks()
+    .AddCheck<K13StoreApiHealthCheck>("k13store_health_check");
 
 builder.Services.AddSession();
 
@@ -61,6 +76,7 @@ ConfigureMembershipServices(builder.Services);
 
 //Kentico Store API
 builder.Services.AddKenticoStoreServices(builder.Configuration);
+
 
 var app = builder.Build();
 
@@ -88,7 +104,30 @@ app.MapControllerRoute(
    defaults: new { controller = "HttpErrors", action = "Error" }
 );
 
-app.MapHealthChecks("/status");
+app.MapHealthChecks("/status", new HealthCheckOptions
+{
+    ResponseWriter = async (context, report) =>
+    {
+        // Set response content type to JSON
+        context.Response.ContentType = "application/json";
+
+        // Create a JSON object with detailed health check information
+        string result = JsonSerializer.Serialize(new
+        {
+            status = report.Status.ToString(),
+            checks = report.Entries.Select(entry => new
+            {
+                name = entry.Key,
+                status = entry.Value.Status.ToString(),
+                description = entry.Value.Description,
+                exception = FormatExceptionHelper.Format(entry.Value.Exception),
+                data = entry.Value.Data
+            })
+        });
+
+        await context.Response.WriteAsync(result);
+    }
+});
 
 app.MapControllerRoute(
     name: DancingGoatConstants.DEFAULT_ROUTE_NAME,
