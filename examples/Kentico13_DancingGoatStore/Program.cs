@@ -4,7 +4,13 @@ namespace DancingGoat
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            // Access configuration and log all settings
+            var config = host.Services.GetRequiredService<IConfiguration>();
+            LogConfiguration(config);
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -15,5 +21,15 @@ namespace DancingGoat
                     .UseIISIntegration()
                     .UseStartup<Startup>();
                 });
+
+        private static void LogConfiguration(IConfiguration config)
+        {
+            Console.WriteLine("Application Settings:");
+
+            foreach (var kvp in config.AsEnumerable())
+            {
+                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+            }
+        }
     }
 }

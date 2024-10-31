@@ -147,6 +147,7 @@ app.MapControllerRoute(
     }
 );
 
+LogConfiguration(builder.Configuration);
 app.Run();
 
 
@@ -202,4 +203,14 @@ static void ConfigureMembershipServices(IServiceCollection services)
     });
 
     services.AddAuthorization();
+}
+
+static void LogConfiguration(IConfiguration config)
+{
+    Console.WriteLine("Application Settings:");
+
+    foreach (var kvp in config.AsEnumerable())
+    {
+        Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+    }
 }
