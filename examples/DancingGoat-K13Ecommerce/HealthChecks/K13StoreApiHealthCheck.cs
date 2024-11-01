@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using System.Net.Http.Headers;
+
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace DancingGoat.HealthChecks
 {
@@ -20,7 +22,12 @@ namespace DancingGoat.HealthChecks
             try
             {
                 using var httpClient = httpClientFactory.CreateClient(nameof(K13StoreApiHealthCheck));
-                var response = await httpClient.GetAsync("/status", cancellationToken);
+                var request = new StringContent("user_email=&grant_type=client_credentials&client_id=YourUniqueClientIdentifier&client_secret=%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A");
+
+                request.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+
+                var response = await httpClient.PostAsync("/api/store/auth/token", request, cancellationToken);
+
                 if (response.IsSuccessStatusCode)
                 {
                     return HealthCheckResult.Healthy("App is healthy.");
