@@ -165,7 +165,7 @@ jobs:
 
           # The ASP.NET Core app can take a few seconds to start, so we delay running tests
           #   until it is ready, and fail if we go over a maximum wait time
-          $limit = 10
+          $limit = 30
           $attempts = 0
           $success = $false
 

@@ -25,6 +25,7 @@ using Kentico.Xperience.K13Ecommerce.WebsiteChannel;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace Kentico.Xperience.K13Ecommerce;
@@ -77,6 +78,10 @@ public static class KenticoStoreServiceCollectionExtensions
         })
         .AddClientCredentialsTokenHandler(TokenManagementConstants.StoreApiClientName);
 
+        services.AddTransient<H>();
+        services.AddHttpClient(ClientCredentialsTokenManagementDefaults.BackChannelHttpClientName)
+            .AddHttpMessageHandler<H>();
+
         services.AddTransient<ITokenManagementService, TokenManagementService>();
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IContentItemService, ContentItemServiceBase>();
@@ -100,5 +105,29 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddSingleton<IWebsiteChannelProvider, WebsiteChannelProvider>();
 
         return services;
+    }
+}
+
+internal class H(ILogger<H> logger) : DelegatingHandler
+{
+    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        if (request.Content is not null)
+        {
+            var c = await request.Content.ReadAsStringAsync();
+
+            logger.LogError(c);
+        }
+
+
+        var response = await base.SendAsync(request, cancellationToken);
+
+        if (response.Content is not null)
+        {
+            var c = await response.Content.ReadAsStringAsync();
+            logger.LogError(c);
+        }
+
+        return response;
     }
 }
