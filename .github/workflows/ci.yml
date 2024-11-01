@@ -163,6 +163,9 @@ jobs:
 
       - name: Run Applications and E2E Tests
         run: |
+          # Trust DEV certs because of communication.
+          dotnet dev-certs https
+
           # Run the ASP.NET Core app as a background job
           cd ./publish/K13
           Start-Job -ScriptBlock { dotnet ./${{ env.K13_PROJECT_NAME }}.dll } -Name ${{ env.K13_PROJECT_NAME }}
