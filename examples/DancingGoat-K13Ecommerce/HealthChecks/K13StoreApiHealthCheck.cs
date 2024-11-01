@@ -1,6 +1,9 @@
 ﻿using System.Net.Http.Headers;
 
+using Kentico.Xperience.K13Ecommerce.Config;
+
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Options;
 
 namespace DancingGoat.HealthChecks
 {
@@ -8,11 +11,13 @@ namespace DancingGoat.HealthChecks
     {
         private readonly IHttpClientFactory httpClientFactory;
         private readonly ILogger<K13StoreApiHealthCheck> logger;
+        private readonly IOptions<KenticoStoreConfig> kenticoStoreConfig;
 
-        public K13StoreApiHealthCheck(IHttpClientFactory httpClientFactory, ILogger<K13StoreApiHealthCheck> logger)
+        public K13StoreApiHealthCheck(IHttpClientFactory httpClientFactory, ILogger<K13StoreApiHealthCheck> logger, IOptions<KenticoStoreConfig> kenticoStoreConfig)
         {
             this.httpClientFactory = httpClientFactory;
             this.logger = logger;
+            this.kenticoStoreConfig = kenticoStoreConfig;
         }
 
         public async Task<HealthCheckResult> CheckHealthAsync(
@@ -22,8 +27,7 @@ namespace DancingGoat.HealthChecks
             try
             {
                 using var httpClient = httpClientFactory.CreateClient(nameof(K13StoreApiHealthCheck));
-                var request = new StringContent("user_email=&grant_type=client_credentials&client_id=YourUniqueClientIdentifier&client_secret=%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A");
-
+                var request = new StringContent($"user_email=&grant_type=client_credentials&client_id={kenticoStoreConfig.Value.ClientId}&client_secret={kenticoStoreConfig.Value.ClientSecret}");
                 request.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
 
                 var response = await httpClient.PostAsync("/api/store/auth/token", request, cancellationToken);
@@ -47,13 +51,13 @@ namespace DancingGoat.HealthChecks
                         $"Reason: {reasonPhrase}. " +
                         $"Response: {responseBody}";
                     logger.LogError(errorMessage);
-                    return HealthCheckResult.Healthy(errorMessage);
+                    return HealthCheckResult.Unhealthy(errorMessage);
                 }
             }
             catch (HttpRequestException e)
             {
                 logger.LogError(e, e.Message);
-                return HealthCheckResult.Healthy(e.Message);
+                return HealthCheckResult.Unhealthy(exception: e);
             }
         }
     }

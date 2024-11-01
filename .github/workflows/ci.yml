@@ -154,9 +154,6 @@ jobs:
 
       - name: Run Applications and E2E Tests
         run: |
-          # Trust DEV certs because of communication.
-          dotnet dev-certs https
-
           # Run the ASP.NET Core app as a background job
           cd ./publish/K13
           Start-Job -ScriptBlock { dotnet ./${{ env.K13_PROJECT_NAME }}.dll } -Name ${{ env.K13_PROJECT_NAME }}
@@ -197,7 +194,7 @@ jobs:
 
           # The ASP.NET Core app can take a few seconds to start, so we delay running tests
           #   until it is ready, and fail if we go over a maximum wait time
-          $limit = 10
+          $limit = 30
           $attempts = 0
           $success = $false
 
@@ -220,6 +217,9 @@ jobs:
               Write-Output "XbK Application did not respond in time."
               exit 1
           }
+
+          # Sleep for finishing initialization
+          Start-Sleep -Seconds 10
 
           # TODO: Run the E2E tests
 

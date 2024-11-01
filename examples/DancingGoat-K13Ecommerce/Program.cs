@@ -1,8 +1,5 @@
-using System.Text.Json;
-
 using DancingGoat;
 using DancingGoat.HealthChecks;
-using DancingGoat.Helpers;
 using DancingGoat.Models;
 
 using Kentico.Activities.Web.Mvc;
@@ -15,7 +12,6 @@ using Kentico.Xperience.K13Ecommerce;
 using Kentico.Xperience.K13Ecommerce.ShoppingCart;
 using Kentico.Xperience.K13Ecommerce.Users;
 
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
@@ -61,7 +57,7 @@ builder.Services.AddHttpClient(
     client =>
     {
         client.BaseAddress = new Uri(builder.Configuration.GetSection("CMSKenticoStoreConfig:StoreApiUrl").Value);
-        client.Timeout = TimeSpan.FromSeconds(5);
+        client.Timeout = TimeSpan.FromSeconds(10);
     }
 );
 builder.Services.AddHealthChecks()
@@ -104,30 +100,7 @@ app.MapControllerRoute(
    defaults: new { controller = "HttpErrors", action = "Error" }
 );
 
-app.MapHealthChecks("/status", new HealthCheckOptions
-{
-    ResponseWriter = async (context, report) =>
-    {
-        // Set response content type to JSON
-        context.Response.ContentType = "application/json";
-
-        // Create a JSON object with detailed health check information
-        string result = JsonSerializer.Serialize(new
-        {
-            status = report.Status.ToString(),
-            checks = report.Entries.Select(entry => new
-            {
-                name = entry.Key,
-                status = entry.Value.Status.ToString(),
-                description = entry.Value.Description,
-                exception = FormatExceptionHelper.Format(entry.Value.Exception),
-                data = entry.Value.Data
-            })
-        });
-
-        await context.Response.WriteAsync(result);
-    }
-});
+app.MapHealthChecks("/status");
 
 app.MapControllerRoute(
     name: DancingGoatConstants.DEFAULT_ROUTE_NAME,
@@ -147,7 +120,6 @@ app.MapControllerRoute(
     }
 );
 
-LogConfiguration(builder.Configuration);
 app.Run();
 
 
@@ -203,14 +175,4 @@ static void ConfigureMembershipServices(IServiceCollection services)
     });
 
     services.AddAuthorization();
-}
-
-static void LogConfiguration(IConfiguration config)
-{
-    Console.WriteLine("Application Settings:");
-
-    foreach (var kvp in config.AsEnumerable())
-    {
-        Console.WriteLine($"{kvp.Key}: {kvp.Value}");
-    }
 }
