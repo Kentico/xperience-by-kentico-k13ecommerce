@@ -43,7 +43,7 @@ jobs:
       XBK_PROJECT_NAME: DancingGoat
       K13_PROJECT_NAME: Kentico13_DancingGoat
       XBK_STATUS_CHECK_URL: https://localhost:14066/status
-      K13_STATUS_CHECK_URL: https://localhost:65375/status
+      K13_STATUS_CHECK_URL: http://localhost:65375/status
       XPERIENCE_BY_KENTICO_LICENSE: ${{ secrets.XPERIENCE_BY_KENTICO_LICENSE }}
       KENTICO_XPERIENCE_13_LICENSE: ${{ secrets.KENTICO_XPERIENCE_13_LICENSE }}
 
@@ -143,15 +143,6 @@ jobs:
             -o ./publish/XbK `
             --no-build `
             --no-restore
-
-      #- name: Install Playwright Dependencies
-          # TODO: to je blbost
-        #run: |
-        #  ./test/Kentico.Community.Portal.Web.E2E.Tests/bin/Release/net8.0/playwright.ps1 install
-        
-      - name: Install Azurite
-        id: azuright
-        uses: potatoqualitee/azuright@e56d2754eb15218d507961493bc83ca037216887 # set as a commit hash for security - v1.1
 
       - name: Test Solution
         run: |
