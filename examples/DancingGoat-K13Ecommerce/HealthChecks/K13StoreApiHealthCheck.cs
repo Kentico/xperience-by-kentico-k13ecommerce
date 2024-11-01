@@ -20,7 +20,7 @@ namespace DancingGoat.HealthChecks
             try
             {
                 using var httpClient = httpClientFactory.CreateClient(nameof(K13StoreApiHealthCheck));
-                var response = await httpClient.PostAsync("/api/store/auth/token", new StringContent("test"));
+                var response = await httpClient.GetAsync("/status", cancellationToken);
                 if (response.IsSuccessStatusCode)
                 {
                     return HealthCheckResult.Healthy("App is healthy.");
