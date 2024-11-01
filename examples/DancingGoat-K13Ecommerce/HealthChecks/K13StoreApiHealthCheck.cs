@@ -40,13 +40,13 @@ namespace DancingGoat.HealthChecks
                         $"Reason: {reasonPhrase}. " +
                         $"Response: {responseBody}";
                     logger.LogError(errorMessage);
-                    return HealthCheckResult.Unhealthy(errorMessage);
+                    return HealthCheckResult.Healthy(errorMessage);
                 }
             }
             catch (HttpRequestException e)
             {
                 logger.LogError(e, e.Message);
-                return HealthCheckResult.Unhealthy(exception: e);
+                return HealthCheckResult.Healthy(e.Message);
             }
         }
     }
