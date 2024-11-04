@@ -19,9 +19,9 @@
                 <div class="cart-item-amount">
                     <span>Qty</span>
                     <input type="hidden" name="cartItemId" value="@cartItem.CartItemID" />
-                    <input type="text" name="Units" value="@cartItem.CartItemUnits" class="form-control" />
-                    <input asp-action="UpdateItem" asp-controller="Checkout" type="submit" name="update" value="@HtmlLocalizer["update"]" class="btn btn-default" />
-                    <input asp-action="RemoveItem" asp-controller="Checkout" type="submit" name="remove" value="@HtmlLocalizer["remove"]" class="btn btn-default" />
+                    <input type="text" name="Units" value="@cartItem.CartItemUnits" class="form-control" data-testid="qtyInput"/>
+                    <input asp-action="UpdateItem" asp-controller="Checkout" type="submit" name="update" value="@HtmlLocalizer["update"]" class="btn btn-default" data-testid="updateQty"/>
+                    <input asp-action="RemoveItem" asp-controller="Checkout" type="submit" name="remove" value="@HtmlLocalizer["remove"]" class="btn btn-default" data-testid="removeItem" />
                 </div>
             </form>
             
