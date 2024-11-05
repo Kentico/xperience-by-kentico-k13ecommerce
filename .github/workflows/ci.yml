@@ -1,8 +1,29 @@
 name: "CI: Build and Test"
 
 on:
-  schedule:
-    - cron: '0 10 * * 5'  # Runs every Friday at 10:00 UTC
+  push:
+    branches: [main]
+    paths:
+      - "**.cs"
+      - "**.tsx"
+      - "**.js"
+      - "**.csproj"
+      - "**.props"
+      - "**.targets"
+      - "**.sln"
+      - "**/Client/**/*.json"
+  pull_request:
+    branches: [main]
+    paths:
+      - "**.cs"
+      - "**.cshtml"
+      - "**.tsx"
+      - "**.js"
+      - "**.json"
+      - "**.csproj"
+      - "**.props"
+      - "**.targets"
+      - "**.sln"
 
 jobs:
   build_and_test:

@@ -1,26 +1,27 @@
+<#
+.Synopsis
+    Updates the local with hotfix according to version of packages of live site.
+#>
+
+Import-Module (Resolve-Path Settings) `
+    -Function `
+    Get-AppSettings `
+    -Force
+
 Import-Module (Resolve-Path Utilities) `
     -Function `
-    Get-WebProjectPath, `
     Invoke-ExpressionWithException, `
     Write-Status `
     -Force
 
-$projectPath = Get-WebProjectPath
-$repositoryPath = Join-Path $projectPath "App_Data/CIRepository"
-if ($Env:ASPNETCORE_ENVIRONMENT -eq "CI") {
-    $launchProfile = "K13Ecommerce.WebCI"
-    $configuration = "Release"
-} else {
-    $launchProfile = "DancingGoat"
-    $configuration = "Debug"
-}
+$appSettings = Get-AppSettings
 
 $command = "dotnet run " + `
-    "--launch-profile $launchProfile " + `
-    "-c $configuration " + `
+    "--launch-profile $($appSettings.LaunchProfile) " + `
+    "-c $($appSettings.Configuration) " + `
     "--no-build " + `
     "--no-restore " + `
-    "--project $projectPath " + `
+    "--project $($appSettings.XbKProjectPath) " + `
     "--kxp-update " + `
     "--skip-confirmation"
 
