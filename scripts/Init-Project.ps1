@@ -13,12 +13,10 @@ Import-Module (Resolve-Path Settings) `
 Import-Module (Resolve-Path Utilities) `
     -Function `
     Invoke-ExpressionWithException, `
-    Get-ConnectionString, `
     Write-Status `
     -Force
 
 $appSettings = Get-AppSettings
-$connectionString = Get-ConnectionString $appSettings
 
 $backupDatabaseFolderPath = Resolve-Path(Join-Path $($appSettings.WorkspaceFolder) "database")
 $backupFileListPath = Join-Path -Path $backupDatabaseFolderPath -ChildPath "backups.txt"

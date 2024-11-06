@@ -145,3 +145,6 @@ segments_2i
 **/App_Data/CMSModules/SmartSearch/*
 /examples/DancingGoat-Shopify/assets/ContentItems
 /examples/DancingGoat-K13Ecommerce/assets/ContentItems
+
+# Databases backup
+/database/*.bak
