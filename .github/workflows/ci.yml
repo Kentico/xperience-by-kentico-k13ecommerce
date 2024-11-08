@@ -1,12 +1,33 @@
-name: "CI - E2E: Build and Test"
+name: "CI: Build and Test"
 
 on:
-  schedule:
-    - cron: '5 17 * * *'  # Runs every Friday at 10:00 UTC
+  push:
+    branches: [main]
+    paths:
+      - "**.cs"
+      - "**.tsx"
+      - "**.js"
+      - "**.csproj"
+      - "**.props"
+      - "**.targets"
+      - "**.sln"
+      - "**/Client/**/*.json"
+  pull_request:
+    branches: [main]
+    paths:
+      - "**.cs"
+      - "**.cshtml"
+      - "**.tsx"
+      - "**.js"
+      - "**.json"
+      - "**.csproj"
+      - "**.props"
+      - "**.targets"
+      - "**.sln"
 
 jobs:
   build_and_test:
-    name: Test E2E
+    name: Build and Test
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -14,17 +35,9 @@ jobs:
 
     env:
       ASPNETCORE_ENVIRONMENT: CI
-      XBK_DATABASE_BACKUP_FILENAME: ""
-      K13_DATABASE_BACKUP_FILENAME: ""
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_NOLOGO: 1
-      XBK_PROJECT_NAME: DancingGoat
-      K13_PROJECT_NAME: Kentico13_DancingGoat
-      XBK_STATUS_CHECK_URL: https://localhost:14066/status
-      K13_STATUS_CHECK_URL: http://localhost:65375/status
-      XPERIENCE_BY_KENTICO_LICENSE: ${{ secrets.XPERIENCE_BY_KENTICO_LICENSE }}
-      KENTICO_XPERIENCE_13_LICENSE: ${{ secrets.KENTICO_XPERIENCE_13_LICENSE }}
 
     steps:
       - uses: actions/checkout@v4
@@ -36,103 +49,15 @@ jobs:
         with:
           global-json-file: global.json
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-
-      - name: Install NPM
+      - name: Install dependencies
         run: |
-          cd test/Playwright
-          npm ci
-          npx playwright install --with-deps
-          cd ../..
+          dotnet restore `
+            --locked-mode
 
-      - name: Get Database Backup Name
-        run: |
-          $latestBackups = Get-Content -Path "./database/backups.txt" -TotalCount 2
-          "K13_DATABASE_BACKUP_FILENAME=$($latestBackups[0])" >> $env:GITHUB_ENV
-          "XBK_DATABASE_BACKUP_FILENAME=$($latestBackups[1])" >> $env:GITHUB_ENV
-
-      - name: Extract Database Backup
-        run: |
-          Expand-Archive `
-            -Path "./database/${{ env.K13_DATABASE_BACKUP_FILENAME }}.zip" `
-            -DestinationPath "./database"
-          Expand-Archive `
-            -Path "./database/${{ env.XBK_DATABASE_BACKUP_FILENAME }}.zip" `
-            -DestinationPath "./database"
-
-      - name: Install a SQL Server suite of tools (SQLEngine, SQLPackage)
-        uses: potatoqualitee/mssqlsuite@9a0136e208df60b8ecb62909f076bc34854fa55a # set as a commit hash for security - v1.7
-        with:
-          install: sqlpackage, sqlengine
-          sa-password: Pass@12345
-          version: 2022
-
-      - name: Restore Database .bak
-        run: |
-          docker exec sql mkdir /var/opt/mssql/backup
-          docker cp "./database/${{ env.K13_DATABASE_BACKUP_FILENAME }}" sql:/var/opt/mssql/backup
-          sqlcmd `
-            -S localhost `
-            -d master `
-            -U "sa" `
-            -P "Pass@12345" `
-            -Q "RESTORE DATABASE [Kentico13_DancingGoat] FROM DISK='/var/opt/mssql/backup/${{ env.K13_DATABASE_BACKUP_FILENAME }}' WITH MOVE 'Kentico13_DancingGoat' TO '/var/opt/mssql/data/Kentico13_DancingGoat.mdf', MOVE 'Kentico13_DancingGoat_log' TO '/var/opt/mssql/data/Kentico13_DancingGoat_log.ldf'"
-          docker cp "./database/${{ env.XBK_DATABASE_BACKUP_FILENAME }}" sql:/var/opt/mssql/backup
-          sqlcmd `
-            -S localhost `
-            -d master `
-            -U "sa" `
-            -P "Pass@12345" `
-            -Q "RESTORE DATABASE [XByK_DancingGoat_K13Ecommerce] FROM DISK='/var/opt/mssql/backup/${{ env.XBK_DATABASE_BACKUP_FILENAME }}' WITH MOVE 'XByK_DancingGoat_K13Ecommerce' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce.mdf', MOVE 'XByK_DancingGoat_K13Ecommerce_log' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce_log.ldf'"
-
-      - name: Imports license key to DB
-        run: |
-          sqlcmd `
-            -S localhost `
-            -d Kentico13_DancingGoat `
-            -U "sa" `
-            -P "Pass@12345" `
-            -Q "INSERT INTO [dbo].[CMS_LicenseKey] VALUES ('localhost', '${{ env.KENTICO_XPERIENCE_13_LICENSE }}', 'X', '10/20/2025', 1);"
-          sqlcmd `
-            -S localhost `
-            -d XByK_DancingGoat_K13Ecommerce `
-            -U "sa" `
-            -P "Pass@12345" `
-            -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
-      
-      - name: Reset DB consistency for last applied hotfix
-        run: |
-          dotnet build `
-            --configuration Release
-          cd scripts
-          ./Reset-DatabaseConsistency.ps1
-          cd ..
-      
-      - name: Build Solution for last hotfix
+      - name: Build Solution
         run: |
           dotnet build `
             --configuration Release `
-            -p:XbyKVersion=*
-          cd scripts
-          ./Reset-DatabaseConsistency.ps1 -ExcludeCIRestore
-          cd ..
-
-      - name: Publish Application
-        run: |
-          dotnet publish `
-            ./examples/Kentico13_DancingGoatStore `
-            -c Release `
-            -o ./publish/K13 `
-            --no-build `
-            --no-restore
-          dotnet publish `
-            ./examples/DancingGoat-K13Ecommerce `
-            -c Release `
-            -o ./publish/XbK `
-            --no-build `
             --no-restore
 
       - name: Test Solution
@@ -142,91 +67,3 @@ jobs:
             --configuration Release `
             --no-build `
             --no-restore
-
-      - name: Run Applications and E2E Tests
-        run: |
-          # Run the ASP.NET Core app as a background job
-          cd ./publish/K13
-          Start-Job -ScriptBlock { dotnet ./${{ env.K13_PROJECT_NAME }}.dll } -Name ${{ env.K13_PROJECT_NAME }}
-          Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
-          cd ../../
-
-          # The ASP.NET Core app can take a few seconds to start, so we delay running tests
-          #   until it is ready, and fail if we go over a maximum wait time
-          $limit = 30
-          $attempts = 0
-          $success = $false
-
-          while ($attempts -lt $limit -and -not $success) {
-              Start-Sleep -Seconds 1
-              try {
-                  $response = Invoke-WebRequest -Uri ${{ env.K13_STATUS_CHECK_URL }} -Method Get -SkipCertificateCheck
-                  if ($response.StatusCode -eq 200) {
-                      Write-Output "K13 store: Application is ready."
-                      $success = $true
-                  }
-              }
-              catch {
-                  Write-Output "Attempt $attempts - Application not ready yet."
-              }
-              $attempts++
-          }
-
-          if (-not $success) {
-              Write-Output "K13 store: Application did not respond in time."
-              exit 1
-          }
-
-          # Run the ASP.NET Core app as a background job
-          cd ./publish/XbK
-          Start-Job -ScriptBlock { dotnet ./${{ env.XBK_PROJECT_NAME }}.dll } -Name ${{ env.XBK_PROJECT_NAME }}
-          Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
-          cd ../../
-
-          # The ASP.NET Core app can take a few seconds to start, so we delay running tests
-          #   until it is ready, and fail if we go over a maximum wait time
-          $limit = 30
-          $attempts = 0
-          $success = $false
-
-          while ($attempts -lt $limit -and -not $success) {
-              Start-Sleep -Seconds 1
-              try {
-                  $response = Invoke-WebRequest -Uri ${{ env.XBK_STATUS_CHECK_URL }} -Method Get -SkipCertificateCheck
-                  if ($response.StatusCode -eq 200) {
-                      Write-Output "XbK Application is ready."
-                      $success = $true
-                  }
-              }
-              catch {
-                  Write-Output "Attempt $attempts - Application not ready yet."
-              }
-              $attempts++
-          }
-
-          if (-not $success) {
-              Write-Output "XbK Application did not respond in time."
-              exit 1
-          }
-
-          # Sleep for finishing initialization
-          Start-Sleep -Seconds 10
-
-          # Run the E2E tests
-          cd test/Playwright
-          npx playwright test
-          cd ../..
-
-          # Stop the background ASP.NET Core application
-          Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
-          Stop-Job -Name ${{ env.K13_PROJECT_NAME }}
-          Remove-Job -Name ${{ env.K13_PROJECT_NAME }}
-          Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
-          Stop-Job -Name ${{ env.XBK_PROJECT_NAME }}
-          Remove-Job -Name ${{ env.XBK_PROJECT_NAME }}
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: ./test/Playwright/playwright-report/
-          retention-days: 30
