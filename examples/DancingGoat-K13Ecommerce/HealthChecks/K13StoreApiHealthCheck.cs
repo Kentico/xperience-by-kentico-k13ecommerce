@@ -42,6 +42,7 @@ namespace DancingGoat.HealthChecks
                     string reasonPhrase = response.ReasonPhrase;
 
                     string responseBody = string.Empty;
+
                     if (response.Content != null)
                     {
                         responseBody = await response.Content.ReadAsStringAsync(cancellationToken);

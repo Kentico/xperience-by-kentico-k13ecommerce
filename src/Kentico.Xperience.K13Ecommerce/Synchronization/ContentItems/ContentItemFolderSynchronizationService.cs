@@ -49,10 +49,12 @@ internal class ContentItemFolderSynchronizationService : IContentItemFolderSynch
         }
 
         var folder = await contentFolderManager.Get(targetFolderGuid, cancellationToken);
+
         if (folder == null)
         {
             return;
         }
+
         int targetFolderId = folder.ContentFolderID;
         var root = await contentFolderManager.GetRoot(cancellationToken);
 

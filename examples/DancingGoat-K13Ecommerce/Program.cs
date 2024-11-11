@@ -73,7 +73,6 @@ ConfigureMembershipServices(builder.Services);
 //Kentico Store API
 builder.Services.AddKenticoStoreServices(builder.Configuration);
 
-
 var app = builder.Build();
 
 app.InitKentico();
