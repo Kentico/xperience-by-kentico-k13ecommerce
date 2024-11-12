@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>377222f7-e976-4d8f-82e2-a4d0a0b41261</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Glass_Clear_4Cups-7akqwdxz</CodeName>
+      <GUID>e7d6c3b8-9059-4467-b68f-4b3b044be96b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>08a654e2-fc8f-4d7d-b1b8-5fa0f5b79c82</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>35</SKUID>
+  <SKUName>Hario V60 (Glass, Clear, 4 cups)</SKUName>
+  <SKUNumber>HAR-V60-Glass-Clear-4-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

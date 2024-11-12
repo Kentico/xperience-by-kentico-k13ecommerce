@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.categorypage>
+  <CategoryName>Grinders</CategoryName>
+  <CategoryProducts>
+    <![CDATA[[{"WebPageGuid":"6807d5c3-ea4d-4a95-9b08-94de450cc015"},{"WebPageGuid":"581eb683-628d-4110-8f67-fbf70b38ab80"},{"WebPageGuid":"4032eb7e-5188-4214-8c71-02990ccbfe87"},{"WebPageGuid":"c4fb988c-8fdd-409e-9e3f-d0bd744574c8"},{"WebPageGuid":"ce5bda98-74ec-40c9-b58d-e0d837191ff2"},{"WebPageGuid":"bc39be1d-b6b2-4c01-b5d2-ec226a954e98"},{"WebPageGuid":"dec85014-e7ff-41b5-aac0-431dda574a79"}]]]>
+  </CategoryProducts>
+  <ContentItemDataCommonDataID>
+    <GUID>8b44d6ed-cc65-488a-9fb3-57d97dd90573</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Grinders-x2nn8uvw</CodeName>
+      <GUID>7d681a8a-19ce-4b51-8096-8f3b707a4be9</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>e0f1d8d9-b8d5-42f2-986d-d12b35646f62</ContentItemDataGUID>
+</contentitemdata.k13store.categorypage>

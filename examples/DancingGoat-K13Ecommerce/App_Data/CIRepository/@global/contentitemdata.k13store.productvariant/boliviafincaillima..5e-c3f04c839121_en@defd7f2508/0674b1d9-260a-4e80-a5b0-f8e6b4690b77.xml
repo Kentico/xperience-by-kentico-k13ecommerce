@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>70b1ebd8-7da0-4541-b15e-c3f04c839121</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BoliviaFincaIllimani_4Oz-sa6c4efi</CodeName>
+      <GUID>22404c38-4418-48b3-80bd-18169d41fdbf</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>0674b1d9-260a-4e80-a5b0-f8e6b4690b77</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>89</SKUID>
+  <SKUName>Bolivia Finca Illimani (4 oz)</SKUName>
+  <SKUNumber>CO-BOL-CASCARA-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

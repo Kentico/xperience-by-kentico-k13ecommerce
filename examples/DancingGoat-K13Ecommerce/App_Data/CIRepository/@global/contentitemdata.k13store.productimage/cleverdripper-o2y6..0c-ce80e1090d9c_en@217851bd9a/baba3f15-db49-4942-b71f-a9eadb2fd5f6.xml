@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>2897a88d-9f1e-4795-b30c-ce80e1090d9c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>CleverDripper-o2y6e9t9</CodeName>
+      <GUID>aeb37de3-9069-4749-80fc-1193c3237db0</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>baba3f15-db49-4942-b71f-a9eadb2fd5f6</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"facd6821-273a-4e74-b5ba-cbeba78f0747","Name":"Clever Dripper.jpg","Extension":".jpg","Size":29574,"LastModified":"2024-10-24T14:38:49.5982748Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Clever Dripper</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/b3b1808c-d603-430d-8f11-047960ed0d22/clever-dripper]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

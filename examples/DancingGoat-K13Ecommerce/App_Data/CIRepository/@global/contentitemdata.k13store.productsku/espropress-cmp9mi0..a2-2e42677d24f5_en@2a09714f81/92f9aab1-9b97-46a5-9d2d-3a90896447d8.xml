@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Brewer</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>9d2173cd-f8e7-4833-8da2-2e42677d24f5</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EsproPress-cmp9mi0t</CodeName>
+      <GUID>e17abce4-f9ac-40dd-9205-3174783bdaa3</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>92f9aab1-9b97-46a5-9d2d-3a90896447d8</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"BrewerIsDishwasherSafe":true}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+  <ManufacturerDisplayName>Espro</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Brewers/Espro-Press</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"394f612a-6807-4573-bbec-53da3d8ca18f"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>A major rethink in the way coffee is made. Retains heat for several hours. The filters in this device are up to 12 times finer, and each coffee is filtered twice. This means no sediment, no silt, and a perfectly clear coffee.</p>
+
+<p>The Espro Press is durable, perfect for travelling as well as at home. It can survive practically anything.</p>
+
+<p>Oh, and one more thing. You can easily use this brewer for perfect loose-leaf tea, tonic water, or even vanilla extract.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>111</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:09:37Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Espro Press</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>ESP-PR</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[The Espro Press retains heat for hours, has super-finer filters ensuring no sediment, and is perfect for all travel.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

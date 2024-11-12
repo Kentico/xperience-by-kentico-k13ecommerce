@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>c81f0b28-d233-42ec-b7b0-21ffcce3c324</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Chemex-tjbyj4e8</CodeName>
+      <GUID>1b0f9173-2947-4586-b502-729d7dc59543</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ac36304a-1228-4692-b217-be50035651e5</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"dde31f41-eb52-410a-aafd-134d0c73f782"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

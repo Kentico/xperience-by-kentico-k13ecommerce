@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Brewer</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>c951f2ae-2def-482d-a30a-71eae5c54787</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Chemex-40hqauno</CodeName>
+      <GUID>dde31f41-eb52-410a-aafd-134d0c73f782</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>3ad83f4d-1d76-44a1-9e89-ec5cd362ba81</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"BrewerIsDishwasherSafe":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+  <ManufacturerDisplayName>Chemex</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Brewers/Chemex</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"ed698889-455a-4351-b9b7-a535d2184c87"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <PublicStatusDisplayName />
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>A coffee brewer that can raise the spirit of your home as well? Of course, the Chemex, with its unique hand-fitting shape, wrapped in a polished wooden collar and a leather tie.</p>
+
+<p>Using Chemex, you will produce a full-flavoured brew at the strength of your liking. The glass is heat-resistant, so it&#39;s safe and you can use its handle to manipulate the device safely. The filters (sold separately) are natural and unbleached and deliver a taste without bitterness or sediment.</p>
+
+<p>You&#39;ll appreciate its elegance, proven by its forty-year tradition. This remains to this day one of &#39;the&#39; truly chic ways of making coffee. Made in the USA.</p>
+
+<p>All you need do is insert a filter and beans and pour freshly hot water over them.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>102</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:07:04Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Chemex</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CM</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>True</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[With this unique hand-fitting American-made brewer, not only can you prepare a cup of fine coffee, but you also look cool while doing it.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

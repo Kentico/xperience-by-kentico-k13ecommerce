@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>4114a687-47e5-4b48-b62d-a936b56fa30d</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EthiopiaYirgacheffe_decaf-i2pz52mh</CodeName>
+      <GUID>f29d301d-523d-44f3-a22c-f25a7f3dfa1b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>afd9ccb7-91a3-461a-b5cd-2d10bded79ed</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":null,"CoffeeCountry":"Ethiopia","CoffeeVariety":"Heirloom varietals","CoffeeProcessing":"washed","CoffeeAltitude":6500,"CoffeeIsDecaf":true}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
+  <NodeAliasPath>/Store/Coffees/Ethiopia-Yirgacheffe-(decaf)</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"d44cd718-8bf4-46f1-bb49-99c8c9f8b18b"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"b0d2189b-227c-490e-bb12-13bde285ac34"},{"Identifier":"5757eede-9782-4e68-9793-d4e5d584b9a8"},{"Identifier":"be2b741f-c559-4172-abba-7b9ae57d5223"},{"Identifier":"c741e138-1695-4554-9293-73ef68a18217"},{"Identifier":"b28498bf-d976-4e85-9d2a-5bd0f6f59e0b"}]]]>
+  </ProductVariants>
+  <PublicStatusDisplayName />
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>Smell its flowery aroma and taste the spicy sweet flavor in which you can relish all kinds of fruits - for example, peaches, apricots, or watermelon. You can also taste chocolate and nuts. Does this seem crazy? Oh, come on, it&#39;s Africa and its wildlife. Experience this Ethiopian/Congolese coffee, which is also suitable for any kind of brewing method.</p>
+
+<p>The Ethiopia Yirgacheffe is prepared using the wash method. Coffee beans are peeled with a pulper, submerged in fermentation tanks, and finally rested on jute-covered beds.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>96</SKUID>
+  <SKUInStoreFrom>2020-08-03 08:55:45Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Ethiopia Yirgacheffe (decaf)</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-ETH-YIRGACHEFFE</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Taste the African wildlife. Taste this Ethiopian sweet, spicy, and flowery coffee in which you can savor pretty much every fruit along with chocolate and nuts.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

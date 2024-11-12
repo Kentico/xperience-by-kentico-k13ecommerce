@@ -1,4 +1,5 @@
 using DancingGoat;
+using DancingGoat.HealthChecks;
 using DancingGoat.Models;
 
 using Kentico.Activities.Web.Mvc;
@@ -50,6 +51,18 @@ builder.Services.AddLocalization()
         options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResources));
     });
 
+// K13 Store helath check
+builder.Services.AddHttpClient(
+    nameof(K13StoreApiHealthCheck),
+    client =>
+    {
+        client.BaseAddress = new Uri(builder.Configuration.GetSection("CMSKenticoStoreConfig:StoreApiUrl").Value);
+        client.Timeout = TimeSpan.FromSeconds(10);
+    }
+);
+builder.Services.AddHealthChecks()
+    .AddCheck<K13StoreApiHealthCheck>("k13store_health_check");
+
 builder.Services.AddSession();
 
 builder.Services.AddDancingGoatServices();
@@ -85,6 +98,8 @@ app.MapControllerRoute(
    pattern: "error/{code}",
    defaults: new { controller = "HttpErrors", action = "Error" }
 );
+
+app.MapHealthChecks("/status");
 
 app.MapControllerRoute(
     name: DancingGoatConstants.DEFAULT_ROUTE_NAME,

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.dancinggoat.navigationitem>
+  <ContentItemDataCommonDataID>
+    <GUID>cdf02b2d-6ce0-41dd-8f89-44a0dc8c0b5e</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Store-qxdcq3dp</CodeName>
+      <GUID>375bd3d2-d54c-496d-a8a8-8f030d822a99</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ea40c85c-a8b2-4216-b264-81f3b4f7e744</ContentItemDataGUID>
+  <NavigationItemLink>
+    <![CDATA[[{"WebPageGuid":"dc4134ee-e1ec-439f-ab1c-d0da031aa58f"}]]]>
+  </NavigationItemLink>
+  <NavigationItemName>Store</NavigationItemName>
+</contentitemdata.dancinggoat.navigationitem>

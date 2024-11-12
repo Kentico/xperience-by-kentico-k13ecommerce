@@ -15,7 +15,7 @@
 
         <div class="col-md-8 cart-content">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" data-testid="billingDetails">
                     <h2>@HtmlLocalizer["Billing details"]</h2>
 
                     <partial name="Partials/CustomerViewModel" model="Model.CustomerDetails"/>
@@ -26,7 +26,7 @@
                 </div>
                 @if (Model.DeliveryDetails.ShippingOption.IsVisible)
                 {
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-testid="shippingDetails">
                         <h2>@HtmlLocalizer["Shipping details"]</h2>
                         <span>@Model.ShippingName</span>
                         <br />
@@ -53,7 +53,7 @@
 
                 <form asp-action="FinishOrder" asp-controller="Checkout" method="post">
                     @Html.EditorFor(m => m.PaymentMethod)
-                    <input type="submit" value="@HtmlLocalizer["Confirm and pay"]" class="btn-primary checkout-button btn btn-default" />
+                    <input type="submit" value="@HtmlLocalizer["Confirm and pay"]" class="btn-primary checkout-button btn btn-default" data-testid="confirmOrder"/>
                     @Html.Kentico().PageData()
                 </form>
             </div>

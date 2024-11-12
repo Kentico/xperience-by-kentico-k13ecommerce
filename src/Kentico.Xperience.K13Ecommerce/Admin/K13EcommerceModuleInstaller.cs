@@ -42,10 +42,10 @@ internal class K13EcommerceModuleInstaller : IK13EcommerceModuleInstaller
         var formInfo = FormHelper.GetBasicFormDefinition(nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsID));
         var formItem = new FormFieldInfo
         {
-            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductSKUFolderID),
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductSKUFolderGuid),
             Visible = true,
-            DataType = FieldDataType.Integer,
-            Caption = K13EcommerceSettingsConstants.SettingsProductSKUFolderID,
+            DataType = FieldDataType.Guid,
+            Caption = K13EcommerceSettingsConstants.SettingsProductSKUFolderGuid,
             Enabled = true,
             AllowEmpty = false,
         };
@@ -53,10 +53,10 @@ internal class K13EcommerceModuleInstaller : IK13EcommerceModuleInstaller
 
         formItem = new FormFieldInfo
         {
-            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductVariantFolderID),
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductVariantFolderGuid),
             Visible = true,
-            DataType = FieldDataType.Integer,
-            Caption = K13EcommerceSettingsConstants.SettingsProductVariantFolderID,
+            DataType = FieldDataType.Guid,
+            Caption = K13EcommerceSettingsConstants.SettingsProductVariantFolderGuid,
             Enabled = true,
             AllowEmpty = false,
         };
@@ -64,10 +64,20 @@ internal class K13EcommerceModuleInstaller : IK13EcommerceModuleInstaller
 
         formItem = new FormFieldInfo
         {
-            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductImageFolderID),
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsProductImageFolderGuid),
             Visible = true,
-            DataType = FieldDataType.Integer,
-            Caption = K13EcommerceSettingsConstants.SettingsProductImageFolderID,
+            DataType = FieldDataType.Guid,
+            Caption = K13EcommerceSettingsConstants.SettingsProductImageFolderGuid,
+            Enabled = true,
+            AllowEmpty = false,
+        };
+        formInfo.AddFormItem(formItem);
+
+        formItem = new FormFieldInfo
+        {
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsGuid),
+            Visible = false,
+            DataType = FieldDataType.Guid,
             Enabled = true,
             AllowEmpty = false,
         };
@@ -85,9 +95,9 @@ internal class K13EcommerceModuleInstaller : IK13EcommerceModuleInstaller
         {
             settings = new K13EcommerceSettingsInfo()
             {
-                K13EcommerceSettingsProductSKUFolderID = 0,
-                K13EcommerceSettingsProductVariantFolderID = 0,
-                K13EcommerceSettingsProductImageFolderID = 0,
+                K13EcommerceSettingsProductSKUFolderGuid = Guid.Empty,
+                K13EcommerceSettingsProductVariantFolderGuid = Guid.Empty,
+                K13EcommerceSettingsProductImageFolderGuid = Guid.Empty
             };
             settings.Insert();
         }
@@ -147,6 +157,16 @@ internal class K13EcommerceModuleInstaller : IK13EcommerceModuleInstaller
             DataType = FieldDataType.Integer,
             Caption = K13EcommerceTableConstants.OrderCaption,
             Enabled = false,
+            AllowEmpty = false,
+        };
+        formInfo.AddFormItem(formItem);
+
+        formItem = new FormFieldInfo
+        {
+            Name = nameof(PagePathMappingRuleInfo.PagePathMappingRuleGuid),
+            Visible = false,
+            DataType = FieldDataType.Guid,
+            Enabled = true,
             AllowEmpty = false,
         };
         formInfo.AddFormItem(formItem);

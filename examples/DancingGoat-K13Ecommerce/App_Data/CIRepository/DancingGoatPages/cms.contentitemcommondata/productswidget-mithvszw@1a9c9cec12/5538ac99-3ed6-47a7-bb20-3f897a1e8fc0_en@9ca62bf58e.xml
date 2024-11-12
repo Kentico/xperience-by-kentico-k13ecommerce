@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitemcommondata>
+  <ContentItemCommonDataContentItemID>
+    <CodeName>ProductsWidget-mithvszw</CodeName>
+    <GUID>2a2874ab-e5c1-45f2-bfdf-49ce4b055bb2</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </ContentItemCommonDataContentItemID>
+  <ContentItemCommonDataContentLanguageID>
+    <CodeName>en</CodeName>
+    <GUID>e4a8fb12-ebc2-45d0-930f-c9fba2780c85</GUID>
+    <ObjectType>cms.contentlanguage</ObjectType>
+  </ContentItemCommonDataContentLanguageID>
+  <ContentItemCommonDataFirstPublishedWhen>2024-04-17 13:02:28Z</ContentItemCommonDataFirstPublishedWhen>
+  <ContentItemCommonDataGUID>5538ac99-3ed6-47a7-bb20-3f897a1e8fc0</ContentItemCommonDataGUID>
+  <ContentItemCommonDataIsLatest>True</ContentItemCommonDataIsLatest>
+  <ContentItemCommonDataLastPublishedWhen>2024-10-24 14:54:39Z</ContentItemCommonDataLastPublishedWhen>
+  <ContentItemCommonDataPageBuilderWidgets>
+    <![CDATA[{"editableAreas":[{"identifier":"top","sections":[{"identifier":"208866c7-830c-4589-a7ab-9e11013cff09","type":"DancingGoat.SingleColumnSection","properties":{"theme":null},"zones":[{"identifier":"251ab099-9134-4818-a640-6f9754f738fc","widgets":[{"identifier":"9e65822a-98a7-40e1-b133-21d13ad60eff","type":"DancingGoat.LandingPage.KenticoStoreProductList","variants":[{"identifier":"9528a3e6-e279-44c0-9728-d0350fd472c6","properties":{"title":"Grinders","path":"/Store/Grinders","culture":"en-US","currencyCode":"USD","orderBy":"SKUName DESC","limit":6},"fieldIdentifiers":{"title":"e90f35d0-0dbc-44d2-bd8e-d2ac662ddc71","path":"b0f0c569-c1c1-42ad-bcdc-36acca68cfb0","culture":"416c0ab2-6245-4207-b11c-9923bd96b63b","currencyCode":"c218e3d7-2f44-4c80-a2cb-0a26ab65e446","orderBy":"2277012a-1214-4720-be96-0bfda2c74891","limit":"3296acec-f100-4a10-a245-c84710472fb0"}}]}]}],"fieldIdentifiers":{"theme":"2cad18ce-99f6-4e29-9eef-c4b0a3d53479"}}]},{"identifier":"bottom","sections":[{"identifier":"315c8885-fc7e-46bc-aae5-e9b732ac3c6f","type":"DancingGoat.SingleColumnSection","properties":{"theme":null},"zones":[{"identifier":"e4a2faab-da0d-4f14-b669-fe0297ccaf32","widgets":[]}],"fieldIdentifiers":{"theme":"75b79a27-d37b-4a11-a412-8dc34ea8033c"}}]}]}]]>
+  </ContentItemCommonDataPageBuilderWidgets>
+  <ContentItemCommonDataPageTemplateConfiguration>
+    <![CDATA[{"identifier":"DancingGoat.LandingPageSingleColumn","properties":{"showLogo":true,"headerColorCssClass":"first-color"},"fieldIdentifiers":{"showLogo":"202d9e46-95df-4845-8649-817d4975813d","headerColorCssClass":"55382dc1-3325-4f0f-b61a-dfb6f0d9418f"}}]]>
+  </ContentItemCommonDataPageTemplateConfiguration>
+  <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
+  <SEOFieldsDescription />
+  <SEOFieldsTitle />
+</cms.contentitemcommondata>

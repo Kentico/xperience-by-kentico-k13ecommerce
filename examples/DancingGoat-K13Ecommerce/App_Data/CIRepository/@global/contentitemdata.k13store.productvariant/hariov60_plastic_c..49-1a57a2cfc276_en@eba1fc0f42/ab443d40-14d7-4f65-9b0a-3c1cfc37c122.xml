@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>19c89afa-6d93-49ba-a049-1a57a2cfc276</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Plastic_Clear_8Cups-nvzvx3qv</CodeName>
+      <GUID>6fa0e7b0-2a27-4324-bb32-508a567dec65</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ab443d40-14d7-4f65-9b0a-3c1cfc37c122</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>49</SKUID>
+  <SKUName>Hario V60 (Plastic, Clear, 8 cups)</SKUName>
+  <SKUNumber>HAR-V60-Plastic-Clear-8-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

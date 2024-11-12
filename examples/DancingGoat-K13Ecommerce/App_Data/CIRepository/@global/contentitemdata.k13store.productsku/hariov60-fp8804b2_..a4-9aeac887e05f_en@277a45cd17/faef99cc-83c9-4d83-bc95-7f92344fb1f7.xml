@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Brewer</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>1d020e25-72bc-4004-9da4-9aeac887e05f</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60-fp8804b2</CodeName>
+      <GUID>4c002494-c743-4980-8757-28484fed48f5</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>faef99cc-83c9-4d83-bc95-7f92344fb1f7</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"BrewerIsDishwasherSafe":true}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+  <ManufacturerDisplayName>Hario</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Brewers/Hario-V60</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"40d33746-9837-4ae2-8b68-8c066333dc19"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"b2cb7d56-1771-44e5-b60a-b6cd73f4e983"},{"Identifier":"380031cf-1f13-4ffd-ae53-423e3c4f5e1c"},{"Identifier":"df579ab0-fdd2-4ebb-a292-1aaaf99f760d"},{"Identifier":"9a75f290-a4c7-4a44-b373-eb22bff8ba5e"},{"Identifier":"b56cb515-b050-4a33-a239-be4f1951640c"},{"Identifier":"065a1248-0f3d-412c-b577-3e4bbee7e69b"},{"Identifier":"ea5d4a90-e917-47bf-be6a-76c1c433801b"},{"Identifier":"b5a186de-d41d-4b36-bb98-e1ea71dd1a7c"},{"Identifier":"6e5224e2-f629-41e9-aee1-c09014956034"},{"Identifier":"4466496d-21f1-4a5d-97fb-f703b1843ca8"},{"Identifier":"6ea3f36d-9330-449f-8d1a-381627dbf502"},{"Identifier":"4a0fb488-34ef-419b-acca-a8a93c269c29"},{"Identifier":"415ef9c4-7a16-4dbd-924c-55c53cb9b013"},{"Identifier":"bf96a6ce-1436-4706-8c96-8fb4465e8e06"},{"Identifier":"b1d8831b-2358-42fb-9f81-7fe769484289"},{"Identifier":"7ea12ff4-5bf6-4469-b64c-6cc8fc27a53b"},{"Identifier":"e7d6c3b8-9059-4467-b68f-4b3b044be96b"},{"Identifier":"abd97fe3-0f58-4bc7-b499-d09ba7b709b1"},{"Identifier":"60f2e76d-e96f-48f9-9b96-1d8443f382b9"},{"Identifier":"c48d1dbe-5d6c-43ca-9b79-a3d80d3cea78"},{"Identifier":"bc249768-a796-4709-915d-cc7b5c6ce5bc"},{"Identifier":"d5aaf1a5-0ac2-4020-bb2b-73005e29394c"},{"Identifier":"b54ef464-fd9b-420c-b1f3-dceddb0025c4"},{"Identifier":"2813d8f7-cdc7-4e1b-b5fa-5397272070db"},{"Identifier":"24f1e009-dd3c-446d-af09-b7b8adf83e15"},{"Identifier":"baa8df30-a864-45f0-98f1-78f3c072ea95"},{"Identifier":"3d861c1a-45d7-4bef-8eb2-f927c37f656e"},{"Identifier":"ff0e3b71-9699-4ce6-8874-045a4ac6c7aa"},{"Identifier":"ddd208e8-4f22-4314-8fa4-310849178c01"},{"Identifier":"6fa0e7b0-2a27-4324-bb32-508a567dec65"},{"Identifier":"771ee4f3-3fc6-4bf4-a68f-d57e6fd33df1"},{"Identifier":"18794bc2-19df-4416-81ee-bdfa4d92e7db"},{"Identifier":"b2a8b44d-137a-4a73-8e59-51bb28b58c1f"},{"Identifier":"52c9b7fc-3ca4-4838-9d2f-061606dbd640"},{"Identifier":"34322bde-8102-476e-a135-f0c0b3712cf3"},{"Identifier":"c64fb944-9326-427e-bf03-813a9aa29f86"}]]]>
+  </ProductVariants>
+  <PublicStatusDisplayName />
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>This has to be one of the, if not &#39;the&#39; most popular manual coffee brewers available. With an almost unlimited number of varieties, Hario V60 has conquered the hearts of coffee aficionados the world over. You can see this device being used on a daily basis at home by complete beginners and experts alike. Baristas stick to Hario V60 for its ease of use and the proven taste of the resulting drink.</p>
+
+<p>It will brew you quite the cup, that&#39;s guaranteed. Hario&#39;s unique design lets the coffee slowly pour through both sides of the cone. Spiral ribs on the inside of the cone help the water catch the taste perfectly. As the water spirals through the brewer, the V60 creates an amazingly even brew, making sure no coffee is left out.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>33</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:10:21Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Hario V60</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>HAR-V60</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Easy-to-use, the taste of top quality, designed with coffee in mind &ndash; these are only a few of all the features this Hario has.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

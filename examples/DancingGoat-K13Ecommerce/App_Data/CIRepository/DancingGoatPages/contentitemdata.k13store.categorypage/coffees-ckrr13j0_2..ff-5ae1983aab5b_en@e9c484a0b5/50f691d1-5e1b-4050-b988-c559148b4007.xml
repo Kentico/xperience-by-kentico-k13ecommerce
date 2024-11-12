@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.categorypage>
+  <CategoryName>Coffees</CategoryName>
+  <CategoryProducts>
+    <![CDATA[[{"WebPageGuid":"a387ad23-0eba-413f-a2c6-2111e60ba254"},{"WebPageGuid":"d4c8b710-e9cf-4cdf-9ff0-fcc75ef2a3f6"},{"WebPageGuid":"8503ad67-4300-405b-8f0f-c3265e0651fc"},{"WebPageGuid":"c554e1aa-3673-47e2-94b5-4f19572c6ce3"},{"WebPageGuid":"a7d81f32-2b25-4a9a-8baa-25176878baf8"},{"WebPageGuid":"d5b18e9c-acf1-4936-8d70-5e7ea9da7c6a"},{"WebPageGuid":"52ebb490-0aff-4631-ad44-140635a4b336"},{"WebPageGuid":"528584bc-c144-46c5-92ac-eb08185d959a"},{"WebPageGuid":"ab8bf91d-01a2-4bed-802f-31511c8262d7"},{"WebPageGuid":"30dfdf8c-d6d1-454e-b7f6-6724e2ba303b"}]]]>
+  </CategoryProducts>
+  <ContentItemDataCommonDataID>
+    <GUID>22d728ee-b45c-4367-84ff-5ae1983aab5b</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>Coffees-ckrr13j0</CodeName>
+      <GUID>036e7228-0c54-46ac-a8b7-64f55dde77fc</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>50f691d1-5e1b-4050-b988-c559148b4007</ContentItemDataGUID>
+</contentitemdata.k13store.categorypage>

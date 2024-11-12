@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>BoliviaFincaIllimani-f2x6oqg9</CodeName>
+    <GUID>e01ff300-e23b-4b47-9290-12373fd1b4e1</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>30dfdf8c-d6d1-454e-b7f6-6724e2ba303b</WebPageItemGUID>
+  <WebPageItemName>BoliviaFincaIllimani-f2x6oqg9</WebPageItemName>
+  <WebPageItemOrder>10</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Coffees-kg4txlkt</CodeName>
+    <GUID>7900e0b8-0209-4208-b7c2-e8c22aa6d93c</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>/Store/Products/Coffees/Bolivia_Finca_Illimani</WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

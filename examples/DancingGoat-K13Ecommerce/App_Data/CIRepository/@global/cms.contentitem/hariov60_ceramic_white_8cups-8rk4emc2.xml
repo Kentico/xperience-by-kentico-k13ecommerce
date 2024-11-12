@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitem>
+  <ContentItemContentFolderID>
+    <CodeName>Variants-4nccxboa</CodeName>
+    <GUID>f876a103-8118-484a-b0c9-3e1dae921f66</GUID>
+    <ObjectType>cms.contentfolder</ObjectType>
+  </ContentItemContentFolderID>
+  <ContentItemContentTypeID>
+    <CodeName>K13Store.ProductVariant</CodeName>
+    <GUID>7866b3e7-7e08-471d-bef8-7891df3d05f5</GUID>
+    <ObjectType>cms.contenttype</ObjectType>
+  </ContentItemContentTypeID>
+  <ContentItemGUID>4a0fb488-34ef-419b-acca-a8a93c269c29</ContentItemGUID>
+  <ContentItemIsReusable>True</ContentItemIsReusable>
+  <ContentItemIsSecured>False</ContentItemIsSecured>
+  <ContentItemName>HarioV60_Ceramic_White_8Cups-8rk4emc2</ContentItemName>
+</cms.contentitem>

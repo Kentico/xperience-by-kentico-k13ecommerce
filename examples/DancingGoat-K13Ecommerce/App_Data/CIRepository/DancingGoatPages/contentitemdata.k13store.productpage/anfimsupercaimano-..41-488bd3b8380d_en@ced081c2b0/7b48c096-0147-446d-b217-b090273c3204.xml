@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>87342c94-fb34-410d-b741-488bd3b8380d</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>AnfimSuperCaimano-cq1gpgbk</CodeName>
+      <GUID>91753e30-5025-4af9-8d6a-e35b2aa77010</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>7b48c096-0147-446d-b217-b090273c3204</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"c759365e-80b9-4c99-9f9d-558fb32b3066"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>ed7215c8-7ae4-4873-b52f-356aff5e8174</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60-ey7iici6</CodeName>
+      <GUID>1a179474-f9f6-4341-9bd2-3f708db9c1d2</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>76af8b22-ac46-4eff-8c1d-2d757dc3eabf</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"4c002494-c743-4980-8757-28484fed48f5"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

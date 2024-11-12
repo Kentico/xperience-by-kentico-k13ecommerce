@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c8a78775-efff-4c7b-bad8-a75f1e63186c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande_8Oz-529caz4u</CodeName>
+      <GUID>7c8bcb8c-f2aa-446b-b697-9f75096bfe8b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>cd880c0e-a7f1-44ce-9c00-6fba615148de</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>75</SKUID>
+  <SKUName>Brazil Natural Barra Grande (8 oz)</SKUName>
+  <SKUNumber>CO-BRA-BARRAGRANDE-8-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

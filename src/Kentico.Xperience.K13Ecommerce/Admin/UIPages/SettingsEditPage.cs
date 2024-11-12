@@ -37,9 +37,9 @@ internal class SettingsEditPage : ModelEditPage<SettingsConfigurationModel>
 
             model = new SettingsConfigurationModel()
             {
-                ProductSKUFolderID = info.K13EcommerceSettingsProductSKUFolderID.ToString(),
-                ProductVariantFolderID = info.K13EcommerceSettingsProductVariantFolderID.ToString(),
-                ProductImageFolderID = info.K13EcommerceSettingsProductImageFolderID.ToString(),
+                ProductSKUFolderGuid = info.K13EcommerceSettingsProductSKUFolderGuid.ToString(),
+                ProductVariantFolderGuid = info.K13EcommerceSettingsProductVariantFolderGuid.ToString(),
+                ProductImageFolderGuid = info.K13EcommerceSettingsProductImageFolderGuid.ToString(),
             };
             return model;
         }

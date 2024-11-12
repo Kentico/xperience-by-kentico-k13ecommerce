@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>PorlexTallCeramicBurrGrinder-iddpj4pi</CodeName>
+    <GUID>33f39fa6-48ff-4ba2-90ab-2354c65ad222</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>6807d5c3-ea4d-4a95-9b08-94de450cc015</WebPageItemGUID>
+  <WebPageItemName>PorlexTallCeramicBurrGrinder-iddpj4pi</WebPageItemName>
+  <WebPageItemOrder>1</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Grinders-zwudp979</CodeName>
+    <GUID>8a2fc61b-b2da-42ce-9d1e-ce5586d2006e</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>
+    <![CDATA[/Store/Products/Grinders/Porlex_Tall_Ceramic_Burr_Grinder]]>
+  </WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

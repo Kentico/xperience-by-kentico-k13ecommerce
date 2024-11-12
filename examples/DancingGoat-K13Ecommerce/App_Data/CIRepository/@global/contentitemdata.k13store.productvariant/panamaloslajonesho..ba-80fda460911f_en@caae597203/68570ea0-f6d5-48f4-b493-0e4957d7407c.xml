@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>cc40a449-f1af-41a6-8aba-80fda460911f</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney_2Lb-2nmigto4</CodeName>
+      <GUID>28e68fe4-b6c5-4ed3-a1ce-1de49b23dc4b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>68570ea0-f6d5-48f4-b493-0e4957d7407c</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>79</SKUID>
+  <SKUName>Panama Los Lajones Honey (2 lb)</SKUName>
+  <SKUNumber>CO-PAN-LAJONES-2-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

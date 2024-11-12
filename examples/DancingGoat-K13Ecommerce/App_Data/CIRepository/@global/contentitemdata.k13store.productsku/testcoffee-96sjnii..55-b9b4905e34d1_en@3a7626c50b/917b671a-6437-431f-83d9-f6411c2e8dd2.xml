@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>61c06026-aaa4-4517-ad55-b9b4905e34d1</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>TestCoffee-96sjniiq</CodeName>
+      <GUID>a6bd20f0-cd86-4267-95ad-fff657315e36</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>917b671a-6437-431f-83d9-f6411c2e8dd2</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":null,"CoffeeCountry":"USA","CoffeeVariety":"-","CoffeeProcessing":"washed","CoffeeAltitude":null,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <NodeAliasPath>/Store/Coffees/Test-coffee</NodeAliasPath>
+  <ProductImages>[]</ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>50</SKUAvailableItems>
+  <SKUDescription />
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>126</SKUID>
+  <SKUInStoreFrom>2024-04-17 11:26:01Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Test coffee</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber />
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>Test coffee is here</SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

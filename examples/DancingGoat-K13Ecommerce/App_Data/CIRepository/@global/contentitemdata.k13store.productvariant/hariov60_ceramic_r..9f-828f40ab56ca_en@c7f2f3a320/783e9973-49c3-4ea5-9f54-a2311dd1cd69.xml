@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>2858b5ff-8c29-43d6-aa9f-828f40ab56ca</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Ceramic_Red_2Cups-i7zet7av</CodeName>
+      <GUID>ea5d4a90-e917-47bf-be6a-76c1c433801b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>783e9973-49c3-4ea5-9f54-a2311dd1cd69</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>39</SKUID>
+  <SKUName>Hario V60 (Ceramic, Red, 2 cups)</SKUName>
+  <SKUNumber>HAR-V60-Ceramic-Red-2-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>

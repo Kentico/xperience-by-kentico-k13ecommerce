@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.class>
+  <ClassDisplayName>K13Ecommerce Settings info</ClassDisplayName>
+  <ClassFormDefinition>
+    <form>
+      <field column="K13EcommerceSettingsID" columntype="integer" enabled="true" guid="a2008fc6-4c01-4ed8-af17-8d8dbd3236f9" isPK="true" />
+      <field column="K13EcommerceSettingsProductSKUFolderGuid" columntype="guid" enabled="true" guid="cbd9637f-ba3e-4d79-8562-ddd7a2682808" visible="true">
+        <properties>
+          <fieldcaption>
+            <![CDATA[Content item folder for 'K13Store.ProductSKU']]>
+          </fieldcaption>
+        </properties>
+      </field>
+      <field column="K13EcommerceSettingsProductVariantFolderGuid" columntype="guid" enabled="true" guid="8df567e4-3669-47e1-a0a1-5c282ae4c36e" visible="true">
+        <properties>
+          <fieldcaption>
+            <![CDATA[Content item folder for 'K13Store.ProductVariant']]>
+          </fieldcaption>
+        </properties>
+      </field>
+      <field column="K13EcommerceSettingsProductImageFolderGuid" columntype="guid" enabled="true" guid="46505e1c-0abd-493e-83bb-47b3694a44fb" visible="true">
+        <properties>
+          <fieldcaption>
+            <![CDATA[Content item folder for 'K13Store.ProductImage']]>
+          </fieldcaption>
+        </properties>
+      </field>
+      <field column="K13EcommerceSettingsGuid" columntype="guid" enabled="true" guid="bd3983ee-8b88-4db7-b305-c425f345fa1d" />
+    </form>
+  </ClassFormDefinition>
+  <ClassGUID>82912681-2a63-4932-a30a-af98b3e8e669</ClassGUID>
+  <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
+  <ClassName>KenticoK13ecommerce.Settings</ClassName>
+  <ClassResourceID>
+    <CodeName>CMS.Integration.K13Ecommerce</CodeName>
+    <GUID>58704b77-b9ed-4063-990b-8b7f0ae487c8</GUID>
+    <ObjectType>cms.resource</ObjectType>
+  </ClassResourceID>
+  <ClassTableName>KenticoK13ecommerce_Settings</ClassTableName>
+  <ClassType>Other</ClassType>
+</cms.class>

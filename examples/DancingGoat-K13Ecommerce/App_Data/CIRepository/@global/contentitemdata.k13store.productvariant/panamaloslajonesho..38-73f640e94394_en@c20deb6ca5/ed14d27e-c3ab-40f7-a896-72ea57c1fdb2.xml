@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>cd8ab258-cab6-44ba-af38-73f640e94394</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>PanamaLosLajonesHoney_5Lb-xalw53jv</CodeName>
+      <GUID>fa63dc98-942b-4250-a4fc-3cbc25560bc2</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ed14d27e-c3ab-40f7-a896-72ea57c1fdb2</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>78</SKUID>
+  <SKUName>Panama Los Lajones Honey (5 lb)</SKUName>
+  <SKUNumber>CO-PAN-LAJONES-5-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

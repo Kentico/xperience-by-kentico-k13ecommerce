@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitem>
+  <ContentItemContentFolderID>
+    <CodeName>Variants-4nccxboa</CodeName>
+    <GUID>f876a103-8118-484a-b0c9-3e1dae921f66</GUID>
+    <ObjectType>cms.contentfolder</ObjectType>
+  </ContentItemContentFolderID>
+  <ContentItemContentTypeID>
+    <CodeName>K13Store.ProductVariant</CodeName>
+    <GUID>7866b3e7-7e08-471d-bef8-7891df3d05f5</GUID>
+    <ObjectType>cms.contenttype</ObjectType>
+  </ContentItemContentTypeID>
+  <ContentItemGUID>f189f46e-dd1e-42f8-8daa-40d106dc21ca</ContentItemGUID>
+  <ContentItemIsReusable>True</ContentItemIsReusable>
+  <ContentItemIsSecured>False</ContentItemIsSecured>
+  <ContentItemName>KenyaGakuyuniAA_5Lb-jr0r8hyi</ContentItemName>
+</cms.contentitem>

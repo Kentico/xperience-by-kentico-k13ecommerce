@@ -59,7 +59,7 @@ public static class KenticoStoreServiceCollectionExtensions
             {
                 var config = sp.GetRequiredService<IOptionsMonitor<KenticoStoreConfig>>().CurrentValue;
 
-                client.TokenEndpoint = config.StoreApiUrl?.TrimEnd('/') + "/api/store/auth/token";
+                client.TokenEndpoint = config.StoreApiUrl.TrimEnd('/') + "/api/store/auth/token";
                 client.ClientId = config.ClientId;
                 client.ClientSecret = config.ClientSecret;
                 client.ClientCredentialStyle = ClientCredentialStyle.PostBody;

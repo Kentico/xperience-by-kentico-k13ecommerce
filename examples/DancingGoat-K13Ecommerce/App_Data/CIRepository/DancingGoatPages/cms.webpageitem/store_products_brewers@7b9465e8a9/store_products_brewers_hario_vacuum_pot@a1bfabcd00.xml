@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>HarioVacuumPot-231ex0o1</CodeName>
+    <GUID>737d1853-8f1a-49d6-9d5d-db55bf606be5</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>4f9fb7a8-cafb-4101-b6f2-c129bef24704</WebPageItemGUID>
+  <WebPageItemName>HarioVacuumPot-231ex0o1</WebPageItemName>
+  <WebPageItemOrder>1</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Brewers-b9tkrah3</CodeName>
+    <GUID>16a63bfb-f391-496e-9c47-f28a8ddf14e3</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>/Store/Products/Brewers/Hario_Vacuum_Pot</WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

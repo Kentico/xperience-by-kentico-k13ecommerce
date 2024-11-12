@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.FilterPack</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>f83e19bd-8750-49cc-9608-2000722924d0</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BleachedPaperFiltersV60-01-r5trvog8</CodeName>
+      <GUID>50234556-21f3-4248-b7d8-828fc38aa7b5</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>288b73b0-68be-4d86-af95-166c28c74924</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"FilterPackQuantity":100,"FilterPromotionTitle":null,"FilterPromotionDescription":null,"FilterBannerText":null}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Accessories</DepartmentDisplayName>
+  <ManufacturerDisplayName>Hario</ManufacturerDisplayName>
+  <NodeAliasPath>/Store/Accessories/Bleached-Paper-Filters-V60-01</NodeAliasPath>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"8bc53c35-1919-4fec-bf76-1a4a5de7eaec"}]]]>
+  </ProductImages>
+  <ProductVariants>[]</ProductVariants>
+  <SKUAvailableItems>1</SKUAvailableItems>
+  <SKUDescription>
+    <![CDATA[Enjoy retro V60-01 porcelain filters, made by the Japanese company Hario, with bleached paper filters that sweeten your bitter coffee. These paper filters allow the coffee to flow through the filter while at the same time trapping the coffee grounds inside.]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>86</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:33:12Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Bleached Paper Filters V60-01</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>HAR-V60-01-F</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>10</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>Bleached paper filters for Hario V60-01.</SKUShortDescription>
+  <SKUTrackInventory>ByProduct</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productpage>
+  <ContentItemDataCommonDataID>
+    <GUID>aa4f0985-a7f4-407a-83e0-917e7ffc3729</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>KenyaGakuyuniAA-vmtfuglo</CodeName>
+      <GUID>5db843d7-a1ce-42eb-8586-19290e03db5b</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>6bf356a8-8bd5-4439-beaf-fab027f3810a</ContentItemDataGUID>
+  <Product>
+    <![CDATA[[{"Identifier":"59c81f38-9f55-4d67-baa9-41d1b18358be"}]]]>
+  </Product>
+</contentitemdata.k13store.productpage>

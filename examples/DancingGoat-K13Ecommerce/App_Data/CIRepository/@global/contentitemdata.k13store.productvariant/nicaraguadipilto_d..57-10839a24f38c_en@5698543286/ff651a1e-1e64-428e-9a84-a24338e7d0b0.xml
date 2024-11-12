@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>1e4665b7-ff27-4b82-8757-10839a24f38c</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>NicaraguaDipilto_decaf_16Oz-mt181omq</CodeName>
+      <GUID>2597c2e7-516d-42f8-af61-e9b44a157988</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>ff651a1e-1e64-428e-9a84-a24338e7d0b0</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>30</SKUID>
+  <SKUName>Nicaragua Dipilto (decaf) (16 oz)</SKUName>
+  <SKUNumber>CO-NIC-DIPILTO-16-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

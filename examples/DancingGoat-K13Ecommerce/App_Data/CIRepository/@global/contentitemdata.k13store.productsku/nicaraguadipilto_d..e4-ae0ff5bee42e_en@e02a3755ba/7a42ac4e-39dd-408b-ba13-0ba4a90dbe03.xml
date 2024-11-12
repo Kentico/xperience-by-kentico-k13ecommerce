@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>NicaraguaDipilto_decaf-ec8ryvox</CodeName>
+      <GUID>890bd4a2-0d0a-4807-883b-eb1c6d94be09</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>7a42ac4e-39dd-408b-ba13-0ba4a90dbe03</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"El Progreso, Dipilto","CoffeeCountry":"Nicaragua","CoffeeVariety":"Catura","CoffeeProcessing":"washed","CoffeeAltitude":5050,"CoffeeIsDecaf":true}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
+  <NodeAliasPath>/Store/Coffees/Nicaragua-Dipilto-(decaf)</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"b2c04262-e319-40ec-b285-c1bf09b62a98"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"2597c2e7-516d-42f8-af61-e9b44a157988"},{"Identifier":"d073a71d-14af-46c8-b78f-c070c5f96cd9"},{"Identifier":"f1634cf0-22a0-4431-9ab3-e64a29015717"},{"Identifier":"fdf8a0dc-b8c7-48b0-8396-2980348f13b4"},{"Identifier":"b9089045-d48d-42d8-b03a-69bced3f8abb"}]]]>
+  </ProductVariants>
+  <PublicStatusDisplayName />
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>Quite a peculiar coffee bean, grown at the El Progresso farm in Nueva Segovie, which is one of Nicaragua&#39;s smallest municipalities. This region is next to the mountainous border with Honduras. The north is known for its pines, natural hot springs, amazing cliff-side views, and, of course, the quality of the locally produced coffee. This is partially thanks to the evenly distributed rainfall throughout the year and mild temperatures. Nicaragua Dipilto is grown by a cooperation created to protect the rights of local farming families in the region. Despite being more of an aggregate of family businesses, it has a central cupping lab that provides unified and modern quality control.</p>
+
+<p>Dipilto is best prepared with a darker roast than most Central American varietals. It has a medium body with an aftertaste that might remind you of a rich, spicy tea. The coffee has excellent depth, strong and rich, but a balanced aroma. The beans themselves have a nut-butter like polish to them. The aroma will remind you of chocolate, caramel, and blooming spring flowers. The finish is uncommonly long.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>26</SKUID>
+  <SKUInStoreFrom>2020-08-03 09:01:07Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Nicaragua Dipilto (decaf)</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-NIC-DIPILTO</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[With a medium body and a pleasant aftertaste, try the deep, strong and rich aromas of Nicaragua Dipilto, which comes from a region full of hot springs.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

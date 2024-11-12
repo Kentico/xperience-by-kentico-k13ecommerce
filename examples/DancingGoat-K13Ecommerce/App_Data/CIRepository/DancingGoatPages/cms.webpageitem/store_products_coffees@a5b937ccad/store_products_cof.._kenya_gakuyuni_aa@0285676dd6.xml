@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>KenyaGakuyuniAA-vmtfuglo</CodeName>
+    <GUID>5db843d7-a1ce-42eb-8586-19290e03db5b</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>c554e1aa-3673-47e2-94b5-4f19572c6ce3</WebPageItemGUID>
+  <WebPageItemName>KenyaGakuyuniAA-vmtfuglo</WebPageItemName>
+  <WebPageItemOrder>4</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Coffees-kg4txlkt</CodeName>
+    <GUID>7900e0b8-0209-4208-b7c2-e8c22aa6d93c</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>/Store/Products/Coffees/Kenya_Gakuyuni_AA</WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>c5c950c1-fe01-4a8d-9601-995feedac201</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>BrazilNaturalBarraGrande_4Oz-gu7nqtsq</CodeName>
+      <GUID>8f862b8d-4ccd-44f5-b813-168c7abd2833</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>452f6ce7-f8f7-4a13-9849-6e0eece1c855</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>76</SKUID>
+  <SKUName>Brazil Natural Barra Grande (4 oz)</SKUName>
+  <SKUNumber>CO-BRA-BARRAGRANDE-4-oz</SKUNumber>
+</contentitemdata.k13store.productvariant>

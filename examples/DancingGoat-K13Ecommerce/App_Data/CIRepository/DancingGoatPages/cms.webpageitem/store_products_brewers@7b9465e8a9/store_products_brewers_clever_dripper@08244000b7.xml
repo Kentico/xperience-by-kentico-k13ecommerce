@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.webpageitem>
+  <WebPageItemContentItemID>
+    <CodeName>CleverDripper-5kwrvvf6</CodeName>
+    <GUID>0333a69e-b880-4ab9-b8a9-224209cbb034</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </WebPageItemContentItemID>
+  <WebPageItemGUID>174d7076-e123-40d4-ba03-6b4a282447a6</WebPageItemGUID>
+  <WebPageItemName>CleverDripper-5kwrvvf6</WebPageItemName>
+  <WebPageItemOrder>5</WebPageItemOrder>
+  <WebPageItemParentID>
+    <CodeName>Brewers-b9tkrah3</CodeName>
+    <GUID>16a63bfb-f391-496e-9c47-f28a8ddf14e3</GUID>
+    <ObjectType>cms.webpageitem</ObjectType>
+  </WebPageItemParentID>
+  <WebPageItemTreePath>/Store/Products/Brewers/Clever_Dripper</WebPageItemTreePath>
+  <WebPageItemWebsiteChannelID>
+    <GUID>55e3ae4b-3843-46b8-95d5-79611c371d6f</GUID>
+    <ObjectType>cms.websitechannel</ObjectType>
+    <Parent>
+      <CodeName>DancingGoatPages</CodeName>
+      <GUID>c430f96d-bd56-4448-b6ab-bce41a58f186</GUID>
+      <ObjectType>cms.channel</ObjectType>
+    </Parent>
+  </WebPageItemWebsiteChannelID>
+</cms.webpageitem>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>6c6b7e14-c9c6-4b33-8d4f-cd934e28568a</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>MacapM2D-d9e4zila</CodeName>
+      <GUID>aa130310-93a6-4c61-af3a-cc85324589c7</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>65c9a1e4-7759-48e5-993f-3f2ff46c31b4</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"71b3e979-a304-42e3-8a0e-a1b170692e92","Name":"Macap M2D.jpg","Extension":".jpg","Size":25797,"LastModified":"2024-10-24T14:39:05.4891787Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Macap M2D</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/d49c05c7-a9d1-4c3c-be15-d52f28f7d9ef/macap-m2d]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

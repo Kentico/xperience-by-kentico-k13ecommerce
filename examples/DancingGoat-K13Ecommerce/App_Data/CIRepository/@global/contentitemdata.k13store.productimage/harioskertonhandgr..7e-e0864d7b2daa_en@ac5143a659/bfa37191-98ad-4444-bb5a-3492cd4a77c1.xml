@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productimage>
+  <ContentItemDataCommonDataID>
+    <GUID>9273cfa8-e752-479c-817e-e0864d7b2daa</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioSkertonHandGrinder-kv67nmjb</CodeName>
+      <GUID>45d4878d-35d3-4eac-896b-5e6ba7c3fb40</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>bfa37191-98ad-4444-bb5a-3492cd4a77c1</ContentItemDataGUID>
+  <ProductImageAsset>
+    <![CDATA[{"Identifier":"3074b19a-194e-40da-ad21-5abd9ebe7de3","Name":"Hario Skerton Hand Grinder.jpg","Extension":".jpg","Size":21768,"LastModified":"2024-10-24T14:38:58.3796549Z"}]]>
+  </ProductImageAsset>
+  <ProductImageDescription>Hario Skerton Hand Grinder</ProductImageDescription>
+  <ProductImageOriginalPath>
+    <![CDATA[/getmetafile/e3a14b62-2a86-4661-a21f-ae7bd1e2d74d/hario-skerton]]>
+  </ProductImageOriginalPath>
+</contentitemdata.k13store.productimage>

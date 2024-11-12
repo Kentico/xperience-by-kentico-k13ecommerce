@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.ordercomplete>
+  <ContentItemDataCommonDataID>
+    <GUID>94f6467e-8e36-47a3-a650-c90caa9e4b98</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>OrderComplete-x6ng68di</CodeName>
+      <GUID>5160d155-791e-4032-b63d-9eacb4bd961c</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>292057e7-3205-44f1-a868-071b8faa4f19</ContentItemDataGUID>
+</contentitemdata.k13store.ordercomplete>

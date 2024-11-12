@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>a8997cf2-1226-407b-87fa-5f782adfd452</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>EthiopiaYirgacheffe_decaf_2Lb-8z5mzxnc</CodeName>
+      <GUID>5757eede-9782-4e68-9793-d4e5d584b9a8</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>eb25e734-57c9-473e-9550-bac60c1fdb80</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>101</SKUID>
+  <SKUName>Ethiopia Yirgacheffe (decaf) (2 lb)</SKUName>
+  <SKUNumber>CO-ETH-YIRGACHEFFE-2-lb</SKUNumber>
+</contentitemdata.k13store.productvariant>

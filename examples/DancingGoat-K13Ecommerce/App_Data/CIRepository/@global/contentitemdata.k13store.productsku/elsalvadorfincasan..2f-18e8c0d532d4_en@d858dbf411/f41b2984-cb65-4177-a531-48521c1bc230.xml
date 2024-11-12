@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>2d659ccb-2746-4d7e-a52f-18e8c0d532d4</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>ElSalvadorFincaSanJose-kkan6326</CodeName>
+      <GUID>27504109-3555-4b4c-a769-e56d1e806293</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>f41b2984-cb65-4177-a531-48521c1bc230</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"Finca San Jose","CoffeeCountry":"ElSalvador","CoffeeVariety":"Red Bourbon","CoffeeProcessing":"washed","CoffeeAltitude":5000,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
+  <NodeAliasPath>/Store/Coffees/El-Salvador-Finca-San-Jose</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"31326f8c-a482-4c05-8fc2-734466842f9b"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"fc46bef6-fbc8-4a31-9c74-66b087e36c16"},{"Identifier":"be0df2e5-513c-4752-ba0e-6fdaf46bec0c"},{"Identifier":"751ad162-5c3e-4e93-aaf1-6f052d90ef7d"},{"Identifier":"2542f769-2507-408b-bbba-ba40bd9d0d57"},{"Identifier":"5798a094-08af-4633-ba7d-ea5dc51448e5"}]]]>
+  </ProductVariants>
+  <PublicStatusDisplayName />
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>This coffee comes from a family business in El Salvador and you can really feel that this coffee is made with a passion and tradition that that has lasted three centuries. The smooth, creamy mouth sensation is something you just must try. It doesn&#39;t matter if you prefer espresso or a sundae, El Salvador Finca San Jose is one of the El Salvador&#39;s finest.</p>
+
+<p>Taste Finca and you will never forget its clean, sweet chocolate taste of cherries and oranges.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>119</SKUID>
+  <SKUInStoreFrom>2020-08-03 08:52:42Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>El Salvador Finca San Jose</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-SAL-SANJOSE</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[A passionate traditional Salvadorian coffee with the creamy sensation of a sweet chocolate taste, suitable for all types of preparation.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

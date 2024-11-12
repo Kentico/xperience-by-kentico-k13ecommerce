@@ -82,7 +82,7 @@
                             <input type="hidden" id="js-parent-product-id" name="ParentSKUID" value="@(Model.SKUID)"/>
                             <label class="units-label">Qty</label>
                             <input type="text" name="Units" value="1" class="add-to-cart-textbox"/>
-                            <input type="submit" id="js-submit-add-to-cart" value="Add to cart" class="btn btn-primary add-to-cart-button @(Model.AllowSale ? "" : "btn-disabled")" disabled="@(!Model.AllowSale)"/>
+                            <input type="submit" id="js-submit-add-to-cart" value="Add to cart" data-testid="addToCart" class="btn btn-primary add-to-cart-button @(Model.AllowSale ? "" : "btn-disabled")" disabled="@(!Model.AllowSale)"/>
                         </div>
                     </form>
                 </div>

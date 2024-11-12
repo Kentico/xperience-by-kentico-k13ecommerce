@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productsku>
+  <ClassName>DancingGoatCore.Coffee</ClassName>
+  <ContentItemDataCommonDataID>
+    <GUID>b3a5153f-a00a-4bc4-addf-f0d5f34c6c99</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>GuatemalaFincaElInjerto-inu09m1y</CodeName>
+      <GUID>4c5a5540-1d17-46ba-8f9c-191f3b1fb901</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>71664c97-c90b-4961-9897-3f4f636474be</ContentItemDataGUID>
+  <CustomFields>
+    <![CDATA[{"CoffeeFarm":"Finca El Injerto","CoffeeCountry":"Guatemala","CoffeeVariety":"Bourbon","CoffeeProcessing":"washed","CoffeeAltitude":5600,"CoffeeIsDecaf":false}]]>
+  </CustomFields>
+  <DepartmentDisplayName>Coffees	</DepartmentDisplayName>
+  <ManufacturerDisplayName />
+  <NodeAliasPath>/Store/Coffees/Guatemala-Finca-El-Injerto</NodeAliasPath>
+  <NodeGUID>00000000-0000-0000-0000-000000000000</NodeGUID>
+  <ProductImages>
+    <![CDATA[[{"Identifier":"cc2cfe17-91cd-4e20-8be3-8bbd192fc13c"}]]]>
+  </ProductImages>
+  <ProductVariants>
+    <![CDATA[[{"Identifier":"06ec2834-aefb-4de0-8885-d10dd513faab"},{"Identifier":"862fcb49-4d2c-4e0b-a199-587f766d58a3"},{"Identifier":"f3082763-8686-49fd-b93f-33a9c0ca40b2"},{"Identifier":"bccbe4cb-33e0-413e-ae32-23db4f48c2c9"},{"Identifier":"7f75f453-bde4-4c52-ab18-7babf43644df"}]]]>
+  </ProductVariants>
+  <PublicStatusDisplayName />
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUDescription>
+<![CDATA[
+<p>This Guatemalan gold tastes of classy alcoholic drinks &ndash; something between cognac and champagne &ndash; along with a classic grape and apricot flavor. Once you sip a cup of the Finca El Injerto, you will at once taste the flavor of Central America.</p>
+
+<p>These superb cherries come from a one-hundred-year family growing business in Guatemala City. The family&#39;s growing secret is to avoid insecticides and use water when milling. Also, an interesting fact about the growers is that they ferment their cherries for up to 72 hours in a wet and cold environment before drying the beans.</p>
+
+]]>
+  </SKUDescription>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>104</SKUID>
+  <SKUInStoreFrom>2020-08-03 08:57:35Z</SKUInStoreFrom>
+  <SKUMaxItemsInOrder>0</SKUMaxItemsInOrder>
+  <SKUMinItemsInOrder>0</SKUMinItemsInOrder>
+  <SKUName>Guatemala Finca El Injerto</SKUName>
+  <SKUNeedsShipping>True</SKUNeedsShipping>
+  <SKUNumber>CO-GUA-ELINJERTO</SKUNumber>
+  <SKUProductType>Product</SKUProductType>
+  <SKUReorderAt>0</SKUReorderAt>
+  <SKUSellOnlyAvailable>False</SKUSellOnlyAvailable>
+  <SKUShortDescription>
+    <![CDATA[Tasting of cognac and champagne, this coffee is very original. Try Finca El Injerto,&nbsp;a superb Central American coffee.]]>
+  </SKUShortDescription>
+  <SKUTrackInventory>Disabled</SKUTrackInventory>
+</contentitemdata.k13store.productsku>

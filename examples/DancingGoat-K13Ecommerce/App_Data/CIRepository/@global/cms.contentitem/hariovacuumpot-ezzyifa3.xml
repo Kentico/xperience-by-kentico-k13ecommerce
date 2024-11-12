@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitem>
+  <ContentItemContentFolderID>
+    <CodeName>SKUs-bk5n2769</CodeName>
+    <GUID>99e70773-fe93-498b-91bd-1417a5ef8f4c</GUID>
+    <ObjectType>cms.contentfolder</ObjectType>
+  </ContentItemContentFolderID>
+  <ContentItemContentTypeID>
+    <CodeName>K13Store.ProductSKU</CodeName>
+    <GUID>6cae7e67-4cbf-4155-a3f6-c74773ac3836</GUID>
+    <ObjectType>cms.contenttype</ObjectType>
+  </ContentItemContentTypeID>
+  <ContentItemGUID>60f0458c-4f04-406b-8867-fcc449acf034</ContentItemGUID>
+  <ContentItemIsReusable>True</ContentItemIsReusable>
+  <ContentItemIsSecured>False</ContentItemIsSecured>
+  <ContentItemName>HarioVacuumPot-ezzyifa3</ContentItemName>
+</cms.contentitem>

@@ -6,7 +6,7 @@
     <DisableCodeAnalysis>True</DisableCodeAnalysis>
     <NoWarn>$(NoWarn);CS1570;CS1572;1591</NoWarn>
     <UserSecretsId>0674b988-fda9-4e92-817f-2662f79e8ebe</UserSecretsId>
-	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="App_Data\CMSModules\WebFarm\webfarm.sync" />
@@ -24,10 +24,10 @@
     <DefineConstants>$(DefineConstants);SEPARATED_ADMIN</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="kentico.xperience.admin" Condition="'$(SeparatedAdmin)' == 'false'" />
-    <PackageReference Include="kentico.xperience.azurestorage" />
-    <PackageReference Include="kentico.xperience.imageprocessing" />
-    <PackageReference Include="kentico.xperience.webapp" />
+    <PackageReference Include="kentico.xperience.admin" Condition="'$(SeparatedAdmin)' == 'false'" VersionOverride="$(XbyKVersion)" />
+    <PackageReference Include="kentico.xperience.azurestorage" VersionOverride="$(XbyKVersion)" />
+    <PackageReference Include="kentico.xperience.imageprocessing" VersionOverride="$(XbyKVersion)" />
+    <PackageReference Include="kentico.xperience.webapp" VersionOverride="$(XbyKVersion)" />
     <PackageReference Include="Scrutor" />
     <PackageReference Include="System.Linq.Async" />
   </ItemGroup>

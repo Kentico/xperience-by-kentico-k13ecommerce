@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.k13store.productvariant>
+  <ContentItemDataCommonDataID>
+    <GUID>befdc634-711d-48da-999f-79a84d481aba</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>HarioV60_Plastic_Clear_2Cups-vn19mcl4</CodeName>
+      <GUID>ff0e3b71-9699-4ce6-8874-045a4ac6c7aa</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>bc1c61f8-aeea-41f0-b1b4-49f305ee8449</ContentItemDataGUID>
+  <SKUAvailableItems>0</SKUAvailableItems>
+  <SKUEnabled>True</SKUEnabled>
+  <SKUID>44</SKUID>
+  <SKUName>Hario V60 (Plastic, Clear, 2 cups)</SKUName>
+  <SKUNumber>HAR-V60-Plastic-Clear-2-cups</SKUNumber>
+</contentitemdata.k13store.productvariant>
