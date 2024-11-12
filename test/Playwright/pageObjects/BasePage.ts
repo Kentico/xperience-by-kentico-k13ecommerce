@@ -11,6 +11,7 @@ export class BasePage {
     await this.page.goto(url);
     await this.fullyLoadPage();
   }
+  
   async fullyLoadPage() {
     await this.page.evaluate(() =>
       document.querySelectorAll("img[loading=lazy]").forEach((img) => img.setAttribute("loading", "eager"))
@@ -18,9 +19,9 @@ export class BasePage {
 
     await this.page.evaluate(async () => {
       await new Promise((resolve) => {
-        var totalHeight = 0;
-        var distance = 200;
-        var timer = setInterval(() => {
+        let totalHeight = 0;
+        const distance = 200;
+        const timer = setInterval(() => {
           var scrollHeight = document.body.scrollHeight;
           window.scrollBy(0, distance);
           totalHeight += distance;
