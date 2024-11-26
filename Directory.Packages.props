@@ -9,7 +9,7 @@
     <XbyKVersion Condition="'$(XbyKVersion)' == ''">$(LastAppliedHotfix)</XbyKVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Duende.AccessTokenManagement.OpenIdConnect" Version="3.0.0" />
+    <PackageVersion Include="Duende.AccessTokenManagement.OpenIdConnect" Version="3.0.1" />
     <PackageVersion Include="Kentico.Xperience.Admin" Version="$(LastAppliedHotfix)" />
     <PackageVersion Include="Kentico.Xperience.WebApp" Version="$(LastAppliedHotfix)" />
     <PackageVersion Include="kentico.xperience.azurestorage" Version="$(LastAppliedHotfix)" />
