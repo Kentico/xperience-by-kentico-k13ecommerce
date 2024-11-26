@@ -27,6 +27,9 @@ namespace Samples.DancingGoat
     {
         private const string DATA_PROTECTION_SAMPLES_ENABLED_SETTINGS_KEY_NAME = "DataProtectionSamplesEnabled";
 
+        private const string CurrentContact = "CurrentContact";
+        private const string CrossSiteContact = "CrossSiteContact";
+
         private IInfoProvider<ContactInfo> contactInfoProvider;
         private IMemberInfoProvider memberInfoProvider;
         private IInfoProvider<ConsentAgreementInfo> consentAgreementInfoProvider;
@@ -134,11 +137,8 @@ namespace Samples.DancingGoat
                     // Remove cookies used for contact tracking
                     var cookieAccessor = Service.Resolve<ICookieAccessor>();
 
-#pragma warning disable CS0618 // CookieName is obsolete
-                    cookieAccessor.Remove(CookieName.CurrentContact);
-                    cookieAccessor.Remove(CookieName.CrossSiteContact);
-#pragma warning restore CS0618 // CookieName is obsolete
-
+                    cookieAccessor.Remove(CurrentContact);
+                    cookieAccessor.Remove(CrossSiteContact);
 
                     // Set the cookie level to default
                     var cookieLevelProvider = Service.Resolve<ICurrentCookieLevelProvider>();
