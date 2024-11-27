@@ -43,6 +43,7 @@
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
   <ClassIconClass>xp-box-cart</ClassIconClass>
   <ClassName>K13Store.CartSummary</ClassName>
+  <ClassShortName>K13StoreCartSummary</ClassShortName>
   <ClassTableName>K13Store_CartSummary</ClassTableName>
   <ClassType>Content</ClassType>
   <ClassWebPageHasUrl>True</ClassWebPageHasUrl>

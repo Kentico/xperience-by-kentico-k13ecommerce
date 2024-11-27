@@ -93,6 +93,7 @@
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
   <ClassIconClass>xp-home</ClassIconClass>
   <ClassName>DancingGoat.HomePage</ClassName>
+  <ClassShortName>DancingGoatHomePage</ClassShortName>
   <ClassTableName>DancingGoat_HomePage</ClassTableName>
   <ClassType>Content</ClassType>
   <ClassWebPageHasUrl>True</ClassWebPageHasUrl>

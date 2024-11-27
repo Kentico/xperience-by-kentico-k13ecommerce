@@ -13,6 +13,7 @@
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
   <ClassIconClass>xp-invoice</ClassIconClass>
   <ClassName>K13Store.OrderComplete</ClassName>
+  <ClassShortName>K13StoreOrderComplete</ClassShortName>
   <ClassTableName>K13Store_OrderComplete</ClassTableName>
   <ClassType>Content</ClassType>
   <ClassWebPageHasUrl>True</ClassWebPageHasUrl>
