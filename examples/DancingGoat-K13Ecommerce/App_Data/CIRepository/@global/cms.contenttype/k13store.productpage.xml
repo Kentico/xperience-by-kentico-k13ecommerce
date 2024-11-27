@@ -32,6 +32,7 @@
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
   <ClassIconClass>xp-box</ClassIconClass>
   <ClassName>K13Store.ProductPage</ClassName>
+  <ClassShortName>K13StoreProductPage</ClassShortName>
   <ClassTableName>K13Store_ProductPage</ClassTableName>
   <ClassType>Content</ClassType>
   <ClassWebPageHasUrl>True</ClassWebPageHasUrl>

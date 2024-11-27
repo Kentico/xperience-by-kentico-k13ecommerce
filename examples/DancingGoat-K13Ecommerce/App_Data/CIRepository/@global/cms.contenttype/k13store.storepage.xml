@@ -31,6 +31,7 @@
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
   <ClassIconClass>xp-market</ClassIconClass>
   <ClassName>K13Store.StorePage</ClassName>
+  <ClassShortName>K13StoreStorePage</ClassShortName>
   <ClassTableName>K13Store_StorePage</ClassTableName>
   <ClassType>Content</ClassType>
   <ClassWebPageHasUrl>True</ClassWebPageHasUrl>

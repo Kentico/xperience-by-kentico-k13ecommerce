@@ -31,6 +31,7 @@
   <ClassHasUnmanagedDbSchema>False</ClassHasUnmanagedDbSchema>
   <ClassIconClass>xp-shopping-cart</ClassIconClass>
   <ClassName>K13Store.CartContent</ClassName>
+  <ClassShortName>K13StoreCartContent</ClassShortName>
   <ClassTableName>K13Store_CartContent</ClassTableName>
   <ClassType>Content</ClassType>
   <ClassWebPageHasUrl>True</ClassWebPageHasUrl>
