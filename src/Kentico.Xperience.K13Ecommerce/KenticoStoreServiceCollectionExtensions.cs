@@ -2,6 +2,7 @@
 
 using IdentityModel.Client;
 
+using Kentico.Web.Mvc;
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 using Kentico.Xperience.K13Ecommerce.Activities;
 using Kentico.Xperience.K13Ecommerce.Admin;
@@ -44,6 +45,10 @@ public static class KenticoStoreServiceCollectionExtensions
     public static IServiceCollection AddKenticoStoreServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddOptions<KenticoStoreConfig>().Bind(configuration.GetSection("CMS" + nameof(KenticoStoreConfig)));
+
+        services.Configure<CookieLevelOptions>(options =>
+            options.CookieConfigurations.Add(ShoppingCartClientStorage.ShoppingCartKey, CookieLevel.Essential)
+        );
 
         // default cache for token management
         services.AddDistributedMemoryCache();
