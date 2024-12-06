@@ -1,4 +1,5 @@
 ﻿using Kentico.Xperience.K13Ecommerce.Orders;
+using Kentico.Xperience.K13Ecommerce.Products;
 using Kentico.Xperience.K13Ecommerce.ShoppingCart;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 
@@ -55,7 +56,7 @@ public class TestController(IKenticoStoreApiClient storeApiClient, IShoppingServ
 
         order.OrderShippingOption = new KShippingOption { ShippingOptionId = 2 };
         order.OrderPaymentOption = new KPaymentOption { PaymentOptionId = 1 };
-        
+
         order.OrderPaymentResult = new KPaymentResult
         {
             PaymentIsCompleted = true,
@@ -66,6 +67,20 @@ public class TestController(IKenticoStoreApiClient storeApiClient, IShoppingServ
         await orderService.UpdateOrder(order);
 
         return Ok();
+    }
+
+    public async Task<IActionResult> TestCartCacheIssue([FromServices] IShoppingService shoppingService, [FromServices] IProductService productService)
+    {
+        //first ensure that ShoppingCartGUID cookie is set to existing cart from previous session
+
+        var prices = await productService.GetProductPrices(33);//set real SKUID
+                                                               // now empty cart is cached in K13
+
+        var cart = await shoppingService.GetCurrentShoppingCartContent();
+
+        // now when cart is empty and cookie is removed -> invalid
+
+        return Json(cart);
     }
 }
 #endif

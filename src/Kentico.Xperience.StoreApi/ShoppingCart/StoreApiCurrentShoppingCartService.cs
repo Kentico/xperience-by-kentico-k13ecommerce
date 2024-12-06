@@ -99,16 +99,19 @@ internal class StoreApiCurrentShoppingCartService : ICurrentShoppingCartService
     /// <returns>Candidate cart or <c>null</c> when no candidate cart found.</returns>
     protected ShoppingCartInfo GetCandidateCart(ref bool anonymize, ref bool evaluationIsNeeded)
     {
+        //custom code starts
+        var shoppingCartGuid = GetCurrentCartGuid();
+
         var cart = mCartCache.GetCart();
-        if (cart != null)
+        if (cart != null && (shoppingCartGuid == Guid.Empty || cart.ShoppingCartGUID != Guid.Empty))
         {
+            // Return cached cart only when requested ShoppingCartGuid is empty otherwise cached cart cannot be empty (ShoppingCartGUID is empty GUID).
+            // Cache can contain empty cart from another request where cart identifier is not sent, like request for price calculation which works with empty cart
             return cart;
         }
 
         evaluationIsNeeded = true;
 
-        //custom code starts
-        var shoppingCartGuid = GetCurrentCartGuid();
         cart = shoppingCartGuid != Guid.Empty ? mCartRepository.GetCart(shoppingCartGuid) : null;
         //Don't anonymize cart because getting cart from client is only way how to get it when it isn't cached.
         //On client app (xbyK) session storage is used as primary option and cookie as secondary, so some anonymize flag in REST api
