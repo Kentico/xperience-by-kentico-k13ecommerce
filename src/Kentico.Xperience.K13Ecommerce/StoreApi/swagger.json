@@ -2909,7 +2909,7 @@
         "properties": {
           "paymentDate": {
             "type": "string",
-            "nullable": true
+            "format": "date-time"
           },
           "paymentIsCompleted": {
             "type": "boolean"
@@ -3639,7 +3639,7 @@
             "nullable": true
           }
         },
-        "additionalProperties": {}
+        "additionalProperties": { }
       },
       "ProductInventoryPriceInfo": {
         "type": "object",
@@ -3746,7 +3746,7 @@
   },
   "security": [
     {
-      "Bearer": []
+      "Bearer": [ ]
     }
   ]
 }

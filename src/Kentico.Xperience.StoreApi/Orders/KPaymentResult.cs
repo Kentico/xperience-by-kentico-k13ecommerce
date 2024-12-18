@@ -2,7 +2,7 @@
 
 public class KPaymentResult
 {
-    public string PaymentDate { get; set; }
+    public DateTime PaymentDate { get; set; }
 
     public bool PaymentIsCompleted { get; set; }
 
