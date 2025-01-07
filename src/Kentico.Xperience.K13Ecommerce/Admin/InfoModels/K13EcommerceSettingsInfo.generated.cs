@@ -1,5 +1,4 @@
 using System.Data;
-using System.Runtime.Serialization;
 
 using CMS;
 using CMS.DataEngine;
@@ -13,8 +12,7 @@ namespace CMS.Integration.K13Ecommerce
     /// <summary>
     /// Data container class for <see cref="K13EcommerceSettingsInfo"/>.
     /// </summary>
-    [Serializable]
-    public partial class K13EcommerceSettingsInfo : AbstractInfo<K13EcommerceSettingsInfo, IInfoProvider<K13EcommerceSettingsInfo>>, IInfoWithId
+    public partial class K13EcommerceSettingsInfo : AbstractInfo<K13EcommerceSettingsInfo, IInfoProvider<K13EcommerceSettingsInfo>>, IInfoWithId, IInfoWithGuid
     {
         /// <summary>
         /// Object type.
@@ -27,7 +25,7 @@ namespace CMS.Integration.K13Ecommerce
         /// </summary>
         public static readonly ObjectTypeInfo TYPEINFO = new(typeof(IInfoProvider<K13EcommerceSettingsInfo>), OBJECT_TYPE, "KenticoK13ecommerce.Settings", nameof(K13EcommerceSettingsID), null, nameof(K13EcommerceSettingsGuid), null, null, null, null, null)
         {
-            TouchCacheDependencies = true
+            TouchCacheDependencies = true,
         };
 
 
@@ -91,7 +89,7 @@ namespace CMS.Integration.K13Ecommerce
         public virtual string K13EcommerceSettingsWorkspaceName
         {
             get => ValidationHelper.GetString(GetValue(nameof(K13EcommerceSettingsWorkspaceName)), string.Empty);
-            set => SetValue(nameof(K13EcommerceSettingsWorkspaceName), value);
+            set => SetValue(nameof(K13EcommerceSettingsWorkspaceName), value, string.Empty);
         }
 
 

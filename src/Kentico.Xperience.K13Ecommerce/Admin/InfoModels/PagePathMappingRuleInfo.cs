@@ -5,6 +5,7 @@
         static PagePathMappingRuleInfo()
         {
             TYPEINFO.ContinuousIntegrationSettings.Enabled = true;
+            TYPEINFO.OrderColumn = nameof(PagePathMappingRuleOrder);
         }
     }
 }
