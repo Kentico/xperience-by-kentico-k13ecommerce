@@ -1,4 +1,6 @@
-﻿using K13Store;
+﻿using CMS.Integration.K13Ecommerce;
+
+using K13Store;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 
@@ -23,14 +25,14 @@ internal class ProductImageSynchronizationService : SynchronizationServiceCommon
 
     /// <inheritdoc/>
     public async Task<IReadOnlySet<Guid>> ProcessImages(IEnumerable<ProductImageDto> images,
-        IEnumerable<ProductImage> existingImages, string language, int userId)
+        IEnumerable<ProductImage> existingImages, K13EcommerceSettingsInfo ecommerceSettings, string language, int userId)
     {
         var (toCreate, toUpdate, toDelete) = ClassifyItems<ProductImageDto, ProductImage, string>(images, existingImages);
 
         var newContentsIDs = new HashSet<int>();
         foreach (var imageToCreate in toCreate)
         {
-            if (await CreateProductImage(imageToCreate, language, userId) is int id and > 0)
+            if (await CreateProductImage(imageToCreate, ecommerceSettings, language, userId) is int id and > 0)
             {
                 newContentsIDs.Add(id);
             }
@@ -53,7 +55,7 @@ internal class ProductImageSynchronizationService : SynchronizationServiceCommon
     }
 
 
-    private async Task<int> CreateProductImage(ProductImageDto productImage, string languageName, int userID)
+    private async Task<int> CreateProductImage(ProductImageDto productImage, K13EcommerceSettingsInfo ecommerceSettings, string languageName, int userID)
     {
         var syncItem = new ProductImageSynchronizationItem
         {
@@ -65,7 +67,8 @@ internal class ProductImageSynchronizationService : SynchronizationServiceCommon
         {
             ContentItem = syncItem,
             LanguageName = languageName,
-            UserID = userID
+            UserID = userID,
+            WorkspaceName = ecommerceSettings.K13EcommerceSettingsEffectiveWorkspaceName
         };
 
         int itemId = await contentItemService.AddContentItem(addParams);

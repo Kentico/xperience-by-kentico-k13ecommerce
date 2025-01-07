@@ -19,10 +19,14 @@ internal class SettingsConfigurationModel
     [DropDownComponent(Label = K13EcommerceSettingsConstants.SettingsProductImageFolderGuid, DataProviderType = typeof(ContentFolderOptionsProvider), Order = 2)]
     public string ProductImageFolderGuid { get; set; } = string.Empty;
 
+    [TextInputComponent(Label = K13EcommerceSettingsConstants.SettingsWorkspaceName, Order = 3, ExplanationText = "If empty, default workspace name is used")]
+    public string WorkspaceName { get; set; } = string.Empty;
+
     internal void MapToSettingsInfo(K13EcommerceSettingsInfo infoObject)
     {
         infoObject.K13EcommerceSettingsProductSKUFolderGuid = Guid.Parse(ProductSKUFolderGuid);
         infoObject.K13EcommerceSettingsProductVariantFolderGuid = Guid.Parse(ProductVariantFolderGuid);
         infoObject.K13EcommerceSettingsProductImageFolderGuid = Guid.Parse(ProductImageFolderGuid);
+        infoObject.K13EcommerceSettingsWorkspaceName = WorkspaceName;
     }
 }

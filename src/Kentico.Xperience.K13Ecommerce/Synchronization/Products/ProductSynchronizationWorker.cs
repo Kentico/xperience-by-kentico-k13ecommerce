@@ -4,8 +4,6 @@ using CMS.Base;
 using CMS.Core;
 
 using Kentico.Xperience.K13Ecommerce.Config;
-using Kentico.Xperience.K13Ecommerce.Synchronization.ContentItems;
-using Kentico.Xperience.K13Ecommerce.Synchronization.ProductPages;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -59,12 +57,8 @@ internal class ProductSynchronizationWorker : ThreadWorker<ProductSynchronizatio
     {
         using var serviceScope = Service.Resolve<IServiceProvider>().CreateScope();
         var provider = serviceScope.ServiceProvider;
-        var productSynchronizationService = provider.GetRequiredService<IProductSynchronizationService>();
-        productSynchronizationService.SynchronizeProducts().GetAwaiter().GetResult();
-        var contentItemFolderSynchronizationService = provider.GetRequiredService<IContentItemFolderSynchronizationService>();
-        contentItemFolderSynchronizationService.SynchronizeContentItemFolders().GetAwaiter().GetResult();
-        var productPageSynchronizationService = provider.GetRequiredService<IProductPageSynchronizationService>();
-        productPageSynchronizationService.SynchronizeProductPages().GetAwaiter().GetResult();
+        var productSynchronizationWorkerService = provider.GetRequiredService<IProductSynchronizationWorkerService>();
+        productSynchronizationWorkerService.SynchronizeProducts().GetAwaiter().GetResult();
     }
 
 

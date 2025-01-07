@@ -84,6 +84,16 @@ namespace CMS.Integration.K13Ecommerce
             set => SetValue(nameof(K13EcommerceSettingsProductImageFolderGuid), value);
         }
 
+        /// <summary>
+        /// K13 ecommerce settings workspace name.
+        /// </summary>
+        [DatabaseField]
+        public virtual string K13EcommerceSettingsWorkspaceName
+        {
+            get => ValidationHelper.GetString(GetValue(nameof(K13EcommerceSettingsWorkspaceName)), string.Empty);
+            set => SetValue(nameof(K13EcommerceSettingsWorkspaceName), value);
+        }
+
 
         /// <summary>
         /// Deletes the object using appropriate provider.
@@ -100,17 +110,6 @@ namespace CMS.Integration.K13Ecommerce
         protected override void SetObject()
         {
             Provider.Set(this);
-        }
-
-
-        /// <summary>
-        /// Constructor for de-serialization.
-        /// </summary>
-        /// <param name="info">Serialization info.</param>
-        /// <param name="context">Streaming context.</param>
-        protected K13EcommerceSettingsInfo(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
         }
 
 

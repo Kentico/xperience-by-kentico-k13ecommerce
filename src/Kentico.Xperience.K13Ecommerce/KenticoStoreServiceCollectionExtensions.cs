@@ -11,6 +11,7 @@ using Kentico.Xperience.K13Ecommerce.Countries;
 using Kentico.Xperience.K13Ecommerce.Customers;
 using Kentico.Xperience.K13Ecommerce.Orders;
 using Kentico.Xperience.K13Ecommerce.Products;
+using Kentico.Xperience.K13Ecommerce.Settings;
 using Kentico.Xperience.K13Ecommerce.ShoppingCart;
 using Kentico.Xperience.K13Ecommerce.SiteStore;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
@@ -100,6 +101,8 @@ public static class KenticoStoreServiceCollectionExtensions
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IWebPageFolderService, WebPageFolderService>();
         services.AddScoped<IContentItemFolderSynchronizationService, ContentItemFolderSynchronizationService>();
+        services.AddScoped<IEcommerceSettingsService, EcommerceSettingsService>();
+        services.AddScoped<IProductSynchronizationWorkerService, ProductSynchronizationWorkerService>();
 
         services.AddSingleton<IK13EcommerceModuleInstaller, K13EcommerceModuleInstaller>();
         services.AddSingleton<IWebsiteChannelProvider, WebsiteChannelProvider>();
