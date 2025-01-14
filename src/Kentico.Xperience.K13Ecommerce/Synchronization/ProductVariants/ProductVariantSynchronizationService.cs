@@ -9,30 +9,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductVariants;
 
-internal class ProductVariantSynchronizationService : SynchronizationServiceCommon,
-    IProductVariantSynchronizationService
+/// <inheritdoc/>
+internal class ProductVariantSynchronizationService(
+    IContentItemService contentItemService,
+    ILogger<ProductVariantSynchronizationService> logger)
+    : IProductVariantSynchronizationService
 {
-    private readonly IContentItemService contentItemService;
-    private readonly ILogger<ProductVariantSynchronizationService> logger;
-
-
-    /// <inheritdoc/>
-    public ProductVariantSynchronizationService(IContentItemService contentItemService,
-        ILogger<ProductVariantSynchronizationService> logger,
-        IHttpClientFactory httpClientFactory) : base(httpClientFactory)
-    {
-        this.contentItemService = contentItemService;
-        this.logger = logger;
-    }
-
-
     /// <inheritdoc/>
     public async Task<IReadOnlySet<Guid>> ProcessVariants(IEnumerable<KProductVariant> variants,
         IEnumerable<ProductVariant> existingVariants,
         K13EcommerceSettingsInfo ecommerceSettings, string language, int userId)
     {
         var (toCreate, toUpdate, toDelete) =
-            ClassifyItems<KProductVariant, ProductVariant, int>(variants, existingVariants);
+            SynchronizationHelper.ClassifyItems<KProductVariant, ProductVariant, int>(variants, existingVariants);
         var newContentIDs = new HashSet<int>();
         foreach (var variantToCreate in toCreate)
         {

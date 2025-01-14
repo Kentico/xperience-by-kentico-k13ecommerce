@@ -24,9 +24,9 @@ internal class ProductSynchronizationService(
     IProductService productService,
     IProductVariantSynchronizationService variantSynchronizationService,
     IProductImageSynchronizationService productImageSynchronizationService,
-    IHttpClientFactory httpClientFactory,
     ISiteStoreService siteStoreService,
-    IOptionsMonitor<KenticoStoreConfig> config) : SynchronizationServiceCommon(httpClientFactory), IProductSynchronizationService
+    IOptionsMonitor<KenticoStoreConfig> config)
+    : IProductSynchronizationService
 {
     public async Task SynchronizeProducts(K13EcommerceSettingsInfo ecommerceSettings)
     {
@@ -64,7 +64,7 @@ internal class ProductSynchronizationService(
             await contentItemService.GetContentItems<ProductSKU>(ProductSKU.CONTENT_TYPE_NAME, linkedItemsLevel: 2);
 
         var (toCreate, toUpdate, toDelete) =
-            ClassifyItems<KProductNode, ProductSKU, int>(kenticoStoreProducts, contentItemProducts);
+            SynchronizationHelper.ClassifyItems<KProductNode, ProductSKU, int>(kenticoStoreProducts, contentItemProducts);
 
         int adminUserId = UserInfoProvider.AdministratorUser.UserID;
         foreach (var productToCreate in toCreate)
