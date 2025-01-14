@@ -1,6 +1,5 @@
 ﻿using CMS.ContentEngine;
 using CMS.ContentEngine.Internal;
-using CMS.DataEngine;
 using CMS.Integration.K13Ecommerce;
 using CMS.Membership;
 
@@ -11,37 +10,26 @@ namespace Kentico.Xperience.K13Ecommerce.Synchronization.ContentItems;
 internal class ContentItemFolderSynchronizationService : IContentItemFolderSynchronizationService
 {
     private readonly IContentQueryExecutor contentQueryExecutor;
-    private readonly IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider;
     private readonly IContentFolderManager contentFolderManager;
 
     public ContentItemFolderSynchronizationService(
         IContentQueryExecutor contentQueryExecutor,
-        IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider,
         IContentFolderManagerFactory contentFolderManagerFactory)
     {
         this.contentQueryExecutor = contentQueryExecutor;
-        this.k13EcommerceSettingsInfoProvider = k13EcommerceSettingsInfoProvider;
         contentFolderManager = contentFolderManagerFactory.Create(UserInfoProvider.AdministratorUser.UserID);
     }
 
-    public async Task SynchronizeContentItemFolders(CancellationToken cancellationToken = default)
+    public async Task SynchronizeContentItemFolders(K13EcommerceSettingsInfo ecommerceSettings, CancellationToken cancellationToken = default)
     {
-        var settings = (await k13EcommerceSettingsInfoProvider.Get()
-            .TopN(1)
-            .GetEnumerableTypedResultAsync())
-            .FirstOrDefault();
+        string workspaceName = ecommerceSettings.K13EcommerceSettingsEffectiveWorkspaceName;
 
-        if (settings is null)
-        {
-            return;
-        }
-
-        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductSKUFolderGuid, ProductSKU.CONTENT_TYPE_NAME, cancellationToken);
-        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductVariantFolderGuid, ProductVariant.CONTENT_TYPE_NAME, cancellationToken);
-        await SynchronizeProductFolder(settings.K13EcommerceSettingsProductImageFolderGuid, ProductImage.CONTENT_TYPE_NAME, cancellationToken);
+        await SynchronizeProductFolder(ecommerceSettings.K13EcommerceSettingsProductSKUFolderGuid, workspaceName, ProductSKU.CONTENT_TYPE_NAME, cancellationToken);
+        await SynchronizeProductFolder(ecommerceSettings.K13EcommerceSettingsProductVariantFolderGuid, workspaceName, ProductVariant.CONTENT_TYPE_NAME, cancellationToken);
+        await SynchronizeProductFolder(ecommerceSettings.K13EcommerceSettingsProductImageFolderGuid, workspaceName, ProductImage.CONTENT_TYPE_NAME, cancellationToken);
     }
 
-    private async Task SynchronizeProductFolder(Guid targetFolderGuid, string contentTypeName, CancellationToken cancellationToken = default)
+    private async Task SynchronizeProductFolder(Guid targetFolderGuid, string workspaceName, string contentTypeName, CancellationToken cancellationToken = default)
     {
         if (targetFolderGuid == Guid.Empty)
         {
@@ -56,7 +44,7 @@ internal class ContentItemFolderSynchronizationService : IContentItemFolderSynch
         }
 
         int targetFolderId = folder.ContentFolderID;
-        var root = await contentFolderManager.GetRoot(cancellationToken);
+        var root = await contentFolderManager.GetRoot(workspaceName, cancellationToken);
 
         if (targetFolderId == root.ContentFolderID)
         {

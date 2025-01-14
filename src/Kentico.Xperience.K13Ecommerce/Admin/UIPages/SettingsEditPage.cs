@@ -40,6 +40,7 @@ internal class SettingsEditPage : ModelEditPage<SettingsConfigurationModel>
                 ProductSKUFolderGuid = info.K13EcommerceSettingsProductSKUFolderGuid.ToString(),
                 ProductVariantFolderGuid = info.K13EcommerceSettingsProductVariantFolderGuid.ToString(),
                 ProductImageFolderGuid = info.K13EcommerceSettingsProductImageFolderGuid.ToString(),
+                WorkspaceName = info.K13EcommerceSettingsWorkspaceName
             };
             return model;
         }

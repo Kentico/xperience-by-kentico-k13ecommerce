@@ -1,5 +1,4 @@
 using System.Data;
-using System.Runtime.Serialization;
 
 using CMS;
 using CMS.DataEngine;
@@ -13,8 +12,7 @@ namespace CMS.Integration.K13Ecommerce
     /// <summary>
     /// Data container class for <see cref="PagePathMappingRuleInfo"/>.
     /// </summary>
-    [Serializable]
-    public partial class PagePathMappingRuleInfo : AbstractInfo<PagePathMappingRuleInfo, IInfoProvider<PagePathMappingRuleInfo>>, IInfoWithId
+    public partial class PagePathMappingRuleInfo : AbstractInfo<PagePathMappingRuleInfo, IInfoProvider<PagePathMappingRuleInfo>>, IInfoWithId, IInfoWithGuid
     {
         /// <summary>
         /// Object type.
@@ -28,12 +26,11 @@ namespace CMS.Integration.K13Ecommerce
         public static readonly ObjectTypeInfo TYPEINFO = new(typeof(IInfoProvider<PagePathMappingRuleInfo>), OBJECT_TYPE, "KenticoK13ecommerce.PagePathMappingRule", nameof(PagePathMappingRuleID), null, nameof(PagePathMappingRuleGuid), null, null, null, null, null)
         {
             TouchCacheDependencies = true,
-            OrderColumn = nameof(PagePathMappingRuleOrder),
         };
 
 
         /// <summary>
-        /// PagePathMappingRule ID.
+        /// Page path mapping rule ID.
         /// </summary>
         [DatabaseField]
         public virtual int PagePathMappingRuleID
@@ -43,7 +40,7 @@ namespace CMS.Integration.K13Ecommerce
         }
 
         /// <summary>
-        /// K13 ecommerce settings Guid.
+        /// Page path mapping rule Guid.
         /// </summary>
         [DatabaseField]
         public virtual Guid PagePathMappingRuleGuid
@@ -53,7 +50,7 @@ namespace CMS.Integration.K13Ecommerce
         }
 
         /// <summary>
-        /// K13 node alias path.
+        /// Page path mapping rule K13 node alias path.
         /// </summary>
         [DatabaseField]
         public virtual string PagePathMappingRuleK13NodeAliasPath
@@ -64,7 +61,7 @@ namespace CMS.Integration.K13Ecommerce
 
 
         /// <summary>
-        /// XbK page path.
+        /// Page path mapping rule XbK page path.
         /// </summary>
         [DatabaseField]
         public virtual string PagePathMappingRuleXbKPagePath
@@ -74,7 +71,7 @@ namespace CMS.Integration.K13Ecommerce
         }
 
         /// <summary>
-        /// Channel name.
+        /// Page path mapping rule channel name.
         /// </summary>
         [DatabaseField]
         public virtual string PagePathMappingRuleChannelName
@@ -84,7 +81,7 @@ namespace CMS.Integration.K13Ecommerce
         }
 
         /// <summary>
-        /// Order.
+        /// Page path mapping rule order.
         /// </summary>
         [DatabaseField]
         public virtual int PagePathMappingRuleOrder
@@ -109,17 +106,6 @@ namespace CMS.Integration.K13Ecommerce
         protected override void SetObject()
         {
             Provider.Set(this);
-        }
-
-
-        /// <summary>
-        /// Constructor for de-serialization.
-        /// </summary>
-        /// <param name="info">Serialization info.</param>
-        /// <param name="context">Streaming context.</param>
-        protected PagePathMappingRuleInfo(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
         }
 
 

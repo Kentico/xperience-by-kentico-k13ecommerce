@@ -83,6 +83,16 @@ internal class K13EcommerceModuleInstaller : IK13EcommerceModuleInstaller
         };
         formInfo.AddFormItem(formItem);
 
+        formItem = new FormFieldInfo
+        {
+            Name = nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsWorkspaceName),
+            Visible = true,
+            DataType = FieldDataType.Text,
+            Enabled = true,
+            AllowEmpty = true,
+        };
+        formInfo.AddFormItem(formItem);
+
         SetFormDefinition(info, formInfo);
 
         if (info.HasChanged)

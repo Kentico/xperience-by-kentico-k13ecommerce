@@ -24,4 +24,5 @@ internal static class K13EcommerceSettingsConstants
     public const string SettingsProductSKUFolderGuid = "Content item folder for '" + ProductSKU.CONTENT_TYPE_NAME + "'";
     public const string SettingsProductVariantFolderGuid = "Content item folder for '" + ProductVariant.CONTENT_TYPE_NAME + "'";
     public const string SettingsProductImageFolderGuid = "Content item folder for '" + ProductImage.CONTENT_TYPE_NAME + "'";
+    public const string SettingsWorkspaceName = "Content item workspace name";
 }

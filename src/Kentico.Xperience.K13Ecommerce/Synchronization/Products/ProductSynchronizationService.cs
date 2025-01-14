@@ -1,5 +1,6 @@
 ﻿using CMS.ContentEngine;
 using CMS.DataEngine;
+using CMS.Integration.K13Ecommerce;
 using CMS.Membership;
 
 using K13Store;
@@ -23,11 +24,11 @@ internal class ProductSynchronizationService(
     IProductService productService,
     IProductVariantSynchronizationService variantSynchronizationService,
     IProductImageSynchronizationService productImageSynchronizationService,
-    IHttpClientFactory httpClientFactory,
     ISiteStoreService siteStoreService,
-    IOptionsMonitor<KenticoStoreConfig> config) : SynchronizationServiceCommon(httpClientFactory), IProductSynchronizationService
+    IOptionsMonitor<KenticoStoreConfig> config)
+    : IProductSynchronizationService
 {
-    public async Task SynchronizeProducts()
+    public async Task SynchronizeProducts(K13EcommerceSettingsInfo ecommerceSettings)
     {
         //Current limitations: only synchronization from default culture is supported. XByK must have same language enabled as default culture in K13
         string defaultCultureCode = ((await siteStoreService.GetCultures()).FirstOrDefault(c => c.CultureIsDefault)?.CultureCode)
@@ -63,7 +64,7 @@ internal class ProductSynchronizationService(
             await contentItemService.GetContentItems<ProductSKU>(ProductSKU.CONTENT_TYPE_NAME, linkedItemsLevel: 2);
 
         var (toCreate, toUpdate, toDelete) =
-            ClassifyItems<KProductNode, ProductSKU, int>(kenticoStoreProducts, contentItemProducts);
+            SynchronizationHelper.ClassifyItems<KProductNode, ProductSKU, int>(kenticoStoreProducts, contentItemProducts);
 
         int adminUserId = UserInfoProvider.AdministratorUser.UserID;
         foreach (var productToCreate in toCreate)
@@ -75,14 +76,14 @@ internal class ProductSynchronizationService(
 
                 var variantGuids = await variantSynchronizationService.ProcessVariants(
                     productToCreate.Sku?.Variants ?? Enumerable.Empty<KProductVariant>(),
-                    Enumerable.Empty<ProductVariant>(), language, adminUserId);
+                    Enumerable.Empty<ProductVariant>(), ecommerceSettings, language, adminUserId);
 
                 var imagesGuids = await productImageSynchronizationService.ProcessImages(GetImageDtos(productToCreate),
-                    Enumerable.Empty<ProductImage>(), language, adminUserId);
+                    Enumerable.Empty<ProductImage>(), ecommerceSettings, language, adminUserId);
 
                 await CreateProduct(
                     GetProductSynchronizationItem(productToCreate, variantGuids, imagesGuids),
-                    language, adminUserId);
+                    ecommerceSettings, language, adminUserId);
 
                 transaction.Commit();
             }
@@ -101,10 +102,10 @@ internal class ProductSynchronizationService(
 
                 var variantGuid = await variantSynchronizationService.ProcessVariants(storeProduct.Sku?.Variants ??
                     Enumerable.Empty<KProductVariant>(),
-                    contentItemProduct.ProductVariants, language, adminUserId);
+                    contentItemProduct.ProductVariants, ecommerceSettings, language, adminUserId);
 
                 var imagesGuids = await productImageSynchronizationService.ProcessImages(GetImageDtos(storeProduct),
-                    contentItemProduct.ProductImages, language, adminUserId);
+                    contentItemProduct.ProductImages, ecommerceSettings, language, adminUserId);
 
                 await UpdateProduct(
                     GetProductSynchronizationItem(storeProduct, variantGuid, imagesGuids),
@@ -122,13 +123,14 @@ internal class ProductSynchronizationService(
     }
 
 
-    private async Task CreateProduct(ProductSynchronizationItem productSyncItem, string languageName, int userID)
+    private async Task CreateProduct(ProductSynchronizationItem productSyncItem, K13EcommerceSettingsInfo ecommerceSettings, string languageName, int userID)
     {
         var addParams = new ContentItemAddParams()
         {
             ContentItem = productSyncItem,
             LanguageName = languageName,
-            UserID = userID
+            UserID = userID,
+            WorkspaceName = ecommerceSettings.K13EcommerceSettingsEffectiveWorkspaceName
         };
 
         await CreateContentItem(addParams);
@@ -146,7 +148,7 @@ internal class ProductSynchronizationService(
                 ContentItemID = existingProduct.SystemFields.ContentItemID,
                 LanguageName = languageName,
                 UserID = userID,
-                VersionStatus = existingProduct.SystemFields.ContentItemCommonDataVersionStatus
+                VersionStatus = existingProduct.SystemFields.ContentItemCommonDataVersionStatus,
             };
 
             await UpdateContentItem(updateParams);
