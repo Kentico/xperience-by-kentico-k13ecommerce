@@ -66,7 +66,7 @@ jobs:
       - name: Install a SQL Server suite of tools (SQLEngine, SQLPackage)
         uses: potatoqualitee/mssqlsuite@9a0136e208df60b8ecb62909f076bc34854fa55a # set as a commit hash for security - v1.7
         with:
-          install: sqlpackage, sqlengine
+          install: sqlpackage, sqlengine, sqlclient
           sa-password: Pass@12345
           version: 2022
 
@@ -239,15 +239,14 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const issueTitle = "🚨 E2E Test Failed: Weekly Cron Job";
+            const date = new Date();
+            const issueTitle = `🚨 ${date.toLocaleDateString('en-GB')} E2E Test Failed: Weekly Cron Job`;
             const issueBody = `### Workflow Failure Alert
             - **Repository**: ${{ github.repository }}
-            - **Workflow**: [Test E2E](${github.server_url}/${github.repository}/actions/runs/${{ github.run_id }})
-            - **Timestamp**: ${new Date().toISOString()}
+            - **Workflow**: [Test E2E](https://github.com/Kentico/xperience-by-kentico-k13ecommerce/actions/runs/${{ github.run_id }})
+            - **Timestamp**: ${date.toISOString()}
 
             Please check the logs and resolve the issue.`;
-
-            const assignees = ["BS-jiriceska", "Rumec"]; // Replace with GitHub usernames
 
             try {
               await github.rest.issues.create({
@@ -255,8 +254,7 @@ jobs:
                 repo: context.repo.repo,
                 title: issueTitle,
                 body: issueBody,
-                labels: ["workflow-failure"],
-                assignees: assignees
+                labels: ["workflow-failure"]
               });
             } catch (error) {
               console.error("Error creating issue:", error);
