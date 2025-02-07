@@ -80,6 +80,7 @@ jobs:
             -d master `
             -U "sa" `
             -P "Pass@12345" `
+            -C `
             -Q "RESTORE DATABASE [Kentico13_DancingGoat] FROM DISK='/var/opt/mssql/backup/${{ env.K13_DATABASE_BACKUP_FILENAME }}' WITH MOVE 'Kentico13_DancingGoat' TO '/var/opt/mssql/data/Kentico13_DancingGoat.mdf', MOVE 'Kentico13_DancingGoat_log' TO '/var/opt/mssql/data/Kentico13_DancingGoat_log.ldf'"
           docker cp "./database/${{ env.XBK_DATABASE_BACKUP_FILENAME }}" sql:/var/opt/mssql/backup
           sqlcmd `
@@ -87,6 +88,7 @@ jobs:
             -d master `
             -U "sa" `
             -P "Pass@12345" `
+            -C `
             -Q "RESTORE DATABASE [XByK_DancingGoat_K13Ecommerce] FROM DISK='/var/opt/mssql/backup/${{ env.XBK_DATABASE_BACKUP_FILENAME }}' WITH MOVE 'XByK_DancingGoat_K13Ecommerce' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce.mdf', MOVE 'XByK_DancingGoat_K13Ecommerce_log' TO '/var/opt/mssql/data/XByK_DancingGoat_K13Ecommerce_log.ldf'"
 
       - name: Imports license key to DB
@@ -96,12 +98,14 @@ jobs:
             -d Kentico13_DancingGoat `
             -U "sa" `
             -P "Pass@12345" `
+            -C `
             -Q "INSERT INTO [dbo].[CMS_LicenseKey] VALUES ('localhost', '${{ env.KENTICO_XPERIENCE_13_LICENSE }}', 'X', '10/20/2025', 1);"
           sqlcmd `
             -S localhost `
             -d XByK_DancingGoat_K13Ecommerce `
             -U "sa" `
             -P "Pass@12345" `
+            -C `
             -Q "UPDATE CMS_SettingsKey SET KeyValue='${{ env.XPERIENCE_BY_KENTICO_LICENSE }}' WHERE KeyName='CMSLicenseKey'"
       
       - name: Reset DB consistency for last applied hotfix
