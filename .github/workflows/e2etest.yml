@@ -152,7 +152,11 @@ jobs:
         run: |
           # Run the ASP.NET Core app as a background job
           cd ./publish/K13
-          Start-Job -ScriptBlock { dotnet ./${{ env.K13_PROJECT_NAME }}.dll } -Name ${{ env.K13_PROJECT_NAME }}
+          Start-Job -ScriptBlock { 
+            $env:DOTNET_ROOT = "/home/runner/.dotnet"
+            $env:PATH += ":/home/runner/.dotnet:/home/runner/.dotnet/tools"
+            & "$env:DOTNET_ROOT/dotnet" ./${{ env.K13_PROJECT_NAME }}.dll 
+          } -Name ${{ env.K13_PROJECT_NAME }}
           Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
           cd ../../
 
@@ -187,7 +191,12 @@ jobs:
 
           # Run the ASP.NET Core app as a background job
           cd ./publish/XbK
-          Start-Job -ScriptBlock { dotnet ./${{ env.XBK_PROJECT_NAME }}.dll } -Name ${{ env.XBK_PROJECT_NAME }}
+          Start-Job -ScriptBlock { 
+            Start-Job -ScriptBlock { 
+            $env:DOTNET_ROOT = "/home/runner/.dotnet"
+            $env:PATH += ":/home/runner/.dotnet:/home/runner/.dotnet/tools"
+            & "$env:DOTNET_ROOT/dotnet" ./${{ env.XBK_PROJECT_NAME }}.dll 
+          } -Name ${{ env.XBK_PROJECT_NAME }}
           Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
           cd ../../
 
