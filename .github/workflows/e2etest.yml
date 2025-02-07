@@ -153,7 +153,8 @@ jobs:
           # Run the ASP.NET Core app as a background job
           cd ./publish/K13
           Start-Job -ScriptBlock { 
-            $env:PATH += ":${env:DOTNET_ROOT}:${env:DOTNET_ROOT}/tools"; 
+            $env:PATH += ":${env:DOTNET_ROOT}:${env:DOTNET_ROOT}/tools"
+            & "$env:DOTNET_ROOT/dotnet" --version
             & "$env:DOTNET_ROOT/dotnet" "./${{ env.K13_PROJECT_NAME }}.dll" 
           } -Name ${{ env.K13_PROJECT_NAME }}
           Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
@@ -191,7 +192,8 @@ jobs:
           # Run the ASP.NET Core app as a background job
           cd ./publish/XbK
           Start-Job -ScriptBlock { 
-            $env:PATH += ":${env:DOTNET_ROOT}:${env:DOTNET_ROOT}/tools"; 
+            $env:PATH += ":${env:DOTNET_ROOT}:${env:DOTNET_ROOT}/tools"
+            & "$env:DOTNET_ROOT/dotnet" --version
             & "$env:DOTNET_ROOT/dotnet" ./${{ env.XBK_PROJECT_NAME }}.dll 
           } -Name ${{ env.XBK_PROJECT_NAME }}
           Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
