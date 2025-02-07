@@ -179,6 +179,9 @@ jobs:
 
           if (-not $success) {
               Write-Output "K13 store: Application did not respond in time."
+              Receive-Job -Name ${{ env.K13_PROJECT_NAME }}
+              Stop-Job -Name ${{ env.K13_PROJECT_NAME }}
+              Remove-Job -Name ${{ env.K13_PROJECT_NAME }}
               exit 1
           }
 
@@ -211,6 +214,9 @@ jobs:
 
           if (-not $success) {
               Write-Output "XbK Application did not respond in time."
+              Receive-Job -Name ${{ env.XBK_PROJECT_NAME }}
+              Stop-Job -Name ${{ env.XBK_PROJECT_NAME }}
+              Remove-Job -Name ${{ env.XBK_PROJECT_NAME }}
               exit 1
           }
 
