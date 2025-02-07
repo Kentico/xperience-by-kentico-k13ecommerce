@@ -250,7 +250,7 @@ jobs:
       
       # Create an issue if this job fails
       - name: "Create GitHub Issue on Failure"
-        if: failure()
+        if: ${{ failure() && github.event_name != 'workflow_dispatch' }} # Runs only on failure and not manual trigger
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
