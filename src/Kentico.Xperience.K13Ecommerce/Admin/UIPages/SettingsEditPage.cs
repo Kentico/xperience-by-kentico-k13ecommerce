@@ -1,8 +1,11 @@
-﻿using CMS.DataEngine;
+﻿using CMS.ContentEngine;
+using CMS.DataEngine;
 using CMS.Integration.K13Ecommerce;
+using CMS.Membership;
 
 using Kentico.Xperience.Admin.Base;
 using Kentico.Xperience.Admin.Base.Forms;
+using Kentico.Xperience.Admin.Base.Forms.Internal;
 using Kentico.Xperience.K13Ecommerce.Admin.UIPages;
 
 [assembly: UIPage(
@@ -35,23 +38,32 @@ internal class SettingsEditPage : ModelEditPage<SettingsConfigurationModel>
                 return new SettingsConfigurationModel();
             }
 
+
+
             model = new SettingsConfigurationModel()
             {
-                ProductSKUFolderGuid = info.K13EcommerceSettingsProductSKUFolderGuid.ToString(),
-                ProductVariantFolderGuid = info.K13EcommerceSettingsProductVariantFolderGuid.ToString(),
-                ProductImageFolderGuid = info.K13EcommerceSettingsProductImageFolderGuid.ToString(),
-                WorkspaceName = info.K13EcommerceSettingsWorkspaceName
+                WorkspaceName = info.K13EcommerceSettingsEffectiveWorkspaceName,
+                ProductSKUFolderId = GetFolderIdByGuid(info.K13EcommerceSettingsProductSKUFolderGuid),
+                ProductVariantFolderId = GetFolderIdByGuid(info.K13EcommerceSettingsProductVariantFolderGuid),
+                ProductImageFolderId = GetFolderIdByGuid(info.K13EcommerceSettingsProductImageFolderGuid),
             };
             return model;
         }
     }
 
     private readonly IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider;
+    private readonly IContentFolderManager contentFolderManager;
 
-    public SettingsEditPage(Xperience.Admin.Base.Forms.Internal.IFormItemCollectionProvider formItemCollectionProvider, IFormDataBinder formDataBinder, IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider)
+    public SettingsEditPage(
+        IFormItemCollectionProvider formItemCollectionProvider,
+        IFormDataBinder formDataBinder,
+        IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider,
+        IContentFolderManagerFactory contentFolderManagerFactory
+        )
         : base(formItemCollectionProvider, formDataBinder)
     {
         this.k13EcommerceSettingsInfoProvider = k13EcommerceSettingsInfoProvider;
+        contentFolderManager = contentFolderManagerFactory.Create(UserInfoProvider.AdministratorUser.UserID);
     }
 
     public int ObjectID
@@ -77,10 +89,28 @@ internal class SettingsEditPage : ModelEditPage<SettingsConfigurationModel>
     {
         var info = await k13EcommerceSettingsInfoProvider.GetAsync(ObjectID);
 
-        model.MapToSettingsInfo(info);
+        info.K13EcommerceSettingsWorkspaceName = model.WorkspaceName;
+        info.K13EcommerceSettingsProductSKUFolderGuid = await GetFolderGuidById(model.ProductSKUFolderId);
+        info.K13EcommerceSettingsProductVariantFolderGuid = await GetFolderGuidById(model.ProductVariantFolderId);
+        info.K13EcommerceSettingsProductImageFolderGuid = await GetFolderGuidById(model.ProductImageFolderId);
 
         k13EcommerceSettingsInfoProvider.Set(info);
 
         return await base.ProcessFormData(model, formItems);
+    }
+
+    private async Task<Guid> GetFolderGuidById(int contentFolderId)
+    {
+        var contentFolder = await contentFolderManager.Get(contentFolderId);
+        return contentFolder?.ContentFolderGUID ?? Guid.Empty;
+    }
+
+    private int GetFolderIdByGuid(Guid contentFolderGuid)
+    {
+        var contentFolder = contentFolderManager.Get()
+            .WhereEquals(nameof(ContentFolderInfo.ContentFolderGUID), contentFolderGuid)
+            .GetEnumerableTypedResult()
+            .FirstOrDefault();
+        return contentFolder?.ContentFolderID ?? 0;
     }
 }
