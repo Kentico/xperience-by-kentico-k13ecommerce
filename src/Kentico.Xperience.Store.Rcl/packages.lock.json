@@ -882,6 +882,7 @@
       "kentico.xperience.ecommerce.common": {
         "type": "Project",
         "dependencies": {
+          "Kentico.Xperience.Admin": "[30.0.1, )",
           "Kentico.Xperience.Core": "[30.0.1, )",
           "Microsoft.Extensions.Http": "[8.0.0, )"
         }
@@ -891,7 +892,7 @@
         "dependencies": {
           "Duende.AccessTokenManagement.OpenIdConnect": "[3.0.1, )",
           "Kentico.Xperience.Admin": "[30.0.1, )",
-          "Kentico.Xperience.Ecommerce.Common": "[1.0.0, )",
+          "Kentico.Xperience.Ecommerce.Common": "[2.0.0, )",
           "Kentico.Xperience.WebApp": "[30.0.1, )",
           "Scrutor": "[4.2.2, )"
         }

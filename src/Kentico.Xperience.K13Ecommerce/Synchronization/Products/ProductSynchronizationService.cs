@@ -130,7 +130,7 @@ internal class ProductSynchronizationService(
             ContentItem = productSyncItem,
             LanguageName = languageName,
             UserID = userID,
-            WorkspaceName = ecommerceSettings.K13EcommerceSettingsEffectiveWorkspaceName
+            WorkspaceName = ecommerceSettings.K13EcommerceSettingsEffectiveWorkspaceName,
         };
 
         await CreateContentItem(addParams);
