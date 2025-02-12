@@ -20,36 +20,12 @@ namespace Kentico.Xperience.K13Ecommerce.Admin.UIPages;
 
 internal class SettingsEditPage : ModelEditPage<SettingsConfigurationModel>
 {
+    private K13EcommerceSettingsInfo? settings;
     private SettingsConfigurationModel? model;
-    private int objectID;
 
-    protected override SettingsConfigurationModel Model
-    {
-        get
-        {
-            if (model != null)
-            {
-                return model;
-            }
+    protected override SettingsConfigurationModel Model => model ??= new();
+    private K13EcommerceSettingsInfo Settings => settings ??= new();
 
-            var info = k13EcommerceSettingsInfoProvider.Get(ObjectID);
-            if (info == null)
-            {
-                return new SettingsConfigurationModel();
-            }
-
-
-
-            model = new SettingsConfigurationModel()
-            {
-                WorkspaceName = info.K13EcommerceSettingsEffectiveWorkspaceName,
-                ProductSKUFolderId = GetFolderIdByGuid(info.K13EcommerceSettingsProductSKUFolderGuid),
-                ProductVariantFolderId = GetFolderIdByGuid(info.K13EcommerceSettingsProductVariantFolderGuid),
-                ProductImageFolderId = GetFolderIdByGuid(info.K13EcommerceSettingsProductImageFolderGuid),
-            };
-            return model;
-        }
-    }
 
     private readonly IInfoProvider<K13EcommerceSettingsInfo> k13EcommerceSettingsInfoProvider;
     private readonly IContentFolderManager contentFolderManager;
@@ -66,51 +42,73 @@ internal class SettingsEditPage : ModelEditPage<SettingsConfigurationModel>
         contentFolderManager = contentFolderManagerFactory.Create(UserInfoProvider.AdministratorUser.UserID);
     }
 
-    public int ObjectID
+    public override async Task ConfigurePage()
     {
-        get
+        settings = (await k13EcommerceSettingsInfoProvider.Get()
+            .TopN(1)
+            .GetEnumerableTypedResultAsync())
+            .FirstOrDefault();
+
+        if (settings == null)
         {
-            if (objectID == 0)
-            {
-                var settings = k13EcommerceSettingsInfoProvider.Get()
-                    .TopN(1)
-                    .Column(nameof(K13EcommerceSettingsInfo.K13EcommerceSettingsID))
-                    .GetEnumerableTypedResult()
-                    .FirstOrDefault();
-                objectID = settings?.K13EcommerceSettingsID ?? 0;
-            }
-            return objectID;
+            model = new SettingsConfigurationModel();
+            return;
         }
+
+        var contentFolderIds = await GetFolderIdsBySettings(settings);
+        model = new SettingsConfigurationModel()
+        {
+            ProductFolderId = contentFolderIds.GetValueOrDefault(settings.K13EcommerceSettingsProductSKUFolderGuid),
+            ProductVariantFolderId = contentFolderIds.GetValueOrDefault(settings.K13EcommerceSettingsProductVariantFolderGuid),
+            ImageFolderId = contentFolderIds.GetValueOrDefault(settings.K13EcommerceSettingsProductImageFolderGuid),
+        };
+        await base.ConfigurePage();
     }
 
     protected override async Task<ICommandResponse> ProcessFormData(
         SettingsConfigurationModel model,
         ICollection<IFormItem> formItems)
     {
-        var info = await k13EcommerceSettingsInfoProvider.GetAsync(ObjectID);
+        Settings.K13EcommerceSettingsWorkspaceName = model.WorkspaceName;
+        var contentFolderGuids = await GetFolderGuidsByModel(model);
+        Settings.K13EcommerceSettingsProductSKUFolderGuid = contentFolderGuids.GetValueOrDefault(model.ProductFolderId);
+        Settings.K13EcommerceSettingsProductVariantFolderGuid = contentFolderGuids.GetValueOrDefault(model.ProductVariantFolderId);
+        Settings.K13EcommerceSettingsProductImageFolderGuid = contentFolderGuids.GetValueOrDefault(model.ImageFolderId);
 
-        info.K13EcommerceSettingsWorkspaceName = model.WorkspaceName;
-        info.K13EcommerceSettingsProductSKUFolderGuid = await GetFolderGuidById(model.ProductSKUFolderId);
-        info.K13EcommerceSettingsProductVariantFolderGuid = await GetFolderGuidById(model.ProductVariantFolderId);
-        info.K13EcommerceSettingsProductImageFolderGuid = await GetFolderGuidById(model.ProductImageFolderId);
-
-        k13EcommerceSettingsInfoProvider.Set(info);
+        k13EcommerceSettingsInfoProvider.Set(Settings);
 
         return await base.ProcessFormData(model, formItems);
     }
 
-    private async Task<Guid> GetFolderGuidById(int contentFolderId)
+    private async Task<Dictionary<Guid, int>> GetFolderIdsBySettings(K13EcommerceSettingsInfo settings)
     {
-        var contentFolder = await contentFolderManager.Get(contentFolderId);
-        return contentFolder?.ContentFolderGUID ?? Guid.Empty;
+        ICollection<Guid> contentFolderGuids = [
+            settings.K13EcommerceSettingsProductSKUFolderGuid,
+            settings.K13EcommerceSettingsProductVariantFolderGuid,
+            settings.K13EcommerceSettingsProductImageFolderGuid
+        ];
+
+        var folders = await contentFolderManager.Get()
+                .WhereIn(nameof(ContentFolderInfo.ContentFolderGUID), contentFolderGuids)
+                .Columns(nameof(ContentFolderInfo.ContentFolderID), nameof(ContentFolderInfo.ContentFolderGUID))
+                .GetEnumerableTypedResultAsync();
+
+        return folders.ToDictionary(x => x.ContentFolderGUID, x => x.ContentFolderID);
     }
 
-    private int GetFolderIdByGuid(Guid contentFolderGuid)
+    private async Task<Dictionary<int, Guid>> GetFolderGuidsByModel(SettingsConfigurationModel model)
     {
-        var contentFolder = contentFolderManager.Get()
-            .WhereEquals(nameof(ContentFolderInfo.ContentFolderGUID), contentFolderGuid)
-            .GetEnumerableTypedResult()
-            .FirstOrDefault();
-        return contentFolder?.ContentFolderID ?? 0;
+        ICollection<int> contentFolderIds = [
+            model.ProductFolderId,
+            model.ProductVariantFolderId,
+            model.ImageFolderId
+        ];
+
+        var folders = await contentFolderManager.Get()
+            .WhereIn(nameof(ContentFolderInfo.ContentFolderID), contentFolderIds)
+            .Columns(nameof(ContentFolderInfo.ContentFolderID), nameof(ContentFolderInfo.ContentFolderGUID))
+            .GetEnumerableTypedResultAsync();
+
+        return folders.ToDictionary(x => x.ContentFolderID, x => x.ContentFolderGUID);
     }
 }
