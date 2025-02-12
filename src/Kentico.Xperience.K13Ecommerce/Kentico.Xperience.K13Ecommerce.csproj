@@ -42,8 +42,4 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\submodules\xperience-by-kentico-ecommerce-common\src\Kentico.Xperience.Ecommerce.Common\Kentico.Xperience.Ecommerce.Common.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Admin\FormComponentConfigurator\" />
-	</ItemGroup>
 </Project>
