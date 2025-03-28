@@ -1,4 +1,6 @@
-﻿using K13Store;
+﻿using CMS.Integration.K13Ecommerce;
+
+using K13Store;
 
 using Kentico.Xperience.K13Ecommerce.StoreApi;
 
@@ -14,9 +16,10 @@ public interface IProductVariantSynchronizationService
     /// </summary>
     /// <param name="variants">Product variants from K13 Store.</param>
     /// <param name="existingVariants">Existing variants content items.</param>
+    /// <param name="ecommerceSettings">Ecommerce settings from XbyK admin.</param>
     /// <param name="language">Current language.</param>
     /// <param name="userId">Admin User ID.</param>
     /// <returns></returns>
     Task<IReadOnlySet<Guid>> ProcessVariants(IEnumerable<KProductVariant> variants, IEnumerable<ProductVariant> existingVariants,
-        string language, int userId);
+        K13EcommerceSettingsInfo ecommerceSettings, string language, int userId);
 }

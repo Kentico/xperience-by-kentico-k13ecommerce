@@ -2,7 +2,6 @@
   <PropertyGroup Label="Globals">
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>DancingGoat</RootNamespace>
     <UserSecretsId>7a2746ea-11f9-41cd-b47c-fe767ba8e4f5</UserSecretsId>
 	<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>

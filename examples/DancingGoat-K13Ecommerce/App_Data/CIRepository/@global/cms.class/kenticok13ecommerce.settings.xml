@@ -26,6 +26,7 @@
         </properties>
       </field>
       <field column="K13EcommerceSettingsGuid" columntype="guid" enabled="true" guid="bd3983ee-8b88-4db7-b305-c425f345fa1d" />
+      <field allowempty="true" column="K13EcommerceSettingsWorkspaceName" columntype="text" enabled="true" guid="9b6031c9-d452-4d21-9410-7cd14dc4ff8c" visible="true" />
     </form>
   </ClassFormDefinition>
   <ClassGUID>82912681-2a63-4932-a30a-af98b3e8e669</ClassGUID>

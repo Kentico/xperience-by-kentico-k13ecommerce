@@ -1,4 +1,6 @@
-﻿using K13Store;
+﻿using CMS.Integration.K13Ecommerce;
+
+using K13Store;
 
 using Kentico.Xperience.Ecommerce.Common.ContentItemSynchronization;
 using Kentico.Xperience.K13Ecommerce.StoreApi;
@@ -7,34 +9,23 @@ using Microsoft.Extensions.Logging;
 
 namespace Kentico.Xperience.K13Ecommerce.Synchronization.ProductVariants;
 
-internal class ProductVariantSynchronizationService : SynchronizationServiceCommon,
-    IProductVariantSynchronizationService
+/// <inheritdoc/>
+internal class ProductVariantSynchronizationService(
+    IContentItemService contentItemService,
+    ILogger<ProductVariantSynchronizationService> logger)
+    : IProductVariantSynchronizationService
 {
-    private readonly IContentItemService contentItemService;
-    private readonly ILogger<ProductVariantSynchronizationService> logger;
-
-
-    /// <inheritdoc/>
-    public ProductVariantSynchronizationService(IContentItemService contentItemService,
-        ILogger<ProductVariantSynchronizationService> logger,
-        IHttpClientFactory httpClientFactory) : base(httpClientFactory)
-    {
-        this.contentItemService = contentItemService;
-        this.logger = logger;
-    }
-
-
     /// <inheritdoc/>
     public async Task<IReadOnlySet<Guid>> ProcessVariants(IEnumerable<KProductVariant> variants,
         IEnumerable<ProductVariant> existingVariants,
-        string language, int userId)
+        K13EcommerceSettingsInfo ecommerceSettings, string language, int userId)
     {
         var (toCreate, toUpdate, toDelete) =
-            ClassifyItems<KProductVariant, ProductVariant, int>(variants, existingVariants);
+            SynchronizationHelper.ClassifyItems<KProductVariant, ProductVariant, int>(variants, existingVariants);
         var newContentIDs = new HashSet<int>();
         foreach (var variantToCreate in toCreate)
         {
-            if (await CreateVariant(GetProductSynchronizationItem(variantToCreate), language, userId) is int id and > 0)
+            if (await CreateVariant(GetProductSynchronizationItem(variantToCreate), ecommerceSettings, language, userId) is int id and > 0)
             {
                 newContentIDs.Add(id);
             }
@@ -58,14 +49,15 @@ internal class ProductVariantSynchronizationService : SynchronizationServiceComm
     }
 
 
-    private async Task<int> CreateVariant(ProductVariantSynchronizationItem variantSyncItem, string languageName,
-        int userId)
+    private async Task<int> CreateVariant(ProductVariantSynchronizationItem variantSyncItem, K13EcommerceSettingsInfo ecommerceSettings,
+        string languageName, int userId)
     {
         int itemID = await contentItemService.AddContentItem(new ContentItemAddParams()
         {
             ContentItem = variantSyncItem,
             LanguageName = languageName,
-            UserID = userId
+            UserID = userId,
+            WorkspaceName = ecommerceSettings.K13EcommerceSettingsEffectiveWorkspaceName
         });
 
         if (itemID == 0)
