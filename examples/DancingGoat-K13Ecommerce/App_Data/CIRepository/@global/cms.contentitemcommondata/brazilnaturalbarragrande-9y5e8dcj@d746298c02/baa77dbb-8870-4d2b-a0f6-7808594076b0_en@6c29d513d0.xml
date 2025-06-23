@@ -17,6 +17,32 @@
   <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
   <ContentItemReferences>
     <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>6bc83478-5632-4d30-b9d4-664f85824ffd</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>baa77dbb-8870-4d2b-a0f6-7808594076b0</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>BrazilNaturalBarraGrande-fhqshxk6</CodeName>
+        <GUID>31651c86-e6ea-4aab-84a4-2420d6037899</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>77022f2b-321a-4cae-88fb-2872b7ff43d7</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>baa77dbb-8870-4d2b-a0f6-7808594076b0</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>BrazilNaturalBarraGrande_2Lb-ck8pcn7x</CodeName>
+        <GUID>f13124ad-6a28-44c5-994c-0d98fbad8527</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>81547ba2-b116-4eb5-b83d-2bc461b6a58f</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
@@ -31,14 +57,14 @@
     </cms.contentitemreference>
     <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>77022f2b-321a-4cae-88fb-2872b7ff43d7</ContentItemReferenceGUID>
+      <ContentItemReferenceGUID>ee3e4868-bba8-4d42-8dce-547b4578a550</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>baa77dbb-8870-4d2b-a0f6-7808594076b0</GUID>
         <ObjectType>cms.contentitemcommondata</ObjectType>
       </ContentItemReferenceSourceCommonDataID>
       <ContentItemReferenceTargetItemID>
-        <CodeName>BrazilNaturalBarraGrande_2Lb-ck8pcn7x</CodeName>
-        <GUID>f13124ad-6a28-44c5-994c-0d98fbad8527</GUID>
+        <CodeName>BrazilNaturalBarraGrande_8Oz-529caz4u</CodeName>
+        <GUID>7c8bcb8c-f2aa-446b-b697-9f75096bfe8b</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>
@@ -65,32 +91,6 @@
       <ContentItemReferenceTargetItemID>
         <CodeName>BrazilNaturalBarraGrande_5Lb-ym2uigo8</CodeName>
         <GUID>126c06c7-5599-4bb1-82f2-f0a5df991502</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>ee3e4868-bba8-4d42-8dce-547b4578a550</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>baa77dbb-8870-4d2b-a0f6-7808594076b0</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>BrazilNaturalBarraGrande_8Oz-529caz4u</CodeName>
-        <GUID>7c8bcb8c-f2aa-446b-b697-9f75096bfe8b</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>6bc83478-5632-4d30-b9d4-664f85824ffd</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>baa77dbb-8870-4d2b-a0f6-7808594076b0</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>BrazilNaturalBarraGrande-fhqshxk6</CodeName>
-        <GUID>31651c86-e6ea-4aab-84a4-2420d6037899</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>

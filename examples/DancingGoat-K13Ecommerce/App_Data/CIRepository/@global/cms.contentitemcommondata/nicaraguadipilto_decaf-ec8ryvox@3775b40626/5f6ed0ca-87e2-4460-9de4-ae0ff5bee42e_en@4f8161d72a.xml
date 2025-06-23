@@ -17,28 +17,15 @@
   <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
   <ContentItemReferences>
     <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>8842b0a4-d245-4ca4-a235-afc88dd8d4de</ContentItemReferenceGUID>
+      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>9d8ad71e-52e6-4a4f-88a0-40901c916f57</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
         <ObjectType>cms.contentitemcommondata</ObjectType>
       </ContentItemReferenceSourceCommonDataID>
       <ContentItemReferenceTargetItemID>
-        <CodeName>NicaraguaDipilto_decaf_16Oz-mt181omq</CodeName>
-        <GUID>2597c2e7-516d-42f8-af61-e9b44a157988</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>309abb62-0c7c-4c5d-86fa-638d86e51620</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>NicaraguaDipilto_decaf_2Lb-gpqkt1d0</CodeName>
-        <GUID>d073a71d-14af-46c8-b78f-c070c5f96cd9</GUID>
+        <CodeName>NicaraguaDipilto_decaf-69n4s5js</CodeName>
+        <GUID>b2c04262-e319-40ec-b285-c1bf09b62a98</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>
@@ -57,6 +44,19 @@
     </cms.contentitemreference>
     <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>309abb62-0c7c-4c5d-86fa-638d86e51620</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>NicaraguaDipilto_decaf_2Lb-gpqkt1d0</CodeName>
+        <GUID>d073a71d-14af-46c8-b78f-c070c5f96cd9</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>66c3b3ff-c4c4-46f7-aa28-85c1d80035a3</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
@@ -70,6 +70,19 @@
     </cms.contentitemreference>
     <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>8842b0a4-d245-4ca4-a235-afc88dd8d4de</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>NicaraguaDipilto_decaf_16Oz-mt181omq</CodeName>
+        <GUID>2597c2e7-516d-42f8-af61-e9b44a157988</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>0207ea3c-fb33-473a-8687-e6affac631c6</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
@@ -78,19 +91,6 @@
       <ContentItemReferenceTargetItemID>
         <CodeName>NicaraguaDipilto_decaf_8Oz-3ks0xt5v</CodeName>
         <GUID>b9089045-d48d-42d8-b03a-69bced3f8abb</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>9d8ad71e-52e6-4a4f-88a0-40901c916f57</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>5f6ed0ca-87e2-4460-9de4-ae0ff5bee42e</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>NicaraguaDipilto_decaf-69n4s5js</CodeName>
-        <GUID>b2c04262-e319-40ec-b285-c1bf09b62a98</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>

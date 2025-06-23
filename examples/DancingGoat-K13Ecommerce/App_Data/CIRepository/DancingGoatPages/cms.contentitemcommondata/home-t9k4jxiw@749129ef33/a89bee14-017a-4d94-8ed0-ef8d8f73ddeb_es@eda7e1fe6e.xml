@@ -29,6 +29,19 @@
     </cms.contentitemreference>
     <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>8c596b5f-0ce9-4125-867e-038adfc8bb37</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>e4e9aab6-7ca3-42c3-b7be-217a7c72d849</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>a89bee14-017a-4d94-8ed0-ef8d8f73ddeb</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>NewYork-xn4wcoi7</CodeName>
+        <GUID>9b401e70-fbc7-4d70-b848-19778172e3f1</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>8c596b5f-0ce9-4125-867e-038adfc8bb37</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>9b3dc9c3-8531-452b-8d44-be88e747beb9</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>a89bee14-017a-4d94-8ed0-ef8d8f73ddeb</GUID>
@@ -63,19 +76,6 @@
       <ContentItemReferenceTargetItemID>
         <CodeName>JimmieDimmick-qv484wii</CodeName>
         <GUID>12e192cc-099a-4fd4-9360-2b8acad4daf0</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>8c596b5f-0ce9-4125-867e-038adfc8bb37</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>e4e9aab6-7ca3-42c3-b7be-217a7c72d849</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>a89bee14-017a-4d94-8ed0-ef8d8f73ddeb</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>NewYork-xn4wcoi7</CodeName>
-        <GUID>9b401e70-fbc7-4d70-b848-19778172e3f1</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>

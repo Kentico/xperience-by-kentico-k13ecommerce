@@ -17,28 +17,15 @@
   <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
   <ContentItemReferences>
     <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>a4102904-c097-4042-9372-793ce1d13d01</ContentItemReferenceGUID>
+      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>b085f57c-1528-4415-a3bc-7334591c0159</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>f1c03049-6fa2-4469-b68e-15ea3ab4e1f4</GUID>
         <ObjectType>cms.contentitemcommondata</ObjectType>
       </ContentItemReferenceSourceCommonDataID>
       <ContentItemReferenceTargetItemID>
-        <CodeName>PanamaLosLajonesHoney_16Oz-chw2c3cj</CodeName>
-        <GUID>65ece48f-9b3d-4927-939a-9de72b7c78bd</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>864f9d54-fa16-4035-b7a8-e95cee4516a1</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>f1c03049-6fa2-4469-b68e-15ea3ab4e1f4</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>PanamaLosLajonesHoney_2Lb-2nmigto4</CodeName>
-        <GUID>28e68fe4-b6c5-4ed3-a1ce-1de49b23dc4b</GUID>
+        <CodeName>PanamaLosLajonesHoney-7wp0zn6r</CodeName>
+        <GUID>5e889993-18ce-48d7-a4b9-b6ee634ee21a</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>
@@ -70,6 +57,19 @@
     </cms.contentitemreference>
     <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>a4102904-c097-4042-9372-793ce1d13d01</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>f1c03049-6fa2-4469-b68e-15ea3ab4e1f4</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>PanamaLosLajonesHoney_16Oz-chw2c3cj</CodeName>
+        <GUID>65ece48f-9b3d-4927-939a-9de72b7c78bd</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>8119b547-0962-4bef-b0e1-bf8a2cd80167</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>f1c03049-6fa2-4469-b68e-15ea3ab4e1f4</GUID>
@@ -82,15 +82,15 @@
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>
     <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>b085f57c-1528-4415-a3bc-7334591c0159</ContentItemReferenceGUID>
+      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>864f9d54-fa16-4035-b7a8-e95cee4516a1</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>f1c03049-6fa2-4469-b68e-15ea3ab4e1f4</GUID>
         <ObjectType>cms.contentitemcommondata</ObjectType>
       </ContentItemReferenceSourceCommonDataID>
       <ContentItemReferenceTargetItemID>
-        <CodeName>PanamaLosLajonesHoney-7wp0zn6r</CodeName>
-        <GUID>5e889993-18ce-48d7-a4b9-b6ee634ee21a</GUID>
+        <CodeName>PanamaLosLajonesHoney_2Lb-2nmigto4</CodeName>
+        <GUID>28e68fe4-b6c5-4ed3-a1ce-1de49b23dc4b</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>

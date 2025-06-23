@@ -27,19 +27,6 @@
   <ContentItemReferences>
     <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>2fe94e9c-68b0-4202-b18f-49dc7c4d6810</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>b6936ed8-2a40-48a0-96b7-c2eac5f1e420</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>ce143368-4752-470a-b8f7-0124b3416a31</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>BrazilNaturalBarraGrande-mtfd4bc3</CodeName>
-        <GUID>edb18903-129a-4c33-9ca1-506cfdf4496e</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>2fe94e9c-68b0-4202-b18f-49dc7c4d6810</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>f94618f3-c0fc-482d-8e9c-21d742d8cfba</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>ce143368-4752-470a-b8f7-0124b3416a31</GUID>
@@ -61,6 +48,19 @@
       <ContentItemReferenceTargetItemID>
         <CodeName>ElSalvadorFincaSanJose-nr6bglxm</CodeName>
         <GUID>818df78b-353d-4863-8e9d-287040051249</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>2fe94e9c-68b0-4202-b18f-49dc7c4d6810</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>b6936ed8-2a40-48a0-96b7-c2eac5f1e420</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>ce143368-4752-470a-b8f7-0124b3416a31</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>BrazilNaturalBarraGrande-mtfd4bc3</CodeName>
+        <GUID>edb18903-129a-4c33-9ca1-506cfdf4496e</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>

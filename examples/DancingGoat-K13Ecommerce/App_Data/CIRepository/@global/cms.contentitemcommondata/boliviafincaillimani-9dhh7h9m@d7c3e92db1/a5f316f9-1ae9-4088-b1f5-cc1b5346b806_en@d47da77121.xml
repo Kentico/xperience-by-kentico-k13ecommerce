@@ -17,6 +17,19 @@
   <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
   <ContentItemReferences>
     <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>4184487a-e45c-4680-a3fb-b5320cf6f4cd</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>a5f316f9-1ae9-4088-b1f5-cc1b5346b806</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>BoliviaFincaIllimani-5qkxtvo5</CodeName>
+        <GUID>4b6b4f4d-e85c-4e4c-8d36-5e49a5b3cdae</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>5e7d4d68-5108-40d0-81bd-688ecd582dda</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
@@ -78,19 +91,6 @@
       <ContentItemReferenceTargetItemID>
         <CodeName>BoliviaFincaIllimani_8Oz-lna92y10</CodeName>
         <GUID>9cca0000-3dd1-4eee-99f7-b8c6393ad6ed</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>4184487a-e45c-4680-a3fb-b5320cf6f4cd</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>a5f316f9-1ae9-4088-b1f5-cc1b5346b806</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>BoliviaFincaIllimani-5qkxtvo5</CodeName>
-        <GUID>4b6b4f4d-e85c-4e4c-8d36-5e49a5b3cdae</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>
