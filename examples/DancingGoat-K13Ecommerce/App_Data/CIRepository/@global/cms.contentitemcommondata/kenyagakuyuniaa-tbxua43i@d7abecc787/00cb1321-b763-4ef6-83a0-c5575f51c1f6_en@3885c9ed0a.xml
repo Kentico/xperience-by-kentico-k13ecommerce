@@ -17,28 +17,15 @@
   <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
   <ContentItemReferences>
     <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>1b145d45-51ce-487c-99cf-be241ca81488</ContentItemReferenceGUID>
+      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>76e59641-266f-4240-8ff2-d02d96f8dff3</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>00cb1321-b763-4ef6-83a0-c5575f51c1f6</GUID>
         <ObjectType>cms.contentitemcommondata</ObjectType>
       </ContentItemReferenceSourceCommonDataID>
       <ContentItemReferenceTargetItemID>
-        <CodeName>KenyaGakuyuniAA_16Oz-j0xeak6f</CodeName>
-        <GUID>5ad59cf0-0dba-4850-a951-da28aa519c10</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>a946b31d-5d9c-4b63-bac0-b9469b7b5544</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>00cb1321-b763-4ef6-83a0-c5575f51c1f6</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>KenyaGakuyuniAA_2Lb-8m4ccslz</CodeName>
-        <GUID>e7831f60-5268-4486-b7f9-55fdf7b5e782</GUID>
+        <CodeName>KenyaGakuyuniAA-2rpjzz74</CodeName>
+        <GUID>0864cb70-e2f1-49d9-93bf-7e3e87d6173f</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>
@@ -70,6 +57,32 @@
     </cms.contentitemreference>
     <cms.contentitemreference>
       <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>a946b31d-5d9c-4b63-bac0-b9469b7b5544</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>00cb1321-b763-4ef6-83a0-c5575f51c1f6</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>KenyaGakuyuniAA_2Lb-8m4ccslz</CodeName>
+        <GUID>e7831f60-5268-4486-b7f9-55fdf7b5e782</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>1b145d45-51ce-487c-99cf-be241ca81488</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>00cb1321-b763-4ef6-83a0-c5575f51c1f6</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>KenyaGakuyuniAA_16Oz-j0xeak6f</CodeName>
+        <GUID>5ad59cf0-0dba-4850-a951-da28aa519c10</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>248a34ce-68e7-4ec8-ad47-ae1c6de9a53d</ContentItemReferenceGroupGUID>
       <ContentItemReferenceGUID>2dd39935-02ee-41f0-8fc1-d7df6c3f9b52</ContentItemReferenceGUID>
       <ContentItemReferenceSourceCommonDataID>
         <GUID>00cb1321-b763-4ef6-83a0-c5575f51c1f6</GUID>
@@ -78,19 +91,6 @@
       <ContentItemReferenceTargetItemID>
         <CodeName>KenyaGakuyuniAA_8Oz-jsobszj2</CodeName>
         <GUID>6d2db35c-02e7-4e84-86b6-56e77db77513</GUID>
-        <ObjectType>cms.contentitem</ObjectType>
-      </ContentItemReferenceTargetItemID>
-    </cms.contentitemreference>
-    <cms.contentitemreference>
-      <ContentItemReferenceGroupGUID>eb316d51-1773-458b-9973-9ca8230fe7f0</ContentItemReferenceGroupGUID>
-      <ContentItemReferenceGUID>76e59641-266f-4240-8ff2-d02d96f8dff3</ContentItemReferenceGUID>
-      <ContentItemReferenceSourceCommonDataID>
-        <GUID>00cb1321-b763-4ef6-83a0-c5575f51c1f6</GUID>
-        <ObjectType>cms.contentitemcommondata</ObjectType>
-      </ContentItemReferenceSourceCommonDataID>
-      <ContentItemReferenceTargetItemID>
-        <CodeName>KenyaGakuyuniAA-2rpjzz74</CodeName>
-        <GUID>0864cb70-e2f1-49d9-93bf-7e3e87d6173f</GUID>
         <ObjectType>cms.contentitem</ObjectType>
       </ContentItemReferenceTargetItemID>
     </cms.contentitemreference>
