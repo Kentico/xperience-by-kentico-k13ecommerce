@@ -1096,7 +1096,7 @@
         "dependencies": {
           "Duende.AccessTokenManagement.OpenIdConnect": "[3.0.1, )",
           "Kentico.Xperience.Admin": "[30.6.0, )",
-          "Kentico.Xperience.Ecommerce.Common": "[2.1.0, )",
+          "Kentico.Xperience.Ecommerce.Common": "[2.2.0, )",
           "Kentico.Xperience.WebApp": "[30.6.0, )",
           "Scrutor": "[4.2.2, )"
         }
