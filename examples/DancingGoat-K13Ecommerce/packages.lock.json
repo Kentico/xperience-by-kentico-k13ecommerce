@@ -1104,7 +1104,7 @@
       "kentico.xperience.store.rcl": {
         "type": "Project",
         "dependencies": {
-          "Kentico.Xperience.K13Ecommerce": "[2.0.0, )"
+          "Kentico.Xperience.K13Ecommerce": "[2.1.0, )"
         }
       },
       "Duende.AccessTokenManagement.OpenIdConnect": {
