@@ -148,3 +148,8 @@ segments_2i
 
 # Databases backup
 /database/*.bak
+
+# MCP server definitions
+mcp.json
+claude_desktop_config.json
+mcp_config.json
