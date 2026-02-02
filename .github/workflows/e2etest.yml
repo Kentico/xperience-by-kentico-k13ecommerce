@@ -110,13 +110,22 @@ jobs:
       
       - name: Drop obsolete foreign key constraint
         run: |
+          $query = @"
+          IF EXISTS (
+            SELECT * FROM sys.foreign_keys 
+            WHERE object_id = OBJECT_ID(N'FK_Commerce_Order_OrderPaymentMethodID_Commerce_PaymentMethod') 
+            AND parent_object_id = OBJECT_ID(N'Commerce_Order')
+          )
+          ALTER TABLE Commerce_Order 
+          DROP CONSTRAINT FK_Commerce_Order_OrderPaymentMethodID_Commerce_PaymentMethod;
+          "@
           sqlcmd `
             -S localhost `
             -d XByK_DancingGoat_K13Ecommerce `
             -U "sa" `
             -P "Pass@12345" `
             -C `
-            -Q "IF EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'FK_Commerce_Order_OrderPaymentMethodID_Commerce_PaymentMethod') AND parent_object_id = OBJECT_ID(N'Commerce_Order')) ALTER TABLE Commerce_Order DROP CONSTRAINT FK_Commerce_Order_OrderPaymentMethodID_Commerce_PaymentMethod;"
+            -Q $query
       
       - name: Reset DB consistency for last applied hotfix
         run: |
