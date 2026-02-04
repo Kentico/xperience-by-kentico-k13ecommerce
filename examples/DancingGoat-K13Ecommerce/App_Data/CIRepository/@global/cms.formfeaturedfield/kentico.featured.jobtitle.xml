@@ -14,13 +14,14 @@
           <componentidentifier>Kentico.TextInput</componentidentifier>
         </settings>
         <validationrulesdata>
-          <FormValidationRuleConfiguration>
-            <ValidationRuleIdentifier>Kentico.MaximumStringLengthFormValidationRule</ValidationRuleIdentifier>
-            <RuleValues>
+          <ValidationRuleConfiguration>
+            <Identifier>Kentico.MaximumLength</Identifier>
+            <ValidationRule>
+              <InstanceIdentifier>45dfe189-7420-4cda-95e1-210084f064d3</InstanceIdentifier>
               <ErrorMessage>Maximum allowed length of the input text is 50.</ErrorMessage>
               <MaximumLength>50</MaximumLength>
-            </RuleValues>
-          </FormValidationRuleConfiguration>
+            </ValidationRule>
+          </ValidationRuleConfiguration>
         </validationrulesdata>
       </field>
     </form>

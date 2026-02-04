@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.settingscategory>
   <CategoryDisplayName>
-    <![CDATA[{$digitalmarketing.settings.settingscategory.cmsonlinemarketing.contactmanagement$}]]>
+    <![CDATA[{$settingscategory.cmsonlinemarketingcontactmanagement$}]]>
   </CategoryDisplayName>
   <CategoryIconPath />
   <CategoryIsCustom>False</CategoryIsCustom>

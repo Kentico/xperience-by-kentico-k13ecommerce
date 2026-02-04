@@ -3,5 +3,6 @@
   <ActivityTypeDisplayName>Product added to shopping cart</ActivityTypeDisplayName>
   <ActivityTypeEnabled>True</ActivityTypeEnabled>
   <ActivityTypeIsCustom>True</ActivityTypeIsCustom>
+  <ActivityTypeManualCreationAllowed>False</ActivityTypeManualCreationAllowed>
   <ActivityTypeName>custom_productaddedtoshoppingcart</ActivityTypeName>
 </om.activitytype>

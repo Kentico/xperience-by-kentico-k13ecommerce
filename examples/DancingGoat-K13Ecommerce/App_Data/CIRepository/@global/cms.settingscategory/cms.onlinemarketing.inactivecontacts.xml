@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.settingscategory>
   <CategoryDisplayName>
-    <![CDATA[{$base.settings.settingscategory.content.recyclebin$}]]>
+    <![CDATA[{$settingscategory.cmsonlinemarketingcontactmanagementinactivecontacts$}]]>
   </CategoryDisplayName>
   <CategoryIconPath />
   <CategoryIsCustom>False</CategoryIsCustom>
   <CategoryIsGroup>False</CategoryIsGroup>
-  <CategoryName>CMS.Content.RecycleBin</CategoryName>
-  <CategoryOrder>6</CategoryOrder>
+  <CategoryName>CMS.OnlineMarketing.InactiveContacts</CategoryName>
+  <CategoryOrder>4</CategoryOrder>
   <CategoryParentID>
-    <CodeName>CMS.Content</CodeName>
+    <CodeName>CMS.OnlineMarketing.ContactManagement</CodeName>
     <ObjectType>cms.settingscategory</ObjectType>
   </CategoryParentID>
   <CategoryResourceID>
-    <CodeName>CMS.Content</CodeName>
-    <GUID>98c6ee00-230a-4207-a6d3-03677b83b245</GUID>
+    <CodeName>CMS.ContactManagement</CodeName>
+    <GUID>0e4beef1-989c-4687-80ca-ae21fec09734</GUID>
     <ObjectType>cms.resource</ObjectType>
   </CategoryResourceID>
 </cms.settingscategory>

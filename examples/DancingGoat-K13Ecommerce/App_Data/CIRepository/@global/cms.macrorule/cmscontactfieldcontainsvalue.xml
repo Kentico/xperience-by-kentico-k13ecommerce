@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.macrorule>
   <MacroRuleCondition>
-    <![CDATA[Contact.ContactFieldContainsValue("{field}", "{op}", "{value}")]]>
+    <![CDATA[Contact.{field}.{op}("{value}")]]>
   </MacroRuleCondition>
   <MacroRuleDescription>
     <![CDATA[{$macrorule.cmscontactfieldcontainsvalue.description$}]]>

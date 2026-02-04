@@ -1,17 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.settingscategory>
-  <CategoryDisplayName>
-    <![CDATA[{$digitalmarketing.settings.settingscategory.cmsonlinemarketing.contactmanagement.inactivecontacts$}]]>
-  </CategoryDisplayName>
+  <CategoryDisplayName>{$settingskey.om.deleteinactivecontacts.category$}</CategoryDisplayName>
   <CategoryIconPath />
   <CategoryIsCustom>False</CategoryIsCustom>
   <CategoryIsGroup>True</CategoryIsGroup>
   <CategoryName>
-    <![CDATA[CMS.OnlineMarketing.ContactManagement.InactiveContacts]]>
+    <![CDATA[CMS.OnlineMarketing.InactiveContacts.DeleteInactiveContacts]]>
   </CategoryName>
-  <CategoryOrder>2</CategoryOrder>
+  <CategoryOrder>0</CategoryOrder>
   <CategoryParentID>
-    <CodeName>CMS.OnlineMarketing.ContactManagement</CodeName>
+    <CodeName>CMS.OnlineMarketing.InactiveContacts</CodeName>
     <ObjectType>cms.settingscategory</ObjectType>
   </CategoryParentID>
   <CategoryResourceID>

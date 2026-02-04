@@ -31,13 +31,14 @@
           <componentidentifier>Kentico.EmailInput</componentidentifier>
         </settings>
         <validationrulesdata>
-          <FormValidationRuleConfiguration>
-            <ValidationRuleIdentifier>Kentico.MaximumStringLengthFormValidationRule</ValidationRuleIdentifier>
-            <RuleValues>
+          <ValidationRuleConfiguration>
+            <Identifier>Kentico.MaximumLength</Identifier>
+            <ValidationRule>
+              <InstanceIdentifier>0e4f50f5-89fa-49fd-a4e3-9bb32ee6b244</InstanceIdentifier>
               <ErrorMessage>Maximum allowed length of the input text is 254.</ErrorMessage>
               <MaximumLength>254</MaximumLength>
-            </RuleValues>
-          </FormValidationRuleConfiguration>
+            </ValidationRule>
+          </ValidationRuleConfiguration>
         </validationrulesdata>
       </field>
     </form>

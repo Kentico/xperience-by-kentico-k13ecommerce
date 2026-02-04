@@ -6,5 +6,6 @@
   <ActivityTypeDisplayName>Landing page</ActivityTypeDisplayName>
   <ActivityTypeEnabled>True</ActivityTypeEnabled>
   <ActivityTypeIsCustom>False</ActivityTypeIsCustom>
+  <ActivityTypeManualCreationAllowed>False</ActivityTypeManualCreationAllowed>
   <ActivityTypeName>landingpage</ActivityTypeName>
 </om.activitytype>
