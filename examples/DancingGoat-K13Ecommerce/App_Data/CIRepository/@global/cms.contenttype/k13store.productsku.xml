@@ -168,7 +168,6 @@ Bundle
       </field>
       <field allowempty="true" column="SKUInStoreFrom" columnprecision="7" columntype="datetime" enabled="true" guid="2cce9255-fd33-4bfa-9b82-1c02e01bc1d9" visible="true">
         <properties>
-          <explanationtext>{$base.forms.datetimeinput.explanation$}</explanationtext>
           <explanationtextashtml>False</explanationtextashtml>
           <fieldcaption>In store from</fieldcaption>
           <fielddescriptionashtml>False</fielddescriptionashtml>
