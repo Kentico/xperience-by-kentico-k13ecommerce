@@ -3,6 +3,5 @@
   <ActivityTypeDisplayName>Purchased product</ActivityTypeDisplayName>
   <ActivityTypeEnabled>True</ActivityTypeEnabled>
   <ActivityTypeIsCustom>True</ActivityTypeIsCustom>
-  <ActivityTypeManualCreationAllowed>False</ActivityTypeManualCreationAllowed>
   <ActivityTypeName>custom_purchasedproduct</ActivityTypeName>
 </om.activitytype>
