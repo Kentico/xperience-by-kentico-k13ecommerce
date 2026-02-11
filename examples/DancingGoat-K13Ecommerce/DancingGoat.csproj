@@ -30,7 +30,7 @@
     <PackageReference Include="kentico.xperience.webapp" VersionOverride="$(XbyKVersion)" />
     <PackageReference Include="Scrutor" />
     <PackageReference Include="System.Linq.Async" />
-    <PackageReference Include="Kentico.Xperience.K13Ecommerce" VersionOverride="3.0.0-prerelease-2" />
-    <PackageReference Include="Kentico.Xperience.Store.Rcl" VersionOverride="3.0.0-prerelease-2" />
+    <PackageReference Include="Kentico.Xperience.K13Ecommerce" VersionOverride="3.0.0" />
+    <PackageReference Include="Kentico.Xperience.Store.Rcl" VersionOverride="3.0.0" />
   </ItemGroup>
 </Project>

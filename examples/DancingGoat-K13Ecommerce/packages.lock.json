@@ -40,6 +40,28 @@
           "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.1"
         }
       },
+      "Kentico.Xperience.K13Ecommerce": {
+        "type": "Direct",
+        "requested": "[3.0.0, )",
+        "resolved": "3.0.0",
+        "contentHash": "uF/9BtKYGpJIpgZqRJGct0XF2X6spiJUKAktgJcKW3nFr5KVnMEtinuC2NlM78S38tp1qE8/wvQYiZ1/WdQntA==",
+        "dependencies": {
+          "Duende.AccessTokenManagement.OpenIdConnect": "3.0.1",
+          "Kentico.Xperience.Admin": "31.0.0",
+          "Kentico.Xperience.Ecommerce.Common": "3.0.0",
+          "Kentico.Xperience.WebApp": "31.0.0",
+          "Scrutor": "4.2.2"
+        }
+      },
+      "Kentico.Xperience.Store.Rcl": {
+        "type": "Direct",
+        "requested": "[3.0.0, )",
+        "resolved": "3.0.0",
+        "contentHash": "t6TV65oCYKFJsZneARMgQsjwjPyGlmj0xdslI7fY5NKpttHajtXbSSeofTErsGPB5tV5N5ZDHxwXLbvF9Y5mtA==",
+        "dependencies": {
+          "Kentico.Xperience.K13Ecommerce": "3.0.0"
+        }
+      },
       "Kentico.Xperience.WebApp": {
         "type": "Direct",
         "requested": "[31.0.0, )",
@@ -537,6 +559,16 @@
           "Microsoft.Extensions.Options": "9.0.8",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "8.0.0",
           "Microsoft.IdentityModel.JsonWebTokens": "8.14.0"
+        }
+      },
+      "Kentico.Xperience.Ecommerce.Common": {
+        "type": "Transitive",
+        "resolved": "3.0.0",
+        "contentHash": "+rGGvGe49LuBuKA3V+ZV6Jp0/RCTF35ByzRIKL+8833Cs66u1AnJqNRTmMm/l1H1wuS+NY9vDBHU00BPUls0WQ==",
+        "dependencies": {
+          "Kentico.Xperience.Admin": "31.0.0",
+          "Kentico.Xperience.Core": "31.0.0",
+          "Microsoft.Extensions.Http": "8.0.1"
         }
       },
       "Magick.NET-Q8-AnyCPU": {
@@ -1227,30 +1259,6 @@
         "contentHash": "t16Z+OplJEElJy1Q6t12EwMGF2BeLw8IKjD1ema7ewbCRaMqeVIRPZo3MlxidnRFRK+tV6II8tKYX+7N5ZS98A==",
         "dependencies": {
           "System.IO.Hashing": "8.0.0"
-        }
-      },
-      "kentico.xperience.ecommerce.common": {
-        "type": "Project",
-        "dependencies": {
-          "Kentico.Xperience.Admin": "[31.0.0, )",
-          "Kentico.Xperience.Core": "[31.0.0, )",
-          "Microsoft.Extensions.Http": "[8.0.1, )"
-        }
-      },
-      "kentico.xperience.k13ecommerce": {
-        "type": "Project",
-        "dependencies": {
-          "Duende.AccessTokenManagement.OpenIdConnect": "[3.0.1, )",
-          "Kentico.Xperience.Admin": "[31.0.0, )",
-          "Kentico.Xperience.Ecommerce.Common": "[3.0.0, )",
-          "Kentico.Xperience.WebApp": "[31.0.0, )",
-          "Scrutor": "[4.2.2, )"
-        }
-      },
-      "kentico.xperience.store.rcl": {
-        "type": "Project",
-        "dependencies": {
-          "Kentico.Xperience.K13Ecommerce": "[3.0.0-prerelease-1, )"
         }
       },
       "Duende.AccessTokenManagement.OpenIdConnect": {
