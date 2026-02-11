@@ -30,9 +30,7 @@
     <PackageReference Include="kentico.xperience.webapp" VersionOverride="$(XbyKVersion)" />
     <PackageReference Include="Scrutor" />
     <PackageReference Include="System.Linq.Async" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Kentico.Xperience.K13Ecommerce\Kentico.Xperience.K13Ecommerce.csproj" />
-    <ProjectReference Include="..\..\src\Kentico.Xperience.Store.Rcl\Kentico.Xperience.Store.Rcl.csproj" />
+    <PackageReference Include="Kentico.Xperience.K13Ecommerce" Version="*-*" />
+    <PackageReference Include="Kentico.Xperience.Store.Rcl" Version="*-*" />
   </ItemGroup>
 </Project>
