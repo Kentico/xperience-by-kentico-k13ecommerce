@@ -80,6 +80,8 @@ Summary of libraries which are supported by the following versions Xperience by 
 
 | Library                            | Xperience Version | Library Version |
 |------------------------------------|-------------------| --------------- |
+| Kentico.Xperience.K13Ecommerce     | \>= 31.0.0        | >= 3.0.0        |
+| Kentico.Xperience.Store.Rcl        | \>= 31.0.0        | >= 3.0.0        |
 | Kentico.Xperience.K13Ecommerce     | \>= 30.6.0        | >= 2.1.0        |
 | Kentico.Xperience.Store.Rcl        | \>= 30.6.0        | >= 2.1.0        |
 | Kentico.Xperience.K13Ecommerce     | \>= 30.0.1        | >= 2.0.0        |
