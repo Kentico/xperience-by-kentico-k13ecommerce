@@ -56,6 +56,16 @@
           "Microsoft.Extensions.FileProviders.Embedded": "8.0.22"
         }
       },
+      "Microsoft.Extensions.Options": {
+        "type": "Direct",
+        "requested": "[9.0.8, )",
+        "resolved": "9.0.8",
+        "contentHash": "OmTaQ0v4gxGQkehpwWIqPoEiwsPuG/u4HUsbOFoWGx4DKET2AXzopnFe/fE608FIhzc/kcg2p8JdyMRCCUzitQ==",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
+          "Microsoft.Extensions.Primitives": "9.0.8"
+        }
+      },
       "Scrutor": {
         "type": "Direct",
         "requested": "[4.2.2, )",
@@ -857,15 +867,6 @@
         "resolved": "8.0.0",
         "contentHash": "4pm+XgxSukskwjzDDfSjG4KNUIOdFF2VaqZZDtTzoyQMOVSnlV6ZM8a9aVu5dg9LVZTB//utzSc8fOi0b0Mb2Q=="
       },
-      "Microsoft.Extensions.Options": {
-        "type": "Transitive",
-        "resolved": "9.0.8",
-        "contentHash": "OmTaQ0v4gxGQkehpwWIqPoEiwsPuG/u4HUsbOFoWGx4DKET2AXzopnFe/fE608FIhzc/kcg2p8JdyMRCCUzitQ==",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
-          "Microsoft.Extensions.Primitives": "9.0.8"
-        }
-      },
       "Microsoft.Extensions.Options.ConfigurationExtensions": {
         "type": "Transitive",
         "resolved": "8.0.0",
@@ -1250,7 +1251,7 @@
       "kentico.xperience.store.rcl": {
         "type": "Project",
         "dependencies": {
-          "Kentico.Xperience.K13Ecommerce": "[3.0.0-prerelease-1, )"
+          "Kentico.Xperience.K13Ecommerce": "[3.0.0, )"
         }
       },
       "Duende.AccessTokenManagement.OpenIdConnect": {

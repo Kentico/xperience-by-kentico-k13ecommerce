@@ -771,15 +771,6 @@
         "resolved": "8.0.0",
         "contentHash": "4pm+XgxSukskwjzDDfSjG4KNUIOdFF2VaqZZDtTzoyQMOVSnlV6ZM8a9aVu5dg9LVZTB//utzSc8fOi0b0Mb2Q=="
       },
-      "Microsoft.Extensions.Options": {
-        "type": "Transitive",
-        "resolved": "9.0.8",
-        "contentHash": "OmTaQ0v4gxGQkehpwWIqPoEiwsPuG/u4HUsbOFoWGx4DKET2AXzopnFe/fE608FIhzc/kcg2p8JdyMRCCUzitQ==",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
-          "Microsoft.Extensions.Primitives": "9.0.8"
-        }
-      },
       "Microsoft.Extensions.Options.ConfigurationExtensions": {
         "type": "Transitive",
         "resolved": "8.0.0",
@@ -1119,7 +1110,7 @@
         "dependencies": {
           "Duende.AccessTokenManagement.OpenIdConnect": "[3.0.1, )",
           "Kentico.Xperience.Admin": "[31.0.0, )",
-          "Kentico.Xperience.Ecommerce.Common": "[2.2.0, )",
+          "Kentico.Xperience.Ecommerce.Common": "[3.0.0, )",
           "Kentico.Xperience.WebApp": "[31.0.0, )",
           "Scrutor": "[4.2.2, )"
         }
@@ -1188,6 +1179,16 @@
           "Microsoft.AspNetCore.Components": "8.0.22",
           "Microsoft.Extensions.Caching.Memory": "8.0.1",
           "Microsoft.Extensions.FileProviders.Embedded": "8.0.22"
+        }
+      },
+      "Microsoft.Extensions.Options": {
+        "type": "CentralTransitive",
+        "requested": "[9.0.8, )",
+        "resolved": "9.0.8",
+        "contentHash": "OmTaQ0v4gxGQkehpwWIqPoEiwsPuG/u4HUsbOFoWGx4DKET2AXzopnFe/fE608FIhzc/kcg2p8JdyMRCCUzitQ==",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
+          "Microsoft.Extensions.Primitives": "9.0.8"
         }
       },
       "Scrutor": {
