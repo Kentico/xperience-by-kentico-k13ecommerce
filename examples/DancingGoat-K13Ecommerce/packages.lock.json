@@ -56,16 +56,6 @@
           "Microsoft.Extensions.FileProviders.Embedded": "8.0.22"
         }
       },
-      "Microsoft.Extensions.Options": {
-        "type": "Direct",
-        "requested": "[9.0.8, )",
-        "resolved": "9.0.8",
-        "contentHash": "OmTaQ0v4gxGQkehpwWIqPoEiwsPuG/u4HUsbOFoWGx4DKET2AXzopnFe/fE608FIhzc/kcg2p8JdyMRCCUzitQ==",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
-          "Microsoft.Extensions.Primitives": "9.0.8"
-        }
-      },
       "Scrutor": {
         "type": "Direct",
         "requested": "[4.2.2, )",
@@ -1287,6 +1277,16 @@
           "Newtonsoft.Json": "13.0.3",
           "System.CodeDom": "8.0.0",
           "System.IO.Hashing": "9.0.11"
+        }
+      },
+      "Microsoft.Extensions.Options": {
+        "type": "CentralTransitive",
+        "requested": "[9.0.8, )",
+        "resolved": "9.0.8",
+        "contentHash": "OmTaQ0v4gxGQkehpwWIqPoEiwsPuG/u4HUsbOFoWGx4DKET2AXzopnFe/fE608FIhzc/kcg2p8JdyMRCCUzitQ==",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
+          "Microsoft.Extensions.Primitives": "9.0.8"
         }
       }
     }
