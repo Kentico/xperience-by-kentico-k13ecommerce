@@ -28,7 +28,6 @@
     <PackageReference Include="kentico.xperience.azurestorage" VersionOverride="$(XbyKVersion)" />
     <PackageReference Include="kentico.xperience.imageprocessing" VersionOverride="$(XbyKVersion)" />
     <PackageReference Include="kentico.xperience.webapp" VersionOverride="$(XbyKVersion)" />
-    <PackageReference Include="Microsoft.Extensions.Options" />
     <PackageReference Include="Scrutor" />
     <PackageReference Include="System.Linq.Async" />
   </ItemGroup>
