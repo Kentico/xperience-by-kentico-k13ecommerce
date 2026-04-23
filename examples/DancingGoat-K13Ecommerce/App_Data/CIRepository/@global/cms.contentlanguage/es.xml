@@ -7,6 +7,7 @@
     <GUID>e4a8fb12-ebc2-45d0-930f-c9fba2780c85</GUID>
     <ObjectType>cms.contentlanguage</ObjectType>
   </ContentLanguageFallbackContentLanguageID>
+  <ContentLanguageFlagIconName>xp-flag-spain</ContentLanguageFlagIconName>
   <ContentLanguageGUID>fc939370-8f94-4fc9-8cc4-bfdef6ab748c</ContentLanguageGUID>
   <ContentLanguageIsDefault>False</ContentLanguageIsDefault>
   <ContentLanguageName>es</ContentLanguageName>
