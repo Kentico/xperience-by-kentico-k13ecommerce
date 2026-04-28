@@ -2,6 +2,7 @@
 <cms.contentlanguage>
   <ContentLanguageCultureFormat>en-US</ContentLanguageCultureFormat>
   <ContentLanguageDisplayName>English</ContentLanguageDisplayName>
+  <ContentLanguageFlagIconName>xp-flag-united-states</ContentLanguageFlagIconName>
   <ContentLanguageGUID>e4a8fb12-ebc2-45d0-930f-c9fba2780c85</ContentLanguageGUID>
   <ContentLanguageIsDefault>True</ContentLanguageIsDefault>
   <ContentLanguageName>en</ContentLanguageName>
